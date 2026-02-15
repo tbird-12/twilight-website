@@ -1,67 +1,73 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 ---
 
-<BaseLayout title="Twilight Psychology | Testing, Therapy, Medication">
-  <section class="hero py-20 text-center max-w-3xl mx-auto">
-    <h1 class="text-4xl font-bold mb-4">
-      Affordable, Timely, and Top‑Tier Behavioral Health Services
-    </h1>
-    <p class="text-lg text-gray-600">
-      Empowering neurodiverse individuals through accessible psychological testing,
-      therapy, and medication management.
-    </p>
-
-    <div class="mt-8 flex justify-center gap-4">
-      <a href="/contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg">
-        Call Us
-      </a>
-      <a href="/services" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg">
-        Explore Services
-      </a>
-    </div>
-  </section>
-
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 text-center">
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Psychological Assessments</h3>
-        <p class="text-gray-600">
-          Comprehensive evaluations for Autism, ADHD, Dyslexia, learning disabilities,
-          and more.
+<Layout title="Twilight Psychology | Testing, Therapy & Medication">
+  <section class="relative bg-slate-900 py-20 px-6 overflow-hidden">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <div class="flex-1 text-center md:text-left z-10">
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          Evidence-based care for your <span class="text-indigo-300">brightest future.</span>
+        </h1>
+        <p class="text-lg text-slate-300 mb-8 max-w-xl">
+          A woman-owned, psychologist-led practice in Lexington, KY. We specialize in psychological testing, therapy, and medication management with a neuro-affirming approach.
         </p>
+        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+          <a href="/contact" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-full font-semibold transition">
+            Book an Appointment
+          </a>
+          <a href="/services" class="border border-slate-500 text-white hover:bg-slate-800 px-8 py-3 rounded-full font-semibold transition">
+            Our Services
+          </a>
+        </div>
       </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Medication Management</h3>
-        <p class="text-gray-600">
-          Immediate openings with in‑house psychiatric nurse practitioners.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-semibold mb-2">Therapy Services</h3>
-        <p class="text-gray-600">
-          Supportive, neuroaffirmative therapy for children, teens, and adults.
-        </p>
+      
+      <div class="flex-1 relative">
+        <div class="w-full h-80 bg-indigo-500/10 rounded-2xl border border-indigo-500/20 backdrop-blur-sm flex items-center justify-center">
+           <span class="text-indigo-200 italic text-center px-4">"Healing isn't linear, and it shouldn't be fragmented."</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-4">Fast, Accessible Care</h2>
-    <p class="text-gray-600 mb-6">
-      Self‑pay clients often receive full evaluations and reports within one week.
-      Telehealth appointments available across multiple states through PsyPact.
-    </p>
-    <a href="/about" class="px-6 py-3 bg-blue-600 text-white rounded-lg">
-      Learn More
-    </a>
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-slate-900 mb-4">Our Core Values</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Providing a comprehensive lens through which to understand the self.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 border border-slate-100 rounded-2xl hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-indigo-900 mb-3">Accessibility</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We accept most insurances—including Commercial, KY Medicaid, and Medicare—prioritizing faster appointment times.
+          </p>
+        </div>
+        <div class="p-8 border border-slate-100 rounded-2xl hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-indigo-900 mb-3">Neuro-Affirming</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We don't view neurodivergence as a deficit to be cured, but as a vital part of a person's identity.
+          </p>
+        </div>
+        <div class="p-8 border border-slate-100 rounded-2xl hover:shadow-lg transition">
+          <h3 class="text-xl font-bold text-indigo-900 mb-3">Holistic Continuity</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Housing evaluation, therapy, and medication management under one roof for a seamless experience.
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer class="py-12 text-center text-gray-500 text-sm">
-    <p>Twilight Psychology, PLLC</p>
-    <p>501 Darby Creek Rd., Suite 7A, Lexington, KY 40509</p>
-    <p>Email: office@twilightpsychology.com | Phone: (859) 687‑5843</p>
-  </footer>
-</BaseLayout>
+  <section class="bg-indigo-50 py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-slate-900 mb-6">Ready to start your journey?</h2>
+      <p class="text-slate-600 mb-8">Located in Lexington, KY, we are here to provide the clinical clarity you deserve.</p>
+      <a href="tel:1234567890" class="inline-block text-indigo-700 font-bold text-xl hover:underline">
+        (859) XXX-XXXX
+      </a>
+    </div>
+  </section>
+</Layout>
