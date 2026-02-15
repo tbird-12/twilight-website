@@ -1,16 +1,67 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<h1 class="text-3xl font-bold text-center mt-10">
-  Hello from Twilight Psychology!
-</h1>
-<p class="text-center mt-4 text-lg">
-  We are dedicated to providing you with the best psychological resources and support.
-</p>
+<BaseLayout title="Twilight Psychology | Testing, Therapy, Medication">
+  <section class="hero py-20 text-center max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4">
+      Affordable, Timely, and Top‑Tier Behavioral Health Services
+    </h1>
+    <p class="text-lg text-gray-600">
+      Empowering neurodiverse individuals through accessible psychological testing,
+      therapy, and medication management.
+    </p>
 
-<div class="flex justify-center mt-6">
-  <a href="https://twilightpsychology.com" class="text-blue-500 hover:underline">
-    Learn about us at twilightpsychology.com while our new website is under construction!
-  </a>  
-</div>
+    <div class="mt-8 flex justify-center gap-4">
+      <a href="/contact" class="px-6 py-3 bg-blue-600 text-white rounded-lg">
+        Call Us
+      </a>
+      <a href="/services" class="px-6 py-3 border border-blue-600 text-blue-600 rounded-lg">
+        Explore Services
+      </a>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 text-center">
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Psychological Assessments</h3>
+        <p class="text-gray-600">
+          Comprehensive evaluations for Autism, ADHD, Dyslexia, learning disabilities,
+          and more.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Medication Management</h3>
+        <p class="text-gray-600">
+          Immediate openings with in‑house psychiatric nurse practitioners.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-2">Therapy Services</h3>
+        <p class="text-gray-600">
+          Supportive, neuroaffirmative therapy for children, teens, and adults.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Fast, Accessible Care</h2>
+    <p class="text-gray-600 mb-6">
+      Self‑pay clients often receive full evaluations and reports within one week.
+      Telehealth appointments available across multiple states through PsyPact.
+    </p>
+    <a href="/about" class="px-6 py-3 bg-blue-600 text-white rounded-lg">
+      Learn More
+    </a>
+  </section>
+
+  <footer class="py-12 text-center text-gray-500 text-sm">
+    <p>Twilight Psychology, PLLC</p>
+    <p>501 Darby Creek Rd., Suite 7A, Lexington, KY 40509</p>
+    <p>Email: office@twilightpsychology.com | Phone: (859) 687‑5843</p>
+  </footer>
+</BaseLayout>
