@@ -1,12 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* You can also add custom global styles here */
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  @apply antialiased; /* Makes fonts look crisper */
 }
