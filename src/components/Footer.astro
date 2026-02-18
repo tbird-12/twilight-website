@@ -1,0 +1,95 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  { 
+    title: 'Client Resources', 
+    items: [
+      { name: 'Online Testing FAQ', href: '/client-resources/online-testing-and-insurance-faq' },
+      { name: 'Fees & Insurance', href: '/client-resources/fees-and-insurance' },
+      { name: 'Privacy Policy', href: '/privacy' },
+    ] 
+  },
+  { 
+    title: 'Services', 
+    items: [
+      { name: 'ADHD Assessments', href: '/services#adhd' },
+      { name: 'Autism Evaluations', href: '/services#autism' },
+      { name: 'Therapy', href: '/services#therapy' },
+      { name: 'Medication Management', href: '/services#meds' },
+    ] 
+  }
+];
+
+// Social Media Placeholders
+const socials = [
+  { label: 'Facebook', icon: 'facebook', href: '#' },
+  { label: 'Instagram', icon: 'instagram', href: '#' },
+  { label: 'LinkedIn', icon: 'linkedin', href: '#' },
+];
+---
+
+<footer class="relative border-t border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+      
+      <div class="col-span-12 lg:col-span-4">
+        <div class="mb-2">
+          <a class="inline-block font-bold text-xl text-indigo-900 dark:text-white" href="/">
+            Twilight Psychology
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-slate-400 mb-4">
+          Providing comprehensive, accurate, and affordable psychological evaluations and therapy.
+        </p>
+        
+        <div class="flex gap-3">
+          {socials.map((social) => (
+            <a href={social.href} class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label={social.label}>
+              <span class="w-5 h-5 bg-gray-300 dark:bg-gray-600 rounded-full italic text-[10px] flex items-center justify-center text-white">
+                {social.label.charAt(0)}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {links.map(({ title, items }) => (
+        <div class="col-span-6 md:col-span-3 lg:col-span-2">
+          <div class="text-gray-800 dark:text-gray-300 font-bold mb-3 uppercase tracking-wider text-xs">{title}</div>
+          <ul class="text-sm">
+            {items.map(({ name, href }) => (
+              <li class="mb-2">
+                <a class="text-gray-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-white transition" href={href}>
+                  {name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <div class="col-span-12 md:col-span-3 lg:col-span-2">
+        <div class="text-gray-800 dark:text-gray-300 font-bold mb-3 uppercase tracking-wider text-xs">Practice Info</div>
+        <div class="text-sm text-gray-600 dark:text-slate-400 space-y-3">
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-gray-200">Phone & Fax</p>
+            <p>P: (859) 687-5843</p>
+            <p>F: (859) 000-0000</p> </div>
+          <div>
+            <p class="font-semibold text-gray-800 dark:text-gray-200">Hours of Operation</p>
+            <p>Mon - Sun: 8:00 AM - 7:00 PM EST</p>
+            <p>Sat - Sun: By appointment </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-gray-100 dark:border-slate-800">
+      <div class="text-sm text-gray-700 dark:text-slate-400">
+        © {year} · Twilight Psychology PLLC. Lexington, KY.
+      </div>
+    </div>
+  </div>
+</footer>
