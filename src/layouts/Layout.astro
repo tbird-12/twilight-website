@@ -2,7 +2,6 @@
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Announcement from '../components/Announcements.astro';
 
 // This is the "Frontmatter" where you can pass data to the layout
 interface Props {
@@ -22,9 +21,6 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-slate-50 font-['Inter',sans-serif] text-slate-900 flex flex-col min-h-screen">
-		<slot name="announcement">
-    		<Announcement />
-  		</slot>
 
 		<Header />
 
