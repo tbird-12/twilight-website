@@ -1,0 +1,32 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-gray-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-12">
+    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8">
+      <div class="col-span-12 lg:col-span-4">
+        <div class="mb-2">
+          <a class="inline-block font-bold text-xl" href="/">AstroWind</a>
+        </div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+          Making the web a better place, one template at a time.
+        </div>
+      </div>
+      
+      <div class="col-span-6 md:col-span-3 lg:col-span-2">
+        <div class="text-gray-800 dark:text-gray-300 font-medium mb-2">Product</div>
+        <ul class="text-sm">
+          <li class="mb-2"><a class="text-gray-600 hover:text-blue-600" href="#">Features</a></li>
+          <li class="mb-2"><a class="text-gray-600 hover:text-blue-600" href="#">Pricing</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
+      <div class="text-sm text-gray-700 dark:text-slate-400">
+        © {year} · Made with ❤️ by Your Name
+      </div>
+    </div>
+  </div>
+</footer>
