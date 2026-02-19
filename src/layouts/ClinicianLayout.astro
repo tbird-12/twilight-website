@@ -38,12 +38,12 @@ const { name, title, specialty, imageEmoji } = Astro.props;
             <slot />
           </div>
           
-          <div class="mt-16 p-10 bg-black dark:bg-zinc-800 rounded-3xl text-white shadow-2xl relative overflow-hidden">
+          <div class="mt-16 p-10 bg-indigo-100 dark:bg-indigo-900 rounded-3xl text-indigo-950 dark:text-indigo-100 shadow-2xl relative overflow-hidden">
              <div class="absolute top-0 left-0 w-2 h-full bg-amber-500"></div>
             
             <h3 class="text-2xl font-black mb-2">Ready to start?</h3>
-            <p class="mb-8 text-zinc-300 text-lg">Schedule a consultation or evaluation with {name.split(' ')[0]} today.</p>
-            <a href="/contact" class="inline-block bg-amber-500 text-black px-10 py-4 rounded-full font-black hover:bg-amber-400 transition transform hover:scale-105 shadow-lg">
+            <p class="mb-8 text-indigo-700 dark:text-indigo-200 text-lg">Schedule a consultation or evaluation with {name} today.</p>
+            <a href="/contact" class="inline-block bg-amber-500 text-indigo-950 px-10 py-4 rounded-full font-black hover:bg-amber-400 transition transform hover:scale-105 shadow-lg">
               Request Appointment
             </a>
           </div>

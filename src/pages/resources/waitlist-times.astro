@@ -1,0 +1,48 @@
+---
+import ResourceLayout from '../../layouts/ResourceLayout.astro';
+import '../../styles/global.css';
+import ProviderDirectory from '../../components/ProviderDirectory.jsx';
+---
+
+<ResourceLayout 
+  name="Waitlist Times"
+  description="Current appointment availability by provider"
+>
+  <ProviderDirectory client:load />
+  <style is:global>
+        :root { --primary: #0f172a; --accent: #3b82f6; --bg: #f1f5f9; --success: #059669; --warning: #be123c; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; padding: 15px; color: #1e293b; }
+        .container { max-width: 1400px; margin: auto; }
+        
+        .filter-panel { 
+            background: white; padding: 20px; border-radius: 12px; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; 
+            margin-bottom: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: sticky; top: 10px; z-index: 100;
+        }
+
+        .filter-group { display: flex; flex-direction: column; gap: 8px; }
+        label { font-weight: 600; font-size: 0.75rem; color: #64748b; text-transform: uppercase; }
+        select { padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; font-size: 16px; }
+        
+        .reset-btn { background: #ef4444; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; align-self: flex-end; }
+
+        .provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .card { 
+            background: white; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;
+            display: flex; flex-direction: column; min-height: 420px;
+        }
+
+        .credential { color: var(--accent); font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; }
+        .section-title { font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #94a3b8; margin: 15px 0 8px 0; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag { background: #f8fafc; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; border: 1px solid #e2e8f0; }
+        .tag.ins-tag { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+
+        .ins-toggle-btn { margin: 15px 0; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; width: 100%; }
+        .wait-info { margin-top: auto; padding-top: 15px; border-top: 1px solid #f1f5f9; }
+        .wait-item { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.9rem; }
+        .wait-value { font-weight: 700; color: var(--success); }
+    </style>
+</ResourceLayout>
+

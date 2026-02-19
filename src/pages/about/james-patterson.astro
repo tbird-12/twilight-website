@@ -1,0 +1,34 @@
+---
+import ClinicianLayout from '../../layouts/ClinicianLayout.astro';
+import '../../styles/global.css';
+---
+
+<ClinicianLayout 
+  name="Dr. James Patterson" 
+  title="Psychiatrist"
+  specialty="Medication Management"
+  imageEmoji="💊"
+>
+  <h1>About My Practice</h1>
+  <p>
+    This is where your long bio goes. You can write as much as you want here. 
+    Because this is a standalone file, you can use standard HTML tags like 
+    <strong>bold text</strong>, <u>underlines</u>, or lists.
+  </p>
+
+  <h1>Specializations & Expertise</h1>
+  <ul>
+    <li>Psychiatric medication management and optimization.</li>
+    <li>Treatment-resistant mental health conditions.</li>
+    <li>Medication side effect management and adjustment.</li>
+  </ul>
+
+  <h1>Education & Training</h1>
+  <p>
+    Dr. Patterson earned his medical degree from... [Insert education history here]
+  </p>
+
+  <blockquote>
+    "The right medication at the right dose can be transformative for our patients."
+  </blockquote>
+</ClinicianLayout>
