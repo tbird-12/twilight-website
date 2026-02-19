@@ -4,3 +4,11 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Ensure bios are always dark enough to read */
+.prose h1, .prose h2, .prose h3 {
+  color: #000000 !important;
+}
+.dark .prose h1, .dark .prose h2, .dark .prose h3 {
+  color: #ffffff !important;
+}
