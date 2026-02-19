@@ -137,40 +137,64 @@ const clientResources = [
   <div id="mobileMenu" class="hidden md:hidden bg-indigo-950 border-t border-indigo-900">
     <div class="max-w-7xl mx-auto px-4 py-4">
       
-      <div class="mb-4">
-        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">About</div>
-        {staff.map((person) => (
-          <a href={`/about/${person.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
-            {person.name}
-          </a>
-        ))}
+      <!-- About Dropdown -->
+      <div class="mb-2">
+        <button id="aboutToggle" class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg">
+          <span>About</span>
+          <svg class="w-4 h-4 text-amber-500 transition-transform" id="aboutIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7 7" stroke-width="3"></path></svg>
+        </button>
+        <div id="aboutContent" class="hidden mt-1 ml-4">
+          {staff.map((person) => (
+            <a href={`/about/${person.slug}`} class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg">
+              {person.name}
+            </a>
+          ))}
+        </div>
       </div>
 
-      <div class="mb-4">
-        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">Services</div>
-        {services.map((service) => (
-          <a href={`/services/${service.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
-            {service.name}
-          </a>
-        ))}
+      <!-- Services Dropdown -->
+      <div class="mb-2">
+        <button id="servicesToggle" class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg">
+          <span>Services</span>
+          <svg class="w-4 h-4 text-amber-500 transition-transform" id="servicesIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
+        </button>
+        <div id="servicesContent" class="hidden mt-1 ml-4">
+          {services.map((service) => (
+            <a href={`/services/${service.slug}`} class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg">
+              {service.name}
+            </a>
+          ))}
+        </div>
       </div>
 
-      <div class="mb-4">
-        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">Specialties</div>
-        {specialities.map((speciality) => (
-          <a href={`/specialties/${speciality.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
-            {speciality.name}
-          </a>
-        ))}
+      <!-- Specialties Dropdown -->
+      <div class="mb-2">
+        <button id="specialtiesToggle" class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg">
+          <span>Specialties</span>
+          <svg class="w-4 h-4 text-amber-500 transition-transform" id="specialtiesIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
+        </button>
+        <div id="specialtiesContent" class="hidden mt-1 ml-4">
+          {specialities.map((speciality) => (
+            <a href={`/specialties/${speciality.slug}`} class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg">
+              {speciality.name}
+            </a>
+          ))}
+        </div>
       </div>
 
-      <div class="mb-4">
-        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">Resources</div>
-        {clientResources.map((resource) => (
-          <a href={`/resources/${resource.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
-            {resource.name}
-          </a>
-        ))}
+      <!-- Resources Dropdown -->
+      <div class="mb-2">
+        <button id="resourcesToggle" class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg">
+          <span>Resources</span>
+          <svg class="w-4 h-4 text-amber-500 transition-transform" id="resourcesIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
+        </button>
+        <div id="resourcesContent" class="hidden mt-1 ml-4">
+          {clientResources.map((resource) => (
+            <a href={`/resources/${resource.slug}`} class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg">
+              {resource.name}
+            </a>
+          ))}
+        </div>
       </div>
 
       <div class="flex flex-col gap-3 mt-6">
@@ -188,6 +212,7 @@ const clientResources = [
 </header>
 
 <script>
+  // Mobile menu toggle
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const menuIcon = document.getElementById('menuIcon');
@@ -197,6 +222,25 @@ const clientResources = [
     mobileMenu?.classList.toggle('hidden');
     menuIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('hidden');
+  });
+
+  // Dropdown toggles
+  const dropdowns = [
+    { toggle: 'aboutToggle', content: 'aboutContent', icon: 'aboutIcon' },
+    { toggle: 'servicesToggle', content: 'servicesContent', icon: 'servicesIcon' },
+    { toggle: 'specialtiesToggle', content: 'specialtiesContent', icon: 'specialtiesIcon' },
+    { toggle: 'resourcesToggle', content: 'resourcesContent', icon: 'resourcesIcon' }
+  ];
+
+  dropdowns.forEach(({ toggle, content, icon }) => {
+    const toggleBtn = document.getElementById(toggle);
+    const contentDiv = document.getElementById(content);
+    const iconSvg = document.getElementById(icon);
+
+    toggleBtn?.addEventListener('click', () => {
+      contentDiv?.classList.toggle('hidden');
+      iconSvg?.classList.toggle('rotate-180');
+    });
   });
 </script>
 
