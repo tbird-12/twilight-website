@@ -1,10 +1,40 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 /* You can also add custom global styles here */
 html {
   scroll-behavior: smooth;
 }
 
+
+@layer base {
+  /* Force smooth transitions when switching modes */
+  html {
+    @apply transition-colors duration-300;
+  }
+/* Default Body Styles */
+  body {
+    @apply bg-[#F9F9F9] text-zinc-900 antialiased;
+    @apply dark:bg-zinc-950 dark:text-zinc-100;
+  }
+
+  /* Global Heading Visibility */
+  h1, h2, h3, h4 {
+    @apply text-black dark:text-white font-black;
+  }
+
+  /* Ensure all links have a base muted color that flips */
+  a {
+    @apply text-gray-600 dark:text-gray-400 transition-colors;
+  }
+}
+
+@layer components {
+    /* High contrast for the amber buttons even in dark mode */
+    .btn-amber {
+      @apply bg-amber-500 text-zinc-950 hover:bg-amber-400 font-black px-8 py-3 rounded-full transition-all;
+    }
+}
 /* Ensure bios are always dark enough to read */
 .prose h1, .prose h2, .prose h3 {
   color: #000000 !important;
