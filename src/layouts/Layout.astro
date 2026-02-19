@@ -1,12 +1,12 @@
 ---
-
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Announcements from '../components/Announcements.astro';	
+import Announcements from '../components/Announcements.astro';
+import favicon from '../assets/favicons/favicon.svg';
 
 // This is the "Frontmatter" where you can pass data to the layout
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -14,30 +14,30 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="bg-slate-50 font-['Inter',sans-serif] text-slate-900 flex flex-col min-h-screen">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href={favicon.src} />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="bg-slate-50 font-['Inter',sans-serif] text-slate-900 flex flex-col min-h-screen">
 
-		<Announcements />
-		<Header />
+        <Announcements />
+        <Header />
 
-		<main class="grow">
-			<slot /> 
-		</main>
+        <main class="grow">
+            <slot /> 
+        </main>
 
-		<Footer/>
+        <Footer/>
 
-	</body>
+    </body>
 </html>
 
 <style is:global>
     /* Add any global CSS transitions or base styles here */
-	:root {
-		--accent-gradient: linear-gradient(45deg, #4f46e5, #818cf8);
-	}
+    :root {
+        --accent-gradient: linear-gradient(45deg, #4f46e5, #818cf8);
+    }
 </style>

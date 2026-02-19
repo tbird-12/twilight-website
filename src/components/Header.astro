@@ -1,6 +1,7 @@
 ---
 import { providers, staff } from '../data/staff';
 import { specialities, services } from '../data/services';
+import favicon from '../assets/favicons/favicon.svg';
 
 const about = [
   { name: 'Clinical Staff', slug: 'clinical-staff', desc: 'Meet our dedicated team of clinicians', hasNested: true, children: providers, childLabel: 'Our Providers', childHrefBase: '/about/clinicians' },
@@ -22,8 +23,9 @@ const clientResources = [
 <header class="sticky top-0 z-50 w-full bg-indigo-950/95 backdrop-blur-sm border-b border-indigo-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
     
-    <a href="/" class="text-lg sm:text-2xl font-black tracking-tighter text-white hover:scale-105 duration-200 transition-transform">
-      <span class="text-stone-300">Twilight Psychology</span>
+    <a href="/" class="items-center font-black tracking-tighter text-white flex gap-2 ">
+      <img src={favicon.src} alt="Twilight Psychology Logo" class="h-10 w-auto mb-1" />
+      <span class="text-stone-300 hover:text-amber-500 transition-colors">Twilight Psychology</span>
     </a>
 
     <!-- Mobile menu button -->
