@@ -58,13 +58,14 @@ const socials = [
         <div class="col-span-6 md:col-span-3 lg:col-span-2">
           <div class="text-gray-800 dark:text-gray-300 font-bold mb-3 uppercase tracking-wider text-xs">{title}</div>
           <ul class="text-sm">
-            {items.map(({ name, href }) => (
-              <li class="mb-2">
-                <a class="text-gray-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-white transition" href={href}>
-                  {name}
-                </a>
-              </li>
-            ))}
+            {items.map(({ name, href }) => (<li class="mb-2">
+              <a 
+              class="text-gray-600 dark:text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-colors duration-200" 
+              href={href}
+              >
+              {name}</a>
+            </li>
+          ))}
           </ul>
         </div>
       ))}
