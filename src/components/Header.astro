@@ -1,6 +1,6 @@
 ---
 import { providers, staff } from '../data/staff';
-import { specialities } from '../data/specialities';
+import { specialities, services } from '../data/services';
 
 const about = [
   { name: 'Clinical Staff', slug: 'clinical-staff', desc: 'Meet our dedicated team of clinicians', hasNested: true, children: providers, childLabel: 'Our Providers', childHrefBase: '/about/clinicians' },
@@ -8,14 +8,6 @@ const about = [
   { name: 'Our Story', slug: 'twilight-psychology', desc: 'Learn about our mission and values' },  
   { name: 'Locations', slug: 'locations', desc: 'Find our office locations and hours' },
   { name: 'Careers', slug: 'careers', desc: 'Join our team - current job openings' },
-];
-
-const services = [
-  { name: 'Autism Testing', slug: 'autism-testing', desc: 'Comprehensive autism evaluations' },
-  { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'ADHD assessments and diagnostics' },
-  { name: 'Psychological Evaluations', slug: 'psychological-evaluations', desc: 'Full psychological assessments' },
-  { name: 'Therapy', slug: 'therapy', desc: 'Individual and group therapy' },
-  { name: 'Medication Management', slug: 'medication-management', desc: 'Psychiatric medication management' },
 ];
 
 const clientResources = [
@@ -44,6 +36,7 @@ const clientResources = [
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-6 lg:gap-10">
+      
       <div class="group relative py-2">
         <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
           About
@@ -51,9 +44,9 @@ const clientResources = [
         </button>
 
       <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">    
-      <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">More Information</div>
+      <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">Practice Information</div>
         <div class="relative max-h-80 overflow-y-auto custom-scrollbar">
-  {about.map((information) => (
+          {about.map((information) => (
     information.hasNested ? (
       <div class="group/nested ">
         <div class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors cursor-pointer">
@@ -88,10 +81,11 @@ const clientResources = [
       </a>
     )
   ))}
-</div>
+    </div>
   </div>
 </div>
 
+    <!-- Services Dropdown -->
       <div class="group relative py-2">
         <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
           Services
@@ -113,6 +107,7 @@ const clientResources = [
         </div>
       </div>
 
+      <!-- Specialties Dropdown -->
       <div class="group relative py-2">
         <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
           Specialties
@@ -134,6 +129,7 @@ const clientResources = [
         </div>
       </div>
 
+      <!-- Resources Dropdown -->
       <div class="group relative py-2">
         <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
           Resources
@@ -155,11 +151,17 @@ const clientResources = [
         </div>
       </div>
 
-      <a href="https://heatherlcornett.clientsecure.me/sign-in" target="_blank" rel="noopener noreferrer"
+      <!-- Referrals Link -->
+      <a href="https://drive.google.com/file/d/1fhYlXyIpFgUslpYGLkkt6xYveGfmlSG2/view" target="_blank" 
+        class="text-sm font-bold text-indigo-100 hover:text-amber-400 transition-colors duration-200">Referrals</a>
+
+      <!-- Client Portal Button -->
+        <a href="https://heatherlcornett.clientsecure.me/sign-in" target="_blank" rel="noopener noreferrer"
       class="hidden lg:inline-block bg-amber-500 text-indigo-950 px-6 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
         Client Portal
       </a>
 
+      <!-- Call Button -->
       <a href="tel:8596875843" class="bg-amber-500 text-indigo-950 px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
         &#128222; <span class="hidden lg:inline">(859) 687-5843</span><span class="lg:hidden">Call</span>
       </a>
@@ -247,11 +249,18 @@ const clientResources = [
         </div>
       </div>
 
+      <!-- Referrals Link -->
+      <a href="https://drive.google.com/file/d/1fhYlXyIpFgUslpYGLkkt6xYveGfmlSG2/view" target="_blank" 
+        class="text-sm font-bold text-indigo-100 hover:text-amber-400 transition-colors duration-200">Referrals</a>
+
+      <!-- Client Portal Button -->
       <div class="flex flex-col gap-3 mt-6">
         <a href="https://heatherlcornett.clientsecure.me/sign-in" target="_blank" rel="noopener noreferrer"
         class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all">
           Client Portal
         </a>
+        
+        <!-- Call Button -->
         <a href="tel:8596875843" class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all">
           &#128222; (859) 687-5843
         </a>
