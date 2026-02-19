@@ -1,7 +1,6 @@
 ---
 import { staff } from '../data/staff';
 import { specialities } from '../data/specialities';
-import { Phone } from 'lucide-preact';
 
 const services = [
   { name: 'Autism Testing', slug: 'autism-testing', desc: 'Comprehensive autism evaluations' },
@@ -20,14 +19,23 @@ const clientResources = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full bg-indigo-950/95 backdrop-blur-sm border-b border-indigo-900 dark:bg-indigo-950/95 dark:border-indigo-900">
-  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<header class="sticky top-0 z-50 w-full bg-indigo-950/95 backdrop-blur-sm border-b border-indigo-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
     
-    <a href="/" class="text-2xl font-black tracking-tighter text-white dark:text-white">
+    <a href="/" class="text-lg sm:text-2xl font-black tracking-tighter text-white">
       <span class="text-amber-500">Twilight Psychology</span>
     </a>
 
-    <nav class="hidden md:flex items-center gap-10">
+    <!-- Mobile menu button -->
+    <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menuIcon" d="M4 6h16M4 12h16M4 18h16" stroke-width="2" stroke-linecap="round"></path>
+        <path id="closeIcon" class="hidden" d="M6 18L18 6M6 6l12 12" stroke-width="2" stroke-linecap="round"></path>
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-6 lg:gap-10">
        
       <div class="group relative py-2">
         <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
@@ -35,12 +43,12 @@ const clientResources = [
           <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
         </button>
 
-        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 dark:bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
-          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 dark:text-indigo-300/60 font-black px-3 py-2">Our Specialists</div>
+        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
+          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">Our Specialists</div>
           <div class="max-h-80 overflow-y-auto custom-scrollbar">
             {staff.map((person) => (
-              <a href={`/about/${person.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 dark:hover:bg-indigo-800 transition-colors group/item">
-                <div class="text-sm font-black text-indigo-100 dark:text-indigo-100 group-hover/item:text-amber-400">
+              <a href={`/about/${person.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item">
+                <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
                   {person.name}
                 </div>
                 <div class="text-[11px] font-bold text-indigo-200 uppercase">{person.spec}</div>
@@ -56,12 +64,12 @@ const clientResources = [
           <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
         </button>
 
-        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 dark:bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
-          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 dark:text-indigo-300/60 font-black px-3 py-2">Our Services</div>
+        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
+          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">Our Services</div>
           <div class="max-h-80 overflow-y-auto custom-scrollbar">
             {services.map((service) => (
-              <a href={`/services/${service.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 dark:hover:bg-indigo-800 transition-colors group/item">
-                <div class="text-sm font-black text-indigo-100 dark:text-indigo-100 group-hover/item:text-amber-400">
+              <a href={`/services/${service.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item">
+                <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
                   {service.name}
                 </div>
                 <div class="text-[11px] font-bold text-indigo-200">{service.desc}</div>
@@ -71,19 +79,18 @@ const clientResources = [
         </div>
       </div>
 
-      <!-- Specialties -->
       <div class="group relative py-2">
         <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
           Specialties
           <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
         </button>
 
-        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 dark:bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
-          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 dark:text-indigo-300/60 font-black px-3 py-2">Specialties</div>
+        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
+          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">Specialties</div>
           <div class="max-h-80 overflow-y-auto custom-scrollbar">
             {specialities.map((speciality) => (
-              <a href={`/specialties/${speciality.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 dark:hover:bg-indigo-800 transition-colors group/item">
-                <div class="text-sm font-black text-indigo-100 dark:text-indigo-100 group-hover/item:text-amber-400">
+              <a href={`/specialties/${speciality.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item">
+                <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
                   {speciality.name}
                 </div>
                 <div class="text-[11px] font-bold text-indigo-200">{speciality.desc}</div>
@@ -93,20 +100,18 @@ const clientResources = [
         </div>
       </div>
 
-
-      <!-- Resources -->
       <div class="group relative py-2">
         <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
           Resources
           <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
         </button>
 
-        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 dark:bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
-          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 dark:text-indigo-300/60 font-black px-3 py-2">Client Resources</div>
+        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
+          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">Client Resources</div>
           <div class="max-h-80 overflow-y-auto custom-scrollbar">
             {clientResources.map((resource) => (
-              <a href={`/resources/${resource.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 dark:hover:bg-indigo-800 transition-colors group/item">
-                <div class="text-sm font-black text-indigo-100 dark:text-indigo-100 group-hover/item:text-amber-400">
+              <a href={`/resources/${resource.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item">
+                <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
                   {resource.name}
                 </div>
                 <div class="text-[11px] font-bold text-indigo-200">{resource.desc}</div>
@@ -116,37 +121,86 @@ const clientResources = [
         </div>
       </div>
 
-      <!-- Client Portal -->
       <a href="https://heatherlcornett.clientsecure.me/sign-in" target="_blank" rel="noopener noreferrer"
-      class="bg-amber-500 text-indigo-950 px-8 py-3 rounded-full font-black text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
+      class="hidden lg:inline-block bg-amber-500 text-indigo-950 px-6 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
         Client Portal
       </a>
 
-      <!-- Contact us button -->
-      <a href="tel:8596875843" class="bg-amber-500 text-indigo-950 px-8 py-3 rounded-full font-black text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
-        &#128222; (859) 687-5843
+      <a href="tel:8596875843" class="bg-amber-500 text-indigo-950 px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95">
+        &#128222; <span class="hidden lg:inline">(859) 687-5843</span><span class="lg:hidden">Call</span>
       </a>
     </nav>
 
   </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-indigo-950 border-t border-indigo-900">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      
+      <div class="mb-4">
+        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">About</div>
+        {staff.map((person) => (
+          <a href={`/about/${person.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
+            {person.name}
+          </a>
+        ))}
+      </div>
+
+      <div class="mb-4">
+        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">Services</div>
+        {services.map((service) => (
+          <a href={`/services/${service.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
+            {service.name}
+          </a>
+        ))}
+      </div>
+
+      <div class="mb-4">
+        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">Specialties</div>
+        {specialities.map((speciality) => (
+          <a href={`/specialties/${speciality.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
+            {speciality.name}
+          </a>
+        ))}
+      </div>
+
+      <div class="mb-4">
+        <div class="text-xs uppercase tracking-widest text-indigo-300 font-black mb-2 px-2">Resources</div>
+        {clientResources.map((resource) => (
+          <a href={`/resources/${resource.slug}`} class="block px-4 py-2 text-sm text-indigo-100 hover:bg-indigo-900 rounded-lg">
+            {resource.name}
+          </a>
+        ))}
+      </div>
+
+      <div class="flex flex-col gap-3 mt-6">
+        <a href="https://heatherlcornett.clientsecure.me/sign-in" target="_blank" rel="noopener noreferrer"
+        class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all">
+          Client Portal
+        </a>
+        <a href="tel:8596875843" class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all">
+          &#128222; (859) 687-5843
+        </a>
+      </div>
+
+    </div>
+  </div>
 </header>
 
 <script>
-  // Script to handle mobile click if user isn't on a desktop
-  const btn = document.getElementById('dropdownRealButton');
-  const menu = document.getElementById('dropdownMenu');
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const closeIcon = document.getElementById('closeIcon');
 
-  btn?.addEventListener('click', (e) => {
-    if (window.innerWidth < 768) { // Only trigger click logic on mobile/tablet
-      e.preventDefault();
-      menu?.classList.toggle('opacity-100');
-      menu?.classList.toggle('visible');
-    }
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    menuIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
   });
 </script>
 
 <style>
-  /* Optional: Make the long list of 10 names scrollable if it gets too long */
   .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
   }
