@@ -69,7 +69,7 @@ export default function ProviderDirectory() {
                 <div className="tag-container">
                   {p.states_served.map(st => <span className="tag" key={st}>{st}</span>)}
                 </div>
-                <button className="ins-toggle-btn" onClick={() => toggleIns(idx)}>View Insurance →</button>
+                <button className="ins-toggle-btn" onClick={() => toggleIns(idx)}>Accepted Insurances →</button>
                 <div className="wait-info">
                    <div className="section-title">Wait Times</div>
                    {Object.entries(p.wait_times).map(([k, v]) => (
