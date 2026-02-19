@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import '../../styles/global.css';
-import { staff } from '../../data/staff';
+import { providers } from '../../data/staff';
 ---
 
 <Layout title="Our Team | Twilight Psychology">
@@ -18,8 +18,8 @@ import { staff } from '../../data/staff';
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Meet Our Team</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {staff.map((person) => (
-          <a href={`/about/${person.slug}`} class="group bg-gradient-to-br from-indigo-50 to-amber-50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-indigo-100">
+        {providers.map((person) => (
+          <a href={`/about/clinicians/${person.slug}`} class="group bg-gradient-to-br from-indigo-50 to-amber-50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-indigo-100">
             <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">{person.name}</h3>
             <p class="text-sm font-semibold text-indigo-600 uppercase tracking-wide mb-4">{person.spec}</p>
             <span class="text-amber-600 group-hover:text-amber-700 font-bold inline-flex items-center gap-2">

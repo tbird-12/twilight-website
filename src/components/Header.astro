@@ -1,6 +1,14 @@
 ---
-import { staff } from '../data/staff';
+import { providers, staff } from '../data/staff';
 import { specialities } from '../data/specialities';
+
+const about = [
+  { name: 'Clinical Staff', slug: 'clinical-staff', desc: 'Meet our dedicated team of clinicians' },
+  { name: 'Admin Staff', slug: 'admin-staff', desc: 'Meet our administrative team' },
+  { name: 'Our Story', slug: 'twilight-psychology', desc: 'Learn about our mission and values' },  
+  { name: 'Locations', slug: 'locations', desc: 'Find our office locations and hours' },
+  { name: 'Careers', slug: 'careers', desc: 'Join our team - current job openings' },
+];
 
 const services = [
   { name: 'Autism Testing', slug: 'autism-testing', desc: 'Comprehensive autism evaluations' },
@@ -13,17 +21,17 @@ const services = [
 const clientResources = [
   { name: 'Fees', slug: 'fees', desc: 'Pricing and payment options' },
   { name: 'FAQ', slug: 'faq', desc: 'Frequently asked questions' },
-  { name: 'Waitlist Times', slug: 'waitlist-times', desc: 'Current appointment availability' },
+  { name: 'Waitlist Times', slug: 'waitlist-times', desc: 'New Clients Appointments' },
+  { name: 'Referrals', slug: 'referrals', desc: 'Referral information and processes' },
   { name: 'New Client', slug: 'new-client', desc: 'Getting started guide' },
-  { name: 'Returning Client', slug: 'returning-client', desc: 'Resources for existing clients' },
 ];
 ---
 
 <header class="sticky top-0 z-50 w-full bg-indigo-950/95 backdrop-blur-sm border-b border-indigo-900">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
     
-    <a href="/" class="text-lg sm:text-2xl font-black tracking-tighter text-white">
-      <span class="text-amber-500">Twilight Psychology</span>
+    <a href="/" class="text-lg sm:text-2xl font-black tracking-tighter text-white hover:scale-105 duration-200 transition-transform">
+      <span class="text-stone-300">Twilight Psychology</span>
     </a>
 
     <!-- Mobile menu button -->
@@ -34,7 +42,7 @@ const clientResources = [
       </svg>
     </button>
 
-    <!-- Desktop Navigation -->
+    <!-- Desktop Navigation 
     <nav class="hidden md:flex items-center gap-6 lg:gap-10">
        
       <div class="group relative py-2">
@@ -44,14 +52,35 @@ const clientResources = [
         </button>
 
         <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
-          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">Our Specialists</div>
+          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">Twilight Psychology</div>
           <div class="max-h-80 overflow-y-auto custom-scrollbar">
-            {staff.map((person) => (
-              <a href={`/about/${person.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item">
+            {providers.map((person) => (
+              <a href={`/about/clinicians/${person.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item">
                 <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
                   {person.name}
                 </div>
                 <div class="text-[11px] font-bold text-indigo-200 uppercase">{person.spec}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+  -->
+      <div class="group relative py-2">
+        <button class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition">
+          About
+          <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
+        </button>
+
+        <div class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50">
+          <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">More Information</div>
+          <div class="max-h-80 overflow-y-auto custom-scrollbar">
+            {about.map((information) => (
+              <a href={`/about/${information.slug}`} class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item">
+                <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
+                  {information.name}
+                </div>
+                <div class="text-[11px] font-bold text-indigo-200">{information.desc}</div>
               </a>
             ))}
           </div>
@@ -141,11 +170,11 @@ const clientResources = [
       <div class="mb-2">
         <button id="aboutToggle" class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg">
           <span>About</span>
-          <svg class="w-4 h-4 text-amber-500 transition-transform" id="aboutIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7 7" stroke-width="3"></path></svg>
+          <svg class="w-4 h-4 text-amber-500 transition-transform" id="aboutIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg>
         </button>
         <div id="aboutContent" class="hidden mt-1 ml-4">
-          {staff.map((person) => (
-            <a href={`/about/${person.slug}`} class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg">
+          {providers.map((person) => (
+            <a href={`/about/clinicians/${person.slug}`} class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg">
               {person.name}
             </a>
           ))}
