@@ -4,6 +4,7 @@ import "../styles/global.css";
 import pic1 from "../assets/images/pic1.jpg";
 import pic2 from "../assets/images/pic2.jpg";
 import pic3 from "../assets/images/pic3.jpg";
+import hero from "../assets/images/hero.jpg";
 
 const services = [
   {
@@ -78,14 +79,103 @@ const services = [
       </div>
     </section>
 
-    <div class="py-8 border-y border-white/5 bg-indigo-900/20">
-      <div class="max-w-7xl mx-auto px-6 text-center">
-        <p class="text-sm font-black text-indigo-300 uppercase tracking-widest">
-          In-Network with <span class="text-[#D4CFC7]">KY Medicaid</span> · Medicare
-          · Major Commercial Insurances
+    <section class="py-16 px-6 bg-indigo-950">
+      <div class="max-w-6xl mx-auto">
+        <div class="relative">
+          <div class="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full"></div>
+          <img 
+            src={hero.src}
+            alt="Therapy session"
+            class="relative w-full h-75 md:h-125 object-cover rounded-3xl shadow-2xl border border-indigo-800"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-6 bg-indigo-950">
+    <div class="max-w-6xl mx-auto">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+          Twilight Psychology removes <span class="text-amber-500"
+            >barriers</span
+          >, not adds them
+        </h1>
+        <p class="text-indigo-200 text-lg max-w-2xl mx-auto">
+          We designed our evaluation process to be faster, more accessible, and affordable to
+          navigate—so you can get clear answers without adding an additional stressor.
         </p>
+      </header>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- 1 -->
+        <article
+          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
+        >
+          <h3 class="text-xl font-black text-white mb-4">
+            Nationwide access through Psypact
+          </h3>
+          <p class="text-indigo-100 leading-relaxed">
+            Get evaluated from almost anywhere. Our psychologist can assess
+            Autism, ADHD, personality disorders, intellectual disabilities, and
+            more across most U.S. states.
+          </p>
+        </article>
+
+        <!-- 2 -->
+        <article
+          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
+        >
+          <h3 class="text-xl font-black text-white mb-4">
+            Fast, clear answers in 7 days^
+          </h3>
+          <p class="text-indigo-100 leading-relaxed">
+            No long waits for clarity. Self-pay testing is completed and
+            written report is delivered within seven days of your intake
+            appointment.
+          </p>
+        </article>
+
+        <!-- 3 -->
+        <article
+          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
+        >
+          <h3 class="text-xl font-black text-white mb-4">
+            Insurance‑friendly testing
+          </h3>
+          <p class="text-indigo-100 leading-relaxed">
+            We accept most commercial insurances, Medicaid, and Medicare—unlike
+            many practices that are cash‑pay only for psychological testing.
+          </p>
+        </article>
+
+        <!-- 4 -->
+        <article
+          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
+        >
+          <h3 class="text-xl font-black text-white mb-4">
+            Integrated medication support
+          </h3>
+          <p class="text-indigo-100 leading-relaxed">
+            When testing indicates that medication may help, our in‑house
+            provider can step in to support your ongoing care.
+          </p>
+        </article>
+
+        <!-- 5 -->
+        <article
+          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30 sm:col-span-2 lg:col-span-1"
+        >
+          <h3 class="text-xl font-black text-white mb-4">
+            Flexible & remote appointments
+          </h3>
+          <p class="text-indigo-100 leading-relaxed">
+            Weekend availability and fully remote testing options make it easier
+            to get care, even if travel or scheduling is a concern.
+          </p>
+        </article>
       </div>
     </div>
+    </section>
 
     <section class="py-32 px-6 bg-indigo-950">
       <div class="max-w-7xl mx-auto">
