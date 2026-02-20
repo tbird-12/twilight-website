@@ -1,46 +1,113 @@
 ---
 import ResourceLayout from '../../layouts/ResourceLayout.astro';
 import '../../styles/global.css';
+const faqs = [
+  {
+    question: "What is psychological testing?",
+    answer: "Psychological testing is a series of paper-based or computer-based assessments administered to \
+    assess factors such as cognitive, executive, and adaptive functioning. Typically completed in one 3-4 hour sitting, though learning assessments may take 5-6 hours."
+  },
+  {
+    question: "Why get tested at Twilight Psychology?",
+    answer: "We specialize in neuro-affirming care for those frustrated by long waitlists or those who haven't fit traditional diagnostic profiles (e.g., high-masking women or adults). We provide official, comprehensive diagnoses accepted by agencies, including PDA (Pathological Demand Avoidance) profiles."
+  },
+  {
+    question: "Do you accept Medicaid?",
+    answer: "Yes. We are credentialed with Traditional Kentucky Medicaid, Aetna Better Health, Humana Healthy Horizons, UHC Community Plan, and Passport by Molina. We cannot accept Wellcare or out-of-state Medicaid."
+  },
+  {
+    question: "What is the cost for Autism or ADHD testing with insurance?",
+    answer: "Costs depend on your specific insurance plan. While we bill for the intake and feedback sessions, tele-assessment coverage varies. You must confirm your benefits prior to your appointment; if denied, the full self-pay rate applies."
+  },
+  {
+    question: "How long does it take to receive a formal diagnosis?",
+    answer: "Insurance timelines are often constrained by prior authorizations (1-2 weeks) and clinician availability. \
+    For self-pay clients, we can frequently complete the entire intake, assessment, and feedback process within a single week, if paid in full."
+  },
+  {
+    question: "Will insurance cover learning disability assessments?",
+    answer: "Generally, no. Majority of the insurance plans view these as 'educational' and exclude them. \
+    At Twilight, we bill testing for other concerns (like ADHD/Autism) to insurance,  if we determine they are necessary. \
+    We charge a separate hourly rate for the educational components. A detailed quote after the intake session."
+  },
+  {
+    question: "Where are you located?",
+    answer: "Our main office is in Lexington, KY. However, through Psypact, we provide remote psychological services in over 40 states across the U.S."
+  }
+];
 ---
 
+
+
 <ResourceLayout 
-  name="FAQ"
+  name="Twilight Psychology FAQ"
   description="Answers to common questions about our services"
 >
-  <h2>Frequently Asked Questions</h2>
 
-  <h3>How long does an evaluation typically take?</h3>
-  <p>
-    Initial evaluations usually take 90-120 minutes depending on the type of assessment. We schedule ample time to ensure a thorough and accurate evaluation.
-  </p>
+  <main class="bg-indigo-950 min-h-screen py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      
+      <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-black text-indigo-200 mb-4 dark:text-stone-400">
+          Frequently Asked <span class="text-amber-400">Questions</span>
+        </h1>
+        <p class="text-[#D4CFC7] text-lg font-medium">
+          Healing isn't linear. We're here to provide clarity for your journey.
+        </p>
+      </header>
 
-  <h3>Will my insurance cover the cost?</h3>
-  <p>
-    Most major insurance plans cover psychological evaluations and therapy services. We recommend contacting us or your insurance company for specific coverage details.
-  </p>
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="group border border-indigo-900 bg-indigo-900/20 rounded-2xl overflow-hidden transition-all hover:border-amber-500/50">
+            <button 
+              class="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+              onclick={`document.getElementById('faq-${index}').classList.toggle('hidden'); document.getElementById('icon-${index}').classList.toggle('rotate-180');`}
+            >
+              <span class="text-lg font-bold text-indigo-50 text-balance leading-tight pr-4">
+                {faq.question}
+              </span>
+              <svg 
+                id={`icon-${index}`}
+                class="w-5 h-5 text-amber-500 transition-transform duration-300 flex-shrink-0" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            <div id={`faq-${index}`} class="hidden px-6 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
+              <div class="h-px bg-indigo-900 mb-4 w-full" />
+              <p class="text-indigo-200 leading-relaxed font-medium">
+                {faq.answer}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-  <h3>How soon can I get an appointment?</h3>
-  <p>
-    Appointment availability varies by clinician and service type. Please check our Waitlist Times page or contact us for current availability.
-  </p>
+      <section class="mt-20 p-8 rounded-3xl bg-gradient-to-br from-indigo-900 to-indigo-950 border border-indigo-800 text-center">
+        <h2 class="text-2xl font-bold text-white mb-2">Still have questions?</h2>
+        <p class="text-stone-300 mb-6">Contact our administrative team for specific insurance inquiries or to start your intake.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:8596875843" class="px-8 py-3 bg-amber-500 hover:bg-amber-400 text-indigo-950 font-black rounded-xl transition-transform hover:scale-105">
+            (859) 687-5843
+          </a>
+          <a href="mailto:office@twilightpsychology.com" class="px-8 py-3 border border-stone-500 text-stone-200 font-bold rounded-xl hover:bg-stone-800 transition-colors">
+            Email Office
+          </a>
+        </div>
+      </section>
 
-  <h3>What should I bring to my first appointment?</h3>
-  <p>
-    Please bring a valid photo ID, insurance card (if applicable), and any relevant medical or psychological records. We'll also send you intake forms to complete before your visit.
-  </p>
-
-  <h3>Do you offer telehealth appointments?</h3>
-  <p>
-    Some services are available via telehealth. Please contact us to discuss whether your specific needs can be met through virtual sessions.
-  </p>
-
-  <h3>What if I need to cancel or reschedule?</h3>
-  <p>
-    Please contact us at least 24 hours in advance to cancel or reschedule. Cancellations with less notice may result in a cancellation fee.
-  </p>
-
-  <h3>Are my records kept confidential?</h3>
-  <p>
-    Yes. We maintain strict confidentiality in accordance with HIPAA and all applicable privacy laws. Your information is secure and protected.
-  </p>
+    </div>
+  </main>
 </ResourceLayout>
+
+<style>
+  /* Custom Scrollbar for the page */
+  :global(body) {
+    scrollbar-width: thin;
+    scrollbar-color: #f59e0b #1e1b4b;
+  }
+</style>

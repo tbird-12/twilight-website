@@ -9,40 +9,139 @@ import ProviderDirectory from '../../components/ProviderDirectory.jsx';
   description="Current appointment availability by provider"
 >
   <ProviderDirectory client:load />
+
   <style is:global>
-        :root { --primary: #0f172a; --accent: #3b82f6; --bg: #f1f5f9; --success: #059669; --warning: #be123c; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); margin: 0; padding: 15px; color: #1e293b; }
-        .container { max-width: 1400px; margin: auto; }
-        
-        .filter-panel { 
-            background: white; padding: 20px; border-radius: 12px; 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; 
-            margin-bottom: 25px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            position: sticky; top: 10px; z-index: 100;
-        }
+    :root { 
+      /* The Practice Palette */
+      --primary: #1e1b4b; /* Indigo 950 */
+      --accent: #f59e0b;  /* Amber 500 (Gold) */
+      --white-gold: #D4CFC7; 
+      --bg: #0f172a;      /* Deep Slate/Indigo Dark */
+      --card-bg: #1e293b; /* Indigo 900/800 area */
+      --success: #34d399; /* Emerald 400 */
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
 
-        .filter-group { display: flex; flex-direction: column; gap: 8px; }
-        label { font-weight: 600; font-size: 0.75rem; color: #64748b; text-transform: uppercase; }
-        select { padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; font-size: 16px; }
-        
-        .reset-btn { background: #ef4444; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; align-self: flex-end; }
+    body { 
+      font-family: 'Segoe UI', system-ui, sans-serif; 
+      background: var(--bg); 
+      margin: 0; 
+      padding: 15px; 
+      color: var(--text-main); 
+    }
 
-        .provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-        .card { 
-            background: white; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;
-            display: flex; flex-direction: column; min-height: 420px;
-        }
+    .container { max-width: 1400px; margin: auto; }
+    
+    /* Filter Panel - Dark Glassmorphism */
+    .filter-panel { 
+        background: rgba(30, 41, 59, 0.7); 
+        backdrop-filter: blur(10px);
+        padding: 20px; 
+        border-radius: 16px; 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 15px; 
+        margin-bottom: 25px; 
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        position: sticky; 
+        top: 10px; 
+        z-index: 100;
+    }
 
-        .credential { color: var(--accent); font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; }
-        .section-title { font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #94a3b8; margin: 15px 0 8px 0; }
-        .tag-container { display: flex; flex-wrap: wrap; gap: 6px; }
-        .tag { background: #f8fafc; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; border: 1px solid #e2e8f0; }
-        .tag.ins-tag { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+    .filter-group { display: flex; flex-direction: column; gap: 8px; }
+    
+    label { 
+      font-weight: 800; 
+      font-size: 0.7rem; 
+      color: var(--white-gold); 
+      text-transform: uppercase; 
+      letter-spacing: 0.05em;
+    }
 
-        .ins-toggle-btn { margin: 15px 0; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; width: 100%; }
-        .wait-info { margin-top: auto; padding-top: 15px; border-top: 1px solid #f1f5f9; }
-        .wait-item { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.9rem; }
-        .wait-value { font-weight: 700; color: var(--success); }
-    </style>
+    select { 
+      padding: 10px; 
+      border: 1px solid rgba(255,255,255,0.1); 
+      border-radius: 8px; 
+      background: var(--primary); 
+      color: white;
+      font-size: 14px; 
+      outline: none;
+    }
+    
+    select:focus { border-color: var(--accent); }
+
+    .reset-btn { 
+      background: transparent; 
+      color: var(--white-gold); 
+      border: 1px solid rgba(255,255,255,0.2); 
+      padding: 10px; 
+      border-radius: 8px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      align-self: flex-end; 
+      transition: all 0.2s;
+    }
+    .reset-btn:hover { background: #be123c; color: white; border-color: transparent; }
+
+    /* Cards */
+    .provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+    
+    .card { 
+        background: var(--card-bg); 
+        padding: 24px; 
+        border-radius: 20px; 
+        border: 1px solid rgba(255,255,255,0.05);
+        display: flex; 
+        flex-direction: column; 
+        min-height: 450px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+    .credential { color: var(--accent); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; }
+    .section-title { font-size: 0.65rem; text-transform: uppercase; font-weight: 900; color: var(--text-muted); margin: 20px 0 10px 0; letter-spacing: 1px; }
+    
+    .tag-container { display: flex; flex-wrap: wrap; gap: 8px; }
+    
+    .tag { 
+      background: rgba(15, 23, 42, 0.4); 
+      padding: 5px 12px; 
+      border-radius: 6px; 
+      font-size: 0.75rem; 
+      border: 1px solid rgba(255,255,255,0.05); 
+      color: #cbd5e1;
+    }
+    
+    .tag.ins-tag { 
+      background: rgba(245, 158, 11, 0.1); 
+      border-color: rgba(245, 158, 11, 0.3); 
+      color: var(--accent); 
+    }
+
+    .ins-toggle-btn { 
+      margin: 20px 0; 
+      background: rgba(255,255,255,0.03); 
+      border: 1px solid rgba(255,255,255,0.1); 
+      color: var(--white-gold);
+      padding: 12px; 
+      border-radius: 10px; 
+      font-size: 0.8rem; 
+      font-weight: 700; 
+      cursor: pointer; 
+      width: 100%; 
+      transition: background 0.2s;
+    }
+    .ins-toggle-btn:hover { background: rgba(255,255,255,0.08); }
+
+    .wait-info { 
+      margin-top: auto; 
+      padding-top: 15px; 
+      border-top: 1px solid rgba(255,255,255,0.05); 
+    }
+    .wait-item { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; }
+    .wait-label { color: var(--text-muted); }
+    .wait-value { font-weight: 800; color: var(--success); }
+  </style>
 </ResourceLayout>
-

@@ -1,48 +1,126 @@
 ---
-import ResourceLayout from '../../layouts/ResourceLayout.astro';
+import Layout from '../../layouts/Layout.astro';
 import '../../styles/global.css';
+
+const steps = [
+  {
+    number: "01",
+    title: "Schedule",
+    desc: "Reach out via our online portal, phone, or email. We'll match you with the right clinician for your unique needs.",
+    link: "https://heatherlcornett.clientsecure.me/contact-widget",
+    linkText: "Schedule Online"
+  },
+  {
+    number: "02",
+    title: "Intake Forms",
+    desc: "Complete your digital paperwork from the comfort of home. This helps us understand your story before we even meet.",
+  },
+  {
+    number: "03",
+    title: "Verification",
+    desc: "We handle the insurance hurdles. We'll verify your coverage and determine your benefits so there are no surprises.",
+  }
+];
+
+const checklist = [
+  "Valid photo ID",
+  "Insurance card",
+  "Current medications list",
+  "Previous psychiatric records",
+  "Completed digital forms"
+];
 ---
 
-<ResourceLayout 
-  name="New Client"
-  description="Getting started with Twilight Psychology"
->
-  <h2>Welcome!</h2>
-  <p>
-    We're glad you've chosen Twilight Psychology. Our goal is to make your first experience with us as smooth and comfortable as possible. Here's what you can expect.
-  </p>
+<Layout title="New Client | Twilight Psychology">
+  <main class="bg-indigo-950 min-h-screen pb-20 overflow-hidden">
+    
+    <section class="relative py-20 px-4 border-b border-indigo-900 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/40 via-transparent to-transparent">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-900/50 border border-indigo-800 text-amber-400 text-xs font-black uppercase tracking-widest">
+          New Patient Guide
+        </div>
+        <h1 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
+          Your Journey <span class="text-amber-500">Starts Here.</span>
+        </h1>
+        <p class="text-xl text-[#D4CFC7] font-medium leading-relaxed max-w-2xl mx-auto">
+          We’re glad you’ve chosen Twilight Psychology. We strive to make your first experience smooth, affirming, and supportive.
+        </p>
+      </div>
+    </section>
 
-  <h2>Step 1: Schedule Your Appointment</h2>
-  <p>
-    Contact our office to book your initial appointment. We'll ask about your primary concerns and any scheduling preferences. You can schedule online, by phone, or through our contact form.
-  </p>
+    <div class="max-w-6xl mx-auto px-4 -mt-10">
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-2 space-y-6">
+          <div class="bg-indigo-900/20 border border-indigo-800 p-8 md:p-12 rounded-[2rem] backdrop-blur-sm">
+            <h2 class="text-2xl font-black text-white mb-10 flex items-center gap-3">
+              The Path to Your First Visit
+            </h2>
 
-  <h2>Step 2: Complete Intake Forms</h2>
-  <p>
-    Before your appointment, you'll receive intake forms to complete. These help us understand your background, medical history, and current concerns. Please bring completed forms to your appointment, or arrive 15 minutes early to complete them in person.
-  </p>
+            
 
-  <h2>Step 3: Insurance Verification</h2>
-  <p>
-    If you have insurance, we can verify your coverage for you. Please have your insurance card ready when scheduling. If paying out-of-pocket, we accept multiple payment methods.
-  </p>
+            <div class="relative space-y-12">
+              <div class="absolute left-[1.4rem] top-2 bottom-2 w-0.5 bg-gradient-to-b from-amber-500 via-indigo-800 to-transparent"></div>
 
-  <h2>What to Bring</h2>
-  <ul>
-    <li>Valid photo ID</li>
-    <li>Insurance card (if applicable)</li>
-    <li>Completed intake forms</li>
-    <li>List of current medications (if applicable)</li>
-    <li>Any relevant medical or psychiatric records</li>
-  </ul>
+              {steps.map((step) => (
+                <div class="relative pl-16 group">
+                  <div class="absolute left-0 top-0 w-12 h-12 bg-indigo-950 border-2 border-amber-500 rounded-2xl flex items-center justify-center text-amber-500 font-black z-10 group-hover:bg-amber-500 group-hover:text-indigo-950 transition-colors duration-300">
+                    {step.number}
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-black text-indigo-50 mb-2">{step.title}</h3>
+                    <p class="text-indigo-200/80 leading-relaxed mb-4">{step.desc}</p>
+                    {step.link && (
+                      <a href={step.link} target="_blank" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:translate-x-1 transition-transform">
+                        {step.linkText} <span class="text-lg">→</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-  <h2>First Appointment</h2>
-  <p>
-    During your first appointment, we'll discuss your concerns, medical history, and goals for treatment. This is also your opportunity to ask questions about our services and approach. We strive to create a warm, non-judgmental environment where you feel heard and supported.
-  </p>
+          <div class="bg-gradient-to-br from-indigo-900/40 to-indigo-900/10 border border-indigo-800 p-8 rounded-[2rem]">
+            <h2 class="text-2xl font-black text-white mb-4">The First Appointment</h2>
+            <p class="text-indigo-100 leading-relaxed">
+              This is a safe space. During our first hour, we’ll discuss your goals, history, and concerns. It’s an open dialogue designed to ensure you feel heard and supported. No judgments—just a collaborative step forward.
+            </p>
+          </div>
+        </div>
 
-  <h2>Questions Before Your Visit?</h2>
-  <p>
-    Don't hesitate to reach out. <a href="https://heatherlcornett.clientsecure.me/contact-widget" target="_blank">Contact us</a> with any questions about preparing for your appointment.
-  </p>
-</ResourceLayout>
+        <div class="space-y-8">
+          <div class="bg-amber-500 p-8 rounded-[2rem] text-indigo-950 shadow-xl shadow-amber-500/10">
+            <h2 class="text-xl font-black uppercase tracking-tight mb-6 flex items-center gap-2">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+              What to Bring
+            </h2>
+            <ul class="space-y-4">
+              {checklist.map((item) => (
+                <li class="flex items-center gap-3 font-bold text-sm">
+                  <div class="w-5 h-5 rounded-full bg-indigo-950/20 flex items-center justify-center">✓</div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="bg-indigo-900/20 border border-indigo-800 p-8 rounded-[2rem] text-center">
+            <h3 class="text-white font-bold mb-4">Questions?</h3>
+            <p class="text-indigo-200 text-sm mb-6">We're here to help you prepare.</p>
+            <a href="mailto:office@twilightpsychology.com" class="block w-full py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold rounded-xl transition-all">
+              Email Our Office
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .text-balance {
+    text-wrap: balance;
+  }
+</style>

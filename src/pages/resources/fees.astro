@@ -1,33 +1,132 @@
 ---
 import ResourceLayout from '../../layouts/ResourceLayout.astro';
 import '../../styles/global.css';
+
+const psychologicalServices = [
+  { name: "ADHD Assessments", price: "$1,300" },
+  { name: "Autism Assessments", price: "$1,300" },
+  { name: "Personality Disorder Assessments", price: "$1,300" },
+  { name: "Full Psychological Evaluation", price: "$1,300", note: "Covers Autism, ADHD, and Personality" },
+  { name: "Learning Disorder (Disability) Assessments", price: "$1,500", note: "Self-pay only" },
+  { name: "Guardianship Evaluation", price: "$500", note: "Additional cost for court/extra testing" },
+  { name: "Emotional Support Animal (ESA) Evaluation", price: "$200" },
+  { name: "Intake Session", price: "$220" },
+];
+
+const psychotherapyServices = [
+  { name: "60-Minute Session", price: "$250" },
+  { name: "45-Minute Session", price: "$175" },
+  { name: "Clinical Supervision", price: "$150", note: "Per hour" },
+];
+
+const medManagement = [
+  { name: "Intake Session", price: "$250" },
+  { name: "Follow-up Sessions", price: "$100" },
+  { name: "Paperwork (e.g., FMLA)", price: "$75", note: "Per hour" },
+];
 ---
 
 <ResourceLayout 
-  name="Fees"
+  name="Fees at Twilight Psychology"
   description="Transparent pricing and payment options"
 >
-  <h2>Our Commitment to Affordable Care</h2>
-  <p>
-    We believe that financial concerns should never prevent someone from accessing quality mental health care. We strive to offer competitive rates while maintaining the highest standards of clinical service.
-  </p>
+  <main class="bg-indigo-950 min-h-screen py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+          Fees & <span class="text-amber-500">Insurance</span>
+        </h1>
+        <p class="text-[#D4CFC7] text-lg max-w-2xl mx-auto">
+          Transparency is part of the journey. We are committed to providing top-tier behavioral health services that are accessible and affordable.
+        </p>
+      </header>
 
-  <h2>Service Fees</h2>
-  <ul>
-    <li><strong>Initial Evaluation (90-120 minutes):</strong> [Insert fee]</li>
-    <li><strong>Follow-up Sessions (50-60 minutes):</strong> [Insert fee]</li>
-    <li><strong>Specialized Testing (ADHD, Autism):</strong> [Insert fee]</li>
-    <li><strong>Therapy Session (50-60 minutes):</strong> [Insert fee]</li>
-    <li><strong>Medication Management (30-45 minutes):</strong> [Insert fee]</li>
-  </ul>
+      <section class="mb-12 bg-indigo-900/40 border-l-4 border-amber-500 p-6 rounded-r-2xl">
+        <h2 class="text-white font-bold text-xl mb-2">Insurance Information</h2>
+        <p class="text-indigo-100 leading-relaxed">
+          Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for covered services. For commercial insurance, we recommend calling 
+          <a href="tel:8596875843" class="text-amber-400 underline">(859) 687-5843</a> to determine approximate rates, though you should always confirm benefits with your insurance provider prior to your appointment.
+        </p>
+      </section>
 
-  <h2>Insurance & Payment Methods</h2>
-  <p>
-    We accept most major insurance plans. We also offer flexible payment options including cash, credit card, and payment plans for qualifying clients. Please contact our billing department for insurance verification and payment arrangements.
-  </p>
+      <div class="grid gap-8">
+        
+        <div class="bg-indigo-900/20 border border-indigo-800 rounded-3xl p-8">
+          <h3 class="text-2xl font-black text-white mb-6 flex items-center gap-3">
+            <span class="w-2 h-8 bg-amber-500 rounded-full"></span>
+            Psychological Evaluations
+          </h3>
+          <div class="space-y-4">
+            {psychologicalServices.map((service) => (
+              <div class="flex justify-between items-start py-3 border-b border-indigo-900/50">
+                <div>
+                  <p class="text-indigo-50 font-bold">{service.name}</p>
+                  {service.note && <p class="text-xs text-[#D4CFC7] uppercase tracking-wider">{service.note}</p>}
+                </div>
+                <span class="text-amber-400 font-black">{service.price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
-  <h2>Cancellation Policy</h2>
-  <p>
-    Appointments cancelled with less than 24 hours notice may be subject to a cancellation fee. Consistent no-shows may result in termination of services.
-  </p>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-indigo-900/20 border border-indigo-800 rounded-3xl p-8">
+            <h3 class="text-xl font-black text-white mb-6">Psychotherapy</h3>
+            <div class="space-y-4">
+              {psychotherapyServices.map((service) => (
+                <div class="flex justify-between items-center py-3 border-b border-indigo-900/50">
+                  <span class="text-indigo-50 font-bold">{service.name}</span>
+                  <span class="text-amber-400 font-black">{service.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="bg-indigo-900/20 border border-indigo-800 rounded-3xl p-8">
+            <h3 class="text-xl font-black text-white mb-6">Medication Management</h3>
+            <div class="space-y-4">
+              {medManagement.map((service) => (
+                <div class="flex justify-between items-center py-3 border-b border-indigo-900/50">
+                  <span class="text-indigo-50 font-bold">{service.name}</span>
+                  <span class="text-amber-400 font-black">{service.price}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="mt-12 p-8 bg-gradient-to-br from-indigo-900 to-indigo-950 rounded-3xl border border-indigo-800">
+        <h3 class="text-white font-black text-xl mb-4">Flexible Payment Plans</h3>
+        <p class="text-indigo-200 mb-6">
+          We offer payment plans where testing costs can be split into 2-3 equal payments due 24 hours before your appointments. 
+          For a standard $1,300 battery, this typically looks like:
+        </p>
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="p-4 bg-indigo-950 rounded-xl border border-indigo-900">
+            <p class="text-[10px] text-[#D4CFC7] uppercase">Intake</p>
+            <p class="text-xl font-black text-amber-500">$450</p>
+          </div>
+          <div class="p-4 bg-indigo-950 rounded-xl border border-indigo-900">
+            <p class="text-[10px] text-[#D4CFC7] uppercase">Testing</p>
+            <p class="text-xl font-black text-amber-500">$450</p>
+          </div>
+          <div class="p-4 bg-indigo-950 rounded-xl border border-indigo-900">
+            <p class="text-[10px] text-[#D4CFC7] uppercase">Feedback</p>
+            <p class="text-xl font-black text-amber-500">$400</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-12 text-center text-indigo-300/60 text-sm space-y-4">
+        <p>Rates in effect from 01/01/2026</p>
+        <p class="max-w-2xl mx-auto">
+          Under the <strong>No Surprises Act</strong>, you have the right to receive a Good Faith Estimate prior to services. 
+          For additional information, visit <a href="https://www.cms.gov/medical-bill-rights" class="underline hover:text-amber-400">cms.gov/medical-bill-rights</a>.
+        </p>
+      </footer>
+
+    </div>
+  </main>
 </ResourceLayout>

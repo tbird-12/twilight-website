@@ -1,40 +1,26 @@
 ---
-import ResourceLayout from '../../layouts/ResourceLayout.astro';
+import Layout from '../../layouts/Layout.astro';
 import '../../styles/global.css';
+import { providers } from '../../data/staff';
 ---
 
-<ResourceLayout 
-  name="Twilight Psychology Location"
-  description="Find our office locations and hours"
->
-  <h2>Welcome to Our Locations Page</h2>
-  <p>
-    Explore our office locations and find the one that is most convenient for you. We are committed to providing accessible and high-quality care to all our clients.
-  </p>
+<Layout title="Our Locations | Twilight Psychology">
 
-  <h2>Office Hours</h2>
-  <p>
-    Our office hours are designed to accommodate the needs of our clients. Please check the specific location for detailed hours of operation.
-  </p>
-
-  <h2>Telehealth Services</h2>
-  <p>
-    If you need to refill a prescription or discuss medication concerns, please reach out to your clinician. You can submit requests through our client portal or by contacting our office directly.
-  </p>
-
-  <h2>Administrative Support</h2>
-  <p>
-    Our administrative team can assist with:
-  </p>
-  <ul>
-    <li>Insurance questions and billing inquiries</li>
-    <li>Obtaining records or documentation letters</li>
-    <li>Updating contact and insurance information</li>
-    <li>General questions about our services</li>
-  </ul>
-
-  <h2>Need to Reach Us?</h2>
-  <p>
-    <a href="https://heatherlcornett.clientsecure.me/contact-widget" target="_blank">Contact our office</a> during business hours for any questions or concerns.
-  </p>
-</ResourceLayout>
+  <section class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Our Locations</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {providers.map((person) => (
+          <a href={`/about/clinicians/${person.slug}`} class="group bg-gradient-to-br from-indigo-50 to-amber-50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-indigo-100">
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">{person.name}</h3>
+            <p class="text-sm font-semibold text-indigo-600 uppercase tracking-wide mb-4">{person.spec}</p>
+            <span class="text-amber-600 group-hover:text-amber-700 font-bold inline-flex items-center gap-2">
+              View Profile 
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2"></path></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
