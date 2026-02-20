@@ -1,46 +1,192 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import '../../styles/global.css';
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import "../../styles/global.css";
+
+const therapyFocus = [
+  {
+    title: "Neuro-Identity",
+    detail:
+      "Moving from 'masking' to authenticity. Understanding your neuro-type as a vital part of who you are.",
+    link: "/services/identity-work", // Placeholder
+  },
+  {
+    title: "Executive Support",
+    detail:
+      "Collaborative strategies for task management, burnout prevention, and sensory regulation.",
+    link: "/services/executive-functioning", // Placeholder
+  },
+  {
+    title: "Social Connection",
+    detail:
+      "Developing communication styles that honor your comfort level rather than forcing social norms.",
+    link: "/services/social-advocacy", // Placeholder
+  },
+  {
+    title: "Burnout Recovery",
+    detail:
+      "Specialized support for 'Autistic Burnout'—restoring energy and setting sustainable boundaries.",
+    link: "/services/burnout-prevention", // Placeholder
+  },
+];
 ---
 
-<ServiceLayout 
-  name="Therapy"
-  description="Individual therapy for anxiety, depression, trauma, and life transitions"
->
-  <h2>What is Therapy?</h2>
-  <p>
-    Therapy is a collaborative process where you work with a trained mental health professional to explore your thoughts, feelings, and behaviors. Our therapists provide a safe, non-judgmental space to help you navigate life's challenges, develop coping strategies, and work toward meaningful personal growth.
-  </p>
+<ServiceLayout title="Neuro-Affirming Therapy KY | Twilight Psychology">
+  <section class="relative py-24 px-6 overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 z-0 opacity-10">
+      <img
+        src="/images/autism-therapy-abstract.jpg"
+        class="w-full h-full object-cover"
+        alt="Soft light passing through glass"
+      />
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-20">
+      <span
+        class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full"
+      >
+        Neuro-Affirming Counseling
+      </span>
+      <h1
+        class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]"
+      >
+        Therapy for <br /><span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+          >Adults.</span
+        >
+      </h1>
+      <p
+        class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed"
+      >
+        No "fixing." No "curing." Just compassionate, evidence-based therapy
+        that honors your unique way of being.
+      </p>
+    </div>
+  </section>
 
-  <h2>Who Can Benefit from Therapy?</h2>
-  <ul>
-    <li>Individuals experiencing anxiety, depression, or mood difficulties</li>
-    <li>Those processing trauma or significant life transitions</li>
-    <li>People seeking support with relationship issues or communication skills</li>
-    <li>Anyone wanting to better understand themselves and improve their wellbeing</li>
-  </ul>
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 mt-20">
+    <div class="lg:col-span-2 space-y-12">
+      <section
+        class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
+      >
+        <h2 class="text-3xl font-black text-white mb-6 tracking-tight">
+          Support That Validates
+        </h2>
+        <div class="space-y-6 text-indigo-100/80 leading-relaxed text-lg">
+          <p>
+            Traditional therapy often focuses on making neurodivergent people
+            "act neurotypical." At Twilight Psychology, we do the opposite. Our
+            goal is to help you build a life that accommodates <span
+              class="text-amber-400">your nervous system</span
+            >.
+          </p>
+          <p>
+            Whether you were diagnosed yesterday or have known your whole life,
+            we provide a safe space to process the challenges of a world not
+            built for you.
+          </p>
+          <a
+            href="/about/twilight-psychology"
+            class="inline-block text-amber-500 font-black text-sm border-b-2 border-amber-500/20 hover:border-amber-500 transition-all pb-1"
+          >
+            Read our Neuro-Affirming Promise →
+          </a>
+        </div>
+      </section>
 
-  <h2>What to Expect</h2>
-  <p>
-    Therapy is tailored to your unique needs and goals. Your therapist will work with you to develop a treatment plan that feels right for you. Sessions typically include:
-  </p>
-  <ul>
-    <li>Initial consultation to discuss your concerns and goals</li>
-    <li>Regular weekly or bi-weekly sessions (typically 50 minutes)</li>
-    <li>Evidence-based therapeutic approaches (CBT, DBT, psychodynamic, etc.)</li>
-    <li>Skill-building exercises and homework between sessions</li>
-    <li>Ongoing assessment of progress and adjustment of treatment as needed</li>
-  </ul>
+      <section>
+        <h2 class="text-2xl font-black text-white mb-10">Focus Areas</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {
+            therapyFocus.map((item) => (
+              <a
+                href={item.link}
+                class="group p-8 bg-white/[0.02] border border-white/10 sm:border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all block"
+              >
+                <div class="w-10 h-10 rounded-xl bg-amber-500 sm:bg-indigo-900/50 flex items-center justify-center mb-6 border border-white/5 sm:group-hover:bg-amber-500 transition-all">
+                  <span class="text-indigo-950 sm:text-amber-500 sm:group-hover:text-indigo-950 text-xl">
+                    ✦
+                  </span>
+                </div>
+                <h3 class="text-white font-black mb-2">{item.title}</h3>
+                <p class="text-indigo-200/50 text-sm leading-relaxed mb-6">
+                  {item.detail}
+                </p>
+                <span class="text-xs font-black text-amber-500 block sm:opacity-0 sm:group-hover:opacity-100 transition-opacity uppercase tracking-[0.2em]">
+                  Learn More →
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
 
-  <h2>Why Choose Us?</h2>
-  <p>
-    Our therapists are committed to providing <strong>trauma-informed, culturally sensitive care</strong>. We believe in meeting you where you are and working collaboratively toward your goals. Each therapist brings their own expertise and approach, ensuring you can find the right fit for your needs.
-  </p>
-  <p>
-    Whether you're dealing with a specific challenge or seeking general support, our team is here to help you build resilience, develop insight, and create lasting positive change in your life.
-  </p>
+    <aside class="space-y-8">
+      <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+        <h3 class="text-xl font-black text-white mb-6">Continuum of Care</h3>
+        <nav class="space-y-4">
+          <a
+            href="/services/autism-testing"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all text-indigo-100 text-sm font-bold group"
+          >
+            Need a Diagnosis? <span
+              class="text-amber-500 group-hover:translate-x-1 transition-transform"
+              >→</span
+            >
+          </a>
+          <a
+            href="/services/medication-management"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all text-indigo-100 text-sm font-bold group"
+          >
+            Medication Support <span
+              class="text-amber-500 group-hover:translate-x-1 transition-transform"
+              >→</span
+            >
+          </a>
+        </nav>
+      </div>
 
-  <blockquote>
-    "Therapy is not about fixing what's broken. It's about discovering what's possible."
-  </blockquote>
+      <div
+        class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] text-center"
+      >
+        <h3 class="text-2xl font-black text-white mb-4">Find Your Balance</h3>
+        <p class="text-indigo-200/60 text-sm mb-8 leading-relaxed">
+          Accepting Medicaid, Medicare, and Commercial Insurances in Kentucky.
+        </p>
+        <a
+          href="https://heatherlcornett.clientsecure.me/contact-widget"
+          class="block w-full py-4 bg-[#D4CFC7] text-indigo-950 font-black rounded-xl hover:bg-white transition-all shadow-lg shadow-[#D4CFC7]/10"
+        >
+          Schedule Intake
+        </a>
+        <p
+          class="mt-6 text-[10px] font-black text-indigo-400/60 uppercase tracking-widest"
+        >
+          Telehealth & In-Person Available
+        </p>
+      </div>
+
+      <div class="p-6 bg-indigo-900/10 rounded-3xl border border-white/5">
+        <p class="text-xs text-indigo-300/60 leading-relaxed italic">
+          "All our therapists are neuroaffirming; we focus on creating an
+          environment that asks the world to meet you where you're at."
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-6 mt-32">
+    <div
+      class="p-10 bg-indigo-900/20 border border-white/5 rounded-[3rem] text-center"
+    >
+      <h2 class="text-3xl font-black text-white mb-6">
+        Looking for ADHD Support?
+      </h2>
+      <a
+        href="/services/adhd-testing"
+        class="text-amber-500 font-black tracking-widest uppercase text-sm hover:text-white transition-colors"
+      >
+        View ADHD Evaluation Services →
+      </a>
+    </div>
+  </section>
 </ServiceLayout>

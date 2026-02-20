@@ -1,0 +1,191 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import "../../styles/global.css";
+
+const evaluationTypes = [
+  {
+    title: "Diagnostic Clarity",
+    detail:
+      "Distinguishing between complex presentations of Anxiety, Depression, Bipolar Disorder, and PTSD.",
+    link: "/services/therapy", // Placeholder
+  },
+  {
+    title: "Learning & Cognitive",
+    detail:
+      "Identifying Dyslexia, Dysgraphia, or intellectual giftedness to support academic success.",
+    link: "/specialities/dyslexia-testing", // Placeholder
+  },
+  {
+    title: "Personality Profiles",
+    detail:
+      "Exploring long-term patterns of relating to the self and others for therapeutic breakthroughs.",
+    link: "/specialities/personality-profiles", // Placeholder
+  },
+  {
+    title: "Treatment Planning",
+    detail:
+      "Providing the clinical documentation needed for specialized therapy or workplace accommodations.",
+    link: "/services/medication-management", // Placeholder
+  },
+];
+---
+
+<ServiceLayout
+  name="Psychological Evaluations Lexington KY | Twilight Psychology"
+  description="Comprehensive psychological assessments for children, teens, and adults"
+>
+  <section class="relative py-24 px-6 overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 z-0 opacity-10">
+      <img
+        src="/images/abstract-psych-eval.jpg"
+        class="w-full h-full object-cover"
+        alt="Symmetrical abstract art"
+      />
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-20">
+      <span
+        class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full"
+      >
+        Comprehensive Diagnostic Services
+      </span>
+      <h1
+        class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]"
+      >
+        Psychological <br /><span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+          >Evaluations.</span
+        >
+      </h1>
+      <p
+        class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed"
+      >
+        When symptoms overlap and answers are unclear, we provide the
+        evidence-based lens needed to move forward.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 mt-20">
+    <div class="lg:col-span-2 space-y-12">
+      <section
+        class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
+      >
+        <h2 class="text-3xl font-black text-white mb-6 tracking-tight">
+          Answers Within Reach
+        </h2>
+        <p class="text-indigo-100/80 leading-relaxed text-lg mb-6">
+          A psychological evaluation helps us understand the "why" behind your
+          emotional or behavioral experiences. Much like medical labs help a
+          doctor treat a physical ailment, our testing guides your healing
+          journey.
+        </p>
+        <a
+          href="/about/our-process"
+          class="text-amber-500 font-black text-sm hover:underline decoration-2 underline-offset-8"
+        >
+          Learn more about our evidence-based approach →
+        </a>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-black text-white mb-10">
+          Areas of Specialization
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {
+            evaluationTypes.map((item) => (
+              <a
+                href={item.link}
+                class="group p-8 bg-white/[0.02] border border-white/10 sm:border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all block"
+              >
+                <div class="w-10 h-10 rounded-xl bg-amber-500 sm:bg-indigo-900/50 flex items-center justify-center mb-6 border border-white/5 sm:group-hover:bg-amber-500 transition-all">
+                  <span class="text-indigo-950 sm:text-amber-500 sm:group-hover:text-indigo-950">
+                    ✦
+                  </span>
+                </div>
+
+                <h3 class="text-white font-black mb-2">{item.title}</h3>
+                <p class="text-indigo-200/50 text-sm leading-relaxed mb-4">
+                  {item.detail}
+                </p>
+
+                <span class="text-xs font-black text-amber-500 block sm:opacity-0 sm:group-hover:opacity-100 transition-opacity uppercase tracking-widest">
+                  View Details →
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+
+    <aside class="space-y-8">
+      <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+        <h3 class="text-xl font-black text-white mb-6">Related Services</h3>
+        <nav class="space-y-4">
+          <a
+            href="/services/autism-testing"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors text-indigo-100 text-sm font-bold"
+          >
+            Autism Evaluations <span class="text-amber-500">→</span>
+          </a>
+          <a
+            href="/services/adhd-testing"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors text-indigo-100 text-sm font-bold"
+          >
+            ADHD Evaluations <span class="text-amber-500">→</span>
+          </a>
+          <a
+            href="/services/medication-management"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors text-indigo-100 text-sm font-bold"
+          >
+            Medication Mgmt <span class="text-amber-500">→</span>
+          </a>
+        </nav>
+      </div>
+
+      <div
+        class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] text-center"
+      >
+        <h3 class="text-2xl font-black text-white mb-4">Need Answers?</h3>
+        <p class="text-indigo-200/60 text-sm mb-8">
+          Schedule an initial intake to see if testing is the right fit.
+        </p>
+        <a
+          href="https://heatherlcornett.clientsecure.me/contact-widget"
+          class="block w-full py-4 bg-[#D4CFC7] text-indigo-950 font-black rounded-xl hover:bg-white transition-all"
+        >
+          Begin Evaluation
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-6 mt-32">
+    <div
+      class="p-12 bg-indigo-900/20 border border-white/5 rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-8"
+    >
+      <div class="max-w-md">
+        <h2 class="text-3xl font-black text-white mb-4 italic">
+          The Journey Doesn't End at Diagnosis.
+        </h2>
+        <p class="text-indigo-200/60">
+          Once you have clarity, we offer the therapeutic and medical support to
+          help you move forward.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="/services/therapy"
+          class="px-6 py-3 bg-white/5 border border-white/10 text-white font-black rounded-xl hover:bg-white/10 transition-all"
+          >Find a Therapist</a
+        >
+        <a
+          href="/services/medication-management"
+          class="px-6 py-3 bg-white/5 border border-white/10 text-white font-black rounded-xl hover:bg-white/10 transition-all"
+          >Medication Support</a
+        >
+      </div>
+    </div>
+  </section>
+</ServiceLayout>

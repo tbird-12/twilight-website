@@ -5,13 +5,8 @@ const { name, description } = Astro.props;
 ---
 
 <Layout title={`${name} | Resources | Twilight Psychology`}>
-  <main class="bg-[#F9F9F9] dark:bg-zinc-950 py-16 md:py-24">
+  <main class="bg-indigo-950 min-h-screen pb-24">
     <div class="max-w-4xl mx-auto px-6">
-
-      <div class="mb-12">
-        <h1 class="text-4xl md:text-5xl font-black text-black dark:text-white mb-4 leading-tight">{name}</h1>
-        {description && <p class="text-lg text-zinc-600 dark:text-zinc-300">{description}</p>}
-      </div>
 
       <div class="prose prose-lg max-w-none prose-custom
                   prose-p:text-zinc-900 dark:prose-p:text-zinc-100 

@@ -1,46 +1,135 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
+
+const insurancePartners = [
+  "Traditional KY Medicaid", "Aetna Better Health", "Humana Healthy Horizons", 
+  "Passport by Molina", "UHC Community Plan", "Major Commercial Plans"
+];
+
+const evaluationSteps = [
+  {
+    title: "Clinical Intake",
+    detail: "A deep dive into developmental milestones, medical history, and lived experiences."
+  },
+  {
+    title: "Comprehensive Testing",
+    detail: "A 3-4 hour battery assessing cognitive, executive, and adaptive functioning."
+  },
+  {
+    title: "Clinical Observation",
+    detail: "Evidence-based tools including ADOS-2 and the neuro-affirming MIGDAS-2."
+  },
+  {
+    title: "Feedback & Report",
+    detail: "A detailed diagnostic report with tailored recommendations for support."
+  }
+];
 ---
 
 <ServiceLayout 
   name="Autism Testing"
   description="Comprehensive autism spectrum disorder evaluations for children and adults"
 >
-  <h2>What is Autism Testing?</h2>
-  <p>
-    Autism spectrum disorder (ASD) is a lifelong developmental difference that affects how individuals communicate, process information, and interact with the world. Our comprehensive autism testing provides accurate diagnosis and insights to help you understand yourself or your child better.
-  </p>
+    
+    <section class="relative py-24 px-6 overflow-hidden">
+      <div class="absolute inset-0 z-0 opacity-20">
+        <img src="/images/autism-eval-bg.jpg" class="w-full h-full object-cover" alt="Abstract connection" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/40 via-indigo-950 to-indigo-950 z-10"></div>
 
-  <h2>Who Should Get Tested?</h2>
-  <ul>
-    <li>Children showing signs of social communication differences or restricted interests</li>
-    <li>Adolescents struggling with peer relationships or academic challenges</li>
-    <li>Adults seeking answers about lifelong patterns of behavior and experience</li>
-    <li>Individuals with a family history of autism</li>
-  </ul>
+      <div class="max-w-4xl mx-auto text-center relative z-20">
+        <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full">
+          Comprehensive Evaluations
+        </span>
+        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+          Autism <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Testing.</span>
+        </h1>
+        <p class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed">
+          One of the shortest waitlists in Kentucky for comprehensive, evidence-based diagnostic evaluations.
+        </p>
+      </div>
+    </section>
 
-  <h2>What to Expect</h2>
-  <p>
-    Our evaluation process is thorough and individualized. We use evidence-based assessments, clinical interviews, and collateral information from family members or educators to gather a complete picture. The process typically includes:
-  </p>
-  <ul>
-    <li>Initial intake and background history</li>
-    <li>Standardized autism-focused assessments</li>
-    <li>Cognitive and adaptive functioning evaluation</li>
-    <li>Behavioral observation and analysis</li>
-    <li>Detailed feedback session and comprehensive written report</li>
-  </ul>
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12">
+      
+      <div class="lg:col-span-2 space-y-12">
+        
+        <section class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]">
+          <h2 class="text-3xl font-black text-white mb-6 tracking-tight">Beyond the Label</h2>
+          <div class="space-y-6 text-indigo-100/80 leading-relaxed text-lg">
+            <p>
+              Autism Spectrum Disorder (ASD) is a developmental condition where the brain processes information differently. At Twilight Psychology, we recognize that autism is not a mental illness—it is a vital part of a person's identity.
+            </p>
+            <p>
+              We specialize in identifying individuals who have learned to <span class="text-amber-400">"mask"</span> or hide their traits, particularly women and girls, ensuring they finally feel heard and understood.
+            </p>
+          </div>
+        </section>
 
-  <h2>Why Choose Us?</h2>
-  <p>
-    Our team provides <strong>neurodivergent-affirming care</strong>, recognizing autism as a natural difference rather than a deficit. We believe in understanding how autism shows up uniquely in each person, taking into account gender differences, cultural factors, and individual strengths and challenges.
-  </p>
-  <p>
-    Whether you're seeking diagnosis, educational accommodations, or simply a better understanding of yourself, we're here to provide compassionate, expert evaluation and support.
-  </p>
+        <section class="bg-indigo-900/20 border border-indigo-800/50 p-10 rounded-[2.5rem]">
+          <h2 class="text-2xl font-black text-white mb-8 tracking-tight">Our Diagnostic Approach</h2>
+          <p class="text-indigo-200/70 mb-8">
+            A diagnosis should never rely on a single test. We provide a holistic view using gold-standard tools tailored to your needs:
+          </p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-6 bg-white/5 rounded-3xl border border-white/5">
+              <h3 class="text-amber-500 font-black text-sm uppercase mb-2">ADOS-2</h3>
+              <p class="text-xs text-indigo-100/60 leading-relaxed">Standardized behavioral observation used widely for traditional presentations.</p>
+            </div>
+            <div class="p-6 bg-white/5 rounded-3xl border border-white/5">
+              <h3 class="text-amber-500 font-black text-sm uppercase mb-2">MIGDAS-2</h3>
+              <p class="text-xs text-indigo-100/60 leading-relaxed">A sensory-based, neuro-affirming interview style ideal for high-masking individuals.</p>
+            </div>
+          </div>
+        </section>
 
-  <blockquote>
-    "Autism is not something to fix. It's something to understand and support."
-  </blockquote>
+        <section>
+          <h2 class="text-2xl font-black text-white mb-10 text-center lg:text-left">The Testing Timeline</h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            {evaluationSteps.map((step, i) => (
+              <div class="group p-8 bg-white/[0.02] border border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all">
+                <div class="text-4xl font-black text-white/10 mb-4 group-hover:text-amber-500/20 transition-colors">0{i+1}</div>
+                <h3 class="text-white font-black mb-2">{step.title}</h3>
+                <p class="text-indigo-200/50 text-sm leading-relaxed">{step.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <aside class="space-y-8">
+        
+        <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+          <h3 class="text-xl font-black text-white mb-6">In-Network Support</h3>
+          <p class="text-xs text-indigo-200/60 mb-6 leading-relaxed">
+            We are committed to serving the most vulnerable populations. We accept:
+          </p>
+          <ul class="space-y-3">
+            {insurancePartners.map(plan => (
+              <li class="flex items-center gap-3 text-sm font-bold text-[#D4CFC7]">
+                <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                {plan}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-amber-500 p-10 rounded-[2.5rem] text-indigo-950 shadow-2xl shadow-amber-500/10">
+          <h3 class="text-2xl font-black mb-4 tracking-tight">Ready for clarity?</h3>
+          <p class="font-bold text-sm mb-8 opacity-80 italic">
+            "Self-pay clients often receive their full evaluation report in just one week."
+          </p>
+          <a href="https://heatherlcornett.clientsecure.me/contact-widget" 
+             class="block w-full py-4 bg-indigo-950 text-white text-center font-black rounded-xl hover:scale-105 transition-all">
+            Book Evaluation
+          </a>
+        </div>
+
+        <div class="px-6 py-8 border-l border-white/10 italic text-indigo-300/60 text-sm">
+          "Early identification is critical for optimizing quality of life. We ensure you don't have to wait years for answers."
+        </div>
+      </aside>
+    </div>
+  </main>
 </ServiceLayout>
