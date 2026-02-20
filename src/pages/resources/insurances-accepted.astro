@@ -1,0 +1,89 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import { Image } from "astro:assets";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/images/insurance/*.png",
+);
+
+const insuranceProviders = [
+  { name: "Aetna", fileName: "aetna.png" },
+  { name: "Aetna Better Health", fileName: "aetna-better-health.png" },
+  { name: "Aetna Medicare", fileName: "aetna-medicare.png" },
+  { name: "Ambetter", fileName: "ambetter.png" },
+  { name: "Cigna", fileName: "cigna.png" },
+  { name: "CHAMPVA", fileName: "champva.png" },
+  { name: "Humana", fileName: "humana.png" },
+  { name: "Humana Healthy Horizons", fileName: "humana-healthy.png" },
+  { name: "Kentucky State Medicaid", fileName: "medicaid.png" },
+  { name: "Medicare", fileName: "medicare.png" },
+  { name: "Passport by Molina", fileName: "passport.png" },
+  { name: "UMR", fileName: "umr.png" },
+  { name: "UnitedHealthcare (UHC)", fileName: "uhc.png" },
+  { name: "UnitedHealthcare Community", fileName: "uhc-community.png" },
+  { name: "Tricare East", fileName: "tricare.png" }
+];
+---
+
+<Layout title="Insurance | Twilight Psychology">
+  <main class="bg-indigo-950 min-h-screen py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl font-black text-white mb-12 text-center">
+        Accepted <span class="text-amber-500">Insurances</span>
+      </h1>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {
+          insuranceProviders.map((provider) => {
+            // We dynamically build the path to match the imported images
+            const imagePath = `../../assets/images/insurance/${provider.fileName}`;
+
+            return (
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center group hover:bg-white transition-all duration-300">
+                <div class="h-16 flex items-center justify-center mb-4">
+                  {images[imagePath] ? (
+                    <Image
+                      src={images[imagePath]()}
+                      alt={provider.name}
+                      width={200}
+                      height={80}
+                      class="max-h-12 w-auto object-contain grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-500"
+                    />
+                  ) : (
+                    <span class="text-white group-hover:text-indigo-950 font-bold">
+                      {provider.name}
+                    </span>
+                  )}
+                </div>
+                <p class="text-[10px] font-black uppercase tracking-widest text-indigo-300 group-hover:text-indigo-950">
+                  {provider.name}
+                </p>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    <section class="max-w-4xl mx-auto px-6 py-16 mt-16">
+      <div
+        class="bg-amber-500/10 border border-amber-500/30 p-10 rounded-[3rem] text-center"
+      >
+        <h2 class="text-2xl font-black text-white mb-4 italic">
+          Don't see your provider?
+        </h2>
+        <p class="text-indigo-100/70 leading-relaxed mb-8">
+          Insurance panels are frequently updated and not all clinicians are
+          in-network with all of them. We also offer out-of-network billing
+          support and private pay options for those seeking immediate care.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block px-10 py-4 bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-white transition-all"
+        >
+          Verify Your Coverage
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
