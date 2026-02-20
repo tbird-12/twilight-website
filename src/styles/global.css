@@ -15,11 +15,6 @@ html {
     @apply bg-indigo-950 text-white antialiased;
   }
 
-  /* Remove 'text-black' from here so it doesn't override your hero text */
-  h1, h2, h3, h4 {
-    @apply font-black;
-  }
-
   a {
     @apply transition-colors;
   }
