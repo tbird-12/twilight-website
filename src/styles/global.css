@@ -18,7 +18,23 @@ html {
   a {
     @apply transition-colors;
   }
+
+  h1, h2, h3, h4 {
+    @apply font-black tracking-tighter;
+    color: inherit; /* This allows your text-white or text-amber classes to work better */
+  }
+  
+  /* If the site is NOT in dark mode, default to black, otherwise white */
+  html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3 {
+    @apply text-zinc-950;
+  }
+  
+  html.dark h1, html.dark h2, html.dark h3 {
+    @apply text-white;
+  }
 }
+
+
 
 @layer components {
     .btn-amber {
