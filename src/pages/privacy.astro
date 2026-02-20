@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
+
+const policyPoints = [
+  {
+    title: "Information Collection",
+    desc: "This website does not collect any personal information from users. Any information you provide via our contact form widget is sent directly to our client portal and is not stored on this website."
+  },
+  {
+    title: "Analytics & Cookies",
+    desc: "We use standard web analytics to see how visitors interact with our site. This uses 'cookies' to track non-identifiable data like browser type."
+  },
+  {
+    title: "Third-Party Links",
+    desc: "Our site contains links to secure portals (like SimplePractice). Once you leave our domain, their specific privacy policies apply."
+  }
+];
+---
+
+<Layout title="Website Privacy Policy | Twilight Psychology">
+
+   <main class="bg-indigo-950 min-h-screen pb-24 text-white">
+    <section class="py-20 px-6 border-b border-white/5 bg-indigo-900/10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tighter">
+          Website <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Privacy Policy.</span>
+        </h1>
+        <p class="text-indigo-200/60 font-medium">Last Updated: February 20, 2026</p>
+      </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-6 mt-12">
+      
+      <div class="bg-amber-500/10 border border-amber-500/30 p-8 rounded-[2rem] mb-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-4 opacity-20">
+            <span class="text-4xl">⚠️</span>
+        </div>
+        <h2 class="text-amber-500 font-black uppercase text-xs tracking-[0.2em] mb-4">Important Notice</h2>
+        <p class="text-white text-lg font-bold leading-relaxed">
+          This policy applies <span class="italic underline">only</span> to your interaction with this website. 
+        </p>
+        <p class="text-indigo-200/80 mt-4 text-sm leading-relaxed">
+          It does not cover your clinical records or Protected Health Information (PHI). Clinical privacy is governed by HIPAA and our Notice of Privacy Practices, which is provided to all clients during the intake process via our secure portal.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        <section>
+          <h2 class="text-2xl font-black text-white mb-6">How We Handle Online Data</h2>
+          <div class="grid gap-6">
+            {policyPoints.map(point => (
+              <div class="p-8 bg-white/5 border border-white/5 rounded-3xl">
+                <h3 class="text-[#D4CFC7] font-black mb-2">{point.title}</h3>
+                <p class="text-indigo-100/60 text-sm leading-relaxed">{point.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <article class="prose prose-invert prose-indigo max-w-none text-indigo-100/70">
+          <h2 class="text-white font-black">Data Security</h2>
+          <p>
+            We do not collect any personal information on this website. We take reasonable measures to protect the information submitted through our email, but we cannot guarantee its security.
+            However, please note that no email transmission is 100% secure. We recommend using our encrypted client portal for sharing sensitive clinical information.
+          </p>
+
+          <h2 class="text-white font-black">Your Consent</h2>
+          <p>
+            By using our site, you consent to this website-specific privacy policy.
+          </p>
+        </article>
+      </div>
+
+      <div class="mt-20 p-10 bg-white/5 border border-white/10 rounded-[2.5rem] text-center">
+        <h3 class="text-xl font-black text-white mb-2">Web Privacy Questions?</h3>
+        <p class="text-indigo-200/60 text-sm">For questions regarding this website policy, contact:</p>
+        <p class="text-amber-500 font-black mt-4">office@twilightpsychology.com</p>
+      </div>
+    </div>
+</main>
+</Layout>
