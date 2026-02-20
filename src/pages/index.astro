@@ -1,58 +1,77 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import "../styles/global.css"
-import pic1 from '../assets/images/pic1.jpg';
-import pic2 from '../assets/images/pic2.jpg';
-import pic3 from '../assets/images/pic3.jpg';
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import pic1 from "../assets/images/pic1.jpg";
+import pic2 from "../assets/images/pic2.jpg";
+import pic3 from "../assets/images/pic3.jpg";
 
 const services = [
   {
-    title: 'Psychological Testing',
-    desc: 'Comprehensive evaluations for ADHD, Autism, and Learning Disorders with a neuro-affirming lens.',
+    title: "Psychological Testing",
+    desc: "Comprehensive evaluations for ADHD, Autism, and Learning Disorders with a neuro-affirming lens.",
     image: pic1,
-    link: '/services'
+    link: "/services",
   },
   {
-    title: 'Medication',
-    desc: 'Personalized medication management with our dedicated Psychiatric Nurse Practitioner.',
+    title: "Medication Management",
+    desc: "Personalized medication management with our dedicated Psychiatric Nurse Practitioner.",
     image: pic2,
-    link: '/services'
+    link: "/services",
   },
   {
-    title: 'Therapy',
-    desc: 'Individual counseling using evidence-based, neuro-affirming practices.',
+    title: "Therapy",
+    desc: "Individual counseling using evidence-based, neuro-affirming practices.",
     image: pic3,
-    link: '/services'
-  }
+    link: "/services",
+  },
 ];
 ---
 
 <Layout title="Twilight Psychology | Neuro-Affirming Care in Kentucky">
-
   <main class="bg-indigo-950">
     <section class="relative pt-24 pb-24 px-6 bg-indigo-950 overflow-hidden">
-      <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[120px]"></div>
+      <div
+        class="absolute top-0 right-0 -mr-20 -mt-20 w-150 h-150 bg-indigo-500/5 rounded-full blur-[120px]"
+      >
+      </div>
 
-      <div class="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 py-12">
-        <span class="px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-[#D4CFC7] uppercase bg-white/5 border border-white/10 rounded-full">
+      <div
+        class="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10 py-12"
+      >
+        <span
+          class="px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-[#D4CFC7] uppercase bg-white/5 border border-white/10 rounded-full"
+        >
           Now Accepting New Clients
         </span>
-        
-        <h1 class="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
-          Neurodiverse? <br/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Empower Your Future.</span>
+
+        <h1
+          class="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9]"
+        >
+          Neurodiverse? <br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
+            >Empower Your Future.</span
+          >
         </h1>
 
-        <p class="max-w-2xl text-lg md:text-xl text-indigo-200/70 mb-12 leading-relaxed font-medium">
-          Affordable, Timely, and Top-Tier Behavioral Health Services including Psychological Testing, Medication Management, and Therapy.
+        <p
+          class="max-w-2xl text-lg md:text-xl text-indigo-200/70 mb-12 leading-relaxed font-medium"
+        >
+          Affordable, Timely, and Top-Tier Behavioral Health Services including
+          Psychological Testing, Medication Management, and Therapy.
         </p>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://heatherlcornett.clientsecure.me/contact-widget" 
-          class="px-10 py-4 bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-amber-400 transition-all hover:scale-105 shadow-lg shadow-amber-500/20">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="https://heatherlcornett.clientsecure.me/contact-widget"
+            class="px-10 py-4 bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-amber-400 transition-all hover:scale-105 shadow-lg shadow-amber-500/20"
+          >
             Schedule an Evaluation
           </a>
-          <a href="/catalog" class="px-10 py-4 bg-transparent text-white border border-white/20 font-black rounded-xl hover:bg-white/5 transition-all">
+          <a
+            href="/catalog"
+            class="px-10 py-4 bg-transparent text-white border border-white/20 font-black rounded-xl hover:bg-white/5 transition-all"
+          >
             Our Services
           </a>
         </div>
@@ -60,57 +79,69 @@ const services = [
     </section>
 
     <div class="py-8 border-y border-white/5 bg-indigo-900/20">
-       <div class="max-w-7xl mx-auto px-6 text-center">
-          <p class="text-sm font-black text-indigo-300 uppercase tracking-widest">
-            In-Network with <span class="text-[#D4CFC7]">KY Medicaid</span> · Medicare · Major Commercial Insurances
-          </p>
-       </div>
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-sm font-black text-indigo-300 uppercase tracking-widest">
+          In-Network with <span class="text-[#D4CFC7]">KY Medicaid</span> · Medicare
+          · Major Commercial Insurances
+        </p>
+      </div>
     </div>
-
 
     <section class="py-32 px-6 bg-indigo-950">
-    <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-      <div class="text-left">
-        <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter">How We Can Help</h2>
-        <div class="w-16 h-1 bg-amber-500 mt-4 rounded-full"></div>
-      </div>
-      <p class="text-[#D4CFC7] font-medium max-w-md text-sm md:text-base opacity-70 italic">
-        "Healing isn't linear. We provide the clinical clarity to navigate the journey."
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-10">
-      {services.map((service) => (
-        <div class="group relative flex flex-col rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-amber-500/30 transition-all duration-500 overflow-hidden">
-          
-          <div class="aspect-[4/3] overflow-hidden relative">
-            <img 
-              src={service.image.src} 
-              alt={service.title} 
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-indigo-950 via-transparent to-transparent"></div>
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
+        >
+          <div class="text-left">
+            <h2
+              class="text-4xl md:text-5xl font-black text-white tracking-tighter"
+            >
+              How We Can Help
+            </h2>
+            <div class="w-16 h-1 bg-amber-500 mt-4 rounded-full"></div>
           </div>
-
-          <div class="p-10 -mt-12 relative z-10">
-            <h3 class="text-2xl font-black mb-4 text-white tracking-tight group-hover:text-amber-500 transition-colors">
-              {service.title}
-            </h3>
-            <p class="text-indigo-200/60 font-medium text-sm mb-8 leading-relaxed">
-              {service.desc}
-            </p>
-            
-            <a href={service.link} class="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-amber-500/80 group-hover:text-amber-500 transition-colors">
-              Explore Service 
-              <span class="w-8 h-px bg-amber-500/30 group-hover:w-12 group-hover:bg-amber-500 transition-all"></span>
-            </a>
-          </div>
+          <p
+            class="text-[#D4CFC7] font-medium max-w-md text-sm md:text-base opacity-70 italic"
+          >
+            "Healing isn't linear. We provide the clinical clarity to navigate
+            the journey."
+          </p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
 
+        <div class="grid md:grid-cols-3 gap-10">
+          {
+            services.map((service) => (
+              <div class="group relative flex flex-col rounded-[2.5rem] bg-white/2 border border-white/5 hover:border-amber-500/30 transition-all duration-500 overflow-hidden">
+                <div class="aspect-4/3 overflow-hidden relative">
+                  <img
+                    src={service.image.src}
+                    alt={service.title}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                  />
+                  <div class="absolute inset-0 bg-linear-to-t from-indigo-950 via-transparent to-transparent" />
+                </div>
+
+                <div class="p-10 -mt-12 relative z-10">
+                  <h3 class="text-2xl font-black mb-4 text-white tracking-tight group-hover:text-amber-500 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p class="text-indigo-200/60 font-medium text-sm mb-8 leading-relaxed">
+                    {service.desc}
+                  </p>
+
+                  <a
+                    href={service.link}
+                    class="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-amber-500/80 group-hover:text-amber-500 transition-colors"
+                  >
+                    Explore Service
+                    <span class="w-8 h-px bg-amber-500/30 group-hover:w-12 group-hover:bg-amber-500 transition-all" />
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>

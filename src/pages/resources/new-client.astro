@@ -34,7 +34,7 @@ const checklist = [
 <Layout title="New Client | Twilight Psychology">
   <main class="bg-indigo-950 min-h-screen pb-20 overflow-hidden">
     
-    <section class="relative py-20 px-4 border-b border-indigo-900 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/40 via-transparent to-transparent">
+    <section class="relative py-20 px-4 border-b border-indigo-900 bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-indigo-900/40 via-transparent to-transparent">
       <div class="max-w-4xl mx-auto text-center">
         <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-900/50 border border-indigo-800 text-amber-400 text-xs font-black uppercase tracking-widest">
           New Patient Guide
@@ -52,7 +52,7 @@ const checklist = [
       <div class="grid lg:grid-cols-3 gap-8">
         
         <div class="lg:col-span-2 space-y-6">
-          <div class="bg-indigo-900/20 border border-indigo-800 p-8 md:p-12 rounded-[2rem] backdrop-blur-sm">
+          <div class="bg-indigo-900/20 border border-indigo-800 p-8 md:p-12 rounded-4xl backdrop-blur-sm">
             <h2 class="text-2xl font-black text-white mb-10 flex items-center gap-3">
               The Path to Your First Visit
             </h2>
@@ -60,7 +60,7 @@ const checklist = [
             
 
             <div class="relative space-y-12">
-              <div class="absolute left-[1.4rem] top-2 bottom-2 w-0.5 bg-gradient-to-b from-amber-500 via-indigo-800 to-transparent"></div>
+              <div class="absolute left-[1.4rem] top-2 bottom-2 w-0.5 bg-linear-to-b from-amber-500 via-indigo-800 to-transparent"></div>
 
               {steps.map((step) => (
                 <div class="relative pl-16 group">
@@ -81,7 +81,7 @@ const checklist = [
             </div>
           </div>
 
-          <div class="bg-gradient-to-br from-indigo-900/40 to-indigo-900/10 border border-indigo-800 p-8 rounded-[2rem]">
+          <div class="bg-linear-to-br from-indigo-900/40 to-indigo-900/10 border border-indigo-800 p-8 rounded-4xl">
             <h2 class="text-2xl font-black text-white mb-4">The First Appointment</h2>
             <p class="text-indigo-100 leading-relaxed">
               This is a safe space. During our first hour, we’ll discuss your goals, history, and concerns. It’s an open dialogue designed to ensure you feel heard and supported. No judgments—just a collaborative step forward.
@@ -90,7 +90,7 @@ const checklist = [
         </div>
 
         <div class="space-y-8">
-          <div class="bg-amber-500 p-8 rounded-[2rem] text-indigo-950 shadow-xl shadow-amber-500/10">
+          <div class="bg-amber-500 p-8 rounded-4xl text-indigo-950 shadow-xl shadow-amber-500/10">
             <h2 class="text-xl font-black uppercase tracking-tight mb-6 flex items-center gap-2">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
               What to Bring
@@ -105,7 +105,7 @@ const checklist = [
             </ul>
           </div>
 
-          <div class="bg-indigo-900/20 border border-indigo-800 p-8 rounded-[2rem] text-center">
+          <div class="bg-indigo-900/20 border border-indigo-800 p-8 rounded-4xl text-center">
             <h3 class="text-white font-bold mb-4">Questions?</h3>
             <p class="text-indigo-200 text-sm mb-6">We're here to help you prepare.</p>
             <a href="mailto:office@twilightpsychology.com" class="block w-full py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold rounded-xl transition-all">
