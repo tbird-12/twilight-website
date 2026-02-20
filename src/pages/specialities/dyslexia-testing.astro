@@ -1,0 +1,135 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import '../../styles/global.css';
+
+const learningDisabilities = [
+  {
+    title: "Dyslexia",
+    specialty: "Reading & Word Recognition",
+    desc: "Characterized by difficulty reading or recognizing words, alongside persistent challenges with spelling and phonological processing.",
+    icon: "📖"
+  },
+  {
+    title: "Dysgraphia",
+    specialty: "Written Expression",
+    desc: "Difficulty writing at an appropriate peer level, often involving improper letter size/spacing, spelling errors, or illegible handwriting.",
+    icon: "✍️"
+  },
+  {
+    title: "Dyscalculia",
+    specialty: "Mathematics & Numeracy",
+    desc: "The inability to understand numerical data or math concepts, manifesting as trouble with arithmetic skills or basic math logic.",
+    icon: "🔢"
+  }
+];
+
+const faqs = [
+  {
+    q: "How do learning disabilities relate to ADHD?",
+    a: "Learning disabilities frequently co-occur with ADHD. While they are distinct conditions, the executive functioning challenges of ADHD can complicate how a student manages Dyslexia or Dysgraphia."
+  },
+  {
+    q: "What age is best for testing?",
+    a: "Evaluations can be conducted from early childhood through adulthood. Early identification is key for implementing effective IEP or 504 accommodations in school."
+  },
+  {
+    q: "Are these evaluations accepted by Kentucky schools?",
+    a: "Yes. Our comprehensive reports are designed to meet clinical and educational standards, providing the 'evidence of need' required for academic support."
+  },
+  {
+    q: "Do you offer 'Twice Exceptional' (2e) testing?",
+    a: "Absolutely. We specialize in identifying gifted individuals who also have a learning disability, ensuring their brilliance isn't overshadowed by their challenges."
+  },
+  {
+    q: "How much does it cost for a learning disability evaluation?",
+    a: "The cost of a learning disability evaluation varies depending on the specific assessments required. We bill $200 per hour for the parts and these services not typically covered by health insurance."
+  }
+];
+---
+
+<ServiceLayout name="Learning Disability Testing KY | Twilight Psychology"
+  description="Comprehensive learning disability evaluations for Dyslexia, Dysgraphia, and Dyscalculia in Kentucky."
+>
+    
+    <section class="relative pt-32 pb-20 px-6 border-b border-white/5">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="text-amber-500 font-black tracking-[0.3em] uppercase text-[10px] mb-4 block">Educational Advocacy</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-none">
+                Learning <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Disabilities.</span>
+            </h1>
+            <p class="text-indigo-200/70 text-lg leading-relaxed max-w-lg mb-8">
+                We move beyond standard testing to uncover the specific cognitive profile of how you or your child learns, processes, and succeeds.
+            </p>
+            <a href="#faq" class="text-[#D4CFC7] font-black border-b border-amber-500/50 pb-1 hover:text-amber-500 transition-colors">
+                View Common Questions ↓
+            </a>
+        </div>
+        <div class="relative">
+             <div class="aspect-square bg-gradient-to-br from-amber-500/20 to-indigo-500/10 rounded-[3rem] border border-white/10 backdrop-blur-3xl relative overflow-hidden">
+                <div class="absolute inset-0 flex items-center justify-center text-9xl opacity-20">✦</div>
+                <div class="p-12 relative z-10">
+                    <h3 class="text-white font-black text-2xl mb-4 italic">"Children are our most valuable resource."</h3>
+                    <p class="text-indigo-100/60 text-sm italic">— President Herbert Hoover</p>
+                </div>
+             </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <h2 class="text-4xl font-black text-white mb-16 text-center lg:text-left">Clinical <span class="text-amber-500">Definitions.</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            {learningDisabilities.map(ld => (
+                <div class="p-10 bg-white/[0.03] border border-white/10 rounded-[2.5rem] hover:bg-white/[0.05] transition-all">
+                    <h3 class="text-2xl font-black text-white mb-2">{ld.title}</h3>
+                    <p class="text-amber-500 text-[10px] font-black uppercase tracking-widest mb-6">{ld.specialty}</p>
+                    <p class="text-indigo-100/60 text-sm leading-relaxed">{ld.desc}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 mb-24">
+        <div class="bg-indigo-900/30 border border-indigo-500/20 p-12 rounded-[3rem] relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-12 text-8xl text-white/5 font-black">ADHD</div>
+            <div class="max-w-2xl relative z-10">
+                <h2 class="text-3xl font-black text-white mb-6">Integrated Understanding</h2>
+                <p class="text-indigo-100/80 text-lg leading-relaxed">
+                    It is important to understand that learning disabilities rarely exist in isolation. They frequently <strong>co-occur with ADHD</strong> or other health concerns. 
+                </p>
+                <p class="mt-4 text-indigo-100/80 text-lg leading-relaxed">
+                    Our evaluations don't just check for one condition; we look at the <strong>overlap</strong> to ensure the treatment plan addresses the root of the challenge.
+                </p>
+                <div class="mt-8">
+                    <a href="/services/adhd-testing" class="text-amber-500 font-black text-sm uppercase tracking-widest">
+                        Explore ADHD Testing →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="max-w-4xl mx-auto px-6 py-24">
+        <h2 class="text-3xl font-black text-white mb-12 text-center tracking-tight">Frequently Asked <span class="text-[#D4CFC7] italic text-4xl">Questions.</span></h2>
+        <div class="space-y-6">
+            {faqs.map(faq => (
+                <div class="p-8 bg-white/5 border border-white/5 rounded-3xl group hover:border-amber-500/30 transition-all">
+                    <h3 class="text-[#D4CFC7] font-black mb-3 text-lg">{faq.q}</h3>
+                    <p class="text-indigo-200/50 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-24 text-center">
+        <div class="bg-amber-500 p-16 rounded-[4rem] text-indigo-950">
+            <h2 class="text-4xl md:text-6xl font-black mb-8 tracking-tighter">Ready to get evaluated?</h2>
+            <p class="text-xl font-bold mb-10 max-w-xl mx-auto opacity-80 italic">Contact us today to schedule a comprehensive educational evaluation in Lexington or via Telehealth.</p>
+            <a href="https://heatherlcornett.clientsecure.me/contact-widget" class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
+                Request Appointment
+            </a>
+        </div>
+    </section>
+</ServiceLayout>

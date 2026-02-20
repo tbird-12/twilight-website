@@ -1,0 +1,123 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import '../../styles/global.css';
+
+const evaluationFocus = [
+  {
+    title: "Cognitive Assessment",
+    detail: "Standardized IQ testing (WISC-V or WAIS-IV) to understand intellectual potential and processing."
+  },
+  {
+    title: "Adaptive Functioning",
+    detail: "Measuring daily living skills, communication, and social abilities—crucial for Waiver eligibility."
+  },
+  {
+    title: "Waiver Documentation",
+    detail: "Providing the specific clinical documentation required for Kentucky SCL and Michelle P. Waivers."
+  },
+  {
+    title: "Educational Planning",
+    detail: "Clear recommendations for IEP/504 plans to ensure success in school and vocational settings."
+  }
+];
+---
+
+<ServiceLayout name="Psychoeducational Evaluations"
+  description="Comprehensive psychoeducational assessments"
+  >
+    
+    <section class="relative py-24 px-6 overflow-hidden border-b border-white/5">
+      <div class="absolute inset-0 z-0 opacity-10">
+        <img src="/images/intellectual-disability-abstract.jpg" class="w-full h-full object-cover" alt="Abstract interconnected nodes" />
+      </div>
+      <div class="max-w-4xl mx-auto text-center relative z-20">
+        <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full">
+          Specialized Diagnostic Services
+        </span>
+        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+          Clinical <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Clarity.</span>
+        </h1>
+        <p class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed">
+          Comprehensive Intellectual Disability evaluations for children and adults seeking support, waivers, and understanding.
+        </p>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 mt-20">
+      
+      <div class="lg:col-span-2 space-y-12">
+        <section class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]">
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter leading-tight">
+            Expert Care. <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-white italic">Fewer Barriers.</span>
+          </h2>
+          <div class="space-y-6 text-indigo-100/80 leading-relaxed text-lg">
+            <p>
+              An Intellectual Disability (ID) evaluation is more than just an IQ score. It is a comprehensive look at how an individual processes the world and manages the demands of daily life. 
+            </p>
+            <p>
+              Whether you are navigating the transition to adulthood, seeking <span class="text-amber-400">Kentucky Waiver services</span>, or looking for educational clarity, we provide the evidence-based documentation necessary to open doors to support.
+            </p>
+            <a href="/about/process" class="inline-block text-amber-500 font-black text-sm border-b-2 border-amber-500/20 hover:border-amber-500 transition-all pb-1">
+              How our testing process works →
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-black text-white mb-10">Evaluation Pillars</h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            {evaluationFocus.map((item) => (
+              <div class="group p-8 bg-white/[0.02] border border-white/10 sm:border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-amber-500 sm:bg-indigo-900/50 flex items-center justify-center mb-6 border border-white/5 sm:group-hover:bg-amber-500 transition-all">
+                   <span class="text-indigo-950 sm:text-amber-500 sm:group-hover:text-indigo-950 text-xl">✦</span>
+                </div>
+                <h3 class="text-white font-black mb-2">{item.title}</h3>
+                <p class="text-indigo-200/50 text-sm leading-relaxed mb-6">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <aside class="space-y-8">
+        <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+          <h3 class="text-xl font-black text-white mb-4">Kentucky Supports</h3>
+          <p class="text-indigo-200/60 text-sm leading-relaxed mb-4">
+            Our reports meet the criteria for:
+          </p>
+          <ul class="space-y-3 text-sm font-bold text-[#D4CFC7]">
+            <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Michelle P. Waiver</li>
+            <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> SCL Waiver</li>
+            <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Guardianship Proceedings</li>
+            <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> SSI/SSDI Documentation</li>
+          </ul>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] text-center">
+          <h3 class="text-2xl font-black text-white mb-4 tracking-tight">Access Support</h3>
+          <p class="text-indigo-200/60 text-sm mb-8">Professional evaluations with a focus on dignity and clinical precision.</p>
+          <a href="https://heatherlcornett.clientsecure.me/contact-widget" class="block w-full py-4 bg-[#D4CFC7] text-indigo-950 font-black rounded-xl hover:bg-white transition-all shadow-lg shadow-[#D4CFC7]/10">
+            Request Appointment
+          </a>
+        </div>
+
+        <div class="p-8 bg-amber-500 rounded-[2.5rem] text-indigo-950">
+           <h4 class="font-black uppercase text-[10px] tracking-widest mb-2">Billing & Insurance</h4>
+           <p class="text-sm font-bold leading-tight">Psychoeducational evaluations are self-pay only.</p>
+        </div>
+      </aside>
+    </div>
+
+    <section class="max-w-7xl mx-auto px-6 mt-32">
+       <div class="p-12 bg-indigo-900/20 border border-white/5 rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          <div class="max-w-md">
+             <h2 class="text-3xl font-black text-white mb-4 italic">Integrated Care.</h2>
+             <p class="text-indigo-200/60">Following an ID diagnosis, we provide ongoing medication management and specialized therapy support.</p>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4">
+             <a href="/services/medication-management" class="px-6 py-3 bg-white/5 border border-white/10 text-white font-black rounded-xl hover:bg-white/10 transition-all">Medication Support</a>
+             <a href="/services/therapy" class="px-6 py-3 bg-white/5 border border-white/10 text-white font-black rounded-xl hover:bg-white/10 transition-all">Counseling</a>
+          </div>
+       </div>
+    </section>
+</ServiceLayout>
