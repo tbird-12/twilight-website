@@ -1,50 +1,245 @@
 ---
-import ResourceLayout from '../../layouts/ResourceLayout.astro';
-import '../../styles/global.css';
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import "../../styles/global.css";
+
+const clinicianBenefits = [
+  "Competitive Pay (W2 or 1099)",
+  "Health & Retirement Packages",
+  "Targeted Patient Marketing",
+  "Latest HIPAA-Compliant EHR",
+  "Current Testing Suite & Protocols",
+  "Automated Billing & Support",
+];
+
+const cultureHighlights = [
+  {
+    title: "Growth",
+    desc: "Supervision for Postdoc and Master’s level candidates.",
+  },
+  {
+    title: "Balance",
+    desc: "Flexible scheduling designed around your self-care.",
+  },
+  {
+    title: "Clarity",
+    desc: "Full transparency on billing and revenue generation.",
+  },
+];
 ---
 
-<ResourceLayout 
-  name="Careers at Twilight Psychology"
-  description="Join our team - current job openings"
+<ServiceLayout
+  name="Careers | Join the Team at Twilight Psychology"
+  description="Explore career opportunities at Twilight Psychology. Join our collaborative team of providers and staff dedicated to compassionate care in Lexington."
 >
-  <h2>Welcome to Our Careers Page</h2>
-  <p>
-    Explore exciting career opportunities at Twilight Psychology. We are always looking for talented and passionate individuals to join our team.
-  </p>
+  <section class="relative py-24 px-6 overflow-hidden border-b border-white/5 text-center">
+      <div class="absolute inset-0 z-0 opacity-10">
+        <img src="/images/team-collaboration-abstract.jpg" class="w-full h-full object-cover" alt="Collaborative workspace" />
+      </div>
+      <div class="max-w-4xl mx-auto relative z-20">
+        <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full">
+          Join Our Practice
+        </span>
+        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+          Build Your <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Career.</span>
+        </h1>
+        <p class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed">
+          From doctoral students to seasoned clinicians, we provide the environment you need to thrive.
+        </p>
+      </div>
+    </section>
 
-  <h2>Current Openings</h2>
-  <p>
-    Browse our current job openings and find the role that best fits your skills and interests. Click on a position to learn more and apply.
-  </p>
+    <div class="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-3 gap-6 -mt-12 relative z-30">
+      
+      <div class="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+        <div>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-black text-white leading-tight text-amber-500">Licensed <br/>Provider</h2>
+                <span class="text-[9px] font-black text-white border border-white/20 px-2 py-1 rounded uppercase">W2/1099</span>
+            </div>
+            <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
+              Seeking Doctoral or Master’s level clinicians (LP, T-LP, LPA, T-LPA, LPP) for therapy and assessments in Lexington and surrounding counties.
+            </p>
+            <ul class="space-y-3 mb-8">
+              {clinicianBenefits.map(benefit => (
+                <li class="flex items-center gap-2 text-[10px] font-black text-[#D4CFC7] uppercase tracking-wider">
+                  <span class="text-amber-500">✦</span> {benefit}
+                </li>
+              ))}
+            </ul>
+        </div>
+        <a href="mailto:careers@twilightpsychology.com" class="block w-full py-4 bg-amber-500 text-indigo-950 text-center font-black rounded-xl hover:bg-white transition-all text-sm">Apply to Practice</a>
+      </div>
 
-  <h2>Prescription Refills & Medication Management</h2>
-  <p>
-    If you need to refill a prescription or discuss medication concerns, please reach out to your clinician. You can submit requests through our client portal or by contacting our office directly.
-  </p>
+      <div class="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+        <div>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-black text-white leading-tight">Doctoral <br/>Practicum</h2>
+                <span class="text-[9px] font-black text-indigo-950 bg-[#D4CFC7] px-2 py-1 rounded uppercase">Clinical</span>
+            </div>
+            <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
+              Ideal for doctoral students seeking 10-15 assessment hours per week. Experience in a neurodivergent-focused practice with mentorship opportunities.
+            </p>
+            <div class="space-y-4 mb-8">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <p class="text-[10px] font-black text-amber-500 uppercase mb-1">Eligible Licenses</p>
+                    <p class="text-white text-xs font-bold leading-relaxed">T-LPA, LPCA, LCSW, CSW, LMFT</p>
+                </div>
+                <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+                    <p class="text-[10px] font-black text-amber-500 uppercase mb-1">Focus Area</p>
+                    <p class="text-white text-xs font-bold leading-relaxed">Comprehensive testing, diagnostic review, and clinical consultation.</p>
+                </div>
+            </div>
+        </div>
+        <a href="mailto:careers@twilightpsychology.com" class="block w-full py-4 border border-white/20 text-[#D4CFC7] text-center font-black rounded-xl hover:bg-white/10 transition-all text-sm italic">Request Placement</a>
+      </div>
 
-  <h2>Extended Absences</h2>
-  <p>
-    If you need to take a break from therapy or will be unable to keep scheduled appointments, please notify us as soon as possible. We have policies to help minimize impact on your treatment continuity.
-  </p>
+      <div class="bg-indigo-900/20 border border-indigo-500/20 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+        <div>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-black text-white leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white">Admin <br/>Assistant</h2>
+                <span class="text-[9px] font-black text-white bg-indigo-500 px-2 py-1 rounded uppercase">Ops</span>
+            </div>
+            <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
+              Support our clinical mission through scheduling, HIPAA-compliant intake coordination, and billing liaison.
+            </p>
+            <div class="space-y-4 mb-8">
+                <p class="text-[10px] font-black text-indigo-300 uppercase tracking-widest">Key Skillsets</p>
+                {[ "Intake Pipelines", "Protocol Prep", "Insurance Liaison" ].map(skill => (
+                    <div class="flex items-center gap-3">
+                        <div class="w-1.5 h-1.5 bg-[#D4CFC7] rounded-full"></div>
+                        <span class="text-white text-xs font-bold">{skill}</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+        <a href="mailto:careers@twilightpsychology.com" class="block w-full py-4 bg-[#D4CFC7] text-indigo-950 text-center font-black rounded-xl hover:bg-white transition-all text-sm">Join Operations</a>
+      </div>
 
-  <h2>Continuing Care</h2>
-  <p>
-    If you're interested in continuing therapy, increasing frequency, or exploring new treatment approaches, we're happy to discuss your options. Your clinician can help determine what's best for your needs.
-  </p>
+    </div>
 
-  <h2>Administrative Support</h2>
-  <p>
-    Our administrative team can assist with:
-  </p>
-  <ul>
-    <li>Insurance questions and billing inquiries</li>
-    <li>Obtaining records or documentation letters</li>
-    <li>Updating contact and insurance information</li>
-    <li>General questions about our services</li>
-  </ul>
+  <section class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-4xl font-black text-white mb-6 tracking-tighter">
+          Clinical <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-white italic"
+            >Mentorship.</span
+          >
+        </h2>
+        <p class="text-indigo-200/70 text-lg leading-relaxed mb-8">
+          We believe that the next generation of psychologists deserves
+          supervision that is as neuro-affirming as the care we provide to our
+          patients. At Twilight Psychology, mentorship is a collaborative partnership.
+        </p>
 
-  <h2>Need to Reach Us?</h2>
-  <p>
-    <a href="https://heatherlcornett.clientsecure.me/contact-widget" target="_blank">Contact our office</a> during business hours for any questions or concerns.
-  </p>
-</ResourceLayout>
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0"
+            >
+              <span class="text-amber-500 text-xl">📜</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Postdoctoral Supervision</h4>
+              <p class="text-indigo-100/50 text-sm">
+                Full support for candidates seeking licensure in Kentucky,
+                focusing on advanced diagnostic reporting and practice
+                management.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0"
+            >
+              <span class="text-amber-500 text-xl">🔍</span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold">Assessment Specialization</h4>
+              <p class="text-indigo-100/50 text-sm">
+                Master the ADOS-2, MIGDAS-2, and complex differential diagnosis
+                under the guidance of seasoned evaluators.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-gradient-to-br from-indigo-900/40 to-indigo-950 border border-white/10 p-10 rounded-[3rem] shadow-2xl shadow-indigo-950/50"
+      >
+        <h3
+          class="text-[#D4CFC7] font-black text-xs uppercase tracking-widest mb-6 text-center"
+        >
+          The Mentorship Promise
+        </h3>
+        <blockquote
+          class="text-2xl font-black text-white italic leading-tight text-center mb-8"
+        >
+          "We don't just teach you how to test; we teach you how to see the
+          person behind the data."
+        </blockquote>
+        <div class="flex flex-wrap justify-center gap-3">
+          {
+            [
+              "Doctoral Hours",
+              "Case Consultation",
+              "EHR Training",
+              "Billing Insight",
+            ].map((tag) => (
+              <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-indigo-300 uppercase tracking-tighter">
+                {tag}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6 py-32">
+    <h2 class="text-4xl font-black text-white mb-16 text-center">
+      Why Choose <span class="text-amber-500">Twilight Psychology?</span>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        cultureHighlights.map((item) => (
+          <div class="p-8 border-l border-white/10 space-y-4">
+            <h3 class="text-xl font-black text-[#D4CFC7] italic uppercase tracking-tighter">
+              {item.title}
+            </h3>
+            <p class="text-indigo-200/50 text-sm leading-relaxed">
+              {item.desc}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto px-6">
+    <div
+      class="bg-amber-500 p-12 rounded-[4rem] text-indigo-950 flex flex-col md:flex-row items-center gap-8"
+    >
+      <div class="md:w-2/3">
+        <h2 class="text-4xl font-black mb-4 tracking-tighter">
+          Ready to Join Our Team?
+        </h2>
+        <p class="font-bold opacity-80 leading-relaxed">
+          Beautiful office space in Lexington with free parking and easy public
+          transit access. We are deeply committed to diversity, equity, and
+          inclusion—valuing the unique perspectives you bring to our team.
+        </p>
+      </div>
+      <div class="md:w-1/3 text-center">
+        <p class="text-[10px] font-black uppercase tracking-widest mb-4">
+          Questions?
+        </p>
+        <a href="tel:18596875843" class="text-lg font-black"
+          >&#128222; 859-687-5843</a
+        >
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
