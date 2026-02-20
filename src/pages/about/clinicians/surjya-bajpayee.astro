@@ -1,0 +1,38 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import '../../../styles/global.css';
+import { Image } from 'astro:assets';
+import surjyaPhoto from '../../../assets/images/staff/surjya-bajpayee.png';
+
+const specialties = ["Multicultural Counseling", "Adult Psychotherapy", "Identity Development", "Anxiety & Stress Management", "Trauma-Informed Care"];
+---
+
+<Layout title="Surjya Bajpayee, M.S. | Therapist at Twilight Psychology">
+  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
+    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                <Image src={surjyaPhoto} alt="Surjya Bajpayee" 
+                class="object-cover w-full h-full rounded-[2.5rem]" 
+                loading={'eager'}/>
+            </div>
+        </div>
+        <div class="flex-1 text-center lg:text-left">
+            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block">Therapist</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter">Surjya <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Bajpayee, M.S.</span></h1>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
+                {specialties.map(s => <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">{s}</span>)}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg">
+        <h2 class="text-3xl font-black text-white italic">Identity and Cultural Intersectionality.</h2>
+        <p>I am a clinical intern at Twilight Psychology under the supervision of Dr. Heather Cornett. I provide therapy for adults navigating life transitions, identity exploration, and the stressors of intersectional living. My approach is rooted in cultural humility and trauma-informed practices.</p>
+        <p>Having studied and practiced in diverse settings, I understand that mental health is deeply tied to our environments and histories. I offer a collaborative space where we can untangle complex emotions and move toward a more integrated sense of self.</p>
+    </section>
+  </main>
+</Layout>

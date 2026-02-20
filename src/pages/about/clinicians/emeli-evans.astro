@@ -1,0 +1,42 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import '../../../styles/global.css';
+import { Image } from 'astro:assets';
+import emeliPhoto from '../../../assets/images/staff/emeli-evans.png';
+
+const specialties = ["AuDHD Identity", "PDA (Pathological Demand Avoidance)", "High-Masking Support", "LGBTQ+ Affirming", "Neuro-Affirming Therapy"];
+---
+
+<Layout title="Emeli Evans, M.S., LPA | Neuro-Affirming Therapy Lexington">
+  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
+    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                <Image src={emeliPhoto} 
+                alt="Professional Portrait of Emeli Evans" 
+                    class="object-cover w-full h-full rounded-[2.5rem]" 
+                    loading={'eager'}/>
+            </div>
+        </div>
+        <div class="flex-1 text-center lg:text-left">
+            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block">Psychological Associate</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none">Emeli Evans, <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">M.S., LPA.</span></h1>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
+                {specialties.map(s => <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">{s}</span>)}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg">
+        <h2 class="text-3xl font-black text-white italic">Lived Experience meets Clinical Expertise.</h2>
+        <p>As an AuDHD person myself, I am passionate about helping neurodiverse kids, adolescents, and adults find their identity. I take a neuro-affirming approach to both assessment and therapy, moving away from "stereotypical" views of autism.</p>
+        <p>I specialize in identifying <strong>Pathological Demand Avoidance (PDA)</strong> and working with high-masking individuals. My goal is to support clients in unmasking and advocating for their sensory and regulation needs.</p>
+        <div class="bg-amber-500/10 border border-amber-500/30 p-8 rounded-3xl">
+           <p class="text-white font-bold italic">"I am passionate about fostering understanding of the autism spectrum and promoting neuroaffirmative practices among other professionals."</p>
+        </div>
+    </section>
+  </main>
+</Layout>

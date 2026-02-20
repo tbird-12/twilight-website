@@ -1,34 +1,44 @@
 ---
-import ClinicianLayout from '../../../layouts/ClinicianLayout.astro';
+import Layout from '../../../layouts/Layout.astro';
 import '../../../styles/global.css';
+import { Image } from 'astro:assets';
+import nicolaPhoto from '../../../assets/images/staff/nicola-allen.png'; 
+
+const specialties = ["Psychiatry", "Medication Management", "ADHD & PTSD", "Trauma-Informed Care", "Lifestyle Mindfulness"];
 ---
 
-<ClinicianLayout 
-  name="Dr. Alex Rivera" 
-  title="Licensed Professional Counselor"
-  specialty="Anxiety Disorders & Trauma Therapy"
-  imageEmoji="💙"
->
-  <h1>About My Practice</h1>
-  <p>
-    This is where your long bio goes. You can write as much as you want here. 
-    Because this is a standalone file, you can use standard HTML tags like 
-    <strong>bold text</strong>, <u>underlines</u>, or lists.
-  </p>
+<Layout title="Nicola Allen, PMHNP-BC | Medication Management Lexington">
+  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
+    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                <Image src={nicolaPhoto} 
+                alt="Professional Portrait of Nicola Allen" 
+                    class="object-cover w-full h-full rounded-[2.5rem]" 
+                    loading={'eager'}/>
+            </div>
+        </div>
+        <div class="flex-1 text-center lg:text-left">
+            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block">Psychiatric Nurse Practitioner</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter">Nicola Allen, <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic text-4xl md:text-6xl">MSN, PMHNP-BC</span></h1>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
+                {specialties.map(s => <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">{s}</span>)}
+            </div>
+        </div>
+      </div>
+    </section>
 
-  <h1>Specializations & Expertise</h1>
-  <ul>
-    <li>Evidence-based treatment for anxiety and panic disorders.</li>
-    <li>Trauma-informed care and EMDR therapy.</li>
-    <li>Cognitive-behavioral therapy for life transitions.</li>
-  </ul>
-
-  <h1>Education & Training</h1>
-  <p>
-    Dr. Rivera earned their credentials from... [Insert education history here]
-  </p>
-
-  <blockquote>
-    "I believe in meeting clients where they are and empowering them to find their own solutions."
-  </blockquote>
-</ClinicianLayout>
+    <section class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg">
+        <h2 class="text-3xl font-black text-white italic">Comprehensive, Patient-Centered Psychiatry.</h2>
+        <p>With 19 years of nursing experience in psychiatry, I provide a compassionate, judgment-free space for medication management. My training encompasses lifestyle modifications and mindfulness alongside evidence-based prescribing.</p>
+        <p>I began my journey at Hazard Community and Technical College, later earning my Master of Science in Nursing from Indiana Wesleyan University. I am deeply passionate about supporting individuals facing Depression, Anxiety, Sleep Disorders, and Trauma.</p>
+        <div class="p-8 bg-indigo-900/20 border border-white/5 rounded-[2.5rem] text-center">
+            <p class="text-amber-500 font-black text-xs uppercase tracking-widest mb-4">Availability</p>
+            <p class="text-2xl font-black text-white">Immediate Openings for Medication Management</p>
+            <a href="tel:859-687-5843" class="mt-8 inline-block px-10 py-4 bg-[#D4CFC7] text-indigo-950 font-black rounded-xl hover:bg-white transition-all">Request Appointment</a>
+        </div>
+    </section>
+  </main>
+</Layout>

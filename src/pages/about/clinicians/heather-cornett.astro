@@ -1,34 +1,127 @@
 ---
-import ClinicianLayout from '../../../layouts/ClinicianLayout.astro';
+import Layout from '../../../layouts/Layout.astro';
 import '../../../styles/global.css';
+import { Image } from 'astro:assets';
+import portrait from '../../../assets/images/staff/heather-cornett.png';
+
+const specialties = [
+  "High-Masking Autism & ADHD",
+  "Learning Disability Evaluations",
+  "Personality Disorders (BPD/SPMI)",
+  "Guardianship & Disability Claims",
+  "PsyPact Telehealth (40+ States)"
+];
+
+const education = [
+  { degree: "Ph.D. in Counseling Psychology", school: "Texas Woman's University", year: "2019" },
+  { degree: "M.S. in Counseling Psychology", school: "University of Kentucky", year: "2014" },
+  { degree: "APA-Accredited Internship", school: "Wichita Collaborative (WCPIP)", location: "Wichita, KS" }
+];
 ---
 
-<ClinicianLayout 
-  name="Dr. Heather Cornett" 
-  title="Clinical Psychologist" 
-  specialty="Adult ADHD & Autism Evaluations"
-  imageEmoji="🧠"
->
-  <h1>About My Practice</h1>
-  <p>
-    This is where your long bio goes. You can write as much as you want here. 
-    Because this is a standalone file, you can use standard HTML tags like 
-    <strong>bold text</strong>, <u>underlines</u>, or lists.
-  </p>
+<Layout title="Dr. Heather Cornett, Ph.D. | Founder of Twilight Psychology">
+  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
+    
+    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+                    <Image src={portrait} 
+                    alt="Professional Portrait of Dr. Heather Cornett" 
+                    class="object-cover w-full h-full rounded-[2.5rem]" 
+                    loading={'eager'}/>
+                </div>
+            </div>
+        </div>
 
-  <h1>Specializations & Expertise</h1>
-  <ul>
-    <li>Neuro-affirming diagnostic practices for adults.</li>
-    <li>Differential diagnosis of complex trauma vs. ADHD.</li>
-    <li>LGBTQ+ affirming therapy and gender-affirming care letters.</li>
-  </ul>
+        <div class="flex-1 text-center lg:text-left">
+            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block">
+                Founder & Licensed Psychologist
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none">
+                Heather Cornett, <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Ph.D., LP.</span>
+            </h1>
+            <p class="text-indigo-200/70 text-lg leading-relaxed max-w-2xl mb-8">
+                Specializing in comprehensive psychological evaluations for high-masking neurodivergent adults and complex diagnostic clarification.
+            </p>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+                {specialties.map(s => (
+                    <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">
+                        {s}
+                    </span>
+                ))}
+            </div>
+        </div>
+      </div>
+    </section>
 
-  <h1>Education & Training</h1>
-  <p>
-    Dr. Cornett earned her doctorate from... [Insert long education history here]
-  </p>
+    <section class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-8 space-y-8 text-indigo-100/80 text-lg leading-relaxed">
+            <h2 class="text-3xl font-black text-white italic tracking-tight">A Neuro-Affirming Approach to Clarity.</h2>
+            <p>
+                Hello! I am a Kentucky native and the founder of Twilight Psychology. My clinical expertise lies in working with individuals who have often been overlooked or misdiagnosed—particularly those who have learned to "mask" behaviors to fit into neurotypical environments.
+            </p>
+            <p>
+                Whether you are an adult seeking answers about Autism or ADHD for the first time, or a parent navigating a complex learning disability, I provide a thorough, evidence-based, and compassionate evaluation process. I believe that a diagnosis isn't a deficit; it's a vital piece of your identity that provides the roadmap for profound purpose and fulfillment.
+            </p>
+            <p class="border-l-4 border-amber-500 pl-8 italic bg-white/5 py-8 rounded-r-3xl">
+                "We don't just teach you how to test; we teach you how to see the person behind the data. My goal is to ensure you feel heard, understood, and empowered by your results."
+            </p>
+            <p>
+                Beyond my clinical work, I have served as an Assistant Professor of Psychology for three years and hold a PsyPact certificate, allowing me to provide psychological services via telehealth to clients in over 40 states.
+            </p>
+        </div>
 
-  <blockquote>
-    "My goal is to help clients understand their brains, not just diagnose their symptoms."
-  </blockquote>
-</ClinicianLayout>
+        <div class="lg:col-span-4 space-y-8">
+            <div class="bg-white/[0.03] border border-white/10 p-8 rounded-[2.5rem]">
+                <h3 class="text-amber-500 font-black text-xs uppercase tracking-widest mb-6">Education & Credentials</h3>
+                <div class="space-y-6">
+                    {education.map(item => (
+                        <div class="border-b border-white/5 pb-4 last:border-0">
+                            <p class="text-white font-bold text-sm">{item.degree}</p>
+                            <p class="text-indigo-300/60 text-xs">{item.school}</p>
+                            {item.location && <p class="text-indigo-300/40 text-[10px] mt-1 uppercase">{item.location}</p>}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            <div class="p-8 bg-indigo-900/20 border border-white/5 rounded-[2.5rem]">
+                <h3 class="text-amber-500 font-black text-xs uppercase tracking-widest mb-4">Outside the Clinic</h3>
+                <p class="text-sm text-indigo-100/60 leading-relaxed italic">
+                    When I'm not in the office, you’ll likely find me diving into a true crime documentary, playing video games, or spending time with my large orange tabby cat. I am a dedicated BIPOC and LGBTQ+ ally.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 py-24">
+        <div class="bg-amber-500 p-12 rounded-[4rem] text-indigo-950 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-4xl font-black mb-4 tracking-tighter">Current Availability</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-8 my-8">
+                    <div class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10">
+                        <p class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60">Evaluations</p>
+                        <p class="text-xl font-black">Accepting New Clients</p>
+                    </div>
+                    <div class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10">
+                        <p class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60">Individual Therapy</p>
+                        <p class="text-xl font-black opacity-40 italic">Waitlist Only</p>
+                    </div>
+                </div>
+                <p class="font-bold opacity-80 mb-10 max-w-xl mx-auto italic leading-relaxed">
+                    Dr. Cornett provides evaluations for ages 2 and up in Lexington, KY and nationwide via Telehealth.
+                </p>
+                <a href="https://heatherlcornett.clientsecure.me/contact-widget" class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
+                    Schedule an Intake
+                </a>
+            </div>
+            <div class="absolute -bottom-10 -right-10 text-[12rem] font-black text-indigo-950/5 select-none uppercase">PsyPact</div>
+        </div>
+    </section>
+
+  </main>
+</Layout>
