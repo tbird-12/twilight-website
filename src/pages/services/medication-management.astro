@@ -1,0 +1,201 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import "../../styles/global.css";
+
+const medicationApproach = [
+  {
+    title: "Collaborative Choice",
+    detail:"We discuss the risks and benefits openly. You are the expert on your body; we are the experts on the medicine."
+  },
+  {
+    title: "Symptom Tracking",
+    detail:"Regular follow-ups to monitor effectiveness and adjust dosages to minimize side effects."
+  },
+  {
+    title: "Holistic Integration",
+    detail:
+      "Coordinating care with your therapist and testing psychologist for a 360-degree view of your health."
+  },
+  {
+    title: "GeneSight® Testing",
+    detail:
+      "Optional pharmacogenomic testing to see how your DNA may affect your response to certain medications."
+  },
+];
+---
+
+<ServiceLayout 
+name="Medication Management"
+description="Twilight Psychology">
+  <section class="relative py-24 px-6 overflow-hidden border-b border-white/5">
+    <div class="absolute inset-0 z-0 opacity-10">
+      <img
+        src="/images/medication-management-abstract.jpg"
+        class="w-full h-full object-cover"
+        alt="Molecular abstract design"
+      />
+    </div>
+    <div class="max-w-4xl mx-auto text-center relative z-20">
+      <span
+        class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full"
+      >
+        Psychiatric Care
+      </span>
+      <h1
+        class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]"
+      >
+        Medication <br /><span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+          >Management.</span
+        >
+      </h1>
+      <p
+        class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed"
+      >
+        Thoughtful, measured, and supportive psychiatric care led by our
+        specialized Nurse Practitioner.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 mt-20">
+    <div class="lg:col-span-2 space-y-12">
+      <section
+        class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
+      >
+        <h2 class="text-3xl font-black text-white mb-6 tracking-tight">
+          A Balanced Approach
+        </h2>
+        <div class="space-y-6 text-indigo-100/80 leading-relaxed text-lg">
+          <p>
+            Medication can be a powerful tool in managing symptoms of ADHD,
+            anxiety, depression, and other neurological differences. However, it
+            is never a "one-size-fits-all" solution.
+          </p>
+          <p>
+            Our <span class="text-amber-400"
+              >Psychiatric Nurse Practitioner</span
+            > works closely with you to find the right balance, ensuring that any
+            treatment plan respects your lifestyle, your values, and your long-term
+            wellness goals.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-black text-white mb-10">
+          Our Clinical Framework
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {
+            medicationApproach.map((item) => (
+                <div class="group p-8 bg-white/[0.02] border border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all">
+                <div class="text-4xl font-black text-white/10 mb-4 group-hover:text-amber-500/20 transition-colors">✦</div>
+                <h3 class="text-white font-black mb-2">{item.title}</h3>
+                <p class="text-indigo-200/50 text-sm leading-relaxed">{item.detail}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section
+        class="bg-indigo-900/20 border border-indigo-800/50 p-10 rounded-[2.5rem]"
+      >
+        <h2 class="text-2xl font-black text-white mb-6">
+          Your First Appointment
+        </h2>
+        <p class="text-indigo-200/70 mb-8 leading-relaxed">
+          To provide the safest care, please ensure you have the following ready
+          for your intake:
+        </p>
+        <div class="grid md:grid-cols-2 gap-4">
+          {
+            [
+              "Previous psychiatric records",
+              "A list of all current supplements",
+              "Recent blood work (if available)",
+              "Your pharmacy contact information",
+            ].map((item) => (
+              <div class="flex items-center gap-3 text-indigo-100/80 text-sm font-bold">
+                <div class="w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                {item}
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+
+    <aside class="space-y-8">
+      <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+        <h3 class="text-xl font-black text-white mb-4">Meet the Provider</h3>
+        <div class="space-y-4">
+          <p class="text-indigo-200/60 text-sm leading-relaxed">
+            Our medication management is led by experienced psychiatric
+            professionals specializing in neuro-affirming care.
+          </p>
+          <a
+            href="/about/clinicians/nicola-allen"
+            class="text-amber-500 font-black text-xs uppercase tracking-widest hover:text-white transition-colors"
+          >
+            View Provider Profile →
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] text-center"
+      >
+        <h3 class="text-2xl font-black text-white mb-4">Take the Next Step</h3>
+        <p class="text-indigo-200/60 text-sm mb-8 leading-relaxed">
+          Book a psychiatric intake session to discuss your options.
+        </p>
+        <a
+          href="https://heatherlcornett.clientsecure.me/contact-widget"
+          class="block w-full py-4 bg-[#D4CFC7] text-indigo-950 font-black rounded-xl hover:bg-white transition-all shadow-lg shadow-[#D4CFC7]/10"
+        >
+          Request Intake
+        </a>
+      </div>
+
+      <div class="p-8 bg-amber-500 rounded-[2.5rem] text-indigo-950">
+        <h4 class="font-black uppercase text-xs tracking-widest mb-2">
+          Insurance Covered
+        </h4>
+        <p class="text-sm font-bold leading-tight">
+          Medication management is covered by KY Medicaid, Medicare, and most major
+          insurance providers.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-6 mt-32">
+    <div
+      class="p-12 bg-indigo-900/20 border border-white/5 rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-8"
+    >
+      <div class="max-w-md">
+        <h2 class="text-3xl font-black text-white mb-4 italic">
+          Complete Support.
+        </h2>
+        <p class="text-indigo-200/60">
+          We often recommend a combination of therapy and medication for the
+          best clinical outcomes.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="/services/therapy"
+          class="px-6 py-3 bg-white/5 border border-white/10 text-white font-black rounded-xl hover:bg-white/10 transition-all"
+          >Individual Therapy</a
+        >
+        <a
+          href="/services/psychological-evaluations"
+          class="px-6 py-3 bg-white/5 border border-white/10 text-white font-black rounded-xl hover:bg-white/10 transition-all"
+          >Testing & Diagnosis</a
+        >
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
