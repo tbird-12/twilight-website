@@ -1,8 +1,9 @@
 ---
 import logo from '../assets/images/logo.png';
-const siteUrl = Astro.site || 'https://twilightpsychology.com';
-const imagePath = logo.src;
-const imageUrl = new URL(imagePath, siteUrl).href;
+
+const siteUrl = Astro.site || 'http://localhost:4321';
+
+const imageUrl = new URL(logo.src, siteUrl).href;
 
 const { type = 'WebSite', name, description, ...extra } = Astro.props;
 
@@ -11,7 +12,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "MentalHealthAndBehavioralServices",
   "name": "Psychological Testing at Twilight Psychology",
-  "description": "Twilight Psychology PLLC offers comprehensive psychological testing services to help individuals understand their mental health and cognitive functioning.",
+  "description": "Twilight Psychology PLLC offers comprehensive psychological testing services, psychotherapy, and medication management to help individuals understand their mental health and cognitive functioning.",
   
   "image": {
     "@type": "ImageObject",
@@ -19,7 +20,9 @@ const schema = {
     "height": "400",
     "width": "400"
   },
-
+  
+  "logo": imageUrl,
+  
   "provider": {
     "@type": "LocalBusiness",
     "name": "Twilight Psychology PLLC",
@@ -31,15 +34,17 @@ const schema = {
       "https://www.instagram.com/twilight_psychology_pllc/",
       "https://www.linkedin.com/company/twilight-psychology"
     ],
+
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "501 Darby Creek Rd, Suite 7",
       "addressLocality": "Lexington",
       "addressRegion": "KY",
-      "addressCountry": "USA",
+      "addressCountry": "US",
       "postalCode": "40509"
     }
   }
+  
 };
 ---
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
