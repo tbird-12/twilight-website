@@ -540,64 +540,67 @@ const clientResources = [
 </header>
 
 <script>
-  // Mobile menu toggle
-  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const menuIcon = document.getElementById("menuIcon");
-  const closeIcon = document.getElementById("closeIcon");
+  // Defer script execution until after page render
+  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuIcon = document.getElementById("menuIcon");
+    const closeIcon = document.getElementById("closeIcon");
 
-  mobileMenuBtn?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-    menuIcon?.classList.toggle("hidden");
-    closeIcon?.classList.toggle("hidden");
-  });
-
-  // Dropdown toggles
-  const dropdowns = [
-    { toggle: "aboutToggle", content: "aboutContent", icon: "aboutIcon" },
-    {
-      toggle: "servicesToggle",
-      content: "servicesContent",
-      icon: "servicesIcon",
-    },
-    {
-      toggle: "specialtiesToggle",
-      content: "specialtiesContent",
-      icon: "specialtiesIcon",
-    },
-    {
-      toggle: "resourcesToggle",
-      content: "resourcesContent",
-      icon: "resourcesIcon",
-    },
-    {
-      toggle: "clinicalStaffToggle",
-      content: "clinicalStaffContent",
-      icon: "clinicalStaffIcon",
-    },
-  ];
-
-  dropdowns.forEach(({ toggle, content, icon }) => {
-    const toggleBtn = document.getElementById(toggle);
-    const contentDiv = document.getElementById(content);
-    const iconSvg = document.getElementById(icon);
-
-    toggleBtn?.addEventListener("click", () => {
-      contentDiv?.classList.toggle("hidden");
-      iconSvg?.classList.toggle("rotate-180");
+    mobileMenuBtn?.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+      menuIcon?.classList.toggle("hidden");
+      closeIcon?.classList.toggle("hidden");
     });
-  });
 
-  // nested About toggles (one per nested item)
-  const nestedToggles = document.querySelectorAll('[id^="aboutNestedToggle-"]');
-  nestedToggles.forEach((btn) => {
-    const slug = btn.id.replace("aboutNestedToggle-", "");
-    const content = document.getElementById(`aboutNestedContent-${slug}`);
-    const icon = document.getElementById(`aboutNestedIcon-${slug}`);
+    // Dropdown toggles
+    const dropdowns = [
+      { toggle: "aboutToggle", content: "aboutContent", icon: "aboutIcon" },
+      {
+        toggle: "servicesToggle",
+        content: "servicesContent",
+        icon: "servicesIcon",
+      },
+      {
+        toggle: "specialtiesToggle",
+        content: "specialtiesContent",
+        icon: "specialtiesIcon",
+      },
+      {
+        toggle: "resourcesToggle",
+        content: "resourcesContent",
+        icon: "resourcesIcon",
+      },
+      {
+        toggle: "clinicalStaffToggle",
+        content: "clinicalStaffContent",
+        icon: "clinicalStaffIcon",
+      },
+    ];
 
-    btn.addEventListener("click", () => {
-      content?.classList.toggle("hidden");
-      icon?.classList.toggle("rotate-180");
+    dropdowns.forEach(({ toggle, content, icon }) => {
+      const toggleBtn = document.getElementById(toggle);
+      const contentDiv = document.getElementById(content);
+      const iconSvg = document.getElementById(icon);
+
+      toggleBtn?.addEventListener("click", () => {
+        contentDiv?.classList.toggle("hidden");
+        iconSvg?.classList.toggle("rotate-180");
+      });
+    });
+
+    // nested About toggles (one per nested item)
+    const nestedToggles = document.querySelectorAll('[id^="aboutNestedToggle-"]');
+    nestedToggles.forEach((btn) => {
+      const slug = btn.id.replace("aboutNestedToggle-", "");
+      const content = document.getElementById(`aboutNestedContent-${slug}`);
+      const icon = document.getElementById(`aboutNestedIcon-${slug}`);
+
+      btn.addEventListener("click", () => {
+        content?.classList.toggle("hidden");
+        icon?.classList.toggle("rotate-180");
+      });
     });
   });
 </script>

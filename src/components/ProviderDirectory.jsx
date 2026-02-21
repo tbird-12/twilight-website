@@ -35,7 +35,7 @@ export default function ProviderDirectory() {
             {services.map(s => <option key={s} value={s}>{s}</option>)}
           </select>
         </div>
-        
+
         <div className="filter-group">
           <label>State</label>
           <select value={state} onChange={(e) => setState(e.target.value)}>
@@ -55,7 +55,7 @@ export default function ProviderDirectory() {
           </select>
         </div>
 
-        <button className="reset-btn" onClick={() => {setService(''); setState(''); setPayType('');}}>Reset</button>
+        <button className="reset-btn" onClick={() => { setService(''); setState(''); setPayType(''); }}>Reset</button>
       </div>
 
       <div className="provider-grid">
@@ -71,13 +71,13 @@ export default function ProviderDirectory() {
                 </div>
                 <button className="ins-toggle-btn" onClick={() => toggleIns(idx)}>Accepted Insurances →</button>
                 <div className="wait-info">
-                   <div className="section-title">Wait Times</div>
-                   {Object.entries(p.wait_times).map(([k, v]) => (
-                     <div className="wait-item" key={k}>
-                       <span className="wait-label">{k.replace(/_/g, ' ')}</span>
-                       <span className="wait-value">{v}</span>
-                     </div>
-                   ))}
+                  <div className="section-title">Wait Times</div>
+                  {Object.entries(p.wait_times).map(([k, v]) => (
+                    <div className="wait-item" key={k}>
+                      <span className="wait-label">{k.replace(/_/g, ' ')}</span>
+                      <span className="wait-value">{v}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             ) : (
