@@ -1,18 +1,43 @@
 ---
+import logo from '../assets/images/logo.png';
+const siteUrl = Astro.site || 'https://twilightpsychology.com';
+const imagePath = logo.src;
+const imageUrl = new URL(imagePath, siteUrl).href;
+
 const { type = 'WebSite', name, description, ...extra } = Astro.props;
+
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "PsychologicalTesting",
+  "@type": "MentalHealthAndBehavioralServices",
   "name": "Psychological Testing at Twilight Psychology",
+  "description": "Twilight Psychology PLLC offers comprehensive psychological testing services to help individuals understand their mental health and cognitive functioning.",
+  
+  "image": {
+    "@type": "ImageObject",
+    "url": imageUrl,
+    "height": "400",
+    "width": "400"
+  },
+
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Twilight Psychology",
+    "name": "Twilight Psychology PLLC",
+    "telephone": "(859) 687-5843",
+    "priceRange": "$$",
+    "url": "https://twilightpsychology.com",
+    "sameAs": [
+      "https://www.facebook.com/people/Twilight-Psychology-PLLC/61555270131003",
+      "https://www.instagram.com/twilight_psychology_pllc/",
+      "https://www.linkedin.com/company/twilight-psychology"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "501 Darby Creek Rd, Suite 7",
       "addressLocality": "Lexington",
-      "addressRegion": "KY"
+      "addressRegion": "KY",
+      "addressCountry": "USA",
+      "postalCode": "40509"
     }
   }
 };
