@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import '../../styles/global.css';
+import emeliPhoto from '../../assets/images/staff/emeli-evans.png';
+---
+
+<ServiceLayout name="PDA Profile Evaluations | Twilight Psychology"
+  description="Pathological Demand Avoidance (PDA) profile evaluations in Kentucky."
+>
+
+<section class="max-w-4xl mx-auto px-6 py-20 space-y-24">
+    
+    <div class="space-y-8">
+        <header class="space-y-4">
+            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter italic">
+                What is PDA?
+            </h2>
+            <div class="h-1 w-20 bg-amber-500"></div>
+        </header>
+
+        <div class="prose prose-invert prose-indigo lg:prose-xl max-w-none">
+            <p class="text-indigo-100/90 leading-relaxed text-xl">
+                PDA stands for <strong>Pathological Demand Avoidance</strong>, often reframed by the neurodivergent community as a <strong>Pervasive Drive for Autonomy</strong>. It is a specific profile on the autism spectrum.
+            </p>
+            <p class="text-indigo-100/70 leading-relaxed">
+                Individuals with this profile experience an intense, anxiety-driven need for control. Everyday demands—even those the person wants to do—can trigger a "fight-flight-freeze" response. This is not a behavioral choice; it is a fundamental aspect of how their nervous system processes the world.
+            </p>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 md:p-12">
+            <h3 class="text-amber-500 font-black uppercase text-xs tracking-widest mb-8">Clinical Value & Outcomes</h3>
+            <ul class="grid md:grid-cols-2 gap-8">
+                <li class="space-y-2">
+                    <span class="text-white font-bold block">Accommodations</span>
+                    <p class="text-sm text-indigo-200/60">Tailored educational and workplace adjustments that prioritize autonomy.</p>
+                </li>
+                <li class="space-y-2">
+                    <span class="text-white font-bold block">Family Support</span>
+                    <p class="text-sm text-indigo-200/60">Identifying low-demand parenting strategies that reduce household conflict.</p>
+                </li>
+                <li class="space-y-2">
+                    <span class="text-white font-bold block">Identity Clarity</span>
+                    <p class="text-sm text-indigo-200/60">Moving from a "defiant" label to a neuro-affirming understanding of self.</p>
+                </li>
+                <li class="space-y-2">
+                    <span class="text-white font-bold block">Insurance Coverage</span>
+                    <p class="text-sm text-indigo-200/60">Evaluations are covered by most major insurance providers.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row items-center gap-10 p-10 bg-indigo-900/20 border border-white/5 rounded-[3rem]">
+        <div class="w-48 h-48 flex-shrink-0 rounded-2xl overflow-hidden border-2 border-amber-500/20 shadow-2xl">
+            <Image 
+                src={emeliPhoto} 
+                alt="Emeli Evans" 
+                class="w-full h-full object-cover grayscale"
+            />
+        </div>
+        <div class="space-y-4 text-center md:text-left">
+            <p class="text-amber-500 font-black text-[10px] uppercase tracking-[0.4em]">Specializing Clinician</p>
+            <h3 class="text-3xl font-black text-white">Emeli Evans, <span class="text-[#D4CFC7] italic">M.S., LPA</span></h3>
+            <p class="text-indigo-200/80 leading-relaxed">
+                Emeli provides neuro-affirming care specifically for the AuDHD and PDA community, bringing both clinical expertise and lived experience to the assessment process.
+            </p>
+            <a href="/about/clinicians/emeli-evans" class="inline-block text-xs font-black uppercase text-amber-500 hover:text-white transition-colors">
+                Read Full Bio →
+            </a>
+        </div>
+    </div>
+
+    <div class="text-center space-y-16 pb-12">
+        <div class="space-y-2">
+            <h3 class="text-4xl font-black text-white tracking-tighter">Ready to begin?</h3>
+            <p class="text-indigo-200/60 font-medium">Current waitlist for evaluations: <span class="text-white">Approx. 2 Months</span></p>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="mailto:office@twilightpsychology.com" class="px-10 py-5 bg-[#D4CFC7] text-indigo-950 font-black rounded-2xl hover:bg-white transition-all uppercase tracking-widest text-xs">
+                Email the Practice Manager
+            </a>
+            <a href="tel:8596875843" class="px-10 py-5 bg-white/5 border border-white/10 text-white font-black rounded-2xl hover:bg-white/10 transition-all uppercase tracking-widest text-xs">
+                Call 859-687-5843
+            </a>
+        </div>
+    </div>
+
+</section>
+</ServiceLayout>
