@@ -1,50 +1,46 @@
 ---
-import logo from '../assets/images/logo.png';
+import logo from "../assets/images/logo.png";
 
-const siteUrl = Astro.site || 'http://localhost:4321';
+const siteUrl = Astro.site || "http://localhost:4321";
 
 const imageUrl = new URL(logo.src, siteUrl).href;
 
-const { type = 'WebSite', name, description, ...extra } = Astro.props;
-
+const { type = "WebSite", name, description, ...extra } = Astro.props;
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "MentalHealthAndBehavioralServices",
-  "name": "Psychological Testing at Twilight Psychology",
-  "description": "Twilight Psychology PLLC offers comprehensive psychological testing services, psychotherapy, and medication management to help individuals understand their mental health and cognitive functioning.",
-  
-  "image": {
-    "@type": "ImageObject",
-    "url": imageUrl,
-    "height": "400",
-    "width": "400"
+  "@type": "MedicalBusiness",
+  name: "Twilight Psychology",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "501 Darby Creed Rd, Suite 7",
+    addressLocality: "Lexington",
+    addressRegion: "KY",
+    postalCode: "40509",
+    addressCountry: "US",
   },
-  
-  "logo": imageUrl,
-  
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Twilight Psychology PLLC",
-    "telephone": "(859) 687-5843",
-    "priceRange": "$$",
-    "url": "https://twilightpsychology.com",
-    "sameAs": [
-      "https://www.facebook.com/people/Twilight-Psychology-PLLC/61555270131003",
-      "https://www.instagram.com/twilight_psychology_pllc/",
-      "https://www.linkedin.com/company/twilight-psychology"
+  image: {
+    "@type": "ImageObject",
+    url: imageUrl,
+    height: "400",
+    width: "400",
+  },
+  logo: imageUrl,
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Psychological Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "PsychologicalTreatment",
+          name: "Cognitive Behavioral Therapy (CBT)",
+          description: "Evidence-based counseling for anxiety and depression.",
+        },
+      },
     ],
-
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "501 Darby Creek Rd, Suite 7",
-      "addressLocality": "Lexington",
-      "addressRegion": "KY",
-      "addressCountry": "US",
-      "postalCode": "40509"
-    }
-  }
-  
+  },
 };
 ---
+
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
