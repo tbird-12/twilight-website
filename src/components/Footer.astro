@@ -1,93 +1,123 @@
 ---
 const year = new Date().getFullYear();
-
+import { Icon } from "astro-icon/components";
 const links = [
-  { 
-    title: 'Client Resources', 
+  {
+    title: "Client Resources",
     items: [
-      { name: 'Online Testing FAQ', href: '/resources/faq' },
-      { name: 'Fees & Insurance', href: '/resources/fees' },
-      { name: 'Privacy Policy', href: '/privacy' },
-    ] 
+      { name: "Online Testing FAQ", href: "/resources/faq" },
+      { name: "Fees ", href: "/resources/fees" },
+      { name: "Insurance", href: "/resources/insurances-accepted" },
+      { name: "Privacy Policy", href: "/privacy" },
+    ],
   },
-  { 
-    title: 'Services', 
+  {
+    title: "Services",
     items: [
-      { name: 'ADHD Assessments', href: '/services/adhd-testing' },
-      { name: 'Autism Evaluations', href: '/services/autism-testing' },
-      { name: 'Therapy', href: '/services/therapy' },
-      { name: 'Medication Management', href: '/services/medication-management' },
-    ] 
-  }
+      { name: "ADHD Assessments", href: "/services/adhd-testing" },
+      { name: "Autism Evaluations", href: "/services/autism-testing" },
+      { name: "Therapy", href: "/services/therapy" },
+      {
+        name: "Medication Management",
+        href: "/services/medication-management",
+      },
+    ],
+  },
 ];
 
 // Social Media Placeholders
 const socials = [
-  { label: 'Facebook', icon: 'facebook', href: '#' },
-  { label: 'Instagram', icon: 'instagram', href: '#' },
-  { label: 'LinkedIn', icon: 'linkedin', href: '#' },
+  { label: "Facebook", icon: "mdi:facebook", href: "https://www.facebook.com/people/Twilight-Psychology-PLLC/61555270131003/" },
+  { label: "Instagram", icon: "mdi:instagram", href: "https://www.instagram.com/twilight_psychology_pllc/" },
+  { label: "LinkedIn", icon: "mdi:linkedin", href: "https://www.linkedin.com/company/twilight-psychology/?viewAsMember=true" },
 ];
 ---
 
-<footer class="relative border-t-2 border-amber-900 dark:border-amber-900 bg-slate-900 dark:bg-slate-900">
+<footer
+  class="relative border-t-2 border-amber-900 dark:border-amber-900 bg-slate-900 dark:bg-slate-900"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-      
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl text-stone-300 transition-transform duration-200 hover:scale-105" href="/">
+          <a
+            class="inline-block font-bold text-xl text-stone-300 transition-transform duration-200 hover:scale-105"
+            href="/"
+          >
             Twilight Psychology, PLLC
           </a>
         </div>
         <p class="text-sm text-indigo-100 mb-4">
-          Comprehensive, accurate, and affordable psychological evaluations, medication management, and therapy.
+          Comprehensive, accurate, and affordable psychological evaluations,
+          medication management, and therapy.
         </p>
-        
+
+        <a href="https://www.google.com/maps/place/501+Darby+Creek+Rd,+Lexington,+KY+40509" target="_blank" class="text-sm text-indigo-100 mb-4">
+          501 Darby Creek Rd. Suite 7, Lexington, KY 40509
+        </a>
+
         <div class="flex gap-3">
-          {socials.map((social) => (
-            <a href={social.href} class="text-indigo-200 hover:bg-indigo-900 focus:outline-none focus:ring-4 focus:ring-indigo-800 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label={social.label}>
-              <span class="w-5 h-5 bg-indigo-600 rounded-full italic text-[10px] flex items-center justify-center text-white">
-                {social.label.charAt(0)}
-              </span>
-            </a>
-          ))}
+          {
+            socials.map((social) => (
+              <a
+                href={social.href}
+                class="text-indigo-200 hover:bg-indigo-900 focus:outline-none focus:ring-4 focus:ring-indigo-800 rounded-lg text-sm p-2.5 inline-flex items-center"
+                aria-label={social.label}
+              >
+                <Icon name={social.icon} class="w-5 h-5 text-white" />
+              </a>
+            ))
+          }
         </div>
       </div>
 
-      {links.map(({ title, items }) => (
-        <div class="col-span-6 md:col-span-3 lg:col-span-2">
-          <div class="text-indigo-100 font-bold mb-3 uppercase tracking-wider text-xs">{title}</div>
-          <ul class="text-sm">
-            {items.map(({ name, href }) => (<li class="mb-2">
-              <a 
-              class="text-indigo-200 hover:text-amber-400 transition-colors duration-200" 
-              href={href}
-              >
-              {name}</a>
-            </li>
-          ))}
-          </ul>
-        </div>
-      ))}
+      {
+        links.map(({ title, items }) => (
+          <div class="col-span-6 md:col-span-3 lg:col-span-2">
+            <div class="text-indigo-100 font-bold mb-3 uppercase tracking-wider text-xs">
+              {title}
+            </div>
+            <ul class="text-sm">
+              {items.map(({ name, href }) => (
+                <li class="mb-2">
+                  <a
+                    class="text-indigo-200 hover:text-amber-400 transition-colors duration-200"
+                    href={href}
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
 
       <div class="col-span-12 md:col-span-3 lg:col-span-2">
-        <div class="text-indigo-100 font-bold mb-3 uppercase tracking-wider text-xs">Practice Info</div>
+        <div
+          class="text-indigo-100 font-bold mb-3 uppercase tracking-wider text-xs"
+        >
+          Practice Info
+        </div>
         <div class="text-sm text-indigo-200 space-y-3">
           <div>
-            <p class="font-semibold text-indigo-100">Phone & Fax</p>
-            <p>P: (859) 687-5843</p>
-            <p>F: (502) 324-3210</p> </div>
+            <p class="font-semibold text-indigo-100">Contact Us</p>
+            <p>Phone: (859) 687-5843</p>
+            <p>Fax: (502) 324-3210</p>
+            <p>Email: <a href="mailto:office@twilightpsychology.com" class="text-indigo-200 hover:text-amber-400 transition-colors duration-200">office@twilightpsychology.com</a></p>
+          </div>
           <div>
             <p class="font-semibold text-indigo-100">Hours of Operation</p>
-            <p>Mon - Sun: 8:00 AM - 7:00 PM EST</p>
-            <p>Sat - Sun: By appointment </p>
+            <p>Mon - Fri: 8:00 AM - 7:00 PM</p>
+            <p>Sat - Sun: By appointment</p>
           </div>
         </div>
       </div>
-
     </div>
 
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-indigo-900">
+    <div
+      class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-indigo-900"
+    >
       <div class="text-sm text-indigo-200">
         © {year} · Twilight Psychology PLLC. Lexington, KY. All rights reserved.
       </div>
