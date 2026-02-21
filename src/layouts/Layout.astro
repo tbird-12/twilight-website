@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import Announcements from "../components/Announcements.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import favicon from "../assets/favicons/favicon.svg";
+import Schema from "../components/Schema.astro";
 
 // This is the "Frontmatter" where you can pass data to the layout
 interface Props {
@@ -29,6 +30,10 @@ const { title, description, keywords } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     {description && <meta name="description" content={description} />}
     {keywords && <meta name="keywords" content={keywords} />}
+
+    
+    <Schema type="MentalHealthOrganization" name="Twilight Psychology" />
+    <slot name="page-schema" />
 
     <script is:inline>
       document.documentElement.classList.add("dark");

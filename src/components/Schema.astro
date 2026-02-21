@@ -1,0 +1,20 @@
+---
+const { type = 'WebSite', name, description, ...extra } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "PsychologicalTesting",
+  "name": "Psychological Testing at Twilight Psychology",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Twilight Psychology",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "501 Darby Creek Rd, Suite 7",
+      "addressLocality": "Lexington",
+      "addressRegion": "KY"
+    }
+  }
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
