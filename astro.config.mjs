@@ -7,11 +7,12 @@ import icon from "astro-icon";
 
 import sitemap from "@astrojs/sitemap";
 
-// https://astro.build/config
+import partytown from "@astrojs/partytown";
+
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [preact(), icon(), sitemap()],
+  integrations: [preact(), icon(), sitemap(), partytown()],
   site: "https://www.twilightpsychology.com",
 });
