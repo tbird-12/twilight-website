@@ -1,12 +1,126 @@
 ---
-/* src/components/AdvantagesPremiumZigZag.astro */
-
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+
+const categories = [
+  {
+    title: "Neurodivergence & Testing",
+    concerns: [
+      "Autism Spectrum (including High-Masking)",
+      "ADHD (Adult & Pediatric)",
+      "PDA (Pathological Demand Avoidance) Profile",
+      "Learning Disability Evaluations",
+      "Medical Marijuana Consultations",
+      "Comprehensive Neuropsychological Testing",
+    ],
+  },
+  {
+    title: "Clinical Specialties",
+    concerns: [
+      "Depression & Persistent Low Mood",
+      "Anxiety & Panic Disorders",
+      "Trauma & PTSD",
+      "Bipolar Disorder",
+      "Borderline Personality Disorder (BPD)",
+      "Grief & Loss",
+    ],
+  },
+  {
+    title: "Identity & Specialized Advocacy",
+    concerns: [
+      "LGBTQ+ Issues & Gender Affirming Care",
+      "Women’s Health & Reproductive Transitions",
+      "Health at Every Size (HAES) Approach",
+      "Intimacy & Relationship Therapy",
+      "Life Changes & Self-Esteem Issues",
+    ],
+  },
+];
 ---
 
-<Layout title="Our Services | Strengths of Twilight Psychology">
-  <main class="bg-indigo-950 min-h-screen py-16 px-4">
-    
+<Layout title="Concerns & Services | Twilight Psychology">
+  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
+    <section class="pt-32 pb-20 px-6 text-center border-b border-white/5">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter">
+          Areas of <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+            >Care.</span
+          >
+        </h1>
+        <p class="text-indigo-200/60 text-lg max-w-2xl mx-auto">
+          From diagnostic clarification to identity-affirming therapy, we
+          provide specialized support for the complex intersections of the human
+          experience.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-3 gap-12">
+        {
+          categories.map((cat) => (
+            <div class="space-y-8">
+              <h2 class="text-xs font-black uppercase tracking-[0.3em] text-amber-500 border-b border-amber-500/20 pb-4">
+                {cat.title}
+              </h2>
+              <ul class="space-y-4">
+                {cat.concerns.map((item) => (
+                  <li class="flex items-start gap-3 group">
+                    <span class="text-amber-500 mt-1 group-hover:translate-x-1 transition-transform">
+                      →
+                    </span>
+                    <span class="text-indigo-100/80 group-hover:text-white transition-colors text-lg font-medium leading-tight">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-6 mt-12">
+      <div
+        class="bg-white/5 border border-white/10 p-12 rounded-[3rem] relative overflow-hidden"
+      >
+        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3
+              class="text-3xl font-black text-[#D4CFC7] italic mb-4 leading-tight"
+            >
+              Our approach is rooted in <br /> validation, not pathology.
+            </h3>
+            <p class="text-indigo-200/60 leading-relaxed">
+              Whether you are seeking a formal diagnosis or a safe space to
+              process life's transitions, we prioritize your lived experience.
+              All our clinicians are neuro affirming and trauma-informed, with
+              specialized training in the unique challenges faced by
+              marginalized communities.
+            </p>
+          </div>
+          <div class="flex justify-center">
+            <div
+              class="h-px w-full bg-gradient-to-r from-transparent via-amber-500 to-transparent md:h-32 md:w-px"
+            >
+            </div>
+            <div class="hidden md:block pl-12">
+              <p
+                class="text-sm font-black text-white uppercase tracking-widest mb-2"
+              >
+                Ready to start?
+              </p>
+
+              <a href="tel:8596875843"
+                class="block text-amber-500 font-black text-2xl hover:text-white transition-colors mb-2">
+                &#128222; 859-687-5843
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
