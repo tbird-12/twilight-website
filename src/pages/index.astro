@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
-import pic1 from "../assets/images/pic1.jpg";
-import pic2 from "../assets/images/pic2.jpg";
-import pic3 from "../assets/images/pic3.jpg";
-import hero from "../assets/images/hero.jpg";
+import { Image } from 'astro:assets';
+
+import pic1 from "../assets/images/pic1.webp";
+import pic2 from "../assets/images/pic2.webp";
+import pic3 from "../assets/images/pic3.webp";
+import hero from "../assets/images/hero.webp";
 
 const services = [
   {
@@ -50,7 +52,7 @@ const services = [
         >
           Neurodiverse? <br />
           <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
             >Empower Your Future.</span
           >
         </h1>
@@ -83,8 +85,8 @@ const services = [
       <div class="max-w-6xl mx-auto">
         <div class="relative">
           <div class="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full"></div>
-          <img 
-            src={hero.src}
+          <Image 
+            src={hero}
             alt="Therapy session"
             class="relative w-full h-75 md:h-125 object-cover rounded-3xl shadow-2xl border border-indigo-800"
           />
@@ -203,10 +205,12 @@ const services = [
             services.map((service) => (
               <div class="group relative flex flex-col rounded-[2.5rem] bg-white/2 border border-white/5 hover:border-amber-500/30 transition-all duration-500 overflow-hidden">
                 <div class="aspect-4/3 overflow-hidden relative">
-                  <img
-                    src={service.image.src}
+                  <Image
+                    src={service.image}
                     alt={service.title}
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                    width={600}
+                    height={450}
+                    class="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                   />
                   <div class="absolute inset-0 bg-linear-to-t from-indigo-950 via-transparent to-transparent" />
                 </div>
