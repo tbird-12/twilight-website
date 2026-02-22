@@ -1,0 +1,66 @@
+---
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import "../../../styles/global.css";
+import { providers } from "../../../data/staff";
+---
+
+<ServiceLayout
+  title="Clinicians of Twilight Psychology in Lexington, KY"
+  description="Meet our team of dedicated clinicians in Lexington, KY. 
+We are committed to providing compassionate care and support to our patients. Our experienced staff is here to help you on your journey to better health."
+  keywords="clinicians, Lexington KY, healthcare providers, medical staff, compassionate care, patient support"
+>
+  <section
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent"
+  >
+    <h1
+      class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none"
+    >
+      Hello! Meet Our <br /><span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+        >Clinicians</span
+      >
+    </h1>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        providers.map((person) => (
+          <a
+            href={`/about/clinicians/${person.slug}`}
+            class="group bg-gradient-to-br from-indigo-50 to-amber-50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-indigo-100"
+          >
+            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">
+              {person.name}
+            </h3>
+
+            <p class="text-sm font-semibold text-indigo-600 uppercase tracking-wide mb-4">
+              {person.spec}
+            </p>
+
+            <span class="text-amber-600 group-hover:text-amber-700 font-bold inline-flex items-center gap-2">
+              View Profile
+              <svg
+                class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M9 5l7 7-7 7" stroke-width="2" />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="max-w-7xl mx-auto mb-10 py-8 text-center">
+      <a
+        href="/about/staff/samantha-rodarte"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
+      >
+        <span aria-hidden="true">←</span>
+        Meet our staff
+      </a>
+    </div>
+  </section>
+</ServiceLayout>
