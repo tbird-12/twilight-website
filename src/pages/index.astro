@@ -1,31 +1,59 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+import { Icon } from "astro-icon/components";
 import { Image } from 'astro:assets';
 
-import pic1 from "../assets/images/pic1.webp";
-import pic2 from "../assets/images/pic2.webp";
-import pic3 from "../assets/images/pic3.webp";
+
 import hero from "../assets/images/hero.webp";
 
 const services = [
   {
     title: "Psychological Evaluations",
     desc: "Comprehensive evaluations for ADHD, Autism, and Learning Disorders with a neuro-affirming lens.",
-    image: pic1,
+    icon: "mdi:number-one-circle-outline",
     link: "/services/psychological-evaluations",
   },
   {
     title: "Medication Management",
     desc: "Personalized medication management with our dedicated Psychiatric Nurse Practitioner.",
-    image: pic2,
+    icon: "mdi:number-two-circle-outline",
     link: "/services/medication-management",
   },
   {
     title: "Therapy",
     desc: "Individual counseling using evidence-based, neuro-affirming practices.",
-    image: pic3,
+    icon: "mdi:number-three-circle-outline",
     link: "/services/therapy",
+  },
+];
+
+const qualityCareItems = [
+  {
+    icon: "mdi:earth",
+    title: "Nationwide access through Psypact",
+    desc: "Get evaluated from almost anywhere. Our psychologist can assess Autism, ADHD, personality disorders, intellectual disabilities, and more across most U.S. states.",
+  },
+  {
+    icon: "mdi:clock-outline",
+    title: "Fast, clear answers in 7 days",
+    desc: "No long waits for clarity. Self-pay testing is completed and written report is shared within seven days of your intake appointment.",
+  },
+  {
+    icon: "mdi:shield-check-outline",
+    title: "Insurance-friendly testing",
+    desc: "We accept most commercial insurances, Medicaid, and Medicare—unlike many practices that are cash-pay only for psychological testing.",
+  },
+  {
+    icon: "mdi:medication-outline",
+    title: "Integrated medication support",
+    desc: "When testing indicates that medication may help, our in-house provider can step in to support your ongoing care.",
+  },
+  {
+    icon: "mdi:video-wireless",
+    title: "Flexible & remote appointments",
+    desc: "Weekend availability and fully remote testing options make it easier to get care, even if travel or scheduling is a concern.",
+    cardClass: "sm:col-span-2 lg:col-span-1",
   },
 ];
 ---
@@ -56,7 +84,7 @@ const services = [
         >
           Neurodiverse?<br />
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+            class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
             >Empower Your Future.</span
           >
         </h1>
@@ -102,9 +130,9 @@ const services = [
     <div class="max-w-6xl mx-auto">
       <header class="text-center mb-12">
         <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
-          Quality Care with <span class="text-amber-500"
-            >Fewer</span
-          > Obstacles
+          Quality Care, <span class="text-amber-500"
+            >Five</span
+          > Fewer Hurdles
         </h2>
         <p class="text-indigo-200 text-lg max-w-2xl mx-auto">
           We designed our evaluation process to be faster, more accessible, and affordable to
@@ -113,77 +141,24 @@ const services = [
       </header>
 
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- 1 -->
-        <article
-          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
-        >
-          <h3 class="text-xl font-black text-white mb-4">
-            Nationwide access through Psypact
-          </h3>
-          <p class="text-indigo-100 leading-relaxed">
-            Get evaluated from almost anywhere. Our psychologist can assess
-            Autism, ADHD, personality disorders, intellectual disabilities, and
-            more across most U.S. states.
-          </p>
-        </article>
-
-        <!-- 2 -->
-        <article
-          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
-        >
-          <h3 class="text-xl font-black text-white mb-4">
-            Fast, clear answers in 7 days
-          </h3>
-          <p class="text-indigo-100 leading-relaxed">
-            No long waits for clarity. Self-pay testing is completed and
-            written report is shared within seven days of your intake
-            appointment.
-          </p>
-        </article>
-
-        <!-- 3 -->
-        <article
-          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
-        >
-          <h3 class="text-xl font-black text-white mb-4">
-            Insurance‑friendly testing
-          </h3>
-          <p class="text-indigo-100 leading-relaxed">
-            We accept most commercial insurances, Medicaid, and Medicare—unlike
-            many practices that are cash‑pay only for psychological testing.
-          </p>
-        </article>
-
-        <!-- 4 -->
-        <article
-          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30"
-        >
-          <h3 class="text-xl font-black text-white mb-4">
-            Integrated medication support
-          </h3>
-          <p class="text-indigo-100 leading-relaxed">
-            When testing indicates that medication may help, our in‑house
-            provider can step in to support your ongoing care.
-          </p>
-        </article>
-
-        <!-- 5 -->
-        <article
-          class="rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30 sm:col-span-2 lg:col-span-1"
-        >
-          <h3 class="text-xl font-black text-white mb-4">
-            Flexible & remote appointments
-          </h3>
-          <p class="text-indigo-100 leading-relaxed">
-            Weekend availability and fully remote testing options make it easier
-            to get care, even if travel or scheduling is a concern.
-          </p>
-        </article>
+        {qualityCareItems.map((item) => (
+          <article
+            class={`rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30 ${item.cardClass ?? ""}`}
+          >
+            <Icon name={item.icon} class="w-9 h-9 text-amber-200" />
+            <h3 class="text-xl font-black text-white mb-4">
+              {item.title}
+            </h3>
+            <p class="text-indigo-100 leading-relaxed">
+              {item.desc}
+            </p>
+          </article>
+        ))}
       </div>
     </div>
     </section>
 
-    <section class="py-32 px-6 bg-indigo-950">
+    <section class="py-24 sm:py-28 lg:py-32 px-6 bg-indigo-950">
       <div class="max-w-7xl mx-auto">
         <div
           class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
@@ -199,30 +174,21 @@ const services = [
           <p
             class="text-[#D4CFC7] font-medium max-w-md text-sm md:text-base opacity-70 italic"
           >
-            "Healing isn't linear. We provide the clinical clarity to navigate
+            "Twilight Psychology provides the clinical clarity to navigate
             the journey."
           </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-10">
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {
             services.map((service) => (
-              <div class="group relative flex flex-col rounded-[2.5rem] bg-white/2 border border-white/5 hover:border-amber-500/30 transition-all duration-500 overflow-hidden">
-                <div class="aspect-4/3 overflow-hidden relative">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    class="object-cover w-full h-full rounded-[0.5rem]"
-                    loading={"eager"}
-                  />
-                  <div class="absolute inset-0 bg-linear-to-t from-indigo-950 via-transparent to-transparent" />
-                </div>
-
-                <div class="p-10 -mt-12 relative z-10">
-                  <h3 class="text-2xl font-black mb-4 text-white tracking-tight group-hover:text-amber-500 transition-colors">
-                    {service.title}
+              <div class="group relative flex flex-col rounded-3xl bg-white/2 border border-white/5 hover:border-amber-500/30 transition-all duration-500 overflow-hidden">
+                <div class="p-7 sm:p-9 lg:p-10">
+                  <Icon name={service.icon} class="w-9 h-9 text-amber-500" />
+                  <h3 class="text-xl sm:text-2xl font-black mb-4 text-white tracking-tight group-hover:text-amber-500 transition-colors">
+                   {service.title}
                   </h3>
-                  <p class="text-indigo-200/60 font-medium text-sm mb-8 leading-relaxed">
+                  <p class="text-indigo-200/70 font-medium text-sm sm:text-base mb-7 leading-relaxed">
                     {service.desc}
                   </p>
 

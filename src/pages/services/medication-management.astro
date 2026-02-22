@@ -45,7 +45,7 @@ description="Twilight Psychology">
         class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]"
       >
         Medication <br /><span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+          class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
           >Management.</span
         >
       </h1>
@@ -61,7 +61,7 @@ description="Twilight Psychology">
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 mt-20">
     <div class="lg:col-span-2 space-y-12">
       <section
-        class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
+        class="bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
       >
         <h2 class="text-3xl font-black text-white mb-6 tracking-tight">
           A Balanced Approach
@@ -89,7 +89,7 @@ description="Twilight Psychology">
         <div class="grid sm:grid-cols-2 gap-6">
           {
             medicationApproach.map((item) => (
-                <div class="group p-8 bg-white/[0.02] border border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all">
+                <div class="group p-8 bg-white/2 border border-white/5 rounded-4xl hover:border-amber-500/30 transition-all">
                 <div class="text-4xl font-black text-white/10 mb-4 group-hover:text-amber-500/20 transition-colors">✦</div>
                 <h3 class="text-white font-black mb-2">{item.title}</h3>
                 <p class="text-indigo-200/50 text-sm leading-relaxed">{item.detail}</p>
