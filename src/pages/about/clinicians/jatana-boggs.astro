@@ -1,37 +1,87 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import '../../../styles/global.css';
-import { Image } from 'astro:assets';
-import jatanaPhoto from '../../../assets/images/staff/jatana-boggs.png'; 
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import "../../../styles/global.css";
+import { Image } from "astro:assets";
+import jatanaPhoto from "../../../assets/images/staff/jatana-boggs.png";
 
-const specialties = ["Adult ADHD", "Bipolar Disorder", "Substance Use", "Psychological Testing", "Clinical Supervision"];
+const specialties = [
+  "Adult ADHD",
+  "Bipolar Disorder",
+  "Substance Use",
+  "Psychological Testing",
+  "Clinical Supervision",
+];
 ---
 
-<Layout title="Jatana Boggs, M.A., LPCA | Licensed Psychological Counselor Associate">
-  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
-    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent">
-      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
-                <Image src={jatanaPhoto} alt="Jatana Boggs" 
-                class="object-cover w-full h-full rounded-[2.5rem]" loading={'eager'}/> 
-            </div>
+<ServiceLayout
+  title="Jatana Boggs, M.A., LPCA | Licensed Psychological Counselor Associate"
+  description="Jatana Boggs is a Licensed Psychological Counselor Associate with over a decade of experience in community mental health and private practice. Specializing in Adult ADHD, Bipolar Disorder, Substance Use, Psychological Testing, and Clinical Supervision, Jatana provides diagnostic clarity for complex presentations, ensuring clients leave with a concrete understanding of their mental health landscape."
+  keywords="Jatana Boggs, M.A., LPCA, Licensed Psychological Counselor Associate, Adult ADHD, Bipolar Disorder, Substance Use, Psychological Testing, Clinical Supervision"
+>
+  <section
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent"
+  >
+    <div
+      class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+    >
+      <div class="relative group">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
+        >
         </div>
-        <div class="flex-1 text-center lg:text-left">
-            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block">Licensed Psychological Associate</span>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter">Jatana Boggs, <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">M.A., LPA.</span></h1>
-            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
-                {specialties.map(s => <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">{s}</span>)}
-            </div>
+        <div
+          class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+        >
+          <Image
+            src={jatanaPhoto}
+            alt="Jatana Boggs"
+            class="object-cover w-full h-full rounded-[2.5rem]"
+            loading={"eager"}
+          />
         </div>
       </div>
-    </section>
+      <div class="flex-1 text-center lg:text-left">
+        <span
+          class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block"
+          >Licensed Psychological Associate</span
+        >
+        <h1
+          class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter"
+        >
+          Jatana Boggs, <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+            >M.A., LPA.</span>
+        </h1>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
+          {
+            specialties.map((s) => (
+              <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">
+                {s}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg">
-        <h2 class="text-3xl font-black text-white italic">Evidence-Based Care with a Human Connection.</h2>
-        <p>With over a decade of experience in community mental health and private practice, I focus on providing diagnostic clarity for complex presentations. I specialize in Adult ADHD and mood disorders, ensuring that my clients leave with a concrete understanding of their mental health landscape.</p>
-        <p>I earned my Master's degree from Morehead State University and have dedicated my career to serving the Kentucky community through comprehensive testing and supervision of upcoming clinical professionals.</p>
-    </section>
-  </main>
-</Layout>
+  <section
+    class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg"
+  >
+    <h2 class="text-3xl font-black text-white italic">
+      Evidence-Based Care with a Human Connection.
+    </h2>
+    <p>
+      With over a decade of experience in community mental health and private
+      practice, I focus on providing diagnostic clarity for complex
+      presentations. I specialize in Adult ADHD and mood disorders, ensuring
+      that my clients leave with a concrete understanding of their mental health
+      landscape.
+    </p>
+    <p>
+      I earned my Master's degree from Morehead State University and have
+      dedicated my career to serving the Kentucky community through
+      comprehensive testing and supervision of upcoming clinical professionals.
+    </p>
+  </section>
+</ServiceLayout>

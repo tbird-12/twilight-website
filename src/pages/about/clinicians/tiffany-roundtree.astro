@@ -1,40 +1,89 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import '../../../styles/global.css';
-import { Image } from 'astro:assets';
-import tiffanyPhoto from '../../../assets/images/staff/tiffany-roundtree.png';
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import "../../../styles/global.css";
+import { Image } from "astro:assets";
+import tiffanyPhoto from "../../../assets/images/staff/tiffany-roundtree.png";
 
-const specialties = ["Adolescent Therapy", "Parenting Support", "Anxiety Disorders", "School-Based Advocacy", "Developmental Testing"];
+const specialties = [
+  "Adolescent Therapy",
+  "Parenting Support",
+  "Anxiety Disorders",
+  "School-Based Advocacy",
+  "Developmental Testing",
+];
 ---
 
-<Layout title="Tiffany Roundtree, M.A.Ed, M.A., LPCA | Child & Adolescent Specialist">
-  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
-    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent">
-      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
-                <Image src={tiffanyPhoto} alt="Tiffany Roundtree" 
-                class="object-cover w-full h-full rounded-[2.5rem]" 
-                    loading={'eager'}/>
-            </div>
+<ServiceLayout
+  title="Tiffany Roundtree, M.A.Ed, M.A., LPCA | Child & Adolescent Specialist"
+  description="Tiffany Roundtree is a Licensed Psychological Counselor Associate specializing in child and adolescent therapy. With expertise in developmental testing, school-based advocacy, and parenting support, Tiffany provides compassionate care for young clients navigating anxiety disorders and life transitions. Under the supervision of Dr. Heather Cornett, Tiffany is dedicated to fostering resilience and growth in children and families."
+  keywords="Tiffany Roundtree, M.A.Ed, M.A., LPCA, Licensed Psychological Counselor Associate, Child Therapy, Adolescent Therapy, Parenting Support, Anxiety Disorders, School-Based Advocacy" 
+>
+  <section
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent"
+  >
+    <div
+      class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+    >
+      <div class="relative group">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
+        >
         </div>
-        <div class="flex-1 text-center lg:text-left">
-            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block">Licensed Professional Counselor Associate</span>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none">Tiffany <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Roundtree, M.A.Ed, M.A., LPCA</span></h1>
-            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
-                {specialties.map(s => <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">{s}</span>)}
-            </div>
+        <div
+          class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+        >
+          <Image
+            src={tiffanyPhoto}
+            alt="Tiffany Roundtree"
+            class="object-cover w-full h-full rounded-[2.5rem]"
+            loading={"eager"}
+          />
         </div>
       </div>
-    </section>
+      <div class="flex-1 text-center lg:text-left">
+        <span
+          class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block"
+          >Licensed Professional Counselor Associate</span
+        >
+        <h1
+          class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none"
+        >
+          Tiffany <br /><span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+            >Roundtree, M.A.Ed, M.A., LPCA</span>
+        </h1>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
+          {
+            specialties.map((s) => (
+              <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">
+                {s}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg">
-        <h2 class="text-3xl font-black text-white italic">Supporting the Next Generation.</h2>
-        <p>I go by Tree. I recently graduated in December 2025 from Lindsey Wilson College with my Master of Arts in Counseling degree, and am licensed as a Licensed Professional Counselor Associate (LPCA), supervised by Delmetria Cayson-Combs, LPCC-S. 
-          My work centers on adolescents and adults navigating the complexities of modern development. 
-          I help clients explore how societal norms, family dynamics, and life experiences have shaped their personal stories about self worth, competence, and authenticity. </p>
-        <p>I specialize  support clients in deconstructing harmful or limiting beliefs in these stories and rewriting them from a more compassionate and neuroaffirmng understanding of themselves. </p>
-    </section>
-  </main>
-</Layout>
+  <section
+    class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg"
+  >
+    <h2 class="text-3xl font-black text-white italic">
+      Supporting the Next Generation.
+    </h2>
+    <p>
+      I go by Tree. I recently graduated in December 2025 from Lindsey Wilson
+      College with my Master of Arts in Counseling degree, and am licensed as a
+      Licensed Professional Counselor Associate (LPCA), supervised by Delmetria
+      Cayson-Combs, LPCC-S. My work centers on adolescents and adults navigating
+      the complexities of modern development. I help clients explore how
+      societal norms, family dynamics, and life experiences have shaped their
+      personal stories about self worth, competence, and authenticity.
+    </p>
+    <p>
+      I specialize support clients in deconstructing harmful or limiting beliefs
+      in these stories and rewriting them from a more compassionate and
+      neuroaffirmng understanding of themselves.
+    </p>
+  </section>
+</ServiceLayout>
