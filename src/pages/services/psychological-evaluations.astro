@@ -52,7 +52,7 @@ const evaluationTypes = [
         class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]"
       >
         Psychological <br /><span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+          class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
           >Evaluations.</span
         >
       </h1>
@@ -68,7 +68,7 @@ const evaluationTypes = [
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12 mt-20">
     <div class="lg:col-span-2 space-y-12">
       <section
-        class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
+        class="bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
       >
         <h2 class="text-3xl font-black text-white mb-6 tracking-tight">
           Answers Within Reach
@@ -76,11 +76,11 @@ const evaluationTypes = [
         <p class="text-indigo-100/80 leading-relaxed text-lg mb-6">
           A psychological evaluation helps us understand the "why" behind your
           emotional or behavioral experiences. Much like medical labs help a
-          doctor treat a physical ailment, our testing guides your healing
-          journey.
+          doctor treat a physical ailment, a psychological evaluation is 
+          the first step to understanding your mental health.
         </p>
         <a
-          href="/about/our-process"
+          href="/resources/faq"
           class="text-amber-500 font-black text-sm hover:underline decoration-2 underline-offset-8"
         >
           Learn more about our evidence-based approach →
@@ -96,7 +96,7 @@ const evaluationTypes = [
             evaluationTypes.map((item) => (
               <a
                 href={item.link}
-                class="group p-8 bg-white/[0.02] border border-white/10 sm:border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all block"
+                class="group p-8 bg-white/2 border border-white/10 sm:border-white/5 rounded-4xl hover:border-amber-500/30 transition-all block"
               >
                 <div class="w-10 h-10 rounded-xl bg-amber-500 sm:bg-indigo-900/50 flex items-center justify-center mb-6 border border-white/5 sm:group-hover:bg-amber-500 transition-all">
                   <span class="text-indigo-950 sm:text-amber-500 sm:group-hover:text-indigo-950">

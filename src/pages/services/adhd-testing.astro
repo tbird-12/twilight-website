@@ -39,7 +39,7 @@ const adhdInsights = [
       />
     </div>
     <div
-      class="absolute inset-0 bg-gradient-to-b from-indigo-950/40 via-indigo-950 to-indigo-950 z-10"
+      class="absolute inset-0 bg-linear-to-b from-indigo-950/40 via-indigo-950 to-indigo-950 z-10"
     >
     </div>
 
@@ -53,7 +53,7 @@ const adhdInsights = [
         class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]"
       >
         ADHD <br /><span
-          class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+          class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
           >Evaluations.</span
         >
       </h1>
@@ -68,7 +68,7 @@ const adhdInsights = [
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12">
     <div class="lg:col-span-2 space-y-12">
       <section
-        class="bg-white/[0.03] backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
+        class="bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
       >
         <h2 class="text-3xl font-black text-white mb-6 tracking-tight">
           Focus Redefined
@@ -100,7 +100,7 @@ const adhdInsights = [
         <div class="grid sm:grid-cols-2 gap-6">
           {
             adhdInsights.map((insight) => (
-              <div class="group p-8 bg-white/[0.02] border border-white/5 rounded-[2rem] hover:border-amber-500/30 transition-all">
+              <div class="group p-8 bg-white/2 border border-white/5 rounded-4xl hover:border-amber-500/30 transition-all">
                 <div class="w-10 h-10 rounded-xl bg-indigo-900/50 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-amber-500 group-hover:scale-110 transition-all">
                   <span class="text-amber-500 group-hover:text-indigo-950">
                     ✦
@@ -129,7 +129,7 @@ const adhdInsights = [
         <div class="space-y-4">
           {
             [
-              "Standardized rating scales (Brown, Conners, or BRIEF)",
+              "Standardized rating scales (Brown, Conners, etc.)",
               "Continuous Performance Tests (CPT) for objective data",
               "Cognitive assessment (IQ) to rule out learning differences",
               "In-depth developmental and clinical interviews",
