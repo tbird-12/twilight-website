@@ -13,6 +13,12 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [preact(), icon(), sitemap(), partytown()],
+  integrations: [preact(), icon(), sitemap(), partytown(
+    {
+      config: {
+        forward: ['dataLayer.push', 'gtag'],
+      },
+    }),
+  ],
   site: "https://www.twilightpsychology.com",
 });

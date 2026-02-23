@@ -1,5 +1,5 @@
 ---
-const gaId = import.meta.env.PUBLIC_GA_ID;
+const {gaId} = Astro.props;
 ---
 
 {gaId && import.meta.env.PROD && (
@@ -10,23 +10,24 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
       src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
     ></script>
 
-    <script type="text/partytown" define:vars={{ gaId }}>
+    <script type="text/partytown" is:inline data-gaid="{gaId}">
+      const gaId = document.currentScript.dataset.gaid;
       window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments);
+        window.dataLayer.push(arguments);
       }
       gtag('js', new Date());
       gtag('config', gaId);
     </script>
 
-    <script is:inline define:vars={{ gaId }}>
+    <script is:inline data-gaid={gaId}>
       document.addEventListener('astro:after-swap', () => {
-        if (window.gtag) {
-          window.gtag('config', gaId, {
-            page_path: window.location.pathname,
-          });
-        }
-      });
+      const gaId = document.currentScript.dataset.gaid;
+      if (window.gtag) {
+        window.gtag('config', gaId, {
+        page_path: window.location.pathname,
+      });}
+    });
     </script>
   </>
 )}
