@@ -1,14 +1,14 @@
 ---
 import ResourceLayout from '../../layouts/ResourceLayout.astro';
+import ProviderDirectory from '../../components/ProviderDirectory.astro';
 import '../../styles/global.css';
-import ProviderDirectory from '../../components/ProviderDirectory.jsx';
 ---
 
 <ResourceLayout 
   name="Waitlist Times"
   description="Current appointment availability by provider"
 >
-  <ProviderDirectory client:load />
+  <ProviderDirectory />
 
   <style is:global>
     :root { 

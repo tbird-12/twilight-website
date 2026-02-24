@@ -1,0 +1,143 @@
+---
+import providers from '../data/providers.json';
+import "../styles/global.css";
+
+// Get unique options for filters
+const services = [...new Set(providers.flatMap(p => p.services_offered))].sort();
+const states = [...new Set(providers.flatMap(p => p.states_served))].sort();
+---
+
+<div class="container">
+  <div class="filter-panel">
+    <div class="filter-group">
+      <label>Service</label>
+      <select id="service-filter">
+        <option value="">All Services</option>
+        {services.map(s => <option value={s}>{s}</option>)}
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>State</label>
+      <select id="state-filter">
+        <option value="">All States</option>
+        {states.map(st => <option value={st}>{st}</option>)}
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Wait Type</label>
+      <select id="paytype-filter">
+        <option value="">Any Wait Time</option>
+        <option value="testing_insurance">Insurance Testing</option>
+        <option value="testing_out_of_pocket">Out of Pocket Testing</option>
+        <option value="therapy">Therapy</option>
+        <option value="medication_management">Medication Management</option>
+      </select>
+    </div>
+
+    <button class="reset-btn" id="reset-btn">Reset</button>
+  </div>
+
+  <div class="provider-grid" id="provider-grid">
+    <!-- Populated by JavaScript -->
+  </div>
+</div>
+
+<script define:vars={{ providers }}>
+  const serviceFilter = document.getElementById('service-filter');
+  const stateFilter = document.getElementById('state-filter');
+  const payTypeFilter = document.getElementById('paytype-filter');
+  const resetBtn = document.getElementById('reset-btn');
+  const providerGrid = document.getElementById('provider-grid');
+
+  let showInsurance = {};
+
+  function formatLabel(str) {
+    return str.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+  }
+
+  function filterProviders() {
+    const service = serviceFilter.value;
+    const state = stateFilter.value;
+    const payType = payTypeFilter.value;
+
+    return providers.filter(p => {
+      const matchService = !service || p.services_offered.includes(service);
+      const matchState = !state || p.states_served.includes(state);
+      const matchPay = !payType || p.wait_times[payType];
+      return matchService && matchState && matchPay;
+    });
+  }
+
+  function renderCards() {
+    const filtered = filterProviders();
+    providerGrid.innerHTML = '';
+
+    filtered.forEach((provider, idx) => {
+      const card = document.createElement('div');
+      card.className = `card ${showInsurance[idx] ? 'show-ins' : ''}`;
+
+      if (!showInsurance[idx]) {
+        card.innerHTML = `
+          <div class="main-view">
+            <div class="credential">${provider.credential}</div>
+            <h3>${provider.name_with_education}</h3>
+            <div class="section-title">States</div>
+            <div class="tag-container">
+              ${provider.states_served.map(st => `<span class="tag">${st}</span>`).join('')}
+            </div>
+            <button class="ins-toggle-btn" data-idx="${idx}">Accepted Insurances →</button>
+            <div class="wait-info">
+              <div class="section-title">Wait Times</div>
+              ${Object.entries(provider.wait_times).map(([k, v]) => `
+                <div class="wait-item">
+                  <span class="wait-label">${formatLabel(k)}</span>
+                  <span class="wait-value">${v}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      } else {
+        card.innerHTML = `
+          <div class="insurance-view">
+            <h3>${provider.name_with_education}</h3>
+            <div class="section-title">Accepted Insurance</div>
+            <div class="tag-container">
+              ${provider.ins.map(i => `<span class="tag ins-tag">${i}</span>`).join('')}
+            </div>
+            <button class="ins-toggle-btn" data-idx="${idx}">← Back</button>
+          </div>
+        `;
+      }
+
+      providerGrid.appendChild(card);
+    });
+
+    // Attach toggle listeners
+    document.querySelectorAll('.ins-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = e.target.dataset.idx;
+        showInsurance[idx] = !showInsurance[idx];
+        renderCards();
+      });
+    });
+  }
+
+  // Event listeners
+  serviceFilter.addEventListener('change', renderCards);
+  stateFilter.addEventListener('change', renderCards);
+  payTypeFilter.addEventListener('change', renderCards);
+
+  resetBtn.addEventListener('click', () => {
+    serviceFilter.value = '';
+    stateFilter.value = '';
+    payTypeFilter.value = '';
+    showInsurance = {};
+    renderCards();
+  });
+
+  // Initial render
+  renderCards();
+</script>
