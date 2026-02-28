@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { EMAIL_ADDRESS } from '../../data/resource';
 import '../../styles/global.css';
 
 const steps = [
@@ -108,8 +109,8 @@ const checklist = [
           <div class="bg-indigo-900/20 border border-indigo-800 p-8 rounded-4xl text-center">
             <h3 class="text-white font-bold mb-4">Questions?</h3>
             <p class="text-indigo-200 text-sm mb-6">We're here to help you prepare.</p>
-            <a href="mailto:office@twilightpsychology.com" class="block w-full py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold rounded-xl transition-all">
-              Email Our Office
+            <a href={`mailto:${EMAIL_ADDRESS}`} class="block w-full py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold rounded-xl transition-all">
+              Email {EMAIL_ADDRESS}
             </a>
           </div>
         </div>

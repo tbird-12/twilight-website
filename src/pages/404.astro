@@ -1,8 +1,8 @@
 ---
 import ServiceLayout from '../layouts/ServiceLayout.astro';
 import '../styles/global.css';
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
 import logo from "../assets/images/logo.png";
-
 ---
 
 <ServiceLayout name="404 Not Found | Twilight Psychology"
@@ -22,7 +22,7 @@ import logo from "../assets/images/logo.png";
       </span>
       
       <h1 class="text-8xl md:text-9xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-white">
+        <span class="text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-white">
           404
         </span>
       </h1>
@@ -55,10 +55,10 @@ import logo from "../assets/images/logo.png";
         <p class="text-indigo-200/50 text-sm mb-6 font-bold">Need Help?</p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
           <a
-            href="tel:8596875843"
+            href={`tel:${PHONE_NUMBER}`}
             class="flex items-center gap-2 text-amber-500 font-black hover:text-amber-400 transition-colors"
           >
-            <span>📞</span> (859) 687-5843
+            <span>📞</span> {PHONE_NUMBER_FORMATTED}
           </a>
           <a
             href="/resources/faq"
@@ -70,4 +70,4 @@ import logo from "../assets/images/logo.png";
       </div>
     </div>
   </section>
-</Layout>
+</ServiceLayout>

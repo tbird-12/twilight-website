@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from '../../data/resource';
 
 const psychologicalServices = [
   { name: "ADHD Assessments", price: "$1,300" },
@@ -48,7 +49,7 @@ const medManagement = [
           Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for covered services. For 
           <a href="/resources/insurances-accepted" class="text-amber-400 underline">commercial insurance</a>
           we recommend calling 
-          <a href="tel:8596875843" class="text-amber-400 underline">(859) 687-5843</a> to determine approximate rates, though you should always confirm benefits, copays, deductibles with your insurance provider prior to your appointment.
+          <a href={`tel:${PHONE_NUMBER}`} class="text-amber-400 underline">{PHONE_NUMBER_FORMATTED}</a> to determine approximate rates, though you should always confirm benefits, copays, deductibles with your insurance provider prior to your appointment.
         </p>
       </section>
 

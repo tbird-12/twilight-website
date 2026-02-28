@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 import { Image } from "astro:assets";
+import { PHONE_NUMBER } from "../../data/resource";
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../../assets/images/insurance/*.png",
 );
@@ -78,7 +79,7 @@ const insuranceProviders = [
           support and private pay options for those seeking immediate care.
         </p>
         <a
-          href="tel:+18596875843"
+          href={`tel:${PHONE_NUMBER}`}
           class="inline-block px-10 py-4 bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-white transition-all"
         >
           Verify Your Coverage

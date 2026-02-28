@@ -1,3 +1,5 @@
+import { PHONE_NUMBER } from './resource';
+
 export interface ChatNode {
   text: string;
   type?: string;
@@ -45,7 +47,7 @@ export const chatbotTree: ChatTree = {
     "type": "terminal",
     "action": "Call Office",
     "actionType": "call",
-    "actionValue": "+18596875843"
+    "actionValue": PHONE_NUMBER
   },
   "location": {
     "text": "Which state do you reside in?",

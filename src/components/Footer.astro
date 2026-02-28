@@ -1,5 +1,6 @@
 ---
 const year = new Date().getFullYear();
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from "../data/resource";
 import { Icon } from "astro-icon/components";
 const links = [
   {
@@ -103,9 +104,9 @@ const socials = [
         <div class="text-sm text-indigo-200 space-y-3">
           <div>
             <p class="font-semibold text-indigo-100">Contact Us</p>
-            <p>Phone: (859) 687-5843</p>
+            <p>Phone: <a href={`tel:${PHONE_NUMBER}`} class="text-indigo-200 hover:text-amber-400 transition-colors duration-200">{PHONE_NUMBER_FORMATTED}</a></p>
             <p>Fax: (502) 324-3210</p>
-            <p>Email: <a href="mailto:office@twilightpsychology.com" class="text-indigo-200 hover:text-amber-400 transition-colors duration-200">office@twilightpsychology.com</a></p>
+            <p>Email: <a href={`mailto:${EMAIL_ADDRESS}`} class="text-indigo-200 hover:text-amber-400 transition-colors duration-200">{EMAIL_ADDRESS}</a></p>
           </div>
           <div>
             <p class="font-semibold text-indigo-100">Hours of Operation</p>

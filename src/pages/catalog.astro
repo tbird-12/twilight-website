@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
 
 const categories = [
   {
@@ -116,9 +117,9 @@ const categories = [
                 Ready to start?
               </p>
 
-              <a href="tel:8596875843"
+              <a href={`tel:${PHONE_NUMBER}`}
                 class="block text-amber-500 font-black text-2xl hover:text-white transition-colors mb-2">
-                &#128222; 859-687-5843
+                &#128222; {PHONE_NUMBER_FORMATTED}
               </a>
             </div>
           </div>

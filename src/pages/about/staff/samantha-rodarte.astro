@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import '../../../styles/global.css';
+import { EMAIL_ADDRESS } from "../../../data/resource";
 import { Image } from 'astro:assets';
 import samanthaPhoto from '../../../assets/images/staff/samantha-rodarte.png'; 
 
@@ -16,10 +17,10 @@ const expertise = [
   description="Meet Samantha Rodarte, the Practice Manager at Twilight Psychology. With expertise in practice operations, patient care coordination, and insurance navigation, Samantha ensures a seamless experience for both clients and clinicians. Learn how she supports our mission to provide exceptional mental health care."
   >
     
-    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent">
+    <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent">
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="absolute -inset-1 bg-linear-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
             <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
                 <Image 
                   src={samanthaPhoto} 
@@ -35,7 +36,7 @@ const expertise = [
             </span>
             <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none">
                 Samantha <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Rodarte.</span>
+                <span class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic">Rodarte.</span>
             </h1>
             <p class="text-indigo-200/70 text-lg leading-relaxed max-w-2xl mb-8">
                 Ensuring a seamless, supportive experience for every client from their initial inquiry to the completion of their care.
@@ -64,13 +65,13 @@ const expertise = [
             <div class="bg-indigo-900/30 border-l-4 border-amber-500 p-8 rounded-r-3xl">
                 <h4 class="text-white font-black text-sm uppercase mb-2">Direct Contact</h4>
                 <p class="text-amber-500 font-black text-lg underline underline-offset-4 decoration-amber-500/30">
-                    office@twilightpsychology.com
+                    <a href={`mailto:${EMAIL_ADDRESS}`} class="text-amber-500 hover:text-amber-400 transition-colors duration-200">{EMAIL_ADDRESS}</a>
                 </p>
             </div>
         </div>
 
         <div class="lg:col-span-4 space-y-8">
-            <div class="bg-white/[0.03] border border-white/10 p-8 rounded-[2.5rem]">
+            <div class="bg-white/3 border border-white/10 p-8 rounded-[2.5rem]">
                 <h3 class="text-amber-500 font-black text-xs uppercase tracking-widest mb-4">Core Focus</h3>
                 <p class="text-sm text-indigo-100/60 leading-relaxed italic">
                     "My goal is to handle the heavy lifting of healthcare administration so our patients can focus entirely on their growth and our clinicians can focus entirely on their care."
@@ -90,7 +91,7 @@ const expertise = [
     </section>
 
     <section class="max-w-4xl mx-auto px-6 py-16 mt-12">
-      <div class="bg-gradient-to-r from-amber-500/10 to-indigo-500/10 border border-amber-500/20 rounded-3xl p-8 text-center">
+      <div class="bg-linear-to-r from-amber-500/10 to-indigo-500/10 border border-amber-500/20 rounded-3xl p-8 text-center">
         <h3 class="text-xl font-black text-white mb-4">Wondering About Wait Times?</h3>
         <p class="text-indigo-200 mb-6">Check our current waitlist times for different services and get a better idea of when you can be seen.</p>
         <a

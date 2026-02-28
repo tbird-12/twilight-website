@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+import { WIDGET_LINK } from "../data/resource";
 
 import hero from "../assets/images/hero.webp";
 
@@ -98,7 +99,7 @@ const qualityCareItems = [
 
         <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
           <a
-            href="https://heatherlcornett.clientsecure.me/contact-widget"
+            href={WIDGET_LINK}
             class="px-10 py-4 md:w-72 lg:w-80 text-center bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-amber-400 transition-all hover:scale-105 shadow-lg shadow-amber-500/20"
           >
             Schedule an Evaluation
@@ -171,7 +172,7 @@ const qualityCareItems = [
           class="flex flex-col sm:flex-row gap-6 justify-center relative z-10"
         >
           <a
-            href="https://heatherlcornett.clientsecure.me/contact-widget"
+            href={WIDGET_LINK}
             class="px-10 py-4 bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-amber-400 transition-all hover:scale-105 shadow-lg shadow-amber-500/20"
           >
             Contact Us

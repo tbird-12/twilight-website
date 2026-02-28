@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import "../../styles/global.css";
+import { PHONE_NUMBER } from "../../data/resource";
 
 const clinicianBenefits = [
   "Competitive Pay (W2 or 1099)",
@@ -40,7 +41,7 @@ const cultureHighlights = [
           Join Our Practice
         </span>
         <h1 class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
-          Build Your <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Career.</span>
+          Build Your <br/><span class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic">Career.</span>
         </h1>
         <p class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed">
           From doctoral students to seasoned clinicians, we provide the environment you need to thrive.
@@ -48,12 +49,12 @@ const cultureHighlights = [
       </div>
     </section>
 
-    <div class="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-3 gap-6 -mt-12 relative z-30">
+    <div class="max-w-350 mx-auto px-6 grid lg:grid-cols-3 gap-6 -mt-12 relative z-30">
       
-      <div class="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+      <div class="bg-white/3 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
         <div>
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-black text-white leading-tight text-amber-500">Licensed <br/>Provider</h2>
+                <h2 class="text-2xl font-black text-white leading-tight">Licensed <br/>Provider</h2>
                 <span class="text-[9px] font-black text-white border border-white/20 px-2 py-1 rounded uppercase">W2/1099</span>
             </div>
             <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
@@ -70,7 +71,7 @@ const cultureHighlights = [
         <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-amber-500 text-indigo-950 text-center font-black rounded-xl hover:bg-white transition-all text-sm">Apply to Practice</a>
       </div>
 
-      <div class="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+      <div class="bg-white/3 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
         <div>
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-black text-white leading-tight">Doctoral <br/>Practicum</h2>
@@ -96,7 +97,7 @@ const cultureHighlights = [
       <div class="bg-indigo-900/20 border border-indigo-500/20 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
         <div>
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-black text-white leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white">Admin <br/>Assistant</h2>
+                <h2 class="text-2xl font-black text-white leading-tight bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white">Admin <br/>Assistant</h2>
                 <span class="text-[9px] font-black text-white bg-indigo-500 px-2 py-1 rounded uppercase">Ops</span>
             </div>
             <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
@@ -123,7 +124,7 @@ const cultureHighlights = [
       <div>
         <h2 class="text-4xl font-black text-white mb-6 tracking-tighter">
           Clinical <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-white italic"
+            class="text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-white italic"
             >Mentorship.</span
           >
         </h2>
@@ -168,7 +169,7 @@ const cultureHighlights = [
       </div>
 
       <div
-        class="bg-gradient-to-br from-indigo-900/40 to-indigo-950 border border-white/10 p-10 rounded-[3rem] shadow-2xl shadow-indigo-950/50"
+        class="bg-linear-to-br from-indigo-900/40 to-indigo-950 border border-white/10 p-10 rounded-[3rem] shadow-2xl shadow-indigo-950/50"
       >
         <h3
           class="text-[#D4CFC7] font-black text-xs uppercase tracking-widest mb-6 text-center"
@@ -237,7 +238,7 @@ const cultureHighlights = [
         <p class="text-[10px] font-black uppercase tracking-widest mb-4">
           Questions?
         </p>
-        <a href="tel:18596875843" class="text-lg font-black"
+        <a href={`tel:${PHONE_NUMBER}`} class="text-lg font-black"
           >&#128222; 859-687-5843</a
         >
       </div>

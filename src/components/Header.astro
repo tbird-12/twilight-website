@@ -3,6 +3,7 @@ import { providers, staff } from "../data/staff";
 import { specialities, services } from "../data/services";
 import { Image } from "astro:assets";
 import favicon from "../assets/favicons/favicon.svg";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS, WIDGET_LINK, REFERRAL_LINK, SIGN_IN_LINK } from "../data/resource";
 
 const about = [
   {
@@ -323,7 +324,7 @@ const clientResources = [
 
       <!-- Referrals Link -->
       <a
-        href="https://drive.google.com/file/d/1fhYlXyIpFgUslpYGLkkt6xYveGfmlSG2/view"
+        href={REFERRAL_LINK}
         target="_blank"
         class="text-sm font-bold text-indigo-100 hover:text-amber-400 transition-colors duration-200"
         >Referrals</a
@@ -331,7 +332,7 @@ const clientResources = [
 
       <!-- Client Portal Button -->
       <a
-        href="https://heatherlcornett.clientsecure.me/sign-in"
+        href={SIGN_IN_LINK}
         target="_blank"
         rel="noopener noreferrer"
         class="hidden lg:inline-block bg-amber-500 text-indigo-950 px-6 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95"
@@ -341,10 +342,10 @@ const clientResources = [
 
       <!-- Call Button -->
       <a
-        href="tel:8596875843"
+        href={`tel:${PHONE_NUMBER}`}
         class="bg-amber-500 text-indigo-950 px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95"
       >
-        &#128222; <span class="hidden lg:inline">(859) 687-5843</span><span
+        &#128222; <span class="hidden lg:inline">{PHONE_NUMBER_FORMATTED}</span><span
           class="lg:hidden">Call</span
         >
       </a>
@@ -513,7 +514,7 @@ const clientResources = [
 
       <!-- Referrals Link -->
       <a
-        href="https://drive.google.com/file/d/1fhYlXyIpFgUslpYGLkkt6xYveGfmlSG2/view"
+        href={REFERRAL_LINK}
         target="_blank"
         class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:text-amber-400 transition-colors duration-200"
         >Referrals</a
@@ -522,7 +523,7 @@ const clientResources = [
       <!-- Client Portal Button -->
       <div class="flex flex-col gap-3 mt-6">
         <a
-          href="https://heatherlcornett.clientsecure.me/sign-in"
+          href={WIDGET_LINK}
           target="_blank"
           rel="noopener noreferrer"
           class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all"
@@ -532,10 +533,10 @@ const clientResources = [
 
         <!-- Call Button -->
         <a
-          href="tel:8596875843"
+          href={`tel:${PHONE_NUMBER}`}
           class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all"
         >
-          &#128222; (859) 687-5843
+          &#128222; {PHONE_NUMBER_FORMATTED}
         </a>
       </div>
     </div>
