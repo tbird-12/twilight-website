@@ -58,7 +58,7 @@ const faqs = [
             <span class="text-amber-500 font-black tracking-[0.3em] uppercase text-[10px] mb-4 block">Educational Advocacy</span>
             <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-none">
                 Learning <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic">Disabilities.</span>
+                <span class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic">Disabilities.</span>
             </h1>
             <p class="text-indigo-200/70 text-lg leading-relaxed max-w-lg mb-8">
                 We move beyond standard testing to uncover the specific cognitive profile of how you or your child learns, processes, and succeeds.
@@ -68,7 +68,7 @@ const faqs = [
             </a>
         </div>
         <div class="relative">
-             <div class="aspect-square bg-gradient-to-br from-amber-500/20 to-indigo-500/10 rounded-[3rem] border border-white/10 backdrop-blur-3xl relative overflow-hidden">
+             <div class="aspect-square bg-linear-to-br from-amber-500/20 to-indigo-500/10 rounded-[3rem] border border-white/10 backdrop-blur-3xl relative overflow-hidden">
                 <div class="absolute inset-0 flex items-center justify-center text-9xl opacity-20">✦</div>
                 <div class="p-12 relative z-10">
                     <h3 class="text-white font-black text-2xl mb-4 italic">"Children are our most valuable resource."</h3>
@@ -83,7 +83,7 @@ const faqs = [
         <h2 class="text-4xl font-black text-white mb-16 text-center lg:text-left">Clinical <span class="text-amber-500">Definitions.</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
             {learningDisabilities.map(ld => (
-                <div class="p-10 bg-white/[0.03] border border-white/10 rounded-[2.5rem] hover:bg-white/[0.05] transition-all">
+                <div class="p-10 bg-white/3 border border-white/10 rounded-[2.5rem] hover:bg-white/5 transition-all">
                     <h3 class="text-2xl font-black text-white mb-2">{ld.title}</h3>
                     <p class="text-amber-500 text-[10px] font-black uppercase tracking-widest mb-6">{ld.specialty}</p>
                     <p class="text-indigo-100/60 text-sm leading-relaxed">{ld.desc}</p>
