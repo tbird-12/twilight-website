@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
+import { WIDGET_LINK } from '../../data/resource';
 
 const evaluationFocus = [
   {
@@ -96,7 +97,7 @@ const evaluationFocus = [
         <div class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] text-center">
           <h3 class="text-2xl font-black text-white mb-4 tracking-tight">Access Support</h3>
           <p class="text-indigo-200/60 text-sm mb-8">Professional evaluations with a focus on dignity and clinical precision.</p>
-          <a href="https://heatherlcornett.clientsecure.me/contact-widget" class="block w-full py-4 bg-[#D4CFC7] text-indigo-950 font-black rounded-xl hover:bg-white transition-all shadow-lg shadow-[#D4CFC7]/10">
+          <a href={WIDGET_LINK} class="block w-full py-4 bg-[#D4CFC7] text-indigo-950 font-black rounded-xl hover:bg-white transition-all shadow-lg shadow-[#D4CFC7]/10">
             Request Appointment
           </a>
         </div>

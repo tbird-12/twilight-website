@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
+import { WIDGET_LINK } from '../../data/resource';
 
 ---
 
@@ -25,7 +26,7 @@ import '../../styles/global.css';
                     Please note that our current availability is limited, and we are accepting new clients for ESA evaluations. 
                     We encourage you to schedule an intake as soon as possible to secure your spot.
                 </p>
-                <a href="https://heatherlcornett.clientsecure.me/contact-widget" class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
+                <a href={WIDGET_LINK} class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
                     Schedule an Intake
                 </a>
             </div>

@@ -1,6 +1,7 @@
 ---
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
+import { WIDGET_LINK } from '../../data/resource';
 
 ---
 
@@ -26,7 +27,7 @@ import '../../styles/global.css';
                     The evaluation process includes interviews, psychological testing, and collateral information gathering. 
                     The goal is to provide a comprehensive assessment that helps inform adoption decisions and ensures the well-being of the child. 
                 </p>
-                <a href="https://heatherlcornett.clientsecure.me/contact-widget" class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
+                <a href={WIDGET_LINK} class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
                     Schedule an Intake
                 </a>
             </div>

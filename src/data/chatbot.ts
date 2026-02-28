@@ -1,4 +1,4 @@
-import { PHONE_NUMBER } from './resource';
+import { PHONE_NUMBER, WIDGET_LINK, EMAIL_ADDRESS, REFERRAL_LINK } from './resource';
 
 export interface ChatNode {
   text: string;
@@ -26,7 +26,7 @@ export const chatbotTree: ChatTree = {
     "type": "terminal",
     "action": " Referral Form",
     "actionType": "link",
-    "actionValue": "https://drive.google.com/file/d/1fhYlXyIpFgUslpYGLkkt6xYveGfmlSG2/view?usp=sharing"
+    "actionValue": REFERRAL_LINK
   },
   "status": {
     "text": "Are you a new or existing client?",
@@ -76,13 +76,13 @@ export const chatbotTree: ChatTree = {
     "type": "terminal",
     "action": "Get Intake Documents",
     "actionType": "link",
-    "actionValue": "https://heatherlcornett.clientsecure.me/contact-widget"
+    "actionValue": WIDGET_LINK
   },
   "reject": {
     "text": "We're sorry, but we cannot provide the requested service in your state.",
     "type": "terminal",
     "action": "Email Support",
     "actionType": "email",
-    "actionValue": "office@twilightpsychology.com"
+    "actionValue": EMAIL_ADDRESS
   }
 };

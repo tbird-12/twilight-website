@@ -2,6 +2,7 @@
 import ServiceLayout from '../../../layouts/ServiceLayout.astro';
 import '../../../styles/global.css';
 import { Image } from 'astro:assets';
+import { WIDGET_LINK } from '../../../data/resource';
 import stephenPhoto from '../../../assets/images/staff/stephen-shu.png';
 
 const specialties = ["Neuropsychological Assessments", "Psychological Testing", "Marriage & Family Therapy", "Cognitive Behavioral Functioning"];
@@ -65,7 +66,7 @@ const specialties = ["Neuropsychological Assessments", "Psychological Testing", 
                 <p class="font-bold opacity-80 mb-10 max-w-xl mx-auto italic leading-relaxed">
                     Stephen provides evaluations for ages 12 and up in Lexington, KY.
                 </p>
-                <a href="https://heatherlcornett.clientsecure.me/contact-widget" class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
+                <a href={WIDGET_LINK} class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
                     Schedule an Intake
                 </a>
             </div>

@@ -2,6 +2,7 @@
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import "../../../styles/global.css";
 import { Image } from "astro:assets";
+import { WIDGET_LINK } from "../../../data/resource";
 import portrait from "../../../assets/images/staff/heather-cornett.png";
 
 const specialties = [
@@ -216,7 +217,7 @@ const education = [
           and nationwide via Telehealth.
         </p>
         <a
-          href="https://heatherlcornett.clientsecure.me/contact-widget"
+          href={WIDGET_LINK}
           class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all"
         >
           Schedule an Intake
