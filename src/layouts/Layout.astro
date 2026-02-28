@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Announcements from "../components/Announcements.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import Chatbot from "../components/Chatbot.astro";
 import favicon from "../assets/favicons/favicon.svg";
 import Schema from "../components/Schema.astro";
 
@@ -54,6 +55,8 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
     </main>
 
     <Footer />
+
+    <Chatbot />
   </body>
 </html>
 
@@ -61,5 +64,21 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).href;
   /* Add any global CSS transitions or base styles here */
   :root {
     --accent-gradient: linear-gradient(45deg, #4f46e5, #818cf8);
+  }
+
+  /* Chatbot animations and scrollbar */
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .animate-slide-up { 
+    animation: slideUp 0.3s ease-out; 
+  }
+  .chat-scrollbar::-webkit-scrollbar { 
+    width: 4px; 
+  }
+  .chat-scrollbar::-webkit-scrollbar-thumb { 
+    background: #cbd5e1; 
+    border-radius: 10px; 
   }
 </style>
