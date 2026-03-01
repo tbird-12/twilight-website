@@ -80,32 +80,44 @@ const clientResources = [
       >
     </a>
 
-    <!-- Mobile menu button -->
-    <button id="mobileMenuBtn" 
-    class="md:hidden text-white p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg transition-colors active:bg-white/10"
-    aria-label="Open main menu"
-    aria-expanded="false"
-    aria-controls="mobile-menu"
-    >
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
+    <!-- Mobile Controls (Call Button + Menu Button) -->
+    <div class="md:hidden flex items-center gap-2">
+      <!-- Mobile Call Button -->
+      <a
+        id="floatingCallBtn"
+        href={`tel:${PHONE_NUMBER}`}
+        class="bg-amber-500 text-indigo-950 px-4 py-2 rounded-full font-black text-xs hover:bg-amber-400 transition-all shadow-lg flex items-center gap-1"
       >
-        <path
-          id="menuIcon"
-          d="M4 6h16M4 12h16M4 18h16"
-          stroke-width="2"
-          stroke-linecap="round"></path>
-        <path
-          id="closeIcon"
-          class="hidden"
-          d="M6 18L18 6M6 6l12 12"
-          stroke-width="2"
-          stroke-linecap="round"></path>
-      </svg>
-    </button>
+        &#128222; <span>Call</span>
+      </a>
+
+      <!-- Mobile menu button -->
+      <button id="mobileMenuBtn" 
+      class="text-white p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg transition-colors active:bg-white/10"
+      aria-label="Open main menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            id="menuIcon"
+            d="M4 6h16M4 12h16M4 18h16"
+            stroke-width="2"
+            stroke-linecap="round"></path>
+          <path
+            id="closeIcon"
+            class="hidden"
+            d="M6 18L18 6M6 6l12 12"
+            stroke-width="2"
+            stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-6 lg:gap-10">
@@ -340,14 +352,12 @@ const clientResources = [
         Client Portal
       </a>
 
-      <!-- Call Button -->
+      <!-- Call Button (Desktop Only) -->
       <a
         href={`tel:${PHONE_NUMBER}`}
-        class="bg-amber-500 text-indigo-950 px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95"
+        class="hidden lg:inline-block bg-amber-500 text-indigo-950 px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95"
       >
-        &#128222; <span class="hidden lg:inline">{PHONE_NUMBER_FORMATTED}</span><span
-          class="lg:hidden">Call</span
-        >
+        &#128222; <span class="lg:inline">{PHONE_NUMBER_FORMATTED}</span>
       </a>
     </nav>
   </div>
@@ -531,13 +541,8 @@ const clientResources = [
           Client Portal
         </a>
 
-        <!-- Call Button -->
-        <a
-          href={`tel:${PHONE_NUMBER}`}
-          class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all"
-        >
-          &#128222; {PHONE_NUMBER_FORMATTED}
-        </a>
+        <!-- Mobile Call Button Slot (button will move here when menu opens) -->
+        <div id="mobileCallSlot" class="hidden"></div>
       </div>
     </div>
   </div>
@@ -546,16 +551,40 @@ const clientResources = [
 <script>
   // Defer script execution until after page render
   document.addEventListener("DOMContentLoaded", () => {
-    // Mobile menu toggle
+    // Mobile menu toggle with floating button animation
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     const menuIcon = document.getElementById("menuIcon");
     const closeIcon = document.getElementById("closeIcon");
+    const floatingCallBtn = document.getElementById("floatingCallBtn");
+    const mobileCallSlot = document.getElementById("mobileCallSlot");
+    const mobileControlsDiv = floatingCallBtn?.parentElement;
+
+    let isMenuOpen = false;
 
     mobileMenuBtn?.addEventListener("click", () => {
+      isMenuOpen = !isMenuOpen;
+      
       mobileMenu?.classList.toggle("hidden");
       menuIcon?.classList.toggle("hidden");
       closeIcon?.classList.toggle("hidden");
+
+      // Move call button between header and menu
+      if (floatingCallBtn && mobileCallSlot && mobileControlsDiv) {
+        if (isMenuOpen) {
+          // Menu opening - move button into menu slot
+          floatingCallBtn.classList.remove("px-4", "py-2", "text-xs", "gap-1");
+          floatingCallBtn.classList.add("px-6", "py-3", "text-sm", "gap-2", "text-center", "w-full", "justify-center");
+          mobileCallSlot.classList.remove("hidden");
+          mobileCallSlot.appendChild(floatingCallBtn);
+        } else {
+          // Menu closing - return button to header position
+          floatingCallBtn.classList.add("px-4", "py-2", "text-xs", "gap-1");
+          floatingCallBtn.classList.remove("px-6", "py-3", "text-sm", "gap-2", "text-center", "w-full", "justify-center");
+          mobileCallSlot.classList.add("hidden");
+          mobileControlsDiv.prepend(floatingCallBtn);
+        }
+      }
     });
 
     // Dropdown toggles
