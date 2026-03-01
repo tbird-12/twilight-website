@@ -18,7 +18,7 @@ export const chatbotTree: ChatTree = {
     "text": "Hi! To get started, let us know who you are.",
     "options": [
       { "label": "Healthcare Provider", "next": "clinician" },
-      { "label": "Client / Patient", "next": "status" }
+      { "label": "Client", "next": "status" }
     ]
   },
   "clinician": {

@@ -1,6 +1,6 @@
 ---
 import { chatbotTree } from "../data/chatbot";
-import { PHONE_NUMBER } from "../data/resource";
+import { PHONE_NUMBER, EMAIL_ADDRESS } from "../data/resource";
 import { Icon } from "astro-icon/components";
 ---
 
@@ -9,7 +9,7 @@ import { Icon } from "astro-icon/components";
   aria-label="Open chat assistant"
   class="fixed bottom-4 right-4 md:bottom-5 md:right-5 w-14 h-14 md:w-16 md:h-16 bg-indigo-400 hover:bg-teal-700 text-white rounded-full shadow-2xl flex items-center justify-center z-60 transition-transform hover:scale-110 touch-manipulation">
   <Icon
-    name="mdi:chat-outline"
+    name="mdi:chat-bubble-outline"
     class="relative w-6 h-6 md:w-9 md:h-9 object-cover rounded-3xl shadow-2xl"
     />
 </button>
@@ -32,7 +32,19 @@ import { Icon } from "astro-icon/components";
     </div>
 </div>
 
-<script is:inline define:vars={{ tree: chatbotTree }}>
+<script is:inline define:vars={{ tree: chatbotTree, EMAIL_ADDRESS }}>
+// Switch admin contact to email during off-hours (6 PM – 9 AM)
+(function() {
+  const hour = new Date().getHours();
+  const isOffHours = hour < 9 || hour >= 17;
+  if (isOffHours && tree['admin']) {
+    tree['admin'].action = 'Email Office';
+    tree['admin'].actionType = 'email';
+    tree['admin'].actionValue = EMAIL_ADDRESS;
+    tree['admin'].text = 'Our office is currently closed. Please email us and we\'ll get back to you on the next business day.';
+  }
+})();
+
 const chatContainer = document.getElementById('chat-container');
 const chatBox = document.getElementById('chat-box');
 const botTrigger = document.getElementById('bot-trigger');
