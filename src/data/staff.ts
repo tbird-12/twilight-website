@@ -137,7 +137,7 @@ export const providers: Provider[] = [
     wait_times: { therapy: 'Immediate availability' } 
   },
   {
-    name: 'Olivia Williams',
+    name: 'Dr. Olivia Williams',
     slug: 'olivia-williams',
     spec: 'Psychological Assessments', 
     image: oliviaWilliamsImg,

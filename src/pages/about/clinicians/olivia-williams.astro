@@ -1,0 +1,83 @@
+---
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import "../../../styles/global.css";
+import { Image } from "astro:assets";
+import { providers } from "../../../data/staff";
+
+const olivia = providers.find((person) => person.slug === "olivia-williams")!;
+
+const specialties = [
+  "Psychological Assessments",
+  "Autism & ADHD Support",
+  "Psyhoeducational Assessments",
+  "Dyslexia Assessments",
+];
+---
+
+<ServiceLayout
+  name="Olivia Williams, Ph.D, T-LPA | Trainee Licensed Psychological Associate "
+  description="Olivia Williams is a Trainee Licensed Psychological Associate specializing in psychological assessments"
+>
+  <section
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent"
+  >
+    <div class="max-w-7xl mx-auto mb-10">
+      <a
+        href="/about/clinicians/clinicians-lex-ky"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
+      >
+        <span aria-hidden="true">←</span>
+        Back to all clinicians
+      </a>
+    </div>
+    <div
+      class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+    >
+      <div class="relative group">
+        <div
+          class="absolute -inset-1 bg-linear-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
+        >
+        </div>
+        <div
+          class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+        >
+          <Image
+            src={olivia.image}
+            alt={olivia.name}
+            class="object-cover w-full h-full rounded-[2.5rem]"
+            loading={"eager"}
+          />
+        </div>
+      </div>
+        <div class="flex-1 text-center lg:text-left">
+        <span
+          class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block"
+        >
+          Licensed Psychological Associate Trainee
+        </span>
+        <h1
+          class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none"
+        >
+          Olivia <br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic text-4xl md:text-6xl"
+            >Williams, Ph.D., T-LPA.</span
+          >
+        </h1>
+        <p class="text-indigo-200/70 text-lg leading-relaxed max-w-2xl mb-8">
+          Specializing in psychological assessments for individuals
+          for ages 2 and above.
+        </p>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+          {
+            specialties.map((item) => (
+              <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">
+                {item}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
