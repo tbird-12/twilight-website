@@ -62,8 +62,14 @@ const states = [...new Set(providers.flatMap(p => p.states_served))].sort();
     margin-bottom: 25px; 
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
     position: sticky; 
-    top: 10px; 
-    z-index: 100;
+    top: 80px; 
+    z-index: 40;
+  }
+
+  @media (max-width: 640px) {
+    .filter-panel {
+      top: 70px;
+    }
   }
 
   .filter-group { 
