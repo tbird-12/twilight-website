@@ -44,7 +44,7 @@ const states = [...new Set(providers.flatMap(p => p.states_served))].sort();
   </div>
 </div>
 
-<script define:vars={{ providers }}>
+<script is:inline define:vars={{ providers }}>
   const serviceFilter = document.getElementById('service-filter');
   const stateFilter = document.getElementById('state-filter');
   const payTypeFilter = document.getElementById('paytype-filter');

@@ -2,7 +2,9 @@
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import "../../../styles/global.css";
 import { Image } from "astro:assets";
-import jatanaPhoto from "../../../assets/images/staff/jatana-boggs.png";
+import { providers } from "../../../data/staff";
+
+const jatana = providers.find(person => person.slug === 'jatana-boggs')!;
 
 const specialties = [
   "Adult ADHD",
@@ -43,8 +45,8 @@ const specialties = [
           class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
         >
           <Image
-            src={jatanaPhoto}
-            alt="Jatana Boggs"
+            src={jatana.image}
+            alt={jatana.name}
             class="object-cover w-full h-full rounded-[2.5rem]"
             loading={"eager"}
           />

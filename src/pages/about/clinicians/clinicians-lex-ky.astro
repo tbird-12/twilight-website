@@ -11,13 +11,13 @@ We are committed to providing compassionate care and support to our patients. Ou
   keywords="clinicians, Lexington KY, healthcare providers, medical staff, compassionate care, patient support"
 >
   <section
-    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent"
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent"
   >
     <h1
       class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none"
     >
       Meet Our <br /><span
-        class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic"
+        class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
         >Clinicians</span
       >
     </h1>
@@ -27,7 +27,7 @@ We are committed to providing compassionate care and support to our patients. Ou
         providers.map((person) => (
           <a
             href={`/about/clinicians/${person.slug}`}
-            class="group bg-gradient-to-br from-indigo-50 to-amber-50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-indigo-100"
+            class="group bg-linear-to-br from-indigo-50 to-amber-50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-indigo-100"
           >
             <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">
               {person.name}
@@ -53,13 +53,21 @@ We are committed to providing compassionate care and support to our patients. Ou
       }
     </div>
 
-    <div class="max-w-7xl mx-auto mb-10 py-8 text-center">
+    <div class="max-w-7xl mx-auto mb-10 py-8 text-center flex flex-col sm:flex-row gap-4 justify-center items-center">
       <a
         href="/about/staff/samantha-rodarte"
         class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
       >
         <span aria-hidden="true">←</span>
         Meet our staff
+      </a>
+      <span class="hidden sm:inline text-amber-200/50">|</span>
+      <a
+        href="/about/careers"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
+      >
+        Join our team
+        <span aria-hidden="true">→</span>
       </a>
     </div>
   </section>

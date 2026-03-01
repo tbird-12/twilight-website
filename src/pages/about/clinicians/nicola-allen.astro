@@ -2,7 +2,9 @@
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import "../../../styles/global.css";
 import { Image } from "astro:assets";
-import nicolaPhoto from "../../../assets/images/staff/nicola-allen.png";
+import { providers } from "../../../data/staff";
+
+const nicola = providers.find((person) => person.slug === "nicola-allen")!;
 
 const specialties = [
   "Psychiatry",
@@ -13,12 +15,13 @@ const specialties = [
 ];
 ---
 
-<ServiceLayout name="Nicola Allen, PMHNP-BC | Medication Management Lexington"
+<ServiceLayout
+  name="Nicola Allen, PMHNP-BC | Medication Management Lexington"
   description="Nicola Allen is a Board-Certified Psychiatric Nurse Practitioner with 19 years of experience in psychiatry. Specializing in comprehensive medication management, Nicola provides compassionate, patient-centered care for individuals facing Depression, Anxiety, Sleep Disorders, and Trauma. With a holistic approach that includes lifestyle modifications and mindfulness, Nicola is dedicated to supporting clients on their mental health journey."
   keywords="Nicola Allen, PMHNP-BC, Psychiatric Nurse Practitioner, Medication Management, Psychiatry, ADHD, PTSD, Trauma-Informed Care, Lifestyle Mindfulness"
 >
   <section
-    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-gradient-to-b from-indigo-900/20 to-transparent"
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent"
   >
     <div class="max-w-7xl mx-auto mb-10">
       <a
@@ -34,15 +37,15 @@ const specialties = [
     >
       <div class="relative group">
         <div
-          class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
+          class="absolute -inset-1 bg-linear-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
         >
         </div>
         <div
           class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
         >
           <Image
-            src={nicolaPhoto}
-            alt="Professional Portrait of Nicola Allen"
+            src={nicola.image}
+            alt={`Professional Portrait of ${nicola.name}`}
             class="object-cover w-full h-full rounded-[2.5rem]"
             loading={"eager"}
           />
@@ -57,8 +60,9 @@ const specialties = [
           class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter"
         >
           Nicola Allen, <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4CFC7] to-white italic text-4xl md:text-6xl"
-            >MSN, PMHNP-BC</span>
+            class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic text-4xl md:text-6xl"
+            >MSN, PMHNP-BC</span
+          >
         </h1>
         <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
           {
@@ -83,7 +87,7 @@ const specialties = [
       With 19 years of nursing experience in psychiatry, I provide a
       compassionate, judgment-free space for medication management. My training
       encompasses lifestyle modifications and mindfulness alongside
-      evidence-based prescribing. 
+      evidence-based prescribing.
     </p>
     <p>
       I began my journey at Hazard Community and Technical College, later
@@ -92,10 +96,13 @@ const specialties = [
       Anxiety, Sleep Disorders, and Trauma.
     </p>
     <p>
-      Depending on the patient's needs, I am qualified to prescribe 
-      stimulant medications for ADHD, and controlled substances for PTSD and sleep disorders, with
-      a strong emphasis on <strong class="text-amber-500">safety and monitoring</strong>. At Twilight Psychology, we follow DEA guidelines 
-      and PDMP checks for prescribing controlled substances, ensuring that all patients receive the highest standard of care.
+      Depending on the patient's needs, I am qualified to prescribe stimulant
+      medications for ADHD, and controlled substances for PTSD and sleep
+      disorders, with a strong emphasis on <strong class="text-amber-500"
+        >safety and monitoring</strong
+      >. At Twilight Psychology, we follow DEA guidelines and PDMP checks for
+      prescribing controlled substances, ensuring that all patients receive the
+      highest standard of care.
     </p>
 
     <div

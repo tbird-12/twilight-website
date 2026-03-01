@@ -3,7 +3,9 @@ import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import "../../../styles/global.css";
 import { Image } from "astro:assets";
 import { WIDGET_LINK } from "../../../data/resource";
-import portrait from "../../../assets/images/staff/heather-cornett.png";
+import { providers } from "../../../data/staff";
+
+const heather = providers.find(person => person.slug === 'heather-cornett')!;
 
 const specialties = [
   "High-Masking Autism & ADHD",
@@ -63,8 +65,8 @@ const education = [
             class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
           >
             <Image
-              src={portrait}
-              alt="Professional Portrait of Dr. Heather Cornett"
+              src={heather.image}
+              alt={`Professional Portrait of ${heather.name}`}
               class="object-cover w-full h-full rounded-[2.5rem]"
               loading={"eager"}
             />
@@ -182,49 +184,49 @@ const education = [
 
   <section class="max-w-5xl mx-auto px-6 py-24">
     <div
-      class="bg-amber-500 p-12 rounded-[4rem] text-indigo-950 text-center relative overflow-hidden"
+      class="bg-indigo-900/20 p-12 rounded-[4rem] text-white border border-white/10 text-center relative overflow-hidden"
     >
       <div class="relative z-10">
-        <h2 class="text-4xl font-black mb-4 tracking-tighter">
+        <h2 class="text-3xl font-bold mb-4 tracking-tight text-indigo-100">
           Current Availability
         </h2>
-        <div class="flex flex-col md:flex-row justify-center gap-8 my-8">
+        <div class="flex flex-col md:flex-row justify-center gap-6 my-8">
           <div
-            class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10"
+            class="bg-white/5 p-6 rounded-2xl border border-white/10"
           >
             <p
-              class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60"
+              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-amber-400/70"
             >
               Evaluations
             </p>
-            <p class="text-xl font-black">Accepting New Clients</p>
+            <p class="text-lg font-semibold text-indigo-100">Accepting New Clients</p>
           </div>
           <div
-            class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10"
+            class="bg-white/5 p-6 rounded-2xl border border-white/10"
           >
             <p
-              class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60"
+              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-amber-400/70"
             >
               Individual Therapy
             </p>
-            <p class="text-xl font-black opacity-40 italic">Waitlist Only</p>
+            <p class="text-lg font-semibold text-indigo-200/60 italic">Waitlist Only</p>
           </div>
         </div>
         <p
-          class="font-bold opacity-80 mb-10 max-w-xl mx-auto italic leading-relaxed"
+          class="font-medium text-indigo-200/70 mb-10 max-w-xl mx-auto italic leading-relaxed text-sm"
         >
           Dr. Cornett provides evaluations for ages 2 and up in Lexington, KY
-          and nationwide via Telehealth.
+          and nationwide for adults via Telehealth.
         </p>
         <a
           href={WIDGET_LINK}
-          class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all"
+          class="inline-block px-10 py-4 bg-amber-500/90 text-indigo-950 font-bold rounded-2xl hover:bg-amber-500 transition-all"
         >
           Schedule an Intake
         </a>
       </div>
       <div
-        class="absolute -bottom-10 -right-10 text-[12rem] font-black text-indigo-950/5 select-none uppercase"
+        class="absolute -bottom-10 -right-10 text-[12rem] font-black text-white/5 select-none uppercase"
       >
         PsyPact
       </div>

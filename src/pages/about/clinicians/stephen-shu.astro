@@ -1,75 +1,143 @@
 ---
-import ServiceLayout from '../../../layouts/ServiceLayout.astro';
-import '../../../styles/global.css';
-import { Image } from 'astro:assets';
-import { WIDGET_LINK } from '../../../data/resource';
-import stephenPhoto from '../../../assets/images/staff/stephen-shu.png';
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import "../../../styles/global.css";
+import { Image } from "astro:assets";
+import { WIDGET_LINK } from "../../../data/resource";
+import { providers } from "../../../data/staff";
 
-const specialties = ["Neuropsychological Assessments", "Psychological Testing", "Marriage & Family Therapy", "Cognitive Behavioral Functioning"];
+const stephen = providers.find((person) => person.slug === "stephen-shu")!;
+
+const specialties = [
+  "Neuropsychological Assessments",
+  "Psychological Testing",
+  "Marriage & Family Therapy",
+  "Cognitive Behavioral Functioning",
+];
 ---
 
-<ServiceLayout name="Stephen Shu, M.A., LPA | Psychological Assessments Lexington"
-    description="Stephen Shu is a Licensed Psychological Associate specializing in comprehensive neuropsychological assessments for individuals aged 12 and up. With a focus on cognitive, emotional, and behavioral functioning, Stephen provides detailed evaluations that empower clients with clarity and insight into their mental health. Currently completing his doctoral degree at the University of Hartford, Stephen practices under the supervision of Dr. Heather Cornett, offering a supportive and respectful environment throughout the assessment process."
-    keywords="Stephen Shu, M.A., LPA, Licensed Psychological Associate, Neuropsychological Assessments, Psychological Testing, Marriage & Family Therapy, Cognitive Behavioral Functioning"
+<ServiceLayout
+  name="Stephen Shu, M.A., LPA | Psychological Assessments Lexington"
+  description="Stephen Shu is a Licensed Psychological Associate specializing in comprehensive neuropsychological assessments for individuals aged 12 and up. With a focus on cognitive, emotional, and behavioral functioning, Stephen provides detailed evaluations that empower clients with clarity and insight into their mental health. Currently completing his doctoral degree at the University of Hartford, Stephen practices under the supervision of Dr. Heather Cornett, offering a supportive and respectful environment throughout the assessment process."
+  keywords="Stephen Shu, M.A., LPA, Licensed Psychological Associate, Neuropsychological Assessments, Psychological Testing, Marriage & Family Therapy, Cognitive Behavioral Functioning"
 >
-        <section class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent">
-            <div class="max-w-7xl mx-auto mb-10">
-                <a
-                    href="/about/clinicians/clinicians-lex-ky"
-                    class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
-                >
-                    <span aria-hidden="true">←</span>
-                    Back to all clinicians
-                </a>
-            </div>
-            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-        <div class="relative group">
-            <div class="absolute -inset-1 bg-linear-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
-                <Image src={stephenPhoto} 
-                alt="Professional Portrait of Stephen Shu" 
-                    class="object-cover w-full h-full rounded-[2.5rem]" 
-                    loading={'eager'}/> 
-            </div>
+  <section
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent"
+  >
+    <div class="max-w-7xl mx-auto mb-10">
+      <a
+        href="/about/clinicians/clinicians-lex-ky"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
+      >
+        <span aria-hidden="true">←</span>
+        Back to all clinicians
+      </a>
+    </div>
+    <div
+      class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16"
+    >
+      <div class="relative group">
+        <div
+          class="absolute -inset-1 bg-linear-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
+        >
         </div>
-        <div class="flex-1 text-center lg:text-left">
-            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block">Licensed Psychological Associate</span>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter">Stephen Shu, <span class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic">M.A., LPA.</span></h1>
-            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
-                {specialties.map(s => <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">{s}</span>)}
-            </div>
+        <div
+          class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+        >
+          <Image
+            src={stephen.image}
+            alt={`Professional Portrait of ${stephen.name}`}
+            class="object-cover w-full h-full rounded-[2.5rem]"
+            loading={"eager"}
+          />
         </div>
       </div>
-    </section>
-
-    <section class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg">
-        <h2 class="text-3xl font-black text-white italic">Clarity Through Comprehensive Evaluation.</h2>
-        <p>I am a Licensed Psychological Associate practicing under the supervision of Dr. Heather Cornett. Currently completing my doctoral degree at the University of Hartford, I earned my master's from Pepperdine University with an emphasis in Marriage and Family Therapy.</p>
-        <p>I am passionate about neuropsychology and providing assessments that empower individuals to navigate their lives with greater confidence and insight. I strive to create a calm, supportive environment where everyone feels safe and respected throughout the evaluation process.</p>
-    </section>
-
-
-    <section class="max-w-5xl mx-auto px-6 py-24">
-        <div class="bg-amber-500 p-12 rounded-[4rem] text-indigo-950 text-center relative overflow-hidden">
-            <div class="relative z-10">
-                <h2 class="text-4xl font-black mb-4 tracking-tighter">Current Availability</h2>
-                <div class="flex flex-col md:flex-row justify-center gap-8 my-8">
-                    <div class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10">
-                        <p class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60">Evaluations</p>
-                        <p class="text-xl font-black">Accepting New Clients</p>
-                    </div>
-                    <div class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10">
-                        <p class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60">Individual Therapy</p>
-                        <p class="text-xl font-black opacity-40 italic">Waitlist Only</p>
-                    </div>
-                </div>
-                <p class="font-bold opacity-80 mb-10 max-w-xl mx-auto italic leading-relaxed">
-                    Stephen provides evaluations for ages 12 and up in Lexington, KY.
-                </p>
-                <a href={WIDGET_LINK} class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all">
-                    Schedule an Intake
-                </a>
-            </div>
+      <div class="flex-1 text-center lg:text-left">
+        <span
+          class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block"
+          >Licensed Psychological Associate</span
+        >
+        <h1
+          class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter"
+        >
+          Stephen Shu, <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-[#D4CFC7] to-white italic"
+            >M.A., LPA.</span>
+        </h1>
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3 mt-6">
+          {
+            specialties.map((s) => (
+              <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-[#D4CFC7] uppercase tracking-tighter">
+                {s}
+              </span>
+            ))
+          }
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="max-w-4xl mx-auto px-6 py-24 space-y-8 text-indigo-100/80 text-lg"
+  >
+    <h2 class="text-3xl font-black text-white italic">
+      Clarity Through Comprehensive Evaluation.
+    </h2>
+    <p>
+      I am a Licensed Psychological Associate practicing under the supervision
+      of Dr. Heather Cornett. Currently completing my doctoral degree at the
+      University of Hartford, I earned my master's from Pepperdine University
+      with an emphasis in Marriage and Family Therapy.
+    </p>
+    <p>
+      I am passionate about neuropsychology and providing assessments that
+      empower individuals to navigate their lives with greater confidence and
+      insight. I strive to create a calm, supportive environment where everyone
+      feels safe and respected throughout the evaluation process.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 py-24">
+    <div
+      class="bg-amber-500 p-12 rounded-[4rem] text-indigo-950 text-center relative overflow-hidden"
+    >
+      <div class="relative z-10">
+        <h2 class="text-4xl font-black mb-4 tracking-tighter">
+          Current Availability
+        </h2>
+        <div class="flex flex-col md:flex-row justify-center gap-8 my-8">
+          <div
+            class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10"
+          >
+            <p
+              class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60"
+            >
+              Evaluations
+            </p>
+            <p class="text-xl font-black">Accepting New Clients</p>
+          </div>
+          <div
+            class="bg-indigo-950/10 p-6 rounded-2xl border border-indigo-950/10"
+          >
+            <p
+              class="text-[10px] font-black uppercase tracking-widest mb-1 opacity-60"
+            >
+              Individual Therapy
+            </p>
+            <p class="text-xl font-black opacity-40 italic">Waitlist Only</p>
+          </div>
+        </div>
+        <p
+          class="font-bold opacity-80 mb-10 max-w-xl mx-auto italic leading-relaxed"
+        >
+          Stephen provides evaluations for ages 12 and up in Lexington, KY.
+        </p>
+        <a
+          href={WIDGET_LINK}
+          class="inline-block px-12 py-5 bg-indigo-950 text-white font-black rounded-2xl hover:scale-105 transition-all"
+        >
+          Schedule an Intake
+        </a>
+      </div>
+    </div>
+  </section>
 </ServiceLayout>

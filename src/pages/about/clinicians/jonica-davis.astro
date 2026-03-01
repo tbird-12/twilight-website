@@ -2,7 +2,9 @@
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import "../../../styles/global.css";
 import { Image } from "astro:assets";
-import jonicaPhoto from "../../../assets/images/staff/jonica-davis.png";
+import { providers } from "../../../data/staff";
+
+const jonica = providers.find(person => person.slug === 'jonica-davis')!;
 
 const specialties = [
   "Neuro-Affirming Therapy",
@@ -42,8 +44,8 @@ const specialties = [
           class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
         >
           <Image
-            src={jonicaPhoto}
-            alt="Jonica Davis"
+            src={jonica.image}
+            alt={jonica.name}
             class="object-cover w-full h-full rounded-[2.5rem]"
             loading={"eager"}
           />

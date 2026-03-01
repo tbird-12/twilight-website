@@ -3,8 +3,7 @@
 ```text
 /
 ├── public/
-│   └── favicon.svg
-├── src
+├── src/
 │   ├── assets
 │   │   └── astro.svg
 │   ├── components

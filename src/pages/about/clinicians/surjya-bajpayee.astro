@@ -2,7 +2,9 @@
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import "../../../styles/global.css";
 import { Image } from "astro:assets";
-import surjyaPhoto from "../../../assets/images/staff/surjya-bajpayee.png";
+import { providers } from "../../../data/staff";
+
+const surjya = providers.find(person => person.slug === 'surjya-bajpayee')!;
 
 const specialties = [
   "Multicultural Counseling",
@@ -41,8 +43,8 @@ const specialties = [
           class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
         >
           <Image
-            src={surjyaPhoto}
-            alt="Surjya Bajpayee"
+            src={surjya.image}
+            alt={surjya.name}
             class="object-cover w-full h-full rounded-[2.5rem]"
             loading={"eager"}
           />
