@@ -69,6 +69,32 @@ const states = [...new Set(providers.flatMap(p => p.states_served))].sort();
   @media (max-width: 640px) {
     .filter-panel {
       top: 70px;
+      grid-template-columns: 1fr;
+      transition: padding 0.3s ease, box-shadow 0.3s ease, gap 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .filter-panel.minimized {
+      padding: 12px 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      gap: 0;
+    }
+    
+    .filter-panel.minimized .filter-group:not(:first-child),
+    .filter-panel.minimized .reset-btn {
+      display: none;
+      opacity: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .filter-group {
+      transition: opacity 0.2s ease, height 0.2s ease;
+    }
+    
+    .reset-btn {
+      transition: opacity 0.2s ease, height 0.2s ease;
     }
   }
 
@@ -234,8 +260,29 @@ const states = [...new Set(providers.flatMap(p => p.states_served))].sort();
   const payTypeFilter = document.getElementById('paytype-filter');
   const resetBtn = document.getElementById('reset-btn');
   const providerGrid = document.getElementById('provider-grid');
+  const filterPanel = document.querySelector('.filter-panel');
 
   let showInsurance = {};
+  let lastScrollY = 0;
+
+  // Mobile scroll minimization
+  function handleScroll() {
+    if (window.innerWidth <= 640) {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 100) {
+        filterPanel.classList.add('minimized');
+      } else {
+        filterPanel.classList.remove('minimized');
+      }
+      lastScrollY = currentScrollY;
+    } else {
+      filterPanel.classList.remove('minimized');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll);
+  handleScroll(); // Initial check
 
   function formatLabel(str) {
     return str.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
