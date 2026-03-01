@@ -1,61 +1,21 @@
 ---
-import { providers, staff } from "../data/staff";
-import { specialities, services } from "../data/services";
-import { Image } from "astro:assets";
-import favicon from "../assets/favicons/favicon.svg";
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS, WIDGET_LINK, REFERRAL_LINK, SIGN_IN_LINK } from "../data/resource";
-
-const about = [
-  {
-    name: "Clinical Staff",
-    slug: "clinical-staff",
-    desc: "Meet our dedicated team of clinicians",
-    hasNested: true,
-    children: providers,
-    childLabel: "Our Providers",
-    childHrefBase: "/about/clinicians",
-  },
-  {
-    name: "Admin Staff",
-    slug: "admin-staff",
-    desc: "Meet our admini team",
-    hasNested: true,
-    children: staff,
-    childLabel: "Our Staff",
-    childHrefBase: "/about/staff",
-  },
-  {
-    name: "About Us",
-    slug: "twilight-psychology",
-    desc: "Learn about our mission and values",
-  },
-  {
-    name: "Locations",
-    slug: "locations",
-    desc: "Find our office locations and hours",
-  },
-  {
-    name: "Careers",
-    slug: "careers",
-    desc: "Join our team - current job openings",
-  },
-];
-
-const clientResources = [
-  { name: "Fees", slug: "fees", desc: "Pricing and payment options" },
-  { name: "FAQ", slug: "faq", desc: "Frequently asked questions" },
-  {
-    name: "Waitlist Times",
-    slug: "waitlist-times",
-    desc: "New Clients Appointments",
-  },
-  {
-    name: "Insurances Accepted",
-    slug: "insurances-accepted",
-    desc: "Billing Insurance and Networks",
-  },
-  { name: "New Client", slug: "new-client", desc: "Getting started guide" },
-];
+import Logo from "./header/Logo.astro";
+import NavigationDropdown from "./header/NavigationDropdown.astro";
+import MobileDropdown from "./header/MobileDropdown.astro";
+import MenuIcon from "./icons/MenuIcon.astro";
+import {
+  aboutMenuItems,
+  servicesMenuItems,
+  specialtiesMenuItems,
+  clientResourcesMenuItems,
+} from "../data/navigationData";
+import {
+  PHONE_NUMBER,
+  PHONE_NUMBER_FORMATTED,
+  WIDGET_LINK,
+  REFERRAL_LINK,
+  SIGN_IN_LINK,
+} from "../data/resource";
 ---
 
 <header
@@ -64,21 +24,7 @@ const clientResources = [
   <div
     class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between"
   >
-    <a
-      href="/"
-      class="items-center font-black tracking-tighter text-white flex gap-2"
-    >
-      <Image
-        src={favicon}
-        alt="Twilight Psychology Logo"
-        width={240}
-        height={180}
-        class="h-10 w-auto mb-1"
-      />
-      <span class="text-stone-300 hover:text-amber-500 transition-colors"
-        >Twilight Psychology</span
-      >
-    </a>
+    <Logo />
 
     <!-- Mobile Controls (Call Button + Menu Button) -->
     <div class="md:hidden flex items-center gap-2">
@@ -86,6 +32,7 @@ const clientResources = [
       <a
         id="floatingCallBtn"
         href={`tel:${PHONE_NUMBER}`}
+        data-phone={PHONE_NUMBER_FORMATTED}
         class="bg-amber-500 text-indigo-950 px-4 py-2 rounded-full font-black text-xs hover:bg-amber-400 transition-all shadow-lg flex items-center gap-1"
       >
         &#128222; <span>Call</span>
@@ -98,241 +45,43 @@ const clientResources = [
       aria-expanded="false"
       aria-controls="mobile-menu"
       >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            id="menuIcon"
-            d="M4 6h16M4 12h16M4 18h16"
-            stroke-width="2"
-            stroke-linecap="round"></path>
-          <path
-            id="closeIcon"
-            class="hidden"
-            d="M6 18L18 6M6 6l12 12"
-            stroke-width="2"
-            stroke-linecap="round"></path>
-        </svg>
+        <MenuIcon />
       </button>
     </div>
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-6 lg:gap-10">
-      <div class="group relative py-2">
-        <button
-          class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition"
-        >
-          About
-          <svg
-            class="w-4 h-4 text-[#D4CFC7]"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-
-        <div
-          class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50"
-        >
-          <div
-            class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2"
-          >
-            Practice Information
-          </div>
-          <div class="relative max-h-80 overflow-y-auto custom-scrollbar">
-            {
-              about.map((information) =>
-                information.hasNested ? (
-                  <div class="group/nested ">
-                    <div class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors cursor-pointer">
-                      <div class="text-left">
-                        <div class="text-sm font-black text-indigo-100 group-hover/nested:text-amber-400">
-                          {information.name}
-                        </div>
-                        <div class="text-[11px] font-bold text-indigo-200">
-                          {information.desc}
-                        </div>
-                      </div>
-                      <svg
-                        class="w-3 h-3 text-amber-500"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M9 5l7 7-7 7" stroke-width="3" />
-                      </svg>
-                    </div>
-
-                    <div class="absolute inset-0 ml-2 w-64 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 translate-x-2 group-hover/nested:translate-x-0 bg-indigo-800 border-l-4 border-l-amber-500 shadow-2xl rounded-2xl p-3 z-50">
-                      <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">
-                        {information.childLabel}
-                      </div>
-
-                      <div class="max-h-96 overflow-y-auto custom-scrollbar">
-                        {information.children.map((person) => (
-                          <a
-                            href={`${information.childHrefBase}/${person.slug}`}
-                            class="block px-3 py-2 rounded-lg hover:bg-indigo-700 text-sm font-black text-indigo-100 transition-colors"
-                          >
-                            <div class="text-sm font-black text-indigo-100">
-                              {person.name}
-                            </div>
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <a
-                    href={`/about/${information.slug}`}
-                    class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors"
-                  >
-                    <div class="text-sm font-black text-indigo-100">
-                      {information.name}
-                    </div>
-                    <div class="text-[11px] font-bold text-indigo-200">
-                      {information.desc}
-                    </div>
-                  </a>
-                ),
-              )
-            }
-          </div>
-        </div>
-      </div>
+      <!-- About Dropdown -->
+      <NavigationDropdown
+        title="About"
+        items={aboutMenuItems}
+        sectionLabel="Practice Information"
+        baseHref="/about"
+      />
 
       <!-- Services Dropdown -->
-      <div class="group relative py-2">
-        <button
-          class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition"
-        >
-          Services
-          <svg
-            class="w-4 h-4 text-amber-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-
-        <div
-          class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50"
-        >
-          <div
-            class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2"
-          >
-            Our Services
-          </div>
-          <div class="max-h-80 overflow-y-auto custom-scrollbar">
-            {
-              services.map((service) => (
-                <a
-                  href={`/services/${service.slug}`}
-                  class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item"
-                >
-                  <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
-                    {service.name}
-                  </div>
-                  <div class="text-[11px] font-bold text-indigo-200">
-                    {service.desc}
-                  </div>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-      </div>
+      <NavigationDropdown
+        title="Services"
+        items={servicesMenuItems}
+        sectionLabel="Our Services"
+        baseHref="/services"
+      />
 
       <!-- Specialties Dropdown -->
-      <div class="group relative py-2">
-        <button
-          class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition"
-        >
-          Specialties
-          <svg
-            class="w-4 h-4 text-amber-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-
-        <div
-          class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50"
-        >
-          <div
-            class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2"
-          >
-            Specialties
-          </div>
-          <div class="max-h-80 overflow-y-auto custom-scrollbar">
-            {
-              specialities.map((speciality) => (
-                <a
-                  href={`/specialities/${speciality.slug}`}
-                  class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item"
-                >
-                  <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
-                    {speciality.name}
-                  </div>
-                  <div class="text-[11px] font-bold text-indigo-200">
-                    {speciality.desc}
-                  </div>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-      </div>
+      <NavigationDropdown
+        title="Specialties"
+        items={specialtiesMenuItems}
+        sectionLabel="Specialties"
+        baseHref="/specialities"
+      />
 
       <!-- Resources Dropdown -->
-      <div class="group relative py-2">
-        <button
-          class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition"
-        >
-          Resources
-          <svg
-            class="w-4 h-4 text-amber-500"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-
-        <div
-          class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50"
-        >
-          <div
-            class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2"
-          >
-            Client Resources
-          </div>
-          <div class="max-h-80 overflow-y-auto custom-scrollbar">
-            {
-              clientResources.map((resource) => (
-                <a
-                  href={`/resources/${resource.slug}`}
-                  class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors group/item"
-                >
-                  <div class="text-sm font-black text-indigo-100 group-hover/item:text-amber-400">
-                    {resource.name}
-                  </div>
-                  <div class="text-[11px] font-bold text-indigo-200">
-                    {resource.desc}
-                  </div>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-      </div>
+      <NavigationDropdown
+        title="Resources"
+        items={clientResourcesMenuItems}
+        sectionLabel="Client Resources"
+        baseHref="/resources"
+      />
 
       <!-- Referrals Link -->
       <a
@@ -362,165 +111,42 @@ const clientResources = [
     </nav>
   </div>
 
-  <!-- Mobile Menu -->
-   
   <div
     id="mobileMenu"
     class="hidden md:hidden bg-indigo-950 border-t border-indigo-900"
   >
     <div class="max-w-7xl mx-auto px-4 py-4">
       <!-- About Dropdown -->
-      <div class="mb-2">
-        <button
-          id="aboutToggle"
-          class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg"
-        >
-          <span>About</span>
-          <svg
-            class="w-4 h-4 text-amber-500 transition-transform"
-            id="aboutIcon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-        <div id="aboutContent" class="hidden mt-1 ml-4">
-          {
-            about.map((information) =>
-              information.hasNested ? (
-                <div class="mb-2">
-                  <button
-                    id={`aboutNestedToggle-${information.slug}`}
-                    class="w-full flex items-center justify-between px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
-                  >
-                    <span>{information.name}</span>
-                    <svg
-                      class="w-3 h-3 text-amber-500 transition-transform"
-                      id={`aboutNestedIcon-${information.slug}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M19 9l-7 7-7-7" stroke-width="3" />
-                    </svg>
-                  </button>
-                  <div
-                    id={`aboutNestedContent-${information.slug}`}
-                    class="hidden mt-1 ml-4"
-                  >
-                    {information.children.map((person) => (
-                      <a
-                        href={`${information.childHrefBase}/${person.slug}`}
-                        class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-900 rounded-lg"
-                      >
-                        {person.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <a
-                  href={`/about/${information.slug}`}
-                  class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
-                >
-                  {information.name}
-                </a>
-              ),
-            )
-          }
-        </div>
-      </div>
+      <MobileDropdown
+        id="about"
+        title="About"
+        items={aboutMenuItems}
+        baseHref="/about"
+      />
 
       <!-- Services Dropdown -->
-      <div class="mb-2">
-        <button
-          id="servicesToggle"
-          class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg"
-        >
-          <span>Services</span>
-          <svg
-            class="w-4 h-4 text-amber-500 transition-transform"
-            id="servicesIcon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-        <div id="servicesContent" class="hidden mt-1 ml-4">
-          {
-            services.map((service) => (
-              <a
-                href={`/services/${service.slug}`}
-                class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
-              >
-                {service.name}
-              </a>
-            ))
-          }
-        </div>
-      </div>
+      <MobileDropdown
+        id="services"
+        title="Services"
+        items={servicesMenuItems}
+        baseHref="/services"
+      />
 
       <!-- Specialties Dropdown -->
-      <div class="mb-2">
-        <button
-          id="specialtiesToggle"
-          class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg"
-        >
-          <span>Specialties</span>
-          <svg
-            class="w-4 h-4 text-amber-500 transition-transform"
-            id="specialtiesIcon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-        <div id="specialtiesContent" class="hidden mt-1 ml-4">
-          {
-            specialities.map((speciality) => (
-              <a
-                href={`/specialities/${speciality.slug}`}
-                class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
-              >
-                {speciality.name}
-              </a>
-            ))
-          }
-        </div>
-      </div>
+      <MobileDropdown
+        id="specialties"
+        title="Specialties"
+        items={specialtiesMenuItems}
+        baseHref="/specialities"
+      />
 
       <!-- Resources Dropdown -->
-      <div class="mb-2">
-        <button
-          id="resourcesToggle"
-          class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg"
-        >
-          <span>Resources</span>
-          <svg
-            class="w-4 h-4 text-amber-500 transition-transform"
-            id="resourcesIcon"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            ><path d="M19 9l-7 7-7-7" stroke-width="3"></path></svg
-          >
-        </button>
-        <div id="resourcesContent" class="hidden mt-1 ml-4">
-          {
-            clientResources.map((resource) => (
-              <a
-                href={`/resources/${resource.slug}`}
-                class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
-              >
-                {resource.name}
-              </a>
-            ))
-          }
-        </div>
-      </div>
+      <MobileDropdown
+        id="resources"
+        title="Resources"
+        items={clientResourcesMenuItems}
+        baseHref="/resources"
+      />
 
       <!-- Referrals Link -->
       <a
@@ -549,6 +175,8 @@ const clientResources = [
 </header>
 
 <script>
+  import { PHONE_NUMBER_FORMATTED } from "../data/resource";
+  
   // Defer script execution until after page render
   document.addEventListener("DOMContentLoaded", () => {
     // Mobile menu toggle with floating button animation
@@ -575,12 +203,14 @@ const clientResources = [
           // Menu opening - move button into menu slot
           floatingCallBtn.classList.remove("px-4", "py-2", "text-xs", "gap-1");
           floatingCallBtn.classList.add("px-6", "py-3", "text-sm", "gap-2", "text-center", "w-full", "justify-center");
+          floatingCallBtn.innerHTML = `&#128222; <span>Call ${PHONE_NUMBER_FORMATTED}</span>`;
           mobileCallSlot.classList.remove("hidden");
           mobileCallSlot.appendChild(floatingCallBtn);
         } else {
           // Menu closing - return button to header position
           floatingCallBtn.classList.add("px-4", "py-2", "text-xs", "gap-1");
           floatingCallBtn.classList.remove("px-6", "py-3", "text-sm", "gap-2", "text-center", "w-full", "justify-center");
+          floatingCallBtn.innerHTML = `&#128222; <span>Call</span>`;
           mobileCallSlot.classList.add("hidden");
           mobileControlsDiv.prepend(floatingCallBtn);
         }
@@ -604,11 +234,6 @@ const clientResources = [
         toggle: "resourcesToggle",
         content: "resourcesContent",
         icon: "resourcesIcon",
-      },
-      {
-        toggle: "clinicalStaffToggle",
-        content: "clinicalStaffContent",
-        icon: "clinicalStaffIcon",
       },
     ];
 
@@ -637,13 +262,3 @@ const clientResources = [
     });
   });
 </script>
-
-<style>
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #e2e8f0;
-    border-radius: 10px;
-  }
-</style>

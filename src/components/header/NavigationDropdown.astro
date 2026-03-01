@@ -1,0 +1,110 @@
+---
+import ChevronIcon from "../icons/ChevronIcon.astro";
+
+interface MenuItem {
+  name: string;
+  slug: string;
+  desc: string;
+  hasNested?: boolean;
+  children?: any[];
+  childLabel?: string;
+  childHrefBase?: string;
+}
+
+interface Props {
+  title: string;
+  items: MenuItem[];
+  sectionLabel: string;
+  baseHref?: string;
+}
+
+const { title, items, sectionLabel, baseHref = "" } = Astro.props;
+---
+
+<div class="group relative py-2">
+  <button
+    class="flex items-center gap-1 text-sm font-bold text-indigo-100 hover:text-amber-400 transition"
+  >
+    {title}
+    <ChevronIcon class="w-4 h-4 text-amber-500" />
+  </button>
+
+  <div
+    class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 bg-indigo-900 border-t-4 border-t-amber-500 shadow-2xl rounded-b-2xl p-3 z-50"
+  >
+    <div
+      class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2"
+    >
+      {sectionLabel}
+    </div>
+    <div class="relative max-h-80 overflow-y-auto custom-scrollbar">
+      {
+        items.map((item) =>
+          item.hasNested ? (
+            <div class="group/nested">
+              <div class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors cursor-pointer">
+                <div class="text-left">
+                  <div class="text-sm font-black text-indigo-100 group-hover/nested:text-amber-400">
+                    {item.name}
+                  </div>
+                  <div class="text-[11px] font-bold text-indigo-200">
+                    {item.desc}
+                  </div>
+                </div>
+                <svg
+                  class="w-3 h-3 text-amber-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 5l7 7-7 7" stroke-width="3" />
+                </svg>
+              </div>
+
+              <div class="absolute inset-0 ml-2 w-64 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 translate-x-2 group-hover/nested:translate-x-0 bg-indigo-800 border-l-4 border-l-amber-500 shadow-2xl rounded-2xl p-3 z-50">
+                <div class="text-[10px] uppercase tracking-widest text-indigo-200/60 font-black px-3 py-2">
+                  {item.childLabel}
+                </div>
+
+                <div class="max-h-96 overflow-y-auto custom-scrollbar">
+                  {item.children?.map((child: any) => (
+                    <a
+                      href={`${item.childHrefBase}/${child.slug}`}
+                      class="block px-3 py-2 rounded-lg hover:bg-indigo-700 text-sm font-black text-indigo-100 transition-colors"
+                    >
+                      <div class="text-sm font-black text-indigo-100">
+                        {child.name}
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={`${baseHref}/${item.slug}`}
+              class="block px-3 py-3 rounded-xl hover:bg-indigo-800 transition-colors"
+            >
+              <div class="text-sm font-black text-indigo-100">
+                {item.name}
+              </div>
+              <div class="text-[11px] font-bold text-indigo-200">
+                {item.desc}
+              </div>
+            </a>
+          ),
+        )
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+  }
+</style>

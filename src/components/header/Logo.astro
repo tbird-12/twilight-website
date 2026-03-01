@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import favicon from "../../assets/favicons/favicon.svg";
+---
+
+<a
+  href="/"
+  class="items-center font-black tracking-tighter text-white flex gap-2"
+>
+  <Image
+    src={favicon}
+    alt="Twilight Psychology Logo"
+    width={240}
+    height={180}
+    class="h-10 w-auto mb-1"
+  />
+  <span class="text-stone-300 hover:text-amber-500 transition-colors"
+    >Twilight Psychology</span
+  >
+</a>

@@ -1,0 +1,83 @@
+---
+interface MenuItem {
+  name: string;
+  slug: string;
+  desc?: string;
+  hasNested?: boolean;
+  children?: any[];
+  childLabel?: string;
+  childHrefBase?: string;
+}
+
+interface Props {
+  id: string;
+  title: string;
+  items: MenuItem[];
+  baseHref?: string;
+}
+
+const { id, title, items, baseHref = "" } = Astro.props;
+---
+
+<div class="mb-2">
+  <button
+    id={`${id}Toggle`}
+    class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg"
+  >
+    <span>{title}</span>
+    <svg
+      class="w-4 h-4 text-amber-500 transition-transform"
+      id={`${id}Icon`}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M19 9l-7 7-7-7" stroke-width="3"></path>
+    </svg>
+  </button>
+  <div id={`${id}Content`} class="hidden mt-1 ml-4">
+    {
+      items.map((item) =>
+        item.hasNested ? (
+          <div class="mb-2">
+            <button
+              id={`${id}NestedToggle-${item.slug}`}
+              class="w-full flex items-center justify-between px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
+            >
+              <span>{item.name}</span>
+              <svg
+                class="w-3 h-3 text-amber-500 transition-transform"
+                id={`${id}NestedIcon-${item.slug}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19 9l-7 7-7-7" stroke-width="3" />
+              </svg>
+            </button>
+            <div
+              id={`${id}NestedContent-${item.slug}`}
+              class="hidden mt-1 ml-4"
+            >
+              {item.children?.map((child: any) => (
+                <a
+                  href={`${item.childHrefBase}/${child.slug}`}
+                  class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-900 rounded-lg"
+                >
+                  {child.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <a
+            href={`${baseHref}/${item.slug}`}
+            class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
+          >
+            {item.name}
+          </a>
+        ),
+      )
+    }
+  </div>
+</div>
