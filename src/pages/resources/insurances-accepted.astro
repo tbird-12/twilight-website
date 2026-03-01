@@ -1,37 +1,29 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
 import "../../styles/global.css";
 import { Image } from "astro:assets";
 import { PHONE_NUMBER } from "../../data/resource";
+import { insuranceProviders } from "../../data/insurances";
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../../assets/images/insurance/*.png",
 );
-
-const insuranceProviders = [
-  { name: "Aetna", fileName: "aetna.png" },
-  { name: "Aetna Better Health", fileName: "aetna-better-health.png" },
-  { name: "Aetna Medicare", fileName: "aetna-medicare.png" },
-  { name: "Ambetter", fileName: "ambetter.png" },
-  { name: "Cigna", fileName: "cigna.png" },
-  { name: "CHAMPVA", fileName: "champva.png" },
-  { name: "Humana", fileName: "humana.png" },
-  { name: "Humana Healthy Horizons", fileName: "humana-healthy.png" },
-  { name: "Kentucky State Medicaid", fileName: "medicaid.png" },
-  { name: "Medicare", fileName: "medicare.png" },
-  { name: "Passport by Molina", fileName: "passport.png" },
-  { name: "UMR", fileName: "umr.png" },
-  { name: "UnitedHealthcare (UHC)", fileName: "uhc.png" },
-  { name: "UnitedHealthcare Community", fileName: "uhc-community.png" },
-  { name: "Tricare East", fileName: "tricare.png" }
-];
 ---
 
-<Layout title="Insurance | Twilight Psychology">
-  <main class="bg-indigo-950 min-h-screen py-24 px-6">
+<ServiceLayout 
+  name="Insurance Coverage"
+  description="We accept most major insurance providers"
+>
+  <main class="bg-indigo-950 min-h-screen py-16 px-4">
     <div class="max-w-7xl mx-auto">
-      <h1 class="text-4xl font-black text-white mb-12 text-center">
-        Accepted <span class="text-amber-500">Insurances</span>
-      </h1>
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+          Accepted <span class="text-amber-500">Insurances</span>
+        </h1>
+        <p class="text-[#D4CFC7] text-lg max-w-2xl mx-auto">
+          We work with most major insurance providers to make quality care accessible and affordable.
+        </p>
+      </header>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {
@@ -64,9 +56,8 @@ const insuranceProviders = [
           })
         }
       </div>
-    </div>
 
-    <section class="max-w-4xl mx-auto px-6 py-16 mt-16">
+      <section class="max-w-4xl mx-auto mt-16">
       <div
         class="bg-amber-500/10 border border-amber-500/30 p-10 rounded-[3rem] text-center"
       >
@@ -85,6 +76,7 @@ const insuranceProviders = [
           Verify Your Coverage
         </a>
       </div>
-    </section>
+      </section>
+    </div>
   </main>
-</Layout>
+</ServiceLayout>

@@ -8,139 +8,22 @@ import '../../styles/global.css';
   name="Waitlist Times"
   description="Current appointment availability by provider"
 >
-  <ProviderDirectory />
+  <main class="bg-indigo-950 min-h-screen py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+          Provider <span class="text-amber-500">Availability</span>
+        </h1>
+        <p class="text-[#D4CFC7] text-lg max-w-2xl mx-auto">
+          Find the right clinician for your needs. Filter by service, state, and appointment type to view current wait times.
+        </p>
+      </header>
 
-  <style is:global>
-    :root { 
-      /* The Practice Palette */
-      --primary: #1e1b4b; /* Indigo 950 */
-      --accent: #f59e0b;  /* Amber 500 (Gold) */
-      --white-gold: #D4CFC7; 
-      --bg: #0f172a;      /* Deep Slate/Indigo Dark */
-      --card-bg: #1e293b; /* Indigo 900/800 area */
-      --success: #34d399; /* Emerald 400 */
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-
-    body { 
-      font-family: 'Segoe UI', system-ui, sans-serif; 
-      background: var(--bg); 
-      margin: 0; 
-      color: var(--text-main); 
-    }
-
-    .container { max-width: 1400px; margin: auto; }
-    
-    /* Filter Panel - Dark Glassmorphism */
-    .filter-panel { 
-        background: rgba(30, 41, 59, 0.7); 
-        backdrop-filter: blur(10px);
-        padding: 20px; 
-        border-radius: 16px; 
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-        gap: 15px; 
-        margin-bottom: 25px; 
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-        position: sticky; 
-        top: 10px; 
-        z-index: 100;
-    }
-
-    .filter-group { display: flex; flex-direction: column; gap: 8px; }
-    
-    label { 
-      font-weight: 800; 
-      font-size: 0.7rem; 
-      color: var(--white-gold); 
-      text-transform: uppercase; 
-      letter-spacing: 0.05em;
-    }
-
-    select { 
-      padding: 10px; 
-      border: 1px solid rgba(255,255,255,0.1); 
-      border-radius: 8px; 
-      background: var(--primary); 
-      color: white;
-      font-size: 14px; 
-      outline: none;
-    }
-    
-    select:focus { border-color: var(--accent); }
-
-    .reset-btn { 
-      background: transparent; 
-      color: var(--white-gold); 
-      border: 1px solid rgba(255,255,255,0.2); 
-      padding: 10px; 
-      border-radius: 8px; 
-      font-weight: bold; 
-      cursor: pointer; 
-      align-self: flex-end; 
-      transition: all 0.2s;
-    }
-    .reset-btn:hover { background: #be123c; color: white; border-color: transparent; }
-
-    /* Cards */
-    .provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-    
-    .card { 
-        background: var(--card-bg); 
-        padding: 24px; 
-        border-radius: 20px; 
-        border: 1px solid rgba(255,255,255,0.05);
-        display: flex; 
-        flex-direction: column; 
-        min-height: 450px;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    .card:hover { transform: translateY(-5px); border-color: var(--accent); }
-
-    .credential { color: var(--accent); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 5px; }
-    .section-title { font-size: 0.65rem; text-transform: uppercase; font-weight: 900; color: var(--text-muted); margin: 20px 0 10px 0; letter-spacing: 1px; }
-    
-    .tag-container { display: flex; flex-wrap: wrap; gap: 8px; }
-    
-    .tag { 
-      background: rgba(15, 23, 42, 0.4); 
-      padding: 5px 12px; 
-      border-radius: 6px; 
-      font-size: 0.75rem; 
-      border: 1px solid rgba(255,255,255,0.05); 
-      color: #cbd5e1;
-    }
-    
-    .tag.ins-tag { 
-      background: rgba(245, 158, 11, 0.1); 
-      border-color: rgba(245, 158, 11, 0.3); 
-      color: var(--accent); 
-    }
-
-    .ins-toggle-btn { 
-      margin: 20px 0; 
-      background: rgba(255,255,255,0.03); 
-      border: 1px solid rgba(255,255,255,0.1); 
-      color: var(--white-gold);
-      padding: 12px; 
-      border-radius: 10px; 
-      font-size: 0.8rem; 
-      font-weight: 700; 
-      cursor: pointer; 
-      width: 100%; 
-      transition: background 0.2s;
-    }
-    .ins-toggle-btn:hover { background: rgba(255,255,255,0.08); }
-
-    .wait-info { 
-      margin-top: auto; 
-      padding-top: 15px; 
-      border-top: 1px solid rgba(255,255,255,0.05); 
-    }
-    .wait-item { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 0.85rem; }
-    .wait-label { color: var(--text-muted); }
-    .wait-value { font-weight: 800; color: var(--success); }
-  </style>
+      <ProviderDirectory />
+    </div>
+    <div class="text-center mt-12 text-sm text-[#D4CFC7]">
+      <p>KY, OH, IN, TN participate in PSYPACT compact. For more information on telehealth availability in participating states, please
+        visit <a href="https://psypact.gov/page/psypactmap" class="text-amber-500 underline">Psypact Map</a>.</p>
+    </div>
+  </main>
 </ServiceLayout>

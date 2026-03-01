@@ -1,5 +1,5 @@
 ---
-import providers from '../data/providers.json';
+import { providers } from '../data/staff';
 import "../styles/global.css";
 
 // Get unique options for filters
@@ -7,7 +7,7 @@ const services = [...new Set(providers.flatMap(p => p.services_offered))].sort()
 const states = [...new Set(providers.flatMap(p => p.states_served))].sort();
 ---
 
-<div class="container">
+<div class="provider-directory-container">
   <div class="filter-panel">
     <div class="filter-group">
       <label>Service</label>
@@ -43,6 +43,184 @@ const states = [...new Set(providers.flatMap(p => p.states_served))].sort();
     <!-- Populated by JavaScript -->
   </div>
 </div>
+
+<style>
+  .provider-directory-container {
+    max-width: 100%;
+  }
+  
+  /* Filter Panel - Dark Glassmorphism */
+  .filter-panel { 
+    background: rgba(30, 41, 59, 0.7); 
+    backdrop-filter: blur(10px);
+    padding: 20px; 
+    border-radius: 16px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px; 
+    margin-bottom: 25px; 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    position: sticky; 
+    top: 10px; 
+    z-index: 100;
+  }
+
+  .filter-group { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 8px; 
+  }
+  
+  .filter-group label { 
+    font-weight: 800; 
+    font-size: 0.7rem; 
+    color: #D4CFC7; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em;
+  }
+
+  select { 
+    padding: 10px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+    border-radius: 8px; 
+    background: #1e1b4b; 
+    color: white;
+    font-size: 14px; 
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  select:focus { 
+    border-color: #f59e0b; 
+  }
+
+  .reset-btn { 
+    background: transparent; 
+    color: #D4CFC7; 
+    border: 1px solid rgba(255,255,255,0.2); 
+    padding: 10px; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    align-self: flex-end; 
+    transition: all 0.2s;
+  }
+  
+  .reset-btn:hover { 
+    background: #be123c; 
+    color: white; 
+    border-color: transparent; 
+  }
+
+  /* Provider Cards Grid */
+  .provider-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 24px; 
+  }
+  
+  :global(.provider-grid .card) { 
+    background: #1e293b; 
+    padding: 24px; 
+    border-radius: 20px; 
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex; 
+    flex-direction: column; 
+    min-height: 450px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  
+  :global(.provider-grid .card:hover) { 
+    transform: translateY(-5px); 
+    border-color: #f59e0b; 
+  }
+
+  :global(.provider-grid .credential) { 
+    color: #f59e0b; 
+    font-weight: 800; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    margin-bottom: 5px; 
+  }
+  
+  :global(.provider-grid .card h3) {
+    color: #f8fafc;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  :global(.provider-grid .section-title) { 
+    font-size: 0.65rem; 
+    text-transform: uppercase; 
+    font-weight: 900; 
+    color: #94a3b8; 
+    margin: 20px 0 10px 0; 
+    letter-spacing: 1px; 
+  }
+  
+  :global(.provider-grid .tag-container) { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+  }
+  
+  :global(.provider-grid .tag) { 
+    background: rgba(15, 23, 42, 0.4); 
+    padding: 5px 12px; 
+    border-radius: 6px; 
+    font-size: 0.75rem; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    color: #cbd5e1;
+  }
+  
+  :global(.provider-grid .tag.ins-tag) { 
+    background: rgba(245, 158, 11, 0.1); 
+    border-color: rgba(245, 158, 11, 0.3); 
+    color: #f59e0b; 
+  }
+
+  :global(.provider-grid .ins-toggle-btn) { 
+    margin: 20px 0; 
+    background: rgba(255,255,255,0.03); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    color: #D4CFC7;
+    padding: 12px; 
+    border-radius: 10px; 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    cursor: pointer; 
+    width: 100%; 
+    transition: background 0.2s;
+  }
+  
+  :global(.provider-grid .ins-toggle-btn:hover) { 
+    background: rgba(255,255,255,0.08); 
+  }
+
+  :global(.provider-grid .wait-info) { 
+    margin-top: auto; 
+    padding-top: 15px; 
+    border-top: 1px solid rgba(255,255,255,0.05); 
+  }
+  
+  :global(.provider-grid .wait-item) { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 6px; 
+    font-size: 0.85rem; 
+  }
+  
+  :global(.provider-grid .wait-label) { 
+    color: #94a3b8; 
+  }
+  
+  :global(.provider-grid .wait-value) { 
+    font-weight: 800; 
+    color: #34d399; 
+  }
+</style>
 
 <script is:inline define:vars={{ providers }}>
   const serviceFilter = document.getElementById('service-filter');

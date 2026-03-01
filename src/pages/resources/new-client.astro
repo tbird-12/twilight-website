@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import { EMAIL_ADDRESS, WIDGET_LINK } from '../../data/resource';
 import '../../styles/global.css';
 
@@ -32,24 +32,24 @@ const checklist = [
 ];
 ---
 
-<Layout title="New Client | Twilight Psychology">
-  <main class="bg-indigo-950 min-h-screen pb-20 overflow-hidden">
-    
-    <section class="relative py-20 px-4 border-b border-indigo-900 bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-indigo-900/40 via-transparent to-transparent">
-      <div class="max-w-4xl mx-auto text-center">
+<ServiceLayout 
+  name="New Client Guide"
+  description="Your journey to wellness starts here"
+>
+  <main class="bg-indigo-950 min-h-screen py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <header class="text-center mb-12">
         <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-900/50 border border-indigo-800 text-amber-400 text-xs font-black uppercase tracking-widest">
           New Patient Guide
         </div>
-        <h1 class="text-5xl md:text-6xl font-black text-white mb-6 tracking-tight">
-          Your Journey <span class="text-amber-500">Starts Here.</span>
+        <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+          Your Journey <span class="text-amber-500">Starts Here</span>
         </h1>
-        <p class="text-xl text-[#D4CFC7] font-medium leading-relaxed max-w-2xl mx-auto">
-          We’re glad you’ve chosen Twilight Psychology. We strive to make your first experience smooth, affirming, and supportive.
+        <p class="text-[#D4CFC7] text-lg max-w-2xl mx-auto">
+          We're glad you've chosen Twilight Psychology. We strive to make your first experience smooth, affirming, and supportive.
         </p>
-      </div>
-    </section>
+      </header>
 
-    <div class="max-w-6xl mx-auto px-4 -mt-10">
       <div class="grid lg:grid-cols-3 gap-8">
         
         <div class="lg:col-span-2 space-y-6">
@@ -110,7 +110,7 @@ const checklist = [
             <h3 class="text-white font-bold mb-4">Questions?</h3>
             <p class="text-indigo-200 text-sm mb-6">We're here to help you prepare.</p>
             <a href={`mailto:${EMAIL_ADDRESS}`} class="block w-full py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold rounded-xl transition-all">
-              Email {EMAIL_ADDRESS}
+              Email our Office
             </a>
           </div>
         </div>
@@ -118,10 +118,4 @@ const checklist = [
       </div>
     </div>
   </main>
-</Layout>
-
-<style>
-  .text-balance {
-    text-wrap: balance;
-  }
-</style>
+</ServiceLayout>
