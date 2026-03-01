@@ -1,8 +1,6 @@
-## Twilight Psychology new website under consutruction
-
+## Twilight Psychology new website using Astro.js v5 and Tailwind CSS v4
 ```text
 /
-├── public/
 ├── src/
 │   ├── assets
 │   │   └── astro.svg
