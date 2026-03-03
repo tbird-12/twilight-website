@@ -1,7 +1,7 @@
 {
   "name": "twilight_website",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -22,6 +22,6 @@
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.24",
     "postcss": "^8.5.6",
-    "tailwindcss": "4.1"
+    "tailwindcss": "^4.1.0"
   }
 }
