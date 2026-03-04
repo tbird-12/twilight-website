@@ -10,7 +10,7 @@ const links = [
       { name: "Fees ", href: "/resources/fees" },
       { name: "Insurance", href: "/resources/insurances-accepted" },
       { name: "Locations", href: "/about/locations" },
-      { name: "Job Openings", href: "/about/careers" },
+      { name: "Careers", href: "/about/careers" },
     ],
   },
   {
@@ -40,26 +40,26 @@ const socials = [
 ---
 
 <footer
-  class="relative border-t-2 border-amber-900 dark:border-amber-900 bg-slate-900 dark:bg-slate-900"
+  class="relative border-t border-slate-800 bg-site-footer"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
           <a
-            class="inline-block font-bold text-xl text-stone-300 transition-transform duration-200 hover:scale-105"
+            class="inline-block font-bold text-xl text-site-text transition-transform duration-200 hover:scale-105"
             href="/"
           >
             Twilight Psychology, PLLC
           </a>
         </div>
-        <p class="text-sm text-indigo-100 mb-4">
+        <p class="text-sm text-site-text mb-4">
           Comprehensive, accurate, and affordable psychological evaluations,
           medication management, and therapy.
         </p>
 
         <a href="https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509"
-        target="_blank" class="text-sm text-indigo-100 mb-4">
+        target="_blank" class="text-sm text-site-sub mb-4">
           501 Darby Creek Rd. Suite 7, Lexington, KY 40509
         </a>
 
@@ -68,10 +68,10 @@ const socials = [
             socials.map((social) => (
               <a
                 href={social.href}
-                class="text-indigo-200 hover:bg-indigo-900 focus:outline-none focus:ring-4 focus:ring-indigo-800 rounded-lg text-sm p-2.5 inline-flex items-center"
+                class="text-site-sub hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-700 rounded-lg text-sm p-2.5 inline-flex items-center"
                 aria-label={social.label}
               >
-                <Icon name={social.icon} class="w-5 h-5 text-white" />
+                <Icon name={social.icon} class="w-5 h-5 text-site-text" />
               </a>
             ))
           }
@@ -81,14 +81,14 @@ const socials = [
       {
         links.map(({ title, items }) => (
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="text-indigo-100 font-bold mb-3 uppercase tracking-wider text-xs">
+            <div class="text-site-text font-bold mb-3 uppercase tracking-wider text-xs">
               {title}
             </div>
             <ul class="text-sm">
               {items.map(({ name, href }) => (
                 <li class="mb-2">
                   <a
-                    class="text-indigo-200 hover:text-amber-400 transition-colors duration-200"
+                    class="text-site-sub hover:text-cta transition-colors duration-200"
                     href={href}
                   >
                     {name}
@@ -102,19 +102,19 @@ const socials = [
 
       <div class="col-span-12 md:col-span-3 lg:col-span-2">
         <div
-          class="text-indigo-100 font-bold mb-3 uppercase tracking-wider text-xs"
+          class="text-site-text font-bold mb-3 uppercase tracking-wider text-xs"
         >
           Practice Info
         </div>
-        <div class="text-sm text-indigo-200 space-y-3">
+        <div class="text-sm text-site-sub space-y-3">
           <div>
-            <p class="font-semibold text-indigo-100">Contact Us</p>
-            <p>Phone: <a href={`tel:${PHONE_NUMBER}`} class="text-indigo-200 hover:text-amber-400 transition-colors duration-200">{PHONE_NUMBER_FORMATTED}</a></p>
+            <p class="font-semibold text-site-text">Contact Us</p>
+            <p>Phone: <a href={`tel:${PHONE_NUMBER}`} class="text-site-sub hover:text-cta transition-colors duration-200">{PHONE_NUMBER_FORMATTED}</a></p>
             <p>Fax: (502) 324-3210</p>
-            <p>Email: <a href={`mailto:${EMAIL_ADDRESS}`} class="text-indigo-200 hover:text-amber-400 transition-colors duration-200">{EMAIL_ADDRESS}</a></p>
+            <p>Email: <a href={`mailto:${EMAIL_ADDRESS}`} class="text-site-sub hover:text-cta transition-colors duration-200">{EMAIL_ADDRESS}</a></p>
           </div>
           <div>
-            <p class="font-semibold text-indigo-100">Hours of Operation</p>
+            <p class="font-semibold text-site-text">Hours of Operation</p>
             <p>Mon - Fri: 8:00 AM - 7:00 PM</p>
             <p>Sat - Sun: By appointment</p>
           </div>
@@ -123,11 +123,11 @@ const socials = [
     </div>
 
     <div
-      class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-indigo-900"
+      class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-slate-800"
     >
-      <div class="text-sm text-indigo-200">
+      <div class="text-sm text-site-sub">
         © {year} · Twilight Psychology PLLC. All rights reserved. 
-        <a href="/privacy" class="text-indigo-300 hover:text-amber-400 transition-colors duration-200">Privacy Policy</a>
+        <a href="/privacy" class="text-site-sub hover:text-cta transition-colors duration-200">Privacy Policy</a>
       </div>
     </div>
   </div>

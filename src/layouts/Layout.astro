@@ -55,7 +55,7 @@ const siteName = "Twilight Psychology";
   </head>
 
   <body
-    class="bg-slate-50 font-['Inter',sans-serif] text-slate-900 flex flex-col min-h-screen"
+    class="font-['Inter',sans-serif] flex flex-col min-h-screen"
   >
     <Announcements />
     <Header />
@@ -75,6 +75,9 @@ const siteName = "Twilight Psychology";
   :root {
     --accent-gradient: linear-gradient(45deg, #4f46e5, #818cf8);
   }
+
+  /* Dark mode force-applied via JS in <head> */
+  :root { color-scheme: dark; }
 
   /* Chatbot animations and scrollbar */
   @keyframes slideUp {

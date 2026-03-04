@@ -35,19 +35,16 @@ const evaluationSteps = [
 >
     
     <section class="relative py-24 px-6 overflow-hidden">
-      <div class="absolute inset-0 z-0 opacity-20">
-        <img src="/images/autism-eval-bg.jpg" class="w-full h-full object-cover" alt="Abstract connection" />
-      </div>
-      <div class="absolute inset-0 bg-linear-to-b from-indigo-950/40 via-indigo-950 to-indigo-950 z-10"></div>
+      <div class="absolute inset-0 bg-linear-to-b from-site-bg/40 via-site-bg to-site-bg z-10"></div>
 
       <div class="max-w-4xl mx-auto text-center relative z-20">
-        <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full">
+        <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full">
           Comprehensive Evaluations
         </span>
-        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+        <h1 class="text-5xl md:text-8xl font-black text-site-text mb-6 tracking-tighter leading-[0.9]">
           Autism <br/><span class="text-transparent bg-clip-text bg-linear-to-r from-sand to-white italic">Testing.</span>
         </h1>
-        <p class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed">
+        <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
           One of the shortest waitlists in Kentucky for comprehensive, evidence-based diagnostic evaluations.
         </p>
       </div>
@@ -58,42 +55,42 @@ const evaluationSteps = [
       <div class="lg:col-span-2 space-y-12">
         
         <section class="bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]">
-          <h2 class="text-3xl font-black text-white mb-6 tracking-tight">Beyond the Label</h2>
-          <div class="space-y-6 text-indigo-100/80 leading-relaxed text-lg">
+          <h2 class="text-3xl font-black text-site-text mb-6 tracking-tight">Beyond the Label</h2>
+          <div class="space-y-6 text-site-text leading-relaxed text-lg">
             <p>
               Autism Spectrum Disorder (ASD) is a developmental condition where the brain processes information differently. At Twilight Psychology, we recognize that autism is not a mental illness—it is a vital part of a person's identity.
             </p>
             <p>
-              We specialize in identifying individuals who have learned to <span class="text-amber-400">"mask"</span> or hide their traits, particularly women and girls, ensuring they finally feel heard and understood.
+              We specialize in identifying individuals who have learned to <span class="text-cta">"mask"</span> or hide their traits, particularly women and girls, ensuring they finally feel heard and understood.
             </p>
           </div>
         </section>
 
-        <section class="bg-indigo-900/20 border border-indigo-800/50 p-10 rounded-[2.5rem]">
-          <h2 class="text-2xl font-black text-white mb-8 tracking-tight">Our Diagnostic Approach</h2>
-          <p class="text-indigo-200/70 mb-8">
+        <section class="bg-slate-800/20 border border-slate-700/50 p-10 rounded-[2.5rem]">
+          <h2 class="text-2xl font-black text-site-text mb-8 tracking-tight">Our Diagnostic Approach</h2>
+          <p class="text-site-sub mb-8">
             A diagnosis should never rely on a single test. We provide a holistic view using gold-standard tools tailored to your needs:
           </p>
           <div class="grid md:grid-cols-2 gap-6">
             <div class="p-6 bg-white/5 rounded-3xl border border-white/5">
-              <h3 class="text-amber-500 font-black text-sm uppercase mb-2">ADOS-2</h3>
-              <p class="text-xs text-indigo-100/60 leading-relaxed">Standardized behavioral observation used widely for traditional presentations.</p>
+              <h3 class="text-cta font-black text-sm uppercase mb-2">ADOS-2</h3>
+              <p class="text-xs text-site-text/60 leading-relaxed">Standardized behavioral observation used widely for traditional presentations.</p>
             </div>
             <div class="p-6 bg-white/5 rounded-3xl border border-white/5">
-              <h3 class="text-amber-500 font-black text-sm uppercase mb-2">MIGDAS-2</h3>
-              <p class="text-xs text-indigo-100/60 leading-relaxed">A sensory-based, neuro-affirming interview style ideal for high-masking individuals.</p>
+              <h3 class="text-cta font-black text-sm uppercase mb-2">MIGDAS-2</h3>
+              <p class="text-xs text-site-text/60 leading-relaxed">A sensory-based, neuro-affirming interview style ideal for high-masking individuals.</p>
             </div>
           </div>
         </section>
 
         <section>
-          <h2 class="text-2xl font-black text-white mb-10 text-center lg:text-left">The Testing Timeline</h2>
+          <h2 class="text-2xl font-black text-site-text mb-10 text-center lg:text-left">The Testing Timeline</h2>
           <div class="grid sm:grid-cols-2 gap-6">
             {evaluationSteps.map((step, i) => (
-              <div class="group p-8 bg-white/2 border border-white/5 rounded-4xl hover:border-amber-500/30 transition-all">
-                <div class="text-4xl font-black text-white/10 mb-4 group-hover:text-amber-500/20 transition-colors">0{i+1}</div>
-                <h3 class="text-white font-black mb-2">{step.title}</h3>
-                <p class="text-indigo-200/50 text-sm leading-relaxed">{step.detail}</p>
+              <div class="group p-8 bg-white/2 border border-white/5 rounded-4xl hover:border-cta/30 transition-all">
+                <div class="text-4xl font-black text-site-text/10 mb-4 group-hover:text-cta/20 transition-colors">0{i+1}</div>
+                <h3 class="text-site-text font-black mb-2">{step.title}</h3>
+                <p class="text-site-sub/50 text-sm leading-relaxed">{step.detail}</p>
               </div>
             ))}
           </div>
@@ -103,32 +100,32 @@ const evaluationSteps = [
       <aside class="space-y-8">
         
         <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
-          <h3 class="text-xl font-black text-white mb-6">In-Network Support</h3>
-          <p class="text-xs text-indigo-200/60 mb-6 leading-relaxed">
+          <h3 class="text-xl font-black text-site-text mb-6">In-Network Support</h3>
+          <p class="text-xs text-site-sub/60 mb-6 leading-relaxed">
             We are committed to serving the most vulnerable populations. We accept:
           </p>
           <ul class="space-y-3">
             {insurancePartners.map(plan => (
               <li class="flex items-center gap-3 text-sm font-bold text-sand">
-                <span class="w-1.5 h-1.5 bg-amber-500 rounded-full"></span>
+                <span class="w-1.5 h-1.5 bg-cta rounded-full"></span>
                 {plan}
               </li>
             ))}
           </ul>
         </div>
 
-        <div class="bg-amber-500 p-10 rounded-[2.5rem] text-indigo-950 shadow-2xl shadow-amber-500/10">
+        <div class="bg-cta p-10 rounded-[2.5rem] text-cta-fg shadow-2xl shadow-cta/10">
           <h3 class="text-2xl font-black mb-4 tracking-tight">Ready for clarity?</h3>
           <p class="font-bold text-sm mb-8 opacity-80 italic">
             "Self-pay clients often receive their full evaluation report in just one week."
           </p>
           <a href={WIDGET_LINK} 
-             class="block w-full py-4 bg-indigo-950 text-white text-center font-black rounded-xl hover:scale-105 transition-all">
+             class="block w-full py-4 bg-site-bg text-site-text text-center font-black rounded-xl hover:scale-105 transition-all">
             Book Evaluation
           </a>
         </div>
 
-        <div class="px-6 py-8 border-l border-white/10 italic text-indigo-300/60 text-sm">
+        <div class="px-6 py-8 border-l border-white/10 italic text-site-sub/60 text-sm">
           "Early identification is critical for optimizing quality of life. We ensure you don't have to wait years for answers."
         </div>
       </aside>

@@ -36,14 +36,14 @@ const checklist = [
   name="New Client Guide - Twilight Psychology"
   description="Your journey to wellness starts here"
 >
-  <section class="bg-indigo-950 min-h-screen py-16 px-4">
+  <section class="bg-site-bg min-h-screen py-16 px-4">
     <div class="max-w-6xl mx-auto">
       <header class="text-center mb-12">
-        <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-indigo-900/50 border border-indigo-800 text-amber-400 text-xs font-black uppercase tracking-widest">
+        <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-slate-800/50 border border-slate-700 text-cta text-xs font-black uppercase tracking-widest">
           New Patient Guide
         </div>
-        <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
-          Your Journey <span class="text-amber-500">Starts Here</span>
+        <h1 class="text-4xl md:text-5xl font-black text-site-text mb-4">
+          Your Journey <span class="text-cta">Starts Here</span>
         </h1>
         <p class="text-sand text-lg max-w-2xl mx-auto">
           We're glad you've chosen Twilight Psychology. We strive to make your first experience smooth, affirming, and supportive.
@@ -53,26 +53,26 @@ const checklist = [
       <div class="grid lg:grid-cols-3 gap-8">
         
         <div class="lg:col-span-2 space-y-6">
-          <div class="bg-indigo-900/20 border border-indigo-800 p-8 md:p-12 rounded-4xl backdrop-blur-sm">
-            <h2 class="text-2xl font-black text-white mb-10 flex items-center gap-3">
+          <div class="bg-slate-800/20 border border-slate-700 p-8 md:p-12 rounded-4xl backdrop-blur-sm">
+            <h2 class="text-2xl font-black text-site-text mb-10 flex items-center gap-3">
               The Path to Your First Visit
             </h2>
 
             
 
             <div class="relative space-y-12">
-              <div class="absolute left-[1.4rem] top-2 bottom-2 w-0.5 bg-linear-to-b from-amber-500 via-indigo-800 to-transparent"></div>
+              <div class="absolute left-[1.4rem] top-2 bottom-2 w-0.5 bg-linear-to-b from-cta via-slate-700 to-transparent"></div>
 
               {steps.map((step) => (
                 <div class="relative pl-16 group">
-                  <div class="absolute left-0 top-0 w-12 h-12 bg-indigo-950 border-2 border-amber-500 rounded-2xl flex items-center justify-center text-amber-500 font-black z-10 group-hover:bg-amber-500 group-hover:text-indigo-950 transition-colors duration-300">
+                  <div class="absolute left-0 top-0 w-12 h-12 bg-site-bg border-2 border-cta rounded-2xl flex items-center justify-center text-cta font-black z-10 group-hover:bg-cta group-hover:text-cta-fg transition-colors duration-300">
                     {step.number}
                   </div>
                   <div>
-                    <h3 class="text-xl font-black text-indigo-50 mb-2">{step.title}</h3>
-                    <p class="text-indigo-200/80 leading-relaxed mb-4">{step.desc}</p>
+                    <h3 class="text-xl font-black text-site-text mb-2">{step.title}</h3>
+                    <p class="text-site-sub leading-relaxed mb-4">{step.desc}</p>
                     {step.link && (
-                      <a href={step.link} target="_blank" class="inline-flex items-center gap-2 text-amber-400 font-bold text-sm hover:translate-x-1 transition-transform">
+                      <a href={step.link} target="_blank" class="inline-flex items-center gap-2 text-cta font-bold text-sm hover:translate-x-1 transition-transform">
                         {step.linkText} <span class="text-lg">→</span>
                       </a>
                     )}
@@ -82,16 +82,16 @@ const checklist = [
             </div>
           </div>
 
-          <div class="bg-linear-to-br from-indigo-900/40 to-indigo-900/10 border border-indigo-800 p-8 rounded-4xl">
-            <h2 class="text-2xl font-black text-white mb-4">The First Appointment</h2>
-            <p class="text-indigo-100 leading-relaxed">
+          <div class="bg-linear-to-br from-slate-800/40 to-slate-800/10 border border-slate-700 p-8 rounded-4xl">
+            <h2 class="text-2xl font-black text-site-text mb-4">The First Appointment</h2>
+            <p class="text-site-text leading-relaxed">
               This is a safe space. During our first hour, we’ll discuss your goals, history, and concerns. It’s an open dialogue designed to ensure you feel heard and supported. No judgments—just a collaborative step forward.
             </p>
           </div>
         </div>
 
         <div class="space-y-8">
-          <div class="bg-amber-500 p-8 rounded-4xl text-indigo-950 shadow-xl shadow-amber-500/10">
+          <div class="bg-cta p-8 rounded-4xl text-cta-fg shadow-xl shadow-cta/10">
             <h2 class="text-xl font-black uppercase tracking-tight mb-6 flex items-center gap-2">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
               What to Bring
@@ -99,17 +99,17 @@ const checklist = [
             <ul class="space-y-4">
               {checklist.map((item) => (
                 <li class="flex items-center gap-3 font-bold text-sm">
-                  <div class="w-5 h-5 rounded-full bg-indigo-950/20 flex items-center justify-center">✓</div>
+                  <div class="w-5 h-5 rounded-full bg-site-bg/20 flex items-center justify-center">✓</div>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          <div class="bg-indigo-900/20 border border-indigo-800 p-8 rounded-4xl text-center">
-            <h3 class="text-white font-bold mb-4">Questions?</h3>
-            <p class="text-indigo-200 text-sm mb-6">We're here to help you prepare.</p>
-            <a href={`mailto:${EMAIL_ADDRESS}`} class="block w-full py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold rounded-xl transition-all">
+          <div class="bg-slate-800/20 border border-slate-700 p-8 rounded-4xl text-center">
+            <h3 class="text-site-text font-bold mb-4">Questions?</h3>
+            <p class="text-site-sub text-sm mb-6">We're here to help you prepare.</p>
+            <a href={`mailto:${EMAIL_ADDRESS}`} class="block w-full py-3 bg-white/5 hover:bg-white/10 border border-white/20 text-site-text font-bold rounded-xl transition-all">
               Email our Office
             </a>
           </div>

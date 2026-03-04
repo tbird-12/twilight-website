@@ -19,7 +19,7 @@ import {
 ---
 
 <header
-  class="sticky top-0 z-50 w-full bg-indigo-950/95 backdrop-blur-sm border-b border-indigo-900"
+  class="sticky top-0 z-50 w-full bg-site-bg/80 backdrop-blur-md border-b border-slate-800/50"
 >
   <div
     class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between"
@@ -33,14 +33,14 @@ import {
         id="floatingCallBtn"
         href={`tel:${PHONE_NUMBER}`}
         data-phone={PHONE_NUMBER_FORMATTED}
-        class="bg-amber-500 text-indigo-950 px-4 py-2 rounded-full font-black text-xs hover:bg-amber-400 transition-all shadow-lg flex items-center gap-1"
+        class="bg-cta text-cta-fg px-4 py-2 rounded-full font-black text-xs hover:bg-cta/80 transition-all shadow-lg flex items-center gap-1"
       >
         &#128222; <span>Call</span>
       </a>
 
       <!-- Mobile menu button -->
       <button id="mobileMenuBtn" 
-      class="text-white p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg transition-colors active:bg-white/10"
+      class="text-site-text p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-cta/50 rounded-lg transition-colors active:bg-white/10"
       aria-label="Open main menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -87,7 +87,7 @@ import {
       <a
         href={REFERRAL_LINK}
         target="_blank"
-        class="text-sm font-bold text-indigo-100 hover:text-amber-400 transition-colors duration-200"
+        class="text-sm font-bold text-site-text hover:text-cta transition-colors duration-200"
         >Referrals</a
       >
 
@@ -96,7 +96,7 @@ import {
         href={SIGN_IN_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        class="hidden md:inline-block bg-amber-500 text-indigo-950 px-6 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95"
+        class="hidden md:inline-block bg-cta text-cta-fg px-6 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
       >
         Client Portal
       </a>
@@ -104,7 +104,7 @@ import {
       <!-- Call Button (Desktop Only) -->
       <a
         href={`tel:${PHONE_NUMBER}`}
-        class="hidden md:inline-block bg-amber-500 text-indigo-950 px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-amber-400 hover:ring-4 hover:ring-amber-500/30 transition-all shadow-lg shadow-amber-500/20 active:scale-95"
+        class="hidden md:inline-block bg-cta text-cta-fg px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
       >
         &#128222; <span class="lg:inline">{PHONE_NUMBER_FORMATTED}</span>
       </a>
@@ -113,7 +113,7 @@ import {
 
   <div
     id="mobileMenu"
-    class="hidden md:hidden bg-indigo-950 border-t border-indigo-900"
+    class="hidden md:hidden bg-site-bg border-t border-slate-800"
   >
     <div class="max-w-7xl mx-auto px-4 py-4">
       <!-- About Dropdown -->
@@ -152,7 +152,7 @@ import {
       <a
         href={REFERRAL_LINK}
         target="_blank"
-        class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:text-amber-400 transition-colors duration-200"
+        class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-site-text hover:text-cta transition-colors duration-200"
         >Referrals</a
       >
 
@@ -162,7 +162,7 @@ import {
           href={WIDGET_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          class="block text-center bg-amber-500 text-indigo-950 px-6 py-3 rounded-full font-black text-sm hover:bg-amber-400 transition-all"
+          class="block text-center bg-cta text-cta-fg px-6 py-3 rounded-full font-black text-sm hover:bg-cta/80 transition-all"
         >
           Client Portal
         </a>

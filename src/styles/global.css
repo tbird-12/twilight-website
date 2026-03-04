@@ -3,6 +3,15 @@
 
 @theme {
   --color-sand: #D4CFC7;
+
+  /* ── Site palette ── edit these hex values to retheme the whole site ── */
+  --color-site-bg:   #020617;  /* bg-site-bg    → slate-950  (page background)    */
+  --color-site-text: #f1f5f9;  /* text-site-text → slate-100 (primary text)       */
+  --color-site-sub:  #94a3b8;  /* text-site-sub  → slate-400 (secondary/sub text) */
+  --color-cta:       #a5b4fc;  /* bg-cta         → indigo-300 (CTA background)    */
+  --color-cta-fg:    #020617;  /* text-cta-fg    → slate-950  (CTA text)          */
+  --color-site-footer: #010409;  /* bg-site-footer → slate-900  (footer background)  */
+  --color-site-ann: #1e293b;    /* bg-site-ann → indigo-950 (announcement background) */
 }
 
 html {
@@ -15,8 +24,7 @@ html {
   }
 
   body {
-    /* Updated to Indigo-950 as base to match your Twilight theme */
-    @apply bg-indigo-950 text-white antialiased;
+    @apply bg-site-bg text-site-text antialiased;
   }
 
   a {
@@ -25,23 +33,13 @@ html {
 
   h1, h2, h3, h4 {
     @apply font-black tracking-tighter;
-    color: inherit; /* This allows your text-white or text-amber classes to work better */
-  }
-  
-  /* If the site is NOT in dark mode, default to black, otherwise white */
-  html:not(.dark) h1, html:not(.dark) h2, html:not(.dark) h3 {
-    @apply text-zinc-950;
-  }
-  
-  html.dark h1, html.dark h2, html.dark h3 {
-    @apply text-white;
+    color: inherit;
   }
 }
 
-
-
 @layer components {
-    .btn-amber {
-      @apply bg-amber-500 text-zinc-950 hover:bg-amber-400 font-black px-8 py-3 rounded-full transition-all;
-    }
+  /* Primary call-to-action button — uses the CTA palette variables above */
+  .btn-cta {
+    @apply bg-cta text-cta-fg hover:bg-cta/80 font-black px-8 py-3 rounded-full transition-all;
+  }
 }

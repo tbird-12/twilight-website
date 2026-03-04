@@ -22,11 +22,11 @@ const { id, title, items, baseHref = "" } = Astro.props;
 <div class="mb-2">
   <button
     id={`${id}Toggle`}
-    class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-indigo-100 hover:bg-indigo-900 rounded-lg"
+    class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-site-text hover:bg-slate-800 rounded-lg"
   >
     <span>{title}</span>
     <svg
-      class="w-4 h-4 text-amber-500 transition-transform"
+      class="w-4 h-4 text-cta transition-transform"
       id={`${id}Icon`}
       fill="none"
       stroke="currentColor"
@@ -42,11 +42,11 @@ const { id, title, items, baseHref = "" } = Astro.props;
           <div class="mb-2">
             <button
               id={`${id}NestedToggle-${item.slug}`}
-              class="w-full flex items-center justify-between px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
+              class="w-full flex items-center justify-between px-4 py-2 text-sm text-site-sub hover:bg-slate-800 rounded-lg"
             >
               <span>{item.name}</span>
               <svg
-                class="w-3 h-3 text-amber-500 transition-transform"
+                class="w-3 h-3 text-cta transition-transform"
                 id={`${id}NestedIcon-${item.slug}`}
                 fill="none"
                 stroke="currentColor"
@@ -62,7 +62,7 @@ const { id, title, items, baseHref = "" } = Astro.props;
               {item.children?.map((child: any) => (
                 <a
                   href={`${item.childHrefBase}/${child.slug}`}
-                  class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-900 rounded-lg"
+                  class="block px-4 py-2 text-sm text-site-sub hover:bg-slate-800 rounded-lg"
                 >
                   {child.name}
                 </a>
@@ -72,7 +72,7 @@ const { id, title, items, baseHref = "" } = Astro.props;
         ) : (
           <a
             href={`${baseHref}/${item.slug}`}
-            class="block px-4 py-2 text-sm text-indigo-200 hover:bg-indigo-900 rounded-lg"
+            class="block px-4 py-2 text-sm text-site-sub hover:bg-slate-800 rounded-lg"
           >
             {item.name}
           </a>

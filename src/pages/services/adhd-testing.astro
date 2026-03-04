@@ -33,26 +33,19 @@ const adhdInsights = [
   metaDescription="Professional ADHD testing and assessment services in Kentucky for children, teens, and adults. Comprehensive evaluations using evidence-based testing protocols. Telehealth available."
 >
   <section class="relative py-24 px-6 overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-20">
-      <img
-        src="/images/adhd-brain-abstract.jpg"
-        class="w-full h-full object-cover"
-        alt="Abstract neural pathways"
-      />
-    </div>
     <div
-      class="absolute inset-0 bg-linear-to-b from-indigo-950/40 via-indigo-950 to-indigo-950 z-10"
+      class="absolute inset-0 bg-linear-to-b from-site-bg/40 via-site-bg to-site-bg z-10"
     >
     </div>
 
     <div class="max-w-4xl mx-auto text-center relative z-20">
       <span
-        class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full"
+        class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full"
       >
         Comprehensive ADHD Testing
       </span>
       <h1
-        class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]"
+        class="text-5xl md:text-8xl font-black text-site-text mb-6 tracking-tighter leading-[0.9]"
       >
         ADHD <br /><span
           class="text-transparent bg-clip-text bg-linear-to-r from-sand to-white italic"
@@ -60,7 +53,7 @@ const adhdInsights = [
         >
       </h1>
       <p
-        class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed"
+        class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed"
       >
         Evidence-based testing for children and adults in Lexington and across Kentucky.
       </p>
@@ -72,10 +65,10 @@ const adhdInsights = [
       <section
         class="bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
       >
-        <h2 class="text-3xl font-black text-white mb-6 tracking-tight">
+        <h2 class="text-3xl font-black text-site-text mb-6 tracking-tight">
           Focus Redefined
         </h2>
-        <div class="space-y-6 text-indigo-100/80 leading-relaxed text-lg">
+        <div class="space-y-6 text-site-text leading-relaxed text-lg">
           <p>
             ADHD is more than just "hyperactivity" or "distractibility." It is a
             complex neurological difference in how the brain manages executive
@@ -84,7 +77,7 @@ const adhdInsights = [
             undiagnosed neuro-type.
           </p>
           <p>
-            We always perform a comprehensive <span class="text-amber-400"
+            We always perform a comprehensive <span class="text-cta"
               >evaluation</span
             >, identifying your unique cognitive strengths and to rule out other
             learning disabilities. Our goal is to provide clarity and actionable insights,
@@ -95,21 +88,21 @@ const adhdInsights = [
 
       <section>
         <h2
-          class="text-2xl font-black text-white mb-10 text-center lg:text-left"
+          class="text-2xl font-black text-site-text mb-10 text-center lg:text-left"
         >
           What We Measure
         </h2>
         <div class="grid sm:grid-cols-2 gap-6">
           {
             adhdInsights.map((insight) => (
-              <div class="group p-8 bg-white/2 border border-white/5 rounded-4xl hover:border-amber-500/30 transition-all">
-                <div class="w-10 h-10 rounded-xl bg-indigo-900/50 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-amber-500 group-hover:scale-110 transition-all">
-                  <span class="text-amber-500 group-hover:text-indigo-950">
+              <div class="group p-8 bg-white/2 border border-white/5 rounded-4xl hover:border-cta/30 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-slate-800/50 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-cta group-hover:scale-110 transition-all">
+                  <span class="text-cta group-hover:text-cta-fg">
                     ✦
                   </span>
                 </div>
-                <h3 class="text-white font-black mb-2">{insight.title}</h3>
-                <p class="text-indigo-200/50 text-sm leading-relaxed">
+                <h3 class="text-site-text font-black mb-2">{insight.title}</h3>
+                <p class="text-site-sub/50 text-sm leading-relaxed">
                   {insight.detail}
                 </p>
               </div>
@@ -119,12 +112,12 @@ const adhdInsights = [
       </section>
 
       <section
-        class="bg-indigo-900/20 border border-indigo-800/50 p-10 rounded-[2.5rem]"
+        class="bg-slate-800/20 border border-slate-700/50 p-10 rounded-[2.5rem]"
       >
-        <h2 class="text-2xl font-black text-white mb-6">
+        <h2 class="text-2xl font-black text-site-text mb-6">
           The Assessment Battery
         </h2>
-        <p class="text-indigo-200/70 mb-8 leading-relaxed">
+        <p class="text-site-sub mb-8 leading-relaxed">
           We use a multi-informant approach to ensure accuracy. Depending on
           your needs, your evaluation may include:
         </p>
@@ -136,8 +129,8 @@ const adhdInsights = [
               "Cognitive assessment (IQ) to rule out learning differences",
               "In-depth developmental and clinical interviews",
             ].map((item) => (
-              <div class="flex items-center gap-4 text-indigo-100/80 font-medium">
-                <div class="w-2 h-2 bg-amber-500 rounded-full" />
+              <div class="flex items-center gap-4 text-site-text font-medium">
+                <div class="w-2 h-2 bg-cta rounded-full" />
                 {item}
               </div>
             ))
@@ -148,11 +141,11 @@ const adhdInsights = [
 
     <aside class="space-y-8">
       <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
-        <h3 class="text-xl font-black text-white mb-6">Evaluation Details</h3>
+        <h3 class="text-xl font-black text-site-text mb-6">Evaluation Details</h3>
         <div class="space-y-6">
           <div>
             <p
-              class="text-[10px] font-black uppercase text-amber-500 tracking-widest mb-1"
+              class="text-[10px] font-black uppercase text-cta tracking-widest mb-1"
             >
               Duration
             </p>
@@ -160,7 +153,7 @@ const adhdInsights = [
           </div>
           <div>
             <p
-              class="text-[10px] font-black uppercase text-amber-500 tracking-widest mb-1"
+              class="text-[10px] font-black uppercase text-cta tracking-widest mb-1"
             >
               Timeline
             </p>
@@ -168,7 +161,7 @@ const adhdInsights = [
           </div>
           <div>
             <p
-              class="text-[10px] font-black uppercase text-amber-500 tracking-widest mb-1"
+              class="text-[10px] font-black uppercase text-cta tracking-widest mb-1"
             >
               Ages
             </p>
@@ -182,27 +175,27 @@ const adhdInsights = [
       <div
         class="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] text-center"
       >
-        <h3 class="text-2xl font-black text-white mb-4 tracking-tight">
+        <h3 class="text-2xl font-black text-site-text mb-4 tracking-tight">
           Start Your Journey
         </h3>
-        <p class="text-indigo-200/60 text-sm mb-8">
+        <p class="text-site-sub/60 text-sm mb-8">
           Take the first step toward clinical clarity and support.
         </p>
         <a
           href={`tel:${PHONE_NUMBER}`}
-          class="block w-full py-4 bg-sand text-indigo-950 text-center font-black rounded-xl hover:bg-white transition-all shadow-lg shadow-sand/5"
+          class="block w-full py-4 bg-sand text-cta-fg text-center font-black rounded-xl hover:bg-white transition-all shadow-lg shadow-sand/5"
         >
           Call Us Today
         </a>
         <p
-          class="mt-6 text-[10px] font-black text-indigo-400/60 uppercase tracking-widest"
+          class="mt-6 text-[10px] font-black text-site-sub/60 uppercase tracking-widest"
         >
           Self-pay waitlist: Currently 2-4 Weeks
         </p>
       </div>
 
       <div
-        class="p-6 border-l border-white/10 text-indigo-300/60 text-xs leading-relaxed"
+        class="p-6 border-l border-white/10 text-site-sub/60 text-xs leading-relaxed"
       >
         Accepted insurances include KY Medicaid, Aetna, Humana, Passport, and
         more. Self-pay options available with expedited reporting.

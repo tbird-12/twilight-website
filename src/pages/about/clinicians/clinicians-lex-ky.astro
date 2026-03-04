@@ -10,10 +10,10 @@ import { providers } from "../../../data/staff";
   metaDescription="Meet the expert clinicians at Twilight Psychology in Lexington, KY. Licensed psychologists, therapists, and psychiatric nurse practitioners providing neuro-affirming mental health care."
 >
   <section
-    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent"
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-slate-800/20 to-transparent"
   >
     <h1
-      class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none"
+      class="text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter leading-none"
     >
       Meet Our <br /><span
         class="text-transparent bg-clip-text bg-linear-to-r from-sand to-white italic"
@@ -26,17 +26,17 @@ import { providers } from "../../../data/staff";
         providers.map((person) => (
           <a
             href={`/about/clinicians/${person.slug}`}
-            class="group bg-linear-to-br from-indigo-50 to-amber-50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-indigo-100"
+            class="group bg-slate-800/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-700"
           >
-            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-amber-600 transition-colors">
+            <h3 class="text-xl font-bold text-site-text mb-2 group-hover:text-cta transition-colors">
               {person.name}
             </h3>
 
-            <p class="text-sm font-semibold text-indigo-600 uppercase tracking-wide mb-4">
+            <p class="text-sm font-semibold text-cta uppercase tracking-wide mb-4">
               {person.spec}
             </p>
 
-            <span class="text-amber-600 group-hover:text-amber-700 font-bold inline-flex items-center gap-2">
+            <span class="text-cta group-hover:text-cta font-bold inline-flex items-center gap-2">
               View Profile
               <svg
                 class="w-4 h-4 group-hover:translate-x-1 transition-transform"
@@ -55,15 +55,15 @@ import { providers } from "../../../data/staff";
     <div class="max-w-7xl mx-auto mb-10 py-8 text-center flex flex-col sm:flex-row gap-4 justify-center items-center">
       <a
         href="/about/staff/samantha-rodarte"
-        class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta/90"
       >
         <span aria-hidden="true">←</span>
         Meet our staff
       </a>
-      <span class="hidden sm:inline text-amber-200/50">|</span>
+      <span class="hidden sm:inline text-cta/50">|</span>
       <a
         href="/about/careers"
-        class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta/90"
       >
         Join our team
         <span aria-hidden="true">→</span>

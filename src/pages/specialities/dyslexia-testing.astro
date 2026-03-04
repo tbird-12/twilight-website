@@ -56,24 +56,24 @@ const faqs = [
     <section class="relative pt-32 pb-20 px-6 border-b border-white/5">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div>
-            <span class="text-amber-500 font-black tracking-[0.3em] uppercase text-[10px] mb-4 block">Educational Advocacy</span>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-none">
+            <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-4 block">Educational Advocacy</span>
+            <h1 class="text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tighter leading-none">
                 Learning <br/>
                 <span class="text-transparent bg-clip-text bg-linear-to-r from-sand to-white italic">Disabilities.</span>
             </h1>
-            <p class="text-indigo-200/70 text-lg leading-relaxed max-w-lg mb-8">
+            <p class="text-site-sub text-lg leading-relaxed max-w-lg mb-8">
                 We move beyond standard testing to uncover the specific cognitive profile of how you or your child learns, processes, and succeeds.
             </p>
-            <a href="#faq" class="text-sand font-black border-b border-amber-500/50 pb-1 hover:text-amber-500 transition-colors">
+            <a href="#faq" class="text-sand font-black border-b border-cta/50 pb-1 hover:text-cta transition-colors">
                 View Common Questions ↓
             </a>
         </div>
         <div class="relative">
-             <div class="aspect-square bg-linear-to-br from-amber-500/20 to-indigo-500/10 rounded-[3rem] border border-white/10 backdrop-blur-3xl relative overflow-hidden">
+             <div class="aspect-square bg-linear-to-br from-cta/20 to-cta/10 rounded-[3rem] border border-white/10 backdrop-blur-3xl relative overflow-hidden">
                 <div class="absolute inset-0 flex items-center justify-center text-9xl opacity-20">✦</div>
                 <div class="p-12 relative z-10">
-                    <h3 class="text-white font-black text-2xl mb-4 italic">"Children are our most valuable resource."</h3>
-                    <p class="text-indigo-100/60 text-sm italic">— President Herbert Hoover</p>
+                    <h3 class="text-site-text font-black text-2xl mb-4 italic">"Children are our most valuable resource."</h3>
+                    <p class="text-site-text/60 text-sm italic">— President Herbert Hoover</p>
                 </div>
              </div>
         </div>
@@ -81,31 +81,31 @@ const faqs = [
     </section>
 
     <section class="max-w-7xl mx-auto px-6 py-24">
-        <h2 class="text-4xl font-black text-white mb-16 text-center lg:text-left">Clinical <span class="text-amber-500">Definitions.</span></h2>
+        <h2 class="text-4xl font-black text-site-text mb-16 text-center lg:text-left">Clinical <span class="text-cta">Definitions.</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
             {learningDisabilities.map(ld => (
                 <div class="p-10 bg-white/3 border border-white/10 rounded-[2.5rem] hover:bg-white/5 transition-all">
-                    <h3 class="text-2xl font-black text-white mb-2">{ld.title}</h3>
-                    <p class="text-amber-500 text-[10px] font-black uppercase tracking-widest mb-6">{ld.specialty}</p>
-                    <p class="text-indigo-100/60 text-sm leading-relaxed">{ld.desc}</p>
+                    <h3 class="text-2xl font-black text-site-text mb-2">{ld.title}</h3>
+                    <p class="text-cta text-[10px] font-black uppercase tracking-widest mb-6">{ld.specialty}</p>
+                    <p class="text-site-text/60 text-sm leading-relaxed">{ld.desc}</p>
                 </div>
             ))}
         </div>
     </section>
 
     <section class="max-w-7xl mx-auto px-6 mb-24">
-        <div class="bg-indigo-900/30 border border-indigo-500/20 p-12 rounded-[3rem] relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-12 text-8xl text-white/5 font-black">ADHD</div>
+        <div class="bg-slate-800/30 border border-cta/20 p-12 rounded-[3rem] relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-12 text-8xl text-site-text/5 font-black">ADHD</div>
             <div class="max-w-2xl relative z-10">
-                <h2 class="text-3xl font-black text-white mb-6">Integrated Understanding</h2>
-                <p class="text-indigo-100/80 text-lg leading-relaxed">
+                <h2 class="text-3xl font-black text-site-text mb-6">Integrated Understanding</h2>
+                <p class="text-site-text text-lg leading-relaxed">
                     It is important to understand that learning disabilities rarely exist in isolation. They frequently <strong>co-occur with ADHD</strong> or other health concerns. 
                 </p>
-                <p class="mt-4 text-indigo-100/80 text-lg leading-relaxed">
+                <p class="mt-4 text-site-text text-lg leading-relaxed">
                     Our evaluations don't just check for one condition; we look at the <strong>overlap</strong> to ensure the treatment plan addresses the root of the challenge.
                 </p>
                 <div class="mt-8">
-                    <a href="/services/adhd-testing" class="text-amber-500 font-black text-sm uppercase tracking-widest">
+                    <a href="/services/adhd-testing" class="text-cta font-black text-sm uppercase tracking-widest">
                         Explore ADHD Testing →
                     </a>
                 </div>
@@ -114,22 +114,22 @@ const faqs = [
     </section>
 
     <section id="faq" class="max-w-4xl mx-auto px-6 py-24">
-        <h2 class="text-3xl font-black text-white mb-12 text-center tracking-tight">Frequently Asked <span class="text-sand italic text-4xl">Questions.</span></h2>
+        <h2 class="text-3xl font-black text-site-text mb-12 text-center tracking-tight">Frequently Asked <span class="text-sand italic text-4xl">Questions.</span></h2>
         <div class="space-y-6">
             {faqs.map(faq => (
-                <div class="p-8 bg-white/5 border border-white/5 rounded-3xl group hover:border-amber-500/30 transition-all">
+                <div class="p-8 bg-white/5 border border-white/5 rounded-3xl group hover:border-cta/30 transition-all">
                     <h3 class="text-sand font-black mb-3 text-lg">{faq.q}</h3>
-                    <p class="text-indigo-200/50 text-sm leading-relaxed">{faq.a}</p>
+                    <p class="text-site-sub/50 text-sm leading-relaxed">{faq.a}</p>
                 </div>
             ))}
         </div>
     </section>
 
     <section class="max-w-7xl mx-auto px-6 py-24 text-center">
-        <div class="bg-indigo-900/20 p-16 rounded-[4rem] text-white border border-white/10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-indigo-100">Ready to get evaluated?</h2>
-            <p class="text-lg font-medium mb-10 max-w-xl mx-auto text-indigo-200/70 italic">Contact us today to schedule a comprehensive educational evaluation in Lexington or via Telehealth.</p>
-            <a href={WIDGET_LINK} class="inline-block px-10 py-4 bg-amber-500/90 text-indigo-950 font-bold rounded-2xl hover:bg-amber-500 transition-all">
+        <div class="bg-slate-800/20 p-16 rounded-[4rem] text-site-text border border-white/10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 tracking-tight text-site-text">Ready to get evaluated?</h2>
+            <p class="text-lg font-medium mb-10 max-w-xl mx-auto text-site-sub italic">Contact us today to schedule a comprehensive educational evaluation in Lexington or via Telehealth.</p>
+            <a href={WIDGET_LINK} class="inline-block px-10 py-4 bg-cta/90 text-cta-fg font-bold rounded-2xl hover:bg-cta transition-all">
                 Request Appointment
             </a>
         </div>

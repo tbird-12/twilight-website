@@ -40,12 +40,12 @@ const education = [
   metaDescription="Dr. Heather Cornett, Ph.D. - Founder and licensed psychologist at Twilight Psychology in Lexington, KY. Specializing in comprehensive psychological evaluations for neurodivergent adults, ADHD, autism, and complex diagnostics."
 >
   <section
-    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-indigo-900/20 to-transparent"
+    class="relative pt-32 pb-20 px-6 border-b border-white/5 bg-linear-to-b from-slate-800/20 to-transparent"
   >
     <div class="max-w-7xl mx-auto mb-10">
       <a
         href="/about/clinicians/clinicians-lex-ky"
-        class="inline-flex items-center gap-2 text-sm font-semibold text-amber-200/90 hover:text-amber-200"
+        class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta/90"
       >
         <span aria-hidden="true">←</span>
         Back to all clinicians
@@ -56,14 +56,14 @@ const education = [
     >
       <div class="relative group">
         <div
-          class="absolute -inset-1 bg-linear-to-r from-amber-500 to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
+          class="absolute -inset-1 bg-linear-to-r from-cta to-indigo-500 rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"
         >
         </div>
         <div
-          class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+          class="relative w-72 h-96 bg-slate-800 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
         >
           <div
-            class="relative w-72 h-96 bg-indigo-900 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
+            class="relative w-72 h-96 bg-slate-800 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl"
           >
             <Image
               src={heather.image}
@@ -77,12 +77,12 @@ const education = [
 
       <div class="flex-1 text-center lg:text-left">
         <span
-          class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full inline-block"
+          class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full inline-block"
         >
           Founder & Licensed Psychologist
         </span>
         <h1
-          class="text-5xl md:text-7xl font-black text-white mb-4 tracking-tighter leading-none"
+          class="text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter leading-none"
         >
           Heather Cornett, <br />
           <span
@@ -90,7 +90,7 @@ const education = [
             >Ph.D., LP.</span
           >
         </h1>
-        <p class="text-indigo-200/70 text-lg leading-relaxed max-w-2xl mb-8">
+        <p class="text-site-sub text-lg leading-relaxed max-w-2xl mb-8">
           Specializing in comprehensive psychological evaluations for
           high-masking neurodivergent adults and complex diagnostic
           clarification.
@@ -110,9 +110,9 @@ const education = [
 
   <section class="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-12 gap-16">
     <div
-      class="lg:col-span-8 space-y-8 text-indigo-100/80 text-lg leading-relaxed"
+      class="lg:col-span-8 space-y-8 text-site-text text-lg leading-relaxed"
     >
-      <h2 class="text-3xl font-black text-white italic tracking-tight">
+      <h2 class="text-3xl font-black text-site-text italic tracking-tight">
         A Neuro-Affirming Approach to Clarity.
       </h2>
       <p>
@@ -130,7 +130,7 @@ const education = [
         fulfillment.
       </p>
       <p
-        class="border-l-4 border-amber-500 pl-8 italic bg-white/5 py-8 rounded-r-3xl"
+        class="border-l-4 border-cta pl-8 italic bg-white/5 py-8 rounded-r-3xl"
       >
         "We don't just test using a checklist of concerns; we test with an
         intention to understand the person beyond the measures. My goal is to
@@ -147,7 +147,7 @@ const education = [
     <div class="lg:col-span-4 space-y-8">
       <div class="bg-white/3 border border-white/10 p-8 rounded-[2.5rem]">
         <h3
-          class="text-amber-500 font-black text-xs uppercase tracking-widest mb-6"
+          class="text-cta font-black text-xs uppercase tracking-widest mb-6"
         >
           Education & Credentials
         </h3>
@@ -155,10 +155,10 @@ const education = [
           {
             education.map((item) => (
               <div class="border-b border-white/5 pb-4 last:border-0">
-                <p class="text-white font-bold text-sm">{item.degree}</p>
-                <p class="text-indigo-300/60 text-xs">{item.school}</p>
+                <p class="text-site-text font-bold text-sm">{item.degree}</p>
+                <p class="text-site-sub/60 text-xs">{item.school}</p>
                 {item.location && (
-                  <p class="text-indigo-300/40 text-[10px] mt-1 uppercase">
+                  <p class="text-site-sub/40 text-[10px] mt-1 uppercase">
                     {item.location}
                   </p>
                 )}
@@ -168,13 +168,13 @@ const education = [
         </div>
       </div>
 
-      <div class="p-8 bg-indigo-900/20 border border-white/5 rounded-[2.5rem]">
+      <div class="p-8 bg-slate-800/20 border border-white/5 rounded-[2.5rem]">
         <h3
-          class="text-amber-500 font-black text-xs uppercase tracking-widest mb-4"
+          class="text-cta font-black text-xs uppercase tracking-widest mb-4"
         >
           Outside the Clinic
         </h3>
-        <p class="text-sm text-indigo-100/60 leading-relaxed italic">
+        <p class="text-sm text-site-text/60 leading-relaxed italic">
           When I'm not in the office, you’ll likely find me diving into a true
           crime documentary, playing video games, or spending time with my large
           orange tabby cat. I am a dedicated BIPOC and LGBTQ+ ally.
@@ -185,10 +185,10 @@ const education = [
 
   <section class="max-w-5xl mx-auto px-6 py-24">
     <div
-      class="bg-indigo-900/20 p-12 rounded-[4rem] text-white border border-white/10 text-center relative overflow-hidden"
+      class="bg-slate-800/20 p-12 rounded-[4rem] text-site-text border border-white/10 text-center relative overflow-hidden"
     >
       <div class="relative z-10">
-        <h2 class="text-3xl font-bold mb-4 tracking-tight text-indigo-100">
+        <h2 class="text-3xl font-bold mb-4 tracking-tight text-site-text">
           Current Availability
         </h2>
         <div class="flex flex-col md:flex-row justify-center gap-6 my-8">
@@ -196,38 +196,38 @@ const education = [
             class="bg-white/5 p-6 rounded-2xl border border-white/10"
           >
             <p
-              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-amber-400/70"
+              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-cta/70"
             >
               Evaluations
             </p>
-            <p class="text-lg font-semibold text-indigo-100">Accepting New Clients</p>
+            <p class="text-lg font-semibold text-site-text">Accepting New Clients</p>
           </div>
           <div
             class="bg-white/5 p-6 rounded-2xl border border-white/10"
           >
             <p
-              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-amber-400/70"
+              class="text-[10px] font-bold uppercase tracking-widest mb-2 text-cta/70"
             >
               Individual Therapy
             </p>
-            <p class="text-lg font-semibold text-indigo-200/60 italic">Waitlist Only</p>
+            <p class="text-lg font-semibold text-site-sub/60 italic">Waitlist Only</p>
           </div>
         </div>
         <p
-          class="font-medium text-indigo-200/70 mb-10 max-w-xl mx-auto italic leading-relaxed text-sm"
+          class="font-medium text-site-sub mb-10 max-w-xl mx-auto italic leading-relaxed text-sm"
         >
           Dr. Cornett provides evaluations for ages 2 and up in Lexington, KY
           and nationwide for adults via Telehealth.
         </p>
         <a
           href={WIDGET_LINK}
-          class="inline-block px-10 py-4 bg-amber-500/90 text-indigo-950 font-bold rounded-2xl hover:bg-amber-500 transition-all"
+          class="inline-block px-10 py-4 bg-cta/90 text-cta-fg font-bold rounded-2xl hover:bg-cta transition-all"
         >
           Schedule an Intake
         </a>
       </div>
       <div
-        class="absolute -bottom-10 -right-10 text-[12rem] font-black text-white/5 select-none uppercase"
+        class="absolute -bottom-10 -right-10 text-[12rem] font-black text-site-text/5 select-none uppercase"
       >
         PsyPact
       </div>

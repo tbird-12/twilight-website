@@ -9,19 +9,19 @@ const services = [
   {
     title: "Psychological Evaluations",
     desc: "Comprehensive evaluations for ADHD, Autism, and Learning Disorders with a neuro-affirming lens.",
-    icon: "mdi:format-section",
+    icon: "mdi:star-four-points-outline",
     link: "/services/psychological-evaluations",
   },
   {
     title: "Medication Management",
     desc: "Personalized medication management with our dedicated Psychiatric Nurse Practitioner.",
-    icon: "mdi:format-section",
+    icon: "mdi:star-four-points-outline",
     link: "/services/medication-management",
   },
   {
     title: "Therapy",
     desc: "Individual counseling using evidence-based, neuro-affirming practices.",
-    icon: "mdi:format-section",
+    icon: "mdi:star-four-points-outline",
     link: "/services/therapy",
   },
 ];
@@ -61,8 +61,8 @@ const qualityCareItems = [
   description="Twilight Psychology offers neuro-affirming psychological evaluations, medication management, and therapy services 
   in Kentucky and via telehealth in the Psycpact states."
 >
-  <main class="bg-indigo-950 min-h-screen pb-24">
-    <section class="relative pt-24 pb-24 px-6 overflow-hidden bg-indigo-950">
+  <main class="bg-site-bg min-h-screen pb-24">
+    <section class="relative pt-24 pb-24 px-6 overflow-hidden bg-site-bg">
       <!-- SVG Background -->
       <Fragment set:html={heroBg} />
 
@@ -76,7 +76,7 @@ const qualityCareItems = [
         </span>
 
         <h1
-          class="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9]"
+          class="text-5xl md:text-8xl font-black text-site-text mb-8 tracking-tighter leading-[0.9]"
         >
           Neurodiverse?<br />
           <span
@@ -86,7 +86,7 @@ const qualityCareItems = [
         </h1>
 
         <p
-          class="max-w-2xl text-lg md:text-xl mx-auto text-center text-indigo-200/70 mb-12 leading-relaxed font-medium"
+          class="max-w-2xl text-lg md:text-xl mx-auto text-center text-site-sub mb-12 leading-relaxed font-medium"
         >
           We offer Top-Tier Behavioral Health Services in Kentucky including
           Psychological Testing, Medication Management, and Therapy.
@@ -95,13 +95,13 @@ const qualityCareItems = [
         <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
           <a
             href={WIDGET_LINK}
-            class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-amber-400 transition-all hover:scale-105 shadow-lg shadow-amber-500/20"
+            class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-cta text-cta-fg font-black rounded-xl hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
           >
             Schedule an Evaluation
           </a>
           <a
             href="/catalog"
-            class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-white border border-white/20 font-black rounded-xl hover:bg-white/5 transition-all"
+            class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-site-text border border-white/20 font-black rounded-xl hover:bg-white/5 transition-all"
           >
             Our Services
           </a>
@@ -110,17 +110,17 @@ const qualityCareItems = [
 
       <!-- Gaussian-style bottom fade into next section -->
       <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style="background: linear-gradient(to bottom, transparent 0%, rgba(30,27,75,0.5) 40%, rgba(30,27,75,0.85) 70%, #1E1B4B 100%); filter: blur(2px);"
+        style="background: linear-gradient(to bottom, transparent 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.85) 70%, #020617 100%); filter: blur(2px);"
       ></div>
     </section>
 
-    <section class="relative pt-24 pb-24 px-6 bg-indigo-950 overflow-hidden">
+    <section class="relative pt-24 pb-24 px-6 bg-site-bg overflow-hidden">
       <div class="max-w-7xl mx-auto text-center">
         <header class="mb-12">
-          <h2 class="text-4xl md:text-5xl font-black text-white mb-4">
-            Quality Care, <span class="text-amber-500">Five</span> Fewer Hurdles
+          <h2 class="text-4xl md:text-5xl font-black text-site-text mb-4">
+            Quality Care, <span class="text-cta">Five</span> Fewer Hurdles
           </h2>
-          <p class="text-indigo-200 text-lg max-w-2xl mx-auto text-center">
+          <p class="text-site-sub text-lg max-w-2xl mx-auto text-center">
             We designed our evaluation process to be faster, more accessible,
             and affordable to navigate—so you can get clear answers without
             adding an additional stressor.
@@ -131,13 +131,13 @@ const qualityCareItems = [
           {
             qualityCareItems.map((item) => (
               <article
-                class={`rounded-3xl bg-indigo-900/20 border border-indigo-800 p-8 transition-all duration-300 hover:bg-indigo-900/30 ${item.cardClass ?? ""}`}
+                class={`rounded-3xl bg-slate-800/20 border border-slate-700 p-8 transition-all duration-300 hover:bg-slate-800/30 ${item.cardClass ?? ""}`}
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <Icon name={item.icon} class="w-9 h-9 text-indigo-200 shrink-0" />
-                  <h3 class="text-xl font-black text-white">{item.title}</h3>
+                  <Icon name={item.icon} class="w-9 h-9 text-site-sub shrink-0" />
+                  <h3 class="text-xl font-black text-site-text">{item.title}</h3>
                 </div>
-                <p class="text-indigo-100 leading-relaxed">{item.desc}</p>
+                <p class="text-site-text leading-relaxed">{item.desc}</p>
               </article>
             ))
           }
@@ -145,13 +145,13 @@ const qualityCareItems = [
       </div>
     </section>
 
-    <section class="relative py-12 px-6 bg-indigo-950 overflow-hidden">
+    <section class="relative py-12 px-6 bg-site-bg overflow-hidden">
       <div
-        class="bg-white/5 p-8 rounded-4xl text-indigo-950 max-w-7xl mx-auto text-center relative overflow-hidden"
+        class="bg-white/5 p-8 rounded-4xl text-cta-fg max-w-7xl mx-auto text-center relative overflow-hidden"
       >
         <div class="relative z-10">
-          <h2 class="text-4xl font-black mb-6 tracking-tighter justify-center text-white">
-            Ready to Take the Next Step?
+          <h2 class="text-4xl font-black mb-6 tracking-tighter justify-center text-site-text">
+            Ready to Take the Next Step
           </h2>
         </div>
         <div
@@ -159,13 +159,13 @@ const qualityCareItems = [
         >
           <a
             href={WIDGET_LINK}
-            class="px-10 py-4 bg-amber-500 text-indigo-950 font-black rounded-xl hover:bg-amber-400 transition-all hover:scale-105 shadow-lg shadow-amber-500/20"
+            class="px-10 py-4 bg-cta text-cta-fg font-black rounded-xl hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
           >
             Request Intake Forms
           </a>
           <a
             href="/about/clinicians/clinicians-lex-ky"
-            class="px-10 py-4 bg-indigo-800 text-white border border-indigo-700 font-black rounded-xl hover:bg-indigo-700 transition-all hover:scale-105 shadow-lg"
+            class="px-10 py-4 bg-slate-700 text-site-text border border-slate-600 font-black rounded-xl hover:bg-slate-600 transition-all hover:scale-105 shadow-lg"
           >
             Meet Our Clinicians
           </a>
@@ -173,18 +173,18 @@ const qualityCareItems = [
       </div>
     </section>
     
-    <section class="relative pt-24 pb-24 px-6 bg-indigo-950 overflow-hidden">
+    <section class="relative pt-24 pb-24 px-6 bg-site-bg overflow-hidden">
       <div class="max-w-7xl mx-auto">
         <div
           class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
         >
           <div>
             <h2
-              class="text-4xl md:text-5xl font-black text-white tracking-tighter"
+              class="text-4xl md:text-5xl font-black text-site-text tracking-tighter"
             >
               How We Can Help
             </h2>
-            <div class="w-16 h-1 bg-amber-500 mt-4 rounded-full"></div>
+            <div class="w-16 h-1 bg-cta mt-4 rounded-full"></div>
           </div>
           <p
             class="text-sand font-medium max-w-md text-sm md:text-base opacity-70 italic"
@@ -197,24 +197,24 @@ const qualityCareItems = [
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {
             services.map((service) => (
-              <div class="group relative flex flex-col rounded-3xl bg-white/2 border border-white/5 hover:border-amber-500/30 transition-all duration-500 overflow-hidden">
+              <div class="group relative flex flex-col rounded-3xl bg-white/2 border border-white/5 hover:border-cta/30 transition-all duration-500 overflow-hidden">
                 <div class="p-7 sm:p-9 lg:p-10">
                   <div class="flex items-center gap-3 mb-4">
-                    <Icon name={service.icon} class="w-9 h-9 text-indigo-200 shrink-0" />
-                    <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight group-hover:text-amber-500 transition-colors">
+                    <Icon name={service.icon} class="w-9 h-9 text-site-sub shrink-0" />
+                    <h3 class="text-xl sm:text-2xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
                       {service.title}
                     </h3>
                   </div>
-                  <p class="text-indigo-200/70 font-medium text-sm sm:text-base mb-7 leading-relaxed">
+                  <p class="text-site-sub font-medium text-sm sm:text-base mb-7 leading-relaxed">
                     {service.desc}
                   </p>
 
                   <a
                     href={service.link}
-                    class="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-amber-500/80 group-hover:text-amber-500 transition-colors"
+                    class="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors"
                   >
                     Explore Service
-                    <span class="w-8 h-px bg-amber-500/30 group-hover:w-12 group-hover:bg-amber-500 transition-all" />
+                    <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all" />
                   </a>
                 </div>
               </div>

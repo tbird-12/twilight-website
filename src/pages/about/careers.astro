@@ -38,13 +38,13 @@ const cultureHighlights = [
         <img src="/images/team-collaboration-abstract.jpg" class="w-full h-full object-cover" alt="Collaborative workspace" />
       </div>
       <div class="max-w-4xl mx-auto relative z-20">
-        <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-amber-500 uppercase bg-amber-500/10 border border-amber-500/20 rounded-full">
+        <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full">
           Join Our Practice
         </span>
-        <h1 class="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+        <h1 class="text-5xl md:text-8xl font-black text-site-text mb-6 tracking-tighter leading-[0.9]">
           Build Your <br/><span class="text-transparent bg-clip-text bg-linear-to-r from-sand to-white italic">Career.</span>
         </h1>
-        <p class="text-xl text-indigo-200/70 font-medium max-w-2xl mx-auto leading-relaxed">
+        <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
           From doctoral students to seasoned clinicians, we provide the environment you need to thrive.
         </p>
       </div>
@@ -52,70 +52,70 @@ const cultureHighlights = [
 
     <div class="max-w-350 mx-auto px-6 grid lg:grid-cols-3 gap-6 -mt-12 relative z-30">
       
-      <div class="bg-white/3 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+      <div class="bg-white/3 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 transition-all">
         <div>
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-black text-white leading-tight">Licensed <br/>Provider</h2>
-                <span class="text-[9px] font-black text-white border border-white/20 px-2 py-1 rounded uppercase">W2/1099</span>
+                <h2 class="text-2xl font-black text-site-text leading-tight">Licensed <br/>Provider</h2>
+                <span class="text-[9px] font-black text-site-text border border-white/20 px-2 py-1 rounded uppercase">W2/1099</span>
             </div>
-            <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
+            <p class="text-site-text/60 mb-6 text-xs leading-relaxed">
               Seeking Doctoral or Master’s level clinicians (LP, T-LP, LPA, T-LPA, LPP) for therapy and assessments in Lexington and surrounding counties.
             </p>
             <ul class="space-y-3 mb-8">
               {clinicianBenefits.map(benefit => (
                 <li class="flex items-center gap-2 text-[10px] font-black text-sand uppercase tracking-wider">
-                  <span class="text-amber-500">✦</span> {benefit}
+                  <span class="text-cta">✦</span> {benefit}
                 </li>
               ))}
             </ul>
         </div>
-        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-amber-500 text-indigo-950 text-center font-black rounded-xl hover:bg-white transition-all text-sm">Apply to Practice</a>
+        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-cta text-cta-fg text-center font-black rounded-xl hover:bg-white transition-all text-sm">Apply to Practice</a>
       </div>
 
-      <div class="bg-white/3 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+      <div class="bg-white/3 backdrop-blur-xl border border-white/10 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 transition-all">
         <div>
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-black text-white leading-tight">Doctoral <br/>Practicum</h2>
-                <span class="text-[9px] font-black text-indigo-950 bg-sand px-2 py-1 rounded uppercase">Clinical</span>
+                <h2 class="text-2xl font-black text-site-text leading-tight">Doctoral <br/>Practicum</h2>
+                <span class="text-[9px] font-black text-cta-fg bg-sand px-2 py-1 rounded uppercase">Clinical</span>
             </div>
-            <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
+            <p class="text-site-text/60 mb-6 text-xs leading-relaxed">
               Ideal for doctoral students seeking 10-15 assessment hours per week. Experience in a neurodivergent-focused practice with mentorship opportunities.
             </p>
             <div class="space-y-4 mb-8">
                 <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                    <p class="text-[10px] font-black text-amber-500 uppercase mb-1">Eligible Licenses</p>
-                    <p class="text-white text-xs font-bold leading-relaxed">T-LPA, LPCA, LCSW, CSW, LMFT</p>
+                    <p class="text-[10px] font-black text-cta uppercase mb-1">Eligible Licenses</p>
+                    <p class="text-site-text text-xs font-bold leading-relaxed">T-LPA, LPCA, LCSW, CSW, LMFT</p>
                 </div>
                 <div class="bg-white/5 p-4 rounded-xl border border-white/5">
-                    <p class="text-[10px] font-black text-amber-500 uppercase mb-1">Focus Area</p>
-                    <p class="text-white text-xs font-bold leading-relaxed">Comprehensive testing, diagnostic review, and clinical consultation.</p>
+                    <p class="text-[10px] font-black text-cta uppercase mb-1">Focus Area</p>
+                    <p class="text-site-text text-xs font-bold leading-relaxed">Comprehensive testing, diagnostic review, and clinical consultation.</p>
                 </div>
             </div>
         </div>
         <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 border border-white/20 text-sand text-center font-black rounded-xl hover:bg-white/10 transition-all text-sm italic">Request Placement</a>
       </div>
 
-      <div class="bg-indigo-900/20 border border-indigo-500/20 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-amber-500/30 transition-all">
+      <div class="bg-slate-800/20 border border-cta/20 p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 transition-all">
         <div>
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-black text-white leading-tight bg-clip-text bg-linear-to-r from-sand to-white">Admin <br/>Assistant</h2>
-                <span class="text-[9px] font-black text-white bg-indigo-500 px-2 py-1 rounded uppercase">Ops</span>
+                <h2 class="text-2xl font-black text-site-text leading-tight bg-clip-text bg-linear-to-r from-sand to-white">Admin <br/>Assistant</h2>
+                <span class="text-[9px] font-black text-cta-fg bg-cta px-2 py-1 rounded uppercase">Ops</span>
             </div>
-            <p class="text-indigo-100/60 mb-6 text-xs leading-relaxed">
+            <p class="text-site-text/60 mb-6 text-xs leading-relaxed">
               Support our clinical mission through scheduling, HIPAA-compliant intake coordination, and billing liaison.
               This is a part-time position for 10-15 hours per week, ideal for someone passionate about healthcare operations and patient experience.
             </p>
             <div class="space-y-4 mb-8">
-                <p class="text-[10px] font-black text-indigo-300 uppercase tracking-widest">Key Skillsets</p>
+                <p class="text-[10px] font-black text-site-sub uppercase tracking-widest">Key Skillsets</p>
                 {[ "Intake Pipelines", "Protocol Prep", "Insurance Liaison" ].map(skill => (
                     <div class="flex items-center gap-3">
                         <div class="w-1.5 h-1.5 bg-sand rounded-full"></div>
-                        <span class="text-white text-xs font-bold">{skill}</span>
+                        <span class="text-site-text text-xs font-bold">{skill}</span>
                     </div>
                 ))}
             </div>
         </div>
-        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-sand text-indigo-950 text-center font-black rounded-xl hover:bg-white transition-all text-sm">Join Operations</a>
+        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-sand text-cta-fg text-center font-black rounded-xl hover:bg-white transition-all text-sm">Join Operations</a>
       </div>
 
     </div>
@@ -123,13 +123,13 @@ const cultureHighlights = [
   <section class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       <div>
-        <h2 class="text-4xl font-black text-white mb-6 tracking-tighter">
+        <h2 class="text-4xl font-black text-site-text mb-6 tracking-tighter">
           Clinical <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-white italic"
+            class="text-transparent bg-clip-text bg-linear-to-r from-cta to-white italic"
             >Mentorship.</span
           >
         </h2>
-        <p class="text-indigo-200/70 text-lg leading-relaxed mb-8">
+        <p class="text-site-sub text-lg leading-relaxed mb-8">
           We believe that the next generation of psychologists deserves
           supervision that is as neuro-affirming as the care we provide to our
           patients. At Twilight Psychology, mentorship is a collaborative partnership.
@@ -140,11 +140,11 @@ const cultureHighlights = [
             <div
               class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0"
             >
-              <span class="text-amber-500 text-xl"> * </span>
+              <span class="text-cta text-xl"> * </span>
             </div>
             <div>
-              <h4 class="text-white font-bold">Postdoctoral Supervision</h4>
-              <p class="text-indigo-100/50 text-sm">
+              <h4 class="text-site-text font-bold">Postdoctoral Supervision</h4>
+              <p class="text-site-text/50 text-sm">
                 Full support for candidates seeking licensure in Kentucky,
                 focusing on advanced diagnostic reporting and practice
                 management.
@@ -156,11 +156,11 @@ const cultureHighlights = [
             <div
               class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0"
             >
-              <span class="text-amber-500 text-xl"> * </span>
+              <span class="text-cta text-xl"> * </span>
             </div>
             <div>
-              <h4 class="text-white font-bold">Assessment Specialization</h4>
-              <p class="text-indigo-100/50 text-sm">
+              <h4 class="text-site-text font-bold">Assessment Specialization</h4>
+              <p class="text-site-text/50 text-sm">
                 Master the ADOS-2, MIGDAS-2, and complex differential diagnosis
                 under the guidance of seasoned evaluators.
               </p>
@@ -170,7 +170,7 @@ const cultureHighlights = [
       </div>
 
       <div
-        class="bg-linear-to-br from-indigo-900/40 to-indigo-950 border border-white/10 p-10 rounded-[3rem] shadow-2xl shadow-indigo-950/50"
+        class="bg-linear-to-br from-slate-800/40 to-site-bg border border-white/10 p-10 rounded-[3rem] shadow-2xl shadow-site-bg/50"
       >
         <h3
           class="text-sand font-black text-xs uppercase tracking-widest mb-6 text-center"
@@ -178,7 +178,7 @@ const cultureHighlights = [
           The Practicum Experience
         </h3>
         <blockquote
-          class="text-2xl font-black text-white italic leading-tight text-center mb-8"
+          class="text-2xl font-black text-site-text italic leading-tight text-center mb-8"
         >
           "We not only teach you how to test but also a lot of details
           not taught in the classroom".
@@ -191,7 +191,7 @@ const cultureHighlights = [
               "EHR Training",
               "Insurance Insight",
             ].map((tag) => (
-              <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-indigo-300 uppercase tracking-tighter">
+              <span class="px-4 py-2 bg-white/5 border border-white/5 rounded-full text-[10px] font-black text-site-sub uppercase tracking-tighter">
                 {tag}
               </span>
             ))
@@ -202,8 +202,8 @@ const cultureHighlights = [
   </section>
 
   <section class="max-w-7xl mx-auto px-6 py-32">
-    <h2 class="text-4xl font-black text-white mb-16 text-center">
-      Why Choose <span class="text-amber-500">Twilight Psychology?</span>
+    <h2 class="text-4xl font-black text-site-text mb-16 text-center">
+      Why Choose <span class="text-cta">Twilight Psychology?</span>
     </h2>
     <div class="grid md:grid-cols-3 gap-8">
       {
@@ -212,7 +212,7 @@ const cultureHighlights = [
             <h3 class="text-xl font-black text-sand italic uppercase tracking-tighter">
               {item.title}
             </h3>
-            <p class="text-indigo-200/50 text-sm leading-relaxed">
+            <p class="text-site-sub/50 text-sm leading-relaxed">
               {item.desc}
             </p>
           </div>
@@ -223,7 +223,7 @@ const cultureHighlights = [
 
   <section class="max-w-7xl mx-auto px-6">
     <div
-      class="bg-amber-500 p-12 rounded-[4rem] text-indigo-950 flex flex-col md:flex-row items-center gap-8"
+      class="bg-cta p-12 rounded-[4rem] text-cta-fg flex flex-col md:flex-row items-center gap-8"
     >
       <div class="md:w-2/3">
         <h2 class="text-4xl font-black mb-4 tracking-tighter">

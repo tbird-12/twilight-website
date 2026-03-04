@@ -43,7 +43,7 @@ const categories = [
   description="Twilight Psychology provides neuro-affirming psychological evaluations, medication management, and therapy services in Kentucky. We specialize in supporting neurodiverse individuals with ADHD, Autism, learning disorders, and more. Our compassionate care addresses a wide range of concerns including anxiety, depression, trauma, identity issues, and relationship challenges.">
 
 
-  <main class="bg-indigo-950 min-h-screen pb-24 text-white">
+  <main class="bg-site-bg min-h-screen pb-24 text-site-text">
     <section class="pt-32 pb-20 px-6 text-center border-b border-white/5">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter">
@@ -52,7 +52,7 @@ const categories = [
             >Care.</span
           >
         </h1>
-        <p class="text-indigo-200/60 text-lg max-w-2xl mx-auto">
+        <p class="text-site-sub/60 text-lg max-w-2xl mx-auto">
           From diagnostic clarification to identity-affirming therapy, we
           provide specialized support for the complex intersections of the human
           experience.
@@ -65,16 +65,16 @@ const categories = [
         {
           categories.map((cat) => (
             <div class="space-y-8">
-              <h2 class="text-xs font-black uppercase tracking-[0.3em] text-amber-500 border-b border-amber-500/20 pb-4">
+              <h2 class="text-xs font-black uppercase tracking-[0.3em] text-cta border-b border-cta/20 pb-4">
                 {cat.title}
               </h2>
               <ul class="space-y-4">
                 {cat.concerns.map((item) => (
                   <li class="flex items-start gap-3 group">
-                    <span class="text-amber-500 mt-1 group-hover:translate-x-1 transition-transform">
+                    <span class="text-cta mt-1 group-hover:translate-x-1 transition-transform">
                       →
                     </span>
-                    <span class="text-indigo-100/80 group-hover:text-white transition-colors text-lg font-medium leading-tight">
+                    <span class="text-site-text group-hover:text-site-text transition-colors text-lg font-medium leading-tight">
                       {item}
                     </span>
                   </li>
@@ -97,7 +97,7 @@ const categories = [
             >
               Our approach is rooted in <br /> validation, not pathology.
             </h3>
-            <p class="text-indigo-200/60 leading-relaxed">
+            <p class="text-site-sub/60 leading-relaxed">
               Whether you are seeking a formal diagnosis or a safe space to
               process life's transitions, we prioritize your lived experience.
               All our clinicians are neuro-affirming and trauma-informed, with
@@ -107,18 +107,18 @@ const categories = [
           </div>
           <div class="flex justify-center">
             <div
-              class="h-px w-full bg-linear-to-r from-transparent via-amber-500 to-transparent md:h-32 md:w-px"
+              class="h-px w-full bg-linear-to-r from-transparent via-cta to-transparent md:h-32 md:w-px"
             >
             </div>
             <div class="hidden md:block pl-12">
               <p
-                class="text-sm font-black text-white uppercase tracking-widest mb-2"
+                class="text-sm font-black text-site-text uppercase tracking-widest mb-2"
               >
                 Ready to start?
               </p>
 
               <a href={`tel:${PHONE_NUMBER}`}
-                class="block text-amber-500 font-black text-2xl hover:text-white transition-colors mb-2">
+                class="block text-cta font-black text-2xl hover:text-site-text transition-colors mb-2">
                 &#128222; {PHONE_NUMBER_FORMATTED}
               </a>
             </div>

@@ -46,12 +46,12 @@ const faqs = [
   metaDescription='Frequently asked Questions'
 >
 
-  <section class="bg-indigo-950 min-h-screen py-20 px-4">
+  <section class="bg-site-bg min-h-screen py-20 px-4">
     <div class="max-w-3xl mx-auto">
       
       <header class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-black text-indigo-200 mb-4 dark:text-stone-400">
-          Frequently Asked <span class="text-amber-400">Questions</span>
+        <h1 class="text-4xl md:text-5xl font-black text-site-sub mb-4 dark:text-site-sub">
+          Frequently Asked <span class="text-cta">Questions</span>
         </h1>
         <p class="text-sand text-lg font-medium">
           Healing isn't linear. We're here to provide clarity for your journey.
@@ -60,17 +60,17 @@ const faqs = [
 
       <div class="space-y-4">
         {faqs.map((faq, index) => (
-          <div class="group border border-indigo-900 bg-indigo-900/20 rounded-2xl overflow-hidden transition-all hover:border-amber-500/50">
+          <div class="group border border-slate-800 bg-slate-800/20 rounded-2xl overflow-hidden transition-all hover:border-cta/50">
             <button 
               class="w-full flex items-center justify-between p-6 text-left focus:outline-none"
               onclick={`document.getElementById('faq-${index}').classList.toggle('hidden'); document.getElementById('icon-${index}').classList.toggle('rotate-180');`}
             >
-              <span class="text-lg font-bold text-indigo-50 text-balance leading-tight pr-4">
+              <span class="text-lg font-bold text-site-text text-balance leading-tight pr-4">
                 {faq.question}
               </span>
               <svg 
                 id={`icon-${index}`}
-                class="w-5 h-5 text-amber-500 transition-transform duration-300 shrink-0" 
+                class="w-5 h-5 text-cta transition-transform duration-300 shrink-0" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -80,8 +80,8 @@ const faqs = [
             </button>
             
             <div id={`faq-${index}`} class="hidden px-6 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
-              <div class="h-px bg-indigo-900 mb-4 w-full" />
-              <p class="text-indigo-200 leading-relaxed font-medium">
+              <div class="h-px bg-slate-800 mb-4 w-full" />
+              <p class="text-site-sub leading-relaxed font-medium">
                 {faq.answer}
               </p>
             </div>
@@ -89,14 +89,14 @@ const faqs = [
         ))}
       </div>
 
-      <section class="mt-20 p-8 rounded-3xl bg-linear-to-br from-indigo-900 to-indigo-950 border border-indigo-800 text-center">
-        <h2 class="text-2xl font-bold text-white mb-2">Still have questions?</h2>
-        <p class="text-stone-300 mb-6">Contact our administrative team for specific insurance inquiries or to start your intake.</p>
+      <section class="mt-20 p-8 rounded-3xl bg-linear-to-br from-slate-800 to-site-bg border border-slate-700 text-center">
+        <h2 class="text-2xl font-bold text-site-text mb-2">Still have questions?</h2>
+        <p class="text-site-text mb-6">Contact our administrative team for specific insurance inquiries or to start your intake.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={`tel:${PHONE_NUMBER}`} class="px-8 py-3 bg-amber-500 hover:bg-amber-400 text-indigo-950 font-black rounded-xl transition-transform hover:scale-105">
+          <a href={`tel:${PHONE_NUMBER}`} class="px-8 py-3 bg-cta hover:bg-cta/80 text-cta-fg font-black rounded-xl transition-transform hover:scale-105">
             {PHONE_NUMBER_FORMATTED}
           </a>
-          <a href={`mailto:${EMAIL_ADDRESS}`} class="px-8 py-3 border border-stone-500 text-stone-200 font-bold rounded-xl hover:bg-stone-800 transition-colors">
+          <a href={`mailto:${EMAIL_ADDRESS}`} class="px-8 py-3 border border-stone-500 text-site-text font-bold rounded-xl hover:bg-stone-800 transition-colors">
             Email our Office
           </a>
         </div>
@@ -110,6 +110,6 @@ const faqs = [
   /* Custom Scrollbar for the page */
   :global(body) {
     scrollbar-width: thin;
-    scrollbar-color: #f59e0b #1e1b4b;
+    scrollbar-color: #f59e0b #020617;
   }
 </style>
