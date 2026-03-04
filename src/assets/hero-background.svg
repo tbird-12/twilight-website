@@ -1,0 +1,43 @@
+<svg
+  class="absolute inset-0 w-full h-full"
+  viewBox="0 0 1000 450"
+  preserveAspectRatio="xMidYMid slice"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <radialGradient id="greenGlow" cx="0%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#60A839" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#1E1B4B" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="amberGlow" cx="100%" cy="0%" r="60%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#1E1B4B" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#greenGlow)" />
+  <rect width="100%" height="100%" fill="url(#amberGlow)" />
+  <path
+    d="M-100 350 C 200 300 400 400 600 350 S 900 300 1100 350"
+    stroke="#60A839"
+    stroke-width="1.5"
+    fill="none"
+    opacity="0.3"
+  />
+  <path
+    d="M-100 370 C 200 320 400 420 600 370 S 900 320 1100 370"
+    stroke="#F59E0B"
+    stroke-width="0.5"
+    fill="none"
+    opacity="0.2"
+  />
+  <circle cx="200" cy="150" r="2" fill="#F59E0B" opacity="0.4">
+    <animate
+      attributeName="opacity"
+      values="0.2;0.6;0.2"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+  </circle>
+  <circle cx="850" cy="280" r="1.5" fill="#60A839" opacity="0.5" />
+  <circle cx="400" cy="100" r="1" fill="#F59E0B" opacity="0.3" />
+</svg>

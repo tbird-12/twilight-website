@@ -2,10 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
 import { WIDGET_LINK } from "../data/resource";
-
-import hero from "../assets/images/hero.webp";
+import heroBg from "../assets/hero-background.svg?raw";
 
 const services = [
   {
@@ -64,11 +62,9 @@ const qualityCareItems = [
   in Kentucky and via telehealth in the Psycpact states."
 >
   <main class="bg-indigo-950 min-h-screen pb-24">
-    <section class="relative pt-24 pb-24 px-6 bg-indigo-950 overflow-hidden">
-      <div
-        class="absolute top-0 right-0 -mr-20 -mt-20 w-150 h-150  bg-indigo-500/5 rounded-full blur-[120px]"
-      >
-      </div>
+    <section class="relative pt-24 pb-24 px-6 overflow-hidden bg-indigo-950">
+      <!-- SVG Background -->
+      <Fragment set:html={heroBg} />
 
       <div
         class="max-w-7xl mx-auto relative z-10 py-12 text-center"
@@ -111,20 +107,11 @@ const qualityCareItems = [
           </a>
         </div>
       </div>
-    </section>
 
-    <section class="relative pt-24 pb-24 px-6 bg-indigo-950 overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="relative">
-          <div class="absolute inset-0 bg-amber-500/10 blur-3xl rounded-full">
-          </div>
-          <Image
-            src={hero}
-            alt="Therapy session"
-            class="relative w-full h-75 md:h-125 object-cover rounded-3xl shadow-2xl border border-indigo-800"
-          />
-        </div>
-      </div>
+      <!-- Gaussian-style bottom fade into next section -->
+      <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style="background: linear-gradient(to bottom, transparent 0%, rgba(30,27,75,0.5) 40%, rgba(30,27,75,0.85) 70%, #1E1B4B 100%); filter: blur(2px);"
+      ></div>
     </section>
 
     <section class="relative pt-24 pb-24 px-6 bg-indigo-950 overflow-hidden">
