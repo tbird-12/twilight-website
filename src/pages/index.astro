@@ -9,19 +9,19 @@ const services = [
   {
     title: "Psychological Evaluations",
     desc: "Comprehensive evaluations for ADHD, Autism, and Learning Disorders with a neuro-affirming lens.",
-    icon: "mdi:star-four-points-outline",
+    icon: "mdi:calendar-star-outline",
     link: "/services/psychological-evaluations",
   },
   {
     title: "Medication Management",
     desc: "Personalized medication management with our dedicated Psychiatric Nurse Practitioner.",
-    icon: "mdi:star-four-points-outline",
+    icon: "mdi:calendar-star-outline",
     link: "/services/medication-management",
   },
   {
     title: "Therapy",
     desc: "Individual counseling using evidence-based, neuro-affirming practices.",
-    icon: "mdi:star-four-points-outline",
+    icon: "mdi:calendar-star-outline",
     link: "/services/therapy",
   },
 ];
@@ -48,7 +48,7 @@ const qualityCareItems = [
     desc: "When testing indicates that medication may help, our in-house provider can step in to support your ongoing care.",
   },
   {
-    icon: "mdi:video-wireless",
+    icon: "mdi:video-wireless-outline",
     title: "Flexible & remote appointments",
     desc: "Weekend availability and fully remote testing options make it easier to get care, even if travel or scheduling is a concern.",
     cardClass: "sm:col-span-2 lg:col-span-1",
@@ -134,7 +134,7 @@ const qualityCareItems = [
                 class={`rounded-3xl bg-slate-800/20 border border-slate-700 p-8 transition-all duration-300 hover:bg-slate-800/30 ${item.cardClass ?? ""}`}
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <Icon name={item.icon} class="w-9 h-9 text-site-sub shrink-0" />
+                  <Icon name={item.icon} class="w-9 h-9 text-site-sub shrink-0" style="color: var(--color-icon);"/>
                   <h3 class="text-xl font-black text-site-text">{item.title}</h3>
                 </div>
                 <p class="text-site-text leading-relaxed">{item.desc}</p>
@@ -200,7 +200,7 @@ const qualityCareItems = [
               <div class="group relative flex flex-col rounded-3xl bg-white/2 border border-white/5 hover:border-cta/30 transition-all duration-500 overflow-hidden">
                 <div class="p-7 sm:p-9 lg:p-10">
                   <div class="flex items-center gap-3 mb-4">
-                    <Icon name={service.icon} class="w-9 h-9 text-site-sub shrink-0" />
+                    <Icon name={service.icon} class="w-9 h-9 text-site-sub shrink-0" style="color: var(--color-icon);"/>
                     <h3 class="text-xl sm:text-2xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
                       {service.title}
                     </h3>

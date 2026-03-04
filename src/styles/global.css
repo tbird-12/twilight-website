@@ -12,6 +12,7 @@
   --color-cta-fg:    #020617;  /* text-cta-fg    → slate-950  (CTA text)          */
   --color-site-footer: #010409;  /* bg-site-footer → slate-900  (footer background)  */
   --color-site-ann: #1e293b;    /* bg-site-ann → indigo-950 (announcement background) */
+  --color-icon: #dfcaaa;         /* text-icon → amber-300 (icon color) */
 }
 
 html {
