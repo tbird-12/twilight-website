@@ -1,13 +1,13 @@
 ---
 import { chatbotTree } from "../data/chatbot";
-import { PHONE_NUMBER, EMAIL_ADDRESS } from "../data/resource";
+import { EMAIL_ADDRESS } from "../data/resource";
 import { Icon } from "astro-icon/components";
 ---
 
 <button id="bot-trigger" 
   type="button"
   aria-label="Open chat assistant"
-  class="fixed bottom-4 right-4 md:bottom-5 md:right-5 w-14 h-14 md:w-16 md:h-16 bg-cta hover:bg-cta/80 text-cta-fg rounded-full shadow-2xl flex items-center justify-center z-60 transition-transform hover:scale-110 touch-manipulation">
+  class="fixed bottom-4 right-4 md:bottom-5 md:right-5 w-14 h-14 md:w-16 md:h-16 bg-transparent hover:bg-cta-fg/80 text-cta border-2 border-cta rounded-full shadow-2xl flex items-center justify-center z-60 transition-transform hover:scale-110 touch-manipulation">
   <Icon
     name="mdi:chat-bubble-outline"
     class="relative w-6 h-6 md:w-9 md:h-9 object-cover rounded-3xl shadow-2xl"
@@ -24,7 +24,7 @@ import { Icon } from "astro-icon/components";
   hidden flex-col overflow-hidden z-60 animate-slide-up">
   
   <div class="bg-slate-800 p-4 text-site-text font-bold flex justify-between items-center">
-    <span>Twilight Assistant</span>
+    <span>Hi, I'm Liv</span>
     <button id="close-chat" type="button" class="text-2xl leading-none hover:text-site-sub transition-colors">×</button>
   </div>
   
