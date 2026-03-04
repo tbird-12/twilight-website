@@ -37,11 +37,11 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
     >
       {sectionLabel}
     </div>
-    <div class="relative max-h-80 overflow-y-auto custom-scrollbar">
+    <div class="relative overflow-visible">
       {
         items.map((item) =>
           item.hasNested ? (
-            <div class="group/nested">
+            <div class="relative group/nested">
               <div class="flex items-center justify-between px-3 py-3 rounded-xl hover:bg-slate-700 transition-colors cursor-pointer">
                 <div class="text-left">
                   <div class="text-sm font-black text-site-text group-hover/nested:text-cta">
@@ -61,18 +61,19 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
                 </svg>
               </div>
 
-              <div class="absolute inset-0 ml-2 w-64 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 translate-x-2 group-hover/nested:translate-x-0 bg-slate-800 border-l-4 border-l-cta shadow-2xl rounded-2xl p-3 z-50">
+              <div class="absolute top-0 left-full ml-2 w-64 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 translate-x-2 group-hover/nested:translate-x-0 bg-slate-800 border-l-4 border-l-cta shadow-2xl rounded-2xl p-3 z-60">
                 <div class="text-[10px] uppercase tracking-widest text-site-sub/60 font-black px-3 py-2">
                   {item.childLabel}
                 </div>
 
-                <div class="max-h-96 overflow-y-auto custom-scrollbar">
+                <div class="max-h-72 overflow-y-auto custom-scrollbar">
                   {item.children?.map((child: any) => (
                     <a
                       href={`${item.childHrefBase}/${child.slug}`}
                       class="block px-3 py-2 rounded-lg hover:bg-slate-700 text-sm font-black text-site-text transition-colors"
+                      title={child.name}
                     >
-                      <div class="text-sm font-black text-site-text">
+                      <div class="text-sm font-black text-site-text truncate">
                         {child.name}
                       </div>
                     </a>
