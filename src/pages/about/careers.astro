@@ -11,21 +11,6 @@ const clinicianBenefits = [
   "Current Testing Suite & Protocols",
   "Automated Billing & Support",
 ];
-
-const cultureHighlights = [
-  {
-    title: "Growth",
-    desc: "Supervision for Postdoc and Master’s level candidates.",
-  },
-  {
-    title: "Balance",
-    desc: "Flexible scheduling designed around your self-care.",
-  },
-  {
-    title: "Clarity",
-    desc: "Full transparency on billing and revenue generation.",
-  },
-];
 ---
 
 <ServiceLayout
@@ -39,8 +24,9 @@ const cultureHighlights = [
           Join Our Practice
         </span>
         <h1 class="text-5xl md:text-8xl font-black text-site-text mb-6 tracking-tighter leading-[0.9]">
-          Build Your <br/><span class="text-transparent bg-clip-text bg-linear-to-r from-sand to-white italic">Career.</span>
+          Build Your <br/><span class="text-cta">Career.</span>
         </h1>
+        
         <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
           From doctoral students to seasoned clinicians, we provide the environment you need to thrive.
         </p>
@@ -123,7 +109,7 @@ const cultureHighlights = [
       <div>
         <h2 class="text-4xl font-black text-site-text mb-6 tracking-tighter">
           Clinical <span
-            class="text-transparent bg-clip-text bg-linear-to-r from-cta to-white italic"
+            class="text-cta"
             >Mentorship.</span
           >
         </h2>
@@ -199,25 +185,7 @@ const cultureHighlights = [
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-6 py-32">
-    <h2 class="text-4xl font-black text-site-text mb-16 text-center">
-      Why Choose <span class="text-cta">Twilight Psychology?</span>
-    </h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      {
-        cultureHighlights.map((item) => (
-          <div class="p-8 border-l border-white/10 space-y-4">
-            <h3 class="text-xl font-black text-sand italic uppercase tracking-tighter">
-              {item.title}
-            </h3>
-            <p class="text-site-sub/50 text-sm leading-relaxed">
-              {item.desc}
-            </p>
-          </div>
-        ))
-      }
-    </div>
-  </section>
+  
 
   <section class="max-w-7xl mx-auto px-6">
     <div

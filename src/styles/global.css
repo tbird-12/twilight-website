@@ -2,7 +2,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-sand: #D4CFC7;
 
   /* ── Site palette ── edit these hex values to retheme the whole site ── */
   --color-site-bg:   #020617;  /* bg-site-bg    → slate-950  (page background)    */
