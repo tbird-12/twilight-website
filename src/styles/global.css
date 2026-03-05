@@ -14,6 +14,10 @@
   --color-site-ann: #1e293b;    /* bg-site-ann → indigo-950 (announcement background) */
   --color-icon: #dfcaaa;         /* text-icon → amber-300 (icon color) */
   --color-button-border: #dfcaaa; /* border-button-border → amber-300 (button border color) */
+  --font-heading: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-serif: var(--font-heading);
+  --font-sans: var(--font-body);
 }
 
 html {
@@ -27,14 +31,16 @@ html {
 
   body {
     @apply bg-site-bg text-site-text antialiased;
+    font-family: var(--font-body);
   }
 
   a {
     @apply transition-colors;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-black tracking-tighter;
+    font-family: var(--font-heading);
     color: inherit;
   }
 }
