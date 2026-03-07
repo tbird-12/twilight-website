@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import { Icon } from "astro-icon/components";
-import { WIDGET_LINK } from "../data/resource";
+import { REFERRAL_LINK } from "../data/resource";
 import heroBg from "../assets/hero-background.svg?raw";
 
 const services = [
@@ -62,12 +62,12 @@ const qualityCareItems = [
   in Kentucky and via telehealth in the Psypact states."
 >
   <main class="bg-site-bg min-h-screen pb-24">
-    <section class="relative pt-24 pb-24 px-6 overflow-hidden bg-site-bg">
+    <section class="relative py-24 px-4 overflow-hidden bg-site-bg">
       <!-- SVG Background -->
       <Fragment set:html={heroBg} />
 
       <div
-        class="max-w-4xl mx-auto relative z-10 py-12 text-center"
+        class="max-w-4xl mx-auto relative z-10 py-16 text-center"
       >
         <span
           class="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-sand uppercase bg-white/5 border border-white/10 rounded-full"
@@ -93,16 +93,16 @@ const qualityCareItems = [
 
         <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
           <a
-            href={WIDGET_LINK}
+            href="/catalog"
             class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-cta text-cta-fg font-black rounded-xl hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
           >
-            Schedule an Evaluation
+            Our Services
           </a>
           <a
-            href="/catalog"
+            href={REFERRAL_LINK}
             class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-site-text border border-(--color-button-border) font-black rounded-xl hover:bg-white/5 transition-all"
           >
-            Our Services
+            Client Referral
           </a>
         </div>
       </div>
@@ -113,7 +113,7 @@ const qualityCareItems = [
       ></div>
     </section>
 
-    <section class="relative pt-24 pb-24 px-6 bg-site-bg overflow-hidden">
+    <section class="relative py-24 px-4 bg-site-bg overflow-hidden">
       <div class="max-w-4xl mx-auto text-center">
         <header class="mb-12">
           <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4">
@@ -144,12 +144,12 @@ const qualityCareItems = [
       </div>
     </section>
 
-    <section class="relative py-12 px-6 bg-site-bg overflow-hidden">
+    <section class="relative py-12 px-4 bg-site-bg overflow-hidden">
       <div
         class="bg-white/5 p-8 rounded-4xl text-cta-fg max-w-4xl mx-auto text-center relative overflow-hidden"
       >
         <div class="relative z-10">
-          <h2 class="font-serif text-4xl font-black mb-6 tracking-tighter justify-center text-site-text">
+          <h2 class="font-serif text-4xl font-black mb-6 tracking-tighter text-site-text">
             Ready to Get Started
           </h2>
         </div>
@@ -172,7 +172,7 @@ const qualityCareItems = [
       </div>
     </section>
     
-    <section class="relative pt-24 pb-24 px-6 bg-site-bg overflow-hidden">
+    <section class="relative py-24 px-4 bg-site-bg overflow-hidden">
       <div class="max-w-4xl mx-auto">
         <div
           class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"

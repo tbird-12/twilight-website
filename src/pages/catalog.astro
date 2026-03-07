@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import ServiceLayout from "../layouts/ServiceLayout.astro";
 import "../styles/global.css";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
 
@@ -39,92 +39,73 @@ const categories = [
 ];
 ---
 
-<Layout title="Catalog of Services | Twilight Psychology"
-  description="Twilight Psychology provides neuro-affirming psychological evaluations, medication management, and therapy services in Kentucky. We specialize in supporting neurodiverse individuals with ADHD, Autism, learning disorders, and more. Our compassionate care addresses a wide range of concerns including anxiety, depression, trauma, identity issues, and relationship challenges.">
+<ServiceLayout
+  name="Catalog of Services"
+  description="Twilight Psychology provides neuro-affirming psychological evaluations, medication management, and therapy services in Kentucky."
+  metaDescription="Twilight Psychology provides neuro-affirming psychological evaluations, medication management, and therapy services in Kentucky. We specialize in supporting neurodiverse individuals with ADHD, Autism, learning disorders, and more."
+>
+  <section class="relative py-24 px-4 text-center border-b border-white/5 overflow-hidden">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
+        Areas of <span class="text-cta">Care</span>
+      </h1>
+      <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
+        From diagnostic clarification to identity-affirming therapy, we provide
+        specialized support for the complex intersections of the human
+        experience.
+      </p>
+    </div>
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-slate-800/40 via-transparent to-transparent z-0"
+    >
+    </div>
+  </section>
 
+  <section class="max-w-7xl mx-auto px-4 mt-20">
+    <div class="grid md:grid-cols-3 gap-6">
+      {
+        categories.map((cat) => (
+          <div class="group bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cta/30 p-8 rounded-3xl transition-all duration-300">
+            <h2 class="font-serif text-lg font-black text-site-text mb-6 group-hover:text-cta transition-colors">
+              {cat.title}
+            </h2>
+            <ul class="space-y-4">
+              {cat.concerns.map((item) => (
+                <li class="flex items-start gap-3 text-sm text-site-sub leading-relaxed">
+                  <span class="text-cta mt-1">✦</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
 
-  <main class="bg-site-bg min-h-screen pb-24 text-site-text">
-    <section class="pt-32 pb-20 px-6 text-center border-b border-white/5">
-      <div class="max-w-4xl mx-auto">
-        <h1 class="font-serif text-5xl md:text-7xl font-black mb-6 tracking-tighter">
-          Areas of <span
-            class="text-cta"
-            >Care.</span
-          >
-        </h1>
-        <p class="text-site-sub/60 text-lg max-w-2xl mx-auto">
-          From diagnostic clarification to identity-affirming therapy, we
-          provide specialized support for the complex intersections of the human
-          experience.
+  <section class="max-w-4xl mx-auto px-4 mt-20 mb-10">
+    <div class="bg-slate-800/20 border border-slate-700/50 p-8 md:p-12 rounded-[2.5rem]">
+      <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+        Our approach is rooted in validation, not pathology.
+      </h2>
+      <p class="text-site-text leading-relaxed font-medium mb-8">
+        Whether you are seeking a formal diagnosis or a safe space to process
+        life&apos;s transitions, we prioritize your lived experience. All our
+        clinicians are neuro-affirming and trauma-informed, with specialized
+        training in the unique challenges faced by marginalized communities.
+      </p>
+
+      <div class="pt-6 border-t border-white/10">
+        <p class="text-[10px] font-black text-site-sub/60 uppercase tracking-widest  mb-2">
+          Ready to start?
         </p>
+        <a
+          href="/contact"
+          class="inline-block text-cta font-black text-2xl hover:text-site-text transition-colors"
+        >
+          &#128222; {PHONE_NUMBER_FORMATTED}
+        </a>
       </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto px-6 py-20">
-      <div class="grid md:grid-cols-3 gap-12">
-        {
-          categories.map((cat) => (
-            <div class="space-y-8">
-              <h2 class="font-serif text-xs font-black uppercase tracking-[0.3em] text-cta border-b border-cta/20 pb-4">
-                {cat.title}
-              </h2>
-              <ul class="space-y-4">
-                {cat.concerns.map((item) => (
-                  <li class="flex items-start gap-3 group">
-                    <span class="text-cta mt-1 group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
-                    <span class="text-site-text group-hover:text-site-text transition-colors text-lg font-medium leading-tight">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto px-6 mt-12">
-      <div
-        class="bg-white/5 border border-white/10 p-12 rounded-[3rem] relative overflow-hidden"
-      >
-        <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3
-              class="font-serif text-3xl font-black text-sand italic mb-4 leading-tight"
-            >
-              Our approach is rooted in <br /> validation, not pathology.
-            </h3>
-            <p class="text-site-sub/60 leading-relaxed">
-              Whether you are seeking a formal diagnosis or a safe space to
-              process life's transitions, we prioritize your lived experience.
-              All our clinicians are neuro-affirming and trauma-informed, with
-              specialized training in the unique challenges faced by
-              marginalized communities.
-            </p>
-          </div>
-          <div class="flex justify-center">
-            <div
-              class="h-px w-full bg-linear-to-r from-transparent via-cta to-transparent md:h-32 md:w-px"
-            >
-            </div>
-            <div class="hidden md:block pl-12">
-              <p
-                class="text-sm font-black text-site-text uppercase tracking-widest mb-2"
-              >
-                Ready to start?
-              </p>
-
-              <a href={`tel:${PHONE_NUMBER}`}
-                class="block text-cta font-black text-2xl hover:text-site-text transition-colors mb-2">
-                &#128222; {PHONE_NUMBER_FORMATTED}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-</Layout>
+    </div>
+  </section>
+</ServiceLayout>

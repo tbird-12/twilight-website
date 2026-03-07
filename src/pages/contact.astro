@@ -41,7 +41,7 @@ const contactMethods = [
   description="Reach Twilight Psychology by phone, email, or our intake widget"
   metaDescription="Contact Twilight Psychology by phone, email, or online widget. For emergencies, call 911 or 988."
 >
-  <section class="bg-site-bg min-h-screen py-20 px-4">
+  <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-5xl mx-auto">
       <header class="text-center mb-14">
         <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-slate-800/50 border border-slate-700 text-cta text-xs font-black uppercase tracking-widest">
@@ -50,7 +50,7 @@ const contactMethods = [
         <h1 class="font-serif text-4xl md:text-6xl font-black text-site-text mb-4">
           How To <span class="text-cta">Reach Us</span>
         </h1>
-        <p class="text-sand text-lg max-w-2xl mx-auto">
+        <p class="text-site-sub text-lg font-medium max-w-2xl mx-auto leading-relaxed">
           We are here to help you get started. Reach out by form, phone, or email and our team will guide your next step.
         </p>
       </header>
@@ -94,7 +94,7 @@ const contactMethods = [
                 href={method.href}
                 target={method.external ? "_blank" : undefined}
                 rel={method.external ? "noopener noreferrer" : undefined}
-                class="inline-flex items-center justify-center w-full rounded-xl bg-cta px-4 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors"
+                class="inline-flex items-center justify-center w-full rounded-xl bg-cta px-4 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
               >
                 {method.cta}
               </a>
@@ -118,7 +118,7 @@ const contactMethods = [
             href={REFERRAL_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-xl bg-cta px-6 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors"
+            class="inline-flex items-center justify-center rounded-xl bg-cta px-6 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
           >
             Open Referral Form
           </a>
