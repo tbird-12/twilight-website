@@ -9,33 +9,24 @@ import {
   specialtiesMenuItems,
   clientResourcesMenuItems,
 } from "../data/navigationData";
-import {
-  PHONE_NUMBER,
-  PHONE_NUMBER_FORMATTED,
-  WIDGET_LINK,
-  REFERRAL_LINK,
-  SIGN_IN_LINK,
-} from "../data/resource";
 ---
 
 <header
   class="sticky top-0 z-50 w-full bg-site-bg/80 backdrop-blur-md border-b border-slate-800/50"
 >
   <div
-    class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between"
+    class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between"
   >
     <Logo />
 
-    <!-- Mobile Controls (Call Button + Menu Button) -->
+    <!-- Mobile Controls (Contact Button + Menu Button) -->
     <div class="md:hidden flex items-center gap-2">
-      <!-- Mobile Call Button -->
+      <!-- Mobile Contact Button -->
       <a
-        id="floatingCallBtn"
-        href={`tel:${PHONE_NUMBER}`}
-        data-phone={PHONE_NUMBER_FORMATTED}
+        href="/contact"
         class="bg-cta text-cta-fg px-4 py-2 rounded-full font-black text-xs hover:bg-cta/80 transition-all shadow-lg flex items-center gap-1"
       >
-        &#128222; <span>Call</span>
+        <span>Contact Us</span>
       </a>
 
       <!-- Mobile menu button -->
@@ -83,30 +74,12 @@ import {
         baseHref="/resources"
       />
 
-      <!-- Referrals Link -->
+      <!-- Contact Us Button (Desktop Only) -->
       <a
-        href={REFERRAL_LINK}
-        target="_blank"
-        class="text-sm font-bold text-site-text hover:text-cta transition-colors duration-200"
-        >Referrals</a
-      >
-
-      <!-- Client Portal Button -->
-      <a
-        href={SIGN_IN_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hidden md:inline-block bg-cta text-cta-fg px-6 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
-      >
-        Client Portal
-      </a>
-
-      <!-- Call Button (Desktop Only) -->
-      <a
-        href={`tel:${PHONE_NUMBER}`}
+        href="/contact"
         class="hidden md:inline-block bg-cta text-cta-fg px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
       >
-        &#128222; <span class="lg:inline">{PHONE_NUMBER_FORMATTED}</span>
+        <span class="lg:inline">Contact Us</span>
       </a>
     </nav>
   </div>
@@ -148,73 +121,23 @@ import {
         baseHref="/resources"
       />
 
-      <!-- Referrals Link -->
-      <a
-        href={REFERRAL_LINK}
-        target="_blank"
-        class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-site-text hover:text-cta transition-colors duration-200"
-        >Referrals</a
-      >
-
-      <!-- Client Portal Button -->
-      <div class="flex flex-col gap-3 mt-6">
-        <a
-          href={WIDGET_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block text-center bg-cta text-cta-fg px-6 py-3 rounded-full font-black text-sm hover:bg-cta/80 transition-all"
-        >
-          Client Portal
-        </a>
-
-        <!-- Mobile Call Button Slot (button will move here when menu opens) -->
-        <div id="mobileCallSlot" class="hidden"></div>
-      </div>
     </div>
   </div>
 </header>
 
 <script>
-  import { PHONE_NUMBER_FORMATTED } from "../data/resource";
-  
   // Defer script execution until after page render
   document.addEventListener("DOMContentLoaded", () => {
-    // Mobile menu toggle with floating button animation
+    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
     const menuIcon = document.getElementById("menuIcon");
     const closeIcon = document.getElementById("closeIcon");
-    const floatingCallBtn = document.getElementById("floatingCallBtn");
-    const mobileCallSlot = document.getElementById("mobileCallSlot");
-    const mobileControlsDiv = floatingCallBtn?.parentElement;
-
-    let isMenuOpen = false;
 
     mobileMenuBtn?.addEventListener("click", () => {
-      isMenuOpen = !isMenuOpen;
-      
       mobileMenu?.classList.toggle("hidden");
       menuIcon?.classList.toggle("hidden");
       closeIcon?.classList.toggle("hidden");
-
-      // Move call button between header and menu
-      if (floatingCallBtn && mobileCallSlot && mobileControlsDiv) {
-        if (isMenuOpen) {
-          // Menu opening - move button into menu slot
-          floatingCallBtn.classList.remove("px-4", "py-2", "text-xs", "gap-1");
-          floatingCallBtn.classList.add("px-6", "py-3", "text-sm", "gap-2", "text-center", "w-full", "justify-center");
-          floatingCallBtn.innerHTML = `&#128222; <span>Call ${PHONE_NUMBER_FORMATTED}</span>`;
-          mobileCallSlot.classList.remove("hidden");
-          mobileCallSlot.appendChild(floatingCallBtn);
-        } else {
-          // Menu closing - return button to header position
-          floatingCallBtn.classList.add("px-4", "py-2", "text-xs", "gap-1");
-          floatingCallBtn.classList.remove("px-6", "py-3", "text-sm", "gap-2", "text-center", "w-full", "justify-center");
-          floatingCallBtn.innerHTML = `&#128222; <span>Call</span>`;
-          mobileCallSlot.classList.add("hidden");
-          mobileControlsDiv.prepend(floatingCallBtn);
-        }
-      }
     });
 
     // Dropdown toggles

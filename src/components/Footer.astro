@@ -1,6 +1,6 @@
 ---
 const year = new Date().getFullYear();
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from "../data/resource";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS, FAX_NUMBER, FAX_NUMBER_FORMATTED } from "../data/resource";
 import { Icon } from "astro-icon/components";
 const links = [
   {
@@ -42,7 +42,7 @@ const socials = [
 <footer
   class="relative border-t border-slate-800 bg-site-footer"
 >
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
       <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
@@ -109,13 +109,13 @@ const socials = [
         <div class="text-sm text-site-sub space-y-3">
           <div>
             <p class="font-semibold text-site-text">Contact Us</p>
-            <p>Phone: <a href={`tel:${PHONE_NUMBER}`} class="text-site-sub hover:text-cta transition-colors duration-200">{PHONE_NUMBER_FORMATTED}</a></p>
-            <p>Fax: (502) 324-3210</p>
-            <p>Email: <a href={`mailto:${EMAIL_ADDRESS}`} class="text-site-sub hover:text-cta transition-colors duration-200">{EMAIL_ADDRESS}</a></p>
+            <p>P: <a href={`tel:${PHONE_NUMBER}`} class="text-site-sub hover:text-cta transition-colors duration-200">{PHONE_NUMBER_FORMATTED}</a></p>
+            <p>F: <a href={`fax:${FAX_NUMBER}`} class="text-site-sub hover:text-cta transition-colors duration-200">{FAX_NUMBER_FORMATTED}</a></p>
+            <p>E: <a href={`mailto:${EMAIL_ADDRESS}`} class="text-site-sub hover:text-cta transition-colors duration-200">{EMAIL_ADDRESS}</a></p>
           </div>
           <div>
             <p class="font-semibold text-site-text">Hours of Operation</p>
-            <p>Mon - Fri: 8:00 AM - 7:00 PM</p>
+            <p>Mon - Fri: 8 AM - 7 PM</p>
             <p>Sat - Sun: By appointment</p>
           </div>
         </div>

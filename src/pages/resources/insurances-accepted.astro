@@ -32,7 +32,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             const imagePath = `../../assets/images/insurance/${provider.fileName}`;
 
             return (
-              <div class="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center group hover:bg-white transition-all duration-300">
+              <div class="bg-white md:bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center group md:hover:bg-white transition-all duration-300">
                 <div class="h-16 flex items-center justify-center mb-4">
                   {images[imagePath] ? (
                     <Image
@@ -43,12 +43,12 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                       class="max-h-12 w-auto object-contain grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-500"
                     />
                   ) : (
-                    <span class="text-site-text group-hover:text-cta-fg font-bold">
+                    <span class="text-cta-fg md:text-site-text md:group-hover:text-cta-fg font-bold">
                       {provider.name}
                     </span>
                   )}
                 </div>
-                <p class="text-[10px] font-black uppercase tracking-widest text-site-sub group-hover:text-cta-fg">
+                <p class="text-[10px] font-black uppercase tracking-widest text-cta-fg md:text-site-sub md:group-hover:text-cta-fg">
                   {provider.name}
                 </p>
               </div>
