@@ -5,12 +5,6 @@
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs>
-    <!-- Bottom-left green ambient -->
-    <radialGradient id="greenGlow" cx="0%" cy="100%" r="80%">
-      <stop offset="0%" stop-color="#60A839" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#020617" stop-opacity="0" />
-    </radialGradient>
-
     <!-- Moonlight emission glow -->
     <radialGradient id="centerGlow" cx="50%" cy="50%" r="35%">
       <stop offset="0%" stop-color="#c7d2fe" stop-opacity="0.22" />
@@ -30,10 +24,6 @@
 
   </defs>
 
-
-  <!-- Base green ambient -->
-  <rect width="100%" height="100%" fill="url(#greenGlow)" />
-
   <!-- Blurred moon, deep behind -->
   <g opacity="0.2" filter="url(#moonBlur)">
     <circle cx="500" cy="225" r="18" fill="#e2e8f0" />
@@ -42,15 +32,6 @@
 
   <!-- Soft radial colour wash on top to add depth -->
   <rect width="100%" height="100%" fill="url(#centerGlow)" />
-
-  <!-- Subtle green wave at bottom -->
-  <path
-    d="M-100 350 C 200 300 400 400 600 350 S 900 300 1100 350"
-    stroke="#60A839"
-    stroke-width="1.5"
-    fill="none"
-    opacity="0.2"
-  />
 
   <!-- Small accent glints (amber swapped to CTA indigo-300) -->
   <circle cx="200" cy="150" r="1.5" fill="#a5b4fc" opacity="0.3">
@@ -61,6 +42,6 @@
       repeatCount="indefinite"
     />
   </circle>
-  <circle cx="850" cy="280" r="1.5" fill="#60A839" opacity="0.4" />
-  <circle cx="400" cy="100" r="1"   fill="#a5b4fc" opacity="0.25" />
+  <circle cx="850" cy="280" r="1.5" fill="#a5b4fc" opacity="0.3" />
+  <circle cx="400" cy="100" r="1"   fill="#60A839" opacity="0.35" />
 </svg>
