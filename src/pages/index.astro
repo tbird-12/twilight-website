@@ -4,6 +4,7 @@ import "../styles/global.css";
 import { Icon } from "astro-icon/components";
 import { REFERRAL_LINK } from "../data/resource";
 import heroBg from "../assets/hero-background.svg?raw";
+import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
 const services = [
   {
@@ -64,7 +65,12 @@ const qualityCareItems = [
   <main class="bg-site-bg min-h-screen pb-24">
     <section class="relative py-24 px-4 overflow-hidden bg-site-bg">
       <!-- SVG Background -->
-      <Fragment set:html={heroBg} />
+      <div class="absolute inset-0 md:hidden" aria-hidden="true">
+        <Fragment set:html={heroBgMobile} />
+      </div>
+      <div class="absolute inset-0 hidden md:block" aria-hidden="true">
+        <Fragment set:html={heroBg} />
+      </div>
 
       <div
         class="max-w-4xl mx-auto relative z-10 py-16 text-center"
