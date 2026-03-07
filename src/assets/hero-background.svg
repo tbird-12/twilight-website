@@ -5,7 +5,6 @@
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs>
-    <!-- Moonlight emission glow -->
     <radialGradient id="centerGlow" cx="50%" cy="50%" r="35%">
       <stop offset="0%" stop-color="#c7d2fe" stop-opacity="0.22" />
       <stop offset="35%" stop-color="#a5b4fc" stop-opacity="0.1" />
@@ -13,35 +12,42 @@
       <stop offset="100%" stop-color="#020617" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Reduced blur: stdDeviation 18 keeps it tight rather than screen-wide -->
-    <filter id="blurCenter" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="18" />
-    </filter>
-
     <filter id="moonBlur" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="5" />
     </filter>
-
   </defs>
 
-  <!-- Blurred moon, deep behind -->
   <g opacity="0.2" filter="url(#moonBlur)">
     <circle cx="500" cy="225" r="18" fill="#e2e8f0" />
     <circle cx="500" cy="225" r="26" fill="#c7d2fe" opacity="0.35" />
   </g>
 
-  <!-- Soft radial colour wash on top to add depth -->
   <rect width="100%" height="100%" fill="url(#centerGlow)" />
 
-  <!-- Small accent glints (amber swapped to CTA indigo-300) -->
-  <circle cx="300" cy="150" r="1.5" fill="#a5b4fc" opacity="0.3">
-    <animate
-      attributeName="opacity"
-      values="0.15;0.45;0.15"
-      dur="4s"
-      repeatCount="indefinite"
-    />
-  </circle>
-  <circle cx="550" cy="280" r="1.5" fill="#a5b4fc" opacity="0.3" />
-  <circle cx="400" cy="100" r="1"   fill="#60A839" opacity="0.35" />
+  <g id="starfield">
+    <polygon points="0,-3 0.8,-0.8 3,0 0.8,0.8 0,3 -0.8,0.8 -3,0 -0.8,-0.8" transform="translate(150, 100) scale(0.8)" fill="#a5b4fc" opacity="0.15">
+      <animate attributeName="opacity" values="0.15; 0.4; 0.15" dur="6s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3" transform="translate(80, 150)" fill="#a5b4fc" opacity="0.1" />
+
+    <polygon points="0,-2 0.5,-0.5 2,0 0.5,0.5 0,2 -0.5,0.5 -2,0 -0.5,-0.5" transform="translate(850, 80) scale(1.2)" fill="#60A839" opacity="0.12">
+      <animate attributeName="opacity" values="0.12; 0.3; 0.12" dur="7s" begin="1s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3" transform="translate(920, 160)" fill="#a5b4fc" opacity="0.08" />
+
+    <polygon points="0,-2 0.5,-0.5 2,0 0.5,0.5 0,2 -0.5,0.5 -2,0 -0.5,-0.5" transform="translate(200, 350)" fill="#a5b4fc" opacity="0.1">
+      <animate attributeName="opacity" values="0.1; 0.5; 0.1; 0.1" dur="4s" begin="2s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(100, 380)" fill="#a5b4fc" opacity="0.08" />
+
+    <polygon points="0,-2.5 0.7,-0.7 2.8,0 0.7,0.7 0,2.8 -0.7,0.7 -2.8,0 -0.7,-0.7" transform="translate(800, 320) scale(0.9)" fill="#a5b4fc" opacity="0.1">
+      <animate attributeName="opacity" values="0.05; 0.35; 0.05" dur="5.5s" begin="3s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="0,-2.5 0.7,-0.7 2.8,0 0.7,0.7 0,2.8 -0.7,0.7 -2.8,0 -0.7,-0.7" transform="translate(880, 400)" fill="#60A839" opacity="0.08">
+       <animate attributeName="opacity" values="0.05; 0.25; 0.05" dur="6.5s" begin="4.5s" repeatCount="indefinite" />
+    </polygon>
+
+    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(50, 40)" fill="#a5b4fc" opacity="0.08" />
+    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(950, 410)" fill="#a5b4fc" opacity="0.08" />
+  </g>
 </svg>
