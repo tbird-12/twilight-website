@@ -28,7 +28,7 @@
     <polygon points="0,-3 0.8,-0.8 3,0 0.8,0.8 0,3 -0.8,0.8 -3,0 -0.8,-0.8" transform="translate(150, 100) scale(0.8)" fill="#a5b4fc" opacity="0.15">
       <animate attributeName="opacity" values="0.15; 0.4; 0.15" dur="6s" repeatCount="indefinite" />
     </polygon>
-    <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3" transform="translate(80, 150)" fill="#a5b4fc" opacity="0.1" />
+    <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3" transform="translate(80, 150)" fill="#a5b4fc" opacity="0.11" />
 
     <polygon points="0,-2 0.5,-0.5 2,0 0.5,0.5 0,2 -0.5,0.5 -2,0 -0.5,-0.5" transform="translate(850, 80) scale(1.2)" fill="#60A839" opacity="0.12">
       <animate attributeName="opacity" values="0.12; 0.3; 0.12" dur="7s" begin="1s" repeatCount="indefinite" />
@@ -47,7 +47,6 @@
        <animate attributeName="opacity" values="0.05; 0.25; 0.05" dur="6.5s" begin="4.5s" repeatCount="indefinite" />
     </polygon>
 
-    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(50, 40)" fill="#a5b4fc" opacity="0.08" />
-    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(950, 410)" fill="#a5b4fc" opacity="0.08" />
+    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(470, 80)" fill="#a5b4fc" opacity="0.08" />
   </g>
 </svg>

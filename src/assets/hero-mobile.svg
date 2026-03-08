@@ -29,8 +29,8 @@
     <polygon points="0,-2.5 0.7,-0.7 2.8,0 0.7,0.7 0,2.8 -0.7,0.7 -2.8,0 -0.7,-0.7" transform="translate(60, 60)" fill="#a5b4fc" opacity="0.15">
       <animate attributeName="opacity" values="0.1;0.4;0.1" dur="7s" repeatCount="indefinite" />
     </polygon>
-    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(320, 100)" fill="#a5b4fc" opacity="0.1" />
-    <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3" transform="translate(180, 40)" fill="#60A839" opacity="0.12" />
+    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(320, 100)" fill="#a5b4fc" opacity="0.31" />
+    <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3" transform="translate(180, 40)" fill="#60A839" opacity="0.32" />
 
     <polygon points="0,-3 0.8,-0.8 3,0 0.8,0.8 0,3 -0.8,0.8 -3,0 -0.8,-0.8" transform="translate(330, 600) scale(0.9)" fill="#a5b4fc" opacity="0.12">
       <animate attributeName="opacity" values="0.1;0.35;0.1" dur="5s" begin="2s" repeatCount="indefinite" />
@@ -38,9 +38,8 @@
     <polygon points="0,-2 0.6,-0.6 2.5,0 0.6,0.6 0,2.5 -0.6,0.6 -2.5,0 -0.6,-0.6" transform="translate(80, 580) scale(1.1)" fill="#60A839" opacity="0.1">
       <animate attributeName="opacity" values="0.08;0.3;0.08" dur="9s" begin="1s" repeatCount="indefinite" />
     </polygon>
-    <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3" transform="translate(200, 650)" fill="#a5b4fc" opacity="0.08" />
     
-    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(20, 350)" fill="#a5fcc1" opacity="0.06" />
-    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(380, 250)" fill="#a5fcd5" opacity="0.06" />
+    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(20, 350)" fill="#a5fcc1" opacity="0.16" />
+    <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4" transform="translate(380, 250)" fill="#a5fcd5" opacity="0.16" />
   </g>
 </svg>
