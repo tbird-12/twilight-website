@@ -19,10 +19,10 @@ interface Props {
 const { id, title, items, baseHref = "" } = Astro.props;
 ---
 
-<div class="mb-2">
+<div class="mb-2 font-sans">
   <button
     id={`${id}Toggle`}
-    class="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-site-text hover:bg-slate-800 rounded-lg"
+    class="w-full flex items-center justify-between px-4 py-3 text-sm font-serif font-bold text-site-text hover:bg-slate-800 rounded-lg"
   >
     <span>{title}</span>
     <svg
