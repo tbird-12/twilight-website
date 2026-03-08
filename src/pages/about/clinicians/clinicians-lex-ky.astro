@@ -2,6 +2,7 @@
 import ServiceLayout from "../../../layouts/ServiceLayout.astro";
 import "../../../styles/global.css";
 import { providers } from "../../../data/staff";
+import { Image } from "astro:assets";
 ---
 
 <ServiceLayout
@@ -28,6 +29,17 @@ import { providers } from "../../../data/staff";
             href={`/about/clinicians/${person.slug}`}
             class="group bg-slate-800/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-700"
           >
+            <div class="hidden md:block mb-6">
+              <div class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/60">
+                <Image
+                  src={person.image}
+                  alt={`Photo of ${person.name}`}
+                  class="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
             <h3 class="font-serif text-xl font-bold text-site-text mb-2 group-hover:text-cta transition-colors">
               {person.name}
             </h3>
