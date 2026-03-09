@@ -1,6 +1,8 @@
 ---
 import LandingLayout from "../layouts/LandingLayout.astro";
 import "../styles/global.css";
+import heroBg from "../assets/hero-background.svg?raw";
+import heroBgMobile from "../assets/hero-mobile.svg?raw";
 ---
 
 <LandingLayout
@@ -8,6 +10,13 @@ import "../styles/global.css";
   description="Twilight Psychology provides affordable mental health care in Lexington, Kentucky, including therapy, psychological evaluations, and medication management for new and returning clients."
 >
   <section class="relative overflow-hidden px-4 py-20 sm:py-28">
+    <div class="absolute inset-0 md:hidden" aria-hidden="true">
+      <Fragment set:html={heroBgMobile} />
+    </div>
+    <div class="absolute inset-0 hidden md:block" aria-hidden="true">
+      <Fragment set:html={heroBg} />
+    </div>
+
     <div
       class="pointer-events-none absolute inset-0 opacity-60"
       aria-hidden="true"
@@ -20,7 +29,7 @@ import "../styles/global.css";
       </p>
 
       <h1 class="mt-6 font-serif text-4xl font-black tracking-tight text-site-text sm:text-6xl">
-        Affordable Mental Health Care in Kentucky
+        Top-Tier Mental Health Care in Kentucky
       </h1>
 
       <p class="mt-6 max-w-3xl text-base leading-relaxed text-site-sub sm:text-lg">
@@ -50,25 +59,22 @@ import "../styles/global.css";
       <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
         <h2 class="font-serif text-2xl font-black text-site-text">Testing</h2>
         <p class="mt-3 text-sm leading-relaxed text-site-sub">
-          Affordable psychological evaluations in Lexington, including ADHD, Autism, and learning assessments.
+          ADHD testing, autism testing, learning assessments, and psychoeducational evaluations.
         </p>
-        <a class="mt-5 inline-block text-sm font-black text-cta" href="/services/psychological-evaluations">Explore evaluations</a>
       </article>
 
       <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
         <h2 class="font-serif text-2xl font-black text-site-text">Medication</h2>
         <p class="mt-3 text-sm leading-relaxed text-site-sub">
-          Medication management with personalized support and practical follow-up for long-term mental wellness.
+          Psychiatric medication management with personalized follow-up and practical support.
         </p>
-        <a class="mt-5 inline-block text-sm font-black text-cta" href="/services/medication-management">Explore medication care</a>
       </article>
 
       <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
         <h2 class="font-serif text-2xl font-black text-site-text">Therapy</h2>
         <p class="mt-3 text-sm leading-relaxed text-site-sub">
-          Evidence-based therapy in Lexington, Kentucky focused on practical progress, emotional safety, and accessible care.
+          Individual therapy with evidence-based care focused on practical progress and emotional safety.
         </p>
-        <a class="mt-5 inline-block text-sm font-black text-cta" href="/services/therapy">Explore therapy</a>
       </article>
     </div>
   </section>
@@ -83,7 +89,7 @@ import "../styles/global.css";
         </li>
         <li class="rounded-2xl border border-white/10 bg-site-bg/70 p-4">
           <span class="block text-xs font-black tracking-[0.12em] text-site-text uppercase">Step 2</span>
-          Check timelines, fees, and insurance details for care in Lexington, Kentucky.
+          Check timelines, fees, and insurance details for care.
         </li>
         <li class="rounded-2xl border border-white/10 bg-site-bg/70 p-4">
           <span class="block text-xs font-black tracking-[0.12em] text-site-text uppercase">Step 3</span>
