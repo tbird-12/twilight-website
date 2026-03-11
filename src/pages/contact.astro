@@ -6,6 +6,7 @@ import {
   PHONE_NUMBER_FORMATTED,
   FAX_NUMBER_FORMATTED,
   EMAIL_ADDRESS,
+  SIGN_IN_LINK,
   WIDGET_LINK,
   REFERRAL_LINK,
 } from "../data/resource";
@@ -18,13 +19,15 @@ const contactMethods = [
     href: WIDGET_LINK,
     cta: "Open Intake Form",
     external: true,
+    icon: "M12 2C8.13 2 5 5.13 5 9v2H4a2 2 0 00-2 2v5a2 2 0 002 2h16a2 2 0 002-2v-5a2 2 0 00-2-2h-1V9c0-3.87-3.13-7-7-7m-5 9V9a5 5 0 0110 0v2H7z",
   },
   {
     title: "Call Our Office",
     description:
-      "Speak with our team about scheduling, referrals, insurance questions, or next steps.",
+      "Speak with our team about scheduling, referrals, billing, benefits, insurance questions, or next steps.",
     href: `tel:${PHONE_NUMBER}`,
     cta: PHONE_NUMBER_FORMATTED,
+    icon: "M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011 .24 11.35 11.35 0 00 3.57.57 1 1 0 011 1V21a1 1 0 01-1 1A17 17 0 013 7a1 1 0 011-1h3.41a1 1 0 011 1 11.35 11.35 0 00.57 3.57 1 1 0 01-.24 1l-2.12 2.22z",
   },
   {
     title: "Email Our Team",
@@ -32,6 +35,7 @@ const contactMethods = [
       "Send us your questions and we will respond as soon as possible during business hours.",
     href: `mailto:${EMAIL_ADDRESS}`,
     cta: "Email Us",
+    icon: "M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2m0 4-8 5-8-5V6l8 5 8-5v2z",
   },
 ];
 ---
@@ -41,41 +45,41 @@ const contactMethods = [
   description="Reach Twilight Psychology by phone, email, or our intake widget"
   metaDescription="Contact Twilight Psychology by phone, email, or online widget. For emergencies, call 911 or 988."
 >
-  <section class="bg-site-bg min-h-screen py-24 px-4">
+  <section class="bg-site-bg min-h-screen py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
-      <header class="text-center mb-14">
-        <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-slate-800/50 border border-slate-700 text-cta text-xs font-black uppercase tracking-widest">
+      <header class="text-center mb-10 md:mb-14">
+        <div class="inline-block px-3 md:px-4 py-1.5 mb-5 md:mb-6 rounded-full bg-slate-800/50 border border-slate-700 text-cta text-[11px] md:text-xs font-black uppercase tracking-widest">
           Contact Twilight Psychology
         </div>
-        <h1 class="font-serif text-4xl md:text-6xl font-black text-site-text mb-4">
+        <h1 class="font-serif text-3xl sm:text-4xl md:text-6xl font-black text-site-text mb-4 leading-tight">
           How To <span class="text-cta">Reach Us</span>
         </h1>
-        <p class="text-site-sub text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+        <p class="text-site-sub text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
           We are here to help you get started. Reach out by form, phone, or email and our team will guide your next step.
         </p>
       </header>
 
-      <section class="mb-10 rounded-4xl border border-amber-300/30 bg-linear-to-br from-amber-300/25 to-slate-800/20 p-8 md:p-10">
-        <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-4">Emergency Support</h2>
-        <p class="text-site-text leading-relaxed mb-6">
-          If you are in immediate danger or need urgent help, do not wait for an office response.
+      <section class="mb-8 md:mb-10 rounded-4xl border border-amber-300/30 bg-linear-to-br from-amber-300/25 to-slate-800/20 p-6 sm:p-8 md:p-10">
+        <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
+        <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
+          If you are in immediate danger or need urgent help, do not wait for office response.
         </p>
         <div class="grid gap-4 md:grid-cols-3">
           <a
             href="tel:911"
-            class="rounded-2xl border border-white/20 bg-white/5 px-5 py-4 hover:bg-white/10 transition-colors"
+            class="rounded-2xl border border-white/20 bg-white/5 px-4 sm:px-5 py-4 hover:bg-white/10 transition-colors"
           >
             <p class="text-xs font-black uppercase tracking-widest text-cta">Immediate Emergency</p>
-            <p class="text-2xl font-black text-site-text mt-1">Call 911</p>
+            <p class="text-xl sm:text-2xl font-black text-site-text mt-1">Call 911</p>
           </a>
           <a
             href="tel:988"
-            class="rounded-2xl border border-white/20 bg-white/5 px-5 py-4 hover:bg-white/10 transition-colors"
+            class="rounded-2xl border border-white/20 bg-white/5 px-4 sm:px-5 py-4 hover:bg-white/10 transition-colors"
           >
             <p class="text-xs font-black uppercase tracking-widest text-cta">Mental Health Crisis</p>
-            <p class="text-2xl font-black text-site-text mt-1">Call 988</p>
+            <p class="text-xl sm:text-2xl font-black text-site-text mt-1">Call 988</p>
           </a>
-          <div class="rounded-2xl border border-white/20 bg-white/5 px-5 py-4">
+          <div class="rounded-2xl border border-white/20 bg-white/5 px-4 sm:px-5 py-4">
             <p class="text-xs font-black uppercase tracking-widest text-cta">Important Note</p>
             <p class="text-site-sub text-sm mt-2 leading-relaxed">
               Messages sent through email, phone, or forms are not monitored for emergency response.
@@ -84,32 +88,13 @@ const contactMethods = [
         </div>
       </section>
 
-      <section class="grid gap-6 md:grid-cols-3">
-        {
-          contactMethods.map((method) => (
-            <article class="rounded-4xl border border-slate-700 bg-slate-800/20 p-7 backdrop-blur-sm hover:border-cta/50 transition-colors">
-              <h2 class="font-serif text-2xl font-black text-site-text mb-3">{method.title}</h2>
-              <p class="text-site-sub leading-relaxed mb-6">{method.description}</p>
-              <a
-                href={method.href}
-                target={method.external ? "_blank" : undefined}
-                rel={method.external ? "noopener noreferrer" : undefined}
-                class="inline-flex items-center justify-center w-full rounded-full bg-cta px-4 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
-              >
-                {method.cta}
-              </a>
-            </article>
-          ))
-        }
-      </section>
-
-      <section class="mt-12 rounded-4xl border border-slate-700 bg-slate-800/20 p-8 md:p-10">
+      <section class="mt-10 md:mt-12 rounded-4xl border border-slate-700 bg-slate-800/20 p-6 sm:p-8 md:p-10">
         <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div class="max-w-2xl">
             <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">
               Referral Information
             </h2>
-            <p class="text-site-sub leading-relaxed">
+            <p class="text-site-sub leading-relaxed text-sm sm:text-base">
               Providers and care teams can submit a referral using our referral form and fax it to {FAX_NUMBER_FORMATTED}.
               Include relevant records and contact details so we can follow up quickly.
             </p>
@@ -118,16 +103,63 @@ const contactMethods = [
             href={REFERRAL_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+            class="inline-flex items-center justify-center w-full md:w-auto rounded-full bg-cta px-6 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300 min-h-11"
           >
             Referrals
           </a>
         </div>
       </section>
 
-      <section class="mt-12 rounded-4xl border border-slate-700 bg-slate-800/20 p-8 text-center">
+            <section class="mt-8 rounded-4xl border border-slate-700 bg-slate-800/20 p-6 sm:p-8 md:p-10">
+        <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div class="max-w-2xl">
+
+            <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 leading-tight">
+              Existing Client Portal
+            </h2>
+            <p class="text-site-sub leading-relaxed text-sm sm:text-base">
+              Already a client? Sign in to your secure portal to message your provider, review documents, and manage upcoming appointments.
+            </p>
+          </div>
+          <a
+            href={SIGN_IN_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-full md:w-auto rounded-full bg-cta px-6 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300 min-h-11"
+          >
+            Portal Sign In
+          </a>
+        </div>
+      </section>
+
+
+      <section class="grid gap-5 sm:gap-6 md:grid-cols-3 mt-8  border-slate-700 bg-slate-800/20 p-6 sm:p-8 md:p-10">
+        {
+          contactMethods.map((method) => (
+            <article class="group rounded-4xl border border-slate-700 bg-slate-800/20 p-6 sm:p-7 backdrop-blur-sm hover:border-cta/50 transition-colors">
+              <div class="w-12 h-12 bg-site-bg border border-slate-700 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg shadow-black/20">
+                <svg class="w-6 h-6 text-cta" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d={method.icon}></path>
+                </svg>
+              </div>
+              <h2 class="font-serif text-xl sm:text-2xl font-black text-site-text mb-3">{method.title}</h2>
+              <p class="text-site-sub leading-relaxed mb-5 sm:mb-6 text-sm sm:text-base">{method.description}</p>
+              <a
+                href={method.href}
+                target={method.external ? "_blank" : undefined}
+                rel={method.external ? "noopener noreferrer" : undefined}
+                class="inline-flex items-center justify-center w-full rounded-full bg-cta px-4 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300 min-h-11"
+              >
+                {method.cta}
+              </a>
+            </article>
+          ))
+        }
+      </section>
+
+      <section class="mt-10 md:mt-12 rounded-4xl border border-slate-700 bg-slate-800/20 p-6 sm:p-8 text-center">
         <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
-        <p class="text-site-sub mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
+        <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
         <p class="text-site-sub">Sat - Sun: By appointment</p>
       </section>
     </div>
