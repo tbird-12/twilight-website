@@ -11,7 +11,7 @@ const psychologicalServices = [
   { name: "Learning Disorder (Disability) Assessments", price: "$1,500", note: "Self-pay only" },
   { name: "Guardianship Evaluation", price: "$500", note: "Additional cost for court/extra testing" },
   { name: "Emotional Support Animal (ESA) Evaluation", price: "$200" },
-  { name: "Intake Session", price: "$220" },
+  { name: "Diagnostic Clarification", price: "$220" },
 ];
 
 const psychotherapyServices = [
@@ -23,6 +23,7 @@ const psychotherapyServices = [
 const medManagement = [
   { name: "Intake Session", price: "$250" },
   { name: "Follow-up Sessions", price: "$100" },
+  { name: "Medical Marijuana Consultations", price: "$150" },
   { name: "Paperwork (e.g., FMLA)", price: "$75", note: "Per hour" },
 ];
 ---
@@ -54,9 +55,83 @@ const medManagement = [
         </p>
       </section>
 
-      <div class="grid gap-8">
-        
-        <div class="bg-slate-800/20 border border-slate-700 rounded-3xl p-8">
+      <section class="mt-10" data-fee-tabs-root>
+        <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub/80">
+          <p class="font-semibold uppercase tracking-wider">Choose a pricing category</p>
+          <p class="sm:hidden">Swipe for more</p>
+        </div>
+        <div class="relative">
+          <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent sm:hidden"></div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent sm:hidden"></div>
+          <div
+            class="mb-6 flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory"
+            role="tablist"
+            aria-label="Fee categories"
+          >
+          <button
+            type="button"
+            id="fee-tab-psychological"
+            role="tab"
+            aria-controls="fee-panel-psychological"
+            aria-selected="true"
+            data-fee-tab-trigger
+            data-target="fee-panel-psychological"
+            class="snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-cta text-site-bg border-cta shadow-lg shadow-cta/20"
+          >
+            <span class="flex items-center gap-3 text-left">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-site-bg/20 text-[11px] font-black">1</span>
+              <span class="leading-tight">
+                <span class="block">Psychological Evaluations</span>
+                <span class="block text-[10px] uppercase tracking-wider opacity-80">{psychologicalServices.length} services</span>
+              </span>
+            </span>
+          </button>
+          <button
+            type="button"
+            id="fee-tab-psychotherapy"
+            role="tab"
+            aria-controls="fee-panel-psychotherapy"
+            aria-selected="false"
+            data-fee-tab-trigger
+            data-target="fee-panel-psychotherapy"
+            class="snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
+          >
+            <span class="flex items-center gap-3 text-left">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">2</span>
+              <span class="leading-tight">
+                <span class="block">Psychotherapy</span>
+                <span class="block text-[10px] uppercase tracking-wider opacity-80">{psychotherapyServices.length} services</span>
+              </span>
+            </span>
+          </button>
+          <button
+            type="button"
+            id="fee-tab-medication"
+            role="tab"
+            aria-controls="fee-panel-medication"
+            aria-selected="false"
+            data-fee-tab-trigger
+            data-target="fee-panel-medication"
+            class="snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
+          >
+            <span class="flex items-center gap-3 text-left">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">3</span>
+              <span class="leading-tight">
+                <span class="block">Medication Management</span>
+                <span class="block text-[10px] uppercase tracking-wider opacity-80">{medManagement.length} services</span>
+              </span>
+            </span>
+          </button>
+          </div>
+        </div>
+
+        <article
+          id="fee-panel-psychological"
+          role="tabpanel"
+          aria-labelledby="fee-tab-psychological"
+          data-fee-tab-panel
+          class="bg-slate-800/20 border border-slate-700 rounded-3xl p-8"
+        >
           <h3 class="font-serif text-2xl font-black text-site-text mb-6 flex items-center gap-3">
             <span class="w-2 h-8 bg-cta rounded-full"></span>
             Psychological Evaluations
@@ -72,34 +147,50 @@ const medManagement = [
               </div>
             ))}
           </div>
-        </div>
+        </article>
 
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-slate-800/20 border border-slate-700 rounded-3xl p-8">
-            <h3 class="font-serif text-xl font-black text-site-text mb-6">Psychotherapy</h3>
-            <div class="space-y-4">
-              {psychotherapyServices.map((service) => (
-                <div class="flex justify-between items-center py-3 border-b border-slate-800/50">
+        <article
+          id="fee-panel-psychotherapy"
+          role="tabpanel"
+          aria-labelledby="fee-tab-psychotherapy"
+          data-fee-tab-panel
+          class="hidden bg-slate-800/20 border border-slate-700 rounded-3xl p-8"
+        >
+          <h3 class="font-serif text-2xl font-black text-site-text mb-6">Psychotherapy</h3>
+          <div class="space-y-4">
+            {psychotherapyServices.map((service) => (
+              <div class="flex justify-between items-center py-3 border-b border-slate-800/50">
+                <div>
                   <span class="text-site-text font-bold">{service.name}</span>
-                  <span class="text-cta font-black">{service.price}</span>
+                  {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
                 </div>
-              ))}
-            </div>
+                <span class="text-cta font-black">{service.price}</span>
+              </div>
+            ))}
           </div>
+        </article>
 
-          <div class="bg-slate-800/20 border border-slate-700 rounded-3xl p-8">
-            <h3 class="font-serif text-xl font-black text-site-text mb-6">Medication Management</h3>
-            <div class="space-y-4">
-              {medManagement.map((service) => (
-                <div class="flex justify-between items-center py-3 border-b border-slate-800/50">
+        <article
+          id="fee-panel-medication"
+          role="tabpanel"
+          aria-labelledby="fee-tab-medication"
+          data-fee-tab-panel
+          class="hidden bg-slate-800/20 border border-slate-700 rounded-3xl p-8"
+        >
+          <h3 class="font-serif text-2xl font-black text-site-text mb-6">Medication Management</h3>
+          <div class="space-y-4">
+            {medManagement.map((service) => (
+              <div class="flex justify-between items-center py-3 border-b border-slate-800/50">
+                <div>
                   <span class="text-site-text font-bold">{service.name}</span>
-                  <span class="text-cta font-black">{service.price}</span>
+                  {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
                 </div>
-              ))}
-            </div>
+                <span class="text-cta font-black">{service.price}</span>
+              </div>
+            ))}
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
 
       <section class="mt-12 p-8 bg-linear-to-br from-slate-800 to-site-bg rounded-3xl border border-slate-700">
         <h3 class="font-serif text-site-text font-black text-xl mb-4">Flexible Payment Plans</h3>
@@ -157,4 +248,47 @@ const medManagement = [
 
     </div>
   </section>
+
+  <script is:inline>
+    const feeTabsRoot = document.querySelector("[data-fee-tabs-root]");
+
+    if (feeTabsRoot) {
+      const triggers = Array.from(
+        feeTabsRoot.querySelectorAll("[data-fee-tab-trigger]"),
+      );
+      const panels = Array.from(
+        feeTabsRoot.querySelectorAll("[data-fee-tab-panel]"),
+      );
+
+      const activateFeeTab = (targetId) => {
+        triggers.forEach((trigger) => {
+          const isActive = trigger.dataset.target === targetId;
+          trigger.setAttribute("aria-selected", String(isActive));
+          trigger.classList.toggle("bg-cta", isActive);
+          trigger.classList.toggle("text-site-bg", isActive);
+          trigger.classList.toggle("border-cta", isActive);
+          trigger.classList.toggle("shadow-lg", isActive);
+          trigger.classList.toggle("shadow-cta/20", isActive);
+          trigger.classList.toggle("opacity-100", isActive);
+          trigger.classList.toggle("bg-white/5", !isActive);
+          trigger.classList.toggle("text-site-text", !isActive);
+          trigger.classList.toggle("border-white/10", !isActive);
+          trigger.classList.toggle("opacity-80", !isActive);
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle("hidden", panel.id !== targetId);
+        });
+      };
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const targetId = trigger.dataset.target;
+          if (targetId) {
+            activateFeeTab(targetId);
+          }
+        });
+      });
+    }
+  </script>
 </ServiceLayout>

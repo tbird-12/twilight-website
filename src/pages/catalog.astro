@@ -55,7 +55,7 @@ const categories = [
         experience.
       </p>
       <p class="mt-6 text-sm text-site-sub/80 max-w-3xl mx-auto leading-relaxed">
-        We do not offer speech therapy, occupational therapy, or physical therapy at our
+        We do not offer speech therapy, occupational therapy, or play therapy at our
         facility.
       </p>
     </div>
@@ -65,25 +65,85 @@ const categories = [
     </div>
   </section>
 
-  <section class="max-w-7xl mx-auto px-4 mt-20">
-    <div class="grid md:grid-cols-3 gap-6">
-      {
-        categories.map((cat) => (
-          <div class="group bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cta/30 p-8 rounded-3xl transition-all duration-300">
-            <h2 class="font-serif text-lg font-black text-site-text mb-6 group-hover:text-cta transition-colors">
-              {cat.title}
-            </h2>
-            <ul class="space-y-4">
-              {cat.concerns.map((item) => (
-                <li class="flex items-start gap-3 text-sm text-site-sub leading-relaxed">
-                  <span class="text-cta mt-1">✦</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
+  <section class="max-w-7xl mx-auto px-4 mt-20" data-tabs-root>
+    <div class="flex flex-col gap-6">
+      <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub/80">
+        <p class="font-semibold uppercase tracking-wider">Choose a care category</p>
+        <p class="sm:hidden">Swipe for more</p>
+      </div>
+      <div class="relative">
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent sm:hidden"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent sm:hidden"></div>
+        <div
+          class="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory"
+          role="tablist"
+          aria-label="Care categories"
+        >
+          {
+            categories.map((cat, index) => (
+              <button
+                type="button"
+                id={`category-tab-${index}`}
+                role="tab"
+                aria-controls={`category-panel-${index}`}
+                aria-selected={index === 0 ? "true" : "false"}
+                data-tab-trigger
+                data-target={`category-panel-${index}`}
+                class:list={[
+                  "snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide",
+                  index === 0
+                    ? "bg-cta text-site-bg border-cta shadow-lg shadow-cta/20"
+                    : "bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80",
+                ]}
+              >
+                <span class="flex items-center gap-3 text-left">
+                  <span class:list={[
+                    "inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-black",
+                    index === 0 ? "bg-site-bg/20" : "bg-white/10",
+                  ]}>
+                    {index + 1}
+                  </span>
+                  <span class="leading-tight">
+                    <span class="block">{cat.title}</span>
+                    <span class="block text-[10px] uppercase tracking-wider opacity-80">
+                      {cat.concerns.length} focus areas
+                    </span>
+                  </span>
+                </span>
+              </button>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="relative">
+        {
+          categories.map((cat, index) => (
+            <article
+              id={`category-panel-${index}`}
+              role="tabpanel"
+              aria-labelledby={`category-tab-${index}`}
+              data-tab-panel
+              class:list={[
+                "bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl",
+                index !== 0 && "hidden",
+              ]}
+            >
+              <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-6">
+                {cat.title}
+              </h2>
+              <ul class="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                {cat.concerns.map((item) => (
+                  <li class="flex items-start gap-3 text-sm text-site-sub leading-relaxed bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <span class="text-cta mt-1">✦</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 
@@ -112,4 +172,45 @@ const categories = [
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    const tabsRoot = document.querySelector("[data-tabs-root]");
+
+    if (tabsRoot) {
+      const triggers = Array.from(
+        tabsRoot.querySelectorAll("[data-tab-trigger]"),
+      );
+      const panels = Array.from(tabsRoot.querySelectorAll("[data-tab-panel]"));
+
+      const activateTab = (targetId) => {
+        triggers.forEach((trigger) => {
+          const isActive = trigger.dataset.target === targetId;
+          trigger.setAttribute("aria-selected", String(isActive));
+          trigger.classList.toggle("bg-cta", isActive);
+          trigger.classList.toggle("text-site-bg", isActive);
+          trigger.classList.toggle("border-cta", isActive);
+          trigger.classList.toggle("shadow-lg", isActive);
+          trigger.classList.toggle("shadow-cta/20", isActive);
+          trigger.classList.toggle("opacity-100", isActive);
+          trigger.classList.toggle("bg-white/5", !isActive);
+          trigger.classList.toggle("text-site-text", !isActive);
+          trigger.classList.toggle("border-white/10", !isActive);
+          trigger.classList.toggle("opacity-80", !isActive);
+        });
+
+        panels.forEach((panel) => {
+          panel.classList.toggle("hidden", panel.id !== targetId);
+        });
+      };
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const targetId = trigger.dataset.target;
+          if (targetId) {
+            activateTab(targetId);
+          }
+        });
+      });
+    }
+  </script>
 </ServiceLayout>
