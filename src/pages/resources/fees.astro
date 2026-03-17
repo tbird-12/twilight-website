@@ -15,9 +15,11 @@ const psychologicalServices = [
 ];
 
 const psychotherapyServices = [
-  { name: "60-Minute Session", price: "$250" },
-  { name: "45-Minute Session", price: "$175" },
+  { name: "60-Minute Session", price: "$200", note: "Dr. Cornett" },
+  { name: "45-Minute Session", price: "$150", note: "Dr. Cornett" },
   { name: "Clinical Supervision", price: "$150", note: "Per hour" },
+  { name: "60-Minute Session", price: "$100", note: "Pre-licensed clinicians" },
+  { name: "45-Minute Session", price: "$80", note: "Pre-licensed clinicians" },
 ];
 
 const medManagement = [
@@ -58,13 +60,13 @@ const medManagement = [
       <section class="mt-10" data-fee-tabs-root>
         <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub/80">
           <p class="font-semibold uppercase tracking-wider">Choose a pricing category</p>
-          <p class="sm:hidden">Swipe for more</p>
+          <p class="hidden lg:block">Scroll to explore</p>
         </div>
         <div class="relative">
-          <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent sm:hidden"></div>
-          <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent sm:hidden"></div>
+          <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent hidden lg:block"></div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent hidden lg:block"></div>
           <div
-            class="mb-6 flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory"
+            class="mb-6 flex flex-col lg:flex-row gap-3 pb-2 lg:overflow-x-auto lg:snap-x lg:snap-mandatory"
             role="tablist"
             aria-label="Fee categories"
           >
@@ -76,7 +78,7 @@ const medManagement = [
             aria-selected="true"
             data-fee-tab-trigger
             data-target="fee-panel-psychological"
-            class="snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-cta text-site-bg border-cta shadow-lg shadow-cta/20"
+            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-cta text-site-bg border-cta shadow-lg shadow-cta/20"
           >
             <span class="flex items-center gap-3 text-left">
               <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-site-bg/20 text-[11px] font-black">1</span>
@@ -94,7 +96,7 @@ const medManagement = [
             aria-selected="false"
             data-fee-tab-trigger
             data-target="fee-panel-psychotherapy"
-            class="snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
+            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
           >
             <span class="flex items-center gap-3 text-left">
               <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">2</span>
@@ -112,7 +114,7 @@ const medManagement = [
             aria-selected="false"
             data-fee-tab-trigger
             data-target="fee-panel-medication"
-            class="snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
+            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
           >
             <span class="flex items-center gap-3 text-left">
               <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">3</span>

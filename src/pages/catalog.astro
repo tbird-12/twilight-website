@@ -69,13 +69,13 @@ const categories = [
     <div class="flex flex-col gap-6">
       <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub/80">
         <p class="font-semibold uppercase tracking-wider">Choose a care category</p>
-        <p class="sm:hidden">Swipe for more</p>
+        <p class="hidden lg:block">Scroll to explore</p>
       </div>
       <div class="relative">
-        <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent sm:hidden"></div>
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent sm:hidden"></div>
+        <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent hidden lg:block"></div>
+        <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent hidden lg:block"></div>
         <div
-          class="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory"
+          class="flex flex-col lg:flex-row gap-3 pb-2 lg:overflow-x-auto lg:snap-x lg:snap-mandatory"
           role="tablist"
           aria-label="Care categories"
         >
@@ -90,7 +90,7 @@ const categories = [
                 data-tab-trigger
                 data-target={`category-panel-${index}`}
                 class:list={[
-                  "snap-start min-w-max px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide",
+                  "w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide",
                   index === 0
                     ? "bg-cta text-site-bg border-cta shadow-lg shadow-cta/20"
                     : "bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80",
