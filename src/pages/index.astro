@@ -72,9 +72,7 @@ const qualityCareItems = [
         <Fragment set:html={heroBg} />
       </div>
 
-      <div
-        class="max-w-4xl mx-auto relative z-10 py-16 text-center"
-      >
+      <div class="max-w-4xl mx-auto relative z-10 py-16 text-center">
         <span
           class="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-sand uppercase bg-white/5 border border-white/10 rounded-full"
         >
@@ -84,20 +82,24 @@ const qualityCareItems = [
         <h1
           class="font-serif text-5xl md:text-8xl font-black text-site-text mb-8 tracking-tighter leading-[0.9]"
         >
-          For 
+          For
           <span
             class="bg-clip-text bg-linear-to-r text-(--color-text-sub) to-white italic"
-            >Every</span> Way of Being
+            >Every</span
+          > Way of Being
         </h1>
 
         <p
           class="max-w-2xl text-lg md:text-xl mx-auto text-center text-site-sub mb-12 leading-relaxed font-medium"
         >
-          We offer mental health services, specializing in neuro-affirming care in Kentucky including
-          psychological testing, medication management, and therapy.
+          We offer mental health services, specializing in neuro-affirming care
+          in Kentucky including psychological testing, medication management,
+          and therapy.
         </p>
 
-        <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
+        <div
+          class="flex flex-col md:flex-row gap-6 items-center justify-center"
+        >
           <a
             href="/catalog"
             class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
@@ -105,7 +107,9 @@ const qualityCareItems = [
             Our Services
           </a>
           <a
-            href={REFERRAL_LINK} target="_blank" rel="noopener noreferrer"
+            href={REFERRAL_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-site-text border border-(--color-button-border) font-black rounded-full hover:bg-white/5 transition-all"
           >
             Client Referral
@@ -114,15 +118,19 @@ const qualityCareItems = [
       </div>
 
       <!-- Gaussian-style bottom fade into next section -->
-      <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+      <div
+        class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
         style="background: linear-gradient(to bottom, transparent 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.85) 70%, #020617 100%); filter: blur(2px);"
-      ></div>
+      >
+      </div>
     </section>
 
     <section class="relative py-24 px-4 bg-site-bg overflow-hidden">
       <div class="max-w-4xl mx-auto text-center">
         <header class="mb-12">
-          <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4">
+          <h2
+            class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4"
+          >
             Quality Care, <span class="text-cta">Five</span> Fewer Hurdles
           </h2>
           <p class="text-site-sub text-lg max-w-2xl mx-auto text-center">
@@ -139,8 +147,14 @@ const qualityCareItems = [
                 class={`rounded-3xl bg-slate-800/20 border border-slate-700 p-8 transition-all duration-300 hover:bg-slate-800/30 ${item.cardClass ?? ""}`}
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <Icon name={item.icon} class="w-9 h-9 text-site-sub shrink-0" style="color: var(--color-icon);"/>
-                  <h3 class="font-serif text-xl font-black text-site-text">{item.title}</h3>
+                  <Icon
+                    name={item.icon}
+                    class="w-9 h-9 text-site-sub shrink-0"
+                    style="color: var(--color-icon);"
+                  />
+                  <h3 class="font-serif text-xl font-black text-site-text">
+                    {item.title}
+                  </h3>
                 </div>
                 <p class="text-site-text leading-relaxed">{item.desc}</p>
               </article>
@@ -155,7 +169,9 @@ const qualityCareItems = [
         class="bg-white/5 p-8 rounded-4xl text-cta-fg max-w-4xl mx-auto text-center relative overflow-hidden"
       >
         <div class="relative z-10">
-          <h2 class="font-serif text-4xl font-black mb-6 tracking-tighter text-site-text">
+          <h2
+            class="font-serif text-4xl font-black mb-6 tracking-tighter text-site-text"
+          >
             Ready to Get Started
           </h2>
         </div>
@@ -168,18 +184,16 @@ const qualityCareItems = [
           >
             Steps for New Clients
           </a>
-          <div class="rounded-full bg-linear-to-r from-cta to-teal-500 p-[1.5px] shadow-[0_0_24px_rgba(251,146,60,0.35)]">
-            <a
-              href="/about/clinicians/clinicians-lex-ky"
-              class="inline-flex w-full items-center justify-center rounded-full bg-site-bg px-10 py-4 text-site-text font-black transition-all hover:bg-site-bg/80"
-            >
-              Meet Our Clinicians
-            </a>
-          </div>
+          <a
+            href="/about/clinicians/clinicians-lex-ky"
+            class="px-10 py-4 bg-transparent text-site-text border border-(--color-button-border) font-black rounded-full hover:bg-white/5 transition-all"
+          >
+            Meet Our Clinicians
+          </a>
         </div>
       </div>
     </section>
-    
+
     <section class="relative py-24 px-4 bg-site-bg overflow-hidden">
       <div class="max-w-4xl mx-auto">
         <div
@@ -207,7 +221,11 @@ const qualityCareItems = [
               <div class="group relative flex flex-col rounded-3xl bg-white/2 border border-white/5 hover:border-cta/30 transition-all duration-500 overflow-hidden">
                 <div class="p-7 sm:p-9 lg:p-10">
                   <div class="flex items-center gap-3 mb-4">
-                    <Icon name={service.icon} class="w-9 h-9 text-site-sub shrink-0" style="color: var(--color-icon);"/>
+                    <Icon
+                      name={service.icon}
+                      class="w-9 h-9 text-site-sub shrink-0"
+                      style="color: var(--color-icon);"
+                    />
                     <h3 class="font-serif text-xl sm:text-2xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
                       {service.title}
                     </h3>
@@ -230,7 +248,5 @@ const qualityCareItems = [
         </div>
       </div>
     </section>
-
-
   </main>
 </Layout>

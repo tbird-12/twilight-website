@@ -4,33 +4,35 @@ import { EMAIL_ADDRESS } from "../data/resource";
 import { Icon } from "astro-icon/components";
 ---
 
-<button id="bot-trigger" 
-  type="button"
-  aria-label="Open chat assistant"
-  class="fixed bottom-4 right-4 md:bottom-5 md:right-5 w-14 h-14 md:w-16 md:h-16 bg-cta-fg/80 hover:bg-transparent text-cta border-2 border-cta rounded-full shadow-2xl flex items-center justify-center z-60 transition-transform hover:scale-110 touch-manipulation">
-  <Icon
-    name="mdi:chat-bubble-outline"
-    class="relative w-6 h-6 md:w-9 md:h-9 object-cover rounded-3xl shadow-2xl"
-    style="color: var(--color-icon);"
+<div class="fixed bottom-4 right-4 md:bottom-5 md:right-5 z-60 rounded-full bg-linear-to-r from-teal-500 to-blue-500 p-[1.5px] shadow-[0_0_24px_rgba(165,180,252,0.35)]">
+  <button id="bot-trigger"
+    type="button"
+    aria-label="Open chat assistant"
+    class="w-14 h-14 md:w-16 md:h-16 bg-site-bg hover:bg-site-bg/80 rounded-full flex items-center justify-center transition-colors touch-manipulation">
+    <Icon
+      name="mdi:chat-bubble-outline"
+      class="w-6 h-6 md:w-7 md:h-7"
+      style="color: var(--color-icon);"
     />
-</button>
+  </button>
+</div>
 
-<div id="chat-container" 
-  class="fixed bottom-20 left-3 right-3 
-  md:bottom-24 md:left-auto md:right-5 
+<div id="chat-container"
+  class="fixed bottom-20 left-3 right-3
+  md:bottom-24 md:left-auto md:right-5
   md:w-fit w-auto
   max-h-[75vh] h-auto
-  max-w-[90vw] md:max-w-96 
-  bg-site-bg rounded-2xl shadow-2xl 
+  max-w-[90vw] md:max-w-96
+  rounded-2xl border border-white/10 bg-site-bg shadow-2xl
   hidden flex-col overflow-hidden z-60 animate-slide-up">
-  
-  <div class="bg-slate-800 p-4 text-site-text font-bold flex justify-between items-center">
+
+  <div class="flex items-center justify-between border-b border-white/10 bg-white/5 p-4 text-site-text font-bold">
     <span>Hi, I'm Liv</span>
     <button id="close-chat" type="button" class="text-2xl leading-none hover:text-site-sub transition-colors">×</button>
   </div>
-  
-  <div id="chat-box" class="h-80 overflow-y-auto p-4 flex flex-col gap-3 bg-slate-100 chat-scrollbar">
-    </div>
+
+  <div id="chat-box" class="h-80 overflow-y-auto p-4 flex flex-col gap-3 bg-site-bg chat-scrollbar">
+  </div>
 </div>
 
 <script is:inline define:vars={{ tree: chatbotTree, EMAIL_ADDRESS }}>
@@ -89,7 +91,7 @@ function renderNode(nodeId) {
   const node = tree[nodeId];
   
   const botMsg = document.createElement('div');
-  botMsg.className = "bg-slate-200 text-slate-800 p-3 rounded-2xl rounded-bl-none max-w-[85%] text-sm self-start shadow-sm";
+  botMsg.className = "bg-white/5 border border-white/10 text-site-text p-3 rounded-2xl rounded-bl-none max-w-[85%] text-sm self-start";
   botMsg.innerText = node.text;
   chatBox.appendChild(botMsg);
 
@@ -98,7 +100,7 @@ function renderNode(nodeId) {
 
   if (node.type === "terminal") {
     const callBtn = document.createElement('button');
-    callBtn.className = "w-full bg-emerald-600 hover:bg-emerald-700 text-site-text font-bold py-3 rounded-xl transition-colors shadow-md mt-2";
+    callBtn.className = "w-full bg-cta text-cta-fg font-bold py-3 rounded-xl transition-colors mt-2";
     callBtn.innerText = `${node.action}`;
     callBtn.onclick = () => {
       if (node.actionType === "link" && node.actionValue) {
@@ -127,11 +129,11 @@ function renderNode(nodeId) {
   } else {
     node.options.forEach(opt => {
       const btn = document.createElement('button');
-      btn.className = "border border-cta text-cta hover:bg-cta hover:text-cta-fg px-4 py-2 rounded-full text-sm transition-all shadow-sm bg-white";
+      btn.className = "border border-cta/60 text-cta hover:bg-cta hover:text-cta-fg px-4 py-2 rounded-full text-sm transition-colors bg-site-bg";
       btn.innerText = opt.label;
       btn.onclick = () => {
         const userMsg = document.createElement('div');
-        userMsg.className = "bg-cta text-cta-fg p-3 rounded-2xl rounded-br-none max-w-[85%] text-sm self-end shadow-md";
+        userMsg.className = "bg-cta/90 text-cta-fg p-3 rounded-2xl rounded-br-none max-w-[85%] text-sm self-end";
         userMsg.innerText = opt.label;
         chatBox.appendChild(userMsg);
         optionsCont.remove();
