@@ -11,6 +11,7 @@ export const services = [
   { name: 'Autism Testing', slug: 'autism-testing', desc: 'Comprehensive autism evaluations' },
   { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'ADHD assessments and diagnostics' },
   { name: 'Medication Management', slug: 'medication-management', desc: 'Psychiatric medication management' },
+  {name: 'Personality Testing', slug: 'personality-profiles', desc: 'Comprehensive personality assessments' },
   { name: 'Psychological Evaluations', slug: 'psychological-evaluations', desc: 'Full psychological assessments' },
   { name: 'Psychotherapy', slug: 'therapy', desc: 'Therapy services for teens and adults' },
 ];
