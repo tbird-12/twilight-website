@@ -62,165 +62,207 @@ const qualityCareItems = [
   description="Twilight Psychology offers neuro-affirming psychological evaluations, medication management, and therapy services 
   in Kentucky."
 >
-  <main class="bg-site-bg min-h-screen pb-24">
-    <section class="relative py-24 px-4 overflow-hidden bg-site-bg">
+  <div class="homepage-shell bg-site-bg">
+    <section class="homepage-panel homepage-panel-hero relative isolate overflow-hidden px-4">
       <!-- SVG Background -->
-      <div class="absolute inset-0 md:hidden" aria-hidden="true">
+      <div class="absolute inset-0 md:hidden opacity-70" aria-hidden="true">
         <Fragment set:html={heroBgMobile} />
       </div>
-      <div class="absolute inset-0 hidden md:block" aria-hidden="true">
+      <div class="absolute inset-0 hidden md:block opacity-80" aria-hidden="true">
         <Fragment set:html={heroBg} />
       </div>
 
-      <div class="max-w-4xl mx-auto relative z-10 py-16 text-center">
-        <span
-          class="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-sand uppercase bg-white/5 border border-white/10 rounded-full"
-        >
-          Now Accepting New Clients
-        </span>
+      <div class="homepage-panel-glow homepage-panel-glow-top" aria-hidden="true"></div>
+      <div class="homepage-panel-glow homepage-panel-glow-bottom" aria-hidden="true"></div>
 
-        <h1
-          class="font-serif text-5xl md:text-8xl font-black text-site-text mb-8 tracking-tighter leading-[0.9]"
-        >
-          For
+      <div class="homepage-panel-inner mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.25fr_0.75fr]">
+        <div class="relative z-10 text-center lg:text-left">
           <span
-            class="glow-word bg-clip-text bg-linear-to-r text-(--color-text-sub)/0"
-            >Every</span
-          > Way of Being
-        </h1>
-
-        <p
-          class="max-w-2xl text-lg md:text-xl mx-auto text-center text-site-sub mb-12 leading-relaxed font-medium"
-        >
-          We offer mental health services, specializing in neuro-affirming care
-          in Kentucky including psychological testing, medication management,
-          and therapy.
-        </p>
-
-        <div
-          class="flex flex-col md:flex-row gap-6 items-center justify-center"
-        >
-          <a
-            href="/catalog"
-            class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
+            class="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-sand uppercase bg-white/6 border border-white/10 rounded-full backdrop-blur"
           >
-            Our Services
-          </a>
-          <a
-            href={REFERRAL_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-site-text border border-(--color-button-border) font-black rounded-full hover:bg-white/5 transition-all"
+            Now Accepting New Clients
+          </span>
+
+          <h1
+            class="font-serif text-5xl md:text-7xl xl:text-8xl font-black text-site-text mb-8 tracking-tighter leading-[0.9]"
           >
-            Client Referral
-          </a>
+            For 
+            <span
+              class="glow-word bg-clip-text bg-linear-to-r text-(--color-text-sub)/0"
+              >Every</span
+            > Way of Being
+          </h1>
+
+          <p
+            class="max-w-2xl text-lg md:text-xl text-site-sub mb-12 leading-relaxed font-medium mx-auto lg:mx-0"
+          >
+            We offer mental health services, specializing in neuro-affirming care in Kentucky including psychological testing, medication management, and therapy.
+          </p>
+
+          <div
+            class="flex flex-col md:flex-row gap-6 items-center justify-center lg:justify-start"
+          >
+            <a
+              href="/catalog"
+              class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
+            >
+              Our Services
+            </a>
+            <a
+              href={REFERRAL_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-site-text border border-(--color-button-border) font-black rounded-full hover:bg-white/5 transition-all"
+            >
+              Client Referral
+            </a>
+          </div>
+
+          <div class="mt-10 flex items-center justify-center gap-4 text-site-sub/80 lg:justify-start">
+            <span class="h-px w-12 bg-white/20"></span>
+            <p class="text-[11px] uppercase tracking-[0.32em]">Scroll to explore</p>
+          </div>
         </div>
-      </div>
 
-      <!-- Gaussian-style bottom fade into next section -->
-      <div
-        class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-        style="background: linear-gradient(to bottom, transparent 0%, rgba(2,6,23,0.5) 40%, rgba(2,6,23,0.85) 70%, #020617 100%); filter: blur(2px);"
-      >
+        <aside class="relative z-10">
+          <div class="homepage-feature-card rounded-4xl border border-white/10 bg-slate-950/45 p-6 sm:p-8 backdrop-blur-xl shadow-2xl shadow-slate-950/30">
+            <p class="text-[11px] font-black uppercase tracking-[0.35em] text-site-sub/80">Twilight Psychology by Numbers</p>
+            <div class="mt-6 space-y-5">
+              <div class="homepage-stat-card">
+                <span class="homepage-stat-kicker">1</span>
+                <div>
+                  <h2 class="text-2xl font-serif font-black text-site-text"><span class="text-cta">2000+</span> Evaluations</h2>
+                  <p class="mt-2 text-sm leading-6 text-site-sub"> Dr. Cornett supervised and conducted over 2000 evaluations, providing comprehensive insights and support.</p>  
+                </div>
+              </div>
+              <div class="homepage-stat-card">
+                <span class="homepage-stat-kicker">2</span>
+                <div>
+                  <h2 class="text-2xl font-serif font-black text-site-text"><span class="text-cta">8+</span> Years Experience</h2>
+                  <p class="mt-2 text-sm leading-6 text-site-sub">
+                    We have over 8 years of experience in providing neuro-affirming care, ensuring each client receives personalized and effective support.
+                  </p>
+                </div>
+              </div>
+              <div class="homepage-stat-card">
+                <span class="homepage-stat-kicker">3</span>
+                <div>
+                  <h2 class="text-2xl font-serif font-black text-site-text"><span class="text-cta">14+</span> Insurance Panels</h2>
+                  <p class="mt-2 text-sm leading-6 text-site-sub">
+                    We are part of over 14 insurance panels, making it easier for clients to access the care they need.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="relative py-24 px-4 bg-site-bg overflow-hidden">
-      <div class="max-w-4xl mx-auto text-center">
-        <header class="mb-12">
+    <section class="homepage-panel homepage-panel-care relative isolate overflow-hidden px-4">
+      <div class="homepage-panel-glow homepage-panel-glow-left" aria-hidden="true"></div>
+      <div class="homepage-panel-inner mx-auto max-w-6xl">
+        <header class="mx-auto mb-12 max-w-3xl text-center">
+          <p class="homepage-section-label">Designed for clarity</p>
           <h2
-            class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4"
+            class="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-site-text mb-5"
           >
             Quality Care, <span class="text-cta">Five</span> Fewer Hurdles
           </h2>
-          <p class="text-site-sub text-lg max-w-2xl mx-auto text-center">
-            We designed our evaluation process to be faster, more accessible,
-            and affordable to navigate—so you can get clear answers without
-            adding an additional stressor.
+          <p class="text-site-sub text-lg max-w-2xl mx-auto text-center leading-relaxed">
+            We designed our evaluation process to be faster, more accessible, and affordable to navigate—so you can get clear answers without adding an additional stressor.
           </p>
         </header>
 
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 text-left">
-          {
-            qualityCareItems.map((item) => (
-              <article
-                class={`rounded-3xl bg-slate-800/20 border border-slate-700 p-8 transition-all duration-300 hover:bg-slate-800/30 ${item.cardClass ?? ""}`}
-              >
-                <div class="flex items-center gap-3 mb-4">
+        <div class="care-two-panel">
+          <!-- Left: selectable tab list -->
+          <nav class="care-tab-list" aria-label="Quality care highlights" role="tablist">
+            <p class="care-hint">Select a topic to learn more</p>
+            {
+              qualityCareItems.map((item, idx) => (
+                <button
+                  class={`care-tab${idx === 0 ? " active" : ""}`}
+                  data-care-tab={String(idx)}
+                  type="button"
+                  aria-selected={idx === 0 ? "true" : "false"}
+                  role="tab"
+                >
                   <Icon
                     name={item.icon}
-                    class="w-9 h-9 text-site-sub shrink-0"
+                    class="care-tab-icon w-5 h-5 shrink-0"
                     style="color: var(--color-icon);"
                   />
-                  <h3 class="font-serif text-xl font-black text-site-text">
+                  <span class="care-tab-title font-serif font-black text-sm leading-snug">
+                    {item.title}
+                  </span>
+                  <Icon
+                    name="mdi:chevron-right"
+                    class="care-tab-arrow ml-auto w-4 h-4 shrink-0"
+                  />
+                </button>
+              ))
+            }
+          </nav>
+
+          <!-- Right: stacked content panels (one visible at a time) -->
+          <div class="care-panels">
+            {
+              qualityCareItems.map((item, idx) => (
+                <div
+                  class={`care-panel${idx === 0 ? " active" : ""}`}
+                  data-care-panel={String(idx)}
+                  role="tabpanel"
+                  aria-hidden={idx !== 0 ? "true" : "false"}
+                >
+                  <p class="care-panel-eyebrow">
+                    {String(idx + 1).padStart(2, "0")} / {String(qualityCareItems.length).padStart(2, "0")}
+                  </p>
+                  <Icon
+                    name={item.icon}
+                    class="w-12 h-12 mb-5"
+                    style="color: var(--color-icon);"
+                  />
+                  <h3 class="font-serif text-2xl sm:text-3xl font-black text-site-text mb-4 leading-tight">
                     {item.title}
                   </h3>
+                  <p class="text-site-sub text-sm sm:text-base leading-relaxed max-w-md">
+                    {item.desc}
+                  </p>
                 </div>
-                <p class="text-site-text leading-relaxed">{item.desc}</p>
-              </article>
-            ))
-          }
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="relative py-12 px-4 bg-site-bg overflow-hidden">
-      <div
-        class="bg-white/5 p-8 rounded-4xl text-cta-fg max-w-4xl mx-auto text-center relative overflow-hidden"
-      >
-        <div class="relative z-10">
-          <h2
-            class="font-serif text-4xl font-black mb-6 tracking-tighter text-site-text"
-          >
-            Ready to Get Started
-          </h2>
-        </div>
+    <section class="homepage-panel homepage-panel-services relative isolate overflow-hidden px-4">
+      <div class="homepage-panel-glow homepage-panel-glow-right" aria-hidden="true"></div>
+      <div class="homepage-panel-inner mx-auto max-w-6xl">
         <div
-          class="flex flex-col sm:flex-row gap-6 justify-center relative z-10"
+          class="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
         >
-          <a
-            href="/resources/new-client"
-            class="px-10 py-4 bg-slate-700 text-site-text border border-slate-600 font-black rounded-full hover:bg-slate-600 transition-all hover:scale-105 shadow-lg"
-          >
-            Steps for New Clients
-          </a>
-          <a
-            href="/about/clinicians/clinicians-lex-ky"
-            class="px-10 py-4 bg-transparent text-site-text border border-(--color-button-border) font-black rounded-full hover:bg-white/5 transition-all"
-          >
-            Meet Our Clinicians
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="relative py-24 px-4 bg-site-bg overflow-hidden">
-      <div class="max-w-4xl mx-auto">
-        <div
-          class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6"
-        >
-          <div class="self-start md:self-auto">
+          <div>
+            <p class="homepage-section-label">Core services</p>
             <h2
-              class="font-serif text-4xl md:text-5xl font-black text-site-text tracking-tighter"
+              class="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-site-text tracking-tighter"
             >
               How We Can Help
             </h2>
-            <div class="w-16 h-1 bg-cta mt-4 rounded-full"></div>
           </div>
           <p
-            class="text-site-text font-medium max-w-md text-sm md:text-base opacity-70 italic"
+            class="max-w-md text-sm md:text-base leading-relaxed text-site-sub"
           >
-            "Twilight Psychology provides the clinical clarity to navigate the
-            journey."
+            "Twilight Psychology provides the clinical clarity to navigate the journey."
           </p>
         </div>
 
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {
             services.map((service) => (
-              <div class="group relative flex flex-col rounded-3xl bg-white/2 border border-white/5 hover:border-cta/30 transition-all duration-500 overflow-hidden">
-                <div class="p-7 sm:p-9 lg:p-10">
-                  <div class="flex items-center gap-3 mb-4">
+              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border border-white/8 p-7 sm:p-9 transition-all duration-500 overflow-hidden">
+                <div class="relative z-10 flex h-full flex-col">
+                  <div class="mb-5 flex items-center gap-3">
                     <Icon
                       name={service.icon}
                       class="w-9 h-9 text-site-sub shrink-0"
@@ -230,16 +272,16 @@ const qualityCareItems = [
                       {service.title}
                     </h3>
                   </div>
-                  <p class="text-site-sub font-medium text-sm sm:text-base mb-7 leading-relaxed">
+                  <p class="mb-7 text-sm sm:text-base leading-relaxed text-site-sub">
                     {service.desc}
                   </p>
 
                   <a
                     href={service.link}
-                    class="inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors"
+                    class="mt-auto inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors"
                   >
                     Explore Service
-                    <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all" />
+                    <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all"></span>
                   </a>
                 </div>
               </div>
@@ -248,5 +290,405 @@ const qualityCareItems = [
         </div>
       </div>
     </section>
-  </main>
+
+    <section class="homepage-panel homepage-panel-cta relative isolate overflow-hidden px-4">
+      <div class="homepage-panel-inner mx-auto max-w-5xl">
+        <div class="homepage-cta-shell rounded-[2.5rem] border border-white/10 px-6 py-10 sm:px-10 sm:py-14 text-center">
+          <p class="homepage-section-label justify-center">Next step</p>
+          <h2
+            class="font-serif text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter text-site-text"
+          >
+            Ready to Get Started
+          </h2>
+          <p class="mx-auto mb-10 max-w-2xl text-base sm:text-lg leading-relaxed text-site-sub">
+            We’re here to support you at every step of your journey. Whether you’re seeking clarity through testing, personalized therapy, or medication management, we have a clear path forward for you.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row gap-6 justify-center relative z-10"
+          >
+            <a
+              href="/resources/new-client"
+              class="px-10 py-4 bg-slate-700 text-site-text border border-slate-600 font-black rounded-full hover:bg-slate-600 transition-all hover:scale-105 shadow-lg"
+            >
+              Steps for New Clients
+            </a>
+            <a
+              href="/about/clinicians/clinicians-lex-ky"
+              class="px-10 py-4 bg-transparent text-site-text border border-(--color-button-border) font-black rounded-full hover:bg-white/5 transition-all"
+            >
+              Meet Our Clinicians
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>
+
+<style>
+  :global(body:has(.homepage-shell)) {
+    scroll-snap-type: y proximity;
+  }
+
+  .homepage-shell {
+    position: relative;
+  }
+
+  .homepage-shell::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at top, rgba(165, 180, 252, 0.08), transparent 34%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%, transparent 80%, rgba(255, 255, 255, 0.02));
+    z-index: 0;
+  }
+
+  .homepage-panel {
+    position: relative;
+    min-height: calc(100svh - var(--homepage-chrome-offset));
+    display: flex;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .homepage-panel:first-child {
+    border-top: 0;
+  }
+
+  .homepage-panel-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .homepage-panel-hero {
+    --homepage-chrome-offset: 6.5rem;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(223, 202, 170, 0.12), transparent 26%),
+      radial-gradient(circle at 80% 75%, rgba(165, 180, 252, 0.14), transparent 28%),
+      linear-gradient(180deg, rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.92));
+  }
+
+  .homepage-panel-care {
+    --homepage-chrome-offset: 6.5rem;
+    background:
+      linear-gradient(135deg, rgba(7, 14, 32, 0.96), rgba(15, 23, 42, 0.88)),
+      radial-gradient(circle at 20% 15%, rgba(223, 202, 170, 0.08), transparent 24%);
+  }
+
+  .homepage-panel-services {
+    --homepage-chrome-offset: 6.5rem;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(223, 202, 170, 0.1), transparent 20%),
+      linear-gradient(180deg, rgba(2, 6, 23, 0.94), rgba(10, 18, 36, 0.98));
+  }
+
+  .homepage-panel-cta {
+    --homepage-chrome-offset: 6.5rem;
+    background:
+      linear-gradient(160deg, rgba(11, 17, 34, 0.98), rgba(2, 6, 23, 0.98)),
+      radial-gradient(circle at 50% 0%, rgba(165, 180, 252, 0.14), transparent 32%);
+  }
+
+  .homepage-panel-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .homepage-panel-glow-top {
+    top: 8%;
+    right: 10%;
+    width: 18rem;
+    height: 18rem;
+    background: rgba(165, 180, 252, 0.2);
+  }
+
+  .homepage-panel-glow-bottom {
+    bottom: 10%;
+    left: 8%;
+    width: 14rem;
+    height: 14rem;
+    background: rgba(223, 202, 170, 0.18);
+  }
+
+  .homepage-panel-glow-left {
+    top: 18%;
+    left: 0;
+    width: 16rem;
+    height: 16rem;
+    background: rgba(223, 202, 170, 0.12);
+  }
+
+  .homepage-panel-glow-right {
+    right: 2%;
+    bottom: 12%;
+    width: 20rem;
+    height: 20rem;
+    background: rgba(165, 180, 252, 0.12);
+  }
+
+  .homepage-feature-card,
+  .homepage-glass-card,
+  .homepage-service-card,
+  .homepage-cta-shell {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.6), rgba(2, 6, 23, 0.78));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+  }
+
+  .homepage-stat-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .homepage-stat-card:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .homepage-stat-kicker {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: rgba(165, 180, 252, 0.14);
+    color: var(--color-site-text);
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+  }
+
+  .homepage-section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(148, 163, 184, 0.9);
+  }
+
+  .homepage-section-label::before,
+  .homepage-section-label::after {
+    content: "";
+    width: 2.5rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .homepage-service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, rgba(165, 180, 252, 0.08), transparent 40%, rgba(223, 202, 170, 0.06));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .homepage-service-card:hover::before {
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    :global(body:has(.homepage-shell)) {
+      scroll-snap-type: y mandatory;
+    }
+
+    .homepage-panel,
+    .homepage-panel-hero,
+    .homepage-panel-care,
+    .homepage-panel-services,
+    .homepage-panel-cta {
+      --homepage-chrome-offset: 7.25rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .homepage-panel {
+      min-height: auto;
+    }
+
+    .homepage-panel-inner {
+      padding-top: 3.75rem;
+      padding-bottom: 3.75rem;
+    }
+
+    .homepage-section-label::before,
+    .homepage-section-label::after {
+      width: 1.5rem;
+    }
+  }
+
+  /* ── Care two-panel (Scrapy-style interactive tabs) ── */
+
+  .care-two-panel {
+    display: grid;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 2rem;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.5), rgba(2, 6, 23, 0.7));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  @media (min-width: 1024px) {
+    .care-two-panel {
+      grid-template-columns: minmax(240px, 5fr) 7fr;
+    }
+  }
+
+  .care-hint {
+    padding: 1.25rem 1.5rem 0.5rem;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(148, 163, 184, 0.35);
+  }
+
+  .care-tab-list {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  @media (min-width: 1024px) {
+    .care-tab-list {
+      border-bottom: none;
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+  }
+
+  .care-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border: none;
+    border-left: 2px solid transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.15s ease, border-left-color 0.15s ease;
+  }
+
+  .care-tab:last-child {
+    border-bottom: none;
+  }
+
+  .care-tab:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .care-tab-icon {
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+  }
+
+  .care-tab-title {
+    color: var(--color-site-sub);
+    transition: color 0.2s ease;
+  }
+
+  .care-tab-arrow {
+    opacity: 0;
+    color: var(--color-cta);
+    transform: translateX(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .care-tab.active {
+    border-left-color: var(--color-cta);
+    background: rgba(165, 180, 252, 0.05);
+  }
+
+  .care-tab.active .care-tab-icon {
+    opacity: 1;
+  }
+
+  .care-tab.active .care-tab-title {
+    color: var(--color-site-text);
+  }
+
+  .care-tab.active .care-tab-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .care-panels {
+    display: grid;
+    min-height: 22rem;
+  }
+
+  .care-panel {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .care-panel.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .care-panel-eyebrow {
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(148, 163, 184, 0.35);
+    margin-bottom: 1.25rem;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll<HTMLButtonElement>('[data-care-tab]');
+    const panels = document.querySelectorAll<HTMLElement>('[data-care-panel]');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const idx = tab.dataset.careTab;
+
+        tabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        panels.forEach((p) => {
+          p.classList.remove('active');
+          p.setAttribute('aria-hidden', 'true');
+        });
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const panel = document.querySelector<HTMLElement>(`[data-care-panel="${idx}"]`);
+        if (panel) {
+          panel.classList.add('active');
+          panel.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+  });
+</script>
