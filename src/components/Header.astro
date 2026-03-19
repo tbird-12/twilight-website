@@ -17,9 +17,19 @@ import {
   <div
     class="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between"
   >
+    <!-- Mobile menu button (leftmost on mobile) -->
+    <button id="mobileMenuBtn"
+      class="md:hidden text-site-text p-3 -ml-2 focus:outline-none focus:ring-2 focus:ring-cta/50 rounded-lg transition-colors active:bg-white/10"
+      aria-label="Open main menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <MenuIcon />
+    </button>
+
     <Logo />
 
-    <!-- Mobile Controls (Theme + Contact + Menu Button) -->
+    <!-- Mobile Controls (Theme + Contact) -->
     <div class="md:hidden flex items-center gap-2">
       <button
         type="button"
@@ -52,16 +62,6 @@ import {
       >
         <span>Contact Us</span>
       </a>
-
-      <!-- Mobile menu button -->
-      <button id="mobileMenuBtn" 
-      class="text-site-text p-3 -mr-2 focus:outline-none focus:ring-2 focus:ring-cta/50 rounded-lg transition-colors active:bg-white/10"
-      aria-label="Open main menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-      >
-        <MenuIcon />
-      </button>
     </div>
 
     <!-- Desktop Navigation -->
