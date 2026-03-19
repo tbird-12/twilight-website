@@ -6,6 +6,7 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Chatbot from "../components/Chatbot.astro";
 import favicon from "../assets/favicons/favicon.svg";
 import Schema from "../components/Schema.astro";
+import "../styles/global.css";
 
 // This is the "Frontmatter" where you can pass data to the layout
 interface Props {
@@ -53,7 +54,17 @@ const siteName = "Twilight Psychology";
     <slot name="page-schema" />
 
     <script is:inline>
-      document.documentElement.classList.add("dark");
+      (() => {
+        const root = document.documentElement;
+        const storedTheme = localStorage.getItem("theme");
+        const theme = storedTheme === "light" || storedTheme === "dark"
+          ? storedTheme
+          : "dark";
+
+        root.classList.remove("light", "dark");
+        root.classList.add(theme);
+        root.style.colorScheme = theme;
+      })();
     </script>
   </head>
 
@@ -78,9 +89,6 @@ const siteName = "Twilight Psychology";
   :root {
     --accent-gradient: linear-gradient(45deg, #4f46e5, #818cf8);
   }
-
-  /* Dark mode force-applied via JS in <head> */
-  :root { color-scheme: dark; }
 
   /* Chatbot animations and scrollbar */
   @keyframes slideUp {

@@ -40,7 +40,7 @@ const socials = [
 ---
 
 <footer
-  class="relative border-t border-slate-800 bg-site-footer"
+  class="relative border-t theme-border bg-site-footer"
 >
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
@@ -68,7 +68,7 @@ const socials = [
             socials.map((social) => (
               <a
                 href={social.href}
-                class="text-site-sub hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                class="text-site-sub theme-hover-surface-2 focus:outline-none focus:ring-4 focus:ring-cta/30 rounded-lg text-sm p-2.5 inline-flex items-center"
                 aria-label={social.label}
               >
                 <Icon name={social.icon} class="w-5 h-5 text-site-text" style="color: var(--color-icon);"/>
@@ -123,7 +123,7 @@ const socials = [
     </div>
 
     <div
-      class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t border-slate-800"
+      class="md:flex md:items-center md:justify-between py-6 md:py-8 border-t theme-border"
     >
       <div class="text-sm text-site-sub">
         © {year} · Twilight Psychology PLLC. All rights reserved. 

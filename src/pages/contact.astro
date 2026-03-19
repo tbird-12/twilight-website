@@ -20,7 +20,7 @@ import {
   <section class="bg-site-bg min-h-screen py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
       <header class="text-center mb-10 md:mb-14">
-        <div class="inline-block px-3 md:px-4 py-1.5 mb-5 md:mb-6 rounded-full bg-slate-800/50 border border-slate-700 text-cta text-[11px] md:text-xs font-black uppercase tracking-widest">
+        <div class="inline-block px-3 md:px-4 py-1.5 mb-5 md:mb-6 rounded-full theme-surface-2 border theme-border-strong text-cta text-[11px] md:text-xs font-black uppercase tracking-widest">
           Contact Twilight Psychology
         </div>
         <h1 class="font-serif text-3xl sm:text-4xl md:text-6xl font-black text-site-text mb-4 leading-tight">
@@ -31,7 +31,7 @@ import {
         </p>
       </header>
 
-      <section class="mb-8 md:mb-10 rounded-4xl border border-amber-300/30 bg-linear-to-br from-amber-300/25 to-slate-800/20 p-6 sm:p-8 md:p-10">
+      <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border border-amber-300/30 p-6 sm:p-8 md:p-10">
         <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
         <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
           If you are in immediate danger or need urgent help, do not wait for office response.
@@ -39,19 +39,19 @@ import {
         <div class="grid gap-4 md:grid-cols-3">
           <a
             href="tel:911"
-            class="rounded-2xl border border-white/20 bg-white/5 px-4 sm:px-5 py-4 hover:bg-white/10 transition-colors"
+            class="rounded-2xl border theme-border bg-site-bg/30 px-4 sm:px-5 py-4 theme-hover-surface transition-colors"
           >
             <p class="text-xs font-black uppercase tracking-widest text-cta">Immediate Emergency</p>
             <p class="text-xl sm:text-2xl font-black text-site-text mt-1">Call 911</p>
           </a>
           <a
             href="tel:988"
-            class="rounded-2xl border border-white/20 bg-white/5 px-4 sm:px-5 py-4 hover:bg-white/10 transition-colors"
+            class="rounded-2xl border theme-border bg-site-bg/30 px-4 sm:px-5 py-4 theme-hover-surface transition-colors"
           >
             <p class="text-xs font-black uppercase tracking-widest text-cta">Mental Health Crisis</p>
             <p class="text-xl sm:text-2xl font-black text-site-text mt-1">Call 988</p>
           </a>
-          <div class="rounded-2xl border border-white/20 bg-white/5 px-4 sm:px-5 py-4">
+          <div class="rounded-2xl border theme-border bg-site-bg/30 px-4 sm:px-5 py-4">
             <p class="text-xs font-black uppercase tracking-widest text-cta">Important Note</p>
             <p class="text-site-sub text-sm mt-2 leading-relaxed">
               Messages sent through email, phone, or forms are not monitored for emergency response.
@@ -60,7 +60,7 @@ import {
         </div>
       </section>
 
-      <section class="mt-10 md:mt-12 rounded-4xl border border-slate-700 bg-slate-800/20 p-6 sm:p-8 md:p-10" data-contact-tabs-root>
+      <section class="mt-10 md:mt-12 rounded-4xl border theme-border-strong theme-surface-2 p-6 sm:p-8 md:p-10" data-contact-tabs-root>
         <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub/80">
           <p class="font-semibold uppercase tracking-wider">Select the path that fits you</p>
           <p class="hidden lg:block">Scroll to explore</p>
@@ -101,10 +101,10 @@ import {
               aria-selected="false"
               data-contact-tab-trigger
               data-target="contact-panel-existing"
-              class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
+              class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide theme-surface-soft text-site-text theme-border theme-hover-surface-2 hover:border-cta/50 hover:text-cta opacity-80"
             >
               <span class="flex items-center gap-3 text-left">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">2</span>
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full theme-surface text-[11px] font-black">2</span>
                 <span class="leading-tight">
                   <span class="block">Existing Clients</span>
                   <span class="block text-[10px] uppercase tracking-wider opacity-80">Portal and support</span>
@@ -120,10 +120,10 @@ import {
               aria-selected="false"
               data-contact-tab-trigger
               data-target="contact-panel-future"
-              class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
+              class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide theme-surface-soft text-site-text theme-border theme-hover-surface-2 hover:border-cta/50 hover:text-cta opacity-80"
             >
               <span class="flex items-center gap-3 text-left">
-                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">3</span>
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full theme-surface text-[11px] font-black">3</span>
                 <span class="leading-tight">
                   <span class="block">Future Clients</span>
                   <span class="block text-[10px] uppercase tracking-wider opacity-80">Start care with us</span>
@@ -140,7 +140,7 @@ import {
           role="tabpanel"
           aria-labelledby="contact-tab-existing"
           data-contact-tab-panel
-          class="hidden rounded-3xl border border-slate-700 bg-site-bg/40 p-6 sm:p-8"
+          class="hidden rounded-3xl border theme-border-strong theme-surface-soft p-6 sm:p-8"
         >
           <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 leading-tight">Existing Client Portal</h2>
           <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
@@ -168,7 +168,7 @@ import {
           data-contact-tab-panel
           class="hidden"
         >
-          <article class="rounded-3xl border border-slate-700 bg-site-bg/40 p-6 sm:p-8">
+          <article class="rounded-3xl border theme-border-strong theme-surface-soft p-6 sm:p-8">
             <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">Start As A Future Client</h2>
             <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
               Use our secure intake form to request an appointment and share what kind of support you are looking for.
@@ -194,7 +194,7 @@ import {
           role="tabpanel"
           aria-labelledby="contact-tab-providers"
           data-contact-tab-panel
-          class="rounded-3xl border border-slate-700 bg-site-bg/40 p-6 sm:p-8"
+          class="rounded-3xl border theme-border-strong theme-surface-soft p-6 sm:p-8"
         >
           <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">Referral Information</h2>
           <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
@@ -216,7 +216,7 @@ import {
         </article>
       </section>
 
-      <section class="mt-10 md:mt-12 rounded-4xl border border-slate-700 bg-slate-800/20 p-6 sm:p-8 text-center">
+      <section class="mt-10 md:mt-12 rounded-4xl border theme-border-strong theme-surface-2 p-6 sm:p-8 text-center">
         <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
         <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
         <p class="text-site-sub">Sat - Sun: By appointment</p>
@@ -245,9 +245,9 @@ import {
           trigger.classList.toggle("shadow-lg", isActive);
           trigger.classList.toggle("shadow-cta/20", isActive);
           trigger.classList.toggle("opacity-100", isActive);
-          trigger.classList.toggle("bg-white/5", !isActive);
+          trigger.classList.toggle("theme-surface-soft", !isActive);
           trigger.classList.toggle("text-site-text", !isActive);
-          trigger.classList.toggle("border-white/10", !isActive);
+          trigger.classList.toggle("theme-border", !isActive);
           trigger.classList.toggle("opacity-80", !isActive);
         });
 
@@ -266,4 +266,14 @@ import {
       });
     }
   </script>
+
+  <style>
+    .contact-emergency-shell {
+      background: linear-gradient(135deg, rgba(252, 211, 77, 0.16), rgba(30, 41, 59, 0.2));
+    }
+
+    :root.light .contact-emergency-shell {
+      background: linear-gradient(135deg, rgba(252, 211, 77, 0.2), rgba(224, 231, 255, 0.7));
+    }
+  </style>
 </ServiceLayout>

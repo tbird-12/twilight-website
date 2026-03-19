@@ -22,7 +22,7 @@ const { id, title, items, baseHref = "" } = Astro.props;
 <div class="mb-2 font-sans">
   <button
     id={`${id}Toggle`}
-    class="w-full flex items-center justify-between px-4 py-3 text-sm font-serif font-bold text-site-text hover:bg-slate-800 rounded-lg"
+    class="w-full flex items-center justify-between px-4 py-3 text-sm font-serif font-bold text-site-text theme-hover-surface-2 rounded-lg"
   >
     <span>{title}</span>
     <svg
@@ -42,7 +42,7 @@ const { id, title, items, baseHref = "" } = Astro.props;
           <div class="mb-2">
             <button
               id={`${id}NestedToggle-${item.slug}`}
-              class="w-full flex items-center justify-between px-4 py-2 text-sm text-site-sub hover:bg-slate-800 rounded-lg"
+              class="w-full flex items-center justify-between px-4 py-2 text-sm text-site-sub theme-hover-surface-2 rounded-lg"
             >
               <span>{item.name}</span>
               <svg
@@ -62,7 +62,7 @@ const { id, title, items, baseHref = "" } = Astro.props;
               {item.children?.map((child: any) => (
                 <a
                   href={`${item.childHrefBase}/${child.slug}`}
-                  class="block px-4 py-2 text-sm text-site-sub hover:bg-slate-800 rounded-lg"
+                  class="block px-4 py-2 text-sm text-site-sub theme-hover-surface-2 rounded-lg"
                 >
                   {child.name}
                 </a>
@@ -72,7 +72,7 @@ const { id, title, items, baseHref = "" } = Astro.props;
         ) : (
           <a
             href={`${baseHref}/${item.slug}`}
-            class="block px-4 py-2 text-sm text-site-sub hover:bg-slate-800 rounded-lg"
+            class="block px-4 py-2 text-sm text-site-sub theme-hover-surface-2 rounded-lg"
           >
             {item.name}
           </a>

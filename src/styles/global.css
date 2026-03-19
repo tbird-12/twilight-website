@@ -1,19 +1,61 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  /* Default to dark theme to preserve existing design on first load. */
+  --theme-site-bg: #020617;
+  --theme-site-text: #f1f5f9;
+  --theme-site-sub: #94a3b8;
+  --theme-site-footer: #010409;
+  --theme-site-ann: #1e293b;
+  --theme-cta: #a5b4fc;
+  --theme-cta-fg: #020617;
+  --theme-icon: #dfcaaa;
+  --theme-button-border: #dfcaaa;
+
+  --theme-surface: #0f172a;
+  --theme-surface-2: #1e293b;
+  --theme-surface-soft: rgba(255, 255, 255, 0.05);
+  --theme-border: rgba(148, 163, 184, 0.35);
+  --theme-border-strong: rgba(148, 163, 184, 0.5);
+}
+
+:root.light {
+  --theme-site-bg: #f8fafc;
+  --theme-site-text: #0f172a;
+  --theme-site-sub: #475569;
+  --theme-site-footer: #e2e8f0;
+  --theme-site-ann: #e0e7ff;
+  --theme-cta: #4f46e5;
+  --theme-cta-fg: #f8fafc;
+  --theme-icon: #4338ca;
+  --theme-button-border: #6366f1;
+
+  --theme-surface: #ffffff;
+  --theme-surface-2: #eef2ff;
+  --theme-surface-soft: rgba(15, 23, 42, 0.04);
+  --theme-border: rgba(100, 116, 139, 0.35);
+  --theme-border-strong: rgba(100, 116, 139, 0.5);
+}
+
 @theme {
 
   /* ── Site palette ── edit these hex values to retheme the whole site ── */
-  --color-site-bg:   #020617;  /* bg-site-bg    → slate-950  (page background)    */
-  --color-site-text: #f1f5f9;  /* text-site-text → slate-100 (primary text)       */
-  --color-site-sub:  #94a3b8;  /* text-site-sub  → slate-400 (secondary/sub text) */
+  --color-site-bg:   var(--theme-site-bg);  /* page background */
+  --color-site-text: var(--theme-site-text);  /* primary text */
+  --color-site-sub:  var(--theme-site-sub);  /* secondary text */
   --color-sand: var(--color-site-sub); /* text-sand → same as text-site-sub */
-  --color-cta:       #a5b4fc;  /* bg-cta         → indigo-300 (CTA background)    */
-  --color-cta-fg:    #020617;  /* text-cta-fg    → slate-950  (CTA text)          */
-  --color-site-footer: #010409;  /* bg-site-footer → slate-900  (footer background)  */
-  --color-site-ann: #1e293b;    /* bg-site-ann → indigo-950 (announcement background) */
-  --color-icon: #dfcaaa;         /* text-icon → amber-300 (icon color) */
-  --color-button-border: #dfcaaa; /* border-button-border → amber-300 (button border color) */
+  --color-cta:       var(--theme-cta);
+  --color-cta-fg:    var(--theme-cta-fg);
+  --color-site-footer: var(--theme-site-footer);
+  --color-site-ann: var(--theme-site-ann);
+  --color-icon: var(--theme-icon);
+  --color-button-border: var(--theme-button-border);
+  --color-surface: var(--theme-surface);
+  --color-surface-2: var(--theme-surface-2);
+  --color-surface-soft: var(--theme-surface-soft);
+  --color-border: var(--theme-border);
+  --color-border-strong: var(--theme-border-strong);
   --font-heading: "Fraunces", serif;
   --font-body: "Inter", sans-serif;
   --font-serif: var(--font-heading);
@@ -50,6 +92,38 @@ html {
   .btn-cta {
     @apply bg-cta text-cta-fg hover:bg-cta/80 font-black px-8 py-3 rounded-full transition-all;
   }
+
+  .theme-border {
+    border-color: var(--color-border);
+  }
+
+  .theme-border-strong {
+    border-color: var(--color-border-strong);
+  }
+
+  .theme-surface {
+    background-color: var(--color-surface);
+  }
+
+  .theme-surface-2 {
+    background-color: var(--color-surface-2);
+  }
+
+  .theme-surface-soft {
+    background-color: var(--color-surface-soft);
+  }
+
+  .theme-hover-surface:hover {
+    background-color: var(--color-surface);
+  }
+
+  .theme-hover-surface-2:hover {
+    background-color: var(--color-surface-2);
+  }
+
+  .theme-divider {
+    background-color: var(--color-border-strong);
+  }
 }
 
 @keyframes pulseGlow {
@@ -61,4 +135,8 @@ html {
 .glow-word {
   animation: pulseGlow 3s infinite ease-in-out;
   color: #f1f5f9;
+}
+
+:root.light .glow-word {
+  color: #0f172a;
 }

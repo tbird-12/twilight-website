@@ -11,7 +11,7 @@ import { Image } from "astro:assets";
   metaDescription="Meet the expert clinicians at Twilight Psychology in Lexington, KY. Licensed psychologists, therapists, and psychiatric nurse practitioners providing neuro-affirming mental health care."
 >
   <section
-    class="relative pt-32 pb-24 px-4 border-b border-white/5 bg-linear-to-b from-slate-800/20 to-transparent"
+    class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
   >
     <h1
       class="font-serif text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter text-center leading-none"
@@ -27,10 +27,10 @@ import { Image } from "astro:assets";
         providers.map((person) => (
           <a
             href={`/about/clinicians/${person.slug}`}
-            class="group bg-slate-800/50 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-700"
+              class="group theme-surface-2 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border theme-border"
           >
             <div class="hidden md:block mb-6">
-              <div class="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/60">
+                <div class="overflow-hidden rounded-2xl border theme-border theme-surface">
                 <Image
                   src={person.image}
                   alt={`Photo of ${person.name}`}
