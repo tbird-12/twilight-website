@@ -9,8 +9,9 @@ const { type = "WebSite", name, description, ...extra } = Astro.props;
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Twilight Psychology",
+  "@type": type,
+  name: name || "Twilight Psychology",
+  ...(description ? { description } : {}),
   address: {
     "@type": "PostalAddress",
     streetAddress: "501 Darby Creed Rd, Suite 7",
@@ -42,6 +43,7 @@ const schema = {
       },
     ],
   },
+  ...extra,
 };
 ---
 

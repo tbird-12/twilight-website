@@ -8,16 +8,37 @@ interface Props {
   metaDescription?: string;
   image?: string;
   canonical?: string;
+  robots?: string;
+  title?: string;
 }
 
-const { name, description, metaDescription, image, canonical } = Astro.props;
+const {
+  name,
+  description,
+  metaDescription,
+  image,
+  canonical,
+  robots,
+  title,
+} = Astro.props;
+
+const pageTitle =
+  title ||
+  (/twilight psychology/i.test(name)
+    ? name
+    : `${name} | Twilight Psychology`);
+
+const pageDescription =
+  metaDescription ||
+  `${name} services at Twilight Psychology. ${description}`;
 ---
 
 <Layout 
-  title={`${name} | ${description} | Twilight Psychology`}
-  description={metaDescription || `${name} services at Twilight Psychology. ${description}`}
+  title={pageTitle}
+  description={pageDescription}
   image={image}
   canonical={canonical}
+  robots={robots}
 >
   <main class="bg-site-bg min-h-screen pb-24">
     <div class="max-w-4xl mx-auto px-6">
