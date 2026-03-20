@@ -1,0 +1,49 @@
+---
+import ServiceLayout from "../../../layouts/ServiceLayout.astro";
+import "../../../styles/global.css";
+import { WIDGET_LINK } from "../../../data/resource";
+---
+
+<ServiceLayout
+  name="Executive Support Therapy | Twilight Psychology"
+  description="Therapy support for planning, initiation, organization, and energy management."
+>
+  <section class="max-w-5xl mx-auto px-4 pt-20">
+    <a href="/services/therapy" class="text-xs font-black uppercase tracking-[0.2em] text-cta hover:underline">
+      Back to Therapy
+    </a>
+    <h1 class="mt-4 font-serif text-4xl md:text-6xl font-black text-site-text">Executive Support</h1>
+    <p class="mt-6 text-lg text-site-sub leading-relaxed max-w-3xl">
+      Executive function differences can affect focus, task initiation, and follow-through. This therapy focus builds
+      practical systems that match your real life, not idealized routines.
+    </p>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 mt-12 grid gap-6 md:grid-cols-2">
+    <div class="rounded-3xl border theme-border p-8 theme-surface-soft">
+      <h2 class="font-serif text-2xl font-black text-site-text mb-4">Common Goals</h2>
+      <ul class="space-y-3 text-site-sub">
+        <li>Reduce overwhelm from competing demands</li>
+        <li>Create realistic routines and reminders</li>
+        <li>Improve transitions and time awareness</li>
+      </ul>
+    </div>
+    <div class="rounded-3xl border theme-border p-8 theme-surface-soft">
+      <h2 class="font-serif text-2xl font-black text-site-text mb-4">Approach</h2>
+      <p class="text-site-sub leading-relaxed">
+        We combine psychoeducation and behavior supports with a neuro-affirming lens so strategies feel usable and
+        sustainable over time.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 mt-14 mb-10">
+    <div class="rounded-4xl border theme-border p-10 text-center theme-surface-soft">
+      <h2 class="font-serif text-3xl font-black text-site-text mb-4">Get Matched With Support</h2>
+      <p class="text-site-sub mb-8">Start with an intake to build a plan around your needs and schedule.</p>
+      <a href={WIDGET_LINK} class="inline-block px-8 py-3 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all">
+        Schedule Intake
+      </a>
+    </div>
+  </section>
+</ServiceLayout>
