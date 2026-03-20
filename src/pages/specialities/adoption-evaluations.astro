@@ -1,37 +1,267 @@
 ---
+import { Image } from 'astro:assets';
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
 import { WIDGET_LINK } from '../../data/resource';
+import heatherPhoto from '../../assets/images/staff/heather-cornett.png';
 
+const evaluationAreas = [
+  {
+    title: "Clinical Interview",
+    detail: "In-depth interviews with prospective adoptive parent(s) to assess parenting history, motivations, mental health background, and relational functioning."
+  },
+  {
+    title: "Psychological Testing",
+    detail: "Standardized testing battery measuring personality, emotional regulation, and psychological stability—key factors reviewed by domestic and international adoption agencies."
+  },
+  {
+    title: "Collateral Information",
+    detail: "Review of relevant background records, references, and documents provided by the prospective family to ensure a complete clinical picture."
+  },
+  {
+    title: "Notary & Apostille-Ready Reports",
+    detail: "Notarization and licensing completed on-site at our facility. Reports are prepared to meet apostille requirements for international submissions."
+  }
+];
+
+const countries = [
+  "China", "South Korea", "Colombia", "India", "Philippines",
+  "Ethiopia", "Haiti", "Guatemala", "Vietnam", "Ukraine", "Bulgaria", "Other Countries"
+];
+
+const faqs = [
+  {
+    q: "What is a psychological adoption evaluation?",
+    a: "An adoption evaluation is a clinical assessment conducted by a licensed psychologist that examines the psychological fitness and parenting readiness of prospective adoptive parents. It is required by most domestic and international adoption agencies and courts."
+  },
+  {
+    q: "Who is evaluated — just one parent or both?",
+    a: "Dr. Cornett evaluates all prospective adoptive parents in the household. For couples, both partners are individually assessed. The goal is to determine whether adoption is in the best interest of the child."
+  },
+  {
+    q: "Do you cover international adoptions?",
+    a: "Yes. We provide evaluations accepted by adoption agencies and authorities for adoptions from many countries, including China, South Korea, Colombia, India, the Philippines, and others. Our reports are formatted to meet international documentation standards."
+  },
+  {
+    q: "Is notarization handled at your facility?",
+    a: "Yes. Notary services and licensing are completed on-site at our facility. For international adoptions, reports can be prepared to meet apostille requirements so you are not chasing down third-party notary services."
+  },
+  {
+    q: "How much does the evaluation cost?",
+    a: "The evaluation is $900 per parent. This flat fee covers the clinical interview, psychological testing, collateral review, the written report, and on-site notarization."
+  },
+  {
+    q: "Is there a waitlist?",
+    a: "We are currently accepting new clients for adoption evaluations with no waitlist. We encourage you to schedule early, as agency and court timelines can be tight."
+  },
+  {
+    q: "Is the evaluation covered by insurance?",
+    a: "Adoption evaluations are self-pay only and are not covered by health insurance."
+  }
+];
 ---
 
 <ServiceLayout name="Adoption Evaluations | Twilight Psychology"
   description="Adoption evaluations in Kentucky"
-  metaDescription="Professional adoption evaluations in Kentucky. Comprehensive psychological assessments for prospective adoptive parents. Licensed psychologists providing thorough, compassionate evaluations."
+  metaDescription="Professional adoption evaluations in Kentucky. Comprehensive psychological assessments for prospective adoptive parents. Licensed psychologists providing thorough, compassionate evaluations for domestic and international adoptions."
 >
-    <section class="max-w-5xl mx-auto px-4 py-24">
-        <div class="theme-surface-2 p-12 rounded-[4rem] text-site-text border theme-border text-center relative overflow-hidden">
-            <div class="relative z-10">
-                <h2 class="font-serif text-3xl font-bold mb-4 tracking-tight text-site-text">Current Availability</h2>
-                <div class="flex flex-col md:flex-row justify-center gap-6 my-8">
-                    <div class="theme-surface-soft p-6 rounded-2xl border theme-border">
-                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 text-cta/70">Evaluations</p>
-                        <p class="text-lg font-semibold text-site-text">Accepting New Clients</p>
-                    </div>
-                    <div class="theme-surface-soft p-6 rounded-2xl border theme-border">
-                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 text-cta/70">Price</p>
-                        <p class="text-lg font-semibold text-site-sub/60 italic">$900 per parent</p>
-                    </div>
-                </div>
-                <p class="font-medium text-site-sub mb-10 max-w-xl mx-auto italic leading-relaxed text-sm">
-                    Dr. Cornett evaluates both the prospective adoptive parent(s) to determine if adoption is in the best interest of the child. 
-                    The evaluation process includes interviews, psychological testing, and collateral information gathering. 
-                    The goal is to provide a comprehensive assessment that helps inform adoption decisions and ensures the well-being of the child. 
-                </p>
-                <a href={WIDGET_LINK} class="inline-block px-10 py-4 bg-cta/90 text-cta-fg font-bold rounded-full hover:bg-cta transition-all">
-                    Schedule an Intake
-                </a>
-            </div>
+
+  <!-- Hero -->
+  <section class="relative pt-36 pb-28 px-4 border-b theme-border overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">Family Formation</span>
+      <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-8 tracking-tight">
+        Adoption <span class="text-cta">Evaluations</span>
+      </h1>
+      <p class="text-site-sub text-lg leading-relaxed max-w-2xl mb-10">
+        Compassionate and thorough psychological evaluations for prospective adoptive parents. We support domestic and international adoptions, with on-site notarization for a fully consolidated process.
+      </p>
+      <a href="#get-started" class="text-sand font-black border-b border-cta/50 pb-1 hover:text-cta transition-colors">
+        Get started today ↓
+      </a>
+    </div>
+  </section>
+
+  <!-- Main content + sidebar -->
+  <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 mt-20">
+
+    <div class="lg:col-span-2 space-y-12">
+
+      <section class="theme-surface-soft backdrop-blur-md border theme-border p-10 rounded-[2.5rem]">
+        <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-6 tracking-tighter leading-tight">
+          The Best Interest <span class="text-cta">of the Child.</span>
+        </h2>
+        <div class="space-y-6 text-site-text leading-relaxed text-lg">
+          <p>
+            Adoption evaluations are required by domestic courts and international adoption authorities to assess the psychological fitness and parenting readiness of prospective adoptive families. Dr. Cornett conducts all evaluations personally, bringing a thorough and compassionate approach to every family's unique path.
+          </p>
+          <p>
+            The evaluation covers clinical interviews, standardized psychological testing, and collateral information gathering. The resulting report is written to the standard required by adoption agencies, courts, and international authorities—and <strong>notarization is completed on-site</strong> at our facility, so you have everything you need in one place.
+          </p>
+          <a href="/resources/faq" class="inline-block text-cta font-black text-sm border-b-2 border-cta/20 hover:border-cta transition-all pb-1">
+            Learn more about our evaluation process →
+          </a>
         </div>
-    </section>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-black text-site-text mb-10">What the Evaluation Covers</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {evaluationAreas.map((item, idx) => (
+            <div class="group p-8 theme-surface-soft border theme-border rounded-4xl hover:border-cta/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-cta/10 flex items-center justify-center mb-6 border border-cta/20 group-hover:bg-cta transition-all">
+                <span class="text-cta group-hover:text-cta-fg font-black text-sm">{String(idx + 1).padStart(2, '0')}</span>
+              </div>
+              <h3 class="font-serif text-site-text font-black mb-2">{item.title}</h3>
+              <p class="text-site-sub/60 text-sm leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- International callout -->
+      <section class="theme-surface-2 border border-cta/20 p-12 rounded-[3rem] relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-12 text-8xl text-site-text/5 font-black select-none">INTL</div>
+        <div class="max-w-2xl relative z-10">
+          <h2 class="font-serif text-3xl font-black text-site-text mb-6">International Adoptions Covered</h2>
+          <p class="text-site-text text-lg leading-relaxed mb-8">
+            Our evaluations meet the documentation standards required by adoption agencies and authorities across numerous countries. Reports are formatted for international submission and can be apostille-ready with on-site notarization.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {countries.map(country => (
+              <span class="px-3 py-1.5 text-xs font-bold text-site-text/70 theme-surface-soft border theme-border rounded-full">
+                {country}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Clinician card -->
+      <div class="flex flex-col md:flex-row items-center gap-10 p-10 theme-surface-2 border theme-border rounded-[3rem]">
+        <div class="w-48 h-48 shrink-0 rounded-2xl overflow-hidden border-2 border-cta/20 shadow-2xl">
+          <Image
+            src={heatherPhoto}
+            alt="Dr. Heather Cornett"
+            class="w-full h-full object-cover grayscale"
+          />
+        </div>
+        <div class="space-y-4 text-center md:text-left">
+          <p class="text-cta font-black text-[10px] uppercase tracking-[0.4em]">Evaluating Clinician</p>
+          <h3 class="font-serif text-3xl font-black text-site-text">Dr. Heather Cornett, <span class="text-sand italic">Psy.D.</span></h3>
+          <p class="text-site-sub leading-relaxed">
+            Dr. Cornett leads all adoption evaluations at Twilight Psychology, bringing clinical expertise and a thorough, family-centered approach to every assessment.
+          </p>
+          <a href="/about/clinicians/heather-cornett" class="inline-block text-xs font-black uppercase text-cta hover:text-site-text transition-colors">
+            Read Full Bio →
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="space-y-8">
+      <div class="theme-surface-soft border theme-border p-8 rounded-[2.5rem]">
+        <h3 class="font-serif text-xl font-black text-site-text mb-4">Current Availability</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">Waitlist</span>
+              <span class="text-site-sub/60">Accepting new clients now</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">Fee</span>
+              <span class="text-site-sub/60">$900 per parent</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">Notary Services</span>
+              <span class="text-site-sub/60">Completed on-site at our facility</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">International</span>
+              <span class="text-site-sub/60">Reports formatted for international agencies</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="theme-surface-soft border theme-border p-10 rounded-[2.5rem] text-center">
+        <h3 class="font-serif text-2xl font-black text-site-text mb-4 tracking-tight">Schedule an Intake</h3>
+        <p class="text-site-sub/60 text-sm mb-8">We are currently accepting new clients for adoption evaluations.</p>
+        <a href={WIDGET_LINK} class="block w-full py-4 bg-sand text-cta-fg font-black rounded-full hover:bg-white transition-all shadow-lg shadow-sand/10">
+          Request Appointment
+        </a>
+      </div>
+
+      <div class="p-8 bg-cta rounded-[2.5rem] text-cta-fg">
+        <h4 class="font-serif font-black uppercase text-[10px] tracking-widest mb-2">Billing & Insurance</h4>
+        <p class="text-sm font-bold leading-tight">Adoption evaluations are self-pay only and are not covered by health insurance.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 py-24">
+    <h2 class="font-serif text-3xl font-black text-site-text mb-12 text-center tracking-tight">
+      Frequently Asked <span class="text-sand italic text-4xl">Questions</span>
+    </h2>
+    <div class="space-y-6">
+      {faqs.map(faq => (
+        <div class="p-8 theme-surface-soft border theme-border rounded-3xl group hover:border-cta/30 transition-all">
+          <h3 class="font-serif text-sand font-black mb-3 text-lg">{faq.q}</h3>
+          <p class="text-site-sub/50 text-sm leading-relaxed">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="max-w-7xl mx-auto px-4 mt-8 mb-16">
+    <div class="p-12 theme-surface-2 border theme-border rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      <div class="max-w-md">
+        <h2 class="font-serif text-3xl font-black text-site-text mb-4 italic">Related Evaluations</h2>
+        <p class="text-site-sub/60">Other evaluation services offered at Twilight Psychology.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/specialities/guardianship-evaluations" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">
+          Guardianship Evaluations
+        </a>
+        <a href="/specialities/esa-evaluations" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">
+          ESA Evaluations
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started -->
+  <section id="get-started" class="max-w-7xl mx-auto px-4 py-24 text-center">
+    <div class="theme-surface-2 p-16 rounded-[4rem] text-site-text border theme-border">
+      <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">Next Step</span>
+      <h2 class="font-serif text-3xl md:text-5xl font-black mb-6 tracking-tight text-site-text">
+        Ready to Begin the Adoption Process?
+      </h2>
+      <p class="text-lg font-medium mb-10 max-w-xl mx-auto text-site-sub leading-relaxed">
+        We are currently accepting new clients. Schedule an intake with Dr. Cornett and we will guide you through everything — from the clinical evaluation to notarized documentation ready for your agency or court.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={WIDGET_LINK} class="inline-block px-10 py-4 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all shadow-lg shadow-cta/20">
+          Request an Appointment
+        </a>
+        <a href="/resources/new-client" class="inline-block px-10 py-4 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">
+          Steps for New Clients
+        </a>
+      </div>
+    </div>
+  </section>
+
 </ServiceLayout>

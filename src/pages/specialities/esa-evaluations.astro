@@ -3,35 +3,232 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
 import { WIDGET_LINK } from '../../data/resource';
 
+const evaluationComponents = [
+  {
+    title: "Mental Health Assessment",
+    detail: "A clinical interview and review of your psychological history to document a qualifying disability as defined under the Fair Housing Act and related laws."
+  },
+  {
+    title: "Therapeutic Necessity",
+    detail: "We determine whether an emotional support animal provides direct therapeutic benefit for your specific mental health condition—a legal requirement for a valid ESA letter."
+  },
+  {
+    title: "Housing Documentation",
+    detail: "FHA-compliant letters written on official letterhead for landlords, property managers, and housing authorities to support reasonable accommodation requests."
+  },
+  {
+    title: "Renewal Evaluations",
+    detail: "ESA letters typically require annual renewal. We make the renewal process straightforward for existing clients, prioritizing continuity of care."
+  }
+];
+
+const faqs = [
+  {
+    q: "What is an Emotional Support Animal (ESA)?",
+    a: "An ESA is an animal that provides comfort and emotional support to a person with a diagnosed psychiatric disability. Unlike service animals, ESAs do not require specialized training—their presence itself provides therapeutic benefit."
+  },
+  {
+    q: "How is an ESA different from a service animal?",
+    a: "Service animals are trained to perform specific tasks and are covered under the ADA, granting broad public access rights. ESAs are covered under the Fair Housing Act for housing accommodations. ESAs do not have the same public access rights as service animals."
+  },
+  {
+    q: "What does the evaluation involve?",
+    a: "The evaluation is a clinical assessment conducted by a licensed psychologist. It includes a clinical interview, review of relevant mental health history, and a determination of whether your condition qualifies and whether an ESA is therapeutically indicated."
+  },
+  {
+    q: "Will my landlord accept the letter?",
+    a: "Our ESA letters are written by licensed psychologists on official letterhead and are compliant with the Fair Housing Act. They include the clinician's license number and are structured to meet the documentation standards most landlords and housing providers require."
+  },
+  {
+    q: "How long does the evaluation take?",
+    a: "Most ESA evaluations are completed in a single session. Once the evaluation is complete, your letter is typically prepared and delivered within one to two business days."
+  },
+  {
+    q: "Is the evaluation covered by insurance?",
+    a: "ESA evaluations are self-pay only and are not typically covered by health insurance. The flat fee is $250 per evaluation, with no hidden charges."
+  }
+];
 ---
 
 <ServiceLayout name="ESA Evaluations | Twilight Psychology"
   description="Emotional Support Animal (ESA) evaluations in Kentucky"
   metaDescription="Professional Emotional Support Animal (ESA) evaluations in Kentucky. Licensed psychologists providing comprehensive assessments for housing and travel accommodations. Schedule your ESA evaluation today."
 >
-    <section class="max-w-5xl mx-auto px-4 py-24">
-        <div class="theme-surface-2 p-12 rounded-[4rem] text-site-text border theme-border text-center relative overflow-hidden">
-            <div class="relative z-10">
-                <h2 class="font-serif text-3xl font-bold mb-4 tracking-tight text-site-text">Current Availability</h2>
-                <div class="flex flex-col md:flex-row justify-center gap-6 my-8">
-                    <div class="theme-surface-soft p-6 rounded-2xl border theme-border">
-                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 text-cta/70">Evaluations</p>
-                        <p class="text-lg font-semibold text-site-text">New clients waitlist is 2 weeks</p>
-                    </div>
-                    <div class="theme-surface-soft p-6 rounded-2xl border theme-border">
-                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 text-cta/70">Price</p>
-                        <p class="text-lg font-semibold text-site-sub/60 italic">$250 per evaluation</p>
-                    </div>
-                </div>
-                <p class="font-medium text-site-sub mb-10 max-w-xl mx-auto italic leading-relaxed text-sm">
-                    Please note that our current availability is limited, and we are accepting new clients for ESA evaluations. 
-                    We encourage you to schedule an intake as soon as possible to secure your spot. Existing clients seeking ESA 
-                    evaluations will be prioritized and accommodated based on their current treatment plan and needs. 
-                </p>
-                <a href={WIDGET_LINK} class="inline-block px-10 py-4 bg-cta/90 text-cta-fg font-bold rounded-full hover:bg-cta transition-all">
-                    Schedule an Intake
-                </a>
-            </div>
+
+  <!-- Hero -->
+  <section class="relative pt-36 pb-28 px-4 border-b theme-border overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">Mental Health Documentation</span>
+      <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-8 tracking-tight">
+        ESA <span class="text-cta">Evaluations</span>
+      </h1>
+      <p class="text-site-sub text-lg leading-relaxed max-w-2xl mb-10">
+        Licensed psychologists providing comprehensive Emotional Support Animal evaluations for housing accommodations. We assess your clinical need and provide FHA-compliant documentation accepted by landlords and housing authorities.
+      </p>
+      <a href="#get-started" class="text-sand font-black border-b border-cta/50 pb-1 hover:text-cta transition-colors">
+        Get started today ↓
+      </a>
+    </div>
+  </section>
+
+  <!-- Main content + sidebar -->
+  <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 mt-20">
+
+    <div class="lg:col-span-2 space-y-12">
+
+      <section class="theme-surface-soft backdrop-blur-md border theme-border p-10 rounded-[2.5rem]">
+        <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-6 tracking-tighter leading-tight">
+          Clinically Grounded, <span class="text-cta">Legally Sound.</span>
+        </h2>
+        <div class="space-y-6 text-site-text leading-relaxed text-lg">
+          <p>
+            An Emotional Support Animal letter is only valid when it comes from a <strong>licensed mental health professional</strong> who has conducted a genuine clinical evaluation. Online ESA letter mills that issue letters without a real assessment are not compliant with federal housing law and can be rejected by landlords.
+          </p>
+          <p>
+            At Twilight Psychology, our ESA evaluations are conducted by licensed psychologists who assess your specific mental health condition, review your history, and determine whether an ESA is therapeutically indicated for your situation. Our letters meet the evidentiary standard required under the <strong>Fair Housing Act</strong>.
+          </p>
+          <p>
+            Existing clients seeking ESA evaluations are prioritized and accommodated within their current treatment plan.
+          </p>
+          <a href="/resources/faq" class="inline-block text-cta font-black text-sm border-b-2 border-cta/20 hover:border-cta transition-all pb-1">
+            Learn more about our evaluation process →
+          </a>
         </div>
-    </section>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-black text-site-text mb-10">What the Evaluation Covers</h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {evaluationComponents.map((item, idx) => (
+            <div class="group p-8 theme-surface-soft border theme-border rounded-4xl hover:border-cta/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-cta/10 flex items-center justify-center mb-6 border border-cta/20 group-hover:bg-cta transition-all">
+                <span class="text-cta group-hover:text-cta-fg font-black text-sm">{String(idx + 1).padStart(2, '0')}</span>
+              </div>
+              <h3 class="font-serif text-site-text font-black mb-2">{item.title}</h3>
+              <p class="text-site-sub/60 text-sm leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- FHA callout -->
+      <section class="theme-surface-2 border border-cta/20 p-12 rounded-[3rem] relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-12 text-8xl text-site-text/5 font-black select-none">FHA</div>
+        <div class="max-w-2xl relative z-10">
+          <h2 class="font-serif text-3xl font-black text-site-text mb-6">Your Fair Housing Rights</h2>
+          <p class="text-site-text text-lg leading-relaxed">
+            Under the <strong>Fair Housing Act</strong>, people with disabilities have the right to request reasonable accommodations from housing providers—including the right to keep an ESA in a no-pets building or to waive a pet deposit.
+          </p>
+          <p class="mt-4 text-site-text text-lg leading-relaxed">
+            A valid ESA letter from a licensed clinician is the cornerstone of that accommodation request. Our documentation is written to clearly convey your clinical need and the therapeutic role your ESA plays in your treatment.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="space-y-8">
+      <div class="theme-surface-soft border theme-border p-8 rounded-[2.5rem]">
+        <h3 class="font-serif text-xl font-black text-site-text mb-4">Current Availability</h3>
+        <ul class="space-y-4 text-sm">
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">Waitlist</span>
+              <span class="text-site-sub/60">Approx. 2 weeks for new clients</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">Flat Fee</span>
+              <span class="text-site-sub/60">$250 per evaluation</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">Delivery</span>
+              <span class="text-site-sub/60">Letter provided within 1–2 business days after evaluation</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-cta font-black mt-0.5">✓</span>
+            <div>
+              <span class="font-bold text-site-text block">Existing Clients</span>
+              <span class="text-site-sub/60">Prioritized within current treatment plan</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="theme-surface-soft border theme-border p-10 rounded-[2.5rem] text-center">
+        <h3 class="font-serif text-2xl font-black text-site-text mb-4 tracking-tight">Schedule an Intake</h3>
+        <p class="text-site-sub/60 text-sm mb-8">Secure your spot — availability is limited.</p>
+        <a href={WIDGET_LINK} class="block w-full py-4 bg-sand text-cta-fg font-black rounded-full hover:bg-white transition-all shadow-lg shadow-sand/10">
+          Request Appointment
+        </a>
+      </div>
+
+      <div class="p-8 bg-cta rounded-[2.5rem] text-cta-fg">
+        <h4 class="font-serif font-black uppercase text-[10px] tracking-widest mb-2">Billing & Insurance</h4>
+        <p class="text-sm font-bold leading-tight">ESA evaluations are self-pay only and are not covered by health insurance.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-4xl mx-auto px-4 py-24">
+    <h2 class="font-serif text-3xl font-black text-site-text mb-12 text-center tracking-tight">
+      Frequently Asked <span class="text-sand italic text-4xl">Questions</span>
+    </h2>
+    <div class="space-y-6">
+      {faqs.map(faq => (
+        <div class="p-8 theme-surface-soft border theme-border rounded-3xl group hover:border-cta/30 transition-all">
+          <h3 class="font-serif text-sand font-black mb-3 text-lg">{faq.q}</h3>
+          <p class="text-site-sub/50 text-sm leading-relaxed">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Related services -->
+  <section class="max-w-7xl mx-auto px-4 mt-8 mb-16">
+    <div class="p-12 theme-surface-2 border theme-border rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      <div class="max-w-md">
+        <h2 class="font-serif text-3xl font-black text-site-text mb-4 italic">Related Services</h2>
+        <p class="text-site-sub/60">ESA evaluations often go hand-in-hand with ongoing mental health care.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/services/therapy" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">
+          Therapy
+        </a>
+        <a href="/services/psychological-evaluations" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">
+          Psychological Evaluations
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Started -->
+  <section id="get-started" class="max-w-7xl mx-auto px-4 py-24 text-center">
+    <div class="theme-surface-2 p-16 rounded-[4rem] text-site-text border theme-border">
+      <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">Next Step</span>
+      <h2 class="font-serif text-3xl md:text-5xl font-black mb-6 tracking-tight text-site-text">
+        Ready to Get Your ESA Letter?
+      </h2>
+      <p class="text-lg font-medium mb-10 max-w-xl mx-auto text-site-sub leading-relaxed">
+        Schedule an intake today. New clients are seen within approximately 2 weeks and your letter will be delivered within 1–2 business days after your evaluation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={WIDGET_LINK} class="inline-block px-10 py-4 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all shadow-lg shadow-cta/20">
+          Request an Appointment
+        </a>
+        <a href="/resources/new-client" class="inline-block px-10 py-4 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">
+          Steps for New Clients
+        </a>
+      </div>
+    </div>
+  </section>
+
 </ServiceLayout>
