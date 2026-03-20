@@ -154,7 +154,7 @@ const qualityCareItems = [
         <div class="care-two-panel">
           <!-- Left: selectable tab list -->
           <nav class="care-tab-list" aria-label="Quality care highlights" role="tablist">
-            <p class="care-hint">Select a topic to learn more</p>
+            <p class="care-hint">Select to learn more</p>
             {
               qualityCareItems.map((item, idx) => (
                 <button
@@ -550,25 +550,23 @@ const qualityCareItems = [
     }
   }
 
-  /* ── Care two-panel (Scrapy-style interactive tabs) ── */
+  /* ── Care two-panel (highlight blocks + display panel) ── */
 
   .care-two-panel {
     display: grid;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 2rem;
-    overflow: hidden;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.5), rgba(2, 6, 23, 0.7));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    gap: 1.5rem;
+    align-items: start;
   }
 
   @media (min-width: 1024px) {
     .care-two-panel {
       grid-template-columns: minmax(240px, 5fr) 7fr;
+      gap: 2.5rem;
     }
   }
 
   .care-hint {
-    padding: 1.25rem 1.5rem 0.5rem;
+    padding: 0 0.25rem 0.75rem;
     font-size: 0.6rem;
     font-weight: 800;
     letter-spacing: 0.28em;
@@ -577,14 +575,9 @@ const qualityCareItems = [
   }
 
   .care-tab-list {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  @media (min-width: 1024px) {
-    .care-tab-list {
-      border-bottom: none;
-      border-right: 1px solid rgba(255, 255, 255, 0.06);
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .care-tab {
@@ -592,22 +585,19 @@ const qualityCareItems = [
     align-items: center;
     gap: 0.75rem;
     width: 100%;
-    padding: 1rem 1.5rem;
+    padding: 0.875rem 1.25rem;
     text-align: left;
-    border: none;
-    border-left: 2px solid transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-left: 3px solid transparent;
+    border-radius: 0.875rem;
+    background: rgba(15, 23, 42, 0.35);
     cursor: pointer;
-    transition: background 0.15s ease, border-left-color 0.15s ease;
-  }
-
-  .care-tab:last-child {
-    border-bottom: none;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
   }
 
   .care-tab:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(2px);
   }
 
   .care-tab-icon {
@@ -628,8 +618,9 @@ const qualityCareItems = [
   }
 
   .care-tab.active {
+    border-color: rgba(165, 180, 252, 0.2);
     border-left-color: var(--color-cta);
-    background: rgba(165, 180, 252, 0.05);
+    background: rgba(165, 180, 252, 0.09);
   }
 
   .care-tab.active .care-tab-icon {
@@ -648,6 +639,10 @@ const qualityCareItems = [
   .care-panels {
     display: grid;
     min-height: 22rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+    background: rgba(15, 23, 42, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .care-panel {
@@ -742,18 +737,10 @@ const qualityCareItems = [
     background: rgba(100, 116, 139, 0.35);
   }
 
-  :root.light .care-two-panel {
-    border-color: rgba(100, 116, 139, 0.28);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(238, 242, 255, 0.78));
-    box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.25);
-  }
-
-  :root.light .care-tab-list {
-    border-color: rgba(100, 116, 139, 0.22);
-  }
-
   :root.light .care-tab {
-    border-bottom-color: rgba(100, 116, 139, 0.18);
+    border-color: rgba(100, 116, 139, 0.2);
+    border-left-color: transparent;
+    background: rgba(255, 255, 255, 0.7);
   }
 
   :root.light .care-tab:hover:not(.active) {
@@ -761,7 +748,15 @@ const qualityCareItems = [
   }
 
   :root.light .care-tab.active {
-    background: rgba(79, 70, 229, 0.12);
+    border-color: rgba(79, 70, 229, 0.25);
+    border-left-color: var(--color-cta);
+    background: rgba(79, 70, 229, 0.1);
+  }
+
+  :root.light .care-panels {
+    border-color: rgba(100, 116, 139, 0.2);
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.2);
   }
 
   :root.light .care-hint,
