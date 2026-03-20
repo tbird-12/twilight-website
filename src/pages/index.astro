@@ -106,7 +106,7 @@ const qualityCareItems = [
               href="/catalog"
               class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
             >
-              Our Services
+              Explore Our Services
             </a>
             <a
               href={REFERRAL_LINK}
@@ -114,7 +114,7 @@ const qualityCareItems = [
               rel="noopener noreferrer"
               class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-site-text border border-button-border font-black rounded-full theme-hover-surface transition-all"
             >
-              Client Referral
+              Submit Client Referral
             </a>
           </div>
 
@@ -127,31 +127,15 @@ const qualityCareItems = [
         <aside class="relative z-10">
           <div class="homepage-feature-card rounded-4xl border theme-border p-6 sm:p-8 backdrop-blur-xl shadow-2xl shadow-slate-950/30">
             <p class="text-[11px] font-black uppercase tracking-[0.35em] text-site-sub/80">Twilight Psychology by Numbers</p>
-            <div class="mt-6 space-y-5">
+            <div class="mt-8 space-y-1">
               <div class="homepage-stat-card">
-                <span class="homepage-stat-kicker">1</span>
-                <div>
-                  <h2 class="text-2xl font-serif font-black text-site-text"><span class="text-cta">2000+</span> Evaluations</h2>
-                  <p class="mt-2 text-sm leading-6 text-site-sub"> Dr. Cornett has supervised and conducted over 2000 evaluations, providing comprehensive insights and support.</p>  
-                </div>
+                <h2 class="text-3xl sm:text-4xl font-serif font-black text-site-text leading-tight tracking-tight"><span class="text-cta">2000+</span> Evaluations</h2>
               </div>
               <div class="homepage-stat-card">
-                <span class="homepage-stat-kicker">2</span>
-                <div>
-                  <h2 class="text-2xl font-serif font-black text-site-text"><span class="text-cta">8+</span> Years Experience</h2>
-                  <p class="mt-2 text-sm leading-6 text-site-sub">
-                    We have over 8 years of experience in providing neuro-affirming care, ensuring each client receives personalized and effective support.
-                  </p>
-                </div>
+                <h2 class="text-3xl sm:text-4xl font-serif font-black text-site-text leading-tight tracking-tight"><span class="text-cta">8+</span> Years Experience</h2>
               </div>
               <div class="homepage-stat-card">
-                <span class="homepage-stat-kicker">3</span>
-                <div>
-                  <h2 class="text-2xl font-serif font-black text-site-text"><span class="text-cta">14+</span> Insurance Panels</h2>
-                  <p class="mt-2 text-sm leading-6 text-site-sub">
-                    We are part of over 14 insurance panels, making it easier for clients to access the care they need.
-                  </p>
-                </div>
+                <h2 class="text-3xl sm:text-4xl font-serif font-black text-site-text leading-tight tracking-tight"><span class="text-cta">14+</span> Insurance Panels</h2>
               </div>
             </div>
           </div>
@@ -471,31 +455,13 @@ const qualityCareItems = [
   }
 
   .homepage-stat-card {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-    align-items: flex-start;
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .homepage-stat-card:first-of-type {
     border-top: 0;
-    padding-top: 0;
-  }
-
-  .homepage-stat-kicker {
-    display: inline-flex;
-    width: 2.5rem;
-    height: 2.5rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    background: rgba(165, 180, 252, 0.14);
-    color: var(--color-site-text);
-    font-size: 0.875rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    padding-top: 0.25rem;
   }
 
   .homepage-section-label {
