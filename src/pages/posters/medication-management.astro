@@ -1,0 +1,476 @@
+---
+import logo from '../../assets/images/logo.png';
+import nicolaPhoto from '../../assets/images/staff/nicola-allen.png';
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medication Management Poster | Twilight Psychology</title>
+    <style>
+      :root {
+        --ink: #0b1220;
+        --muted: #334155;
+        --accent: #0f766e;
+        --accent-soft: #e6f7f4;
+        --line: #dde5ea;
+        --paper: #ffffff;
+        --lavender-ink: #8b5cf6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+        background:
+          radial-gradient(circle at 12% 8%, #e8faf6 0%, transparent 22%),
+          radial-gradient(circle at 92% 24%, #eef4ff 0%, transparent 25%),
+          linear-gradient(180deg, #f8fafc 0%, #f2f7f9 100%);
+        color: var(--ink);
+      }
+
+      .sheet {
+        width: min(900px, 100% - 2rem);
+        margin: 1.5rem auto;
+        background:
+          linear-gradient(165deg, rgba(230, 247, 244, 0.45) 0%, rgba(255, 255, 255, 0) 30%),
+          var(--paper);
+        border: 0;
+        padding: 2.4rem;
+        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sheet::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%238b5cf6' stroke-opacity='0.16' stroke-width='1.2'%3E%3Cpath d='M36 212c12-18 14-36 8-56'/%3E%3Cpath d='M44 168c8 2 12 8 14 14'/%3E%3Cpath d='M39 152c7 1 12 6 14 11'/%3E%3Cpath d='M34 137c7 2 12 7 14 12'/%3E%3Cpath d='M29 121c7 1 12 6 14 11'/%3E%3Cpath d='M160 224c9-16 9-31 3-47'/%3E%3Cpath d='M163 187c7 2 10 7 12 12'/%3E%3Cpath d='M158 173c6 1 10 5 12 10'/%3E%3Cpath d='M153 159c6 1 10 5 12 10'/%3E%3Ccircle cx='92' cy='74' r='18'/%3E%3Ccircle cx='92' cy='74' r='9'/%3E%3Cpath d='M82 74h20M92 64v20M85 67l14 14M99 67L85 81'/%3E%3Ccircle cx='196' cy='56' r='14'/%3E%3Cpath d='M188 56h16M196 48v16M190 50l12 12M202 50l-12 12'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 240px 240px;
+        background-repeat: repeat;
+        opacity: 0.17;
+      }
+
+      .sheet::after {
+        content: "";
+        position: absolute;
+        top: -5rem;
+        right: -5rem;
+        width: 14rem;
+        height: 14rem;
+        border-radius: 9999px;
+        background: radial-gradient(circle, rgba(15, 118, 110, 0.1), rgba(15, 118, 110, 0));
+        pointer-events: none;
+      }
+
+      .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .masthead {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+
+      .brand img {
+        width: 3.2rem;
+        height: 3.2rem;
+        object-fit: contain;
+      }
+
+      .brand-text {
+        font-size: 0.92rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .chip {
+        display: inline-block;
+        border: 1px solid #bfe8df;
+        background: var(--accent-soft);
+        color: #0a5a52;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 0.28rem 0.55rem;
+      }
+
+      .eyebrow {
+        margin: 1rem 0 0;
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0.45rem 0 0.5rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.1rem, 5.1vw, 3.5rem);
+        line-height: 1.06;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.02rem;
+        max-width: 46ch;
+      }
+
+      .rule {
+        height: 0;
+        margin: 1rem 0;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .hero-grid {
+        margin-top: 1.15rem;
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 1.2rem;
+        align-items: stretch;
+      }
+
+      .provider {
+        border: 0;
+        background: linear-gradient(180deg, #f7fffd, #f8fbff);
+        padding: 1.15rem;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        border-radius: 0.9rem;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+      }
+
+      .provider-photo {
+        width: 5.4rem;
+        height: 5.4rem;
+        border-radius: 9999px;
+        object-fit: cover;
+        border: 3px solid #cfece6;
+        flex-shrink: 0;
+      }
+
+      .provider-kicker {
+        margin: 0;
+        font-size: 0.62rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #0a5a52;
+      }
+
+      .provider-name {
+        margin: 0.2rem 0 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+
+      .provider-role {
+        margin: 0.2rem 0 0;
+        font-size: 0.86rem;
+        color: var(--muted);
+      }
+
+      .stat {
+        border: 0;
+        padding: 0.95rem 1rem;
+        border-left: 3px solid rgba(15, 118, 110, 0.35);
+        background: #fcfefe;
+        border-radius: 0.8rem;
+        box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+      }
+
+      .stat-label {
+        margin: 0;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .stat-value {
+        margin: 0.2rem 0 0;
+        font-size: 1.08rem;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.34rem;
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+      }
+
+      .detail-card {
+        border: 0;
+        background: #fcfefe;
+        padding: 0.95rem 1rem;
+        border-radius: 0.9rem;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.045);
+      }
+
+      .detail-title {
+        margin: 0;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .detail-list {
+        margin: 0.45rem 0 0;
+        padding: 0;
+        list-style: none;
+        columns: 1;
+      }
+
+      .detail-list li {
+        margin: 0 0 0.45rem;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+
+      .detail-list li strong {
+        color: var(--ink);
+      }
+
+      .detail-link {
+        color: #0a5a52;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .detail-link:hover {
+        text-decoration: underline;
+      }
+
+      ul {
+        margin: 0.75rem 0 0;
+        padding-left: 1.1rem;
+        columns: 2;
+        column-gap: 1.8rem;
+      }
+
+      li {
+        margin: 0 0 0.55rem;
+        color: var(--muted);
+        line-height: 1.45;
+        break-inside: avoid;
+      }
+
+      .footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding-top: 1.1rem;
+      }
+
+      .print-btn {
+        margin: 0 auto 2rem;
+        display: block;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+        padding: 0.55rem 0.9rem;
+        font-size: 0.9rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 640px) {
+        .sheet {
+          padding: 1.2rem;
+        }
+
+        .brand img {
+          width: 2.6rem;
+          height: 2.6rem;
+        }
+
+        .provider-photo {
+          width: 4.5rem;
+          height: 4.5rem;
+        }
+
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+
+        ul {
+          columns: 1;
+        }
+
+        .footer {
+          flex-direction: column;
+        }
+      }
+
+      @media print {
+        @page {
+          size: Letter portrait;
+          margin: 0.45in;
+        }
+
+        body {
+          background: #fff;
+          print-color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+
+        .print-btn {
+          display: none;
+        }
+
+        .sheet {
+          width: 100%;
+          margin: 0;
+          border: 0;
+          min-height: 10.1in;
+          break-inside: avoid;
+          box-shadow: none;
+          background: #fff;
+        }
+
+        .sheet::before {
+          opacity: 0.1;
+        }
+
+        .sheet::after {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+    <main class="sheet">
+      <div class="content">
+      <header class="masthead">
+        <div class="brand">
+          <img src={logo.src} alt="Twilight Psychology logo" />
+          <p class="brand-text">Twilight Psychology</p>
+        </div>
+        <span class="chip">Kentucky</span>
+      </header>
+
+      <p class="eyebrow">Psychiatric Care</p>
+      <h1>Medication Management</h1>
+      <p class="subtitle">Thoughtful psychiatric support for ADHD, anxiety, depression, and related concerns.</p>
+
+      <section class="hero-grid" aria-label="Provider and highlights">
+        <article class="provider">
+          <img class="provider-photo" src={nicolaPhoto.src} alt="Nicola Allen" />
+          <div>
+            <p class="provider-kicker">Lead Provider</p>
+            <p class="provider-name">Nicola Allen, MSN</p>
+            <p class="provider-role">Psychiatric Nurse Practitioner (PMHNP)</p>
+          </div>
+        </article>
+        <article class="stat">
+          <p class="stat-label">Care Model</p>
+          <p class="stat-value">Medication + therapy-informed follow-up planning</p>
+        </article>
+      </section>
+
+      <div class="rule"></div>
+
+      <section class="stats" aria-label="Key details">
+        <article class="stat">
+          <p class="stat-label">Current Waitlist</p>
+          <p class="stat-value">Immediate Openings</p>
+        </article>
+        <article class="stat">
+          <p class="stat-label">Insurance Accepted</p>
+          <p class="stat-value">Medicaid, Medicare, Most Commercial Plans</p>
+        </article>
+      </section>
+
+      <div class="rule"></div>
+
+      <section>
+        <h2>Contact &amp; Rates</h2>
+        <div class="details-grid" aria-label="Contact and pricing details">
+          <article class="detail-card">
+            <p class="detail-title">Office Contact</p>
+            <ul class="detail-list">
+              <li><strong>Address:</strong> 1040 Monarch St., Office 305, Lexington, KY 40513</li>
+              <li>
+                <strong>Phone:</strong>
+                <a class="detail-link" href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER_FORMATTED}</a>
+              </li>
+              <li>
+                <strong>Email:</strong>
+                <a class="detail-link" href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a>
+              </li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <p class="detail-title">Nicola Allen Rates</p>
+            <ul class="detail-list">
+              <li><strong>Medication Intake:</strong> $150</li>
+              <li><strong>Medication Follow-up:</strong> $80</li>
+              <li><strong>Medical Marijuana Consultation:</strong> $75</li>
+              <li><strong>Status:</strong> Medical marijuana consultations available</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <div class="footer">
+        <span>Kentucky-based care</span>
+        <span>Telehealth and in-person available</span>
+      </div>
+      </div>
+    </main>
+  </body>
+</html>
