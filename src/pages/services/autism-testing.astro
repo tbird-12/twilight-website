@@ -3,11 +3,6 @@ import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
 import { WIDGET_LINK } from '../../data/resource';
 
-const insurancePartners = [
-  "Traditional KY Medicaid", "Aetna Better Health", "Humana Healthy Horizons", 
-  "Passport by Molina", "UHC Community Plan", "Major Commercial Plans"
-];
-
 const evaluationSteps = [
   {
     title: "Clinical Intake",
@@ -102,18 +97,16 @@ const evaluationSteps = [
       <aside class="space-y-8">
         
         <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
-          <h3 class="font-serif text-xl font-black text-site-text mb-6">In-Network Support</h3>
-          <p class="text-xs text-site-sub/60 mb-6 leading-relaxed">
-            We are committed to ensuring our diagnostic expertise is accessible regardless of insurance type. We accept:
+          <h3 class="font-serif text-xl font-black text-site-text mb-6">Insurance Accepted</h3>
+          <p class="text-sm text-site-sub/60 leading-relaxed mb-4">
+            We accept KY Medicaid, Medicare, and most major commercial plans so testing remains accessible.
           </p>
-          <ul class="space-y-3">
-            {insurancePartners.map(plan => (
-              <li class="flex items-center gap-3 text-sm font-bold text-sand">
-                <span class="w-1.5 h-1.5 bg-cta rounded-full"></span>
-                {plan}
-              </li>
-            ))}
-          </ul>
+          <a
+            href="/resources/insurances-accepted"
+            class="text-cta font-black text-xs uppercase tracking-widest hover:text-site-text transition-colors"
+          >
+            View All Accepted Plans →
+          </a>
         </div>
 
         <div class="bg-cta p-10 rounded-[2.5rem] text-cta-fg shadow-2xl shadow-cta/10">
