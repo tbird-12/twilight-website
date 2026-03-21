@@ -43,6 +43,29 @@ const differentiators = [
   description="Get expert psychological evaluations for ADHD, Autism, and learning disorders, plus therapy and medication management. 
   Insurance accepted. Now accepting new clients in Kentucky and across 43+ states via PSYPACT."
 >
+  <!-- ══ Theme toggle ══ -->
+  <button
+    type="button"
+    data-theme-toggle
+    class="lp-theme-toggle"
+    aria-label="Toggle light/dark mode"
+  >
+    <svg class="lp-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"></circle>
+      <path d="M12 2v2"></path>
+      <path d="M12 20v2"></path>
+      <path d="m4.93 4.93 1.41 1.41"></path>
+      <path d="m17.66 17.66 1.41 1.41"></path>
+      <path d="M2 12h2"></path>
+      <path d="M20 12h2"></path>
+      <path d="m6.34 17.66-1.41 1.41"></path>
+      <path d="m19.07 4.93-1.41 1.41"></path>
+    </svg>
+    <svg class="lp-toggle-icon lp-toggle-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+    </svg>
+  </button>
+
   <!-- ════════════════ HERO ════════════════ -->
   <section class="lp-section lp-hero relative isolate overflow-hidden">
     <div class="lp-hero-glow" aria-hidden="true"></div>
@@ -88,7 +111,7 @@ const differentiators = [
         <!-- Trust bar -->
         <div class="lp-trust-bar mt-14 sm:mt-20 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-4">
           {differentiators.map((d) => (
-            <div class="flex flex-col items-center gap-1 min-w-[5rem]">
+            <div class="flex flex-col items-center gap-1 min-w-20">
               <Icon name={d.icon} class="w-5 h-5 text-icon" />
               <span class="text-xl sm:text-2xl font-serif font-black text-site-text">{d.stat}</span>
               <span class="text-[11px] font-semibold text-site-sub/70 uppercase tracking-wider">{d.label}</span>
@@ -306,7 +329,7 @@ const differentiators = [
   <!-- ════════════════ FINAL CTA ════════════════ -->
   <section class="lp-section lp-final-cta relative isolate overflow-hidden">
     <div class="mx-auto max-w-4xl px-5 py-20 sm:py-28">
-      <div class="lp-cta-card rounded-[2rem] border border-white/10 px-6 py-12 sm:px-12 sm:py-16 text-center">
+      <div class="lp-cta-card rounded-4xl border border-white/10 px-6 py-12 sm:px-12 sm:py-16 text-center">
         <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter mb-5">
           You Deserve Answers.
           <br class="hidden sm:block" />
@@ -578,4 +601,72 @@ const differentiators = [
       display: none;
     }
   }
+  /* ── Theme toggle ── */
+
+  .lp-theme-toggle {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 50;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    color: var(--color-site-sub);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .lp-theme-toggle:hover {
+    border-color: var(--color-cta);
+    color: var(--color-cta);
+  }
+
+  /* Sun icon visible in dark mode, moon in light mode */
+  .lp-toggle-moon {
+    display: none;
+  }
+
+  :root.light .lp-toggle-icon:not(.lp-toggle-moon) {
+    display: none;
+  }
+
+  :root.light .lp-toggle-moon {
+    display: block;
+  }
+
+  :root.light .lp-theme-toggle {
+    border-color: rgba(100, 116, 139, 0.25);
+    background: rgba(255, 255, 255, 0.7);
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const root = document.documentElement;
+
+    const getCurrentTheme = (): string => {
+      if (root.classList.contains('light')) return 'light';
+      return 'dark';
+    };
+
+    const applyTheme = (theme: string) => {
+      root.classList.remove('light', 'dark');
+      root.classList.add(theme);
+      root.style.colorScheme = theme;
+      localStorage.setItem('theme', theme);
+    };
+
+    document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+    });
+  });
+</script>
