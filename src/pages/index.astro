@@ -71,64 +71,54 @@ const qualityCareItems = [
       <div class="absolute inset-0 hidden md:block opacity-80" aria-hidden="true">
         <Fragment set:html={heroBg} />
       </div>
-      <div class="homepage-panel-inner mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.25fr_0.75fr]">
-        <div class="relative z-10 text-center lg:text-left">
-          <span
-            class="inline-block px-4 py-1.5 mb-8 text-[10px] font-black tracking-[0.3em] text-sand uppercase theme-surface-soft border theme-border rounded-full backdrop-blur"
-          >
-            Neuro-Affirming Care in KY
-          </span>
+      <div class="homepage-panel-inner relative z-10 mx-auto max-w-5xl text-center">
+        <h1
+          class="font-serif text-[2.25rem] sm:text-5xl md:text-7xl xl:text-8xl font-black text-site-text mb-4 sm:mb-8 tracking-tighter leading-[0.9]"
+        >
+          Answers You Deserve,
+          <br class="hidden sm:block" />
+          <span class="italic">Care&nbsp;</span>You Can Trust
+        </h1>
 
-          <h1
-            class="font-serif text-5xl md:text-7xl xl:text-8xl font-black text-site-text mb-8 tracking-tighter leading-[0.9]"
-          >
-            For 
-            <span class="italic">Every </span> Way of Being
-          </h1>
-
-          <p
-            class="max-w-2xl text-lg md:text-xl text-site-sub mb-12 leading-relaxed font-medium mx-auto lg:mx-0"
-          >
-          Receive expert-led psychological testing, therapy, and medication management from a team that specializes in what others might overlook. We are currently accepting new clients.
+        <p
+          class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-site-sub mb-8 sm:mb-12 leading-relaxed font-medium"
+        >
+          Whether you're seeking an evaluation for ADHD, Autism, or a learning disorder — or looking for therapy and medication support — our neuro-affirming team is here to help. Now accepting new clients.
         </p>
 
-          <div
-            class="flex flex-col md:flex-row gap-6 items-center justify-center lg:justify-start"
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center justify-center">
+          <a
+            href="/catalog"
+            class="w-full sm:w-auto px-10 py-3 sm:px-12 sm:py-4 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
           >
-            <a
-              href="/catalog"
-              class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
-            >
-              Explore Our Services
-            </a>
-            <a
-              href={REFERRAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="w-full px-10 py-4 md:w-72 lg:w-80 text-center bg-transparent text-site-text border border-button-border font-black rounded-full theme-hover-surface transition-all"
-            >
-              Submit Client Referral
-            </a>
-          </div>
-
+            Explore Our Services
+          </a>
+          <a
+            href={REFERRAL_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm font-bold text-site-sub hover:text-cta transition-colors underline underline-offset-4 decoration-site-sub/30 hover:decoration-cta/50"
+          >
+            Referring a client? Submit a referral &rarr;
+          </a>
         </div>
 
-        <aside class="relative z-10">
-          <div class="homepage-feature-card rounded-4xl border theme-border p-6 sm:p-8 backdrop-blur-xl shadow-2xl shadow-slate-950/30">
-            <p class="text-[11px] font-black uppercase tracking-[0.35em] text-site-sub/80">Expertise by Numbers</p>
-            <div class="mt-8 space-y-1">
-              <div class="homepage-stat-card">
-                <h2 class="text-3xl sm:text-4xl font-serif font-black text-site-text leading-tight tracking-tight"><span class="text-cta">2100<sup>+</sup></span> Evaluations</h2>
-              </div>
-              <div class="homepage-stat-card">
-                <h2 class="text-3xl sm:text-4xl font-serif font-black text-site-text leading-tight tracking-tight"><span class="text-cta">8<sup>+</sup></span> Years Experience</h2>
-              </div>
-              <div class="homepage-stat-card">
-                <h2 class="text-3xl sm:text-4xl font-serif font-black text-site-text leading-tight tracking-tight"><span class="text-cta">15<sup>+</sup></span> Insurance Panels</h2>
-              </div>
-            </div>
-          </div>
-        </aside>
+        <div class="homepage-trust-bar mt-8 sm:mt-16 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-3">
+          <span class="flex items-center gap-2">
+            <span class="text-xl sm:text-2xl font-serif font-black text-cta homepage-stat-value">2100<sup>+</sup></span>
+            <span class="text-xs sm:text-sm font-semibold text-site-sub/80">Evaluations</span>
+          </span>
+          <span class="hidden sm:block w-px h-6 bg-site-sub/20" aria-hidden="true"></span>
+          <span class="flex items-center gap-2">
+            <span class="text-xl sm:text-2xl font-serif font-black text-cta homepage-stat-value">8<sup>+</sup></span>
+            <span class="text-xs sm:text-sm font-semibold text-site-sub/80">Years Experience</span>
+          </span>
+          <span class="hidden sm:block w-px h-6 bg-site-sub/20" aria-hidden="true"></span>
+          <span class="flex items-center gap-2">
+            <span class="text-xl sm:text-2xl font-serif font-black text-cta homepage-stat-value">15<sup>+</sup></span>
+            <span class="text-xs sm:text-sm font-semibold text-site-sub/80">Insurance Panels</span>
+          </span>
+        </div>
       </div>
     </section>
 
@@ -364,14 +354,14 @@ const qualityCareItems = [
   .homepage-panel-hero {
     --homepage-chrome-offset: 6.5rem;
     background:
-      radial-gradient(circle at 15% 20%, rgba(223, 202, 170, 0.12), transparent 26%),
+      radial-gradient(circle at 15% 20%, rgba(45, 212, 191, 0.10), transparent 26%),
       linear-gradient(180deg, rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.92));
   }
 
   .homepage-panel-care {
     --homepage-chrome-offset: 6.5rem;
     background:
-      radial-gradient(circle at 20% 16%, rgba(223, 202, 170, 0.06), transparent 26%),
+      radial-gradient(circle at 20% 16%, rgba(45, 212, 191, 0.05), transparent 26%),
       linear-gradient(180deg, rgba(11, 19, 39, 0.93), rgba(8, 15, 32, 0.97));
   }
 
@@ -411,7 +401,7 @@ const qualityCareItems = [
     left: 8%;
     width: 14rem;
     height: 14rem;
-    background: rgba(223, 202, 170, 0.18);
+    background: rgba(45, 212, 191, 0.14);
     animation-delay: 1.8s;
   }
 
@@ -420,7 +410,7 @@ const qualityCareItems = [
     left: 0;
     width: 16rem;
     height: 16rem;
-    background: rgba(223, 202, 170, 0.12);
+    background: rgba(45, 212, 191, 0.10);
     animation-delay: 2.6s;
   }
 
@@ -476,7 +466,7 @@ const qualityCareItems = [
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, rgba(165, 180, 252, 0.08), transparent 40%, rgba(223, 202, 170, 0.06));
+    background: linear-gradient(160deg, rgba(165, 180, 252, 0.08), transparent 40%, rgba(45, 212, 191, 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -524,8 +514,13 @@ const qualityCareItems = [
     }
 
     .homepage-panel-inner {
-      padding-top: 3.75rem;
-      padding-bottom: 3.75rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .homepage-panel-hero .homepage-panel-inner {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
     }
 
     .homepage-section-label::before,
@@ -679,7 +674,7 @@ const qualityCareItems = [
   :root.light .homepage-panel-glow-bottom,
   :root.light .homepage-panel-glow-left,
   :root.light .homepage-panel-glow-right {
-    background: rgba(99, 102, 241, 0.16);
+    background: rgba(20, 184, 166, 0.14);
   }
 
   :root.light .homepage-panel {
@@ -770,8 +765,8 @@ const qualityCareItems = [
   document.addEventListener('DOMContentLoaded', () => {
     const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-care-tab]'));
     const panels = Array.from(document.querySelectorAll<HTMLElement>('[data-care-panel]'));
-    const statValues = Array.from(document.querySelectorAll<HTMLElement>('.homepage-stat-card .text-cta'));
-    const statsCard = document.querySelector<HTMLElement>('.homepage-feature-card');
+    const statValues = Array.from(document.querySelectorAll<HTMLElement>('.homepage-stat-value'));
+    const trustBar = document.querySelector<HTMLElement>('.homepage-trust-bar');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const setActiveTab = (activeIndex: number) => {
@@ -839,7 +834,7 @@ const qualityCareItems = [
       });
     };
 
-    if (statsCard && statCounterMeta.length > 0 && 'IntersectionObserver' in window) {
+    if (trustBar && statCounterMeta.length > 0 && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver(
         (entries, obs) => {
           entries.forEach((entry) => {
@@ -852,7 +847,7 @@ const qualityCareItems = [
         { threshold: 0.35 }
       );
 
-      observer.observe(statsCard);
+      observer.observe(trustBar);
     } else if (statCounterMeta.length > 0) {
       runStatCounters();
     }
