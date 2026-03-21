@@ -9,10 +9,11 @@ export const specialities = [
 ];
 
 export const services = [
+  { name: 'Psychological Evaluations', slug: 'psychological-evaluations', desc: 'Comprehensive psychological and diagnostic evaluations' },
   { name: 'Autism Testing', slug: 'autism-testing', desc: 'Comprehensive autism spectrum evaluations' },
   { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'Evidence-based ADHD assessments and diagnostics' },
-  { name: 'Medication Management', slug: 'medication-management', desc: 'Individualized psychiatric medication management' },
-  {name: 'Personality Testing', slug: 'personality-profiles', desc: 'In-depth personality and differential diagnostic assessments' },
-  { name: 'Psychological Evaluations', slug: 'psychological-evaluations', desc: 'Comprehensive psychological and diagnostic evaluations' },
   { name: 'Psychotherapy', slug: 'therapy', desc: 'Neuro-affirming therapy for teens and adults' },
+  { name: 'Medication Management', slug: 'medication-management', desc: 'Individualized psychiatric medication management' },
+  { name: 'Personality Testing', slug: 'personality-profiles', desc: 'In-depth personality and differential diagnostic assessments' },
+  { name: 'Disability Evaluations', slug: 'disability-evaluations', desc: 'Evaluations for disability benefits and accommodations' },
 ];

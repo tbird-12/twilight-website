@@ -1,0 +1,197 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import "../../styles/global.css";
+
+const requirements = [
+  {
+    title: "Photo ID",
+    detail: "A valid government-issued picture ID is required before your evaluation can begin.",
+  },
+  {
+    title: "Assistive Devices",
+    detail: "Bring your glasses, hearing aids, or any other assistive devices you regularly use.",
+  },
+  {
+    title: "Take Your Medications",
+    detail: "Take all prescribed medications as normal on the day of your appointment. You will not be seen if this requirement is not met.",
+  },
+  {
+    title: "Arrive On Time",
+    detail: "Arrive promptly. If you are more than 15 minutes late, we will be unable to assist you due to high appointment volume.",
+  },
+];
+---
+
+<ServiceLayout
+  name="SSA Consultative Evaluations | Twilight Psychology"
+  description="Social Security Administration consultative evaluations conducted by licensed psychologists. No cost to you — paid directly by the SSA."
+  metaDescription="SSA consultative psychological evaluations in Arizona. No cost to patients — billed directly to the Social Security Administration. Conducted by Dr. Mastikian, Dr. McGady, or Dr. Mansfield-Blair."
+>
+  <section class="relative py-24 px-4 text-center border-b border-white/5 overflow-hidden">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <span
+        class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full"
+      >
+        Social Security Administration
+      </span>
+      <h1
+        class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight"
+      >
+        Disability <span class="text-cta">Evaluations</span>
+      </h1>
+      <p
+        class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed"
+      >
+        Consultative psychological evaluations ordered by the SSA — at no cost to you.
+      </p>
+    </div>
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-slate-800/40 via-transparent to-transparent z-0"
+    >
+    </div>
+  </section>
+
+  <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 mt-20">
+    <div class="lg:col-span-2 space-y-12">
+
+      <section
+        class="bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]"
+      >
+        <h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">
+          What to Expect
+        </h2>
+        <div class="space-y-5 text-site-text leading-relaxed text-lg">
+          <p>
+            A Consultative Evaluation is a psychological assessment ordered by the <span class="text-cta">Social Security Administration (SSA)</span> as part of the disability determination process. The cost of this service is covered entirely by the SSA — there is no fee for you.
+          </p>
+          <p>
+            Your evaluation will typically take <strong class="text-site-text">30 minutes to one hour</strong>. If psychological testing is requested by the Department, this may require an additional one to two hours depending on the specific tests ordered.
+          </p>
+          <p>
+            The evaluation will be conducted by Dr. Mastikian, Dr. McGady, or Dr. Mansfield-Blair. Please note that while our doctors conduct the evaluation, the <em>disability examiner and their team</em> make the ultimate determination as to whether your claim is denied or accepted.
+          </p>
+          <p class="text-sm text-site-sub/70">
+            You may call our office to confirm your appointment. We do not return phone calls to confirm appointments.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-black text-site-text mb-10 tracking-tight">
+          Appointment Requirements
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {
+            requirements.map((item) => (
+              <div class="p-8 bg-white/5 border border-white/10 sm:border-white/5 rounded-3xl">
+                <div class="w-10 h-10 rounded-xl bg-cta sm:bg-slate-800/50 flex items-center justify-center mb-6 border border-white/5">
+                  <span class="text-cta-fg sm:text-cta text-xl">✦</span>
+                </div>
+                <h3 class="font-serif text-site-text font-black mb-2">{item.title}</h3>
+                <p class="text-site-sub/50 text-sm leading-relaxed">{item.detail}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="bg-white/3 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem]">
+        <h2 class="font-serif text-2xl font-black text-site-text mb-6 tracking-tight">
+          Late Arrivals & Rescheduling
+        </h2>
+        <div class="space-y-5 text-site-text leading-relaxed">
+          <p>
+            Due to the high volume of appointments scheduled, <strong class="text-site-text">we cannot accommodate arrivals more than 15 minutes late</strong>. You will be marked as a <span class="text-cta font-bold">"NO SHOW"</span> and will need to contact your Disability Evaluator to reschedule.
+          </p>
+          <p>
+            In some cases, the assigned doctor may offer in-house rescheduling depending on their schedule — but this is entirely at the doctor's discretion.
+          </p>
+          <p>
+            If you know in advance that you cannot make your appointment or are running late, please contact your Disability Examiner or our office as soon as possible:
+          </p>
+          <ul class="space-y-3 mt-4">
+            <li class="flex items-center gap-3 text-sm">
+              <span class="w-2 h-2 rounded-full bg-cta shrink-0"></span>
+              <span><strong class="text-site-text">Disability Examiner:</strong> <a href="tel:6027717100" class="text-cta hover:underline">602-771-7100</a></span>
+            </li>
+            <li class="flex items-center gap-3 text-sm">
+              <span class="w-2 h-2 rounded-full bg-cta shrink-0"></span>
+              <span><strong class="text-site-text">Twilight Psychology Office:</strong> <a href="tel:6239771869" class="text-cta hover:underline">623-977-1869</a></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="space-y-8">
+      <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+        <h3 class="font-serif text-xl font-black text-site-text mb-2">No Cost to You</h3>
+        <p class="text-site-sub/60 text-sm mb-6 leading-relaxed">
+          This evaluation is billed directly to the Social Security Administration. You will not be charged for this service.
+        </p>
+        <div class="p-5 bg-cta/10 border border-cta/20 rounded-2xl text-center">
+          <p class="text-3xl font-black text-cta">$0</p>
+          <p class="text-xs text-site-sub/60 uppercase tracking-widest mt-1 font-bold">Patient Cost</p>
+        </div>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+        <h3 class="font-serif text-xl font-black text-site-text mb-6">Important Numbers</h3>
+        <div class="space-y-4">
+          <div class="p-4 bg-white/5 rounded-2xl">
+            <p class="text-xs text-site-sub/60 uppercase tracking-widest font-bold mb-1">Disability Examiner</p>
+            <a href="tel:6027717100" class="text-cta font-black hover:underline">602-771-7100</a>
+          </div>
+          <div class="p-4 bg-white/5 rounded-2xl">
+            <p class="text-xs text-site-sub/60 uppercase tracking-widest font-bold mb-1">Our Office</p>
+            <a href="tel:6239771869" class="text-cta font-black hover:underline">623-977-1869</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 p-8 rounded-[2.5rem]">
+        <h3 class="font-serif text-xl font-black text-site-text mb-6">Related Services</h3>
+        <nav class="space-y-4">
+          <a
+            href="/services/psychological-evaluations"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all text-site-text text-sm font-bold group"
+          >
+            Psychological Evaluations <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+          <a
+            href="/specialities/guardianship-evaluations"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all text-site-text text-sm font-bold group"
+          >
+            Guardianship Evaluations <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+          <a
+            href="/specialities/esa-evaluations"
+            class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-all text-site-text text-sm font-bold group"
+          >
+            ESA Evaluations <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </nav>
+      </div>
+    </aside>
+  </div>
+
+  <section class="max-w-7xl mx-auto px-4 mt-32 mb-12">
+    <div
+      class="p-10 bg-linear-to-r from-cta/10 to-cta/10 border border-cta/20 rounded-[3rem] text-center"
+    >
+      <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+        Questions About Your Appointment?
+      </h2>
+      <p class="text-site-sub mb-8 max-w-2xl mx-auto">
+        If you were referred to us by the SSA and have questions about your scheduled evaluation, please don't hesitate to reach out to our office.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block px-8 py-3 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</ServiceLayout>
