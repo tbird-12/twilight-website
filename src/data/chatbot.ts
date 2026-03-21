@@ -72,14 +72,14 @@ export const chatbotTree: ChatTree = {
     ]
   },
   "final": {
-    "text": "Great! Let's talk to get you assigned to the right clinician.",
+    "text": "We'd like to connect you with the clinician best suited to your needs.",
     "type": "terminal",
     "action": "Get Intake Documents",
     "actionType": "link",
     "actionValue": WIDGET_LINK
   },
   "reject": {
-    "text": "We're sorry, but we cannot provide the requested service in your state.",
+    "text": "Unfortunately, we are unable to provide the requested service in your state at this time.",
     "type": "terminal",
     "action": "Email Support",
     "actionType": "email",
