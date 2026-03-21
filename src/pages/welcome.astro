@@ -1,87 +1,581 @@
 ---
 import LandingLayout from "../layouts/LandingLayout.astro";
 import "../styles/global.css";
+import { Icon } from "astro-icon/components";
 import logo from "../assets/images/logo.png";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS, WIDGET_LINK } from "../data/resource";
+import { providers } from "../data/staff";
+import { Image } from "astro:assets";
+
+const featuredProviders = providers.slice(0, 4);
+
+const services = [
+  {
+    icon: "mdi:head-cog-outline",
+    title: "Psychological Testing",
+    desc: "ADHD, Autism, learning disabilities, personality — comprehensive evaluations with most results in 7 days.",
+    link: "/services/psychological-evaluations",
+  },
+  {
+    icon: "mdi:medication-outline",
+    title: "Medication Management",
+    desc: "Psychiatric medication support from our in-house Nurse Practitioner. Most clients seen immediately.",
+    link: "/services/medication-management",
+  },
+  {
+    icon: "mdi:account-heart-outline",
+    title: "Therapy",
+    desc: "Evidence-based, neuro-affirming individual counseling for teens and adults.",
+    link: "/services/therapy",
+  },
+];
+
+const differentiators = [
+  { icon: "mdi:clock-fast", stat: "7 days", label: "Self-pay results turnaround" },
+  { icon: "mdi:shield-check-outline", stat: "15+", label: "Insurance panels accepted" },
+  { icon: "mdi:earth", stat: "43+", label: "States via PSYPACT" },
+  { icon: "mdi:calendar-check-outline", stat: "2,100+", label: "Evaluations completed" },
+];
 ---
 
 <LandingLayout
-  title="Expert Mental Health Care in Lexington, Kentucky | Twilight Psychology"
-  description="Twilight Psychology provides specialized mental health care in Lexington, Kentucky, including therapy, psychological evaluations, and medication management for new and returning clients."
+  title="Neuro-Affirming Psychological Testing & Therapy in Kentucky | Twilight Psychology"
+  description="Get expert psychological evaluations for ADHD, Autism, and learning disorders, plus therapy and medication management. 
+  Insurance accepted. Now accepting new clients in Kentucky and across 43+ states via PSYPACT."
 >
-  <section class="relative isolate overflow-hidden px-4 py-16 sm:py-20">
-    <div class="relative mx-auto max-w-5xl rounded-4xl border-4 border-icon bg-white/3 p-8 shadow-[0_10px_24px_-20px_rgba(15,23,42,0.85),inset_0_0_20px_rgba(180,83,9,0.15)] sm:p-10 lg:p-12">
-      <div class="relative flex flex-col items-center gap-6 text-center sm:gap-8">
-        <div class="mx-auto shrink-0">
-          <div class="rounded-4xl border border-white/15 bg-site-bg/75 p-2 shadow-[0_8px_20px_-18px_rgba(15,23,42,0.85)]">
-            <img
-              src={logo.src}
-              class="h-28 w-28 rounded-[1.3rem] sm:h-36 sm:w-36"
-              alt="Twilight Psychology"
-            />
-          </div>
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="lp-section lp-hero relative isolate overflow-hidden">
+    <div class="lp-hero-glow" aria-hidden="true"></div>
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24 lg:py-32">
+      <div class="flex flex-col items-center text-center">
+        <a href="/" class="mb-8 inline-block" aria-label="Twilight Psychology home">
+          <img
+            src={logo.src}
+            class="h-16 w-16 rounded-2xl sm:h-20 sm:w-20"
+            alt="Twilight Psychology"
+            width="80"
+            height="80"
+          />
+        </a>
+
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-site-text tracking-tighter leading-[0.92] max-w-4xl">
+          Expert Psychological Testing
+          <br class="hidden sm:block" />
+          <span class="text-cta">That Accepts Insurance</span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-site-sub leading-relaxed font-medium">
+          Most practices limit comprehensive testing to self-pay only. We accept 15+ insurance panels — including Medicaid and Medicare — so you can get the answers you need without the financial barrier.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 items-center">
+          <a
+            href={WIDGET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-10 py-4 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
+          >
+            Request an Appointment
+          </a>
+          <a
+            href={`tel:${PHONE_NUMBER}`}
+            class="text-sm font-bold text-site-sub hover:text-cta transition-colors"
+          >
+            or call {PHONE_NUMBER_FORMATTED}
+          </a>
         </div>
 
+        <!-- Trust bar -->
+        <div class="lp-trust-bar mt-14 sm:mt-20 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-4">
+          {differentiators.map((d) => (
+            <div class="flex flex-col items-center gap-1 min-w-[5rem]">
+              <Icon name={d.icon} class="w-5 h-5 text-icon" />
+              <span class="text-xl sm:text-2xl font-serif font-black text-site-text">{d.stat}</span>
+              <span class="text-[11px] font-semibold text-site-sub/70 uppercase tracking-wider">{d.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ SERVICES ════════════════ -->
+  <section class="lp-section lp-services relative isolate overflow-hidden">
+    <div class="lp-glow lp-glow-right" aria-hidden="true"></div>
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+      <div class="text-center mb-12 sm:mb-16">
+        <p class="lp-label">What We Offer</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+          Three Ways We Can Help You
+        </h2>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        {services.map((s) => (
+          <a href={s.link} class="group lp-card flex flex-col rounded-3xl border border-white/8 p-6 sm:p-8 transition-all duration-300 hover:border-cta/20">
+            <Icon name={s.icon} class="w-10 h-10 mb-5 text-icon" />
+            <h3 class="font-serif text-xl sm:text-2xl font-black text-site-text mb-3 group-hover:text-cta transition-colors tracking-tight">
+              {s.title}
+            </h3>
+            <p class="text-sm leading-relaxed text-site-sub mb-5 grow">
+              {s.desc}
+            </p>
+            <span class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-cta/70 group-hover:text-cta transition-colors">
+              Learn More
+              <span class="w-6 h-px bg-cta/30 group-hover:w-10 group-hover:bg-cta transition-all"></span>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ WHY US ════════════════ -->
+  <section class="lp-section lp-why relative isolate overflow-hidden">
+    <div class="lp-glow lp-glow-left" aria-hidden="true"></div>
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-
-          <h1 class="mx-auto mt-5 max-w-4xl text-4xl leading-[1.05] text-site-text sm:mt-6 sm:text-6xl">
-            Specialized Mental Health Care in Kentucky
-          </h1>
-
-          <p class="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-site-sub sm:mt-6 sm:text-lg">
-            Twilight Psychology delivers expert, neuro-affirming mental health care for individuals
-            and families—spanning comprehensive psychological testing, psychiatric medication management, and evidence-based therapy.
+          <p class="lp-label">Why Twilight Psychology</p>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter mb-6">
+            Built for People Who've
+            <span class="text-cta"> Been Overlooked</span>
+          </h2>
+          <p class="text-site-sub text-base sm:text-lg leading-relaxed mb-8">
+            Many adults go years without answers because the system wasn't designed for them. We specialize in assessments for ADHD, Autism, and related conditions — using a neuro-affirming approach that centers your experience rather than dismissing it.
           </p>
+          <a
+            href="/about/twilight-psychology"
+            class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+          >
+            Read Our Story
+            <Icon name="mdi:arrow-right" class="w-4 h-4" />
+          </a>
+        </div>
 
-          <div class="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:justify-center">
-            <a
-              href="/contact"
-              class="inline-flex min-h-11 items-center justify-center rounded-full bg-cta px-8 py-3 text-sm font-black text-cta-fg transition-colors duration-150 hover:bg-cta/95"
-            >
-              Contact Twilight Psychology
-            </a>
-            <a
-              href="/"
-              class="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 bg-site-bg/70 px-8 py-3 text-sm font-black text-site-text transition-colors duration-150 hover:bg-site-bg/72"
-            >
-              Explore Our Practice
-            </a>
+        <div class="space-y-4">
+          <div class="lp-card rounded-2xl border border-white/8 p-5">
+            <div class="flex items-start gap-4">
+              <Icon name="mdi:speedometer" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
+              <div>
+                <h3 class="font-serif text-lg font-black text-site-text mb-1">Results in Days, Not Months</h3>
+                <p class="text-sm text-site-sub leading-relaxed">Self-pay evaluations can be completed and reports delivered within 7 days of intake. Insurance-based testing starts within weeks.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lp-card rounded-2xl border border-white/8 p-5">
+            <div class="flex items-start gap-4">
+              <Icon name="mdi:video-wireless-outline" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
+              <div>
+                <h3 class="font-serif text-lg font-black text-site-text mb-1">Fully Remote Testing Available</h3>
+                <p class="text-sm text-site-sub leading-relaxed">No need to travel. Complete your evaluation from home via secure telehealth — available across 43+ states through PSYPACT.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lp-card rounded-2xl border border-white/8 p-5">
+            <div class="flex items-start gap-4">
+              <Icon name="mdi:calendar-weekend-outline" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
+              <div>
+                <h3 class="font-serif text-lg font-black text-site-text mb-1">Weekend &amp; Flexible Scheduling</h3>
+                <p class="text-sm text-site-sub leading-relaxed">We know your schedule is full. We offer evening and weekend appointments so you don't have to choose between work and getting answers.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="relative px-4 pb-20 sm:pb-24">
-    <div class="mx-auto max-w-6xl">
-      <div class="mb-6 flex flex-col items-start justify-between gap-3 sm:mb-8 sm:flex-row sm:items-end">
-        <div>
-          <p class="text-xs font-black tracking-[0.16em] text-site-sub uppercase">Your Welcome Path</p>
-          <h2 class="mt-2 text-3xl text-site-text sm:text-4xl">Common Next Steps</h2>
-        </div>
+  <!-- ════════════════ TEAM ════════════════ -->
+  <section class="lp-section lp-team relative isolate overflow-hidden">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+      <div class="text-center mb-12 sm:mb-16">
+        <p class="lp-label">Your Clinical Team</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+          Meet the Clinicians
+        </h2>
+        <p class="mt-4 max-w-2xl mx-auto text-site-sub text-base leading-relaxed">
+          Our team includes licensed psychologists, licensed psychological associates, and a psychiatric nurse practitioner — each specializing in neurodivergent care.
+        </p>
       </div>
 
-      <ol class="grid gap-3 sm:grid-cols-3 sm:gap-4">
-        <li class="rounded-3xl border border-white/10 bg-white/3 p-5 text-sm leading-relaxed text-site-sub transition-colors duration-150 hover:border-white/12 hover:bg-white/4">
-          <span class="relative block text-xs font-black tracking-[0.12em] text-site-text uppercase">Step 1</span>
-          <p class="relative mt-2.5">
-            Review our care options and choose the service that best fits your needs.
-          </p>
-        </li>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+        {featuredProviders.map((p) => (
+          <a href={`/about/clinicians/${p.slug}`} class="group text-center">
+            <div class="lp-avatar-ring mx-auto mb-3 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-cta/40 transition-colors">
+              <Image
+                src={p.image}
+                alt={p.name}
+                width={112}
+                height={112}
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="font-serif text-sm sm:text-base font-black text-site-text group-hover:text-cta transition-colors">{p.name}</h3>
+            <p class="text-xs text-site-sub mt-0.5">{p.credential} &middot; {p.spec}</p>
+          </a>
+        ))}
+      </div>
 
-        <li class="rounded-3xl border border-white/10 bg-white/3 p-5 text-sm leading-relaxed text-site-sub transition-colors duration-150 hover:border-white/12 hover:bg-white/4">
-          <span class="relative block text-xs font-black tracking-[0.12em] text-site-text uppercase">Step 2</span>
-          <p class="relative mt-2.5">
-            Check timelines, fees, and insurance details for care.
-          </p>
-        </li>
-
-        <li class="rounded-3xl border border-white/10 bg-white/3 p-5 text-sm leading-relaxed text-site-sub transition-colors duration-150 hover:border-white/12 hover:bg-white/4">
-          <span class="relative block text-xs font-black tracking-[0.12em] text-site-text uppercase">Step 3</span>
-          <p class="relative mt-2.5">
-            Contact us to start intake and schedule your first appointment.
-          </p>
-        </li>
-      </ol>
+      <div class="text-center mt-8">
+        <a
+          href="/about/clinicians/clinicians-lex-ky"
+          class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+        >
+          View All Clinicians
+          <Icon name="mdi:arrow-right" class="w-4 h-4" />
+        </a>
+      </div>
     </div>
   </section>
+
+  <!-- ════════════════ INSURANCE ════════════════ -->
+  <section class="lp-section lp-insurance relative isolate overflow-hidden">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+      <div class="text-center mb-10 sm:mb-14">
+        <p class="lp-label">Insurance Accepted</p>
+        <h2 class="font-serif text-3xl sm:text-4xl font-black text-site-text tracking-tighter">
+          We Work With Your Insurance
+        </h2>
+        <p class="mt-4 max-w-xl mx-auto text-site-sub text-sm sm:text-base leading-relaxed">
+          We accept most major commercial plans, Medicaid, Medicare, Tricare, and CHAMPVA. Out-of-pocket options are also available with faster turnaround.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 opacity-70">
+        <span class="lp-ins-badge">Aetna</span>
+        <span class="lp-ins-badge">Cigna</span>
+        <span class="lp-ins-badge">UHC</span>
+        <span class="lp-ins-badge">Humana</span>
+        <span class="lp-ins-badge">Medicaid</span>
+        <span class="lp-ins-badge">Medicare</span>
+        <span class="lp-ins-badge">Tricare</span>
+        <span class="lp-ins-badge">Ambetter</span>
+        <span class="lp-ins-badge">CHAMPVA</span>
+        <span class="lp-ins-badge">Passport</span>
+        <span class="lp-ins-badge">UMR</span>
+      </div>
+
+      <p class="text-center mt-6 text-xs text-site-sub/60">
+        <a href="/resources/insurances-accepted" class="hover:text-cta transition-colors underline underline-offset-2">View full insurance details &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════ HOW IT WORKS ════════════════ -->
+  <section class="lp-section lp-steps relative isolate overflow-hidden">
+    <div class="lp-glow lp-glow-right" aria-hidden="true"></div>
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
+      <div class="text-center mb-12 sm:mb-16">
+        <p class="lp-label">How It Works</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+          Three Simple Steps
+        </h2>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-3">
+        <div class="lp-step-card relative rounded-3xl border border-white/8 p-6 sm:p-8 text-center">
+          <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">1</span>
+          <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Reach Out</h3>
+          <p class="text-sm text-site-sub leading-relaxed">
+            Contact us online or call. We'll answer your questions and help determine which service fits your needs.
+          </p>
+        </div>
+
+        <div class="lp-step-card relative rounded-3xl border border-white/8 p-6 sm:p-8 text-center">
+          <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">2</span>
+          <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Complete Intake</h3>
+          <p class="text-sm text-site-sub leading-relaxed">
+            Fill out our intake forms and schedule your appointment. We'll verify benefits and walk you through what to expect.
+          </p>
+        </div>
+
+        <div class="lp-step-card relative rounded-3xl border border-white/8 p-6 sm:p-8 text-center">
+          <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">3</span>
+          <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Get Answers</h3>
+          <p class="text-sm text-site-sub leading-relaxed">
+            Attend your evaluation, therapy, or medication appointment. Receive your results and a clear path forward.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FINAL CTA ════════════════ -->
+  <section class="lp-section lp-final-cta relative isolate overflow-hidden">
+    <div class="mx-auto max-w-4xl px-5 py-20 sm:py-28">
+      <div class="lp-cta-card rounded-[2rem] border border-white/10 px-6 py-12 sm:px-12 sm:py-16 text-center">
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter mb-5">
+          You Deserve Answers.
+          <br class="hidden sm:block" />
+          <span class="text-cta">Let's Find Them.</span>
+        </h2>
+        <p class="max-w-xl mx-auto text-site-sub text-base sm:text-lg leading-relaxed mb-8">
+          Whether it's an evaluation, therapy, or medication support — our team is ready when you are. New clients are currently being accepted.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href={WIDGET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-10 py-4 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
+          >
+            Request an Appointment
+          </a>
+          <a
+            href={`mailto:${EMAIL_ADDRESS}`}
+            class="text-sm font-bold text-site-sub hover:text-cta transition-colors"
+          >
+            or email {EMAIL_ADDRESS}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER BAR ════════════════ -->
+  <footer class="border-t border-white/6 px-5 py-6 text-center">
+    <div class="mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-site-sub/60">
+      <p>&copy; {new Date().getFullYear()} Twilight Psychology, PLLC. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="/privacy" class="hover:text-cta transition-colors">Privacy Policy</a>
+        <span class="text-site-sub/20">|</span>
+        <a href="/" class="hover:text-cta transition-colors">Main Website</a>
+      </div>
+    </div>
+  </footer>
 </LandingLayout>
+
+<style>
+  /* ── Scoped landing-page styles ── */
+
+  .lp-section {
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .lp-section:first-child {
+    border-top: 0;
+  }
+
+  /* Hero glow */
+  .lp-hero-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(165, 180, 252, 0.12), transparent),
+      radial-gradient(circle at 20% 80%, rgba(45, 212, 191, 0.06), transparent 40%);
+  }
+
+  .lp-hero {
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.95));
+  }
+
+  .lp-services {
+    background: linear-gradient(180deg, rgba(8, 15, 32, 0.95), rgba(11, 19, 39, 0.97));
+  }
+
+  .lp-why {
+    background: linear-gradient(180deg, rgba(11, 19, 39, 0.97), rgba(8, 15, 32, 0.96));
+  }
+
+  .lp-team {
+    background: linear-gradient(180deg, rgba(8, 15, 32, 0.96), rgba(5, 11, 25, 0.98));
+  }
+
+  .lp-insurance {
+    background: linear-gradient(180deg, rgba(5, 11, 25, 0.98), rgba(8, 15, 32, 0.96));
+  }
+
+  .lp-steps {
+    background: linear-gradient(180deg, rgba(8, 15, 32, 0.96), rgba(5, 11, 25, 0.985));
+  }
+
+  .lp-final-cta {
+    background: linear-gradient(180deg, rgba(5, 11, 25, 0.985), rgba(2, 6, 23, 0.995));
+  }
+
+  /* Glow orbs */
+  .lp-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.5;
+    pointer-events: none;
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .lp-glow-left {
+    top: 15%;
+    left: -4%;
+    background: rgba(45, 212, 191, 0.10);
+  }
+
+  .lp-glow-right {
+    bottom: 10%;
+    right: -2%;
+    background: rgba(165, 180, 252, 0.10);
+  }
+
+  /* Cards */
+  .lp-card {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.5), rgba(2, 6, 23, 0.7));
+    backdrop-filter: blur(12px);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+
+  .lp-card:hover {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.65), rgba(2, 6, 23, 0.8));
+  }
+
+  .lp-step-card {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.4), rgba(2, 6, 23, 0.6));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  }
+
+  .lp-cta-card {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(165, 180, 252, 0.08), transparent 50%),
+      linear-gradient(180deg, rgba(15, 23, 42, 0.6), rgba(2, 6, 23, 0.78));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+  }
+
+  /* Label */
+  .lp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(148, 163, 184, 0.8);
+  }
+
+  .lp-label::before,
+  .lp-label::after {
+    content: "";
+    width: 2rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  /* Insurance badges */
+  .lp-ins-badge {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-site-sub);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    background: rgba(15, 23, 42, 0.4);
+  }
+
+  /* Trust bar */
+  .lp-trust-bar {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* ── Light mode overrides ── */
+
+  :root.light .lp-hero-glow {
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(79, 70, 229, 0.10), transparent),
+      radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.06), transparent 40%);
+  }
+
+  :root.light .lp-hero {
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.9), rgba(241, 245, 249, 0.98));
+  }
+
+  :root.light .lp-services {
+    background: linear-gradient(180deg, rgba(241, 245, 249, 0.98), rgba(248, 250, 252, 0.96));
+  }
+
+  :root.light .lp-why {
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(241, 245, 249, 0.97));
+  }
+
+  :root.light .lp-team {
+    background: linear-gradient(180deg, rgba(241, 245, 249, 0.97), rgba(248, 250, 252, 0.98));
+  }
+
+  :root.light .lp-insurance {
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(241, 245, 249, 0.97));
+  }
+
+  :root.light .lp-steps {
+    background: linear-gradient(180deg, rgba(241, 245, 249, 0.97), rgba(238, 243, 250, 0.985));
+  }
+
+  :root.light .lp-final-cta {
+    background: linear-gradient(180deg, rgba(238, 243, 250, 0.985), rgba(232, 238, 246, 0.995));
+  }
+
+  :root.light .lp-section {
+    border-top-color: rgba(100, 116, 139, 0.12);
+  }
+
+  :root.light .lp-glow-left {
+    background: rgba(20, 184, 166, 0.10);
+  }
+
+  :root.light .lp-glow-right {
+    background: rgba(79, 70, 229, 0.10);
+  }
+
+  :root.light .lp-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(238, 242, 255, 0.8));
+    box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.2);
+  }
+
+  :root.light .lp-card:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(238, 242, 255, 0.9));
+  }
+
+  :root.light .lp-step-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(238, 242, 255, 0.75));
+    box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.15);
+    border-color: rgba(100, 116, 139, 0.18);
+  }
+
+  :root.light .lp-cta-card {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.06), transparent 50%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(238, 242, 255, 0.85));
+    box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.25);
+  }
+
+  :root.light .lp-label {
+    color: rgba(71, 85, 105, 0.8);
+  }
+
+  :root.light .lp-label::before,
+  :root.light .lp-label::after {
+    background: rgba(100, 116, 139, 0.3);
+  }
+
+  :root.light .lp-ins-badge {
+    border-color: rgba(100, 116, 139, 0.2);
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  :root.light .lp-trust-bar {
+    border-top-color: rgba(100, 116, 139, 0.15);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lp-glow {
+      display: none;
+    }
+  }
+</style>
