@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   /* Default to dark theme */
@@ -99,11 +98,6 @@ html {
 }
 
 @layer components {
-  /* Primary call-to-action button — uses the CTA palette variables above */
-  .btn-cta {
-    @apply bg-cta text-cta-fg hover:bg-cta/80 font-black px-8 py-3 rounded-full transition-all;
-  }
-
   .theme-border {
     border-color: var(--color-border);
   }
@@ -130,10 +124,6 @@ html {
 
   .theme-hover-surface-2:hover {
     background-color: var(--color-surface-2);
-  }
-
-  .theme-divider {
-    background-color: var(--color-border-strong);
   }
 }
 
