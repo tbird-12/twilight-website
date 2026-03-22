@@ -47,7 +47,7 @@ const medManagement = [
         </p>
       </header>
 
-      <section class="mb-12 bg-slate-800/40 border-l-4 border-cta p-6 rounded-r-2xl">
+      <section class="mb-12 bg-surface-soft border-l-4 border-cta p-6 rounded-r-2xl">
         <h2 class="font-serif text-site-text font-bold text-xl mb-2">Insurance Information</h2>
         <p class="text-site-text leading-relaxed">
           Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for covered services. For 
@@ -96,10 +96,10 @@ const medManagement = [
             aria-selected="false"
             data-fee-tab-trigger
             data-target="fee-panel-psychotherapy"
-            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
-          >
+          class="bg-surface-soft text-site-text border-border hover:border-cta/50 hover:text-cta opacity-80"
+        >
             <span class="flex items-center gap-3 text-left">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">2</span>
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-surface text-[11px] font-black">2</span>
               <span class="leading-tight">
                 <span class="block">Psychotherapy</span>
                 <span class="block text-[10px] uppercase tracking-wider opacity-80">{psychotherapyServices.length} services</span>
@@ -114,10 +114,10 @@ const medManagement = [
             aria-selected="false"
             data-fee-tab-trigger
             data-target="fee-panel-medication"
-            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-white/5 text-site-text border-white/10 hover:border-cta/50 hover:text-cta opacity-80"
-          >
+          class="bg-surface-soft text-site-text border-border hover:border-cta/50 hover:text-cta opacity-80"
+        >
             <span class="flex items-center gap-3 text-left">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-[11px] font-black">3</span>
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-surface text-[11px] font-black">3</span>
               <span class="leading-tight">
                 <span class="block">Medication Management</span>
                 <span class="block text-[10px] uppercase tracking-wider opacity-80">{medManagement.length} services</span>
@@ -132,7 +132,7 @@ const medManagement = [
           role="tabpanel"
           aria-labelledby="fee-tab-psychological"
           data-fee-tab-panel
-          class="bg-slate-800/20 border border-slate-700 rounded-3xl p-8"
+          class="bg-surface-soft border border-border-strong rounded-3xl p-8"
         >
           <h3 class="font-serif text-2xl font-black text-site-text mb-6 flex items-center gap-3">
             <span class="w-2 h-8 bg-cta rounded-full"></span>
@@ -140,7 +140,7 @@ const medManagement = [
           </h3>
           <div class="space-y-4">
             {psychologicalServices.map((service) => (
-              <div class="flex justify-between items-start py-3 border-b border-slate-800/50">
+              <div class="flex justify-between items-start py-3 border-b border-border">
                 <div>
                   <p class="text-site-text font-bold">{service.name}</p>
                   {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
@@ -156,12 +156,12 @@ const medManagement = [
           role="tabpanel"
           aria-labelledby="fee-tab-psychotherapy"
           data-fee-tab-panel
-          class="hidden bg-slate-800/20 border border-slate-700 rounded-3xl p-8"
+          class="hidden bg-surface-soft border border-border-strong rounded-3xl p-8"
         >
           <h3 class="font-serif text-2xl font-black text-site-text mb-6">Psychotherapy</h3>
           <div class="space-y-4">
             {psychotherapyServices.map((service) => (
-              <div class="flex justify-between items-center py-3 border-b border-slate-800/50">
+              <div class="flex justify-between items-center py-3 border-b border-border">
                 <div>
                   <span class="text-site-text font-bold">{service.name}</span>
                   {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
@@ -177,12 +177,12 @@ const medManagement = [
           role="tabpanel"
           aria-labelledby="fee-tab-medication"
           data-fee-tab-panel
-          class="hidden bg-slate-800/20 border border-slate-700 rounded-3xl p-8"
+          class="hidden bg-surface-soft border border-border-strong rounded-3xl p-8"
         >
           <h3 class="font-serif text-2xl font-black text-site-text mb-6">Medication Management</h3>
           <div class="space-y-4">
             {medManagement.map((service) => (
-              <div class="flex justify-between items-center py-3 border-b border-slate-800/50">
+              <div class="flex justify-between items-center py-3 border-b border-border">
                 <div>
                   <span class="text-site-text font-bold">{service.name}</span>
                   {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
@@ -194,22 +194,22 @@ const medManagement = [
         </article>
       </section>
 
-      <section class="mt-12 p-8 bg-linear-to-br from-slate-800 to-site-bg rounded-3xl border border-slate-700">
+      <section class="mt-12 p-8 bg-surface-2 rounded-3xl border border-border-strong">
         <h3 class="font-serif text-site-text font-black text-xl mb-4">Flexible Payment Plans</h3>
         <p class="text-site-sub mb-6">
           We offer payment plans where testing costs can be split into 2-3 equal payments due 24 hours before your appointments. 
           For a standard $1,300 battery, this typically looks like:
         </p>
         <div class="grid grid-cols-3 gap-4 text-center">
-          <div class="p-4 bg-site-bg rounded-xl border border-slate-800">
+          <div class="p-4 bg-site-bg rounded-xl border border-border">
             <p class="text-[10px] text-sand uppercase">Intake</p>
             <p class="text-xl font-black text-cta">$450</p>
           </div>
-          <div class="p-4 bg-site-bg rounded-xl border border-slate-800">
+          <div class="p-4 bg-site-bg rounded-xl border border-border">
             <p class="text-[10px] text-sand uppercase">Testing</p>
             <p class="text-xl font-black text-cta">$450</p>
           </div>
-          <div class="p-4 bg-site-bg rounded-xl border border-slate-800">
+          <div class="p-4 bg-site-bg rounded-xl border border-border">
             <p class="text-[10px] text-sand uppercase">Feedback</p>
             <p class="text-xl font-black text-cta">$400</p>
           </div>
@@ -217,7 +217,7 @@ const medManagement = [
       </section>
 
       <section class="mt-10">
-        <div class="grid gap-6 md:grid-cols-2 bg-slate-800/20 border border-slate-700 rounded-3xl p-8">
+        <div class="grid gap-6 md:grid-cols-2 bg-surface-soft border border-border-strong rounded-3xl p-8">
           <div>
             <h3 class="font-serif text-site-text font-black text-xl mb-3">Accepted Payment Methods</h3>
             <ul class="text-site-sub list-disc list-inside">
@@ -231,7 +231,7 @@ const medManagement = [
           </div>
           <div>
             <h3 class="font-serif text-site-text font-black text-xl mb-6">Financing Options</h3>
-            <a href="https://www.carecredit.com/go/VSM688/?dtc=DS9X&sitecode=CCLBADS9X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-4 rounded-lg hover:bg-white/5">
+            <a href="https://www.carecredit.com/go/VSM688/?dtc=DS9X&sitecode=CCLBADS9X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-4 rounded-lg hover:bg-surface-soft">
               <img width="175" 
                 src="https://www.carecredit.com/sites/pc/image/flexible-financing-prequal-apply-pay-375x320.png" 
                 alt="CareCredit - Flexible Financing for Healthcare" class="w-full md:w-56 hover:scale-105 transition-all" />
@@ -272,9 +272,9 @@ const medManagement = [
           trigger.classList.toggle("shadow-lg", isActive);
           trigger.classList.toggle("shadow-cta/20", isActive);
           trigger.classList.toggle("opacity-100", isActive);
-          trigger.classList.toggle("bg-white/5", !isActive);
+          trigger.classList.toggle("bg-surface-soft", !isActive);
           trigger.classList.toggle("text-site-text", !isActive);
-          trigger.classList.toggle("border-white/10", !isActive);
+          trigger.classList.toggle("border-border", !isActive);
           trigger.classList.toggle("opacity-80", !isActive);
         });
 

@@ -4,7 +4,7 @@ import { EMAIL_ADDRESS } from "../data/resource";
 import { Icon } from "astro-icon/components";
 ---
 
-<div class="fixed bottom-4 right-4 md:bottom-5 md:right-5 z-60 rounded-full bg-linear-to-r from-teal-500 to-blue-500 p-[1.5px] shadow-[0_0_24px_rgba(165,180,252,0.35)]">
+<div class="fixed bottom-4 right-4 md:bottom-5 md:right-5 z-60 rounded-full bg-linear-to-r from-indigo-400 to-cyan-400 p-[1.5px] shadow-[0_0_24px_rgba(199,210,254,0.35)]">
   <button id="bot-trigger"
     type="button"
     aria-label="Open chat assistant"
@@ -23,10 +23,10 @@ import { Icon } from "astro-icon/components";
   md:w-fit w-auto
   max-h-[75vh] h-auto
   max-w-[90vw] md:max-w-96
-  rounded-2xl border border-white/10 bg-site-bg shadow-2xl
+  rounded-2xl border border-border bg-site-bg shadow-2xl
   hidden flex-col overflow-hidden z-60 animate-slide-up">
 
-  <div class="flex items-center justify-between border-b border-white/10 bg-white/5 p-4 text-site-text font-bold">
+  <div class="flex items-center justify-between border-b border-border bg-surface-soft p-4 text-site-text font-bold">
     <span>Hi, I'm Liv</span>
     <button id="close-chat" type="button" class="text-2xl leading-none hover:text-site-sub transition-colors">×</button>
   </div>
@@ -91,7 +91,7 @@ function renderNode(nodeId) {
   const node = tree[nodeId];
   
   const botMsg = document.createElement('div');
-  botMsg.className = "bg-white/5 border border-white/10 text-site-text p-3 rounded-2xl rounded-bl-none max-w-[85%] text-sm self-start";
+  botMsg.className = "bg-surface-soft border border-border text-site-text p-3 rounded-2xl rounded-bl-none max-w-[85%] text-sm self-start";
   botMsg.innerText = node.text;
   chatBox.appendChild(botMsg);
 

@@ -3,40 +3,50 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Default to dark theme to preserve existing design on first load. */
-  --theme-site-bg: #020617;
-  --theme-site-text: #f1f5f9;
-  --theme-site-sub: #94a3b8;
-  --theme-site-footer: #010409;
-  --theme-site-ann: #1e293b;
-  --theme-cta: #a5b4fc;
-  --theme-cta-fg: #020617;
-  --theme-icon: #5eead4;
-  --theme-button-border: #5eead4;
+  /* Default to dark theme */
+--theme-site-bg: #131c23; 
+--theme-site-text: #e2e8f0;
+--theme-site-sub: #94a3b8; 
+--theme-site-footer: #0c1116; 
+--theme-site-ann: #1e293b; 
+--theme-cta: #818cf8; 
+--theme-cta-fg: #0f172a; 
+--theme-icon: #99f6e4; 
+--theme-button-border: #2dd4bf; 
 
-  --theme-surface: #0f172a;
-  --theme-surface-2: #1e293b;
-  --theme-surface-soft: rgba(255, 255, 255, 0.05);
-  --theme-border: rgba(148, 163, 184, 0.35);
-  --theme-border-strong: rgba(148, 163, 184, 0.5);
+/* Surfaces for cards and sections */
+--theme-surface: #1a242d; 
+--theme-surface-2: #242f39; 
+--theme-surface-soft: rgba(226, 232, 240, 0.03); 
+--theme-border: rgba(148, 163, 184, 0.15); 
+--theme-border-strong: rgba(148, 163, 184, 0.25);
+
+/* RGB channels for panel/card gradients — update these alongside the hex vars above */
+--rgb-bg: 19, 28, 35;
+--rgb-surface: 26, 36, 45;
+--rgb-surface-2: 36, 47, 57;
 }
 
 :root.light {
-  --theme-site-bg: #f8fafc;
-  --theme-site-text: #0f172a;
-  --theme-site-sub: #475569;
-  --theme-site-footer: #e2e8f0;
-  --theme-site-ann: #e0e7ff;
+  --theme-site-bg: #faf5ff;
+  --theme-site-text: #1e1b4b;
+  --theme-site-sub: #5b5294;
+  --theme-site-footer: #e0e7ff;
+  --theme-site-ann: #eef2ff;
   --theme-cta: #4f46e5;
-  --theme-cta-fg: #f8fafc;
-  --theme-icon: #0d9488;
-  --theme-button-border: #14b8a6;
+  --theme-cta-fg: #faf5ff;
+  --theme-icon: #0891b2;
+  --theme-button-border: #0891b2;
 
   --theme-surface: #ffffff;
   --theme-surface-2: #eef2ff;
-  --theme-surface-soft: rgba(15, 23, 42, 0.04);
-  --theme-border: rgba(100, 116, 139, 0.35);
-  --theme-border-strong: rgba(100, 116, 139, 0.5);
+  --theme-surface-soft: rgba(79, 70, 229, 0.04);
+  --theme-border: rgba(79, 70, 229, 0.18);
+  --theme-border-strong: rgba(79, 70, 229, 0.32);
+
+  --rgb-bg: 250, 245, 255;
+  --rgb-surface: 255, 255, 255;
+  --rgb-surface-2: 238, 242, 255;
 }
 
 @theme {
@@ -128,16 +138,16 @@ html {
 }
 
 @keyframes pulseGlow {
-  0% { text-shadow: 0 0 10px rgba(223, 202, 170, 0.2); }
-  50% { text-shadow: 0 0 25px rgba(223, 202, 170, 0.5); }
-  100% { text-shadow: 0 0 10px rgba(223, 202, 170, 0.2); }
+  0% { text-shadow: 0 0 10px rgba(199, 210, 254, 0.2); }
+  50% { text-shadow: 0 0 25px rgba(199, 210, 254, 0.5); }
+  100% { text-shadow: 0 0 10px rgba(199, 210, 254, 0.2); }
 }
 
 .glow-word {
   animation: pulseGlow 3s infinite ease-in-out;
-  color: #f1f5f9;
+  color: #e0e7ff;
 }
 
 :root.light .glow-word {
-  color: #0f172a;
+  color: #1e1b4b;
 }

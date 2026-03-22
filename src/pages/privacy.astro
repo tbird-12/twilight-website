@@ -25,7 +25,7 @@ const policyPoints = [
 >
 
    <main class="bg-site-bg min-h-screen pb-24 text-site-text">
-    <section class="py-24 px-4 border-b border-white/5 bg-slate-800/10">
+    <section class="py-24 px-4 border-b border-border bg-surface-soft">
       <div class="max-w-4xl mx-auto text-center">
         <h1 class="font-serif text-4xl md:text-6xl font-black mb-4 tracking-tighter">
           Website <span class="text-cta">Privacy Policy.</span>
@@ -54,7 +54,7 @@ const policyPoints = [
           <h2 class="font-serif text-2xl font-black text-site-text mb-6">How We Handle Online Data</h2>
           <div class="grid gap-6">
             {policyPoints.map(point => (
-              <div class="p-8 bg-white/5 border border-white/5 rounded-3xl">
+              <div class="p-8 bg-surface-soft border border-border rounded-3xl">
                 <h3 class="font-serif text-sand font-black mb-2">{point.title}</h3>
                 <p class="text-site-text/60 text-sm leading-relaxed">{point.desc}</p>
               </div>
@@ -62,7 +62,7 @@ const policyPoints = [
           </div>
         </section>
 
-        <article class="prose prose-invert prose-indigo max-w-none text-site-text/70">
+        <article class="prose max-w-none text-site-text/70">
           <h2 class="font-serif text-site-text font-black">Data Security</h2>
           <p>
             We do not collect any personal information on this website. We take reasonable measures to protect the information submitted through our email, but we cannot guarantee its security.
@@ -76,7 +76,7 @@ const policyPoints = [
         </article>
       </div>
 
-      <div class="mt-20 p-10 bg-white/5 border border-white/10 rounded-[2.5rem] text-center">
+      <div class="mt-20 p-10 bg-surface-soft border border-border rounded-[2.5rem] text-center">
         <h3 class="font-serif text-xl font-black text-site-text mb-2">Web Privacy Questions?</h3>
         <p class="text-site-sub/60 text-sm">For questions regarding this website policy, contact:</p>
         <p class="text-cta font-black mt-4"></p>

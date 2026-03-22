@@ -60,7 +60,7 @@ const faqs = [
 
       <div class="space-y-4">
         {faqs.map((faq, index) => (
-          <div class="group border border-slate-800 bg-slate-800/20 rounded-2xl overflow-hidden transition-all hover:border-cta/50">
+          <div class="group border border-border bg-surface-soft rounded-2xl overflow-hidden transition-all hover:border-cta/50">
             <button 
               class="w-full flex items-center justify-between p-6 text-left focus:outline-none"
               onclick={`document.getElementById('faq-${index}').classList.toggle('hidden'); document.getElementById('icon-${index}').classList.toggle('rotate-180');`}
@@ -80,7 +80,7 @@ const faqs = [
             </button>
             
             <div id={`faq-${index}`} class="hidden px-4 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
-              <div class="h-px bg-slate-800 mb-4 w-full" />
+              <div class="h-px bg-border mb-4 w-full" />
               <p class="text-site-sub leading-relaxed font-medium">
                 {faq.answer}
               </p>
@@ -89,14 +89,14 @@ const faqs = [
         ))}
       </div>
 
-      <section class="mt-20 p-8 rounded-3xl bg-linear-to-br from-slate-800 to-site-bg border border-slate-700 text-center">
+      <section class="mt-20 p-8 rounded-3xl bg-surface-2 border border-border-strong text-center">
         <h2 class="font-serif text-2xl font-bold text-site-text mb-2">Still have questions?</h2>
         <p class="text-site-text mb-6">Contact our administrative team for specific insurance inquiries or to begin your intake process.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={`tel:${PHONE_NUMBER}`} class="px-8 py-3 bg-cta hover:bg-cta/80 text-cta-fg font-black rounded-full transition-transform hover:scale-105">
             {PHONE_NUMBER_FORMATTED}
           </a>
-          <a href={`mailto:${EMAIL_ADDRESS}`} class="px-8 py-3 border border-stone-500 text-site-text font-bold rounded-full hover:bg-stone-800 transition-colors">
+          <a href={`mailto:${EMAIL_ADDRESS}`} class="px-8 py-3 border border-border-strong text-site-text font-bold rounded-full hover:bg-surface-2 transition-colors">
             Email our Office
           </a>
         </div>
@@ -110,6 +110,6 @@ const faqs = [
   /* Custom Scrollbar for the page */
   :global(body) {
     scrollbar-width: thin;
-    scrollbar-color: #f59e0b #020617;
+    scrollbar-color: #c7d2fe #312e81;
   }
 </style>
