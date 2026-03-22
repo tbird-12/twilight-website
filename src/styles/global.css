@@ -29,7 +29,7 @@
 :root.light {
   --theme-site-bg: #faf5ff;
   --theme-site-text: #1e1b4b;
-  --theme-site-sub: #5b5294;
+  --theme-site-sub: #4a3f86;
   --theme-site-footer: #e0e7ff;
   --theme-site-ann: #eef2ff;
   --theme-cta: #4f46e5;
@@ -39,9 +39,9 @@
 
   --theme-surface: #ffffff;
   --theme-surface-2: #eef2ff;
-  --theme-surface-soft: rgba(79, 70, 229, 0.04);
-  --theme-border: rgba(79, 70, 229, 0.18);
-  --theme-border-strong: rgba(79, 70, 229, 0.32);
+  --theme-surface-soft: rgba(79, 70, 229, 0.08);
+  --theme-border: rgba(79, 70, 229, 0.26);
+  --theme-border-strong: rgba(79, 70, 229, 0.4);
 
   --rgb-bg: 250, 245, 255;
   --rgb-surface: 255, 255, 255;
@@ -66,6 +66,9 @@
   --color-surface-soft: var(--theme-surface-soft);
   --color-border: var(--theme-border);
   --color-border-strong: var(--theme-border-strong);
+  --color-muted: var(--color-site-sub);
+  --color-ink: var(--color-site-text);
+  --color-brand: var(--color-cta);
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', 'Segoe UI', sans-serif;
   --font-serif: var(--font-heading);
@@ -88,6 +91,12 @@ html {
 
   a {
     @apply transition-colors;
+  }
+
+  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--color-cta) 78%, white 22%);
+    outline-offset: 2px;
+    border-radius: 0.375rem;
   }
 
   h1, h2, h3, h4, h5, h6 {

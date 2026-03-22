@@ -156,15 +156,16 @@ const qualityCareItems = [
           <span class="flex items-center gap-2">
             <a
               href="/resources/faq#wait-times"
-              class="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              class="waitlist-faq-link flex items-center gap-2 hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70 rounded-md"
               title="Self-pay waitlist — see FAQ for insurance wait times"
+              aria-label="3 week waitlist for self-pay clients. Open FAQ wait times section for insurance and Medicaid timing details."
             >
               <span
                 class="text-xl sm:text-2xl font-serif font-black text-icon homepage-stat-value"
                 >3</span
               >
               <span class="text-xs sm:text-sm font-semibold text-cta"
-                >Weeks Waitlist<span class="block text-[10px] text-site-sub/60 font-medium normal-case tracking-normal">Self-pay clients</span></span
+                >Weeks Waitlist<span class="waitlist-context block text-[10px] text-site-sub/75 font-semibold normal-case tracking-normal">Self-pay clients</span></span
               >
             </a>
           </span>
@@ -211,8 +212,11 @@ const qualityCareItems = [
                 <button
                   class={`care-tab${idx === 0 ? " active" : ""}`}
                   data-care-tab={String(idx)}
+                  id={`care-tab-${idx}`}
                   type="button"
                   aria-selected={idx === 0 ? "true" : "false"}
+                  aria-controls={`care-panel-${idx}`}
+                  tabindex={idx === 0 ? "0" : "-1"}
                   role="tab"
                 >
                   <Icon
@@ -220,7 +224,7 @@ const qualityCareItems = [
                     class="care-tab-icon w-5 h-5 shrink-0"
                     style="color: var(--color-icon);"
                   />
-                  <span class="care-tab-title font-serif font-black text-sm leading-snug">
+                  <span class="care-tab-title font-sans font-semibold text-[0.95rem] leading-snug tracking-[0.01em]">
                     {item.title}
                   </span>
                   <Icon
@@ -239,7 +243,9 @@ const qualityCareItems = [
                 <div
                   class={`care-panel${idx === 0 ? " active" : ""}`}
                   data-care-panel={String(idx)}
+                  id={`care-panel-${idx}`}
                   role="tabpanel"
+                  aria-labelledby={`care-tab-${idx}`}
                   aria-hidden={idx !== 0 ? "true" : "false"}
                 >
                   <p class="care-panel-eyebrow">
@@ -251,10 +257,10 @@ const qualityCareItems = [
                     class="w-12 h-12 mb-5"
                     style="color: var(--color-icon);"
                   />
-                  <h3 class="font-serif text-2xl sm:text-3xl font-black text-site-text mb-4 leading-tight">
+                  <h3 class="font-sans text-2xl sm:text-3xl font-semibold tracking-tight text-site-text mb-4 leading-tight">
                     {item.title}
                   </h3>
-                  <p class="text-site-sub text-sm sm:text-base leading-relaxed max-w-md">
+                  <p class="text-site-sub text-base sm:text-[1.05rem] leading-relaxed max-w-md font-medium">
                     {item.desc}
                   </p>
                 </div>
@@ -738,6 +744,11 @@ const qualityCareItems = [
     transform: translateX(2px);
   }
 
+  .care-tab:focus-visible {
+    outline: 2px solid rgba(129, 140, 248, 0.85);
+    outline-offset: 2px;
+  }
+
   .care-tab-icon {
     opacity: 0.4;
     transition: opacity 0.2s ease;
@@ -774,6 +785,10 @@ const qualityCareItems = [
   .care-tab.active .care-tab-arrow {
     opacity: 1;
     transform: translateX(0);
+  }
+
+  :root:not(.light) .waitlist-context {
+    color: #cbd5e1;
   }
 
   .care-panels {
@@ -973,6 +988,7 @@ const qualityCareItems = [
         const isActive = index === activeIndex;
         tab.classList.toggle("active", isActive);
         tab.setAttribute("aria-selected", isActive ? "true" : "false");
+        tab.setAttribute("tabindex", isActive ? "0" : "-1");
       });
 
       panels.forEach((panel, index) => {
@@ -987,7 +1003,33 @@ const qualityCareItems = [
         const activeIndex = Number(tab.dataset.careTab);
         if (Number.isFinite(activeIndex)) {
           setActiveTab(activeIndex);
+          tabs[activeIndex]?.focus();
         }
+      });
+
+      tab.addEventListener("keydown", (event) => {
+        const currentIndex = Number(tab.dataset.careTab);
+        if (!Number.isFinite(currentIndex)) {
+          return;
+        }
+
+        let nextIndex = currentIndex;
+
+        if (event.key === "ArrowDown" || event.key === "ArrowRight") {
+          nextIndex = (currentIndex + 1) % tabs.length;
+        } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
+          nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        } else if (event.key === "Home") {
+          nextIndex = 0;
+        } else if (event.key === "End") {
+          nextIndex = tabs.length - 1;
+        } else {
+          return;
+        }
+
+        event.preventDefault();
+        setActiveTab(nextIndex);
+        tabs[nextIndex]?.focus();
       });
     });
 

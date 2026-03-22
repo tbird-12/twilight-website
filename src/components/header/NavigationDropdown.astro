@@ -23,17 +23,21 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
 
 <div class="group relative py-2 font-sans">
   <button
-    class="flex items-center gap-1 text-sm font-serif font-bold text-site-text hover:text-cta transition"
+    type="button"
+    aria-haspopup="menu"
+    class="desktop-nav-trigger flex items-center gap-1 text-[15px] font-sans font-semibold tracking-[0.01em] text-site-text hover:text-cta transition"
   >
     {title}
     <ChevronIcon class="w-4 h-4 text-cta" />
   </button>
 
   <div
-    class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 theme-surface border-t-4 border-t-cta shadow-2xl rounded-b-2xl p-3 z-50"
+    class="absolute left-0 mt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 group-focus-within:translate-y-0 theme-surface border-t-4 border-t-cta shadow-2xl rounded-b-2xl p-3 z-50"
+    role="menu"
+    aria-label={`${title} menu`}
   >
     <div
-      class="text-[10px] uppercase tracking-widest text-site-sub/60 font-black px-3 py-2"
+      class="text-[10px] uppercase tracking-widest text-site-sub/80 font-black px-3 py-2"
     >
       {sectionLabel}
     </div>
@@ -42,12 +46,16 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
         items.map((item) =>
           item.hasNested ? (
             <div class="relative group/nested">
-              <div class="flex items-center justify-between px-3 py-3 rounded-xl theme-hover-surface-2 transition-colors cursor-pointer">
+              <button
+                type="button"
+                class="w-full flex items-center justify-between px-3 py-3 rounded-xl theme-hover-surface-2 transition-colors cursor-pointer"
+                aria-haspopup="menu"
+              >
                 <div class="text-left">
-                  <div class="text-sm font-serif font-black text-site-text group-hover/nested:text-cta">
+                  <div class="text-sm font-sans font-semibold tracking-[0.01em] text-site-text group-hover/nested:text-cta">
                     {item.name}
                   </div>
-                  <div class="text-[11px] font-bold text-site-sub">
+                  <div class="desktop-nav-meta text-xs font-medium text-site-sub">
                     {item.desc}
                   </div>
                 </div>
@@ -59,10 +67,10 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
                 >
                   <path d="M9 5l7 7-7 7" stroke-width="3" />
                 </svg>
-              </div>
+              </button>
 
-              <div class="absolute top-0 left-full ml-2 w-64 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 translate-x-2 group-hover/nested:translate-x-0 theme-surface-2 border-l-4 border-l-cta shadow-2xl rounded-2xl p-3 z-60">
-                <div class="text-[10px] uppercase tracking-widest text-site-sub/60 font-black px-3 py-2">
+              <div class="absolute top-0 left-full ml-2 w-64 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible group-focus-within/nested:opacity-100 group-focus-within/nested:visible transition-all duration-200 translate-x-2 group-hover/nested:translate-x-0 group-focus-within/nested:translate-x-0 theme-surface-2 border-l-4 border-l-cta shadow-2xl rounded-2xl p-3 z-60" role="menu" aria-label={`${item.name} submenu`}>
+                <div class="text-[10px] uppercase tracking-widest text-site-sub/80 font-black px-3 py-2">
                   {item.childLabel}
                 </div>
 
@@ -70,10 +78,10 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
                   {item.children?.map((child: any) => (
                     <a
                       href={`${item.childHrefBase}/${child.slug}`}
-                      class="block px-3 py-2 rounded-lg theme-hover-surface text-sm font-black text-site-text transition-colors"
+                      class="block px-3 py-2 rounded-lg theme-hover-surface text-sm font-black text-site-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70"
                       title={child.name}
                     >
-                      <div class="text-sm font-serif font-black text-site-text truncate">
+                      <div class="text-sm font-sans font-semibold tracking-[0.01em] text-site-text truncate">
                         {child.name}
                       </div>
                     </a>
@@ -84,12 +92,12 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
           ) : (
             <a
               href={`${baseHref}/${item.slug}`}
-              class="block px-3 py-3 rounded-xl theme-hover-surface-2 transition-colors"
+              class="block px-3 py-3 rounded-xl theme-hover-surface-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70"
             >
-              <div class="text-sm font-serif font-black text-site-text">
+              <div class="text-sm font-sans font-semibold tracking-[0.01em] text-site-text">
                 {item.name}
               </div>
-              <div class="text-[11px] font-bold text-site-sub">
+              <div class="desktop-nav-meta text-xs font-medium text-site-sub">
                 {item.desc}
               </div>
             </a>
@@ -101,6 +109,20 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
 </div>
 
 <style>
+  :root:not(.light) .desktop-nav-trigger {
+    color: #f1f5f9;
+  }
+
+  .desktop-nav-trigger:focus-visible {
+    outline: 2px solid rgba(129, 140, 248, 0.85);
+    outline-offset: 4px;
+    border-radius: 0.5rem;
+  }
+
+  :root:not(.light) .desktop-nav-meta {
+    color: #cbd5e1;
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
   }
