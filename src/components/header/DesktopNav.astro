@@ -1,0 +1,58 @@
+---
+import NavigationDropdown from "./NavigationDropdown.astro";
+import ThemeToggleIcon from "./ThemeToggleIcon.astro";
+import {
+  aboutMenuItems,
+  servicesMenuItems,
+  specialtiesMenuItems,
+  clientResourcesMenuItems,
+} from "../../data/navigationData";
+---
+
+<nav class="hidden md:flex items-center gap-6 lg:gap-10">
+  <NavigationDropdown
+    title="About"
+    items={aboutMenuItems}
+    sectionLabel="Practice Information"
+    baseHref="/about"
+  />
+
+  <NavigationDropdown
+    title="Services"
+    items={servicesMenuItems}
+    sectionLabel="Our Services"
+    baseHref="/services"
+  />
+
+  <NavigationDropdown
+    title="Specialties"
+    items={specialtiesMenuItems}
+    sectionLabel="Specialties"
+    baseHref="/specialities"
+  />
+
+  <NavigationDropdown
+    title="Resources"
+    items={clientResourcesMenuItems}
+    sectionLabel="Client Resources"
+    baseHref="/resources"
+  />
+
+  <button
+    type="button"
+    class="theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface p-0 text-(--color-muted) shadow-sm transition hover:-translate-y-0.5 hover:text-(--color-ink) hover:shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-brand)"
+    data-theme-toggle
+    aria-label="Switch to dark mode"
+    aria-pressed="false"
+  >
+    <ThemeToggleIcon />
+    <span class="sr-only" data-theme-label>Dark mode</span>
+  </button>
+
+  <a
+    href="/contact"
+    class="hidden md:inline-block bg-cta text-cta-fg px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
+  >
+    <span class="lg:inline">Contact Us</span>
+  </a>
+</nav>

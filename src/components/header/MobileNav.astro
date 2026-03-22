@@ -1,0 +1,154 @@
+---
+import MobileDropdown from "./MobileDropdown.astro";
+import ThemeToggleIcon from "./ThemeToggleIcon.astro";
+import {
+  aboutMenuItems,
+  servicesMenuItems,
+  specialtiesMenuItems,
+  clientResourcesMenuItems,
+} from "../../data/navigationData";
+---
+
+<!-- Mobile menu overlay: lives outside <header> to escape its stacking context -->
+<div
+  id="mobile-menu"
+  class="hidden md:hidden fixed inset-0 z-60"
+  style="pointer-events:auto"
+>
+  <!-- Dark backdrop — clicking here closes the menu -->
+  <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <!-- Panel -->
+  <div
+    data-mobile-menu-panel
+    class="absolute inset-x-3 top-18 bottom-4 sm:top-22 max-w-lg mx-auto overflow-y-auto overscroll-contain rounded-2xl border theme-border-strong bg-surface shadow-2xl"
+  >
+    <div class="px-4 py-4">
+      <MobileDropdown
+        id="about"
+        title="About"
+        items={aboutMenuItems}
+        baseHref="/about"
+      />
+
+      <MobileDropdown
+        id="services"
+        title="Services"
+        items={servicesMenuItems}
+        baseHref="/services"
+      />
+
+      <MobileDropdown
+        id="specialties"
+        title="Specialties"
+        items={specialtiesMenuItems}
+        baseHref="/specialities"
+      />
+
+      <MobileDropdown
+        id="resources"
+        title="Resources"
+        items={clientResourcesMenuItems}
+        baseHref="/resources"
+      />
+
+      <div
+        class="flex items-center justify-between px-6 py-3"
+        style="background: color-mix(in srgb, var(--color-surface) 30%, transparent);"
+      >
+        <span class="text-sm font-semibold text-(--color-muted)">Appearance</span>
+        <button
+          type="button"
+          class="theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface p-0 text-muted shadow-sm transition hover:text-ink hover:shadow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+          data-theme-toggle
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <ThemeToggleIcon />
+          <span class="sr-only" data-theme-label>Dark mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var menuBtn = document.getElementById("mobileMenuBtn");
+    var menu = document.getElementById("mobile-menu");
+    var backdrop = document.getElementById("mobile-menu-backdrop");
+    var menuIcon = document.getElementById("menuIcon");
+    var closeIcon = document.getElementById("closeIcon");
+
+    function isMenuOpen() {
+      return menu && !menu.classList.contains("hidden");
+    }
+
+    function openMenu() {
+      if (!menu) return;
+      menu.classList.remove("hidden");
+      if (menuIcon) menuIcon.classList.add("hidden");
+      if (closeIcon) closeIcon.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      if (menuBtn) menuBtn.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu() {
+      if (!menu) return;
+      menu.classList.add("hidden");
+      if (menuIcon) menuIcon.classList.remove("hidden");
+      if (closeIcon) closeIcon.classList.add("hidden");
+      document.body.style.overflow = "";
+      if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    }
+
+    if (menuBtn) {
+      menuBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (isMenuOpen()) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener("click", function () {
+        closeMenu();
+      });
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && isMenuOpen()) closeMenu();
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 768 && isMenuOpen()) closeMenu();
+    });
+
+    /* ── Dropdown toggles ── */
+    ["about", "services", "specialties", "resources"].forEach(function (id) {
+      var toggle = document.getElementById(id + "Toggle");
+      var content = document.getElementById(id + "Content");
+      var icon = document.getElementById(id + "Icon");
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          if (content) content.classList.toggle("hidden");
+          if (icon) icon.classList.toggle("rotate-180");
+        });
+      }
+    });
+
+    /* ── Nested About toggles ── */
+    document.querySelectorAll('[id^="aboutNestedToggle-"]').forEach(function (btn) {
+      var slug = btn.id.replace("aboutNestedToggle-", "");
+      var content = document.getElementById("aboutNestedContent-" + slug);
+      var icon = document.getElementById("aboutNestedIcon-" + slug);
+      btn.addEventListener("click", function () {
+        if (content) content.classList.toggle("hidden");
+        if (icon) icon.classList.toggle("rotate-180");
+      });
+    });
+  })();
+</script>
