@@ -11,7 +11,10 @@ const schema = {
   "@context": "https://schema.org",
   "@type": type,
   name: name || "Twilight Psychology",
-  ...(description ? { description } : {}),
+  description:
+    description ||
+    "Neuro-affirming psychological evaluations, therapy, and medication management in Lexington, Kentucky. Among the shortest waitlists in Kentucky for clients seeking a diagnosis with Medicaid or health insurance. Accepting 15+ insurance panels including Medicaid, Medicare, and Tricare.",
+  url: "https://www.twilightpsychology.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "501 Darby Creed Rd, Suite 7",
@@ -20,6 +23,26 @@ const schema = {
     postalCode: "40509",
     addressCountry: "US",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "38.0406",
+    longitude: "-84.5037",
+  },
+  areaServed: [
+    {
+      "@type": "State",
+      name: "Kentucky",
+      sameAs: "https://en.wikipedia.org/wiki/Kentucky",
+    },
+    {
+      "@type": "City",
+      name: "Lexington",
+      containedInPlace: {
+        "@type": "State",
+        name: "Kentucky",
+      },
+    },
+  ],
   priceRange: "$$",
   telephone: "+1-859-687-5843",
   image: {
@@ -29,6 +52,21 @@ const schema = {
     width: "400",
   },
   logo: imageUrl,
+  paymentAccepted: "Medicaid, Medicare, Tricare, Aetna, Cigna, UnitedHealthcare, Humana, Ambetter, Passport, UMR, CHAMPVA, Self-Pay",
+  currenciesAccepted: "USD",
+  knowsAbout: [
+    "ADHD Testing",
+    "Autism Evaluation",
+    "Psychological Evaluations",
+    "Learning Disability Testing",
+    "Dyslexia Testing",
+    "Medication Management",
+    "Cognitive Behavioral Therapy",
+    "Psychoeducational Evaluations",
+    "ESA Evaluations",
+    "Adoption Evaluations",
+    "Guardianship Evaluations",
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Psychological Services",
@@ -36,9 +74,46 @@ const schema = {
       {
         "@type": "Offer",
         itemOffered: {
+          "@type": "MedicalTest",
+          name: "ADHD Testing in Kentucky",
+          description:
+            "Comprehensive ADHD evaluations for children and adults in Kentucky. Insurance accepted including Medicaid. Among the shortest waitlists in the state.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalTest",
+          name: "Autism Evaluation in Kentucky",
+          description:
+            "Neuro-affirming autism spectrum evaluations in Lexington, KY. We accept Medicaid and most major insurances with minimal wait times.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalTest",
+          name: "Psychological Evaluations",
+          description:
+            "Comprehensive psychological evaluations for learning disorders, personality profiles, and cognitive assessments in Kentucky.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
           "@type": "PsychologicalTreatment",
-          name: "Cognitive Behavioral Therapy (CBT)",
-          description: "Evidence-based counseling for anxiety and depression.",
+          name: "Therapy Services in Kentucky",
+          description:
+            "Evidence-based, neuro-affirming individual therapy for teens and adults in Lexington, KY and via telehealth.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "PsychologicalTreatment",
+          name: "Medication Management",
+          description:
+            "Psychiatric medication management by our in-house Nurse Practitioner in Lexington, Kentucky.",
         },
       },
     ],
