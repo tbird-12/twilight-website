@@ -2,7 +2,8 @@
 import ServiceLayout from '../../layouts/ServiceLayout.astro';
 import '../../styles/global.css';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
-const faqs = [
+
+const generalFaqs = [
   {
     question: "What is psychological testing?",
     answer: "Psychological testing is a series of paper-based or computer-based assessments administered to \
@@ -34,6 +35,29 @@ const faqs = [
   {
     question: "Where are you located?",
     answer: "Our main office is in Lexington, KY. However, through Psypact, we provide remote psychological services in over 40 states across the U.S."
+  },
+];
+
+const waitTimeFaqs = [
+  {
+    question: "How long is the current waitlist?",
+    answer: "Wait times vary by provider and service. We maintain some of the shortest waitlists in Kentucky, often ranging from 3-4 months for Medicaid and insurance evaluations by Dr. Heather Cornett or Dr. Olivia Williams and immediate availability for medication management. For the most current wait times, please visit our Waitlist Times page."
+  },
+  {
+    question: "How long is the current waitlist for an evaluation?",
+    answer: "We pride ourselves on offering some of the most efficient turnaround times in the region. To maintain high-quality care, we manage our calendar using a dedicated slot system. For clients seeking evaluations through insurance, the wait time is typically around 4 months due to high demand. For those opting for self-pay, we can often schedule an evaluation within 3 weeks, depending on the provider and specific service needed."
+  },
+  {
+    question: "Why is there a difference in wait times?",
+    answer: "The difference is primarily due to volume and administrative requirements. We reserve a specific number of appointments each week for various payment methods to ensure we can serve a diverse range of clients. Because there is a much higher volume of referrals for insurance-based care, those specific slots fill up much further in advance. Additionally, insurance and Medicaid evaluations often require a pre-authorization process and clinical review period to determine 'medical necessity' before the first appointment can be finalized."
+  },
+  {
+    question: "Can I choose to 'Self-Pay' if I have insurance?",
+    answer: "Yes, you can opt to self-pay for services even if you have insurance. This may be beneficial if you prefer a faster appointment or want to avoid insurance-related administrative processes. Medicaid clients have different rules, please contact our office for more information."
+  },
+  {
+    question: "Do you offer a \"cancellation list\"?",
+    answer: "Yes, we maintain a cancellation list for clients who wish to be notified of earlier appointment openings. If a cancellation occurs, we reach out to clients in the order they joined the list to offer them an earlier appointment."
   }
 ];
 ---
@@ -58,35 +82,78 @@ const faqs = [
         </p>
       </header>
 
-      <div class="space-y-4">
-        {faqs.map((faq, index) => (
-          <div class="group border border-border bg-surface-soft rounded-2xl overflow-hidden transition-all hover:border-cta/50">
-            <button 
-              class="w-full flex items-center justify-between p-6 text-left focus:outline-none"
-              onclick={`document.getElementById('faq-${index}').classList.toggle('hidden'); document.getElementById('icon-${index}').classList.toggle('rotate-180');`}
-            >
-              <span class="text-lg font-bold text-site-text text-balance leading-tight pr-4">
-                {faq.question}
-              </span>
-              <svg 
-                id={`icon-${index}`}
-                class="w-5 h-5 text-cta transition-transform duration-300 shrink-0" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+      <!-- General Questions -->
+      <div class="mb-12">
+        <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-6">
+          General
+        </h2>
+        <div class="space-y-4">
+          {generalFaqs.map((faq, index) => (
+            <div class="group border border-border bg-surface-soft rounded-2xl overflow-hidden transition-all hover:border-cta/50">
+              <button 
+                class="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                onclick={`document.getElementById('faq-general-${index}').classList.toggle('hidden'); document.getElementById('icon-general-${index}').classList.toggle('rotate-180');`}
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            
-            <div id={`faq-${index}`} class="hidden px-4 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
-              <div class="h-px bg-border mb-4 w-full" />
-              <p class="text-site-sub leading-relaxed font-medium">
-                {faq.answer}
-              </p>
+                <span class="text-lg font-bold text-site-text text-balance leading-tight pr-4">
+                  {faq.question}
+                </span>
+                <svg 
+                  id={`icon-general-${index}`}
+                  class="w-5 h-5 text-cta transition-transform duration-300 shrink-0" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div id={`faq-general-${index}`} class="hidden px-4 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                <div class="h-px bg-border mb-4 w-full" />
+                <p class="text-site-sub leading-relaxed font-medium">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      <!-- Wait Times -->
+      <div id="wait-times" class="mb-12 scroll-mt-28">
+        <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-6">
+          Wait Times &amp; Scheduling
+        </h2>
+        <div class="space-y-4">
+          {waitTimeFaqs.map((faq, index) => (
+            <div class="group border border-border bg-surface-soft rounded-2xl overflow-hidden transition-all hover:border-cta/50">
+              <button 
+                class="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                onclick={`document.getElementById('faq-wait-${index}').classList.toggle('hidden'); document.getElementById('icon-wait-${index}').classList.toggle('rotate-180');`}
+              >
+                <span class="text-lg font-bold text-site-text text-balance leading-tight pr-4">
+                  {faq.question}
+                </span>
+                <svg 
+                  id={`icon-wait-${index}`}
+                  class="w-5 h-5 text-cta transition-transform duration-300 shrink-0" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div id={`faq-wait-${index}`} class="hidden px-4 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
+                <div class="h-px bg-border mb-4 w-full" />
+                <p class="text-site-sub leading-relaxed font-medium">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       <section class="mt-20 p-8 rounded-3xl bg-surface-2 border border-border-strong text-center">
