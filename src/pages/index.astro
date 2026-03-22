@@ -340,7 +340,7 @@ const qualityCareItems = [
             </a>
             <a
               href="/about/clinicians/clinicians-lex-ky"
-              class="px-10 py-4 bg-transparent text-site-text border border-button-border font-black rounded-full theme-hover-surface transition-all"
+              class="px-10 py-4 bg-cta text-cta-fg border border-button-border font-black rounded-full theme-hover-surface transition-all"
             >
               Meet Our Clinicians
             </a>
@@ -485,17 +485,11 @@ const qualityCareItems = [
 
   .homepage-panel-cta {
     --homepage-chrome-offset: 6.5rem;
-    background:
-      radial-gradient(
-        circle at 50% 10%,
-        rgba(199, 210, 254, 0.08),
-        transparent 30%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(var(--rgb-surface-2), 0.985),
-        rgba(var(--rgb-bg), 0.995)
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(var(--rgb-surface-2), 0.985),
+      rgba(var(--rgb-bg), 0.995)
+    );
   }
 
   .homepage-panel-glow {
@@ -544,15 +538,20 @@ const qualityCareItems = [
 
   .homepage-feature-card,
   .homepage-glass-card,
-  .homepage-service-card,
-  .homepage-cta-shell {
+  .homepage-service-card {
     background: linear-gradient(
       180deg,
-      rgba(55, 48, 163, 0.6),
-      rgba(49, 46, 129, 0.78)
+      rgba(199, 210, 254, 0.06),
+      rgba(109, 206, 249, 0.08)
     );
     box-shadow: inset 0 1px 0 rgba(199, 210, 254, 0.08);
     backdrop-filter: blur(20px);
+  }
+
+  .homepage-cta-shell {
+    background: rgba(var(--rgb-surface), 0.55);
+    box-shadow: none;
+    backdrop-filter: none;
   }
 
   .homepage-stat-card {
@@ -708,7 +707,7 @@ const qualityCareItems = [
     border: 1px solid rgba(199, 210, 254, 0.1);
     border-left: 3px solid transparent;
     border-radius: 0.875rem;
-    background: rgba(55, 48, 163, 0.35);
+    background: rgba(199, 210, 254, 0.15);
     cursor: pointer;
     transition:
       background 0.2s ease,
@@ -743,7 +742,7 @@ const qualityCareItems = [
   .care-tab.active {
     border-color: rgba(199, 210, 254, 0.2);
     border-left-color: var(--color-cta);
-    background: rgba(199, 210, 254, 0.09);
+    background: rgba(4, 88, 84, 0.09);
   }
 
   .care-tab.active .care-tab-icon {
@@ -764,7 +763,7 @@ const qualityCareItems = [
     min-height: 22rem;
     border: 1px solid rgba(199, 210, 254, 0.12);
     border-radius: 1.25rem;
-    background: rgba(55, 48, 163, 0.4);
+    background: rgba(199, 210, 254, 0.12);
     box-shadow: inset 0 1px 0 rgba(199, 210, 254, 0.06);
   }
 
@@ -863,27 +862,28 @@ const qualityCareItems = [
   }
 
   :root.light .homepage-panel-cta {
-    background:
-      radial-gradient(
-        circle at 50% 0%,
-        rgba(99, 102, 241, 0.09),
-        transparent 34%
-      ),
-      linear-gradient(
-        180deg,
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(var(--rgb-surface-2), 0.985),
+      rgba(var(--rgb-bg), 0.995)
+    );
   }
 
   :root.light .homepage-feature-card,
   :root.light .homepage-glass-card,
-  :root.light .homepage-service-card,
-  :root.light .homepage-cta-shell {
+  :root.light .homepage-service-card {
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.92),
       rgba(238, 242, 255, 0.85)
     );
     box-shadow: inset 0 1px 0 rgba(79, 70, 229, 0.15);
+  }
+
+  :root.light .homepage-cta-shell {
+    background: rgba(var(--rgb-surface), 0.8);
+    box-shadow: none;
+    backdrop-filter: none;
   }
 
   :root.light .homepage-stat-card {
