@@ -16,9 +16,10 @@ interface Props {
   items: MenuItem[];
   sectionLabel: string;
   baseHref?: string;
+  moreLink?: { href: string; label: string };
 }
 
-const { title, items, sectionLabel, baseHref = "" } = Astro.props;
+const { title, items, sectionLabel, baseHref = "", moreLink } = Astro.props;
 ---
 
 <div class="group relative py-2 font-sans">
@@ -105,6 +106,19 @@ const { title, items, sectionLabel, baseHref = "" } = Astro.props;
         )
       }
     </div>
+    {moreLink && (
+      <div class="border-t theme-border mt-2 pt-2 px-3">
+        <a
+          href={moreLink.href}
+          class="flex items-center gap-2 py-2 text-sm font-sans font-bold text-cta hover:text-cta/80 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70 rounded-lg"
+        >
+          {moreLink.label}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path d="M9 5l7 7-7 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    )}
   </div>
 </div>
 

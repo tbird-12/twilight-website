@@ -91,8 +91,8 @@ const qualityCareItems = [
         >
           Whether you're seeking an evaluation for ADHD, Autism, or a learning
           disorder — or looking for therapy and medication support — our
-          neuro-affirming team in Lexington, Kentucky is here to help.
-          Now accepting new clients.
+          neuro-affirming team in Lexington, Kentucky is here to help. Now
+          accepting new clients.
         </p>
 
         <div
@@ -126,6 +126,29 @@ const qualityCareItems = [
               >Evaluations</span
             >
           </span>
+
+          <span
+            class="hidden sm:block w-px h-6 bg-site-sub/20"
+            aria-hidden="true"></span>
+          <span class="flex items-center gap-2">
+            <a
+              href="/resources/faq#wait-times"
+              class="waitlist-faq-link flex items-center gap-2 hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70 rounded-md"
+              title="Self-pay waitlist — see FAQ for insurance wait times"
+              aria-label="3 week waitlist for self-pay clients. Open FAQ wait times section for insurance and Medicaid timing details."
+            > ~
+              <span
+                class="text-xl sm:text-2xl font-serif font-black text-icon homepage-stat-value"
+                >3</span
+              >
+              <span class="text-xs sm:text-sm font-semibold text-cta"
+                >Weeks Waitlist<span
+                  class="waitlist-context block text-[10px] text-site-sub/75 font-semibold normal-case tracking-normal"
+                  >Self-pay clients</span
+                ></span
+              >
+            </a>
+          </span>
           <span
             class="hidden sm:block w-px h-6 bg-site-sub/20"
             aria-hidden="true"></span>
@@ -149,25 +172,6 @@ const qualityCareItems = [
             <span class="text-xs sm:text-sm font-semibold text-cta"
               >Insurance Panels</span
             >
-          </span>
-          <span
-            class="hidden sm:block w-px h-6 bg-site-sub/20"
-            aria-hidden="true"></span>
-          <span class="flex items-center gap-2">
-            <a
-              href="/resources/faq#wait-times"
-              class="waitlist-faq-link flex items-center gap-2 hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70 rounded-md"
-              title="Self-pay waitlist — see FAQ for insurance wait times"
-              aria-label="3 week waitlist for self-pay clients. Open FAQ wait times section for insurance and Medicaid timing details."
-            >
-              <span
-                class="text-xl sm:text-2xl font-serif font-black text-icon homepage-stat-value"
-                >3</span
-              >
-              <span class="text-xs sm:text-sm font-semibold text-cta"
-                >Weeks Waitlist<span class="waitlist-context block text-[10px] text-site-sub/75 font-semibold normal-case tracking-normal">Self-pay clients</span></span
-              >
-            </a>
           </span>
         </div>
       </div>
@@ -452,7 +456,11 @@ const qualityCareItems = [
         rgba(103, 232, 249, 0.08),
         transparent 26%
       ),
-      linear-gradient(180deg, rgba(var(--rgb-bg), 0.72), rgba(var(--rgb-bg), 0.92));
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-bg), 0.72),
+        rgba(var(--rgb-bg), 0.92)
+      );
   }
 
   @media (min-width: 640px) {
@@ -493,7 +501,11 @@ const qualityCareItems = [
         rgba(199, 210, 254, 0.06),
         transparent 30%
       ),
-      linear-gradient(180deg, rgba(var(--rgb-bg), 0.93), rgba(var(--rgb-bg), 0.97));
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-bg), 0.93),
+        rgba(var(--rgb-bg), 0.97)
+      );
   }
 
   .homepage-panel-services {
@@ -504,7 +516,11 @@ const qualityCareItems = [
         rgba(199, 210, 254, 0.06),
         transparent 30%
       ),
-      linear-gradient(180deg, rgba(var(--rgb-bg), 0.97), rgba(var(--rgb-surface-2), 0.985));
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-bg), 0.97),
+        rgba(var(--rgb-surface-2), 0.985)
+      );
   }
 
   .homepage-panel-cta {

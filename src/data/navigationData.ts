@@ -53,4 +53,7 @@ export const clientResourcesMenuItems = [
   { name: "New Client", slug: "new-client", desc: "Getting started guide" },
 ];
 
-export { services as servicesMenuItems, specialities as specialtiesMenuItems };
+export const servicesMenuItems = services.slice(0, 4);
+export const specialtiesMenuItems = specialities.slice(0, 4);
+export const allServicesMenuItems = services;
+export const allSpecialtiesMenuItems = specialities;

@@ -1,0 +1,85 @@
+---
+import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import "../../styles/global.css";
+import { specialities } from "../../data/services";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
+---
+
+<ServiceLayout
+  name="Our Specialties"
+  description="Explore all specialty evaluations and assessments offered by Twilight Psychology."
+  metaDescription="Twilight Psychology offers specialized evaluations including learning disability testing, psychoeducational evaluations, adoption evaluations, guardianship evaluations, ESA evaluations, and more in Kentucky."
+>
+  <section class="relative py-24 px-4 text-center border-b theme-border overflow-hidden">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
+        Our <span class="text-cta">Specialties</span>
+      </h1>
+      <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
+        Beyond our core services, we offer specialized evaluations and assessments
+        designed to meet specific needs, often not covered by insurance, from educational accommodations to legal proceedings.
+      </p>
+    </div>
+    <div class="specialties-hero-radial absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0"></div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-4 mt-16 mb-10">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {specialities.map((specialty) => (
+        <a
+          href={`/specialities/${specialty.slug}`}
+          class="group theme-surface-soft border theme-border rounded-2xl p-6 hover:border-cta/50 hover:shadow-lg hover:shadow-cta/10 transition-all duration-200"
+        >
+          <h2 class="font-serif text-lg font-black text-site-text group-hover:text-cta transition-colors mb-2">
+            {specialty.name}
+          </h2>
+          <p class="text-sm text-site-sub leading-relaxed mb-4">
+            {specialty.desc}
+          </p>
+          <span class="inline-flex items-center gap-1 text-xs font-bold text-cta">
+            Learn more
+            <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 mt-12 mb-10">
+    <div class="theme-surface-2 border theme-border-strong p-8 md:p-12 rounded-[2.5rem]">
+      <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+        Looking for something specific?
+      </h2>
+      <p class="text-site-text leading-relaxed font-medium mb-6">
+        If you don&apos;t see the evaluation type you need listed above, reach out to us.
+        Our clinicians have broad expertise and may be able to accommodate your request
+        or refer you to a trusted colleague.
+      </p>
+      <div class="flex flex-wrap gap-4 items-center">
+        <a
+          href="/contact"
+          class="inline-block bg-cta text-cta-fg px-6 py-3 rounded-full font-black text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
+        >
+          Contact Us
+        </a>
+        <a
+          href={`tel:${PHONE_NUMBER}`}
+          class="inline-block text-cta font-black text-sm hover:text-site-text transition-colors"
+        >
+          &#128222; {PHONE_NUMBER_FORMATTED}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .specialties-hero-radial {
+      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.4), transparent 65%);
+    }
+    :root.light .specialties-hero-radial {
+      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.12), transparent 65%);
+    }
+  </style>
+</ServiceLayout>
