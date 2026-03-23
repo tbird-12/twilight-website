@@ -144,4 +144,12 @@ const { title, items, sectionLabel, baseHref = "", moreLink } = Astro.props;
     background: var(--color-site-sub);
     border-radius: 10px;
   }
+
+  /* Ensure menus show when opened via JS (touch devices) */
+  .group.open > [role="menu"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    translate: 0 0;
+  }
 </style>

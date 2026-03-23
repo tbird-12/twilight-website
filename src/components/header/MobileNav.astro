@@ -129,28 +129,38 @@ import {
       if (window.innerWidth >= 768 && isMenuOpen()) closeMenu();
     });
 
-    /* ── Dropdown toggles ── */
-    ["about", "services", "specialties", "resources"].forEach(function (id) {
-      var toggle = document.getElementById(id + "Toggle");
-      var content = document.getElementById(id + "Content");
-      var icon = document.getElementById(id + "Icon");
-      if (toggle) {
-        toggle.addEventListener("click", function () {
-          if (content) content.classList.toggle("hidden");
-          if (icon) icon.classList.toggle("rotate-180");
-        });
-      }
-    });
+    /* ── Dropdown toggles (delegated) ──
+       Use event delegation so toggles keep working after orientation/resize. */
+    // Use a document-level click listener so the handler continues to work
+    // if the panel element is ever replaced (e.g., after orientation/resize).
+    document.addEventListener('click', function (e) {
+      var panel = e.target.closest('[data-mobile-menu-panel]');
+      if (!panel) return;
 
-    /* ── Nested About toggles ── */
-    document.querySelectorAll('[id^="aboutNestedToggle-"]').forEach(function (btn) {
-      var slug = btn.id.replace("aboutNestedToggle-", "");
-      var content = document.getElementById("aboutNestedContent-" + slug);
-      var icon = document.getElementById("aboutNestedIcon-" + slug);
-      btn.addEventListener("click", function () {
-        if (content) content.classList.toggle("hidden");
-        if (icon) icon.classList.toggle("rotate-180");
-      });
+      var btn = e.target.closest('button');
+      if (!btn) return;
+
+      // Primary dropdowns (ids like "aboutToggle")
+      if (btn.id && /Toggle$/.test(btn.id)) {
+        var idBase = btn.id.replace(/Toggle$/, '');
+        var content = document.getElementById(idBase + 'Content');
+        var icon = document.getElementById(idBase + 'Icon');
+        if (content) content.classList.toggle('hidden');
+        if (icon) icon.classList.toggle('rotate-180');
+        return;
+      }
+
+      // Nested toggles (ids like "<id>NestedToggle-<slug>")
+      var nestedMatch = btn.id && btn.id.match(/^(.+)NestedToggle-(.+)$/);
+      if (nestedMatch) {
+        var idBase = nestedMatch[1];
+        var slug = nestedMatch[2];
+        var nestedContent = document.getElementById(idBase + 'NestedContent-' + slug);
+        var nestedIcon = document.getElementById(idBase + 'NestedIcon-' + slug);
+        if (nestedContent) nestedContent.classList.toggle('hidden');
+        if (nestedIcon) nestedIcon.classList.toggle('rotate-180');
+        return;
+      }
     });
   })();
 </script>
