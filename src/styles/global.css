@@ -70,7 +70,7 @@
   --color-ink: var(--color-site-text);
   --color-brand: var(--color-cta);
   --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
   --font-serif: var(--font-heading);
   --font-sans: var(--font-body);
 }

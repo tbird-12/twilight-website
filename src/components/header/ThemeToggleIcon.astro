@@ -1,3 +1,10 @@
+<style is:global>
+:root .theme-toggle__rays { opacity: 0; transition: opacity 180ms ease, transform 200ms cubic-bezier(.2,.9,.3,1); transform-origin: center; transform: scale(.92); }
+:root .theme-toggle__bulb, :root .theme-toggle__filament, :root .theme-toggle__rays path { transition: filter 180ms ease, stroke 180ms ease, fill 180ms ease, opacity 180ms ease; }
+:root.light .theme-toggle__bulb, :root.light .theme-toggle__filament { filter: drop-shadow(0 0 6px rgba(99,102,241,0.32)); }
+:root.light .theme-toggle__rays { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 6px rgba(99,102,241,0.32)); }
+</style>
+
 <svg
   class="theme-toggle__icon h-4.5 w-4.5"
   viewBox="0 0 24 24"
