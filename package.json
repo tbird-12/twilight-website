@@ -6,6 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "astro": "astro"
   },
   "dependencies": {
@@ -22,6 +25,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.24",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.0"
+    "tailwindcss": "^4.1.0",
+    "vitest": "^4.1.1"
   }
 }
