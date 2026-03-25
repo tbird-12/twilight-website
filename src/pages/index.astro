@@ -27,6 +27,25 @@ const services = [
   },
 ];
 
+const problemPoints = [
+  {
+    title: "Long waits for testing",
+    desc: "Wait times for insured psychological evaluations in Kentucky can stretch years — making it hard to get the answers you need when you need them.",
+  },
+  {
+    title: "Limited insurance options",
+    desc: "Comprehensive evaluations are often only available on a self-pay basis, which can mean thousands of dollars out of pocket — even when you have insurance.",
+  },
+  {
+    title: "Adults can be harder to assess",
+    desc: "Many assessment approaches were originally developed for children. Adults who've adapted over time may need a more nuanced, experienced evaluation.",
+  },
+  {
+    title: "What comes after the diagnosis?",
+    desc: "A diagnosis is just the starting point. Having therapy, medication management, and ongoing support available in one place makes all the difference.",
+  },
+];
+
 const qualityCareItems = [
   {
     icon: "mdi:earth",
@@ -196,83 +215,34 @@ const qualityCareItems = [
               class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-site-text tracking-tighter leading-[1.05] mb-6"
             >
               Getting Answers
-              <span class="text-cta block sm:inline"> Shouldn't Be This Hard</span>
+              <span class="text-cta block sm:inline"> Should Not Be This Hard</span>
             </h2>
-            <p
-              class="text-site-sub text-base sm:text-lg leading-relaxed max-w-lg font-medium"
-            >
-              If you've been looking for clarity around ADHD, Autism, or a
-              learning difference, you've probably noticed how difficult the
-              process can be — long waits, limited insurance options, and
-              assessments that don't always reflect the adult experience.
+            <p class="text-site-sub text-base sm:text-lg leading-relaxed max-w-lg font-medium">
+              Twilight Psychology provides specialized evaluations for ADHD, Autism, and learning disorders, 
+              specifically tailored to the adult experience. 
+              Unlike insurance-constrained or pediatric-focused models, our expertise also includes adoption 
+              evaluations, ESA letters, guardianship assessments, and psychoeducational testing.
+              <a href="/specialities" class="text-cta font-semibold hover:underline">
+                Learn more 
+              </a>
             </p>
           </div>
 
           <!-- Right: staggered pain points -->
           <div class="problem-points" role="list">
-            <div class="problem-point" role="listitem">
-              <span class="problem-point-marker" aria-hidden="true"></span>
-              <div>
-                <h3
-                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
-                >
-                  Long waits for testing
-                </h3>
-                <p class="text-sm text-site-sub leading-relaxed">
-                  Wait times for insured psychological evaluations in Kentucky
-                  can stretch years — making it hard to get the answers
-                  you need when you need them.
-                </p>
+            {problemPoints.map((point) => (
+              <div class="problem-point" role="listitem">
+                <span class="problem-point-marker" aria-hidden="true"></span>
+                <div>
+                  <h3 class="font-sans text-base sm:text-lg font-bold text-site-text mb-1">
+                    {point.title}
+                  </h3>
+                  <p class="text-sm text-site-sub leading-relaxed">
+                    {point.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-
-            <div class="problem-point" role="listitem">
-              <span class="problem-point-marker" aria-hidden="true"></span>
-              <div>
-                <h3
-                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
-                >
-                  Limited insurance options
-                </h3>
-                <p class="text-sm text-site-sub leading-relaxed">
-                  Comprehensive evaluations are often only available on a
-                  self-pay basis, which can mean thousands of dollars out of
-                  pocket — even when you have insurance.
-                </p>
-              </div>
-            </div>
-
-            <div class="problem-point" role="listitem">
-              <span class="problem-point-marker" aria-hidden="true"></span>
-              <div>
-                <h3
-                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
-                >
-                  Adults can be harder to assess
-                </h3>
-                <p class="text-sm text-site-sub leading-relaxed">
-                  Many assessment approaches were originally developed for
-                  children. Adults who've adapted over time may need a more
-                  nuanced, experienced evaluation.
-                </p>
-              </div>
-            </div>
-
-            <div class="problem-point" role="listitem">
-              <span class="problem-point-marker" aria-hidden="true"></span>
-              <div>
-                <h3
-                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
-                >
-                  What comes after the diagnosis?
-                </h3>
-                <p class="text-sm text-site-sub leading-relaxed">
-                  A diagnosis is just the starting point. Having therapy,
-                  medication management, and ongoing support available in one
-                  place makes all the difference.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
