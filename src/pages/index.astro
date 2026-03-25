@@ -183,6 +183,163 @@ const qualityCareItems = [
       </div>
     </section>
 
+    <!-- ════════════════ THE PROBLEM ════════════════ -->
+    <section
+      class="homepage-panel homepage-panel-problem relative isolate overflow-hidden px-4"
+    >
+      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="problem-grid">
+          <!-- Left: bold statement -->
+          <div class="problem-statement">
+            <p class="homepage-section-label">The Reality</p>
+            <h2
+              class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-site-text tracking-tighter leading-[1.05] mb-6"
+            >
+              Getting Answers
+              <span class="text-cta block sm:inline"> Shouldn't Be This Hard</span>
+            </h2>
+            <p
+              class="text-site-sub text-base sm:text-lg leading-relaxed max-w-lg font-medium"
+            >
+              If you've been looking for clarity around ADHD, Autism, or a
+              learning difference, you've probably noticed how difficult the
+              process can be — long waits, limited insurance options, and
+              assessments that don't always reflect the adult experience.
+            </p>
+          </div>
+
+          <!-- Right: staggered pain points -->
+          <div class="problem-points" role="list">
+            <div class="problem-point" role="listitem">
+              <span class="problem-point-marker" aria-hidden="true"></span>
+              <div>
+                <h3
+                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
+                >
+                  Long waits for testing
+                </h3>
+                <p class="text-sm text-site-sub leading-relaxed">
+                  Wait times for insured psychological evaluations in Kentucky
+                  can stretch years — making it hard to get the answers
+                  you need when you need them.
+                </p>
+              </div>
+            </div>
+
+            <div class="problem-point" role="listitem">
+              <span class="problem-point-marker" aria-hidden="true"></span>
+              <div>
+                <h3
+                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
+                >
+                  Limited insurance options
+                </h3>
+                <p class="text-sm text-site-sub leading-relaxed">
+                  Comprehensive evaluations are often only available on a
+                  self-pay basis, which can mean thousands of dollars out of
+                  pocket — even when you have insurance.
+                </p>
+              </div>
+            </div>
+
+            <div class="problem-point" role="listitem">
+              <span class="problem-point-marker" aria-hidden="true"></span>
+              <div>
+                <h3
+                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
+                >
+                  Adults can be harder to assess
+                </h3>
+                <p class="text-sm text-site-sub leading-relaxed">
+                  Many assessment approaches were originally developed for
+                  children. Adults who've adapted over time may need a more
+                  nuanced, experienced evaluation.
+                </p>
+              </div>
+            </div>
+
+            <div class="problem-point" role="listitem">
+              <span class="problem-point-marker" aria-hidden="true"></span>
+              <div>
+                <h3
+                  class="font-sans text-base sm:text-lg font-bold text-site-text mb-1"
+                >
+                  What comes after the diagnosis?
+                </h3>
+                <p class="text-sm text-site-sub leading-relaxed">
+                  A diagnosis is just the starting point. Having therapy,
+                  medication management, and ongoing support available in one
+                  place makes all the difference.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="homepage-panel homepage-panel-services relative isolate overflow-hidden px-4"
+    >
+      <div
+        class="homepage-panel-glow homepage-panel-glow-right"
+        aria-hidden="true"
+      >
+      </div>
+      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <div
+          class="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+        >
+          <div>
+            <p class="homepage-section-label">Core services</p>
+            <h2
+              class="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-site-text tracking-tighter"
+            >
+              How We Can Help
+            </h2>
+          </div>
+          <p
+            class="max-w-md text-sm md:text-base leading-relaxed text-site-sub"
+          >
+            "Twilight Psychology delivers the clinical depth to guide confident,
+            informed decisions."
+          </p>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {
+            services.map((service) => (
+              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-9 sm:p-11 transition-all duration-500 overflow-hidden min-h-56">
+                <div class="relative z-10 flex h-full flex-col">
+                  <div class="mb-5 flex items-center gap-3">
+                    <Icon
+                      name={service.icon}
+                      class="w-9 h-9 text-site-sub shrink-0"
+                      style="color: var(--color-icon);"
+                    />
+                    <h3 class="font-serif text-xl sm:text-2xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p class="mb-7 text-sm sm:text-base leading-relaxed text-site-sub">
+                    {service.desc}
+                  </p>
+
+                  <a
+                    href={service.link}
+                    class="mt-auto inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors"
+                  >
+                    Explore Service
+                    <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all" />
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <section
       id="quality-care"
       class="homepage-panel homepage-panel-care relative isolate overflow-hidden px-4"
@@ -209,6 +366,53 @@ const qualityCareItems = [
           </p>
         </header>
 
+        <!-- ── Mobile accordion (visible < lg) ── -->
+        <div class="care-accordion" role="list">
+          {
+            qualityCareItems.map((item, idx) => (
+              <div
+                class={`care-accordion-item${idx === 0 ? " open" : ""}`}
+                data-accordion-item={String(idx)}
+                role="listitem"
+              >
+                <button
+                  class="care-accordion-trigger"
+                  type="button"
+                  aria-expanded={idx === 0 ? "true" : "false"}
+                  data-accordion-trigger={String(idx)}
+                >
+                  <Icon
+                    name={item.icon}
+                    class="care-accordion-icon w-6 h-6 shrink-0"
+                    style="color: var(--color-icon);"
+                  />
+                  <span class="care-accordion-title font-sans font-semibold text-[0.95rem] leading-snug">
+                    {item.title}
+                  </span>
+                  <Icon
+                    name="mdi:chevron-down"
+                    class="care-accordion-chevron ml-auto w-5 h-5 shrink-0"
+                  />
+                </button>
+                <div class="care-accordion-body">
+                  <div class="care-accordion-content">
+                    <p class="text-site-sub text-sm leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
+                    {item.link ? (
+                      <a href={item.link} class="inline-flex items-center text-cta text-sm font-semibold hover:underline mt-3">
+                        Learn More
+                        <svg class="w-3 h-3 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- ── Desktop tab/panel (visible lg+) ── -->
         <div class="care-two-panel">
           <!-- Left: selectable tab list -->
           <nav
@@ -289,68 +493,6 @@ const qualityCareItems = [
               ))
             }
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="homepage-panel homepage-panel-services relative isolate overflow-hidden px-4"
-    >
-      <div
-        class="homepage-panel-glow homepage-panel-glow-right"
-        aria-hidden="true"
-      >
-      </div>
-      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <div
-          class="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
-        >
-          <div>
-            <p class="homepage-section-label">Core services</p>
-            <h2
-              class="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-site-text tracking-tighter"
-            >
-              How We Can Help
-            </h2>
-          </div>
-          <p
-            class="max-w-md text-sm md:text-base leading-relaxed text-site-sub"
-          >
-            "Twilight Psychology delivers the clinical depth to guide confident,
-            informed decisions."
-          </p>
-        </div>
-
-        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {
-            services.map((service) => (
-              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-9 sm:p-11 transition-all duration-500 overflow-hidden min-h-56">
-                <div class="relative z-10 flex h-full flex-col">
-                  <div class="mb-5 flex items-center gap-3">
-                    <Icon
-                      name={service.icon}
-                      class="w-9 h-9 text-site-sub shrink-0"
-                      style="color: var(--color-icon);"
-                    />
-                    <h3 class="font-serif text-xl sm:text-2xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
-                      {service.title}
-                    </h3>
-                  </div>
-                  <p class="mb-7 text-sm sm:text-base leading-relaxed text-site-sub">
-                    {service.desc}
-                  </p>
-
-                  <a
-                    href={service.link}
-                    class="mt-auto inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors"
-                  >
-                    Explore Service
-                    <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all" />
-                  </a>
-                </div>
-              </div>
-            ))
-          }
         </div>
       </div>
     </section>
@@ -528,6 +670,112 @@ const qualityCareItems = [
       );
   }
 
+  .homepage-panel-problem {
+    --homepage-chrome-offset: 6.5rem;
+    background:
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(199, 210, 254, 0.05),
+        transparent 30%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-bg), 0.95),
+        rgba(var(--rgb-bg), 0.92)
+      );
+  }
+
+  .problem-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .problem-grid {
+      grid-template-columns: 5fr 6fr;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+
+  .problem-statement {
+    position: sticky;
+    top: 6rem;
+  }
+
+  @media (max-width: 1023px) {
+    .problem-statement {
+      position: static;
+      text-align: center;
+    }
+
+    .problem-statement p:last-child {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .problem-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .problem-point {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(199, 210, 254, 0.1);
+    position: relative;
+  }
+
+  .problem-point:first-child {
+    border-top: 1px solid rgba(199, 210, 254, 0.1);
+  }
+
+  .problem-point-marker {
+    position: relative;
+    flex-shrink: 0;
+    width: 0.625rem;
+    height: 0.625rem;
+    margin-top: 0.45rem;
+    border-radius: 9999px;
+    background: var(--color-cta);
+    opacity: 0.6;
+  }
+
+  .problem-point-marker::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    border: 1.5px solid var(--color-cta);
+    opacity: 0.25;
+  }
+
+  :root.light .homepage-panel-problem {
+    background:
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(79, 70, 229, 0.05),
+        transparent 30%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-bg), 0.97),
+        rgba(var(--rgb-bg), 0.94)
+      );
+  }
+
+  :root.light .problem-point {
+    border-bottom-color: rgba(79, 70, 229, 0.12);
+  }
+
+  :root.light .problem-point:first-child {
+    border-top-color: rgba(79, 70, 229, 0.12);
+  }
+
   .homepage-panel-services {
     --homepage-chrome-offset: 6.5rem;
     background:
@@ -681,7 +929,7 @@ const qualityCareItems = [
 
   @media (max-width: 767px) {
     .homepage-panel {
-      min-height: auto;
+      min-height: 100svh;
     }
 
     .homepage-shell::before {
@@ -722,18 +970,122 @@ const qualityCareItems = [
     }
   }
 
-  /* ── Care two-panel (highlight blocks + display panel) ── */
+  /* ── Mobile accordion (< lg) ── */
+
+  .care-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .care-accordion {
+      display: none;
+    }
+  }
+
+  .care-accordion-item {
+    border: 1px solid rgba(199, 210, 254, 0.12);
+    border-radius: 1rem;
+    background: rgba(199, 210, 254, 0.04);
+    overflow: hidden;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .care-accordion-item.open {
+    border-color: rgba(199, 210, 254, 0.22);
+    background: rgba(199, 210, 254, 0.08);
+  }
+
+  .care-accordion-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+  }
+
+  .care-accordion-trigger:focus-visible {
+    outline: 2px solid rgba(129, 140, 248, 0.85);
+    outline-offset: -2px;
+    border-radius: 1rem;
+  }
+
+  .care-accordion-icon {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .care-accordion-item.open .care-accordion-icon {
+    opacity: 1;
+  }
+
+  .care-accordion-title {
+    color: var(--color-site-sub);
+    transition: color 0.2s ease;
+  }
+
+  .care-accordion-item.open .care-accordion-title {
+    color: var(--color-site-text);
+  }
+
+  .care-accordion-chevron {
+    color: var(--color-site-sub);
+    transition: transform 0.3s ease, color 0.2s ease;
+  }
+
+  .care-accordion-item.open .care-accordion-chevron {
+    transform: rotate(180deg);
+    color: var(--color-cta);
+  }
+
+  .care-accordion-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+  }
+
+  .care-accordion-item.open .care-accordion-body {
+    grid-template-rows: 1fr;
+  }
+
+  .care-accordion-content {
+    overflow: hidden;
+    padding: 0 1.25rem;
+    min-height: 0;
+  }
+
+  .care-accordion-item.open .care-accordion-content {
+    padding-bottom: 1.25rem;
+  }
+
+  :root.light .care-accordion-item {
+    border-color: rgba(79, 70, 229, 0.12);
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  :root.light .care-accordion-item.open {
+    border-color: rgba(79, 70, 229, 0.22);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  /* ── Desktop tab/panel (visible lg+) ── */
 
   .care-two-panel {
-    display: grid;
-    gap: 1.5rem;
-    align-items: start;
+    display: none;
   }
 
   @media (min-width: 1024px) {
     .care-two-panel {
-      grid-template-columns: minmax(240px, 5fr) 7fr;
+      display: grid;
       gap: 2.5rem;
+      align-items: start;
+      grid-template-columns: minmax(240px, 5fr) 7fr;
     }
   }
 
@@ -1136,5 +1488,32 @@ const qualityCareItems = [
     } else if (statCounterMeta.length > 0) {
       runStatCounters();
     }
+
+    // ── Accordion (mobile care section) ──
+    const accordionTriggers = Array.from(
+      document.querySelectorAll<HTMLButtonElement>("[data-accordion-trigger]"),
+    );
+
+    accordionTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const idx = trigger.dataset.accordionTrigger;
+        const item = document.querySelector<HTMLElement>(
+          `[data-accordion-item="${idx}"]`,
+        );
+        if (!item) return;
+
+        const isOpen = item.classList.contains("open");
+
+        if (isOpen) {
+          // Close this item
+          item.classList.remove("open");
+          trigger.setAttribute("aria-expanded", "false");
+        } else {
+          // Open this item (allow multiple open)
+          item.classList.add("open");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
   });
 </script>
