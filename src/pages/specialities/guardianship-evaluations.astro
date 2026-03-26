@@ -95,7 +95,7 @@ const faqs = [
                 <span class="text-cta group-hover:text-cta-fg font-black text-sm">{String(idx + 1).padStart(2, '0')}</span>
               </div>
               <h3 class="font-serif text-site-text font-black mb-2">{item.title}</h3>
-              <p class="text-site-sub/80 text-sm leading-relaxed">{item.detail}</p>
+              <p class="text-site-sub text-sm leading-relaxed">{item.detail}</p>
             </div>
           ))}
         </div>
@@ -128,7 +128,7 @@ const faqs = [
 
       <div class="theme-surface-soft border theme-border p-8 rounded-[2.5rem]">
         <h3 class="font-serif text-xl font-black text-site-text mb-4">Scope of Service</h3>
-        <p class="text-site-sub/80 text-sm leading-relaxed mb-4">
+        <p class="text-site-sub text-sm leading-relaxed mb-4">
           We provide independent clinical evaluation and written psychological opinion only.
         </p>
         <ul class="space-y-3 text-sm font-bold text-sand/80">
@@ -154,7 +154,7 @@ const faqs = [
       {faqs.map((faq) => (
         <div class="p-8 theme-surface-soft border theme-border rounded-3xl group hover:border-cta/30 transition-all">
           <h3 class="font-serif text-sand font-black mb-3 text-lg">{faq.q}</h3>
-          <p class="text-site-sub/75 text-sm leading-relaxed">{faq.a}</p>
+          <p class="text-site-sub text-sm leading-relaxed">{faq.a}</p>
         </div>
       ))}
     </div>

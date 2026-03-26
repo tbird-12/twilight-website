@@ -24,6 +24,10 @@
 --rgb-bg: 19, 28, 35;
 --rgb-surface: 26, 36, 45;
 --rgb-surface-2: 36, 47, 57;
+--rgb-accent: 199, 210, 254;
+--rgb-accent-alt: 103, 232, 249;
+--theme-section-label: rgba(165, 180, 252, 0.9);
+--theme-section-label-line: rgba(199, 210, 254, 0.2);
 }
 
 :root.light {
@@ -46,11 +50,13 @@
   --rgb-bg: 250, 245, 255;
   --rgb-surface: 255, 255, 255;
   --rgb-surface-2: 238, 242, 255;
+  --rgb-accent: 79, 70, 229;
+  --rgb-accent-alt: 8, 145, 178;
+  --theme-section-label: rgba(91, 82, 148, 0.85);
+  --theme-section-label-line: rgba(79, 70, 229, 0.25);
 }
 
 @theme {
-
-  /* ── Site palette ── edit these hex values to retheme the whole site ── */
   --color-site-bg:   var(--theme-site-bg);  /* page background */
   --color-site-text: var(--theme-site-text);  /* primary text */
   --color-site-sub:  var(--theme-site-sub);  /* secondary text */
@@ -134,19 +140,4 @@ html {
   .theme-hover-surface-2:hover {
     background-color: var(--color-surface-2);
   }
-}
-
-@keyframes pulseGlow {
-  0% { text-shadow: 0 0 10px rgba(199, 210, 254, 0.2); }
-  50% { text-shadow: 0 0 25px rgba(199, 210, 254, 0.5); }
-  100% { text-shadow: 0 0 10px rgba(199, 210, 254, 0.2); }
-}
-
-.glow-word {
-  animation: pulseGlow 3s infinite ease-in-out;
-  color: #e0e7ff;
-}
-
-:root.light .glow-word {
-  color: #1e1b4b;
 }

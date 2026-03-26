@@ -55,7 +55,7 @@ const categories = [
         specialized support for the complex intersections of the human
         experience.
       </p>
-      <p class="mt-6 text-sm text-site-sub/80 max-w-3xl mx-auto leading-relaxed">
+      <p class="mt-6 text-sm text-site-sub max-w-3xl mx-auto leading-relaxed">
         Our practice does not provide speech therapy, occupational therapy, or play therapy.
       </p>
     </div>
@@ -67,7 +67,7 @@ const categories = [
 
   <section class="max-w-7xl mx-auto px-4 mt-20" data-tabs-root>
     <div class="flex flex-col gap-6">
-      <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub/80">
+      <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub">
         <p class="font-semibold uppercase tracking-wider">Choose a care category</p>
         <p class="hidden lg:block">Scroll to explore</p>
       </div>
@@ -160,7 +160,7 @@ const categories = [
       </p>
 
       <div class="pt-6 border-t theme-border">
-        <p class="text-[10px] font-black text-site-sub/80 uppercase tracking-widest  mb-2">
+        <p class="text-[10px] font-black text-site-sub uppercase tracking-widest  mb-2">
           Ready to start?
         </p>
         <a
@@ -216,11 +216,7 @@ const categories = [
 
   <style>
     .catalog-hero-radial {
-      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.4), transparent 65%);
-    }
-
-    :root.light .catalog-hero-radial {
-      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.12), transparent 65%);
+      background: radial-gradient(circle at center, rgba(var(--rgb-surface-2), 0.4), transparent 65%);
     }
   </style>
 </ServiceLayout>

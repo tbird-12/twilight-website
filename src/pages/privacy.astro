@@ -30,7 +30,7 @@ const policyPoints = [
         <h1 class="font-serif text-4xl md:text-6xl font-black mb-4 tracking-tighter">
           Website <span class="text-cta">Privacy Policy.</span>
         </h1>
-        <p class="text-site-sub/80 font-medium">Last Updated: February 20, 2026</p>
+        <p class="text-site-sub font-medium">Last Updated: February 20, 2026</p>
       </div>
     </section>
 
@@ -56,13 +56,13 @@ const policyPoints = [
             {policyPoints.map(point => (
               <div class="p-8 bg-surface-soft border border-border rounded-3xl">
                 <h3 class="font-serif text-sand font-black mb-2">{point.title}</h3>
-                <p class="text-site-text/60 text-sm leading-relaxed">{point.desc}</p>
+                <p class="text-site-sub text-sm leading-relaxed">{point.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <article class="prose max-w-none text-site-text/70">
+        <article class="prose max-w-none text-site-sub">
           <h2 class="font-serif text-site-text font-black">Data Security</h2>
           <p>
             We do not collect any personal information on this website. We take reasonable measures to protect the information submitted through our email, but we cannot guarantee its security.
@@ -78,7 +78,7 @@ const policyPoints = [
 
       <div class="mt-20 p-10 bg-surface-soft border border-border rounded-[2.5rem] text-center">
         <h3 class="font-serif text-xl font-black text-site-text mb-2">Web Privacy Questions?</h3>
-        <p class="text-site-sub/80 text-sm">For questions regarding this website policy, contact:</p>
+        <p class="text-site-sub text-sm">For questions regarding this website policy, contact:</p>
         <p class="text-cta font-black mt-4"></p>
           <a href={`mailto:${EMAIL_ADDRESS}`} class="text-cta hover:text-cta transition-colors duration-200">{EMAIL_ADDRESS}</a>
         </p>

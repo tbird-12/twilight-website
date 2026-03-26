@@ -31,7 +31,7 @@ import {
         </p>
       </header>
 
-      <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border border-amber-300/30 p-6 sm:p-8 md:p-10">
+      <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border theme-border-strong p-6 sm:p-8 md:p-10">
         <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
         <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
           If you are in immediate danger or need urgent help, do not wait for office response.
@@ -61,7 +61,7 @@ import {
       </section>
 
       <section class="mt-10 md:mt-12 rounded-4xl border theme-border-strong theme-surface-2 p-6 sm:p-8 md:p-10" data-contact-tabs-root>
-        <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub/80">
+        <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub">
           <p class="font-semibold uppercase tracking-wider">Select the path that fits you</p>
           <p class="hidden lg:block">Scroll to explore</p>
         </div>
@@ -282,11 +282,7 @@ import {
 
   <style>
     .contact-emergency-shell {
-      background: linear-gradient(135deg, rgba(252, 211, 77, 0.16), rgba(30, 41, 59, 0.2));
-    }
-
-    :root.light .contact-emergency-shell {
-      background: linear-gradient(135deg, rgba(252, 211, 77, 0.2), rgba(224, 231, 255, 0.7));
+      background: linear-gradient(135deg, rgba(var(--rgb-surface-2), 0.6), rgba(var(--rgb-surface), 0.4));
     }
   </style>
 </ServiceLayout>

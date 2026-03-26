@@ -103,7 +103,7 @@ const faqs = [
                 <span class="text-cta group-hover:text-cta-fg font-black text-sm">{String(idx + 1).padStart(2, '0')}</span>
               </div>
               <h3 class="font-serif text-site-text font-black mb-2">{item.title}</h3>
-              <p class="text-site-sub/80 text-sm leading-relaxed">{item.detail}</p>
+              <p class="text-site-sub text-sm leading-relaxed">{item.detail}</p>
             </div>
           ))}
         </div>
@@ -133,28 +133,28 @@ const faqs = [
             <span class="text-cta font-black mt-0.5">✓</span>
             <div>
               <span class="font-bold text-site-text block">Waitlist</span>
-              <span class="text-site-sub/80">Approx. 2 weeks for new clients</span>
+              <span class="text-site-sub">Approx. 2 weeks for new clients</span>
             </div>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-cta font-black mt-0.5">✓</span>
             <div>
               <span class="font-bold text-site-text block">Evaluating Team</span>
-              <span class="text-site-sub/80">Licensed psychologists providing formal clinical review</span>
+              <span class="text-site-sub">Licensed psychologists providing formal clinical review</span>
             </div>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-cta font-black mt-0.5">✓</span>
             <div>
               <span class="font-bold text-site-text block">Delivery</span>
-              <span class="text-site-sub/80">Letter provided within 1–2 business days after evaluation</span>
+              <span class="text-site-sub">Letter provided within 1–2 business days after evaluation</span>
             </div>
           </li>
           <li class="flex items-start gap-3">
             <span class="text-cta font-black mt-0.5">✓</span>
             <div>
               <span class="font-bold text-site-text block">Existing Clients</span>
-              <span class="text-site-sub/80">Prioritized within current treatment plan</span>
+              <span class="text-site-sub">Prioritized within current treatment plan</span>
             </div>
           </li>
         </ul>
@@ -162,7 +162,7 @@ const faqs = [
 
       <div class="theme-surface-soft border theme-border p-10 rounded-[2.5rem] text-center">
         <h3 class="font-serif text-2xl font-black text-site-text mb-4 tracking-tight">Schedule an Intake</h3>
-        <p class="text-site-sub/80 text-sm mb-8">Request a clinician-led evaluation if you need documentation that is careful, legitimate, and professionally prepared.</p>
+        <p class="text-site-sub text-sm mb-8">Request a clinician-led evaluation if you need documentation that is careful, legitimate, and professionally prepared.</p>
         <a href={WIDGET_LINK} class="block w-full py-4 bg-sand text-cta-fg font-black rounded-full hover:bg-cta transition-all shadow-lg shadow-sand/10">
           Request Appointment
         </a>
@@ -184,7 +184,7 @@ const faqs = [
       {faqs.map(faq => (
         <div class="p-8 theme-surface-soft border theme-border rounded-3xl group hover:border-cta/30 transition-all">
           <h3 class="font-serif text-sand font-black mb-3 text-lg">{faq.q}</h3>
-          <p class="text-site-sub/75 text-sm leading-relaxed">{faq.a}</p>
+          <p class="text-site-sub text-sm leading-relaxed">{faq.a}</p>
         </div>
       ))}
     </div>

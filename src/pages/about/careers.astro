@@ -41,7 +41,7 @@ const clinicianBenefits = [
                 <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Licensed <br/>Provider</h2>
                 <span class="text-[9px] font-black text-site-text border border-border-strong px-2 py-1 rounded uppercase">W2/1099</span>
             </div>
-            <p class="text-site-text/60 mb-6 text-xs leading-relaxed">
+            <p class="text-site-sub mb-6 text-xs leading-relaxed">
               Seeking Doctoral or Master’s level clinicians (LP, T-LP, LPA, T-LPA, LPP) for therapy and assessments in Lexington and surrounding counties.
             </p>
             <ul class="space-y-3 mb-8">
@@ -61,7 +61,7 @@ const clinicianBenefits = [
                 <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Doctoral <br/>Practicum</h2>
                 <span class="text-[9px] font-black text-cta-fg bg-sand px-2 py-1 rounded uppercase">Clinical</span>
             </div>
-            <p class="text-site-text/60 mb-6 text-xs leading-relaxed">
+            <p class="text-site-sub mb-6 text-xs leading-relaxed">
               Seeking KY-licensed doctoral Psychology students for 10–15 hours of assessment work per week.
               Gain hands-on experience with a diverse caseload from ages 2 and above.
             </p>
@@ -106,7 +106,7 @@ const clinicianBenefits = [
             </div>
             <div>
               <h4 class="font-serif text-site-text font-bold">Postdoctoral Supervision</h4>
-              <p class="text-site-text/50 text-sm">
+              <p class="text-site-sub text-sm">
                 Full support for candidates seeking licensure in Kentucky,
                 focusing on advanced diagnostic reporting and practice
                 management.
@@ -122,7 +122,7 @@ const clinicianBenefits = [
             </div>
             <div>
               <h4 class="font-serif text-site-text font-bold">Assessment Specialization</h4>
-              <p class="text-site-text/50 text-sm">
+              <p class="text-site-sub text-sm">
                 Master the ADOS-2, MIGDAS-2, and complex differential diagnosis
                 under the guidance of seasoned evaluators.
               </p>
@@ -165,27 +165,23 @@ const clinicianBenefits = [
 
   
 
-  <section class="max-w-7xl mx-auto px-4">
-    <div
-      class="bg-cta p-12 rounded-[4rem] text-cta-fg flex flex-col md:flex-row items-center gap-8"
-    >
-      <div class="md:w-2/3">
-        <h2 class="font-serif text-4xl font-black mb-4 tracking-tighter">
+  <section class="max-w-4xl mx-auto px-4 pb-8">
+    <div class="rounded-3xl border theme-border-strong theme-surface-2 p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
+      <div class="flex-1">
+        <h2 class="font-serif text-xl sm:text-2xl font-black text-site-text mb-2 tracking-tight">
           Ready to Join Our Team?
         </h2>
-        <p class="font-bold opacity-80 leading-relaxed">
-          Beautiful office space in Lexington with free parking and easy public
-          transit access. We are deeply committed to diversity, equity, and
-          inclusion—valuing the unique perspectives you bring to our team.
+        <p class="text-site-sub text-sm leading-relaxed">
+          Beautiful office space in Lexington with free parking and easy transit access. We value the unique perspectives you bring.
         </p>
       </div>
-      <div class="md:w-1/3 text-center">
-        <p class="text-[10px] font-black uppercase tracking-widest mb-4">
-          Questions?
-        </p>
-        <a href={`tel:${PHONE_NUMBER}`} class="text-lg font-black"
-          >&#128222; 859-687-5843</a
-        >
+      <div class="flex items-center gap-4 shrink-0">
+        <a href="mailto:info@twilightpsychology.com" class="inline-flex items-center rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors">
+          Get in Touch
+        </a>
+        <a href={`tel:${PHONE_NUMBER}`} class="text-sm font-black text-site-sub hover:text-cta transition-colors whitespace-nowrap">
+          859-687-5843
+        </a>
       </div>
     </div>
   </section>
