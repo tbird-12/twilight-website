@@ -66,7 +66,6 @@ const differentiators = [
     </svg>
   </button>
 
-  <!-- ════════════════ HERO ════════════════ -->
   <section class="lp-section lp-hero relative isolate overflow-hidden">
     <div class="lp-hero-glow" aria-hidden="true"></div>
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24 lg:py-32">
@@ -211,7 +210,6 @@ const differentiators = [
     </div>
   </section>
 
-  <!-- ════════════════ TEAM ════════════════ -->
   <section class="lp-section lp-team relative isolate overflow-hidden">
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
       <div class="text-center mb-12 sm:mb-16">
@@ -287,7 +285,6 @@ const differentiators = [
     </div>
   </section>
 
-  <!-- ════════════════ HOW IT WORKS ════════════════ -->
   <section class="lp-section lp-steps relative isolate overflow-hidden">
     <div class="lp-glow lp-glow-right" aria-hidden="true"></div>
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
@@ -376,7 +373,7 @@ const differentiators = [
 
   .lp-section {
     position: relative;
-    border-top: 1px solid rgba(199, 210, 254, 0.06);
+    border-top: 1px solid var(--theme-border);
   }
 
   .lp-section:first-child {
@@ -389,8 +386,8 @@ const differentiators = [
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(199, 210, 254, 0.12), transparent),
-      radial-gradient(circle at 20% 80%, rgba(103, 232, 249, 0.06), transparent 40%);
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(var(--rgb-accent), 0.08), transparent),
+      radial-gradient(circle at 20% 80%, rgba(var(--rgb-accent-alt), 0.06), transparent 40%);
   }
 
   .lp-hero {
@@ -435,20 +432,20 @@ const differentiators = [
   .lp-glow-left {
     top: 15%;
     left: -4%;
-    background: rgba(103, 232, 249, 0.10);
+    background: rgba(var(--rgb-accent-alt), 0.10);
   }
 
   .lp-glow-right {
     bottom: 10%;
     right: -2%;
-    background: rgba(199, 210, 254, 0.10);
+    background: rgba(var(--rgb-accent), 0.06);
   }
 
   /* Cards */
   .lp-card {
     background: linear-gradient(180deg, rgba(var(--rgb-surface), 0.5), rgba(var(--rgb-bg), 0.7));
     backdrop-filter: blur(12px);
-    box-shadow: inset 0 1px 0 rgba(199, 210, 254, 0.06);
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.04);
     transition: background 0.3s ease, border-color 0.3s ease;
   }
 
@@ -458,14 +455,14 @@ const differentiators = [
 
   .lp-step-card {
     background: linear-gradient(180deg, rgba(var(--rgb-surface), 0.4), rgba(var(--rgb-bg), 0.6));
-    box-shadow: inset 0 1px 0 rgba(199, 210, 254, 0.06);
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.04);
   }
 
   .lp-cta-card {
     background:
-      radial-gradient(circle at 50% 0%, rgba(199, 210, 254, 0.08), transparent 50%),
+      radial-gradient(circle at 50% 0%, rgba(var(--rgb-accent), 0.05), transparent 50%),
       linear-gradient(180deg, rgba(var(--rgb-surface), 0.6), rgba(var(--rgb-bg), 0.78));
-    box-shadow: inset 0 1px 0 rgba(199, 210, 254, 0.08);
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.06);
     backdrop-filter: blur(20px);
   }
 
@@ -479,7 +476,7 @@ const differentiators = [
     font-weight: 800;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: rgba(165, 180, 252, 0.8);
+    color: var(--theme-section-label);
   }
 
   .lp-label::before,
@@ -487,7 +484,7 @@ const differentiators = [
     content: "";
     width: 2rem;
     height: 1px;
-    background: rgba(199, 210, 254, 0.2);
+    background: var(--theme-section-label-line);
   }
 
   /* Insurance badges */
@@ -497,7 +494,7 @@ const differentiators = [
     font-size: 0.85rem;
     color: var(--color-site-sub);
     padding: 0.5rem 1rem;
-    border: 1px solid rgba(199, 210, 254, 0.1);
+    border: 1px solid var(--theme-border);
     border-radius: 9999px;
     background: rgba(var(--rgb-surface), 0.4);
   }
@@ -505,16 +502,10 @@ const differentiators = [
   /* Trust bar */
   .lp-trust-bar {
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(199, 210, 254, 0.08);
+    border-top: 1px solid var(--theme-border);
   }
 
   /* ── Light mode overrides ── */
-
-  :root.light .lp-hero-glow {
-    background:
-      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(79, 70, 229, 0.10), transparent),
-      radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.06), transparent 40%);
-  }
 
   :root.light .lp-hero {
     background: linear-gradient(180deg, rgba(var(--rgb-bg), 0.9), rgba(var(--rgb-surface-2), 0.98));
@@ -544,56 +535,31 @@ const differentiators = [
     background: linear-gradient(180deg, rgba(var(--rgb-surface-2), 0.985), rgba(var(--rgb-surface-2), 0.995));
   }
 
-  :root.light .lp-section {
-    border-top-color: rgba(79, 70, 229, 0.12);
-  }
-
-  :root.light .lp-glow-left {
-    background: rgba(20, 184, 166, 0.10);
-  }
-
-  :root.light .lp-glow-right {
-    background: rgba(79, 70, 229, 0.10);
-  }
-
   :root.light .lp-card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(238, 242, 255, 0.8));
-    box-shadow: inset 0 1px 0 rgba(79, 70, 229, 0.12);
+    background: linear-gradient(180deg, rgba(var(--rgb-surface), 0.9), rgba(var(--rgb-surface-2), 0.8));
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.08);
   }
 
   :root.light .lp-card:hover {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(238, 242, 255, 0.9));
+    background: linear-gradient(180deg, rgba(var(--rgb-surface), 0.95), rgba(var(--rgb-surface-2), 0.9));
   }
 
   :root.light .lp-step-card {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(238, 242, 255, 0.75));
-    box-shadow: inset 0 1px 0 rgba(79, 70, 229, 0.1);
-    border-color: rgba(79, 70, 229, 0.15);
+    background: linear-gradient(180deg, rgba(var(--rgb-surface), 0.85), rgba(var(--rgb-surface-2), 0.75));
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.06);
+    border-color: var(--theme-border-strong);
   }
 
   :root.light .lp-cta-card {
     background:
-      radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.06), transparent 50%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(238, 242, 255, 0.85));
-    box-shadow: inset 0 1px 0 rgba(79, 70, 229, 0.15);
-  }
-
-  :root.light .lp-label {
-    color: rgba(91, 82, 148, 0.8);
-  }
-
-  :root.light .lp-label::before,
-  :root.light .lp-label::after {
-    background: rgba(79, 70, 229, 0.25);
+      radial-gradient(circle at 50% 0%, rgba(var(--rgb-accent), 0.04), transparent 50%),
+      linear-gradient(180deg, rgba(var(--rgb-surface), 0.92), rgba(var(--rgb-surface-2), 0.85));
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.1);
   }
 
   :root.light .lp-ins-badge {
-    border-color: rgba(79, 70, 229, 0.15);
-    background: rgba(255, 255, 255, 0.7);
-  }
-
-  :root.light .lp-trust-bar {
-    border-top-color: rgba(79, 70, 229, 0.12);
+    border-color: var(--theme-border-strong);
+    background: rgba(var(--rgb-surface), 0.7);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -601,21 +567,22 @@ const differentiators = [
       display: none;
     }
   }
+
   /* ── Theme toggle ── */
 
   .lp-theme-toggle {
     position: fixed;
     top: 1.25rem;
     right: 1.25rem;
-    z-index: 50;
+    z-index: 110;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 9999px;
-    border: 1px solid rgba(199, 210, 254, 0.15);
-    background: rgba(55, 48, 163, 0.6);
+    border: 1px solid var(--theme-glass-border);
+    background: var(--theme-glass-bg);
     backdrop-filter: blur(12px);
     color: var(--color-site-sub);
     cursor: pointer;
@@ -623,8 +590,8 @@ const differentiators = [
   }
 
   .lp-theme-toggle:hover {
-    border-color: var(--color-cta);
-    color: var(--color-cta);
+    border-color: var(--theme-border-strong);
+    color: var(--color-site-text);
   }
 
   /* Sun icon visible in dark mode, moon in light mode */
@@ -638,11 +605,6 @@ const differentiators = [
 
   :root.light .lp-toggle-moon {
     display: block;
-  }
-
-  :root.light .lp-theme-toggle {
-    border-color: rgba(79, 70, 229, 0.2);
-    background: rgba(255, 255, 255, 0.7);
   }
 </style>
 

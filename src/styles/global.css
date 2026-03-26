@@ -1,68 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
 @import "tailwindcss";
 
 :root {
-  /* Default to dark theme */
---theme-site-bg: #0c0f14; 
---theme-site-text: #e2e8f0;
---theme-site-sub: #94a3b8; 
---theme-site-footer: #080b10; 
---theme-site-ann: #151b26; 
---theme-cta: #a78bfa; 
---theme-cta-fg: #0f172a; 
---theme-icon: #67e8f9; 
---theme-button-border: #67e8f9; 
+  /* Dark Theme: "Deep Obsidian & Silver" */
+  --theme-site-bg: #0a0a0c; 
+  --theme-site-text: #f8fafc;
+  --theme-site-sub: #94a3b8; 
+  --theme-site-footer: #050507; 
+  --theme-site-ann: #111114; 
+  --theme-cta: #ffffff; 
+  --theme-cta-fg: #0a0a0c; 
+  --theme-icon: #38bdf8; 
+  --theme-button-border: #334155; 
 
-/* Surfaces for cards and sections */
---theme-surface: #14191f; 
---theme-surface-2: #1c2430; 
---theme-surface-soft: rgba(226, 232, 240, 0.03); 
---theme-border: rgba(167, 139, 250, 0.12); 
---theme-border-strong: rgba(167, 139, 250, 0.22);
+  /* Surfaces & Glass */
+  --theme-surface: #111114; 
+  --theme-surface-2: #1e1e22; 
+  --theme-surface-soft: rgba(255, 255, 255, 0.03); 
+  --theme-border: rgba(255, 255, 255, 0.08); 
+  --theme-border-strong: rgba(255, 255, 255, 0.15);
+  --theme-glass-bg: rgba(10, 10, 12, 0.7);
+  --theme-glass-border: rgba(255, 255, 255, 0.1);
 
-/* RGB channels for panel/card gradients — update these alongside the hex vars above */
---rgb-bg: 12, 15, 20;
---rgb-surface: 20, 25, 31;
---rgb-surface-2: 28, 36, 48;
---rgb-accent: 167, 139, 250;
---rgb-accent-alt: 103, 232, 249;
---theme-section-label: rgba(167, 139, 250, 0.9);
---theme-section-label-line: rgba(167, 139, 250, 0.2);
+  /* RGB for gradients */
+  --rgb-bg: 10, 10, 12;
+  --rgb-surface: 17, 17, 20;
+  --rgb-surface-2: 30, 30, 34;
+  --rgb-accent: 255, 255, 255;
+  --rgb-accent-alt: 56, 189, 248;
+  --theme-section-label: rgba(148, 163, 184, 0.9);
+  --theme-section-label-line: rgba(255, 255, 255, 0.1);
 }
 
 :root.light {
-  --theme-site-bg: #f8f9fc;
-  --theme-site-text: #1e1b4b;
-  --theme-site-sub: #64748b;
-  --theme-site-footer: #f1f0fb;
-  --theme-site-ann: #eef2ff;
-  --theme-cta: #7c3aed;
+  /* Light Theme: "Bone, Stone & Charcoal" */
+  --theme-site-bg: #fcfcf9;
+  --theme-site-text: #121212;
+  --theme-site-sub: #575757;
+  --theme-site-footer: #f1f1ee;
+  --theme-site-ann: #f5f5f3;
+  --theme-cta: #121212;
   --theme-cta-fg: #ffffff;
-  --theme-icon: #0d9488;
-  --theme-button-border: #0d9488;
+  --theme-icon: #0284c7;
+  --theme-button-border: #d4d4d4;
 
   --theme-surface: #ffffff;
-  --theme-surface-2: #f3f0ff;
-  --theme-surface-soft: rgba(124, 58, 237, 0.08);
-  --theme-border: rgba(124, 58, 237, 0.2);
-  --theme-border-strong: rgba(124, 58, 237, 0.35);
+  --theme-surface-2: #f4f4f2;
+  --theme-surface-soft: rgba(0, 0, 0, 0.03);
+  --theme-border: rgba(0, 0, 0, 0.10);
+  --theme-border-strong: rgba(0, 0, 0, 0.18);
+  --theme-glass-bg: rgba(252, 252, 249, 0.8);
+  --theme-glass-border: rgba(0, 0, 0, 0.08);
 
-  --rgb-bg: 248, 249, 252;
+  --rgb-bg: 252, 252, 249;
   --rgb-surface: 255, 255, 255;
-  --rgb-surface-2: 243, 240, 255;
-  --rgb-accent: 124, 58, 237;
-  --rgb-accent-alt: 13, 148, 136;
-  --theme-section-label: rgba(100, 76, 184, 0.85);
-  --theme-section-label-line: rgba(124, 58, 237, 0.25);
+  --rgb-surface-2: 244, 244, 242;
+  --rgb-accent: 18, 18, 18;
+  --rgb-accent-alt: 2, 132, 199;
+  --theme-section-label: rgba(87, 87, 87, 0.85);
+  --theme-section-label-line: rgba(0, 0, 0, 0.12);
 }
 
 @theme {
-  --color-site-bg:   var(--theme-site-bg);  /* page background */
-  --color-site-text: var(--theme-site-text);  /* primary text */
-  --color-site-sub:  var(--theme-site-sub);  /* secondary text */
-  --color-sand: var(--color-site-sub); /* text-sand → same as text-site-sub */
-  --color-cta:       var(--theme-cta);
-  --color-cta-fg:    var(--theme-cta-fg);
+  /* Colors */
+  --color-site-bg: var(--theme-site-bg);
+  --color-site-text: var(--theme-site-text);
+  --color-site-sub: var(--theme-site-sub);
+  --color-sand: var(--theme-site-sub);
+  --color-cta: var(--theme-cta);
+  --color-cta-fg: var(--theme-cta-fg);
   --color-site-footer: var(--theme-site-footer);
   --color-site-ann: var(--theme-site-ann);
   --color-icon: var(--theme-icon);
@@ -72,47 +78,68 @@
   --color-surface-soft: var(--theme-surface-soft);
   --color-border: var(--theme-border);
   --color-border-strong: var(--theme-border-strong);
-  --color-muted: var(--color-site-sub);
-  --color-ink: var(--color-site-text);
-  --color-brand: var(--color-cta);
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
+  --color-muted: var(--theme-site-sub);
+  --color-ink: var(--theme-site-text);
+  --color-brand: var(--theme-cta);
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
   --font-serif: var(--font-heading);
   --font-sans: var(--font-body);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 @layer base {
   html {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-500 scroll-smooth;
   }
 
   body {
     @apply bg-site-bg text-site-text antialiased;
     font-family: var(--font-body);
+    letter-spacing: -0.011em; /* Modern Inter spacing */
   }
 
-  a {
-    @apply transition-colors;
-  }
-
-  :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
-    outline: 2px solid color-mix(in srgb, var(--color-cta) 78%, white 22%);
-    outline-offset: 2px;
-    border-radius: 0.375rem;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-black tracking-tighter;
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight;
     font-family: var(--font-heading);
-    color: inherit;
+  }
+
+  /* Sophisticated Focus Ring */
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-offset-site-bg;
+    ring-color: var(--theme-border-strong);
   }
 }
 
 @layer components {
+  /* The "Frosted Premium" Glass Utility */
+  .glass {
+    background-color: var(--theme-glass-bg);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid var(--theme-glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .premium-card {
+    @apply transition-all duration-300 hover:translate-y-0.5;
+    background: var(--theme-surface);
+    border: 1px solid var(--theme-border);
+  }
+
+  .premium-card:hover {
+    border-color: var(--theme-border-strong);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-premium {
+    @apply px-6 py-3 font-medium transition-all active:scale-95;
+    background-color: var(--theme-cta);
+    color: var(--theme-cta-fg);
+    border-radius: 4px;
+  }
+
   .theme-border {
     border-color: var(--color-border);
   }
@@ -139,5 +166,24 @@ html {
 
   .theme-hover-surface-2:hover {
     background-color: var(--color-surface-2);
+  }
+}
+
+@layer components {
+  .site-footer {
+    background-color: var(--theme-site-footer);
+    border-top: 1px solid var(--theme-border);
+    @apply py-16 px-6;
+  }
+
+  /* Premium footer links: Muted by default, white/black on hover */
+  .footer-link {
+    color: var(--theme-site-sub);
+    @apply transition-colors duration-300 hover:text-site-text text-sm font-medium;
+  }
+
+  .footer-heading {
+    @apply font-heading text-lg mb-6;
+    color: var(--theme-site-text);
   }
 }

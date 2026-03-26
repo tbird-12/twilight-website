@@ -33,7 +33,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             const imagePath = `../../assets/images/insurance/${provider.fileName}`;
 
             return (
-              <div class="bg-white md:bg-surface-soft border border-border rounded-2xl p-6 flex flex-col items-center justify-center group md:hover:bg-white transition-all duration-300">
+              <div class="bg-white md:bg-surface-soft border border-border rounded-2xl p-6 flex flex-col items-center justify-center group md:hover:bg-white active:scale-95 active:bg-surface-2 transition-all duration-300">
                 <div class="h-16 flex items-center justify-center mb-4">
                   {images[imagePath] ? (
                     <Image
@@ -72,7 +72,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         </p>
         <a
           href={`tel:${PHONE_NUMBER}`}
-          class="inline-block px-10 py-4 bg-cta text-cta-fg font-black rounded-full hover:bg-white transition-all"
+          class="inline-block px-10 py-4 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all"
         >
           Verify Your Coverage
         </a>
