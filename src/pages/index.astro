@@ -515,16 +515,6 @@ const qualityCareItems = [
 </Layout>
 
 <style>
-  @keyframes ambientDrift {
-    0%,
-    100% {
-      transform: translate3d(0, 0, 0) scale(1);
-    }
-    50% {
-      transform: translate3d(0, -10px, 0) scale(1.03);
-    }
-  }
-
   @keyframes panelGlowBreath {
     0%,
     100% {
@@ -544,21 +534,13 @@ const qualityCareItems = [
   }
 
   .homepage-shell::before {
+    /* Top radial glow removed to prevent movement while scrolling */
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background:
-      radial-gradient(circle at top, rgba(var(--rgb-accent), 0.1), transparent 34%),
-      linear-gradient(
-        180deg,
-        rgba(var(--rgb-accent), 0.04),
-        transparent 20%,
-        transparent 80%,
-        rgba(var(--rgb-accent), 0.02)
-      );
+    background: none;
     z-index: 0;
-    animation: ambientDrift 14s ease-in-out infinite;
   }
 
   .homepage-panel {
@@ -585,11 +567,7 @@ const qualityCareItems = [
 
   .homepage-panel-hero {
     --homepage-chrome-offset: 4rem;
-    background: linear-gradient(
-      180deg,
-      rgba(var(--rgb-bg), 0.72),
-      rgba(var(--rgb-bg), 0.92)
-    );
+    background: rgba(var(--rgb-bg), 0.85);
   }
 
   @media (min-width: 640px) {
@@ -638,11 +616,7 @@ const qualityCareItems = [
         rgba(var(--rgb-accent), 0.05),
         transparent
       ),
-      linear-gradient(
-        180deg,
-        rgba(var(--rgb-bg), 0.93),
-        rgba(var(--rgb-bg), 0.97)
-      );
+      rgba(var(--rgb-bg), 0.95);
   }
 
   .homepage-panel-problem {
@@ -653,11 +627,7 @@ const qualityCareItems = [
         rgba(var(--rgb-accent), 0.05),
         transparent
       ),
-      linear-gradient(
-        180deg,
-        rgba(var(--rgb-bg), 0.95),
-        rgba(var(--rgb-bg), 0.92)
-      );
+      rgba(var(--rgb-bg), 0.94);
   }
 
   .problem-grid {
@@ -737,11 +707,7 @@ const qualityCareItems = [
         rgba(var(--rgb-accent), 0.05),
         transparent
       ),
-      linear-gradient(
-        180deg,
-        rgba(var(--rgb-bg), 0.97),
-        rgba(var(--rgb-surface-2), 0.985)
-      );
+      rgba(var(--rgb-bg), 0.97);
   }
 
   .homepage-panel-cta {
@@ -752,11 +718,7 @@ const qualityCareItems = [
         rgba(var(--rgb-accent), 0.04),
         transparent
       ),
-      linear-gradient(
-        180deg,
-        rgba(var(--rgb-surface-2), 0.985),
-        rgba(var(--rgb-bg), 0.995)
-      );
+      rgba(var(--rgb-bg), 0.99);
   }
 
   .homepage-panel-glow {
@@ -806,11 +768,7 @@ const qualityCareItems = [
   .homepage-feature-card,
   .homepage-glass-card,
   .homepage-service-card {
-    background: linear-gradient(
-      180deg,
-      rgba(var(--rgb-accent), 0.06),
-      rgba(var(--rgb-accent-alt), 0.08)
-    );
+    background: rgba(var(--rgb-accent), 0.06);
     box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.08);
     backdrop-filter: blur(20px);
   }
@@ -874,9 +832,7 @@ const qualityCareItems = [
       scroll-snap-type: y mandatory;
     }
 
-    .homepage-shell::before {
-      animation-duration: 12s;
-    }
+    /* Removed homepage-shell::before animation-duration */
 
     .homepage-panel-glow {
       animation-duration: 7s;
@@ -896,10 +852,7 @@ const qualityCareItems = [
       min-height: 100svh;
     }
 
-    .homepage-shell::before {
-      animation-duration: 22s;
-      opacity: 0.78;
-    }
+    /* Removed homepage-shell::before animation-duration and opacity */
 
     .homepage-panel-glow {
       animation-duration: 12s;
@@ -924,9 +877,7 @@ const qualityCareItems = [
   }
 
   @media (min-width: 1280px) {
-    .homepage-shell::before {
-      animation-duration: 10.5s;
-    }
+    /* Removed homepage-shell::before animation-duration */
 
     .homepage-panel-glow {
       opacity: 0.8;
@@ -1174,15 +1125,7 @@ const qualityCareItems = [
   }
 
   :root.light .homepage-shell::before {
-    background:
-      radial-gradient(circle at top, rgba(var(--rgb-accent), 0.1), transparent 34%),
-      linear-gradient(
-        180deg,
-        rgba(var(--rgb-accent), 0.03),
-        transparent 20%,
-        transparent 80%,
-        rgba(var(--rgb-accent), 0.02)
-      );
+    background: none;
   }
 
   :root.light .homepage-panel {
@@ -1201,11 +1144,7 @@ const qualityCareItems = [
   :root.light .homepage-feature-card,
   :root.light .homepage-glass-card,
   :root.light .homepage-service-card {
-    background: linear-gradient(
-      180deg,
-      rgba(var(--rgb-surface), 0.92),
-      rgba(var(--rgb-surface-2), 0.85)
-    );
+    background: rgba(var(--rgb-surface), 0.9);
     box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.15);
   }
 
