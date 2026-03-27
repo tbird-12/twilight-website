@@ -206,6 +206,11 @@ const qualityCareItems = [
     <section
       class="homepage-panel homepage-panel-problem relative isolate overflow-hidden px-4"
     >
+      <div
+        class="homepage-panel-glow homepage-panel-glow-left"
+        aria-hidden="true"
+      >
+      </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
         <div class="problem-grid">
           <!-- Left: bold statement -->
@@ -629,9 +634,9 @@ const qualityCareItems = [
     --homepage-chrome-offset: 6.5rem;
     background:
       radial-gradient(
-        circle at 20% 16%,
-        rgba(var(--rgb-accent), 0.06),
-        transparent 30%
+        ellipse 50% 60% at 12% 50%,
+        rgba(var(--rgb-accent), 0.05),
+        transparent
       ),
       linear-gradient(
         180deg,
@@ -644,9 +649,9 @@ const qualityCareItems = [
     --homepage-chrome-offset: 6.5rem;
     background:
       radial-gradient(
-        circle at 80% 80%,
+        ellipse 50% 60% at 12% 50%,
         rgba(var(--rgb-accent), 0.05),
-        transparent 30%
+        transparent
       ),
       linear-gradient(
         180deg,
@@ -728,9 +733,9 @@ const qualityCareItems = [
     --homepage-chrome-offset: 6.5rem;
     background:
       radial-gradient(
-        circle at 82% 20%,
-        rgba(var(--rgb-accent), 0.06),
-        transparent 24%
+        ellipse 50% 60% at 88% 50%,
+        rgba(var(--rgb-accent), 0.05),
+        transparent
       ),
       linear-gradient(
         180deg,
@@ -741,11 +746,17 @@ const qualityCareItems = [
 
   .homepage-panel-cta {
     --homepage-chrome-offset: 6.5rem;
-    background: linear-gradient(
-      180deg,
-      rgba(var(--rgb-surface-2), 0.985),
-      rgba(var(--rgb-bg), 0.995)
-    );
+    background:
+      radial-gradient(
+        ellipse 40% 50% at 50% 40%,
+        rgba(var(--rgb-accent), 0.04),
+        transparent
+      ),
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-surface-2), 0.985),
+        rgba(var(--rgb-bg), 0.995)
+      );
   }
 
   .homepage-panel-glow {
@@ -775,20 +786,20 @@ const qualityCareItems = [
   }
 
   .homepage-panel-glow-left {
-    top: 20%;
-    left: 4%;
-    width: 16rem;
-    height: 16rem;
-    background: rgba(var(--rgb-accent), 0.1);
+    top: 40%;
+    left: 2%;
+    width: 18rem;
+    height: 18rem;
+    background: rgba(var(--rgb-accent), 0.07);
     animation-delay: 2.6s;
   }
 
   .homepage-panel-glow-right {
-    right: 4%;
-    top: 20%;
-    width: 16rem;
-    height: 16rem;
-    background: rgba(var(--rgb-accent), 0.1);
+    right: 2%;
+    top: 40%;
+    width: 18rem;
+    height: 18rem;
+    background: rgba(var(--rgb-accent), 0.07);
     animation-delay: 3.4s;
   }
 

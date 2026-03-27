@@ -38,7 +38,40 @@ import MobileNav from "./header/MobileNav.astro";
   </div>
 </header>
 
+<!-- Desktop nav frosted backdrop -->
+<div id="desktopNavBackdrop" class="desktop-nav-backdrop" aria-hidden="true"></div>
+
 <MobileNav />
+
+<style>
+  .desktop-nav-backdrop {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-nav-backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      background: rgba(var(--rgb-bg), 0.35);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .desktop-nav-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  :root.light .desktop-nav-backdrop {
+    background: rgba(var(--rgb-bg), 0.45);
+  }
+</style>
 
 <script is:inline>
   (function () {
@@ -70,9 +103,46 @@ import MobileNav from "./header/MobileNav.astro";
     });
 
     // Desktop nav: enable click-to-toggle for touch/rotated devices
+    var backdrop = document.getElementById('desktopNavBackdrop');
+    var backdropTimeout;
+
     function closeAllDesktopOpen() {
       document.querySelectorAll('.group.open').forEach(function (g) {
         g.classList.remove('open');
+      });
+    }
+
+    function showBackdrop() {
+      clearTimeout(backdropTimeout);
+      if (window.innerWidth >= 768 && backdrop) {
+        backdrop.classList.add('active');
+      }
+    }
+
+    function hideBackdrop() {
+      if (backdrop) backdrop.classList.remove('active');
+    }
+
+    function maybeHideBackdrop() {
+      clearTimeout(backdropTimeout);
+      backdropTimeout = setTimeout(function () {
+        var anyHovered = document.querySelector('nav.hidden.md\\:flex .group:hover');
+        var anyOpen = document.querySelector('nav.hidden.md\\:flex .group.open');
+        if (!anyHovered && !anyOpen) hideBackdrop();
+      }, 80);
+    }
+
+    // Attach hover listeners to desktop nav groups
+    document.querySelectorAll('nav.hidden.md\\:flex .group').forEach(function (group) {
+      group.addEventListener('mouseenter', showBackdrop);
+      group.addEventListener('mouseleave', maybeHideBackdrop);
+    });
+
+    // Clicking the backdrop closes everything
+    if (backdrop) {
+      backdrop.addEventListener('click', function () {
+        closeAllDesktopOpen();
+        hideBackdrop();
       });
     }
 
@@ -89,18 +159,29 @@ import MobileNav from "./header/MobileNav.astro";
       // Toggle this group's open state, close others
       var isOpen = group.classList.contains('open');
       closeAllDesktopOpen();
-      if (!isOpen) group.classList.add('open');
-      else group.classList.remove('open');
+      if (!isOpen) {
+        group.classList.add('open');
+        showBackdrop();
+      } else {
+        group.classList.remove('open');
+        maybeHideBackdrop();
+      }
     });
 
     // Close on escape
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeAllDesktopOpen();
+      if (e.key === 'Escape') {
+        closeAllDesktopOpen();
+        hideBackdrop();
+      }
     });
 
     // Close desktop menus when resizing to mobile
     window.addEventListener('resize', function () {
-      if (window.innerWidth < 768) closeAllDesktopOpen();
+      if (window.innerWidth < 768) {
+        closeAllDesktopOpen();
+        hideBackdrop();
+      }
     });
   })();
 </script>
