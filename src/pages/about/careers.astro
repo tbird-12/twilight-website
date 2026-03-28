@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
-import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
 import { PHONE_NUMBER } from "../../data/resource";
 
 const clinicianBenefits = [
@@ -13,11 +12,18 @@ const clinicianBenefits = [
 ];
 ---
 
-<ServiceLayout
-  name="Careers | Join the Team at Twilight Psychology"
-  description="Explore career opportunities at Twilight Psychology. Join our collaborative team of providers and staff dedicated to compassionate care in Lexington."
-  metaDescription="Join the team at Twilight Psychology in Lexington, KY. Career opportunities for psychologists, therapists, and support staff. Competitive pay, flexible scheduling, supportive culture."
+<Layout
+  title="Careers | Join the Team at Twilight Psychology"
+  description="Join the team at Twilight Psychology in Lexington, KY. Career opportunities for psychologists, therapists, and support staff. Competitive pay, flexible scheduling, supportive culture."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="relative py-24 px-4 overflow-hidden border-b border-border text-center">
       <div class="max-w-4xl mx-auto relative z-20">
         <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full">
@@ -185,4 +191,7 @@ const clinicianBenefits = [
       </div>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

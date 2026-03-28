@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../../layouts/ServiceLayout.astro";
-import "../../../styles/global.css";
+import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { WIDGET_LINK } from "../../../data/resource";
 import { providers } from "../../../data/staff";
@@ -16,11 +15,18 @@ const specialties = [
 ];
 ---
 
-<ServiceLayout
-  name="Jatana Boggs, M.A., LPCA | Licensed Psychological Counselor Associate"
-  description="Jatana Boggs is a Licensed Psychological Counselor Associate with over a decade of experience in community mental health and private practice."
-  metaDescription="Jatana Boggs, M.A., LPCA - Licensed psychological counselor associate at Twilight Psychology in Kentucky. 10+ years experience in community mental health providing therapy and counseling services."
+<Layout
+  title="Jatana Boggs, M.A., LPCA | Licensed Psychological Counselor Associate | Twilight Psychology"
+  description="Jatana Boggs, M.A., LPCA - Licensed psychological counselor associate at Twilight Psychology in Kentucky. 10+ years experience in community mental health providing therapy and counseling services."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section
     class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
   >
@@ -119,4 +125,7 @@ const specialties = [
       </a>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

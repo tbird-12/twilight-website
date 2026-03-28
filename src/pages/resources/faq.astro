@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
 
 const generalFaqs = [
@@ -64,11 +63,18 @@ const waitTimeFaqs = [
 
 
 
-<ServiceLayout 
-  name="FAQ"
-  description="Answers to common questions about our services"
-  metaDescription="Frequently asked questions about Twilight Psychology services, including testing timelines, insurance coverage, costs, and how to get started in Kentucky."
+<Layout
+  title="FAQ | Twilight Psychology"
+  description="Frequently asked questions about Twilight Psychology services, including testing timelines, insurance coverage, costs, and how to get started in Kentucky."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
 
   <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-3xl mx-auto">
@@ -171,7 +177,10 @@ const waitTimeFaqs = [
 
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>
 
 <style>
   /* Custom Scrollbar for the page */

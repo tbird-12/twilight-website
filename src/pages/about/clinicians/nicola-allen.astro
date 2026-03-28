@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../../layouts/ServiceLayout.astro";
-import "../../../styles/global.css";
+import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { providers } from "../../../data/staff";
 
@@ -15,11 +14,18 @@ const specialties = [
 ];
 ---
 
-<ServiceLayout
-  name="Nicola Allen, PMHNP-BC | Medication Management Lexington"
-  description="Nicola Allen is a Board-Certified Psychiatric Nurse Practitioner with 19 years of experience in psychiatry. Specializing in comprehensive medication management, Nicola provides compassionate, patient-centered care for individuals facing Depression, Anxiety, Sleep Disorders, and Trauma."
-  metaDescription="Nicola Allen, PMHNP-BC - Board-certified psychiatric nurse practitioner at Twilight Psychology in Lexington, KY. 19+ years experience providing medication management for depression, anxiety, ADHD, and trauma."
+<Layout
+  title="Nicola Allen, PMHNP-BC | Medication Management Lexington | Twilight Psychology"
+  description="Nicola Allen, PMHNP-BC - Board-certified psychiatric nurse practitioner at Twilight Psychology in Lexington, KY. 19+ years experience providing medication management for depression, anxiety, ADHD, and trauma."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section
     class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
   >
@@ -123,4 +129,7 @@ const specialties = [
       >
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

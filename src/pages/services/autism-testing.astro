@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import { WIDGET_LINK } from '../../data/resource';
 
 const evaluationSteps = [
@@ -23,11 +22,18 @@ const evaluationSteps = [
 ];
 ---
 
-<ServiceLayout 
-  name="Autism Testing | Twilight Psychology"
-  description="Comprehensive autism spectrum disorder evaluations for children and adults"
-  metaDescription="Comprehensive autism spectrum disorder (ASD) evaluations for children and adults in Kentucky. Neuro-affirming assessments by experienced psychologists. Telehealth and in-person options available."
+<Layout
+  title="Autism Testing | Twilight Psychology"
+  description="Comprehensive autism spectrum disorder (ASD) evaluations for children and adults in Kentucky. Neuro-affirming assessments by experienced psychologists. Telehealth and in-person options available."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
     
     <section class="relative py-24 px-4 text-center border-b border-border overflow-hidden">
       <div class="max-w-4xl mx-auto relative z-10">
@@ -132,4 +138,7 @@ const evaluationSteps = [
       View All Services
     </a>
   </nav>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

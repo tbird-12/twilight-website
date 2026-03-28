@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
-import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
 import { WIDGET_LINK } from "../../data/resource";
 
 const evaluationTypes = [
@@ -31,11 +30,18 @@ const evaluationTypes = [
 ];
 ---
 
-<ServiceLayout
-  name="Psychological Evaluations Lexington KY | Twilight Psychology"
-  description="Comprehensive psychological assessments for children, teens, and adults"
-  metaDescription="Comprehensive psychological evaluations in Lexington, KY for ADHD, autism, learning disabilities, and more. Expert assessments for children, teens, and adults. Insurance accepted."
+<Layout
+  title="Psychological Evaluations Lexington KY | Twilight Psychology"
+  description="Comprehensive psychological evaluations in Lexington, KY for ADHD, autism, learning disabilities, and more. Expert assessments for children, teens, and adults. Insurance accepted."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="relative py-24 px-4 text-center border-b border-border overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10">
       <span
@@ -189,4 +195,7 @@ const evaluationTypes = [
       View All Services
     </a>
   </nav>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

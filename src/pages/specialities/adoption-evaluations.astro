@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import { WIDGET_LINK } from '../../data/resource';
 import heatherPhoto from '../../assets/images/staff/heather-cornett.png';
 
@@ -61,10 +60,18 @@ const faqs = [
 ];
 ---
 
-<ServiceLayout name="Adoption Evaluations | Twilight Psychology"
-  description="Adoption evaluations in Kentucky"
-  metaDescription="Professional adoption evaluations in Kentucky. Comprehensive psychological assessments for prospective adoptive parents. Licensed psychologists providing thorough, compassionate evaluations for domestic and international adoptions."
+<Layout
+  title="Adoption Evaluations | Twilight Psychology"
+  description="Professional adoption evaluations in Kentucky. Comprehensive psychological assessments for prospective adoptive parents. Licensed psychologists providing thorough, compassionate evaluations for domestic and international adoptions."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
 
   <!-- Hero -->
   <section class="relative pt-36 pb-28 px-4 border-b theme-border overflow-hidden">
@@ -258,4 +265,7 @@ const faqs = [
       View All Specialties
     </a>
   </nav>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

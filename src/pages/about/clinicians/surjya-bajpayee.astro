@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../../layouts/ServiceLayout.astro";
-import "../../../styles/global.css";
+import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { providers } from "../../../data/staff";
 
@@ -15,10 +14,18 @@ const specialties = [
 ];
 ---
 
-<ServiceLayout name="Surjya Bajpayee, M.S. | Therapist at Twilight Psychology"
-  description="Surjya Bajpayee is a therapist at Twilight Psychology specializing in multicultural counseling and trauma-informed care. With a focus on adult psychotherapy, Surjya provides a supportive space for clients to explore identity development, manage anxiety and stress, and navigate the complexities of intersectional living. Under the supervision of Dr. Heather Cornett, Surjya is dedicated to fostering resilience and growth in individuals from diverse backgrounds."
-  metaDescription="Surjya Bajpayee, M.S. - Therapist at Twilight Psychology in Kentucky. Specializing in multicultural counseling, trauma-informed care, and adult psychotherapy for diverse communities."
+<Layout
+  title="Surjya Bajpayee, M.S. | Therapist at Twilight Psychology"
+  description="Surjya Bajpayee, M.S. - Therapist at Twilight Psychology in Kentucky. Specializing in multicultural counseling, trauma-informed care, and adult psychotherapy for diverse communities."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section
     class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
   >
@@ -94,4 +101,7 @@ const specialties = [
       a more integrated sense of self.
     </p>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

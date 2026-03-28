@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import { WIDGET_LINK } from '../../data/resource';
 
 const evaluationAreas = [
@@ -46,11 +45,18 @@ const faqs = [
 ];
 ---
 
-<ServiceLayout
-  name="Guardianship Evaluations | Twilight Psychology PLLC"
-  description="Guardianship evaluations in Kentucky for young and older adults"
-  metaDescription="Guardianship evaluations in Kentucky for both young adults and older adults. Objective clinical assessments and court-ready reports from licensed psychologists. Twilight Psychology does not provide legal representation."
+<Layout
+  title="Guardianship Evaluations | Twilight Psychology PLLC"
+  description="Guardianship evaluations in Kentucky for both young adults and older adults. Objective clinical assessments and court-ready reports from licensed psychologists. Twilight Psychology does not provide legal representation."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="relative pt-36 pb-28 px-4 border-b theme-border overflow-hidden">
     <div class="max-w-7xl mx-auto relative z-10">
       <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">Forensic & Clinical Clarity</span>
@@ -194,4 +200,7 @@ const faqs = [
       View All Specialties
     </a>
   </nav>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

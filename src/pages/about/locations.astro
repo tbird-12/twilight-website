@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
-import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
 
 const locations = [
   {
@@ -30,11 +29,18 @@ const locations = [
 ];
 ---
 
-<ServiceLayout
-  name="Office Locations | Twilight Psychology Lexington KY"
-  description="Discover our three specialized office locations in Lexington, KY"
-  metaDescription="Twilight Psychology office locations in Lexington, KY. Three specialized locations for psychological evaluations, therapy, and medication management. Convenient, accessible mental health care."
+<Layout
+  title="Office Locations | Twilight Psychology Lexington KY"
+  description="Twilight Psychology office locations in Lexington, KY. Three specialized locations for psychological evaluations, therapy, and medication management. Convenient, accessible mental health care."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   
   <section class="py-24 px-4 border-b border-border bg-surface-soft">
     <div class="max-w-4xl mx-auto text-center">
@@ -121,4 +127,7 @@ const locations = [
       </p>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

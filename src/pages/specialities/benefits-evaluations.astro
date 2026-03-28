@@ -1,7 +1,6 @@
 ---
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
-import "../../styles/global.css";
 
 const notCovered = [
   {
@@ -53,11 +52,18 @@ const faqs = [
 ];
 ---
 
-<ServiceLayout
-  name="Benefits Evaluations | Twilight Psychology"
-  description="Self-pay psychological evaluations for benefits applications. These evaluations do not meet the definition of medical necessity and are not covered by health insurance."
-  metaDescription="Self-pay psychological evaluations for private disability benefits, employer benefit programs, and other non-government benefits applications. Not covered by insurance. $1,300 or $200/hour, whichever is lower."
+<Layout
+  title="Benefits Evaluations | Twilight Psychology"
+  description="Self-pay psychological evaluations for private disability benefits, employer benefit programs, and other non-government benefits applications. Not covered by insurance. $1,300 or $200/hour, whichever is lower."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="relative pt-36 pb-28 px-4 border-b theme-border overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10 text-center">
       <span
@@ -279,4 +285,7 @@ const faqs = [
       View All Specialties
     </a>
   </nav>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

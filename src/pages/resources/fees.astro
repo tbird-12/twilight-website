@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from '../../data/resource';
 
 const psychologicalServices = [
@@ -30,11 +29,18 @@ const medManagement = [
 ];
 ---
 
-<ServiceLayout 
-  name="Investment & Pricing"
-  description="Transparent pricing and payment options"
-  metaDescription="Twilight Psychology pricing and fees for psychological evaluations, therapy, and medication management in Kentucky. Transparent pricing, insurance accepted, flexible payment options available."
+<Layout
+  title="Investment & Pricing | Twilight Psychology"
+  description="Twilight Psychology pricing and fees for psychological evaluations, therapy, and medication management in Kentucky. Transparent pricing, insurance accepted, flexible payment options available."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-4xl mx-auto">
       
@@ -293,4 +299,7 @@ const medManagement = [
       });
     }
   </script>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../layouts/ServiceLayout.astro";
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 import {
   PHONE_NUMBER,
   PHONE_NUMBER_FORMATTED,
@@ -12,11 +11,18 @@ import {
 } from "../data/resource";
 ---
 
-<ServiceLayout
-  name="Contact Us"
-  description="Reach Twilight Psychology by phone, email, or our intake widget"
-  metaDescription="Contact Twilight Psychology by phone, email, or online widget. For emergencies, call 911 or 988."
+<Layout
+  title="Contact Us | Twilight Psychology"
+  description="Contact Twilight Psychology by phone, email, or online widget. For emergencies, call 911 or 988."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="bg-site-bg min-h-screen py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
       <header class="text-center mb-10 md:mb-14">
@@ -285,4 +291,7 @@ import {
       background: linear-gradient(135deg, rgba(var(--rgb-surface-2), 0.6), rgba(var(--rgb-surface), 0.4));
     }
   </style>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

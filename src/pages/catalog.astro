@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../layouts/ServiceLayout.astro";
-import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
 
 const categories = [
@@ -40,11 +39,18 @@ const categories = [
 ];
 ---
 
-<ServiceLayout
-  name="Catalog of Services"
-  description="Twilight Psychology provides neuro-affirming psychological evaluations, medication management, and therapy services in Kentucky."
-  metaDescription="Twilight Psychology provides neuro-affirming psychological evaluations, medication management, and therapy services in Kentucky. We specialize in supporting neurodiverse individuals with ADHD, Autism, learning disorders, and more."
+<Layout
+  title="Catalog of Services | Twilight Psychology"
+  description="Twilight Psychology provides neuro-affirming psychological evaluations, medication management, and therapy services in Kentucky. We specialize in supporting neurodiverse individuals with ADHD, Autism, learning disorders, and more."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="relative py-24 px-4 text-center border-b theme-border overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10">
       <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
@@ -219,4 +225,7 @@ const categories = [
       background: radial-gradient(circle at center, rgba(var(--rgb-surface-2), 0.4), transparent 65%);
     }
   </style>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

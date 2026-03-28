@@ -1,7 +1,6 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import Layout from '../../layouts/Layout.astro';
 import { EMAIL_ADDRESS, WIDGET_LINK } from '../../data/resource';
-import '../../styles/global.css';
 
 const steps = [
   {
@@ -37,11 +36,18 @@ const checklist = [
 ];
 ---
 
-<ServiceLayout 
-  name="New Client Guide"
-  description="Your path to clinical clarity starts here"
-  metaDescription="New to Twilight Psychology? Review intake steps, required documents, insurance verification, and what to expect at your first appointment in Kentucky."
+<Layout
+  title="New Client Guide | Twilight Psychology"
+  description="New to Twilight Psychology? Review intake steps, required documents, insurance verification, and what to expect at your first appointment in Kentucky."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-6xl mx-auto">
       <header class="text-center mb-12">
@@ -124,4 +130,7 @@ const checklist = [
       </div>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,14 +1,22 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
 import logo from "../assets/images/logo.png";
 ---
 
-<ServiceLayout name="404 Not Found"
-  description="The page you're looking for doesn't exist. Explore our services and resources to find the support you need."
+<Layout
+  title="404 Not Found | Twilight Psychology"
+  description="The page you're looking for doesn't exist. Explore Twilight Psychology's services and resources to find the support you need."
   robots="noindex, follow"
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="relative py-24 px-4 overflow-hidden border-b border-border min-h-screen flex items-center">
     <div class="absolute inset-0 z-0 opacity-5">
       <img
@@ -71,4 +79,7 @@ import logo from "../assets/images/logo.png";
       </div>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

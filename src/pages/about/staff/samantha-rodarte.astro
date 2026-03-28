@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from '../../../layouts/ServiceLayout.astro';
-import '../../../styles/global.css';
+import Layout from '../../../layouts/Layout.astro';
 import { EMAIL_ADDRESS } from "../../../data/resource";
 import { Image } from 'astro:assets';
 import { staff } from '../../../data/staff';
@@ -15,11 +14,18 @@ const expertise = [
 ];
 ---
 
-<ServiceLayout name="Samantha Rodarte | Practice Manager at Twilight Psychology"
-  description="Meet Samantha Rodarte, the Practice Manager at Twilight Psychology. 
-  With expertise in practice operations, patient care coordination, and insurance navigation, Samantha ensures a seamless experience for both clients and clinicians. Learn how she supports our mission to provide exceptional mental health care."
-  metaDescription="Samantha Rodarte - Practice Manager at Twilight Psychology in Lexington, KY. Expert in practice operations, patient care coordination, and insurance navigation supporting exceptional mental health services."
-  >
+<Layout
+  title="Samantha Rodarte | Practice Manager at Twilight Psychology"
+  description="Samantha Rodarte - Practice Manager at Twilight Psychology in Lexington, KY. Expert in practice operations, patient care coordination, and insurance navigation supporting exceptional mental health services."
+>
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
     
     <section class="relative pt-32 pb-24 px-4 border-b border-border bg-linear-to-b from-surface-2/20 to-transparent">
       <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
@@ -106,4 +112,7 @@ const expertise = [
         </a>
       </div>
     </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

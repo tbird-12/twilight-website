@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
-import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { PHONE_NUMBER } from "../../data/resource";
 import { insuranceProviders } from "../../data/insurances";
@@ -10,11 +9,18 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 ---
 
-<ServiceLayout 
-  name="Insurance Coverage"
-  description="We accept most major insurance providers"
-  metaDescription="View accepted insurance plans at Twilight Psychology in Kentucky, plus options for out-of-network billing and private pay care."
+<Layout
+  title="Insurance Coverage | Twilight Psychology"
+  description="View accepted insurance plans at Twilight Psychology in Kentucky, plus options for out-of-network billing and private pay care."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-7xl mx-auto">
       <header class="text-center mb-12">
@@ -80,4 +86,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       </section>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

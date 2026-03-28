@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from '../../layouts/ServiceLayout.astro';
-import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
 import { WIDGET_LINK } from '../../data/resource';
 
 const learningDisabilities = [
@@ -48,10 +47,18 @@ const faqs = [
 ];
 ---
 
-<ServiceLayout name="Learning Disability Testing KY | Twilight Psychology"
-  description="Comprehensive learning disability evaluations for Dyslexia, Dysgraphia, and Dyscalculia in Kentucky"
-  metaDescription="Comprehensive learning disability testing in Kentucky for Dyslexia, Dysgraphia, and Dyscalculia. Expert assessments for children and adults. IEP and 504 documentation provided."
+<Layout
+  title="Learning Disability Testing KY | Twilight Psychology"
+  description="Comprehensive learning disability testing in Kentucky for Dyslexia, Dysgraphia, and Dyscalculia. Expert assessments for children and adults. IEP and 504 documentation provided."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
     
     <section class="relative pt-36 pb-28 px-4 border-b theme-border">
       <div class="max-w-7xl mx-auto gap-20 items-center">
@@ -131,4 +138,7 @@ const faqs = [
             View All Specialties
         </a>
     </nav>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

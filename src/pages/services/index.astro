@@ -1,15 +1,21 @@
 ---
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
-import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
 import { services } from "../../data/services";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
 ---
 
-<ServiceLayout
-  name="Our Services"
-  description="Explore all psychological services offered by Twilight Psychology — from diagnostic evaluations to therapy and medication management."
-  metaDescription="Twilight Psychology offers comprehensive psychological evaluations, autism and ADHD testing, neuro-affirming therapy, medication management, and personality testing in Kentucky."
+<Layout
+  title="Our Services | Twilight Psychology"
+  description="Twilight Psychology offers comprehensive psychological evaluations, autism and ADHD testing, neuro-affirming therapy, medication management, and personality testing in Kentucky."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section class="relative py-24 px-4 text-center border-b theme-border overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10">
       <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
@@ -81,4 +87,7 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
       background: radial-gradient(circle at center, rgba(99, 102, 241, 0.12), transparent 65%);
     }
   </style>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

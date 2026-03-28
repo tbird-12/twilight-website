@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../layouts/ServiceLayout.astro";
-import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
 
 const values = [
   {
@@ -36,11 +35,18 @@ const values = [
 ];
 ---
 
-<ServiceLayout
-  name="Mission & Values | Twilight Psychology"
-  description="Discover the core principles that guide Twilight Psychology's mission to provide accessible, affordable, and evidence-based mental health care for all."
-  metaDescription="Learn about Twilight Psychology's mission and values. Neuro-affirming mental health care in Kentucky with accessible, evidence-based services for neurodivergent individuals and families."
+<Layout
+  title="Mission & Values | Twilight Psychology"
+  description="Learn about Twilight Psychology's mission and values. Neuro-affirming mental health care in Kentucky with accessible, evidence-based services for neurodivergent individuals and families."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section
     class="relative py-24 px-4 text-center border-b border-border overflow-hidden"
   >
@@ -158,4 +164,7 @@ const values = [
       }
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

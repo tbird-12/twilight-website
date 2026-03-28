@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../../layouts/ServiceLayout.astro";
-import "../../../styles/global.css";
+import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { providers } from "../../../data/staff";
 
@@ -15,11 +14,18 @@ const specialties = [
 ];
 ---
 
-<ServiceLayout
-  name="Emeli Evans, M.S., LPA | Neuro-Affirming Therapy Lexington"
-  description="Emeli Evans is a Psychological Associate specializing in neuro-affirming therapy for neurodiverse individuals. With lived experience as an AuDHD person, Emeli offers a unique perspective and compassionate approach to therapy, helping clients unmask and advocate for their sensory and regulation needs."
-  metaDescription="Emeli Evans, M.S., LPA - Psychological associate at Twilight Psychology in Lexington, KY. Specializing in neuro-affirming therapy for neurodivergent individuals. AuDHD lived experience."
+<Layout
+  title="Emeli Evans, M.S., LPA | Neuro-Affirming Therapy Lexington | Twilight Psychology"
+  description="Emeli Evans, M.S., LPA - Psychological associate at Twilight Psychology in Lexington, KY. Specializing in neuro-affirming therapy for neurodivergent individuals. AuDHD lived experience."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section
     class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
   >
@@ -102,4 +108,7 @@ const specialties = [
       </p>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,6 +1,5 @@
 ---
-import ServiceLayout from "../../../layouts/ServiceLayout.astro";
-import "../../../styles/global.css";
+import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { WIDGET_LINK } from "../../../data/resource";
 import { providers } from "../../../data/staff";
@@ -34,11 +33,18 @@ const education = [
 ];
 ---
 
-<ServiceLayout
-  name="Dr. Heather Cornett, Ph.D. | Founder & Licensed Psychologist"
-  description="Meet Dr. Heather Cornett, Ph.D., the founder of Twilight Psychology. Specializing in comprehensive psychological evaluations for high-masking neurodivergent adults and complex diagnostic clarification."
-  metaDescription="Dr. Heather Cornett, Ph.D. - Founder and licensed psychologist at Twilight Psychology in Lexington, KY. Specializing in comprehensive psychological evaluations for neurodivergent adults, ADHD, autism, and complex diagnostics."
+<Layout
+  title="Dr. Heather Cornett, Ph.D. | Founder & Licensed Psychologist | Twilight Psychology"
+  description="Dr. Heather Cornett, Ph.D. - Founder and licensed psychologist at Twilight Psychology in Lexington, KY. Specializing in comprehensive psychological evaluations for neurodivergent adults, ADHD, autism, and complex diagnostics."
 >
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
   <section
     class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
   >
@@ -233,4 +239,7 @@ const education = [
       </div>
     </div>
   </section>
-</ServiceLayout>
+      </div>
+    </div>
+  </div>
+</Layout>
