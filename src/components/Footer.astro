@@ -1,14 +1,17 @@
 ---
 const year = new Date().getFullYear();
+import { Image } from "astro:assets";
+import favicon from "../assets/favicons/favicon.svg";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS, FAX_NUMBER, FAX_NUMBER_FORMATTED } from "../data/resource";
 import { Icon } from "astro-icon/components";
+
 const links = [
   {
     title: "Resources",
     items: [
-      { name: "Testing FAQ", href: "/resources/faq" },
-      { name: "Fees ", href: "/resources/fees" },
-      { name: "Insurance", href: "/resources/insurances-accepted" },
+      { name: "FAQ", href: "/resources/faq" },
+      { name: "Fees & Insurance", href: "/resources/fees" },
+      { name: "Accepted Insurance", href: "/resources/insurances-accepted" },
       { name: "Locations", href: "/about/locations" },
       { name: "Careers", href: "/about/careers" },
     ],
@@ -19,19 +22,21 @@ const links = [
       { name: "ADHD Assessments", href: "/services/adhd-testing" },
       { name: "Autism Evaluations", href: "/services/autism-testing" },
       { name: "Therapy", href: "/services/therapy" },
-      {
-        name: "Medication Management",
-        href: "/services/medication-management",
-      },
-      {
-        name: "Psychological Evaluations",
-        href: "/services/psychological-evaluations",
-      },
+      { name: "Medication Management", href: "/services/medication-management" },
     ],
-  }
+  },
+  {
+    title: "Specialties",
+    items: [
+      { name: "Learning Disabilities", href: "/specialities/dyslexia-testing" },
+      { name: "Psychoed Evaluations", href: "/specialities/psychoeducational-evaluations" },
+      { name: "Adoption Evaluations", href: "/specialities/adoption-evaluations" },
+      { name: "ESA Evaluations", href: "/specialities/esa-evaluations" },
+      { name: "IEE for KY", href: "/specialities/IEE" },
+    ],
+  },
 ];
 
-// Social Media Placeholders
 const socials = [
   { label: "Facebook", icon: "mdi:facebook", href: "https://www.facebook.com/people/Twilight-Psychology-PLLC/61555270131003/" },
   { label: "Instagram", icon: "mdi:instagram", href: "https://www.instagram.com/twilight_psychology_pllc/" },
@@ -39,27 +44,36 @@ const socials = [
 ];
 ---
 
-<footer
-  class="relative site-footer"
->
-  <div class="max-w-5xl mx-auto">
-    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8">
-      <div class="col-span-12 lg:col-span-4">
-        <div class="mb-2">
-          <a
-            class="inline-block font-heading font-bold text-xl text-site-text transition-transform duration-200 hover:scale-105"
-            href="/"
-          >
-            Twilight Psychology, PLLC
-          </a>
-        </div>
-        <p class="text-sm text-site-text mb-4">
+<footer class="relative site-footer">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-12 gap-4 gap-y-10 sm:gap-8">
+
+      <!-- Brand -->
+      <div class="col-span-12 lg:col-span-3">
+        <a href="/" class="inline-flex items-center gap-2 mb-4 group">
+          <Image
+            src={favicon}
+            alt="Twilight Psychology Logo"
+            width={240}
+            height={180}
+            class="h-10 w-auto"
+          />
+          <span class="font-serif font-black text-site-text group-hover:text-cta transition-colors">
+            Twilight Psychology
+          </span>
+        </a>
+
+        <p class="text-sm text-site-sub mb-4 leading-relaxed">
           Specialized psychological evaluations, psychiatric medication
           management, and evidence-based therapy.
         </p>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509"
-        target="_blank" class="footer-link block mb-4">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link block mb-5"
+        >
           501 Darby Creek Rd. Suite 7, Lexington, KY 40509
         </a>
 
@@ -68,31 +82,27 @@ const socials = [
             socials.map((social) => (
               <a
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="text-site-sub theme-hover-surface-2 focus:outline-none focus:ring-4 focus:ring-cta/30 rounded-lg text-sm p-2.5 inline-flex items-center"
                 aria-label={social.label}
               >
-                <Icon name={social.icon} class="w-5 h-5 text-site-text" style="color: var(--color-icon);"/>
+                <Icon name={social.icon} class="w-5 h-5" style="color: var(--color-icon);" />
               </a>
             ))
           }
         </div>
       </div>
 
+      <!-- Link columns -->
       {
         links.map(({ title, items }) => (
-          <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="footer-heading">
-              {title}
-            </div>
-            <ul>
+          <div class="col-span-6 md:col-span-4 lg:col-span-2">
+            <div class="footer-heading">{title}</div>
+            <ul class="space-y-2">
               {items.map(({ name, href }) => (
-                <li class="mb-2">
-                  <a
-                    class="footer-link"
-                    href={href}
-                  >
-                    {name}
-                  </a>
+                <li>
+                  <a class="footer-link" href={href}>{name}</a>
                 </li>
               ))}
             </ul>
@@ -100,35 +110,31 @@ const socials = [
         ))
       }
 
-      <div class="col-span-12 md:col-span-3 lg:col-span-2">
-        <div
-          class="footer-heading"
-        >
-          Practice Info
-        </div>
+      <!-- Contact -->
+      <div class="col-span-12 md:col-span-4 lg:col-span-3">
+        <div class="footer-heading">Contact</div>
         <div class="text-sm text-site-sub space-y-3">
-          <div>
-            <p class="font-semibold text-site-text">Contact Us</p>
+          <div class="space-y-1">
             <p>P: <a href={`tel:${PHONE_NUMBER}`} class="footer-link">{PHONE_NUMBER_FORMATTED}</a></p>
             <p>F: <a href={`fax:${FAX_NUMBER}`} class="footer-link">{FAX_NUMBER_FORMATTED}</a></p>
             <p>E: <a href={`mailto:${EMAIL_ADDRESS}`} class="footer-link">{EMAIL_ADDRESS}</a></p>
           </div>
           <div>
-            <p class="font-semibold text-site-text">Hours of Operation</p>
-            <p>Mon - Fri: 8 AM - 7 PM</p>
-            <p>Sat - Sun: By appointment</p>
+            <p class="font-semibold text-site-text">Hours</p>
+            <p>Mon &ndash; Fri: 8 AM &ndash; 7 PM</p>
+            <p>Sat &ndash; Sun: By appointment</p>
           </div>
         </div>
       </div>
+
     </div>
 
-    <div
-      class="md:flex md:items-center md:justify-between pt-8 border-t theme-border"
-    >
-      <div class="text-sm text-site-sub">
-        © {year} · Twilight Psychology PLLC. All rights reserved. 
-        <a href="/privacy" class="footer-link">Privacy Policy</a>
-      </div>
+    <!-- Bottom bar -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pt-8 mt-10 border-t theme-border">
+      <p class="text-sm text-site-sub">
+        &copy; {year} Twilight Psychology, PLLC. All rights reserved.
+      </p>
+      <a href="/privacy" class="footer-link">Privacy Policy</a>
     </div>
   </div>
 </footer>
