@@ -10,10 +10,10 @@ const featuredProviders = providers.slice(0, 4);
 
 const services = [
   {
-    icon: "mdi:head-cog-outline",
-    title: "Psychological Testing",
-    desc: "ADHD, Autism, learning disabilities, personality — comprehensive evaluations with self-pay results in 7 days.",
-    link: "/services/psychological-evaluations",
+    icon: "mdi:account-heart-outline",
+    title: "Therapy",
+    desc: "Evidence-based, neuro-affirming individual counseling for teens and adults. Accepted by most insurance plans we carry.",
+    link: "/services/therapy",
   },
   {
     icon: "mdi:medication-outline",
@@ -22,25 +22,25 @@ const services = [
     link: "/services/medication-management",
   },
   {
-    icon: "mdi:account-heart-outline",
-    title: "Therapy",
-    desc: "Evidence-based, neuro-affirming individual counseling for teens and adults.",
-    link: "/services/therapy",
+    icon: "mdi:head-cog-outline",
+    title: "Psychological Testing",
+    desc: "ADHD, Autism, learning disabilities, personality — comprehensive evaluations with self-pay results in 7 days.",
+    link: "/services/psychological-evaluations",
   },
 ];
 
 const differentiators = [
-  { icon: "mdi:clock-fast", stat: "7 days", label: "Self-pay results turnaround" },
-  { icon: "mdi:shield-check-outline", stat: "15+", label: "Insurance panels accepted" },
-  { icon: "mdi:earth", stat: "43+", label: "States via PSYPACT" },
-  { icon: "mdi:calendar-check-outline", stat: "2,100+", label: "Evaluations completed" },
+  { icon: "mdi:shield-check-outline", stat: "17+", label: "Insurance panels accepted" },
   { icon: "mdi:lightning-bolt-outline", stat: "Shortest", label: "Waitlists in KY for insured clients" },
+  { icon: "mdi:earth", stat: "43+", label: "States via PSYPACT" },
+  { icon: "mdi:clock-fast", stat: "7 days", label: "Self-pay testing turnaround" },
+  { icon: "mdi:calendar-check-outline", stat: "2,100+", label: "Evaluations completed" },
 ];
 ---
 
 <LandingLayout
-  title="Neuro-Affirming Psychological Testing & Therapy in Kentucky | Twilight Psychology"
-  description="Expert psychological evaluations for ADHD, autism, and learning disorders in Kentucky. Short waitlists with Medicaid and insurance. Accepting new clients."
+  title="Neuro-Affirming Therapy, Medication Management & Testing in Kentucky | Twilight Psychology"
+  description="Therapy, psychiatric medication management, and psychological evaluations in Kentucky. We accept 15+ insurance panels including Medicaid. Accepting new clients."
 >
   <!-- ══ Theme toggle ══ -->
   <button
@@ -80,13 +80,13 @@ const differentiators = [
         </a>
 
         <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-site-text tracking-tighter leading-[0.92] max-w-4xl">
-          Expert Psychological Testing
+          Therapy, Meds &amp; Testing
           <br class="hidden sm:block" />
-          <span class="text-cta">That Accepts Insurance</span>
+          <span class="text-cta">All Under One Roof</span>
         </h1>
 
         <p class="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-site-sub leading-relaxed font-medium">
-          Most practices limit comprehensive testing to self-pay only. We accept 15+ insurance panels — including Medicaid and Medicare — and offer among the shortest waitlists in Kentucky, so you can get the answers you need without the financial barrier.
+          Neuro-affirming therapy, psychiatric medication management, and comprehensive psychological testing — we accept 15+ insurance panels including Medicaid and Medicare. Some insurances accepted for therapy may not cover testing, so you always have options that fit your coverage.
         </p>
 
         <div class="mt-8 flex flex-col sm:flex-row gap-4 items-center">
@@ -270,12 +270,12 @@ const differentiators = [
         <span class="lp-ins-badge">Aetna</span>
         <span class="lp-ins-badge">Cigna</span>
         <span class="lp-ins-badge">UHC</span>
+        <span class="lp-ins-badge">Anthem</span>
         <span class="lp-ins-badge">Humana</span>
         <span class="lp-ins-badge">Medicaid</span>
         <span class="lp-ins-badge">Medicare</span>
         <span class="lp-ins-badge">Tricare</span>
-        <span class="lp-ins-badge">Ambetter</span>
-        <span class="lp-ins-badge">CHAMPVA</span>
+        <span class="lp-ins-badge">Ambetter</span> 
         <span class="lp-ins-badge">Passport</span>
         <span class="lp-ins-badge">UMR</span>
       </div>

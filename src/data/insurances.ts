@@ -8,6 +8,8 @@ export const insuranceProviders: InsuranceProvider[] = [
   { name: "Aetna Better Health", fileName: "aetna-better-health.png" },
   { name: "Aetna Medicare", fileName: "aetna-medicare.png" },
   { name: "Ambetter", fileName: "ambetter.png" },
+  { name: "Anthem", fileName: "anthem.png" },
+  { name: "Blue Cross Blue Shield", fileName: "bcbs.png" },
   { name: "Cigna", fileName: "cigna.png" },
   { name: "CHAMPVA", fileName: "champva.png" },
   { name: "Humana", fileName: "humana.png" },
