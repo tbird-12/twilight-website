@@ -11,14 +11,6 @@ const locations = [
       "https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509",
   },
   {
-    type: "Satellite Office",
-    providers: "Jonica Davis & Stephen Shu",
-    address: "525 Darby Creek Rd., Suite 27",
-    city: "Lexington, KY 40509",
-    mapLink:
-      "https://www.google.com/maps/search/?api=1&query=525+Darby+Creek+Rd+Suite+27+Lexington+KY+40509",
-  },
-  {
     type: "Medication Management",
     providers: "Nicola Allen",
     address: "1040 Monarch St., Office 305",
@@ -81,7 +73,7 @@ const locations = [
   </section>
 
   <section class="max-w-7xl mx-auto px-4 py-24">
-    <div class="grid lg:grid-cols-3 gap-4 sm:gap-8">
+    <div class="grid lg:grid-cols-2 gap-4 sm:gap-8 max-w-4xl mx-auto">
       {
         locations.map((loc) => (
           <div class="bg-surface-soft border border-border rounded-[2.5rem] p-6 sm:p-10 flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all group">
@@ -120,7 +112,7 @@ const locations = [
     <div class="p-12 bg-surface-soft border border-border rounded-[3rem]">
       <h3 class="font-serif text-2xl font-black mb-4 italic text-site-text!">Choosing the Right Door</h3>
       <p class="text-site-sub leading-relaxed mb-0">
-        Twilight Psychology operates out of three distinct suites to provide
+        Twilight Psychology operates out of two distinct suites to provide
         privacy and specialized clinical environments for our clients. Please double-check
         your appointment reminder for your specific suite number before your
         visit.
