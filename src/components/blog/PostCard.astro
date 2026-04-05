@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from "astro:content";
+import CategoryBadge from "./CategoryBadge.astro";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, category, author } = post.data;
+const href = `/blog/${post.id}`;
+
+const formattedDate = pubDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<article class="group flex flex-col gap-3 p-5 rounded-xl border border-border bg-surface hover:border-border-strong hover:shadow-sm transition-all">
+  <div class="flex items-center justify-between gap-3">
+    <CategoryBadge category={category} />
+    <time
+      datetime={pubDate.toISOString()}
+      class="text-xs text-site-sub shrink-0"
+    >
+      {formattedDate}
+    </time>
+  </div>
+
+  <a href={href} class="block">
+    <h2 class="text-base font-semibold text-site-text group-hover:text-icon transition-colors leading-snug">
+      {title}
+    </h2>
+  </a>
+
+  <p class="text-sm text-site-sub line-clamp-3 leading-relaxed">
+    {description}
+  </p>
+
+  <div class="flex items-center justify-between mt-auto pt-2">
+    <span class="text-xs text-site-sub">{author}</span>
+    <a
+      href={href}
+      class="text-xs font-medium text-icon hover:underline underline-offset-2"
+      aria-label={`Read full article: ${title}`}
+    >
+      Read →
+    </a>
+  </div>
+</article>

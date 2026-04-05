@@ -1,0 +1,94 @@
+---
+import { getCollection } from "astro:content";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import PostCard from "../../../components/blog/PostCard.astro";
+import { blogCategories, getCategoryMeta } from "../../../data/blogCategories";
+import type { BlogCategory } from "../../../content.config";
+import { BLOG_CATEGORIES } from "../../../content.config";
+
+export async function getStaticPaths() {
+  return BLOG_CATEGORIES.map((category) => ({ params: { category } }));
+}
+
+const { category } = Astro.params as { category: BlogCategory };
+const meta = getCategoryMeta(category);
+
+const posts = await getCollection(
+  "blog",
+  ({ data }) => !data.draft && data.category === category
+);
+
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BlogLayout
+  title={meta.label}
+  description={`${meta.description} — from Twilight Psychology.`}
+>
+  <!-- Page header -->
+  <section class="border-b border-border py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-1 text-xs text-site-sub hover:text-site-text transition-colors mb-5"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3.5 h-3.5">
+          <path fill-rule="evenodd" d="M14 8a.75.75 0 0 1-.75.75H4.56l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 1.06L4.56 7.25H13.25A.75.75 0 0 1 14 8Z" clip-rule="evenodd" />
+        </svg>
+        All posts
+      </a>
+
+      <h1 class="font-['Playfair_Display'] text-3xl sm:text-4xl font-bold text-site-text mb-3">
+        {meta.label}
+      </h1>
+      <p class="text-base text-site-sub max-w-xl">
+        {meta.description}
+      </p>
+
+      <p class="mt-4 text-sm text-site-sub">
+        {posts.length} {posts.length === 1 ? "post" : "posts"}
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      {posts.length === 0 ? (
+        <div class="text-center py-16">
+          <p class="text-site-sub text-sm">No posts in this category yet.</p>
+          <a href="/blog" class="mt-4 inline-block text-sm text-icon hover:underline">
+            ← Back to all posts
+          </a>
+        </div>
+      ) : (
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Other categories -->
+  <section class="py-8 px-4 border-t border-border bg-surface-soft">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-4">
+        Other Categories
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {blogCategories
+          .filter((c) => c.slug !== category)
+          .map((cat) => (
+            <a
+              href={`/blog/category/${cat.slug}`}
+              class="text-sm text-site-sub border border-border rounded-full px-3 py-1 hover:border-border-strong hover:text-site-text transition-colors"
+            >
+              {cat.label}
+            </a>
+          ))}
+      </div>
+    </div>
+  </section>
+</BlogLayout>

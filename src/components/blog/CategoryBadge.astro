@@ -1,0 +1,24 @@
+---
+import type { BlogCategory } from "../../content.config";
+import { categoryColorMap, getCategoryMeta } from "../../data/blogCategories";
+
+interface Props {
+  category: BlogCategory;
+  size?: "sm" | "md";
+}
+
+const { category, size = "sm" } = Astro.props;
+const meta = getCategoryMeta(category);
+const colorClass = categoryColorMap[category];
+---
+
+<a
+  href={`/blog/category/${category}`}
+  class:list={[
+    "inline-flex items-center rounded-full font-medium transition-opacity hover:opacity-80",
+    colorClass,
+    size === "sm" ? "text-xs px-2.5 py-0.5" : "text-sm px-3 py-1",
+  ]}
+>
+  {meta.label}
+</a>

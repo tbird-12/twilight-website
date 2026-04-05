@@ -51,6 +51,7 @@ export const clientResourcesMenuItems = [
     desc: "Billing Insurance and Networks",
   },
   { name: "New Client", slug: "new-client", desc: "Getting started guide" },
+  { name: "Blog", slug: "/blog", desc: "Clinical updates and practice news" },
 ];
 
 export const servicesMenuItems = services.slice(0, 4);

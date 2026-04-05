@@ -94,7 +94,7 @@ const { title, items, sectionLabel, baseHref = "", moreLink } = Astro.props;
                 </div>
               ) : (
                 <a
-                  href={`${baseHref}/${item.slug}`}
+                  href={item.slug.startsWith('/') ? item.slug : `${baseHref}/${item.slug}`}
                   class="block px-3 py-2 rounded-xl theme-hover-surface-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70"
                 >
                   <div class="text-sm font-sans font-semibold tracking-[0.01em] text-site-text">

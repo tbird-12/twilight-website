@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import favicon from "../../assets/favicons/favicon.svg";
+import { blogCategories } from "../../data/blogCategories";
+import {
+  PHONE_NUMBER,
+  PHONE_NUMBER_FORMATTED,
+  EMAIL_ADDRESS,
+  FAX_NUMBER,
+  FAX_NUMBER_FORMATTED,
+} from "../../data/resource";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-site-footer mt-16">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand / Logo -->
+      <div class="lg:col-span-1">
+        <a href="/" class="inline-flex items-center gap-2 mb-4 group">
+          <Image
+            src={favicon}
+            alt="Twilight Psychology Logo"
+            width={240}
+            height={180}
+            class="h-9 w-auto"
+          />
+          <span class="font-serif font-black text-site-text group-hover:text-cta transition-colors leading-tight">
+            Twilight<br />Psychology
+          </span>
+        </a>
+        <p class="text-sm text-site-sub leading-relaxed">
+          Specialized psychological evaluations, psychiatric medication management, and evidence-based therapy.
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Contact</p>
+        <div class="space-y-2 text-sm text-site-sub">
+          <p>
+            P:&nbsp;<a href={`tel:${PHONE_NUMBER}`} class="text-site-text hover:text-cta transition-colors">
+              {PHONE_NUMBER_FORMATTED}
+            </a>
+          </p>
+          <p>
+            F:&nbsp;<a href={`fax:${FAX_NUMBER}`} class="text-site-text hover:text-cta transition-colors">
+              {FAX_NUMBER_FORMATTED}
+            </a>
+          </p>
+          <p>
+            E:&nbsp;<a href={`mailto:${EMAIL_ADDRESS}`} class="text-site-text hover:text-cta transition-colors break-all">
+              {EMAIL_ADDRESS}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Locations -->
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Locations</p>
+        <div class="space-y-4 text-sm text-site-sub">
+          <div>
+            <p class="font-semibold text-site-text text-xs uppercase tracking-wide mb-1">Main Office</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-site-text transition-colors leading-snug block"
+            >
+              501 Darby Creek Rd., Suite 7<br />Lexington, KY 40509
+            </a>
+          </div>
+          <div>
+            <p class="font-semibold text-site-text text-xs uppercase tracking-wide mb-1">Medication Management</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=1040+Monarch+St+Office+305+Lexington+KY+40513"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-site-text transition-colors leading-snug block"
+            >
+              1040 Monarch St., Office 305<br />Lexington, KY 40513
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog categories + quick links -->
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Blog Topics</p>
+        <nav class="flex flex-col gap-2 text-sm text-site-sub" aria-label="Blog footer topics">
+          {blogCategories.map((cat) => (
+            <a href={`/blog/category/${cat.slug}`} class="hover:text-site-text transition-colors">
+              {cat.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+    </div>
+
+    <hr class="my-8 border-border" />
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-site-sub">
+      <span>© {year} Twilight Psychology, PLLC. All rights reserved.</span>
+      <a href="/privacy" class="hover:text-site-text transition-colors underline underline-offset-2">
+        Privacy Policy
+      </a>
+    </div>
+
+  </div>
+</footer>
