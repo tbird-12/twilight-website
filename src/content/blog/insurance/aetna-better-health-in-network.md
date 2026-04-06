@@ -8,7 +8,7 @@ tags: ["aetna", "medicaid", "insurance", "network"]
 draft: false
 ---
 
-Twilight Psychology is credentialed with **Aetna Better Health of Kentucky**. This page summarizes the prior authorization requirements for psychological testing, the kinds of documentation commonly requested, how Aetna Better Health may evaluate medical necessity, and the typical appeal pathways available if testing is denied.
+Twilight Psychology is credentialed with **Aetna Better Health of Kentucky**. Since July 2025, Kentucky Medicaid asked managed care organizations to reevaluate whether prior authorizations (PAs) are required post‑COVID; as a result, Aetna Better Health of Kentucky, UnitedHealthcare Community Plan, and WellCare of Kentucky have reinstated PAs for psychological evaluations. However, we have observed an increase in PA denials from Aetna Better Health of Kentucky. This page explains Aetna’s PA requirements for psychological testing, the documentation commonly requested, how medical necessity is evaluated, and the typical appeal pathways if testing is denied.
 
 ## What Services Require Prior Authorization
 
@@ -39,14 +39,15 @@ Aetna Better Health evaluates whether testing is medically necessary and likely 
 - The proposed tests are not appropriate for the member’s age or clinical question
 - Use of alcohol or other intoxicants that would invalidate testing
 
-## Appeal process for denials
+## Appeal Process for Denials
 
 If Aetna Better Health denies a prior authorization or payment for testing, members generally have these options:
 
-1. Request a clinical reconsideration (internal appeal) — submit additional records, a clinician letter of medical necessity, or clarifying information to address the denial reason.
+1. Request a clinical reconsideration (internal appeal) by submitting additional records, a clinician letter of medical necessity, or clarifying information to address the denial reason.
 
-2. File an expedited/urgent appeal if the member’s health would be seriously jeopardized by waiting — this is considered on a case-by-case basis.
+2. File an expedited/urgent appeal if the member’s health would be seriously jeopardized by waiting. This is considered on a case-by-case basis.
 
 3. If internal appeals are exhausted, Medicaid members typically have external review or state fair-hearing options through the Kentucky Medicaid appeals process; the denial notice and member handbook explain those next steps.
 
-Timelines and exact procedures vary by plan and by whether the appeal is standard or expedited. We recommend reviewing the member’s Aetna Better Health member handbook or calling the member services number on the back of the insurance card for plan-specific instructions.
+Timelines and procedures vary whether an appeal is standard or expedited; review your Aetna Better Health member handbook or call the member‑services number on your insurance card for plan‑specific guidance. 
+For general timing and waitlist information, see [FAQ](/resources/faq). Because we receive many Aetna Better Health Medicaid cases, Twilight Psychology does not file appeals on members’ behalf. If an authorization is denied, you may choose to switch to a plan we accept—see accepted plans at [Insurances](/resources/insurances-accepted) or contact us for referral options via [Contact](/contact) page.

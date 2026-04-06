@@ -283,6 +283,7 @@ import {
           const targetId = trigger.dataset.target;
           if (targetId) {
             activateContactTab(targetId);
+            trigger.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
           }
         });
       });

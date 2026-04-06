@@ -14,14 +14,12 @@
   --theme-icon: #0284c7;
   --theme-button-border: #d4d4d4;
 
-  /* Surfaces & Glass */
+  /* Surfaces */
   --theme-surface: #ffffff;
   --theme-surface-2: #f4f4f2;
   --theme-surface-soft: rgba(0, 0, 0, 0.03);
   --theme-border: rgba(0, 0, 0, 0.10);
   --theme-border-strong: rgba(0, 0, 0, 0.18);
-  --theme-glass-bg: rgba(252, 252, 249, 0.8);
-  --theme-glass-border: rgba(0, 0, 0, 0.08);
 
   /* RGB for gradients */
   --rgb-bg: 252, 252, 249;
@@ -33,34 +31,6 @@
   --theme-section-label-line: rgba(0, 0, 0, 0.12);
 }
 
-:root.light {
-  /* Light Theme (explicit) */
-  --theme-site-bg: #fcfcf9;
-  --theme-site-text: #121212;
-  --theme-site-sub: #575757;
-  --theme-site-footer: #f1f1ee;
-  --theme-site-ann: #f5f5f3;
-  --theme-cta: #121212;
-  --theme-cta-fg: #ffffff;
-  --theme-icon: #0284c7;
-  --theme-button-border: #d4d4d4;
-
-  --theme-surface: #ffffff;
-  --theme-surface-2: #f4f4f2;
-  --theme-surface-soft: rgba(0, 0, 0, 0.03);
-  --theme-border: rgba(0, 0, 0, 0.10);
-  --theme-border-strong: rgba(0, 0, 0, 0.18);
-  --theme-glass-bg: rgba(252, 252, 249, 0.8);
-  --theme-glass-border: rgba(0, 0, 0, 0.08);
-
-  --rgb-bg: 252, 252, 249;
-  --rgb-surface: 255, 255, 255;
-  --rgb-surface-2: 244, 244, 242;
-  --rgb-accent: 18, 18, 18;
-  --rgb-accent-alt: 2, 132, 199;
-  --theme-section-label: rgba(87, 87, 87, 0.85);
-  --theme-section-label-line: rgba(0, 0, 0, 0.12);
-}
 
 :root.dark {
   /* Dark Theme: "Deep Obsidian & Silver" */
@@ -79,8 +49,6 @@
   --theme-surface-soft: rgba(255, 255, 255, 0.03);
   --theme-border: rgba(255, 255, 255, 0.08);
   --theme-border-strong: rgba(255, 255, 255, 0.15);
-  --theme-glass-bg: rgba(10, 10, 12, 0.7);
-  --theme-glass-border: rgba(255, 255, 255, 0.1);
 
   --rgb-bg: 10, 10, 12;
   --rgb-surface: 17, 17, 20;
@@ -109,8 +77,6 @@
     --theme-surface-soft: rgba(255, 255, 255, 0.03);
     --theme-border: rgba(255, 255, 255, 0.08);
     --theme-border-strong: rgba(255, 255, 255, 0.15);
-    --theme-glass-bg: rgba(10, 10, 12, 0.7);
-    --theme-glass-border: rgba(255, 255, 255, 0.1);
 
     --rgb-bg: 10, 10, 12;
     --rgb-surface: 17, 17, 20;
@@ -195,33 +161,6 @@
 }
 
 @layer components {
-  /* The "Frosted Premium" Glass Utility */
-  .glass {
-    background-color: var(--theme-glass-bg);
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid var(--theme-glass-border);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-  }
-
-  .premium-card {
-    @apply transition-all duration-300 hover:translate-y-0.5;
-    background: var(--theme-surface);
-    border: 1px solid var(--theme-border);
-  }
-
-  .premium-card:hover {
-    border-color: var(--theme-border-strong);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
-  }
-
-  .btn-premium {
-    @apply px-6 py-3 font-medium transition-all active:scale-95;
-    background-color: var(--theme-cta);
-    color: var(--theme-cta-fg);
-    border-radius: 4px;
-  }
-
   .theme-border {
     border-color: var(--color-border);
   }
@@ -249,9 +188,7 @@
   .theme-hover-surface-2:hover {
     background-color: var(--color-surface-2);
   }
-}
 
-@layer components {
   .site-footer {
     background-color: var(--theme-site-footer);
     border-top: 1px solid var(--theme-border);
@@ -290,4 +227,18 @@
     margin-bottom: 0.35em;
     line-height: 1.72;
   }
+}
+
+/* Remove underline from anchor elements styled as buttons or cards.
+   Placed outside @layer so it overrides Tailwind Typography prose styles. */
+a[class*="rounded-"] {
+  text-decoration-line: none;
+}
+
+/* Inverted text: use site background color so text contrasts with an
+   inverted (bg-cta) panel. Placed outside @layer so it beats prose rules. */
+.inverted-text,
+.prose .inverted-text,
+.prose-lg .inverted-text {
+  color: var(--theme-site-bg);
 }
