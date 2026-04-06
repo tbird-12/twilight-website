@@ -10,6 +10,15 @@ const clinicianBenefits = [
   "Current Testing Suite & Protocols",
   "Automated Billing & Support",
 ];
+
+const therapistBenefits = [
+  "Industry-Leading Compensation",
+  "Health & Medical Benefits",
+  "W2 or 1099 Options",
+  "Targeted Patient Marketing",
+  "Latest HIPAA-Compliant EHR",
+  "Automated Billing & Support",
+];
 ---
 
 <Layout
@@ -39,7 +48,7 @@ const clinicianBenefits = [
       </div>
     </section>
 
-    <div class="max-w-4xl mx-auto px-4 grid lg:grid-cols-2 gap-6 -mt-12 relative z-30">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-6 -mt-12 relative z-30">
       
       <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
         <div>
@@ -83,6 +92,32 @@ const clinicianBenefits = [
             </div>
         </div>
         <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 border border-border-strong text-sand text-center font-black rounded-full hover:bg-surface-2 transition-all text-sm italic">Request Placement</a>
+      </div>
+
+      <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
+        <div>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Child &amp; Teen <br/>Therapist</h2>
+                <span class="text-[9px] font-black text-site-text border border-border-strong px-2 py-1 rounded uppercase">W2/1099</span>
+            </div>
+            <p class="text-site-sub mb-6 text-xs leading-relaxed">
+              Seeking a Kentucky-licensed therapist passionate about working with children and adolescents, with a focus on neurodivergent populations including autism, ADHD, and related profiles.
+            </p>
+            <div class="space-y-4 mb-4">
+                <div class="bg-surface-soft p-4 rounded-xl border border-border">
+                    <p class="text-[10px] font-black text-cta uppercase mb-1">Requirements</p>
+                    <p class="text-site-text text-xs font-bold leading-relaxed">Active KY license (LPCC, LCSW, LMFT, or equivalent). Experience or training in neurodivergence-affirming care for ages 4–17.</p>
+                </div>
+            </div>
+            <ul class="space-y-3 mb-8">
+              {therapistBenefits.map(benefit => (
+                <li class="flex items-center gap-2 text-[10px] font-black text-sand uppercase tracking-wider">
+                  <span class="text-cta">✦</span> {benefit}
+                </li>
+              ))}
+            </ul>
+        </div>
+        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-cta text-cta-fg text-center font-black rounded-full hover:bg-cta/80 active:scale-95 transition-all text-sm">Apply Now</a>
       </div>
 
 

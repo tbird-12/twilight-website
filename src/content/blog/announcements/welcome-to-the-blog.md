@@ -17,7 +17,6 @@ We are excited to launch the **Twilight Psychology Blog** — a dedicated space 
 - **Business Updates** — Office hours, staffing news, and operational announcements.
 - **Announcements** — General news from our practice.
 
-<br>
 ## Why a Blog?
 
 We hear a lot of the same questions from clients, referral sources, and families. Rather than answering each one individually, we wanted to create a searchable, publicly accessible resource that grows over time. We will publish new content regularly. If you have a topic you would like us to address, please reach out through our [Contact](/contact) page.
