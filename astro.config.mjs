@@ -6,18 +6,10 @@ import icon from "astro-icon";
 
 import sitemap from "@astrojs/sitemap";
 
-import partytown from "@astrojs/partytown";
-
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [icon(), sitemap(), partytown(
-    {
-      config: {
-        forward: ['dataLayer.push', 'gtag'],
-      },
-    }),
-  ],
+  integrations: [icon(), sitemap()],
   site: "https://www.twilightpsychology.com",
 });
