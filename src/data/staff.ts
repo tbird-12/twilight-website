@@ -104,7 +104,7 @@ export const providers: Provider[] = [
     image: jatanaBoggsImg,
     name_with_education: 'Jatana Boggs, MA',
     credential: 'LPCA',
-    services_offered: ['Autism Testing', 'ADHD Testing', 'Personality Disorders', 'Psychological evaluations', 'Therapy'],
+    services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'Psychological evaluations', 'Therapy'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$80' },
     states_served: ['Kentucky', 'Ohio'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],

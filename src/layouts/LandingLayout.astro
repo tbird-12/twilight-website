@@ -43,7 +43,7 @@ const seoDescription =
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <GoogleAnalytics />
+    <GoogleAnalytics gaId={import.meta.env.PUBLIC_GA_ID} />
 
     <title>{title}</title>
     <meta name="generator" content={Astro.generator} />

@@ -36,9 +36,10 @@ import { Icon } from "astro-icon/components";
 </div>
 
 <script is:inline define:vars={{ tree: chatbotTree, EMAIL_ADDRESS }}>
-// Switch admin contact to email during off-hours (6 PM – 9 AM)
+// Switch admin contact to email during off-hours (5 PM – 9 AM) Eastern Time
 (function() {
-  const hour = new Date().getHours();
+  const hourStr = new Date().toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false });
+  const hour = parseInt(hourStr, 10);
   const isOffHours = hour < 9 || hour >= 17;
   if (isOffHours && tree['admin']) {
     tree['admin'].action = 'Email Office';

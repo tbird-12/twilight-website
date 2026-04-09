@@ -10,7 +10,7 @@ const {gaId} = Astro.props;
       src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
     ></script>
 
-    <script type="text/partytown" is:inline data-gaid="{gaId}">
+    <script type="text/partytown" is:inline data-gaid={gaId}>
       const gaId = document.currentScript.dataset.gaid;
       window.dataLayer = window.dataLayer || [];
       function gtag() {
