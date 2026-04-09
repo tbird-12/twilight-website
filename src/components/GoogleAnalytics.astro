@@ -21,10 +21,10 @@ const {gaId} = Astro.props;
     </script>
 
     <script is:inline data-gaid={gaId}>
-      gaId = document.currentScript.dataset.gaid;
+      const trackingId = document.currentScript.dataset.gaid;
       document.addEventListener('astro:after-swap', () => {
         if (window.gtag) {
-          window.gtag('config', gaId, {
+          window.gtag('config', trackingId, {
             page_path: window.location.pathname,
           });
         }
