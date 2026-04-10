@@ -103,7 +103,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
       aria-label="Mobile navigation"
     >
       {/* Section Headers */}
-      <div className="divide-y theme-border">
+      <div className="theme-border">
         {sections.map((section) => (
           <div key={section.id}>
             {/* Header Button */}

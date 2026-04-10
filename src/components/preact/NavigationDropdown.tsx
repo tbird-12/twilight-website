@@ -150,9 +150,10 @@ export default function NavigationDropdown({
       {/* Full-width mega dropdown */}
       {isOpen && (
         <>
-          {/* Backdrop blur overlay — blurs the entire page behind the dropdown */}
+          {/* Backdrop blur overlay — blurs content below header and dropdown */}
           <div
-            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-lg nav-backdrop-enter"
+            className="fixed left-0 right-0 bottom-0 z-40 bg-black/40 backdrop-blur-lg nav-backdrop-enter"
+            style={{ top: '5rem' }}
             onClick={() => setIsOpen(false)}
           />
 
