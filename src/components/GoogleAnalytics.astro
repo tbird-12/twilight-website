@@ -1,25 +1,26 @@
 ---
-const {gaId} = Astro.props;
+const { gaId } = Astro.props;
 ---
 
 {gaId && (
   <>
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-    <script define:vars={{ gaId }}>
+
+    <script is:inline define:vars={{ gaId }}>
       window.dataLayer = window.dataLayer || [];
-      window.gtag = window.gtag || function(){
+      function gtag() {
         window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-      window.gtag('config', gaId);
-    </script>
-    <script define:vars={{ gaId }}>
+      }
+      window.gtag = gtag; // Explicitly attach to window
+      
+      gtag('js', new Date());
+      gtag('config', gaId);
+
+      // Handle Astro View Transitions
       document.addEventListener('astro:after-swap', () => {
-        if(window.gtag){
-          window.gtag('config', gaId, {
-            page_path: window.location.pathname,
-          });
-        }
+        gtag('config', gaId, {
+          page_path: window.location.pathname,
+        });
       });
     </script>
   </>
