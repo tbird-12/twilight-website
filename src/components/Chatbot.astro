@@ -36,6 +36,8 @@ import { Icon } from "astro-icon/components";
 </div>
 
 <script is:inline define:vars={{ tree: chatbotTree, EMAIL_ADDRESS }}>
+// Defer chatbot initialization until browser is idle
+(window.requestIdleCallback || function(cb) { setTimeout(cb, 200); })(function() {
 // Switch admin contact to email during off-hours (5 PM – 9 AM) Eastern Time
 (function() {
   const hourStr = new Date().toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false });
@@ -146,4 +148,5 @@ function renderNode(nodeId) {
   chatBox.appendChild(optionsCont);
   chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
 }
+}); // end requestIdleCallback
 </script>

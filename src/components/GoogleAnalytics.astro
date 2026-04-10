@@ -4,20 +4,27 @@ const { gaId } = Astro.props;
 
 {gaId && (
   <>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-
     <script is:inline define:vars={{ gaId }}>
+      // Pre-define gtag so calls before the library loads are queued
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         window.dataLayer.push(arguments);
       }
-      window.gtag = gtag; // Explicitly attach to window
-      
-      gtag('js', new Date());
-      gtag('config', gaId);
+      window.gtag = gtag;
+
+      // Defer loading the GA library until after critical rendering
+      (window.requestIdleCallback || function(cb) { setTimeout(cb, 200); })(function() {
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+        s.async = true;
+        document.head.appendChild(s);
+
+        gtag('js', new Date());
+        gtag('config', gaId);
+      });
 
       // Handle Astro View Transitions
-      document.addEventListener('astro:after-swap', () => {
+      document.addEventListener('astro:after-swap', function() {
         gtag('config', gaId, {
           page_path: window.location.pathname,
         });

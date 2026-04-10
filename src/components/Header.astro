@@ -98,7 +98,9 @@ import MobileNav from "./header/MobileNav.astro";
 
     document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
       btn.addEventListener("click", function () {
+        root.classList.add("theme-transition");
         applyTheme(currentTheme() === "dark" ? "light" : "dark");
+        setTimeout(function() { root.classList.remove("theme-transition"); }, 500);
       });
     });
 
