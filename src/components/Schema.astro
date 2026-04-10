@@ -5,14 +5,13 @@ const siteUrl = Astro.site || "http://localhost:4321";
 
 const imageUrl = new URL(logo.src, siteUrl).href;
 
-const { type = "WebSite", name, description, ...extra } = Astro.props;
+const { type = "WebSite", name, ...extra } = Astro.props;
 
 const schema = {
   "@context": "https://schema.org",
   "@type": type,
   name: name || "Twilight Psychology",
   description:
-    description ||
     "Neuro-affirming psychological evaluations, therapy, and medication management in Lexington, Kentucky. Among the shortest waitlists in Kentucky for clients seeking a diagnosis with Medicaid or health insurance. Accepting 15+ insurance panels including Medicaid, Medicare, and Tricare.",
   url: "https://www.twilightpsychology.com",
   address: {

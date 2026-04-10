@@ -1,7 +1,6 @@
 ---
 import HeaderWithProvider from "../components/preact/HeaderWithProvider";
 import Footer from "../components/Footer.astro";
-import Announcements from "../components/Announcements.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Chatbot from "../components/Chatbot.astro";
 import favicon from "../assets/favicons/favicon.svg";
@@ -95,7 +94,6 @@ const seoDescription =
   <body
     class="flex flex-col min-h-screen"
   >
-    <!--Announcements /-->
     <HeaderWithProvider client:load logoSrc={favicon.src} />
 
     <main class="grow">

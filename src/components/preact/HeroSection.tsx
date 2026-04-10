@@ -25,6 +25,47 @@ interface HeroSectionProps {
   className?: string;
 }
 
+// Helper to split text into words and wrap with reveal masks
+function WordReveal({ text, baseDelay = 0 }: { text: string; baseDelay?: number }) {
+  if (!text || typeof text !== 'string') return text;
+
+  const words = text.split(/(\s+)/);
+  let wordIndex = 0;
+
+  return words.map((word, idx) => {
+    // Preserve whitespace as-is
+    if (/^\s+$/.test(word)) {
+      return word;
+    }
+
+    const delay = baseDelay + wordIndex * 40;
+    wordIndex++;
+
+    return (
+      <span
+        key={idx}
+        className="word-reveal-mask"
+        style={{
+          display: 'inline-block',
+          overflow: 'hidden',
+          verticalAlign: 'baseline',
+        }}
+      >
+        <span
+          className="word-reveal-content"
+          style={{
+            display: 'inline-block',
+            animation: `wordRevealSlideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both`,
+            animationDelay: `${delay}ms`,
+          }}
+        >
+          {word}
+        </span>
+      </span>
+    );
+  });
+}
+
 export default function HeroSection({
   title,
   subtitle,
@@ -51,19 +92,20 @@ export default function HeroSection({
       ref={heroRef}
       className={`hero-section text-center ${className}`}
     >
-      {/* Title with staggered animation */}
+      {/* Title with word reveal animation */}
       {title && (
         <h1
           className="font-serif text-[2.0rem] sm:text-4xl md:text-6xl xl:text-7xl font-black text-site-text mb-2 sm:mb-6 tracking-tighter leading-[1.02]"
           style={{
-            opacity: hasAnimated ? 1 : 0,
-            animation: hasAnimated
-              ? `fadeInUp ${duration.slow}ms ${easing.smooth} both`
-              : 'none',
+            animation: hasAnimated ? `fadeInUp ${duration.slow}ms ${easing.smooth} both` : 'none',
             animationDelay: `${titleDelay}ms`,
           }}
         >
-          {title}
+          {typeof title === 'string' ? (
+            <WordReveal text={title} baseDelay={titleDelay + 100} />
+          ) : (
+            title
+          )}
         </h1>
       )}
 
@@ -143,6 +185,17 @@ export default function HeroSection({
           from {
             opacity: 0;
             transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes wordRevealSlideUp {
+          from {
+            opacity: 0;
+            transform: translateY(100%);
           }
           to {
             opacity: 1;

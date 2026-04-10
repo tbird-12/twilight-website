@@ -69,7 +69,7 @@ function NestedItem({ item }: { item: any }) {
 
       {isExpanded && item.children && (
         <div
-          className="absolute top-full left-0 mt-1 w-56 bg-surface-2 border-l-4 border-l-cta shadow-2xl rounded-b-xl p-3 z-[60] nav-nested-enter"
+          className="absolute top-full left-0 mt-1 w-56 bg-surface-2 border-l-4 border-l-cta shadow-2xl rounded-b-xl p-3 z-60 nav-nested-enter"
         >
           {item.childLabel && (
             <div className="text-[10px] uppercase tracking-widest text-site-sub/80 font-black px-3 py-2">
