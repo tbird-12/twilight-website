@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import HeaderWithProvider from "../components/preact/HeaderWithProvider";
 import Footer from "../components/Footer.astro";
 import Announcements from "../components/Announcements.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
@@ -96,7 +96,7 @@ const seoDescription =
     class="flex flex-col min-h-screen"
   >
     <!--Announcements /-->
-    <Header />
+    <HeaderWithProvider client:load logoSrc={favicon.src} />
 
     <main class="grow">
       <slot />

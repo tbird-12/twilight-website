@@ -1,7 +1,6 @@
 ---
-import { chatbotTree } from "../data/chatbot";
-import { EMAIL_ADDRESS } from "../data/resource";
 import { Icon } from "astro-icon/components";
+import ChatbotWrapper from "./interactive/ChatbotWrapper.astro";
 ---
 
 <div class="fixed bottom-3 right-3 md:bottom-5 md:right-5 z-60">
@@ -31,31 +30,13 @@ import { Icon } from "astro-icon/components";
     <button id="close-chat" type="button" class="text-xl md:text-2xl leading-none hover:text-site-sub transition-colors">×</button>
   </div>
 
-  <div id="chat-box" class="h-64 md:h-80 overflow-y-auto p-3 md:p-4 flex flex-col gap-3 bg-site-bg chat-scrollbar">
-  </div>
+  <ChatbotWrapper />
 </div>
 
-<script is:inline define:vars={{ tree: chatbotTree, EMAIL_ADDRESS }}>
-// Defer chatbot initialization until browser is idle
-(window.requestIdleCallback || function(cb) { setTimeout(cb, 200); })(function() {
-// Switch admin contact to email during off-hours (5 PM – 9 AM) Eastern Time
-(function() {
-  const hourStr = new Date().toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false });
-  const hour = parseInt(hourStr, 10);
-  const isOffHours = hour < 9 || hour >= 17;
-  if (isOffHours && tree['admin']) {
-    tree['admin'].action = 'Email Office';
-    tree['admin'].actionType = 'email';
-    tree['admin'].actionValue = EMAIL_ADDRESS;
-    tree['admin'].text = 'Our office is currently closed. Please email us and we\'ll get back to you on the next business day.';
-  }
-})();
-
+<script>
 const chatContainer = document.getElementById('chat-container');
-const chatBox = document.getElementById('chat-box');
 const botTrigger = document.getElementById('bot-trigger');
 const closeChat = document.getElementById('close-chat');
-let isChatStarted = false;
 
 function toggleChat() {
   if (!chatContainer) return;
@@ -63,10 +44,6 @@ function toggleChat() {
   if (isHidden) {
     chatContainer.classList.remove('hidden');
     chatContainer.classList.add('flex');
-    if (!isChatStarted) { 
-      renderNode('start'); 
-      isChatStarted = true; 
-    }
   } else {
     chatContainer.classList.add('hidden');
     chatContainer.classList.remove('flex');
@@ -88,65 +65,4 @@ if (closeChat) {
     toggleChat();
   }, { passive: false });
 }
-
-function renderNode(nodeId) {
-  if (!chatBox) return;
-  const node = tree[nodeId];
-  
-  const botMsg = document.createElement('div');
-  botMsg.className = "bg-surface-soft border border-border text-site-text p-3 rounded-2xl rounded-bl-none max-w-[85%] text-sm self-start";
-  botMsg.innerText = node.text;
-  chatBox.appendChild(botMsg);
-
-  const optionsCont = document.createElement('div');
-  optionsCont.className = "flex flex-wrap gap-2 mt-1 mb-4";
-
-  if (node.type === "terminal") {
-    const callBtn = document.createElement('button');
-    callBtn.className = "w-full bg-cta text-cta-fg font-bold py-3 rounded-xl transition-colors mt-2";
-    callBtn.innerText = `${node.action}`;
-    callBtn.onclick = () => {
-      if (node.actionType === "link" && node.actionValue) {
-        window.location.href = node.actionValue;
-        return;
-      }
-
-      if (node.actionType === "email" && node.actionValue) {
-        window.location.href = `mailto:${node.actionValue}`;
-        return;
-      }
-
-      const phoneNumber = node.actionValue || PHONE_NUMBER;
-      window.location.href = `tel:${phoneNumber}`;
-    };
-    optionsCont.appendChild(callBtn);
-    
-    const restart = document.createElement('button');
-    restart.className = "w-full text-xs text-site-sub mt-2 hover:text-cta underline transition-colors";
-    restart.innerText = "Start over";
-    restart.onclick = () => { 
-      chatBox.innerHTML = ''; 
-      renderNode('start'); 
-    };
-    optionsCont.appendChild(restart);
-  } else {
-    node.options.forEach(opt => {
-      const btn = document.createElement('button');
-      btn.className = "border border-cta/60 text-cta hover:bg-cta hover:text-cta-fg px-4 py-2 rounded-full text-sm transition-colors bg-site-bg";
-      btn.innerText = opt.label;
-      btn.onclick = () => {
-        const userMsg = document.createElement('div');
-        userMsg.className = "bg-cta/90 text-cta-fg p-3 rounded-2xl rounded-br-none max-w-[85%] text-sm self-end";
-        userMsg.innerText = opt.label;
-        chatBox.appendChild(userMsg);
-        optionsCont.remove();
-        setTimeout(() => renderNode(opt.next), 300);
-      };
-      optionsCont.appendChild(btn);
-    });
-  }
-  chatBox.appendChild(optionsCont);
-  chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
-}
-}); // end requestIdleCallback
 </script>

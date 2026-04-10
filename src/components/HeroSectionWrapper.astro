@@ -1,0 +1,42 @@
+---
+/**
+ * HeroSectionWrapper - Astro wrapper for Preact HeroSection
+ * Allows passing complex JSX content safely
+ */
+import HeroSection from '../components/preact/HeroSection';
+import { REFERRAL_LINK } from '../data/resource';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const { 
+  title = "Answers You Deserve, Care You Can Trust",
+  subtitle = "Whether you're seeking an evaluation for ADHD, Autism, or a learning disorder — or looking for therapy and medication support — our neuro-affirming team in Lexington, Kentucky is here to help. Now accepting new clients."
+} = Astro.props;
+
+const stats = [
+  { label: "Evaluations", value: "2100+" },
+  { label: "Years Experience", value: "8+" },
+  { label: "Weeks Waitlist", value: "3" },
+  { label: "Insurance Panels", value: "17+" },
+];
+---
+
+<HeroSection
+  client:load
+  title={title}
+  subtitle={subtitle}
+  primaryCta={{
+    label: "Explore Our Services",
+    href: "/catalog",
+  }}
+  secondaryCta={{
+    label: "Referring a client? Submit a referral",
+    href: REFERRAL_LINK,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  }}
+  stats={stats}
+/>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProviderDirectory from '../../components/ProviderDirectory.astro';
+import ProviderDirectoryWrapper from '../../components/interactive/ProviderDirectoryWrapper.astro';
 ---
 
 <Layout
@@ -26,7 +26,7 @@ import ProviderDirectory from '../../components/ProviderDirectory.astro';
         </p>
       </header>
 
-      <ProviderDirectory />
+      <ProviderDirectoryWrapper />
     </div>
     <div class="text-left mt-12 text-sm text-sand">
       <p> * Services excluded by health insurance coverage are offered on a self-pay basis</p>

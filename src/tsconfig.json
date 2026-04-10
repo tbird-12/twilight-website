@@ -8,7 +8,8 @@
     "paths": {
       "~/*": ["src/*"]
     },
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   },
   "include": ["../.astro/types.d.ts", "**/*"],
   "exclude": ["dist/"]

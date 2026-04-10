@@ -1,0 +1,12 @@
+---
+import FaqAccordion from "./FaqAccordion";
+
+interface Props {
+  items: Array<{ question: string; answer: string }>;
+  title?: string;
+}
+
+const { items, title } = Astro.props;
+---
+
+<FaqAccordion client:load items={items} title={title} />
