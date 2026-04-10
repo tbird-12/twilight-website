@@ -2,6 +2,7 @@
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import favicon from "../assets/favicons/favicon.svg";
 import Schema from "../components/Schema.astro";
+import { siteConfig } from "../data/siteConfig";
 import "../styles/global.css";
 
 interface Props {
@@ -43,7 +44,7 @@ const seoDescription =
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <GoogleAnalytics gaId={import.meta.env.PUBLIC_GA_ID} />
+    <GoogleAnalytics gaId={siteConfig.gaId} />
 
     <title>{title}</title>
     <meta name="generator" content={Astro.generator} />
