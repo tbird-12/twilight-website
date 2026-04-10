@@ -1,0 +1,18 @@
+---
+import ProviderDirectory from "./ProviderDirectory";
+import { providers } from "../../data/staff";
+
+// Transform providers data for the component
+const transformedProviders = providers.map((p) => ({
+  id: p.slug,
+  first_name: p.name.split(' ')[0],
+  last_name: p.name.split(' ').slice(1).join(' '),
+  credentials: p.credential,
+  bio: `${p.spec} specialist. Offers: ${p.services_offered.slice(0, 3).join(', ')}${p.services_offered.length > 3 ? '...' : ''}`,
+  services_offered: p.services_offered,
+  states_served: p.states_served,
+  image_url: undefined,
+}));
+---
+
+<ProviderDirectory client:load providers={transformedProviders} />

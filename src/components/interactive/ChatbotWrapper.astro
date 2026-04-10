@@ -1,0 +1,18 @@
+---
+import ChatbotUI from "./ChatbotUI";
+import { chatbotTree, type ChatTree } from "../../data/chatbot";
+import { EMAIL_ADDRESS } from "../../data/resource";
+
+// Switch admin contact to email during off-hours (5 PM – 9 AM) Eastern Time
+const hourStr = new Date().toLocaleString('en-US', { timeZone: 'America/New_York', hour: 'numeric', hour12: false });
+const hour = parseInt(hourStr, 10);
+const isOffHours = hour < 9 || hour >= 17;
+if (isOffHours && chatbotTree['admin']) {
+  chatbotTree['admin'].text = 'Our office is currently closed. Please email us and we\'ll get back to you on the next business day.';
+  chatbotTree['admin'].action = 'Email Office';
+  chatbotTree['admin'].actionType = 'email';
+  chatbotTree['admin'].actionValue = EMAIL_ADDRESS;
+}
+---
+
+<ChatbotUI client:load tree={chatbotTree} />

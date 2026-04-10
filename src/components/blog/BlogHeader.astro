@@ -1,7 +1,10 @@
 ---
-import { blogCategories } from "../../data/blogCategories";
+import { Image } from "astro:assets";
+import favicon from "../../assets/favicons/favicon.svg";
+import BlogHeaderWithProvider from "../preact/BlogHeaderWithProvider";
 
 const currentPath = Astro.url.pathname;
+const isIndex = currentPath === "/blog" || currentPath === "/blog/";
 ---
 
 <header class="sticky top-0 z-50 border-b border-border bg-(--theme-glass-bg) backdrop-blur-md">
@@ -9,59 +12,41 @@ const currentPath = Astro.url.pathname;
 
     <!-- Left: branding -->
     <a href="/blog" class="flex items-center gap-2 shrink-0 group">
+      <Image
+        src={favicon}
+        alt="Twilight Psychology Logo"
+        width={120}
+        height={90}
+        class="h-7 w-auto"
+      />
       <span class="font-['Playfair_Display'] text-lg font-semibold text-site-text group-hover:text-icon transition-colors">
-        Twilight
+        Twilight Psychology
       </span>
       <span class="text-xs font-medium uppercase tracking-widest text-site-sub border border-border rounded px-1.5 py-0.5">
         Blog
       </span>
     </a>
 
-    <!-- Center: category nav (hidden on small screens) -->
-    <nav class="hidden md:flex items-center gap-1 text-sm" aria-label="Blog categories">
-      {blogCategories.map((cat) => (
+    <!-- Right: navigation links -->
+    <nav class="flex items-center gap-3 text-sm" aria-label="Blog navigation">
+      <BlogHeaderWithProvider client:load />
+      {!isIndex && (
         <a
-          href={`/blog/category/${cat.slug}`}
-          class:list={[
-            "px-3 py-1.5 rounded-full font-medium transition-colors",
-            currentPath.includes(`/blog/category/${cat.slug}`)
-              ? "bg-surface-2 text-site-text"
-              : "text-site-sub hover:text-site-text hover:bg-surface-soft",
-          ]}
+          href="/blog"
+          class="text-site-sub hover:text-site-text transition-colors font-medium hidden sm:inline"
         >
-          {cat.label}
+          All Posts
         </a>
-      ))}
+      )}
+      <a
+        href="/"
+        class="shrink-0 text-xs font-medium text-site-sub hover:text-site-text transition-colors flex items-center gap-1"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3.5 h-3.5">
+          <path fill-rule="evenodd" d="M14 8a.75.75 0 0 1-.75.75H4.56l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 1.06L4.56 7.25H13.25A.75.75 0 0 1 14 8Z" clip-rule="evenodd" />
+        </svg>
+        Main site
+      </a>
     </nav>
-
-    <!-- Right: back to main site -->
-    <a
-      href="/"
-      class="shrink-0 text-xs font-medium text-site-sub hover:text-site-text transition-colors flex items-center gap-1"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3.5 h-3.5">
-        <path fill-rule="evenodd" d="M14 8a.75.75 0 0 1-.75.75H4.56l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 1.06L4.56 7.25H13.25A.75.75 0 0 1 14 8Z" clip-rule="evenodd" />
-      </svg>
-      Main site
-    </a>
-  </div>
-
-  <!-- Mobile category strip -->
-  <div class="md:hidden overflow-x-auto scrollbar-none border-t border-border">
-    <div class="flex items-center gap-1 px-4 py-2 w-max">
-      {blogCategories.map((cat) => (
-        <a
-          href={`/blog/category/${cat.slug}`}
-          class:list={[
-            "px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors",
-            currentPath.includes(`/blog/category/${cat.slug}`)
-              ? "bg-surface-2 text-site-text"
-              : "text-site-sub hover:text-site-text bg-surface-soft",
-          ]}
-        >
-          {cat.label}
-        </a>
-      ))}
-    </div>
   </div>
 </header>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import FaqAccordionWrapper from '../../components/interactive/FaqAccordionWrapper.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
 
 const generalFaqs = [
@@ -93,36 +94,7 @@ const waitTimeFaqs = [
         <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-6">
           General
         </h2>
-        <div class="space-y-4">
-          {generalFaqs.map((faq, index) => (
-            <div class="group border border-border bg-surface-soft rounded-2xl overflow-hidden transition-all hover:border-cta/50 active:border-cta/50">
-              <button 
-                class="w-full flex items-center justify-between p-4 sm:p-6 text-left focus:outline-none active:bg-surface-2/50 transition-colors"
-                onclick={`document.getElementById('faq-general-${index}').classList.toggle('hidden'); document.getElementById('icon-general-${index}').classList.toggle('rotate-180');`}
-              >
-                <span class="text-lg font-bold text-site-text text-balance leading-tight pr-4">
-                  {faq.question}
-                </span>
-                <svg 
-                  id={`icon-general-${index}`}
-                  class="w-5 h-5 text-cta transition-transform duration-300 shrink-0" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              <div id={`faq-general-${index}`} class="hidden px-4 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
-                <div class="h-px bg-border mb-4 w-full" />
-                <p class="text-site-sub leading-relaxed font-medium">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <FaqAccordionWrapper items={generalFaqs} />
       </div>
 
       <!-- Wait Times -->
@@ -130,36 +102,7 @@ const waitTimeFaqs = [
         <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-6">
           Wait Times &amp; Scheduling
         </h2>
-        <div class="space-y-4">
-          {waitTimeFaqs.map((faq, index) => (
-            <div class="group border border-border bg-surface-soft rounded-2xl overflow-hidden transition-all hover:border-cta/50 active:border-cta/50">
-              <button 
-                class="w-full flex items-center justify-between p-4 sm:p-6 text-left focus:outline-none active:bg-surface-2/50 transition-colors"
-                onclick={`document.getElementById('faq-wait-${index}').classList.toggle('hidden'); document.getElementById('icon-wait-${index}').classList.toggle('rotate-180');`}
-              >
-                <span class="text-lg font-bold text-site-text text-balance leading-tight pr-4">
-                  {faq.question}
-                </span>
-                <svg 
-                  id={`icon-wait-${index}`}
-                  class="w-5 h-5 text-cta transition-transform duration-300 shrink-0" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              <div id={`faq-wait-${index}`} class="hidden px-4 pb-6 animate-in fade-in slide-in-from-top-2 duration-300">
-                <div class="h-px bg-border mb-4 w-full" />
-                <p class="text-site-sub leading-relaxed font-medium">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <FaqAccordionWrapper items={waitTimeFaqs} />
       </div>
 
       <section class="mt-20 p-8 rounded-3xl bg-surface-2 border border-border-strong text-center">

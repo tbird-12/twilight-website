@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeroSectionWrapper from "../components/HeroSectionWrapper.astro";
 import { Icon } from "astro-icon/components";
-import { REFERRAL_LINK } from "../data/resource";
 import heroBg from "../assets/hero-background.svg?raw";
 import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
@@ -101,103 +101,7 @@ const qualityCareItems = [
       <div
         class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-4xl text-center px-4 sm:px-6"
       >
-        <h1
-          class="font-serif text-[2.0rem] sm:text-4xl md:text-6xl xl:text-7xl font-black text-site-text mb-2 sm:mb-6 tracking-tighter leading-[1.02]"
-        >
-          Answers You Deserve,
-          <br class="hidden sm:block" />
-          <span class="italic">Care&nbsp;</span>You Can Trust
-        </h1>
-
-        <p
-          class="max-w-xl mx-auto text-base sm:text-lg md:text-xl text-site-sub mb-6 sm:mb-10 leading-relaxed font-medium"
-        >
-          Whether you're seeking an evaluation for ADHD, Autism, or a learning
-          disorder — or looking for therapy and medication support — our
-          neuro-affirming team in Lexington, Kentucky is here to help. Now
-          accepting new clients.
-        </p>
-
-        <div
-          class="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center justify-center"
-        >
-          <a
-            href="/catalog"
-            class="w-full sm:w-auto px-10 py-3 sm:px-12 sm:py-4 text-center bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all hover:scale-105 shadow-lg shadow-cta/20"
-          >
-            Explore Our Services
-          </a>
-          <a
-            href={REFERRAL_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sm font-bold text-site-sub hover:text-icon transition-colors underline underline-offset-4 decoration-site-sub/30 hover:decoration-cta/50"
-          >
-            Referring a client? Submit a referral &rarr;
-          </a>
-        </div>
-
-        <div
-          class="homepage-trust-bar mt-6 sm:mt-12 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-4"
-        >
-          <span class="flex items-center gap-2">
-            <span
-              class="text-xl sm:text-2xl font-serif font-black text-icon homepage-stat-value"
-              >2100<sup>+</sup></span
-            >
-            <span class="text-xs sm:text-sm font-semibold text-cta"
-              >Evaluations</span
-            >
-          </span>
-
-          <span
-            class="hidden sm:block w-px h-6 bg-site-sub/20"
-            aria-hidden="true"></span>
-          <span class="flex items-center gap-2">
-            <span
-              class="text-xl sm:text-2xl font-serif font-black text-icon homepage-stat-value"
-              >8<sup>+</sup></span
-            >
-            <span class="text-xs sm:text-sm font-semibold text-cta"
-              >Years Experience</span
-            >
-          </span>
-
-          <span
-            class="hidden sm:block w-px h-6 bg-site-sub/20"
-            aria-hidden="true"></span>
-          <span class="flex items-center gap-2">
-            <a
-              href="/resources/faq#wait-times"
-              class="waitlist-faq-link flex items-center gap-2 hover:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta/70 rounded-md"
-              title="Self-pay waitlist — see FAQ for insurance wait times"
-              aria-label="3 week waitlist for self-pay clients. Open FAQ wait times section for insurance and Medicaid timing details."
-            >
-              <span
-                class="text-xl sm:text-2xl font-serif font-black text-icon homepage-stat-value"
-                >3</span
-              >
-              <span class="text-xs sm:text-sm font-semibold text-cta"
-                >Weeks Waitlist<span
-                  class="waitlist-context block text-[10px] text-site-sub font-semibold normal-case tracking-normal"
-                  >Self-pay clients</span
-                ></span
-              >
-            </a>
-          </span>
-          <span
-            class="hidden sm:block w-px h-6 bg-site-sub/20"
-            aria-hidden="true"></span>
-          <span class="flex items-center gap-2">
-            <span
-              class="text-xl sm:text-2xl font-serif font-black text-icon homepage-stat-value"
-              >17<sup>+</sup></span
-            >
-            <span class="text-xs sm:text-sm font-semibold text-cta"
-              >Insurance Panels</span
-            >
-          </span>
-        </div>
+        <HeroSectionWrapper />
       </div>
     </section>
 
@@ -282,8 +186,8 @@ const qualityCareItems = [
 
         <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {
-            services.map((service) => (
-              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-9 sm:p-11 transition-all duration-500 overflow-hidden min-h-56 hover:border-cta/20 active:scale-[0.98]">
+            services.map((service, idx) => (
+              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-9 sm:p-11 transition-all duration-500 overflow-hidden min-h-56 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10">
                 <div class="relative z-10 flex h-full flex-col">
                   <div class="mb-5 flex items-center gap-3">
                     <Icon
