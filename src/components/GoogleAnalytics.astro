@@ -2,7 +2,7 @@
 const {gaId} = Astro.props;
 ---
 
-{gaId && import.meta.env.PROD && (
+{gaId && (
   <>
     <script 
       async 
@@ -11,17 +11,15 @@ const {gaId} = Astro.props;
 
     <script define:vars={{ gaId }}>
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function() {
-        window.dataLayer.push(arguments);
-      }
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', gaId);
     </script>
 
-    <script is:inline define:vars={{ gaId }}>
+    <script define:vars={{ gaId }}>
       document.addEventListener('astro:after-swap', () => {
         if (window.gtag) {
-          window.gtag('config', gaId, {
+          gtag('config', gaId, {
             page_path: window.location.pathname,
           });
         }
