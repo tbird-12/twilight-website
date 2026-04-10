@@ -227,7 +227,7 @@ const qualityCareItems = [
               Unlike insurance-constrained or pediatric-focused models, our expertise also includes adoption 
               evaluations, ESA letters, guardianship assessments, and psychoeducational testing.
               <a href="/specialities" class="text-cta font-semibold hover:underline">
-                Learn more 
+                Explore our specialty evaluations
               </a>
             </p>
           </div>
@@ -375,7 +375,7 @@ const qualityCareItems = [
                     </p>
                     {item.link ? (
                       <a href={item.link} class="inline-flex items-center text-cta text-sm font-semibold hover:underline mt-3">
-                        Learn More
+                        {`Details about ${item.title.toLowerCase()}`}
                         <svg class="w-3 h-3 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                       </a>
                     ) : null}
@@ -394,7 +394,7 @@ const qualityCareItems = [
             aria-label="Quality care highlights"
             role="tablist"
           >
-            <p class="care-hint">Select to learn more</p>
+            <p class="care-hint">Select a topic for details</p>
             {
               qualityCareItems.map((item, idx) => (
                 <button
@@ -455,7 +455,7 @@ const qualityCareItems = [
                         {item.link ? (
                           <span class="block mt-3">
                             <a href={item.link} class="inline-flex items-center text-cta font-semibold hover:underline">
-                              Learn More
+                              {`Details about ${item.title.toLowerCase()}`}
                               <svg class="w-3 h-3 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                             </a>
                           </span>
