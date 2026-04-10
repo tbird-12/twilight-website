@@ -4,22 +4,19 @@ const {gaId} = Astro.props;
 
 {gaId && (
   <>
-    <script 
-      async 
-      src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-    ></script>
-
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
     <script define:vars={{ gaId }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', gaId);
+      window.gtag = window.gtag || function() {
+        window.dataLayer.push(arguments);
+      };
+      window.gtag('js', new Date());
+      window.gtag('config', gaId);
     </script>
-
     <script define:vars={{ gaId }}>
       document.addEventListener('astro:after-swap', () => {
         if (window.gtag) {
-          gtag('config', gaId, {
+          window.gtag('config', gaId, {
             page_path: window.location.pathname,
           });
         }
