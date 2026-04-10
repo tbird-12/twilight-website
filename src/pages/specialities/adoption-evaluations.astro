@@ -3,6 +3,8 @@ import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import { WIDGET_LINK } from '../../data/resource';
 import heatherPhoto from '../../assets/images/staff/heather-cornett.png';
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../components/preact/primitives/AnimatedSection";
 
 const evaluationAreas = [
   {
@@ -74,26 +76,20 @@ const faqs = [
                   mb-12">
 
   <!-- Hero -->
-  <section class="relative pt-36 pb-28 px-4 border-b theme-border overflow-hidden">
-    <div class="max-w-7xl mx-auto relative z-10">
-      <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">Family Formation</span>
-      <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-8 tracking-tight">
-        Adoption <span class="text-cta">Evaluations</span>
-      </h1>
-      <p class="text-site-sub text-lg leading-relaxed max-w-2xl mb-10">
-        Thoughtful, agency-ready evaluations for prospective adoptive parents who want a process led with precision, warmth, and clinical credibility. We support domestic and international adoptions, with documentation handled carefully from first appointment to final report.
-      </p>
-      <a href="#get-started" class="text-sand font-black border-b border-cta/50 pb-1 hover:text-cta transition-colors">
-        Get started today ↓
-      </a>
-    </div>
-  </section>
+  <PageHeroWrapper
+    title="Adoption Evaluations"
+    accentWord="Evaluations"
+    badge="Family Formation"
+    subtitle="Thoughtful, agency-ready evaluations for prospective adoptive parents who want a process led with precision, warmth, and clinical credibility. We support domestic and international adoptions, with documentation handled carefully from first appointment to final report."
+    size="lg"
+  />
 
   <!-- Main content + sidebar -->
   <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 mt-20">
 
     <div class="lg:col-span-2 space-y-12">
 
+      <AnimatedSection client:visible animation="fadeInUp" delay={100}>
       <section class="theme-surface-soft backdrop-blur-md border theme-border p-10 rounded-[2.5rem]">
         <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-6 tracking-tighter leading-tight">
           Trusted Guidance for a <span class="text-cta">High-Stakes Milestone.</span>
@@ -108,7 +104,9 @@ const faqs = [
 
         </div>
       </section>
+      </AnimatedSection>
 
+      <AnimatedSection client:visible animation="fadeInUp" delay={200}>
       <section>
         <h2 class="font-serif text-2xl font-black text-site-text mb-10">What the Evaluation Covers</h2>
         <div class="grid sm:grid-cols-2 gap-6">
@@ -123,8 +121,10 @@ const faqs = [
           ))}
         </div>
       </section>
+      </AnimatedSection>
 
       <!-- International callout -->
+      <AnimatedSection client:visible animation="fadeInUp" delay={300}>
       <section class="theme-surface-2 border border-cta/20 p-12 rounded-[3rem] relative overflow-hidden">
         <div class="absolute top-0 right-0 p-12 text-8xl text-site-text/5 font-black select-none">INTL</div>
         <div class="max-w-2xl relative z-10">
@@ -141,6 +141,7 @@ const faqs = [
           </div>
         </div>
       </section>
+      </AnimatedSection>
 
       <!-- Clinician card -->
       <div class="flex flex-col md:flex-row items-center gap-10 p-10 theme-surface-2 border theme-border rounded-[3rem]">

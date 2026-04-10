@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { WIDGET_LINK } from "../../data/resource";
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../components/preact/primitives/AnimatedSection";
 
 const diagnosticAreas = [
 	{
@@ -60,25 +62,17 @@ const processSteps = [
                   prose-strong:text-site-text
                   prose-li:text-site-text
                   mb-12">
-	<section class="relative py-24 px-4 text-center border-b border-border overflow-hidden">
-		<div class="max-w-4xl mx-auto relative z-10">
-			<span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full">
-				Advanced Diagnostic Services
-			</span>
-			<h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
-				Personality <span class="text-cta">Evaluations</span>
-			</h1>
-			<p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
-				When symptoms are complex or long-standing, we provide a structured
-				evaluation to identify potential underlying personality and trauma patterns.
-			</p>
-		</div>
-		<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-surface-2/60 via-transparent to-transparent z-0">
-		</div>
-	</section>
+	<PageHeroWrapper
+		title="Personality Evaluations"
+		accentWord="Evaluations"
+		badge="Advanced Diagnostic Services"
+		subtitle="When symptoms are complex or long-standing, we provide a structured evaluation to identify potential underlying personality and trauma patterns."
+		size="lg"
+	/>
 
 	<div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 mt-20">
 		<div class="lg:col-span-2 space-y-12">
+			<AnimatedSection client:visible animation="fadeInUp" delay={100}>
 			<section class="bg-surface-soft backdrop-blur-md border border-border p-10 rounded-[2.5rem]">
 				<h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">
 					Diagnostic Depth, Not Labels Alone
@@ -103,7 +97,9 @@ const processSteps = [
 					</p>
 				</div>
 			</section>
+			</AnimatedSection>
 
+			<AnimatedSection client:visible animation="fadeInUp" delay={200}>
 			<section>
 				<h2 class="font-serif text-2xl font-black text-site-text mb-10 tracking-tight">
 					Areas We Evaluate
@@ -124,6 +120,7 @@ const processSteps = [
 					}
 				</div>
 			</section>
+			</AnimatedSection>
 		</div>
 
 		<aside class="space-y-8">

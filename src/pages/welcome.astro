@@ -69,7 +69,7 @@ const differentiators = [
     <div class="lp-hero-glow" aria-hidden="true"></div>
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24 lg:py-32">
       <div class="flex flex-col items-center text-center">
-        <a href="/" class="mb-8 inline-block" aria-label="Twilight Psychology home">
+        <a href="/" class="lp-reveal mb-8 inline-block" aria-label="Twilight Psychology home">
           <Image
             src={logo}
             class="h-16 w-16 rounded-2xl sm:h-20 sm:w-20"
@@ -80,18 +80,24 @@ const differentiators = [
           />
         </a>
 
-        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-site-text tracking-tighter leading-[0.92] max-w-4xl">
-          Therapy, Meds &amp; Testing
+        <h1 class="lp-reveal lp-reveal-d1 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-site-text tracking-tighter leading-[0.92] max-w-4xl">
+          <span class="lp-word-reveal">Therapy,</span>{" "}
+          <span class="lp-word-reveal" style="--wr-d:1">Meds</span>{" "}
+          <span class="lp-word-reveal" style="--wr-d:2">&amp;</span>{" "}
+          <span class="lp-word-reveal" style="--wr-d:3">Testing</span>
           <br class="hidden sm:block" />
-          <span class="text-cta">All Under One Roof</span>
+          <span class="lp-word-reveal text-cta" style="--wr-d:4">All</span>{" "}
+          <span class="lp-word-reveal text-cta" style="--wr-d:5">Under</span>{" "}
+          <span class="lp-word-reveal text-cta" style="--wr-d:6">One</span>{" "}
+          <span class="lp-word-reveal text-cta" style="--wr-d:7">Roof</span>
         </h1>
 
-        <p class="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-site-sub leading-relaxed font-medium">
+        <p class="lp-reveal lp-reveal-d2 mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-site-sub leading-relaxed font-medium">
           Neuro-affirming therapy, psychiatric medication management, and comprehensive psychological testing — we accept 17+ insurance panels including Medicaid and Medicare. 
           Self-pay option available for virtual testing across states. New clients currently being accepted.
         </p>
 
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 items-center">
+        <div class="lp-reveal lp-reveal-d3 mt-8 flex flex-col sm:flex-row gap-4 items-center">
           <a
             href={WIDGET_LINK}
             target="_blank"
@@ -109,9 +115,9 @@ const differentiators = [
         </div>
 
         <!-- Trust bar -->
-        <div class="lp-trust-bar mt-14 sm:mt-20 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-4">
-          {differentiators.map((d) => (
-            <div class="flex flex-col items-center gap-1 min-w-20">
+        <div class="lp-trust-bar lp-reveal lp-reveal-d4 mt-14 sm:mt-20 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-4">
+          {differentiators.map((d, i) => (
+            <div class="lp-stagger flex flex-col items-center gap-1 min-w-20" style={`--stagger-i:${i}`}>
               <Icon name={d.icon} class="w-5 h-5 text-icon" />
               <span class="text-xl sm:text-2xl font-serif font-black text-site-text">{d.stat}</span>
               <span class="text-[11px] font-semibold text-site-sub uppercase tracking-wider">{d.label}</span>
@@ -125,16 +131,16 @@ const differentiators = [
   <!-- ════════════════ SERVICES ════════════════ -->
   <section class="lp-section lp-services relative isolate overflow-hidden">
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-      <div class="text-center mb-12 sm:mb-16">
+      <div class="lp-reveal text-center mb-12 sm:mb-16">
         <p class="lp-label">What We Offer</p>
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+        <h2 class="lp-split-text font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
           Three Ways We Can Help You
         </h2>
       </div>
 
       <div class="grid gap-5 md:grid-cols-3">
-        {services.map((s) => (
-          <a href={s.link} class="group lp-card flex flex-col rounded-3xl border border-border p-6 sm:p-8 transition-all duration-300 hover:border-cta/20">
+        {services.map((s, i) => (
+          <a href={s.link} class="group lp-reveal lp-card flex flex-col rounded-3xl border border-border p-6 sm:p-8 transition-all duration-300 hover:border-cta/20" style={`--reveal-d:${120 + i * 80}ms`}>
             <Icon name={s.icon} class="w-10 h-10 mb-5 text-icon" />
             <h3 class="font-serif text-xl sm:text-2xl font-black text-site-text mb-3 group-hover:text-cta transition-colors tracking-tight">
               {s.title}
@@ -156,18 +162,19 @@ const differentiators = [
   <section class="lp-section lp-why">
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
       <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
+        <div class="lp-reveal lp-slide-left">
           <p class="lp-label">Why Twilight Psychology</p>
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter mb-6">
+          <h2 class="lp-split-text font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter mb-6">
             Built for People Who've
             <span class="text-cta"> Been Overlooked</span>
           </h2>
-          <p class="text-site-sub text-base sm:text-lg leading-relaxed mb-8">
+          <p class="lp-reveal text-site-sub text-base sm:text-lg leading-relaxed mb-8" style="--reveal-d:100ms">
             Many adults go years without answers because the system wasn't designed for them. We specialize in assessments for ADHD, Autism, and related conditions — using a neuro-affirming approach that centers your experience rather than dismissing it.
           </p>
           <a
             href="/about/twilight-psychology"
-            class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+            class="lp-reveal inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+            style="--reveal-d:200ms"
           >
             Read Our Story
             <Icon name="mdi:arrow-right" class="w-4 h-4" />
@@ -175,7 +182,7 @@ const differentiators = [
         </div>
 
         <div class="space-y-4">
-          <div class="lp-card rounded-2xl border border-border p-5">
+          <div class="lp-reveal lp-slide-right lp-card rounded-2xl border border-border p-5">
             <div class="flex items-start gap-4">
               <Icon name="mdi:speedometer" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
               <div>
@@ -185,7 +192,7 @@ const differentiators = [
             </div>
           </div>
 
-          <div class="lp-card rounded-2xl border border-border p-5">
+          <div class="lp-reveal lp-slide-right lp-card rounded-2xl border border-border p-5" style="--reveal-d:100ms">
             <div class="flex items-start gap-4">
               <Icon name="mdi:video-wireless-outline" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
               <div>
@@ -195,7 +202,7 @@ const differentiators = [
             </div>
           </div>
 
-          <div class="lp-card rounded-2xl border border-border p-5">
+          <div class="lp-reveal lp-slide-right lp-card rounded-2xl border border-border p-5" style="--reveal-d:200ms">
             <div class="flex items-start gap-4">
               <Icon name="mdi:calendar-weekend-outline" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
               <div>
@@ -211,19 +218,19 @@ const differentiators = [
 
   <section class="lp-section lp-team relative isolate overflow-hidden">
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-      <div class="text-center mb-12 sm:mb-16">
+      <div class="lp-reveal text-center mb-12 sm:mb-16">
         <p class="lp-label">Your Clinical Team</p>
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+        <h2 class="lp-split-text font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
           Meet the Clinicians
         </h2>
-        <p class="mt-4 max-w-2xl mx-auto text-site-sub text-base leading-relaxed">
+        <p class="lp-reveal mt-4 max-w-2xl mx-auto text-site-sub text-base leading-relaxed" style="--reveal-d:100ms">
           Our team includes licensed psychologists, licensed psychological associates, and a psychiatric nurse practitioner — each specializing in neurodivergent care.
         </p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-        {featuredProviders.map((p) => (
-          <a href={`/about/clinicians/${p.slug}`} class="group text-center">
+        {featuredProviders.map((p, i) => (
+          <a href={`/about/clinicians/${p.slug}`} class="group lp-reveal lp-scale-in text-center" style={`--reveal-d:${i * 100}ms`}>
             <div class="lp-avatar-ring mx-auto mb-3 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-border group-hover:border-cta/40 transition-colors">
               <Image
                 src={p.image}
@@ -254,17 +261,17 @@ const differentiators = [
   <!-- ════════════════ INSURANCE ════════════════ -->
   <section class="lp-section lp-insurance relative isolate overflow-hidden">
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-      <div class="text-center mb-10 sm:mb-14">
+      <div class="lp-reveal text-center mb-10 sm:mb-14">
         <p class="lp-label">Insurance Accepted</p>
-        <h2 class="font-serif text-3xl sm:text-4xl font-black text-site-text tracking-tighter">
+        <h2 class="lp-split-text font-serif text-3xl sm:text-4xl font-black text-site-text tracking-tighter">
           We Work With Your Insurance
         </h2>
-        <p class="mt-4 max-w-xl mx-auto text-site-sub text-sm sm:text-base leading-relaxed">
+        <p class="lp-reveal mt-4 max-w-xl mx-auto text-site-sub text-sm sm:text-base leading-relaxed" style="--reveal-d:100ms">
           We accept most major commercial plans, Medicaid, Medicare, Tricare, and CHAMPVA. Out-of-pocket options are also available with faster turnaround.
         </p>
       </div>
 
-      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 opacity-70">
+      <div class="lp-reveal flex flex-wrap items-center justify-center gap-6 sm:gap-8 opacity-70" style="--reveal-d:150ms">
         <span class="lp-ins-badge">Aetna</span>
         <span class="lp-ins-badge">Cigna</span>
         <span class="lp-ins-badge">UHC</span>
@@ -286,15 +293,15 @@ const differentiators = [
 
   <section class="lp-section lp-steps relative isolate overflow-hidden">
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
-      <div class="text-center mb-12 sm:mb-16">
+      <div class="lp-reveal text-center mb-12 sm:mb-16">
         <p class="lp-label">How It Works</p>
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+        <h2 class="lp-split-text font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
           Three Simple Steps
         </h2>
       </div>
 
       <div class="grid gap-5 sm:grid-cols-3">
-        <div class="lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center">
+        <div class="lp-reveal lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center">
           <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">1</span>
           <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Reach Out</h3>
           <p class="text-sm text-site-sub leading-relaxed">
@@ -302,7 +309,7 @@ const differentiators = [
           </p>
         </div>
 
-        <div class="lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center">
+        <div class="lp-reveal lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center" style="--reveal-d:120ms">
           <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">2</span>
           <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Complete Intake</h3>
           <p class="text-sm text-site-sub leading-relaxed">
@@ -310,7 +317,7 @@ const differentiators = [
           </p>
         </div>
 
-        <div class="lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center">
+        <div class="lp-reveal lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center" style="--reveal-d:240ms">
           <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">3</span>
           <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Get Answers</h3>
           <p class="text-sm text-site-sub leading-relaxed">
@@ -325,16 +332,16 @@ const differentiators = [
   <section class="lp-section lp-final-cta">
     <div class="lp-cta-glow" aria-hidden="true"></div>
     <div class="mx-auto max-w-4xl px-5 py-20 sm:py-28">
-      <div class="lp-cta-card rounded-4xl border border-border px-6 py-12 sm:px-12 sm:py-16 text-center">
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter mb-5">
+      <div class="lp-reveal lp-scale-in lp-cta-card rounded-4xl border border-border px-6 py-12 sm:px-12 sm:py-16 text-center">
+        <h2 class="lp-split-text font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter mb-5">
           You Deserve Answers.
           <br class="hidden sm:block" />
           <span class="text-cta">Let's Find Them.</span>
         </h2>
-        <p class="max-w-xl mx-auto text-site-sub text-base sm:text-lg leading-relaxed mb-8">
+        <p class="lp-reveal max-w-xl mx-auto text-site-sub text-base sm:text-lg leading-relaxed mb-8" style="--reveal-d:150ms">
           Whether it's an evaluation, therapy, or medication support — our team is ready when you are. New clients are currently being accepted.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div class="lp-reveal flex flex-col sm:flex-row gap-4 justify-center items-center" style="--reveal-d:250ms">
           <a
             href={WIDGET_LINK}
             target="_blank"
@@ -398,6 +405,89 @@ const differentiators = [
     opacity: 1;
   }
 
+  /* ── Scroll-reveal animations ── */
+
+  .lp-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--reveal-d, 0ms);
+  }
+  .lp-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Delay utility classes for hero cascade */
+  .lp-reveal-d1 { --reveal-d: 100ms; }
+  .lp-reveal-d2 { --reveal-d: 200ms; }
+  .lp-reveal-d3 { --reveal-d: 350ms; }
+  .lp-reveal-d4 { --reveal-d: 500ms; }
+
+  /* Directional variants */
+  .lp-slide-left {
+    transform: translateX(-32px);
+  }
+  .lp-slide-left.is-visible {
+    transform: translateX(0);
+  }
+  .lp-slide-right {
+    transform: translateX(32px);
+  }
+  .lp-slide-right.is-visible {
+    transform: translateX(0);
+  }
+  .lp-scale-in {
+    transform: scale(0.95);
+  }
+  .lp-scale-in.is-visible {
+    transform: scale(1);
+  }
+
+  /* Word-by-word reveal for hero heading */
+  .lp-word-reveal {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: baseline;
+  }
+  .lp-word-reveal > span,
+  .lp-word-reveal {
+    --wr-d: 0;
+  }
+  .lp-hero .lp-reveal.is-visible .lp-word-reveal {
+    animation: wordRevealSlideUp 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-delay: calc(var(--wr-d, 0) * 65ms + 200ms);
+  }
+
+  /* Split-text slide-up for section headings */
+  .lp-split-text {
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+  }
+  .lp-reveal.is-visible .lp-split-text,
+  .lp-split-text.lp-reveal.is-visible {
+    animation: textSlideReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--reveal-d, 0ms);
+  }
+
+  /* Staggered children (trust bar stats) */
+  .lp-stagger {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: calc(var(--stagger-i, 0) * 80ms);
+  }
+  .is-visible .lp-stagger {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes textSlideReveal {
+    from { opacity: 0; transform: translateY(40%); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
   @media (max-width: 767px) {
     .lp-hero-glow,
     .lp-cta-glow {
@@ -409,6 +499,16 @@ const differentiators = [
     .lp-hero-glow,
     .lp-cta-glow {
       display: none;
+    }
+    .lp-reveal,
+    .lp-stagger {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+      animation: none !important;
+    }
+    .lp-word-reveal {
+      animation: none !important;
     }
   }
 
@@ -547,6 +647,7 @@ const differentiators = [
   document.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
 
+    // ── Theme toggle ──
     const getCurrentTheme = (): string => {
       if (root.classList.contains('light')) return 'light';
       return 'dark';
@@ -565,5 +666,26 @@ const differentiators = [
         applyTheme(next);
       });
     });
+
+    // ── Scroll-reveal IntersectionObserver ──
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      document.querySelectorAll('.lp-reveal').forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.lp-reveal').forEach((el) => observer.observe(el));
   });
 </script>

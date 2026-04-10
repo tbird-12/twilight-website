@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { WIDGET_LINK } from "../../data/resource";
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../components/preact/primitives/AnimatedSection";
 
 const medicationApproach = [
   {
@@ -36,36 +38,17 @@ const medicationApproach = [
                   prose-strong:text-site-text
                   prose-li:text-site-text
                   mb-12">
-  <section class="relative py-24 px-4 text-center border-b border-border overflow-hidden">
-    <div class="max-w-4xl mx-auto relative z-10">
-      <span
-        class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full"
-      >
-        Psychiatric Care
-      </span>
-      <h1
-        class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight"
-      >
-        Medication <span
-          class="text-cta"
-          >Management</span
-        >
-      </h1>
-      <p
-        class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed"
-      >
-        Thoughtful, measured, and supportive psychiatric care led by our
-        specialized Nurse Practitioner.
-      </p>
-    </div>
-    <div
-      class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-surface-2/60 via-transparent to-transparent z-0"
-    >
-    </div>
-  </section>
+  <PageHeroWrapper
+    title="Medication Management"
+    accentWord="Management"
+    badge="Psychiatric Care"
+    subtitle="Thoughtful, measured, and supportive psychiatric care led by our specialized Nurse Practitioner."
+    size="lg"
+  />
 
   <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 mt-20">
     <div class="lg:col-span-2 space-y-12">
+      <AnimatedSection client:visible animation="fadeInUp" delay={100}>
       <section
         class="bg-surface-soft backdrop-blur-md border border-border p-10 rounded-[2.5rem]"
       >
@@ -87,7 +70,9 @@ const medicationApproach = [
           </p>
         </div>
       </section>
+      </AnimatedSection>
 
+      <AnimatedSection client:visible animation="fadeInUp" delay={200}>
       <section>
         <h2 class="font-serif text-2xl font-black text-site-text mb-10 tracking-tight">
           Our Clinical Framework
@@ -104,7 +89,9 @@ const medicationApproach = [
           }
         </div>
       </section>
+      </AnimatedSection>
 
+      <AnimatedSection client:visible animation="fadeInUp" delay={300}>
       <section
         class="bg-surface-soft border border-border-strong p-10 rounded-[2.5rem]"
       >
@@ -131,6 +118,7 @@ const medicationApproach = [
           }
         </div>
       </section>
+      </AnimatedSection>
     </div>
 
     <aside class="space-y-8">
@@ -166,10 +154,10 @@ const medicationApproach = [
       </div>
 
       <div class="p-8 bg-cta rounded-[2.5rem] text-cta-fg">
-        <h4 class="font-serif font-black uppercase text-xs tracking-widest mb-2">
+        <h4 class="font-serif font-black uppercase inverted-text text-xs tracking-widest mb-2">
           Insurance Covered
         </h4>
-        <p class="text-sm font-bold leading-tight">
+        <p class="text-sm inverted-text font-bold leading-tight">
           Medication management is covered by KY Medicaid, Medicare, and most major
           insurance providers.
         </p>

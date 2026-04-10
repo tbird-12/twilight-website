@@ -2,6 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import { services } from "../../data/services";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import ServiceCardGrid from "../../components/preact/composites/ServiceCardGrid";
+import AnimatedSection from "../../components/preact/primitives/AnimatedSection";
 ---
 
 <Layout
@@ -16,77 +19,48 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
                   prose-strong:text-site-text
                   prose-li:text-site-text
                   mb-12">
-  <section class="relative py-24 px-4 text-center border-b theme-border overflow-hidden">
-    <div class="max-w-4xl mx-auto relative z-10">
-      <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
-        Our <span class="text-cta">Services</span>
-      </h1>
-      <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
-        We provide comprehensive psychological services tailored to your unique needs and often meet the definition of medical necessity.
-        From diagnostic evaluations to ongoing therapy, our neuro-affirming team is here to support you.
-      </p>
-    </div>
-    <div class="services-hero-radial absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0"></div>
-  </section>
+  <PageHeroWrapper
+    title="Our Services"
+    accentWord="Services"
+    subtitle="We provide comprehensive psychological services tailored to your unique needs and often meet the definition of medical necessity. From diagnostic evaluations to ongoing therapy, our neuro-affirming team is here to support you."
+    size="lg"
+  />
 
   <section class="max-w-5xl mx-auto px-4 mt-16 mb-10">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {services.map((service) => (
-        <a
-          href={`/services/${service.slug}`}
-          class="group theme-surface-soft border theme-border rounded-2xl p-6 hover:border-cta/50 hover:shadow-lg hover:shadow-cta/10 transition-all duration-200"
-        >
-          <h2 class="font-serif text-lg font-black text-site-text group-hover:text-cta transition-colors mb-2">
-            {service.name}
-          </h2>
-          <p class="text-sm text-site-sub leading-relaxed mb-4">
-            {service.desc}
-          </p>
-          <span class="inline-flex items-center gap-1 text-xs font-bold text-cta">
-            {`Explore ${service.name}`}
-            <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path d="M9 5l7 7-7 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </span>
-        </a>
-      ))}
-    </div>
+    <ServiceCardGrid
+      client:visible
+      items={services.map((s) => ({ name: s.name, slug: s.slug, description: s.desc }))}
+      basePath="/services"
+    />
   </section>
 
   <section class="max-w-4xl mx-auto px-4 mt-12 mb-10">
-    <div class="theme-surface-2 border theme-border-strong p-8 md:p-12 rounded-[2.5rem]">
-      <h2 class="font-serif text-3xl font-black text-site-text mb-4">
-        Not sure which service is right for you?
-      </h2>
-      <p class="text-site-text leading-relaxed font-medium mb-6">
-        Our team can help you determine the best path forward. Whether you need a comprehensive
-        evaluation, therapy, or medication support, we&apos;ll work together to find the right fit.
-      </p>
-      <div class="flex flex-wrap gap-4 items-center">
-        <a
-          href="/contact"
-          class="inline-block bg-cta text-cta-fg px-6 py-3 rounded-full font-black text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
-        >
-          Contact Us
-        </a>
-        <a
-          href={`tel:${PHONE_NUMBER}`}
-          class="inline-block text-cta font-black text-sm hover:text-site-text transition-colors"
-        >
-          &#128222; {PHONE_NUMBER_FORMATTED}
-        </a>
+    <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+      <div class="bg-surface-2 border p-8 md:p-12 rounded-[2.5rem]" style="border-color: var(--color-border-strong)">
+        <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+          Not sure which service is right for you?
+        </h2>
+        <p class="text-site-text leading-relaxed font-medium mb-6">
+          Our team can help you determine the best path forward. Whether you need a comprehensive
+          evaluation, therapy, or medication support, we&apos;ll work together to find the right fit.
+        </p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <a
+            href="/contact"
+            class="inline-block bg-cta text-cta-fg px-6 py-3 rounded-full font-black text-sm hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all shadow-lg shadow-cta/20 active:scale-95"
+          >
+            Contact Us
+          </a>
+          <a
+            href={`tel:${PHONE_NUMBER}`}
+            class="inline-block text-cta font-black text-sm hover:text-site-text transition-colors"
+          >
+            &#128222; {PHONE_NUMBER_FORMATTED}
+          </a>
+        </div>
       </div>
-    </div>
+    </AnimatedSection>
   </section>
-
-  <style>
-    .services-hero-radial {
-      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.4), transparent 65%);
-    }
-    :root.light .services-hero-radial {
-      background: radial-gradient(circle at center, rgba(99, 102, 241, 0.12), transparent 65%);
-    }
-  </style>
       </div>
     </div>
   </div>

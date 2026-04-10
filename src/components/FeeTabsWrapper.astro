@@ -1,0 +1,15 @@
+---
+import FeeTabs from './preact/composites/FeeTabs';
+
+interface Props {
+  categories: Array<{
+    id: string;
+    title: string;
+    services: Array<{ name: string; price: string; note?: string }>;
+  }>;
+}
+
+const { categories } = Astro.props;
+---
+
+<FeeTabs client:visible categories={categories} />

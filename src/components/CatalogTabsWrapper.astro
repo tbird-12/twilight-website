@@ -1,0 +1,15 @@
+---
+import CatalogTabs from './preact/composites/CatalogTabs';
+
+interface Props {
+  categories: Array<{
+    id: string;
+    title: string;
+    concerns: Array<{ name: string }>;
+  }>;
+}
+
+const { categories } = Astro.props;
+---
+
+<CatalogTabs client:visible categories={categories} />

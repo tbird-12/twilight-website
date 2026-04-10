@@ -1,31 +1,46 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from '../../data/resource';
+import PageHeroWrapper from '../../components/PageHeroWrapper.astro';
+import FeeTabsWrapper from '../../components/FeeTabsWrapper.astro';
+import AnimatedSection from '../../components/preact/primitives/AnimatedSection';
 
-const psychologicalServices = [
-  { name: "ADHD Assessments", price: "$1,300" },
-  { name: "Autism Assessments", price: "$1,300" },
-  { name: "Personality Disorder Assessments", price: "$1,300" },
-  { name: "Full Psychological Evaluation", price: "$1,300", note: "Covers Autism, ADHD, and Personality" },
-  { name: "Learning Disorder (Disability) Assessments", price: "$1,500", note: "Offered on a self-pay basis" },
-  { name: "Guardianship Evaluation", price: "$500", note: "Additional cost for court/extra testing" },
-  { name: "Emotional Support Animal (ESA) Evaluation", price: "$200" },
-  { name: "Diagnostic Clarification", price: "$220" },
-];
-
-const psychotherapyServices = [
-  { name: "60-Minute Session", price: "$200", note: "Dr. Cornett" },
-  { name: "45-Minute Session", price: "$150", note: "Dr. Cornett" },
-  { name: "Clinical Supervision", price: "$150", note: "Per hour" },
-  { name: "60-Minute Session", price: "$100", note: "Pre-licensed clinicians" },
-  { name: "45-Minute Session", price: "$80", note: "Pre-licensed clinicians" },
-];
-
-const medManagement = [
-  { name: "Intake Session", price: "$250" },
-  { name: "Follow-up Sessions", price: "$100" },
-  { name: "Medical Marijuana Consultations", price: "$150" },
-  { name: "Paperwork (e.g., FMLA)", price: "$75", note: "Per hour" },
+const feeCategories = [
+  {
+    id: "psychological",
+    title: "Psychological Evaluations",
+    services: [
+      { name: "ADHD Assessments", price: "$1,300" },
+      { name: "Autism Assessments", price: "$1,300" },
+      { name: "Personality Disorder Assessments", price: "$1,300" },
+      { name: "Full Psychological Evaluation", price: "$1,300", note: "Covers Autism, ADHD, and Personality" },
+      { name: "Learning Disorder (Disability) Assessments", price: "$1,500", note: "Offered on a self-pay basis" },
+      { name: "Guardianship Evaluation", price: "$500", note: "Additional cost for court/extra testing" },
+      { name: "Emotional Support Animal (ESA) Evaluation", price: "$200" },
+      { name: "Diagnostic Clarification", price: "$220" },
+    ],
+  },
+  {
+    id: "psychotherapy",
+    title: "Psychotherapy",
+    services: [
+      { name: "60-Minute Session", price: "$200", note: "Dr. Cornett" },
+      { name: "45-Minute Session", price: "$150", note: "Dr. Cornett" },
+      { name: "Clinical Supervision", price: "$150", note: "Per hour" },
+      { name: "60-Minute Session", price: "$100", note: "Pre-licensed clinicians" },
+      { name: "45-Minute Session", price: "$80", note: "Pre-licensed clinicians" },
+    ],
+  },
+  {
+    id: "medication",
+    title: "Medication Management",
+    services: [
+      { name: "Intake Session", price: "$250" },
+      { name: "Follow-up Sessions", price: "$100" },
+      { name: "Medical Marijuana Consultations", price: "$150" },
+      { name: "Paperwork (e.g., FMLA)", price: "$75", note: "Per hour" },
+    ],
+  },
 ];
 ---
 
@@ -43,210 +58,80 @@ const medManagement = [
                   mb-12">
   <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-4xl mx-auto">
-      
-      <header class="text-center mb-12">
-        <h1 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4">
-          Fees & <span class="text-cta">Insurance</span>
-        </h1>
-        <p class="text-sand text-lg max-w-2xl mx-auto">
-          Transparency is foundational to our practice. We are committed to delivering specialized behavioral health services that reflect both clinical excellence and genuine accessibility.
-        </p>
-      </header>
 
-      <section class="mb-12 bg-surface-soft border-l-4 border-cta p-6 rounded-r-2xl">
-        <h2 class="font-serif text-site-text font-bold text-xl mb-2">Insurance Information</h2>
-        <p class="text-site-text leading-relaxed">
-          Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for covered services. For 
-          <a href="/resources/insurances-accepted" class="text-cta underline">commercial insurance</a>
-          we recommend calling 
-          <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline">{PHONE_NUMBER_FORMATTED}</a> to determine approximate rates, though you should always confirm benefits, copays, deductibles with your insurance provider prior to your appointment.
-        </p>
-      </section>
+      <PageHeroWrapper
+        title="Fees & Insurance"
+        accentWord="Insurance"
+        subtitle="Transparency is foundational to our practice. We are committed to delivering specialized behavioral health services that reflect both clinical excellence and genuine accessibility."
+      />
 
-      <section class="mt-10" data-fee-tabs-root>
-        <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub">
-          <p class="font-semibold uppercase tracking-wider">Choose a pricing category</p>
-          <p class="hidden lg:block">Scroll to explore</p>
-        </div>
-        <div class="relative">
-          <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent hidden lg:block"></div>
-          <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent hidden lg:block"></div>
-          <div
-            class="mb-6 flex flex-col lg:flex-row gap-3 pb-2 lg:overflow-x-auto lg:snap-x lg:snap-mandatory"
-            role="tablist"
-            aria-label="Fee categories"
-          >
-          <button
-            type="button"
-            id="fee-tab-psychological"
-            role="tab"
-            aria-controls="fee-panel-psychological"
-            aria-selected="true"
-            data-fee-tab-trigger
-            data-target="fee-panel-psychological"
-            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-cta text-site-bg border-cta shadow-lg shadow-cta/20"
-          >
-            <span class="flex items-center gap-3 text-left">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-site-bg/20 text-[11px] font-black">1</span>
-              <span class="leading-tight">
-                <span class="block">Psychological Evaluations</span>
-                <span class="block text-[10px] uppercase tracking-wider opacity-80">{psychologicalServices.length} services</span>
-              </span>
-            </span>
-          </button>
-          <button
-            type="button"
-            id="fee-tab-psychotherapy"
-            role="tab"
-            aria-controls="fee-panel-psychotherapy"
-            aria-selected="false"
-            data-fee-tab-trigger
-            data-target="fee-panel-psychotherapy"
-            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-surface-soft text-site-text border-border hover:border-cta/50 hover:text-cta active:scale-95 active:opacity-100 opacity-80"
-        >
-            <span class="flex items-center gap-3 text-left">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-site-bg/20 text-[11px] font-black">2</span>
-              <span class="leading-tight">
-                <span class="block">Psychotherapy</span>
-                <span class="block text-[10px] uppercase tracking-wider opacity-80">{psychotherapyServices.length} services</span>
-              </span>
-            </span>
-          </button>
-          <button
-            type="button"
-            id="fee-tab-medication"
-            role="tab"
-            aria-controls="fee-panel-medication"
-            aria-selected="false"
-            data-fee-tab-trigger
-            data-target="fee-panel-medication"
-            class="w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide bg-surface-soft text-site-text border-border hover:border-cta/50 hover:text-cta active:scale-95 active:opacity-100 opacity-80"
-        >
-            <span class="flex items-center gap-3 text-left">
-              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-site-bg/20 text-[11px] font-black">3</span>
-              <span class="leading-tight">
-                <span class="block">Medication Management</span>
-                <span class="block text-[10px] uppercase tracking-wider opacity-80">{medManagement.length} services</span>
-              </span>
-            </span>
-          </button>
-          </div>
-        </div>
-
-        <article
-          id="fee-panel-psychological"
-          role="tabpanel"
-          aria-labelledby="fee-tab-psychological"
-          data-fee-tab-panel
-          class="bg-surface-soft border border-border-strong rounded-3xl p-8"
-        >
-          <h3 class="font-serif text-2xl font-black text-site-text mb-6 flex items-center gap-3">
-            <span class="w-2 h-8 bg-cta rounded-full"></span>
-            Psychological Evaluations
-          </h3>
-          <div class="space-y-4">
-            {psychologicalServices.map((service) => (
-              <div class="flex justify-between items-start py-3 border-b border-border">
-                <div>
-                  <p class="text-site-text font-bold">{service.name}</p>
-                  {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
-                </div>
-                <span class="text-cta font-black">{service.price}</span>
-              </div>
-            ))}
-          </div>
-        </article>
-
-        <article
-          id="fee-panel-psychotherapy"
-          role="tabpanel"
-          aria-labelledby="fee-tab-psychotherapy"
-          data-fee-tab-panel
-          class="hidden bg-surface-soft border border-border-strong rounded-3xl p-8"
-        >
-          <h3 class="font-serif text-2xl font-black text-site-text mb-6">Psychotherapy</h3>
-          <div class="space-y-4">
-            {psychotherapyServices.map((service) => (
-              <div class="flex justify-between items-center py-3 border-b border-border">
-                <div>
-                  <span class="text-site-text font-bold">{service.name}</span>
-                  {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
-                </div>
-                <span class="text-cta font-black">{service.price}</span>
-              </div>
-            ))}
-          </div>
-        </article>
-
-        <article
-          id="fee-panel-medication"
-          role="tabpanel"
-          aria-labelledby="fee-tab-medication"
-          data-fee-tab-panel
-          class="hidden bg-surface-soft border border-border-strong rounded-3xl p-8"
-        >
-          <h3 class="font-serif text-2xl font-black text-site-text mb-6">Medication Management</h3>
-          <div class="space-y-4">
-            {medManagement.map((service) => (
-              <div class="flex justify-between items-center py-3 border-b border-border">
-                <div>
-                  <span class="text-site-text font-bold">{service.name}</span>
-                  {service.note && <p class="text-xs text-sand uppercase tracking-wider">{service.note}</p>}
-                </div>
-                <span class="text-cta font-black">{service.price}</span>
-              </div>
-            ))}
-          </div>
-        </article>
-      </section>
-
-      <section class="mt-12 p-8 bg-surface-2 rounded-3xl border border-border-strong">
-        <h3 class="font-serif text-site-text font-black text-xl mb-4">Flexible Payment Plans</h3>
-        <p class="text-site-sub mb-6">
-          We offer payment plans where testing costs can be split into 2-3 equal payments due 24 hours before your appointments. 
-          For a standard $1,300 battery, this typically looks like:
-        </p>
-        <div class="grid grid-cols-3 gap-4 text-center">
-          <div class="p-4 bg-site-bg rounded-xl border border-border">
-            <p class="text-[10px] text-sand uppercase">Intake</p>
-            <p class="text-xl font-black text-cta">$450</p>
-          </div>
-          <div class="p-4 bg-site-bg rounded-xl border border-border">
-            <p class="text-[10px] text-sand uppercase">Testing</p>
-            <p class="text-xl font-black text-cta">$450</p>
-          </div>
-          <div class="p-4 bg-site-bg rounded-xl border border-border">
-            <p class="text-[10px] text-sand uppercase">Feedback</p>
-            <p class="text-xl font-black text-cta">$400</p>
-          </div>
-        </div>
-      </section>
+      <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+        <section class="mb-12 bg-surface-soft border-l-4 border-cta p-6 rounded-r-2xl">
+          <h2 class="font-serif text-site-text font-bold text-xl mb-2">Insurance Information</h2>
+          <p class="text-site-text leading-relaxed">
+            Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for covered services. For 
+            <a href="/resources/insurances-accepted" class="text-cta underline">commercial insurance</a>
+            we recommend calling 
+            <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline">{PHONE_NUMBER_FORMATTED}</a> to determine approximate rates, though you should always confirm benefits, copays, deductibles with your insurance provider prior to your appointment.
+          </p>
+        </section>
+      </AnimatedSection>
 
       <section class="mt-10">
-        <div class="grid gap-6 md:grid-cols-2 bg-surface-soft border border-border-strong rounded-3xl p-8">
-          <div>
-            <h3 class="font-serif text-site-text font-black text-xl mb-3">Accepted Payment Methods</h3>
-            <ul class="text-site-sub list-disc list-inside">
-              <li><a href="/resources/insurances-accepted" class="underline text-cta hover:text-cta">Insurance</a></li>
-              <li>FSA/HSA Card</li>
-              <li>Credit card</li>
-              <li>Debit card</li>
-              <li>Cash</li>
-              <li>Zelle, Venmo</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-serif text-site-text font-black text-xl mb-6">Financing Options</h3>
-            <a href="https://www.carecredit.com/go/VSM688/?dtc=DS9X&sitecode=CCLBADS9X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-4 rounded-lg hover:bg-surface-soft">
-              <img width="175" 
-                src="https://www.carecredit.com/sites/pc/image/flexible-financing-prequal-apply-pay-375x320.png" 
-                alt="CareCredit - Flexible Financing for Healthcare" class="w-full md:w-56 hover:scale-105 transition-all"
-                loading="lazy"
-                decoding="async" />
-            </a>
-          </div>
-        </div>
+        <FeeTabsWrapper categories={feeCategories} />
       </section>
+
+      <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+        <section class="mt-12 p-8 bg-surface-2 rounded-3xl border" style="border-color: var(--color-border-strong)">
+          <h3 class="font-serif text-site-text font-black text-xl mb-4">Flexible Payment Plans</h3>
+          <p class="text-site-sub mb-6">
+            We offer payment plans where testing costs can be split into 2-3 equal payments due 24 hours before your appointments. 
+            For a standard $1,300 battery, this typically looks like:
+          </p>
+          <div class="grid grid-cols-3 gap-4 text-center">
+            <div class="p-4 bg-site-bg rounded-xl border" style="border-color: var(--color-border)">
+              <p class="text-[10px] text-sand uppercase">Intake</p>
+              <p class="text-xl font-black text-cta">$450</p>
+            </div>
+            <div class="p-4 bg-site-bg rounded-xl border" style="border-color: var(--color-border)">
+              <p class="text-[10px] text-sand uppercase">Testing</p>
+              <p class="text-xl font-black text-cta">$450</p>
+            </div>
+            <div class="p-4 bg-site-bg rounded-xl border" style="border-color: var(--color-border)">
+              <p class="text-[10px] text-sand uppercase">Feedback</p>
+              <p class="text-xl font-black text-cta">$400</p>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+        <section class="mt-10">
+          <div class="grid gap-6 md:grid-cols-2 bg-surface-soft border rounded-3xl p-8" style="border-color: var(--color-border-strong)">
+            <div>
+              <h3 class="font-serif text-site-text font-black text-xl mb-3">Accepted Payment Methods</h3>
+              <ul class="text-site-sub list-disc list-inside">
+                <li><a href="/resources/insurances-accepted" class="underline text-cta hover:text-cta">Insurance</a></li>
+                <li>FSA/HSA Card</li>
+                <li>Credit card</li>
+                <li>Debit card</li>
+                <li>Cash</li>
+                <li>Zelle, Venmo</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-serif text-site-text font-black text-xl mb-6">Financing Options</h3>
+              <a href="https://www.carecredit.com/go/VSM688/?dtc=DS9X&sitecode=CCLBADS9X" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-4 rounded-lg hover:bg-surface-soft">
+                <img width="175" 
+                  src="https://www.carecredit.com/sites/pc/image/flexible-financing-prequal-apply-pay-375x320.png" 
+                  alt="CareCredit - Flexible Financing for Healthcare" class="w-full md:w-56 hover:scale-105 transition-all"
+                  loading="lazy"
+                  decoding="async" />
+              </a>
+            </div>
+          </div>
+        </section>
+      </AnimatedSection>
 
       <footer class="mt-12 text-center text-site-sub text-sm space-y-4">
         <p>Rates in effect from 01/01/2026</p>
@@ -258,49 +143,6 @@ const medManagement = [
 
     </div>
   </section>
-
-  <script is:inline>
-    const feeTabsRoot = document.querySelector("[data-fee-tabs-root]");
-
-    if (feeTabsRoot) {
-      const triggers = Array.from(
-        feeTabsRoot.querySelectorAll("[data-fee-tab-trigger]"),
-      );
-      const panels = Array.from(
-        feeTabsRoot.querySelectorAll("[data-fee-tab-panel]"),
-      );
-
-      const activateFeeTab = (targetId) => {
-        triggers.forEach((trigger) => {
-          const isActive = trigger.dataset.target === targetId;
-          trigger.setAttribute("aria-selected", String(isActive));
-          trigger.classList.toggle("bg-cta", isActive);
-          trigger.classList.toggle("text-site-bg", isActive);
-          trigger.classList.toggle("border-cta", isActive);
-          trigger.classList.toggle("shadow-lg", isActive);
-          trigger.classList.toggle("shadow-cta/20", isActive);
-          trigger.classList.toggle("opacity-100", isActive);
-          trigger.classList.toggle("bg-surface-soft", !isActive);
-          trigger.classList.toggle("text-site-text", !isActive);
-          trigger.classList.toggle("border-border", !isActive);
-          trigger.classList.toggle("opacity-80", !isActive);
-        });
-
-        panels.forEach((panel) => {
-          panel.classList.toggle("hidden", panel.id !== targetId);
-        });
-      };
-
-      triggers.forEach((trigger) => {
-        trigger.addEventListener("click", () => {
-          const targetId = trigger.dataset.target;
-          if (targetId) {
-            activateFeeTab(targetId);
-          }
-        });
-      });
-    }
-  </script>
       </div>
     </div>
   </div>

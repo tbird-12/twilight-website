@@ -1,39 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
+import PageHeroWrapper from "../components/PageHeroWrapper.astro";
+import CatalogTabsWrapper from "../components/CatalogTabsWrapper.astro";
+import AnimatedSection from "../components/preact/primitives/AnimatedSection";
 
 const categories = [
   {
+    id: "neurodivergence",
     title: "Neurodivergence & Testing",
     concerns: [
-      "Autism Spectrum (including High-Masking)",
-      "ADHD (Adult & Pediatric)",
-      "PDA (Pathological Demand Avoidance) Profile",
-      "Learning Disability Evaluations",
-      "Medical Marijuana Consultations",
-      "Comprehensive Psychological Testing",
-      "Psychoeducational Evaluations",
+      { name: "Autism Spectrum (including High-Masking)" },
+      { name: "ADHD (Adult & Pediatric)" },
+      { name: "PDA (Pathological Demand Avoidance) Profile" },
+      { name: "Learning Disability Evaluations" },
+      { name: "Medical Marijuana Consultations" },
+      { name: "Comprehensive Psychological Testing" },
+      { name: "Psychoeducational Evaluations" },
     ],
   },
   {
+    id: "clinical",
     title: "Clinical Specialties",
     concerns: [
-      "Depression & Persistent Low Mood",
-      "Anxiety & Panic Disorders",
-      "Trauma & PTSD",
-      "Bipolar Disorder",
-      "Borderline Personality Disorder (BPD)",
-      "Grief & Loss",
+      { name: "Depression & Persistent Low Mood" },
+      { name: "Anxiety & Panic Disorders" },
+      { name: "Trauma & PTSD" },
+      { name: "Bipolar Disorder" },
+      { name: "Borderline Personality Disorder (BPD)" },
+      { name: "Grief & Loss" },
     ],
   },
   {
+    id: "identity",
     title: "Identity & Specialized Advocacy",
     concerns: [
-      "LGBTQ+ Issues & Gender Affirming Care",
-      "Women’s Health & Reproductive Transitions",
-      "Health at Every Size (HAES) Approach",
-      "Intimacy & Relationship Therapy",
-      "Life Changes & Self-Esteem Issues",
+      { name: "LGBTQ+ Issues & Gender Affirming Care" },
+      { name: "Women’s Health & Reproductive Transitions" },
+      { name: "Health at Every Size (HAES) Approach" },
+      { name: "Intimacy & Relationship Therapy" },
+      { name: "Life Changes & Self-Esteem Issues" },
     ],
   },
 ];
@@ -51,180 +57,46 @@ const categories = [
                   prose-strong:text-site-text
                   prose-li:text-site-text
                   mb-12">
-  <section class="relative py-24 px-4 text-center border-b theme-border overflow-hidden">
-    <div class="max-w-4xl mx-auto relative z-10">
-      <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
-        Areas of <span class="text-cta">Care</span>
-      </h1>
-      <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
-        From diagnostic clarification to identity-affirming therapy, we provide
-        specialized support for the complex intersections of the human
-        experience.
-      </p>
-      <p class="mt-6 text-sm text-site-sub max-w-3xl mx-auto leading-relaxed">
-        Our practice does not provide speech therapy, occupational therapy, or play therapy.
-      </p>
-    </div>
-    <div
-      class="catalog-hero-radial absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0"
-    >
-    </div>
-  </section>
 
-  <section class="max-w-7xl mx-auto px-4 mt-20" data-tabs-root>
-    <div class="flex flex-col gap-6">
-      <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub">
-        <p class="font-semibold uppercase tracking-wider">Choose a care category</p>
-        <p class="hidden lg:block">Scroll to explore</p>
-      </div>
-      <div class="relative">
-        <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-site-bg to-transparent hidden lg:block"></div>
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-site-bg to-transparent hidden lg:block"></div>
-        <div
-          class="flex flex-col lg:flex-row gap-3 pb-2 lg:overflow-x-auto lg:snap-x lg:snap-mandatory"
-          role="tablist"
-          aria-label="Care categories"
-        >
-          {
-            categories.map((cat, index) => (
-              <button
-                type="button"
-                id={`category-tab-${index}`}
-                role="tab"
-                aria-controls={`category-panel-${index}`}
-                aria-selected={index === 0 ? "true" : "false"}
-                data-tab-trigger
-                data-target={`category-panel-${index}`}
-                class:list={[
-                  "w-full lg:w-auto snap-start px-5 py-4 rounded-2xl border transition-all duration-200 font-serif font-black text-sm tracking-wide",
-                  index === 0
-                    ? "bg-cta text-site-bg border-cta shadow-lg shadow-cta/20"
-                    : "theme-surface-soft text-site-text theme-border theme-hover-surface-2 hover:border-cta/50 hover:text-cta active:scale-95 active:opacity-100 opacity-80",
-                ]}
-              >
-                <span class="flex items-center gap-3 text-left">
-                  <span class:list={[
-                    "inline-flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-black",
-                    index === 0 ? "bg-site-bg text-cta" : "theme-surface text-site-text",
-                  ]}>
-                    {index + 1}
-                  </span>
-                  <span class="leading-tight">
-                    <span class="block">{cat.title}</span>
-                    <span class="block text-[10px] uppercase tracking-wider opacity-80">
-                      {cat.concerns.length} focus areas
-                    </span>
-                  </span>
-                </span>
-              </button>
-            ))
-          }
-        </div>
-      </div>
+  <PageHeroWrapper
+    title="Areas of Care"
+    accentWord="Care"
+    subtitle="From diagnostic clarification to identity-affirming therapy, we provide specialized support for the complex intersections of the human experience."
+    badge="Full Catalog"
+    size="lg"
+  />
 
-      <div class="relative">
-        {
-          categories.map((cat, index) => (
-            <article
-              id={`category-panel-${index}`}
-              role="tabpanel"
-              aria-labelledby={`category-tab-${index}`}
-              data-tab-panel
-              class:list={[
-                "theme-surface-soft border theme-border p-8 md:p-10 rounded-3xl",
-                index !== 0 && "hidden",
-              ]}
-            >
-              <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-6">
-                {cat.title}
-              </h2>
-              <ul class="grid sm:grid-cols-2 gap-4 sm:gap-5">
-                {cat.concerns.map((item) => (
-                  <li class="flex items-start gap-3 text-sm text-site-sub leading-relaxed theme-surface rounded-2xl p-4 border theme-border">
-                    <span class="text-cta mt-1">✦</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))
-        }
-      </div>
-    </div>
+  <section class="max-w-7xl mx-auto px-4 mt-20">
+    <CatalogTabsWrapper categories={categories} />
   </section>
 
   <section class="max-w-4xl mx-auto px-4 mt-20 mb-10">
-    <div class="theme-surface-2 border theme-border-strong p-8 md:p-12 rounded-[2.5rem]">
-      <h2 class="font-serif text-3xl font-black text-site-text mb-4">
-        Our approach is rooted in validation, not pathology.
-      </h2>
-      <p class="text-site-text leading-relaxed font-medium mb-8">
-        Whether you are seeking a formal diagnosis or a safe space to process
-        life&apos;s transitions, we prioritize your lived experience. All our
-        clinicians are neuro-affirming and trauma-informed, with specialized
-        training in the unique challenges faced by marginalized communities.
-      </p>
-
-      <div class="pt-6 border-t theme-border">
-        <p class="text-[10px] font-black text-site-sub uppercase tracking-widest  mb-2">
-          Ready to start?
+    <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+      <div class="bg-surface-2 border p-8 md:p-12 rounded-[2.5rem]" style="border-color: var(--color-border-strong)">
+        <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+          Our approach is rooted in validation, not pathology.
+        </h2>
+        <p class="text-site-text leading-relaxed font-medium mb-8">
+          Whether you are seeking a formal diagnosis or a safe space to process
+          life&apos;s transitions, we prioritize your lived experience. All our
+          clinicians are neuro-affirming and trauma-informed, with specialized
+          training in the unique challenges faced by marginalized communities.
         </p>
-        <a
-          href={`tel:${PHONE_NUMBER}`}
-          class="inline-block text-cta font-black text-2xl hover:text-site-text transition-colors"
-        >
-          &#128222; {PHONE_NUMBER_FORMATTED}
-        </a>
+        <div class="pt-6 border-t" style="border-color: var(--color-border)">
+          <p class="text-[10px] font-black text-site-sub uppercase tracking-widest mb-2">
+            Ready to start?
+          </p>
+          <a
+            href={`tel:${PHONE_NUMBER}`}
+            class="inline-block text-cta font-black text-2xl hover:text-site-text transition-colors"
+          >
+            &#128222; {PHONE_NUMBER_FORMATTED}
+          </a>
+        </div>
       </div>
-    </div>
+    </AnimatedSection>
   </section>
 
-  <script is:inline>
-    const tabsRoot = document.querySelector("[data-tabs-root]");
-
-    if (tabsRoot) {
-      const triggers = Array.from(
-        tabsRoot.querySelectorAll("[data-tab-trigger]"),
-      );
-      const panels = Array.from(tabsRoot.querySelectorAll("[data-tab-panel]"));
-
-      const activateTab = (targetId) => {
-        triggers.forEach((trigger) => {
-          const isActive = trigger.dataset.target === targetId;
-          trigger.setAttribute("aria-selected", String(isActive));
-          trigger.classList.toggle("bg-cta", isActive);
-          trigger.classList.toggle("text-site-bg", isActive);
-          trigger.classList.toggle("border-cta", isActive);
-          trigger.classList.toggle("shadow-lg", isActive);
-          trigger.classList.toggle("shadow-cta/20", isActive);
-          trigger.classList.toggle("opacity-100", isActive);
-          trigger.classList.toggle("theme-surface-soft", !isActive);
-          trigger.classList.toggle("text-site-text", !isActive);
-          trigger.classList.toggle("theme-border", !isActive);
-          trigger.classList.toggle("opacity-80", !isActive);
-        });
-
-        panels.forEach((panel) => {
-          panel.classList.toggle("hidden", panel.id !== targetId);
-        });
-      };
-
-      triggers.forEach((trigger) => {
-        trigger.addEventListener("click", () => {
-          const targetId = trigger.dataset.target;
-          if (targetId) {
-            activateTab(targetId);
-          }
-        });
-      });
-    }
-  </script>
-
-  <style>
-    .catalog-hero-radial {
-      background: radial-gradient(circle at center, rgba(var(--rgb-surface-2), 0.4), transparent 65%);
-    }
-  </style>
       </div>
     </div>
   </div>

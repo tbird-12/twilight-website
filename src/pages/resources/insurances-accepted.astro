@@ -3,6 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { PHONE_NUMBER } from "../../data/resource";
 import { insuranceProviders } from "../../data/insurances";
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../components/preact/primitives/AnimatedSection";
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "../../assets/images/insurance/*.png",
@@ -21,17 +23,16 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
                   prose-strong:text-site-text
                   prose-li:text-site-text
                   mb-12">
-  <section class="bg-site-bg min-h-screen py-24 px-4">
+  <PageHeroWrapper
+    title="Accepted Insurances"
+    accentWord="Insurances"
+    subtitle="We maintain credentials with most major insurance providers to ensure our specialized services remain broadly accessible."
+    size="lg"
+  />
+  <section class="bg-site-bg py-24 px-4">
     <div class="max-w-7xl mx-auto">
-      <header class="text-center mb-12">
-        <h1 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4">
-          Accepted <span class="text-cta">Insurances</span>
-        </h1>
-        <p class="text-sand text-lg max-w-2xl mx-auto">
-          We maintain credentials with most major insurance providers to ensure our specialized services remain broadly accessible.
-        </p>
-      </header>
 
+      <AnimatedSection client:visible animation="fadeInUp" delay={100}>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         {
           insuranceProviders.map((provider) => {
@@ -63,7 +64,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
           })
         }
       </div>
+      </AnimatedSection>
 
+      <AnimatedSection client:visible animation="fadeInUp" delay={200}>
       <section class="max-w-4xl mx-auto mt-16">
       <div
         class="bg-cta/10 border border-cta/30 p-10 rounded-[3rem] text-center"
@@ -84,6 +87,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
         </a>
       </div>
       </section>
+      </AnimatedSection>
     </div>
   </section>
       </div>

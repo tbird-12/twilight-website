@@ -1,0 +1,22 @@
+---
+import PageHero from './preact/primitives/PageHero';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  badge?: string;
+  accentWord?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const { title, subtitle, badge, accentWord, size } = Astro.props;
+---
+
+<PageHero
+  client:visible
+  title={title}
+  subtitle={subtitle}
+  badge={badge}
+  accentWord={accentWord}
+  size={size}
+/>

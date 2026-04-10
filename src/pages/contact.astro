@@ -9,6 +9,9 @@ import {
   WIDGET_LINK,
   REFERRAL_LINK,
 } from "../data/resource";
+import PageHeroWrapper from "../components/PageHeroWrapper.astro";
+import AnimatedSection from "../components/preact/primitives/AnimatedSection";
+import Tabs from "../components/preact/primitives/Tabs";
 ---
 
 <Layout
@@ -25,272 +28,139 @@ import {
                   mb-12">
   <section class="bg-site-bg min-h-screen py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
-      <header class="text-center mb-10 md:mb-14">
-        <div class="inline-block px-3 md:px-4 py-1.5 mb-5 md:mb-6 rounded-full theme-surface-2 border theme-border-strong text-cta text-[11px] md:text-xs font-black uppercase tracking-widest">
-          Contact Twilight Psychology
-        </div>
-        <h1 class="font-serif text-3xl sm:text-4xl md:text-6xl font-black text-site-text mb-4 leading-tight">
-          How To <span class="text-cta">Reach Us</span>
-        </h1>
-        <p class="text-site-sub text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
-          Our team is ready to assist you. Reach out by form, phone, or email, and we will guide you through the appropriate next step.
-        </p>
-      </header>
 
-      <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border-2 border-cta/40 p-6 sm:p-8 md:p-10 relative overflow-hidden">
-        <div class="pointer-events-none absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-cta to-transparent"></div>
-        <div class="inline-block px-3 py-1 mb-4 rounded-full bg-cta/10 border border-cta/30 text-cta text-[11px] font-black uppercase tracking-widest">
-          Emergencies Only
-        </div>
-        <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
-        <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
-          If you are in immediate danger or need urgent help, do not wait for office response.
-        </p>
-        <div class="grid gap-4 md:grid-cols-3">
-          <a
-            href="tel:911"
-            class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <p class="text-xs font-black uppercase tracking-widest text-cta">Immediate Emergency</p>
-            <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 911</p>
-          </a>
-          <a
-            href="tel:988"
-            class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <p class="text-xs font-black uppercase tracking-widest text-cta">Mental Health Crisis</p>
-            <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 988</p>
-          </a>
-          <div class="rounded-2xl border theme-border theme-surface px-4 sm:px-5 py-5">
-            <p class="text-xs font-black uppercase tracking-widest text-site-sub">Important Note</p>
-            <p class="text-site-sub text-sm mt-2 leading-relaxed">
-              Messages sent through email, phone, or forms are not monitored for emergency response.
-            </p>
+      <PageHeroWrapper
+        title="How To Reach Us"
+        accentWord="Reach Us"
+        subtitle="Our team is ready to assist you. Reach out by form, phone, or email, and we will guide you through the appropriate next step."
+        badge="Contact Twilight Psychology"
+        size="lg"
+      />
+
+      <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+        <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border-2 border-cta/40 p-6 sm:p-8 md:p-10 relative overflow-hidden">
+          <div class="pointer-events-none absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-cta to-transparent"></div>
+          <div class="inline-block px-3 py-1 mb-4 rounded-full bg-cta/10 border border-cta/30 text-cta text-[11px] font-black uppercase tracking-widest">
+            Emergencies Only
           </div>
-        </div>
-      </section>
-
-      <section class="mt-10 md:mt-12 rounded-4xl border theme-border-strong theme-surface-2 p-6 sm:p-8 md:p-10" data-contact-tabs-root>
-        <div class="mb-3 flex items-center justify-between px-1 text-xs text-site-sub">
-          <p class="font-semibold uppercase tracking-wider">Select the path that fits you</p>
-          <p class="hidden lg:block">Scroll to explore</p>
-        </div>
-
-        <div class="relative mb-6">
-          <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-surface-2 to-transparent hidden lg:block"></div>
-          <div
-            class="flex flex-col lg:flex-row gap-3 pb-2 lg:overflow-x-auto lg:snap-x lg:snap-mandatory"
-            role="tablist"
-            aria-label="Contact pathways"
-          >
-            <button
-              type="button"
-              id="contact-tab-providers"
-              role="tab"
-              aria-controls="contact-panel-providers"
-              aria-selected="true"
-              data-contact-tab-trigger
-              data-target="contact-panel-providers"
-              class="w-full lg:w-auto snap-start shrink-0 px-5 py-5 rounded-2xl border-2 transition-all duration-300 font-serif font-black text-sm tracking-wide hover:scale-[1.01] active:scale-[0.98] bg-cta text-cta-fg border-cta shadow-lg shadow-cta/20"
-            >
-              <span class="flex items-center gap-3 text-left">
-                <span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-current/20 text-xs font-black">1</span>
-                <span class="leading-tight">
-                  <span class="block">Providers</span>
-                  <span class="block text-[10px] uppercase tracking-wider opacity-70">Referrals and Records</span>
-                </span>
-              </span>
-            </button>
-
-            <button
-              type="button"
-              id="contact-tab-existing"
-              role="tab"
-              aria-controls="contact-panel-existing"
-              aria-selected="false"
-              data-contact-tab-trigger
-              data-target="contact-panel-existing"
-              class="w-full lg:w-auto snap-start shrink-0 px-5 py-5 rounded-2xl border-2 transition-all duration-300 font-serif font-black text-sm tracking-wide hover:scale-[1.01] active:scale-[0.98] theme-surface text-site-text theme-border hover:border-cta/50 hover:text-cta"
-            >
-              <span class="flex items-center gap-3 text-left">
-                <span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-current/20 text-xs font-black">2</span>
-                <span class="leading-tight">
-                  <span class="block">Existing Clients</span>
-                  <span class="block text-[10px] uppercase tracking-wider opacity-70">Portal and Support</span>
-                </span>
-              </span>
-            </button>
-
-            <button
-              type="button"
-              id="contact-tab-future"
-              role="tab"
-              aria-controls="contact-panel-future"
-              aria-selected="false"
-              data-contact-tab-trigger
-              data-target="contact-panel-future"
-              class="w-full lg:w-auto snap-start shrink-0 px-5 py-5 rounded-2xl border-2 transition-all duration-300 font-serif font-black text-sm tracking-wide hover:scale-[1.01] active:scale-[0.98] theme-surface text-site-text theme-border hover:border-cta/50 hover:text-cta"
-            >
-              <span class="flex items-center gap-3 text-left">
-                <span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-current/20 text-xs font-black">3</span>
-                <span class="leading-tight">
-                  <span class="block">Future Clients</span>
-                  <span class="block text-[10px] uppercase tracking-wider opacity-70">Start Care with Us</span>
-                </span>
-              </span>
-            </button>
-
-            <a
-              href="/about/careers"
-              class="w-full lg:w-auto snap-start shrink-0 px-5 py-5 rounded-2xl border-2 transition-all duration-300 font-serif font-black text-sm tracking-wide hover:scale-[1.01] active:scale-[0.98] theme-surface text-site-text theme-border hover:border-cta/50 hover:text-cta"
-            >
-              <span class="flex items-center gap-3 text-left">
-                <span class="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-current/20 text-xs font-black">4</span>
-                <span class="leading-tight">
-                  <span class="block">Careers</span>
-                  <span class="block text-[10px] uppercase tracking-wider opacity-70">Opportunities with Us</span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-
-        
-
-        <article
-          id="contact-panel-existing"
-          role="tabpanel"
-          aria-labelledby="contact-tab-existing"
-          data-contact-tab-panel
-          class="hidden rounded-3xl border theme-border-strong theme-surface-soft p-6 sm:p-8"
-        >
-          <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 leading-tight">Existing Client Portal</h2>
-          <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
-            Already a client? Sign in to your secure portal to message your provider, review documents, and manage upcoming appointments.
+          <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
+          <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
+            If you are in immediate danger or need urgent help, do not wait for office response.
           </p>
-          <div class="flex flex-col gap-3">
+          <div class="grid gap-4 md:grid-cols-3">
             <a
-              href={SIGN_IN_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+              href="tel:911"
+              class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
             >
-              Portal Sign In
+              <p class="text-xs font-black uppercase tracking-widest text-cta">Immediate Emergency</p>
+              <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 911</p>
             </a>
-            <p class="text-sm text-site-sub">
-              Need immediate assistance? Call <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline hover:text-site-text transition-colors">{PHONE_NUMBER_FORMATTED}</a>.
-            </p>
-          </div>
-        </article>
-
-        <article
-          id="contact-panel-future"
-          role="tabpanel"
-          aria-labelledby="contact-tab-future"
-          data-contact-tab-panel
-          class="hidden"
-        >
-          <article class="rounded-3xl border theme-border-strong theme-surface-soft p-6 sm:p-8">
-            <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">Begin as a New Client</h2>
-            <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
-              Use our secure intake form to request an appointment and indicate the type of clinical service you are seeking.
-            </p>
-            <div class="flex flex-col gap-3">
-              <a
-                href={WIDGET_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
-              >
-                Open Intake Form
-              </a>
-              <p class="text-sm text-site-sub">
-                Prefer direct contact? Call <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline hover:text-site-text transition-colors">{PHONE_NUMBER_FORMATTED}</a> or email <a href={`mailto:${EMAIL_ADDRESS}`} class="text-cta underline hover:text-site-text transition-colors">{EMAIL_ADDRESS}</a>.
+            <a
+              href="tel:988"
+              class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <p class="text-xs font-black uppercase tracking-widest text-cta">Mental Health Crisis</p>
+              <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 988</p>
+            </a>
+            <div class="rounded-2xl border p-4 sm:px-5 py-5" style="border-color: var(--color-border); background: var(--color-surface)">
+              <p class="text-xs font-black uppercase tracking-widest text-site-sub">Important Note</p>
+              <p class="text-site-sub text-sm mt-2 leading-relaxed">
+                Messages sent through email, phone, or forms are not monitored for emergency response.
               </p>
             </div>
-          </article>
-        </article>
-      
-        <article
-          id="contact-panel-providers"
-          role="tabpanel"
-          aria-labelledby="contact-tab-providers"
-          data-contact-tab-panel
-          class="rounded-3xl border theme-border-strong theme-surface-soft p-6 sm:p-8"
-        >
-          <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">Referral Information</h2>
-          <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
-            Providers and care teams can submit a referral using our referral form and fax it to {FAX_NUMBER_FORMATTED}. Include relevant records and contact details so we can follow up quickly.
-          </p>
-          <div class="flex flex-col gap-3">
-            <a
-              href={REFERRAL_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
-            >
-              Submit Referral
-            </a>
-            <p class="text-sm text-site-sub">
-              Questions before referring? Call <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline hover:text-site-text transition-colors">{PHONE_NUMBER_FORMATTED}</a>.
-            </p>
           </div>
-        </article>
+        </section>
+      </AnimatedSection>
+
+      <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 md:p-10" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
+        <Tabs
+          client:visible
+          scrollOnChange
+          tabs={[
+            { id: "providers", label: "Providers", sublabel: "Referrals and Records" },
+            { id: "existing", label: "Existing Clients", sublabel: "Portal and Support" },
+            { id: "future", label: "Future Clients", sublabel: "Start Care with Us" },
+            { id: "careers", label: "Careers", sublabel: "Opportunities with Us", isLink: true, href: "/about/careers" },
+          ]}
+          defaultTab="providers"
+        >
+          <div id="providers">
+            <article class="rounded-3xl border p-6 sm:p-8" style="border-color: var(--color-border-strong); background: var(--color-surface-soft)">
+              <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">Referral Information</h2>
+              <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
+                Providers and care teams can submit a referral using our referral form and fax it to {FAX_NUMBER_FORMATTED}. Include relevant records and contact details so we can follow up quickly.
+              </p>
+              <div class="flex flex-col gap-3">
+                <a
+                  href={REFERRAL_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+                >
+                  Submit Referral
+                </a>
+                <p class="text-sm text-site-sub">
+                  Questions before referring? Call <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline hover:text-site-text transition-colors">{PHONE_NUMBER_FORMATTED}</a>.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div id="existing">
+            <article class="rounded-3xl border p-6 sm:p-8" style="border-color: var(--color-border-strong); background: var(--color-surface-soft)">
+              <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 leading-tight">Existing Client Portal</h2>
+              <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
+                Already a client? Sign in to your secure portal to message your provider, review documents, and manage upcoming appointments.
+              </p>
+              <div class="flex flex-col gap-3">
+                <a
+                  href={SIGN_IN_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+                >
+                  Portal Sign In
+                </a>
+                <p class="text-sm text-site-sub">
+                  Need immediate assistance? Call <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline hover:text-site-text transition-colors">{PHONE_NUMBER_FORMATTED}</a>.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div id="future">
+            <article class="rounded-3xl border p-6 sm:p-8" style="border-color: var(--color-border-strong); background: var(--color-surface-soft)">
+              <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">Begin as a New Client</h2>
+              <p class="text-site-sub leading-relaxed text-sm sm:text-base mb-6">
+                Use our secure intake form to request an appointment and indicate the type of clinical service you are seeking.
+              </p>
+              <div class="flex flex-col gap-3">
+                <a
+                  href={WIDGET_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+                >
+                  Open Intake Form
+                </a>
+                <p class="text-sm text-site-sub">
+                  Prefer direct contact? Call <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline hover:text-site-text transition-colors">{PHONE_NUMBER_FORMATTED}</a> or email <a href={`mailto:${EMAIL_ADDRESS}`} class="text-cta underline hover:text-site-text transition-colors">{EMAIL_ADDRESS}</a>.
+                </p>
+              </div>
+            </article>
+          </div>
+        </Tabs>
       </section>
 
-      <section class="mt-10 md:mt-12 rounded-4xl border theme-border-strong theme-surface-2 p-6 sm:p-8 text-center">
-        <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
-        <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
-        <p class="text-site-sub">Sat - Sun: By appointment</p>
-      </section>
+      <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+        <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 text-center" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
+          <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
+          <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
+          <p class="text-site-sub">Sat - Sun: By appointment</p>
+        </section>
+      </AnimatedSection>
     </div>
   </section>
-
-  <script is:inline>
-    const contactTabsRoot = document.querySelector("[data-contact-tabs-root]");
-
-    if (contactTabsRoot) {
-      const triggers = Array.from(
-        contactTabsRoot.querySelectorAll("[data-contact-tab-trigger]"),
-      );
-      const panels = Array.from(
-        contactTabsRoot.querySelectorAll("[data-contact-tab-panel]"),
-      );
-
-      const activateContactTab = (targetId) => {
-        triggers.forEach((trigger) => {
-          const isActive = trigger.dataset.target === targetId;
-          trigger.setAttribute("aria-selected", String(isActive));
-          trigger.classList.toggle("bg-cta", isActive);
-          trigger.classList.toggle("text-cta-fg", isActive);
-          trigger.classList.toggle("border-cta", isActive);
-          trigger.classList.toggle("shadow-lg", isActive);
-          trigger.classList.toggle("shadow-cta/20", isActive);
-          trigger.classList.toggle("theme-surface", !isActive);
-          trigger.classList.toggle("text-site-text", !isActive);
-          trigger.classList.toggle("theme-border", !isActive);
-          trigger.classList.toggle("hover:border-cta/50", !isActive);
-          trigger.classList.toggle("hover:text-cta", !isActive);
-        });
-
-        panels.forEach((panel) => {
-          panel.classList.toggle("hidden", panel.id !== targetId);
-        });
-      };
-
-      triggers.forEach((trigger) => {
-        trigger.addEventListener("click", () => {
-          const targetId = trigger.dataset.target;
-          if (targetId) {
-            activateContactTab(targetId);
-            trigger.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
-          }
-        });
-      });
-    }
-  </script>
-
-
       </div>
     </div>
   </div>

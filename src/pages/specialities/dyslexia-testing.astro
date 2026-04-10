@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { WIDGET_LINK } from '../../data/resource';
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../components/preact/primitives/AnimatedSection";
 
 const learningDisabilities = [
   {
@@ -60,23 +62,15 @@ const faqs = [
                   prose-li:text-site-text
                   mb-12">
     
-    <section class="relative pt-36 pb-28 px-4 border-b theme-border">
-      <div class="max-w-7xl mx-auto gap-20 items-center">
-        <div>
-            <span class="text-cta font-black tracking-[0.3em] uppercase text-[10px] mb-6 block">Educational Advocacy</span>
-            <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-8 tracking-tight">
-                Learning <span class="text-cta">Disabilities</span>
-            </h1>
-            <p class="text-site-sub text-lg leading-relaxed max-w-xl mb-10">
-              We move beyond broad screening to define the specific learning profile beneath the struggle, so families leave with real clarity, credible documentation, and actionable next steps.
-            </p>
-            <a href="#faq" class="text-sand font-black border-b border-cta/50 pb-1 hover:text-cta transition-colors">
-                View Common Questions ↓
-            </a>
-        </div>
-      </div>
-    </section>
+    <PageHeroWrapper
+      title="Learning Disabilities"
+      accentWord="Disabilities"
+      badge="Educational Advocacy"
+      subtitle="We move beyond broad screening to define the specific learning profile beneath the struggle, so families leave with real clarity, credible documentation, and actionable next steps."
+      size="lg"
+    />
 
+    <AnimatedSection client:visible animation="fadeInUp" delay={100}>
     <section class="max-w-7xl mx-auto px-4 py-24">
         <h2 class="font-serif text-4xl font-black text-site-text mb-16 text-center lg:text-left">Learning Profiles We <span class="text-cta">Differentiate</span></h2>
         <div class="grid md:grid-cols-3 gap-8">
@@ -89,7 +83,9 @@ const faqs = [
             ))}
         </div>
     </section>
+    </AnimatedSection>
 
+    <AnimatedSection client:visible animation="fadeInUp" delay={200}>
     <section class="max-w-7xl mx-auto px-4 mb-24">
           <div class="theme-surface-2 border border-cta/20 p-12 rounded-[3rem] relative overflow-hidden">
             <div class="absolute top-0 right-0 p-12 text-8xl text-site-text/5 font-black">ADHD</div>
@@ -109,6 +105,7 @@ const faqs = [
             </div>
         </div>
     </section>
+    </AnimatedSection>
 
     <section id="faq" class="max-w-4xl mx-auto px-4 py-24">
         <h2 class="font-serif text-3xl font-black text-site-text mb-12 text-center tracking-tight">Frequently Asked <span class="text-sand italic text-4xl">Questions</span></h2>

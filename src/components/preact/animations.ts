@@ -31,3 +31,35 @@ export const duration = {
 export function createStaggerDelay(index: number, baseDelay: number = 50): number {
   return index * baseDelay;
 }
+
+/**
+ * Animation keyframe names (defined in global.css)
+ */
+export const keyframes = {
+  fadeInUp: 'fadeInUp',
+  fadeInDown: 'fadeInDown',
+  fadeIn: 'fadeIn',
+  slideInLeft: 'slideInLeft',
+  slideInRight: 'slideInRight',
+  scaleIn: 'scaleIn',
+  wordReveal: 'wordRevealSlideUp',
+} as const;
+
+export type AnimationName = keyof typeof keyframes;
+
+/**
+ * Composable style generator for CSS animations
+ */
+export function animationStyle(
+  keyframe: string,
+  delay: number = 0,
+  durationMs: number = duration.slow,
+  easingFn: string = easing.smooth,
+  active: boolean = true
+): Record<string, string> {
+  if (!active) return { opacity: '0' };
+  return {
+    animation: `${keyframe} ${durationMs}ms ${easingFn} both`,
+    animationDelay: `${delay}ms`,
+  };
+}
