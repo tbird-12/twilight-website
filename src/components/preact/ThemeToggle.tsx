@@ -28,7 +28,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={handleToggle}
       className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface hover:bg-surface-hover p-0 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta"
-      style={{ color: 'var(--color-icon)' }}
+      style={{ color: isDark ? '#fbbf24' : 'var(--color-icon)' }} // Sun: amber-400, Moon: gray-700
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       aria-pressed={isDark}
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
@@ -41,7 +41,8 @@ export default function ThemeToggle() {
       >
         {isDark ? (
           // Sun icon
-          <path d="M8.5 14.5c-.9-.98-1.5-2.33-1.5-3.84A5 5 0 0 1 12 5.66a5 5 0 0 1 5 5c0 1.51-.6 2.86-1.5 3.84-.69.75-1.5 1.66-1.5 2.84h-4c0-1.18-.81-2.09-1.5-2.84Z" />
+          <circle cx="12" cy="12" r="5"></circle>
+      
         ) : (
           // Moon icon
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
