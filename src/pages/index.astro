@@ -7,6 +7,14 @@ import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
 import QualityCareTabsWrapper from "../components/QualityCareTabsWrapper.astro";
 import AnimatedSection from "../components/preact/primitives/AnimatedSection";
+import CountUpStats from "../components/preact/CountUpStats";
+
+const stats = [
+  { label: "Evaluations", value: "2100+" },
+  { label: "Years Experience", value: "8+" },
+  { label: "Weeks Waitlist", value: "3" },
+  { label: "Insurance Panels", value: "17+" },
+];
 
 const services = [
   {
@@ -164,7 +172,7 @@ const qualityCareItems = [
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
         <div
-          class="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+          class="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
         >
           <div>
             <p class="homepage-section-label">Core services</p>
@@ -182,22 +190,22 @@ const qualityCareItems = [
           </p>
         </div>
 
-        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {
             services.map((service, idx) => (
-              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-9 sm:p-11 transition-all duration-500 overflow-hidden min-h-56 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10">
+              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 overflow-hidden min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10">
                 <div class="relative z-10 flex h-full flex-col">
-                  <div class="mb-5 flex items-center gap-3">
+                  <div class="mb-3 flex items-center gap-2">
                     <Icon
                       name={service.icon}
-                      class="w-9 h-9 text-site-sub shrink-0"
+                      class="w-8 h-8 text-site-sub shrink-0"
                       style="color: var(--color-icon);"
                     />
-                    <h3 class="font-serif text-xl sm:text-2xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
+                    <h3 class="font-serif text-lg sm:text-xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
                       {service.title}
                     </h3>
                   </div>
-                  <p class="mb-7 text-sm sm:text-base leading-relaxed text-site-sub">
+                  <p class="mb-4 text-xs sm:text-sm leading-relaxed text-site-sub">
                     {service.desc}
                   </p>
 
@@ -213,6 +221,15 @@ const qualityCareItems = [
             ))
           }
         </div>
+
+        <div class="mt-8 text-center">
+          <p class="homepage-section-label justify-center">By the Numbers</p>
+          <h3 class="font-serif text-2xl sm:text-3xl font-black text-site-text tracking-tighter mb-6">
+            Our Impact
+          </h3>
+        </div>
+
+        <CountUpStats client:visible stats={stats} />
       </div>
     </section>
 
@@ -342,8 +359,8 @@ const qualityCareItems = [
     position: relative;
     z-index: 1;
     width: 100%;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .homepage-panel-hero {
@@ -356,8 +373,8 @@ const qualityCareItems = [
       --homepage-chrome-offset: 5rem;
     }
     .homepage-panel-inner {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 
@@ -366,8 +383,8 @@ const qualityCareItems = [
       --homepage-chrome-offset: 6.5rem;
     }
     .homepage-panel-inner {
-      padding-top: 7.5rem;
-      padding-bottom: 7.5rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
     }
   }
 
@@ -482,6 +499,7 @@ const qualityCareItems = [
 
   .homepage-panel-services {
     --homepage-chrome-offset: 6.5rem;
+    max-height: 100svh;
     background:
       radial-gradient(
         ellipse 50% 60% at 88% 50%,
