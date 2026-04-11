@@ -172,7 +172,7 @@ const qualityCareItems = [
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
         <div
-          class="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+          class="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
         >
           <div>
             <p class="homepage-section-label">Core services</p>
@@ -190,7 +190,7 @@ const qualityCareItems = [
           </p>
         </div>
 
-        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div class="w-full grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {
             services.map((service, idx) => (
               <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 overflow-hidden min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10">
@@ -221,15 +221,6 @@ const qualityCareItems = [
             ))
           }
         </div>
-
-        <div class="mt-8 text-center">
-          <p class="homepage-section-label justify-center">By the Numbers</p>
-          <h3 class="font-serif text-2xl sm:text-3xl font-black text-site-text tracking-tighter mb-6">
-            Our Impact
-          </h3>
-        </div>
-
-        <CountUpStats client:visible stats={stats} />
       </div>
     </section>
 
@@ -284,12 +275,18 @@ const qualityCareItems = [
             Ready to Get Started
           </h2>
           <p
-            class="mx-auto mb-10 max-w-2xl text-base sm:text-lg leading-relaxed text-site-sub"
+            class="mx-auto mb-12 max-w-2xl text-base sm:text-lg leading-relaxed text-site-sub"
           >
             Whether you are pursuing diagnostic clarity, individualized therapy,
             or psychiatric medication management, our team is prepared to guide
             you through a structured, seamless process.
           </p>
+
+          <div class="mb-12">
+            <p class="homepage-section-label justify-center">By the Numbers</p>
+            <CountUpStats client:visible stats={stats} />
+          </div>
+
           <div
             class="flex flex-col sm:flex-row gap-6 justify-center relative z-10"
           >
@@ -499,7 +496,6 @@ const qualityCareItems = [
 
   .homepage-panel-services {
     --homepage-chrome-offset: 6.5rem;
-    max-height: 100svh;
     background:
       radial-gradient(
         ellipse 50% 60% at 88% 50%,

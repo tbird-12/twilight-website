@@ -86,7 +86,7 @@ export default function CountUpStats({ stats }: CountUpStatsProps) {
   return (
     <div
       ref={ref}
-      className="mt-6 flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-3"
+      className="mt-6 w-full flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-3"
     >
       {stats.map((stat, idx) => (
         <StatItem key={idx} stat={stat} isVisible={isVisible} index={idx} />
