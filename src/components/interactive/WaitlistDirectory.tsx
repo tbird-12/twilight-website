@@ -2,23 +2,40 @@ import { useState, useMemo, useCallback } from "preact/hooks";
 
 interface Provider {
   id: string;
-  first_name: string;
-  last_name: string;
-  credentials: string;
-  bio: string;
+  name: string;
+  credential: string;
   services_offered: string[];
   states_served: string[];
-  image_url?: string;
+  wait_times: Record<string, string>;
 }
 
-interface ProviderDirectoryProps {
+interface WaitlistDirectoryProps {
   providers: Provider[];
 }
 
-export default function ProviderDirectory({ providers }: ProviderDirectoryProps) {
+const WAIT_TIME_LABELS: Record<string, string> = {
+  testing_insurance: "Testing (Insurance)",
+  testing_out_of_pocket: "Testing (Self-Pay)",
+  therapy: "Therapy",
+  medication_management: "Medication Management",
+};
+
+function waitTimeBadgeClass(waitTime: string): string {
+  const lower = waitTime.toLowerCase();
+  if (lower.includes("immediate"))
+    return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400";
+  if (lower.includes("week"))
+    return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400";
+  if (lower.includes("month"))
+    return "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400";
+  return "bg-surface-soft text-site-sub";
+}
+
+export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps) {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [selectedStates, setSelectedStates] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
   const uniqueServices = useMemo(
     () => [...new Set(providers.flatMap((p) => p.services_offered))].sort(),
@@ -34,9 +51,8 @@ export default function ProviderDirectory({ providers }: ProviderDirectoryProps)
     return providers.filter((provider) => {
       const matchesSearch =
         searchTerm === "" ||
-        provider.first_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        provider.last_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        provider.bio.toLowerCase().includes(searchTerm.toLowerCase());
+        provider.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        provider.credential.toLowerCase().includes(searchTerm.toLowerCase());
 
       const matchesServices =
         selectedServices.length === 0 ||
@@ -74,13 +90,17 @@ export default function ProviderDirectory({ providers }: ProviderDirectoryProps)
     setSearchTerm("");
   }, []);
 
+  const toggleCard = useCallback((id: string) => {
+    setExpandedCard((prev) => (prev === id ? null : id));
+  }, []);
+
   return (
     <div class="space-y-6">
       {/* Search bar */}
       <div>
         <input
           type="text"
-          placeholder="Search by name or specialty..."
+          placeholder="Search by name or credential..."
           value={searchTerm}
           onInput={(e) => setSearchTerm(e.currentTarget.value)}
           class="w-full px-4 py-2 border border-border rounded-lg bg-surface text-site-text placeholder-site-sub focus:outline-none focus:border-icon transition-colors"
@@ -148,52 +168,53 @@ export default function ProviderDirectory({ providers }: ProviderDirectoryProps)
           </div>
         ) : (
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredProviders.map((provider) => (
-              <div
-                key={provider.id}
-                class="p-4 border border-border rounded-lg bg-surface hover:shadow-md hover:border-border-strong transition-all"
-              >
-                <div class="flex gap-3 mb-3">
-                  {provider.image_url ? (
-                    <img
-                      src={provider.image_url}
-                      alt={provider.first_name}
-                      class="w-12 h-12 rounded-full object-cover"
-                    />
-                  ) : (
-                    <div class="w-12 h-12 rounded-full bg-surface-soft flex items-center justify-center text-sm font-semibold text-site-sub">
-                      {provider.first_name[0]}
-                      {provider.last_name[0]}
+            {filteredProviders.map((provider) => {
+              const isExpanded = expandedCard === provider.id;
+              const nameParts = provider.name.split(" ");
+              const initials =
+                (nameParts[0]?.[0] || "") +
+                (nameParts[nameParts.length - 1]?.[0] || "");
+
+              return (
+                <div
+                  key={provider.id}
+                  class="p-4 border border-border rounded-lg bg-surface hover:shadow-md hover:border-border-strong transition-all cursor-pointer"
+                  onClick={() => toggleCard(provider.id)}
+                >
+                  {/* Header: initials + name */}
+                  <div class="flex gap-3 mb-3">
+                    <div class="w-12 h-12 rounded-full bg-surface-soft flex items-center justify-center text-sm font-semibold text-site-sub shrink-0">
+                      {initials}
                     </div>
-                  )}
-                  <div class="flex-1">
-                    <h3 class="font-semibold text-site-text">
-                      {provider.first_name} {provider.last_name}
-                    </h3>
-                    <p class="text-xs text-site-sub">{provider.credentials}</p>
+                    <div class="flex-1">
+                      <h3 class="font-semibold text-site-text">
+                        {provider.name}
+                      </h3>
+                      <p class="text-xs text-site-sub">{provider.credential}</p>
+                    </div>
                   </div>
-                </div>
 
-                <p class="text-sm text-site-sub line-clamp-2 mb-3">
-                  {provider.bio}
-                </p>
-
-                <div class="space-y-2">
-                  <div>
-                    <p class="text-xs font-semibold text-site-sub mb-1">Services</p>
-                    <div class="flex flex-wrap gap-1">
-                      {provider.services_offered.map((service) => (
-                        <span
-                          key={service}
-                          class="text-xs px-2 py-1 bg-surface-soft text-site-sub rounded"
-                        >
-                          {service}
-                        </span>
+                  {/* Wait times */}
+                  <div class="space-y-2 mb-3">
+                    <p class="text-xs font-semibold text-site-sub mb-1">Wait Times</p>
+                    <div class="flex flex-wrap gap-2">
+                      {Object.entries(provider.wait_times).map(([key, value]) => (
+                        <div key={key} class="flex flex-col items-start">
+                          <span class="text-[11px] text-site-sub mb-0.5">
+                            {WAIT_TIME_LABELS[key] || key}
+                          </span>
+                          <span
+                            class={`text-xs font-semibold px-2.5 py-1 rounded-full ${waitTimeBadgeClass(value)}`}
+                          >
+                            {value}
+                          </span>
+                        </div>
                       ))}
                     </div>
                   </div>
 
-                  <div>
+                  {/* States */}
+                  <div class="mb-2">
                     <p class="text-xs font-semibold text-site-sub mb-1">States</p>
                     <div class="flex flex-wrap gap-1">
                       {provider.states_served.slice(0, 3).map((state) => (
@@ -211,9 +232,31 @@ export default function ProviderDirectory({ providers }: ProviderDirectoryProps)
                       )}
                     </div>
                   </div>
+
+                  {/* Expand hint */}
+                  <p class="text-[11px] text-site-sub text-right select-none">
+                    {isExpanded ? "▲ hide services" : "▼ show services"}
+                  </p>
+
+                  {/* Expanded services */}
+                  {isExpanded && (
+                    <div class="mt-3 pt-3 border-t border-border">
+                      <p class="text-xs font-semibold text-site-sub mb-1">Services</p>
+                      <div class="flex flex-wrap gap-1">
+                        {provider.services_offered.map((service) => (
+                          <span
+                            key={service}
+                            class="text-xs px-2 py-1 bg-surface-soft text-site-sub rounded"
+                          >
+                            {service}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

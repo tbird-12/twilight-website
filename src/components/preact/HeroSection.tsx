@@ -1,20 +1,7 @@
-/**
- * HeroSection component - Hero section with staggered animations
- * Features: Staggered text fade-in, animated CTA buttons, stats reveal
- */
-
 import { useEffect, useRef, useState } from 'preact/hooks';
 import type { ComponentChildren } from 'preact';
-import { duration, easing, createStaggerDelay } from './animations';
+import { duration, easing } from './animations';
 import CtaButton from './CtaButton';
-
-interface HeroItem {
-  type: 'title' | 'subtitle' | 'cta' | 'stats';
-  content?: ComponentChildren;
-  href?: string;
-  target?: string;
-  rel?: string;
-}
 
 interface HeroSectionProps {
   title: ComponentChildren;
@@ -23,47 +10,6 @@ interface HeroSectionProps {
   secondaryCta?: { label: string; href: string; target?: string; rel?: string };
   stats?: Array<{ label: string; value: string }>;
   className?: string;
-}
-
-// Helper to split text into words and wrap with reveal masks
-function WordReveal({ text, baseDelay = 0 }: { text: string; baseDelay?: number }) {
-  if (!text || typeof text !== 'string') return text;
-
-  const words = text.split(/(\s+)/);
-  let wordIndex = 0;
-
-  return words.map((word, idx) => {
-    // Preserve whitespace as-is
-    if (/^\s+$/.test(word)) {
-      return word;
-    }
-
-    const delay = baseDelay + wordIndex * 40;
-    wordIndex++;
-
-    return (
-      <span
-        key={idx}
-        className="word-reveal-mask"
-        style={{
-          display: 'inline-block',
-          overflow: 'hidden',
-          verticalAlign: 'baseline',
-        }}
-      >
-        <span
-          className="word-reveal-content"
-          style={{
-            display: 'inline-block',
-            animation: `wordRevealSlideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both`,
-            animationDelay: `${delay}ms`,
-          }}
-        >
-          {word}
-        </span>
-      </span>
-    );
-  });
 }
 
 export default function HeroSection({
@@ -92,20 +38,15 @@ export default function HeroSection({
       ref={heroRef}
       className={`hero-section text-center ${className}`}
     >
-      {/* Title with word reveal animation */}
       {title && (
         <h1
           className="font-serif text-[2.0rem] sm:text-4xl md:text-6xl xl:text-7xl font-black text-site-text mb-2 sm:mb-6 tracking-tighter leading-[1.02]"
           style={{
-            animation: hasAnimated ? `fadeInUp ${duration.slow}ms ${easing.smooth} both` : 'none',
+            animation: hasAnimated ? `focusBlur ${duration.slow}ms ${easing.smooth} both` : 'none',
             animationDelay: `${titleDelay}ms`,
           }}
         >
-          {typeof title === 'string' ? (
-            <WordReveal text={title} baseDelay={titleDelay + 100} />
-          ) : (
-            title
-          )}
+          {title}
         </h1>
       )}
 
@@ -114,7 +55,6 @@ export default function HeroSection({
         <p
           className="max-w-xl mx-auto text-base sm:text-lg md:text-xl text-site-sub mb-6 sm:mb-10 leading-relaxed font-medium"
           style={{
-            opacity: hasAnimated ? 1 : 0,
             animation: hasAnimated
               ? `fadeInUp ${duration.slow}ms ${easing.smooth} both`
               : 'none',
@@ -130,7 +70,6 @@ export default function HeroSection({
         <div
           className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center justify-center"
           style={{
-            opacity: hasAnimated ? 1 : 0,
             animation: hasAnimated
               ? `fadeInUp ${duration.slow}ms ${easing.smooth} both`
               : 'none',
@@ -160,7 +99,6 @@ export default function HeroSection({
         <div
           className="mt-6 sm:mt-12 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-4"
           style={{
-            opacity: hasAnimated ? 1 : 0,
             animation: hasAnimated
               ? `fadeInUp ${duration.slow}ms ${easing.smooth} both`
               : 'none',
@@ -179,30 +117,6 @@ export default function HeroSection({
           ))}
         </div>
       )}
-
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes wordRevealSlideUp {
-          from {
-            opacity: 0;
-            transform: translateY(100%);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

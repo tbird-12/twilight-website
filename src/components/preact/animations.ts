@@ -37,9 +37,7 @@ export function createStaggerDelay(index: number, baseDelay: number = 50): numbe
  */
 export const keyframes = {
   fadeInUp: 'fadeInUp',
-  fadeInDown: 'fadeInDown',
   fadeIn: 'fadeIn',
-  slideInLeft: 'slideInLeft',
   slideInRight: 'slideInRight',
   scaleIn: 'scaleIn',
   wordReveal: 'wordRevealSlideUp',

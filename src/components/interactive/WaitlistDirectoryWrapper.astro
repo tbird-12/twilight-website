@@ -1,0 +1,15 @@
+---
+import WaitlistDirectory from "./WaitlistDirectory";
+import { providers } from "../../data/staff";
+
+const transformedProviders = providers.map((p) => ({
+  id: p.slug,
+  name: p.name,
+  credential: p.credential,
+  services_offered: p.services_offered,
+  states_served: p.states_served,
+  wait_times: p.wait_times,
+}));
+---
+
+<WaitlistDirectory client:load providers={transformedProviders} />

@@ -1,40 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProviderDirectoryWrapper from '../../components/interactive/ProviderDirectoryWrapper.astro';
+import WaitlistDirectoryWrapper from '../../components/interactive/WaitlistDirectoryWrapper.astro';
 ---
 
 <Layout
   title="Waitlist Times | Twilight Psychology"
   description="Current waitlist times at Twilight Psychology in Lexington, KY. Among the shortest waits in Kentucky for ADHD testing, autism evaluations, and therapy."
 >
-  <div class="bg-site-bg min-h-screen pb-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none prose-custom
-                  prose-p:text-site-text
-                  prose-headings:text-site-text
-                  prose-strong:text-site-text
-                  prose-li:text-site-text
-                  mb-12">
   <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-7xl mx-auto">
       <header class="text-center mb-12">
         <h1 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4">
-          Provider <span class="text-cta">Availability</span>
+          Waitlist <span class="text-cta">Times</span>
         </h1>
         <p class="text-sand text-lg max-w-2xl mx-auto">
-          Filter by service, state, or appointment type to view current wait times.
+          Filter by service or state to view current wait times for our providers.
         </p>
       </header>
 
-      <ProviderDirectoryWrapper />
+      <WaitlistDirectoryWrapper />
     </div>
-    <div class="text-left mt-12 text-sm text-sand">
+    <div class="text-center mt-12 text-sm text-sand">
       <p> * Services excluded by health insurance coverage are offered on a self-pay basis</p>
       <p>KY, OH, IN, TN participate in PSYPACT compact. For a list of participating states visit <a href="https://psypact.gov/page/psypactmap" class="text-cta underline">Psypact Map</a>.
       </p>
     </div>
   </section>
-      </div>
-    </div>
-  </div>
 </Layout>
