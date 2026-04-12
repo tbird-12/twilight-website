@@ -17,6 +17,7 @@ interface StatBarProps {
 function AnimatedValue({ value, isInView, reduced }: { value: string; isInView: boolean; reduced: boolean }) {
   const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
     if (!isInView || hasAnimated.current || reduced) return;
@@ -42,10 +43,13 @@ function AnimatedValue({ value, isInView, reduced }: { value: string; isInView: 
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.floor(target * eased);
       el.textContent = `${current}${suffix}`;
-      if (progress < 1) requestAnimationFrame(tick);
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
     };
 
-    requestAnimationFrame(tick);
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
   }, [isInView, value, reduced]);
 
   return (

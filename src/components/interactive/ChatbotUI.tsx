@@ -19,7 +19,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
       actions: tree["start"]?.options?.map((opt) => ({
         label: opt.label,
         type: "button" as const,
-        action: () => handleOptionClick(opt.next),
+        action: () => handleOptionClick(opt.next, opt.label),
       })),
     },
   ]);
@@ -39,9 +39,9 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
   }, [messages, scrollToBottom]);
 
   const handleOptionClick = useCallback(
-    (nextNode: string) => {
-      // Add user message
-      const optionLabel = tree[currentNode]?.options?.find(
+    (nextNode: string, selectedLabel?: string) => {
+      // Use the label passed directly to avoid stale closure over currentNode
+      const optionLabel = selectedLabel || tree[currentNode]?.options?.find(
         (opt) => opt.next === nextNode
       )?.label;
 
@@ -70,7 +70,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
           botMessage.actions = nextNodeData.options.map((opt) => ({
             label: opt.label,
             type: "button" as const,
-            action: () => handleOptionClick(opt.next),
+            action: () => handleOptionClick(opt.next, opt.label),
           }));
         } else if (nextNodeData.actionType && nextNodeData.actionValue) {
           botMessage.actions = [
@@ -102,7 +102,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
         actions: tree["start"]?.options?.map((opt) => ({
           label: opt.label,
           type: "button" as const,
-          action: () => handleOptionClick(opt.next),
+          action: () => handleOptionClick(opt.next, opt.label),
         })),
       },
     ]);

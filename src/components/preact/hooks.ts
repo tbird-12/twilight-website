@@ -2,7 +2,7 @@
  * Reusable Preact hooks for common patterns
  */
 
-import { useEffect } from 'preact/hooks';
+import { useEffect, useCallback } from 'preact/hooks';
 
 /**
  * Hook for handling keyboard events (ESC, Enter, etc.)
@@ -21,16 +21,23 @@ export function useKeyPress(targetKey: string, callback: () => void) {
 }
 
 /**
- * Hook for scroll lock (prevents scroll on body)
+ * Reference-counted scroll lock shared across all consumers.
+ * Prevents one component from unlocking scroll while another still needs it locked.
  */
-export function useScrollLock() {
-  const lock = () => {
-    document.body.style.overflow = 'hidden';
-  };
+let scrollLockCount = 0;
 
-  const unlock = () => {
-    document.body.style.overflow = '';
-  };
+export function useScrollLock() {
+  const lock = useCallback(() => {
+    scrollLockCount++;
+    document.body.style.overflow = 'hidden';
+  }, []);
+
+  const unlock = useCallback(() => {
+    scrollLockCount = Math.max(0, scrollLockCount - 1);
+    if (scrollLockCount === 0) {
+      document.body.style.overflow = '';
+    }
+  }, []);
 
   return { lock, unlock };
 }
