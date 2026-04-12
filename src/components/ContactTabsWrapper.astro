@@ -1,0 +1,23 @@
+---
+import ContactTabs from './preact/composites/ContactTabs';
+import {
+  PHONE_NUMBER,
+  PHONE_NUMBER_FORMATTED,
+  FAX_NUMBER_FORMATTED,
+  EMAIL_ADDRESS,
+  SIGN_IN_LINK,
+  WIDGET_LINK,
+  REFERRAL_LINK,
+} from '../data/resource';
+---
+
+<ContactTabs
+  client:visible
+  phoneNumber={PHONE_NUMBER}
+  phoneNumberFormatted={PHONE_NUMBER_FORMATTED}
+  faxNumberFormatted={FAX_NUMBER_FORMATTED}
+  emailAddress={EMAIL_ADDRESS}
+  signInLink={SIGN_IN_LINK}
+  widgetLink={WIDGET_LINK}
+  referralLink={REFERRAL_LINK}
+/>
