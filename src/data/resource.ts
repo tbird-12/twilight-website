@@ -10,4 +10,4 @@ export const EMAIL_ADDRESS = "office@twilightpsychology.com";
 export const SIGN_IN_LINK = "https://twilightpsychology.clientsecure.me/sign-in";
 
 export const WIDGET_LINK = "https://twilightpsychology.clientsecure.me/contact-widget";
-export const REFERRAL_LINK = "https://drive.google.com/file/d/1fhYlXyIpFgUslpYGLkkt6xYveGfmlSG2/view";
+export const REFERRAL_LINK = "https://drive.google.com/file/d/1vbZEcdD4eeSjRtlM6aLfeiebtA8HeYBQ/view?usp=sharing";
