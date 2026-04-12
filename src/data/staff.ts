@@ -33,7 +33,7 @@ export interface StaffMember {
 
 export const providers: Provider[] = [
   {
-    name: 'Dr. Heather Cornett',
+    name: 'Heather Cornett',
     slug: 'heather-cornett',
     spec: 'Adult Autism',
     image: heatherCornettImg,
@@ -137,12 +137,12 @@ export const providers: Provider[] = [
     wait_times: { therapy: 'Immediate availability' } 
   },
   {
-    name: 'Dr. Olivia Williams',
+    name: 'Olivia Williams',
     slug: 'olivia-williams',
     spec: 'Psychological Assessments', 
     image: oliviaWilliamsImg,
     name_with_education: 'Olivia Williams, PhD',
-    credential: 'T-LPA',
+    credential: 'LPA',
     services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'IQ testing', 'Psychological evaluations'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500' },
     states_served: ['Kentucky'],
