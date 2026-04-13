@@ -20,5 +20,6 @@ export const insuranceProviders: InsuranceProvider[] = [
   { name: "UMR", fileName: "umr.png" },
   { name: "UnitedHealthcare (UHC)", fileName: "uhc.png" },
   { name: "UnitedHealthcare Community", fileName: "uhc-community.png" },
-  { name: "Tricare East", fileName: "tricare.png" }
+  { name: "Tricare East", fileName: "tricare.png" },
+  { name: "Wellcare of Kentucky", fileName: "wellcare.png" },
 ];
