@@ -3,21 +3,10 @@
  * Uses smooth fade animation for theme transition
  */
 
-import { useState, useEffect } from "preact/hooks";
 import { useTheme } from "./ThemeContext";
 
 export default function ThemeToggle() {
   const { isDark, toggleTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Only render after hydration to avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   const handleToggle = () => {
     toggleTheme();
