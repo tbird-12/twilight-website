@@ -28,14 +28,14 @@ export default function ThemeToggle() {
       type="button"
       onClick={handleToggle}
       className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface hover:bg-surface-hover p-0 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta"
-      style={{ color: "var(--color-icon)" }}
+      style={{ color: isDark ? "var(--color-amber-300)" : "var(--color-icon)" }}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-pressed={isDark}
       title={`Switch to ${isDark ? "light" : "dark"} mode`}
     >
       <svg
         className="h-6 w-6 transition-transform duration-300"
-        fill={isDark ? "none" : "currentColor"} // Sun needs "none" for stroke, Moon needs "fill"
+        fill={ "currentColor"} // Sun needs "none" for stroke, Moon needs "fill"
         stroke={isDark ? "currentColor" : "none"}
         strokeWidth="2"
         strokeLinecap="round"
