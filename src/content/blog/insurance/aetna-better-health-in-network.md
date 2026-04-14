@@ -51,3 +51,10 @@ If Aetna Better Health denies a prior authorization or payment for testing, memb
 
 Timelines and procedures vary whether an appeal is standard or expedited; review your Aetna Better Health member handbook or call the member‑services number on your insurance card for plan‑specific guidance. 
 For general timing and waitlist information, see [FAQ](/resources/faq). Because we receive many Aetna Better Health Medicaid cases, Twilight Psychology does not file appeals on members’ behalf. If an authorization is denied, you may choose to switch to a plan we accept—see accepted plans at [Insurances](/resources/insurances-accepted) or contact us for referral options via [Contact](/contact) page.
+## Further Reading
+
+- [Understanding Health Insurance](/blog/insurance/understanding-health-insurance) — A broader look at commercial insurance, Kentucky Medicaid MCOs, and Medicare and how each type differs.
+- [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — Learn how to read the statement your insurance sends after a claim is processed.
+- [Twilight Psychology Is Now In-Network with Wellcare of Kentucky](/blog/announcements/wellcare-kentucky-in-network) — Another Medicaid MCO option for therapy and medication management.
+- [Fees & Pricing](/resources/fees) — Self-pay rates if insurance authorization is not approved.
+- [New Client Guide](/resources/new-client) — How to begin the intake process at Twilight Psychology.

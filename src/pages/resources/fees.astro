@@ -14,6 +14,7 @@ const feeCategories = [
       { name: "Autism Assessments", price: "$1,300" },
       { name: "Personality Disorder Assessments", price: "$1,300" },
       { name: "Full Psychological Evaluation", price: "$1,300", note: "Covers Autism, ADHD, and Personality" },
+      { name: "Child Psychological Evaluations", price: "$1,000", note: "Ages 2-6, Personality Disorders n/a" },
       { name: "Learning Disorder (Disability) Assessments", price: "$1,500", note: "Offered on a self-pay basis" },
       { name: "Guardianship Evaluation", price: "$500", note: "Additional cost for court/extra testing" },
       { name: "Emotional Support Animal (ESA) Evaluation", price: "$200" },
@@ -140,6 +141,27 @@ const feeCategories = [
           For additional information, visit <a href="https://www.cms.gov/medical-bill-rights" class="underline text-cta hover:text-cta">cms.gov/medical-bill-rights</a>.
         </p>
       </footer>
+
+      <AnimatedSection client:visible animation="fadeInUp" delay={400}>
+        <section class="mt-12">
+          <h2 class="font-serif text-2xl font-black text-site-text mb-6">Billing & Insurance Resources</h2>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <a href="/blog/billing/understanding-your-eob" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+              <p class="text-xs font-bold uppercase tracking-widest text-sky-500 mb-2">Billing</p>
+              <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Your EOB</h3>
+              <p class="text-xs text-site-sub">A plain-language guide to reading your explanation of benefits.</p>
+            </a>
+            <a href="/blog/insurance/understanding-health-insurance" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+              <p class="text-xs font-bold uppercase tracking-widest text-violet-500 mb-2">Insurance</p>
+              <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Health Insurance</h3>
+              <p class="text-xs text-site-sub">Deductibles, copays, and how plan types affect your costs.</p>
+            </a>
+          </div>
+          <div class="mt-4 text-center">
+            <a href="/blog/category/billing" class="text-cta text-sm font-bold hover:underline">View all billing posts →</a>
+          </div>
+        </section>
+      </AnimatedSection>
 
     </div>
   </section>

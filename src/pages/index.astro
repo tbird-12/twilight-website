@@ -8,6 +8,12 @@ import heroBgMobile from "../assets/hero-mobile.svg?raw";
 import QualityCareTabsWrapper from "../components/QualityCareTabsWrapper.astro";
 import AnimatedSection from "../components/preact/primitives/AnimatedSection";
 import CountUpStats from "../components/preact/CountUpStats";
+import { getCollection } from "astro:content";
+import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
+
+const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 
 const stats = [
   { label: "Evaluations", value: "2100+" },
@@ -258,6 +264,60 @@ const qualityCareItems = [
             link: item.link,
           }))}
         />
+      </div>
+    </section>
+
+    <!-- ════════════════ FROM OUR BLOG ════════════════ -->
+    <section
+      class="homepage-panel relative isolate overflow-hidden px-4"
+      style="min-height: auto;"
+    >
+      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6 py-20">
+        <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="homepage-section-label">From our blog</p>
+            <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+              Insights & Updates
+            </h2>
+          </div>
+          <a
+            href="/blog"
+            class="text-cta font-black text-sm hover:underline"
+          >
+            View all posts →
+          </a>
+        </div>
+
+        <div class="w-full grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {recentPosts.map((post) => {
+            const meta = getCategoryMeta(post.data.category);
+            const colorClass = categoryColorMap[post.data.category];
+            return (
+              <a
+                href={`/blog/${post.id}`}
+                class="group flex flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
+              >
+                <div class="flex items-center gap-2 mb-3">
+                  <span class={`text-xs px-2.5 py-0.5 rounded-full font-semibold ${colorClass}`}>
+                    {meta.label}
+                  </span>
+                  <span class="text-xs text-site-sub">
+                    {post.data.pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                  </span>
+                </div>
+                <h3 class="font-serif text-lg font-black text-site-text tracking-tight group-hover:text-cta transition-colors mb-2">
+                  {post.data.title}
+                </h3>
+                <p class="text-xs text-site-sub leading-relaxed line-clamp-3 mb-4">
+                  {post.data.description}
+                </p>
+                <span class="mt-auto text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors">
+                  Read article →
+                </span>
+              </a>
+            );
+          })}
+        </div>
       </div>
     </section>
 

@@ -74,4 +74,11 @@ How we help: We verify which Medicare path you’re on and whether Twilight is i
 This post limited the discussion to insurance types and plan structures. We will follow up with a dedicated post that explains deductibles, copays, and coinsurance and shows what those cost terms typically look like under commercial plans, Kentucky MCOs, Traditional Medicaid, Original Medicare, and Medicare Advantage.
 
 If you want Twilight to check your coverage for a specific appointment, bring your insurance card or email images of it to our billing team and we’ll send a clear summary of expected coverage and any likely out-of-pocket costs.
+## Related Posts and Resources
 
+- [Aetna Better Health — Prior Authorization, Medical Necessity, and Appeals](/blog/insurance/aetna-better-health-in-network) — A detailed look at the prior authorization process for one of Kentucky's most common Medicaid MCOs.
+- [Twilight Psychology Is Now In-Network with Wellcare of Kentucky](/blog/announcements/wellcare-kentucky-in-network) — Our latest Medicaid network addition.
+- [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — How to read the summary your insurance sends after a claim is processed.
+- [Accepted Insurance Plans](/resources/insurances-accepted) — Full list of insurance providers we are credentialed with.
+- [Fees & Pricing](/resources/fees) — Current self-pay rates for evaluations, therapy, and medication management.
+- [New Client Guide](/resources/new-client) — Steps to begin the intake process, including insurance verification.

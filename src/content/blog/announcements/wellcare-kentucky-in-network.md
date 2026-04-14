@@ -29,4 +29,12 @@ If you are interested in scheduling an appointment, please:
 2. Contact our office directly by phone or through our [Contact](/contact) page.
 3. Have your Wellcare of Kentucky insurance card available when you reach out — we will verify your benefits as part of the intake process.
 
+## Related Resources
+
+- [Understanding Health Insurance](/blog/insurance/understanding-health-insurance) — Learn about the differences between Medicaid MCOs, commercial insurance, and Medicare.
+- [Aetna Better Health — Prior Authorization and Appeals](/blog/insurance/aetna-better-health-in-network) — If you have Aetna Better Health, read about the prior authorization process for testing.
+- [Accepted Insurance Plans](/resources/insurances-accepted) — View all insurance providers we are currently credentialed with.
+- [Therapy Services](/services/therapy) — Learn more about our individual therapy options.
+- [Medication Management](/services/medication-management) — Details on psychiatric medication evaluation and ongoing management.
+
 We look forward to serving Wellcare members and expanding access to mental health care across Kentucky.

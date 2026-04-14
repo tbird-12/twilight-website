@@ -36,3 +36,10 @@ Our billing team sends statements **after** your insurance has processed the cla
 ## Questions?
 
 If anything on your EOB does not match what you expected, please contact our administrative team before paying any amount. Billing errors do occur, and we are happy to help you review.
+
+## Learn More
+
+- [Understanding Health Insurance](/blog/insurance/understanding-health-insurance) — A breakdown of commercial plans, Kentucky Medicaid MCOs, and Medicare and how each type affects your coverage.
+- [Fees & Pricing](/resources/fees) — View our current self-pay rates for evaluations, therapy, and medication management.
+- [Accepted Insurance Plans](/resources/insurances-accepted) — Confirm whether your provider is in our network.
+- [Contact Us](/contact) — Reach our billing team with questions about a specific claim or statement.

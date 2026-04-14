@@ -41,14 +41,14 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
             return (
               <div class="bg-white md:bg-surface-soft border border-border rounded-2xl p-6 flex flex-col items-center justify-center group md:hover:bg-white active:scale-95 active:bg-surface-2 transition-all duration-300">
-                <div class="h-16 flex items-center justify-center mb-4">
+                <div class="h-20 w-full flex items-center justify-center mb-4">
                   {images[imagePath] ? (
                     <Image
                       src={images[imagePath]()}
                       alt={provider.name}
-                      width={200}
-                      height={80}
-                      class="max-h-12 w-auto object-contain grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-500"
+                      widths={[200, 300]}
+                      sizes="(min-width: 768px) 200px, 150px"
+                      class="max-h-20 max-w-full w-auto h-auto object-contain grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-500"
                     />
                   ) : (
                     <span class="text-cta-fg md:text-site-text md:group-hover:text-cta-fg font-bold">
@@ -86,6 +86,32 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
           Verify Your Coverage
         </a>
       </div>
+      </section>
+      </AnimatedSection>
+
+      <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+      <section class="max-w-4xl mx-auto mt-12">
+        <h2 class="font-serif text-2xl font-black text-site-text mb-6">Insurance Resources from Our Blog</h2>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/blog/insurance/understanding-health-insurance" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+            <p class="text-xs font-bold uppercase tracking-widest text-violet-500 mb-2">Insurance</p>
+            <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Health Insurance</h3>
+            <p class="text-xs text-site-sub">Commercial plans, Kentucky Medicaid MCOs, and Medicare explained.</p>
+          </a>
+          <a href="/blog/insurance/aetna-better-health-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+            <p class="text-xs font-bold uppercase tracking-widest text-violet-500 mb-2">Insurance</p>
+            <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Aetna Better Health — Prior Auth & Appeals</h3>
+            <p class="text-xs text-site-sub">PA requirements, documentation, and the appeal process for testing.</p>
+          </a>
+          <a href="/blog/announcements/wellcare-kentucky-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+            <p class="text-xs font-bold uppercase tracking-widest text-rose-500 mb-2">Announcement</p>
+            <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Now In-Network with Wellcare of Kentucky</h3>
+            <p class="text-xs text-site-sub">Therapy and medication management under Wellcare benefits.</p>
+          </a>
+        </div>
+        <div class="mt-4 text-center">
+          <a href="/blog/category/insurance" class="text-cta text-sm font-bold hover:underline">View all insurance posts →</a>
+        </div>
       </section>
       </AnimatedSection>
     </div>

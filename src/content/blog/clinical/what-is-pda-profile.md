@@ -32,3 +32,11 @@ At Twilight Psychology, our evaluators are trained to:
 A formal PDA diagnosis opens access to appropriate educational accommodations, therapeutic strategies, and, where applicable, disability support services.
 
 If you believe you or your child may have a PDA profile, please visit our [PDA Profile](/specialities/pda-profile) page for more information or contact our office to schedule an intake.
+
+## Related Resources
+
+- [Autism Testing](/services/autism-testing) — Learn about our comprehensive autism spectrum evaluations, including ADOS-2 and MIGDAS-2 assessments.
+- [Twilight Psychology Is Now In-Network with Wellcare of Kentucky](/blog/announcements/wellcare-kentucky-in-network) — Recent insurance update that may expand access to evaluations.
+- [Understanding Health Insurance](/blog/insurance/understanding-health-insurance) — Overview of insurance types and how they apply to psychological testing.
+- [New Client Guide](/resources/new-client) — Steps to schedule your first evaluation at Twilight Psychology.
+- [Frequently Asked Questions](/resources/faq) — Common questions about testing timelines, insurance coverage, and our process.

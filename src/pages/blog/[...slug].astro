@@ -33,10 +33,51 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString("en-US", {
 
 // Related posts: same category, excluding current
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
-const relatedPosts = allPosts
+const sameCategoryPosts = allPosts
   .filter((p) => p.id !== post.id && p.data.category === category)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
+
+// If fewer than 3 same-category posts, fill with recent posts from other categories
+const otherCategoryPosts = sameCategoryPosts.length < 3
+  ? allPosts
+      .filter((p) => p.id !== post.id && p.data.category !== category)
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+      .slice(0, 3 - sameCategoryPosts.length)
+  : [];
+
+const relatedPosts = [...sameCategoryPosts, ...otherCategoryPosts];
+
+// Contextual site links based on blog category
+const categoryResourceLinks: Record<string, Array<{ label: string; href: string; desc: string }>> = {
+  billing: [
+    { label: "Fees & Pricing", href: "/resources/fees", desc: "Current self-pay rates" },
+    { label: "Accepted Insurances", href: "/resources/insurances-accepted", desc: "View our insurance panels" },
+    { label: "Contact Us", href: "/contact", desc: "Billing questions" },
+  ],
+  insurance: [
+    { label: "Accepted Insurances", href: "/resources/insurances-accepted", desc: "Full provider list" },
+    { label: "Fees & Pricing", href: "/resources/fees", desc: "Self-pay options" },
+    { label: "New Client Guide", href: "/resources/new-client", desc: "Start the intake process" },
+  ],
+  clinical: [
+    { label: "Our Services", href: "/services", desc: "Evaluations, therapy & more" },
+    { label: "Autism Testing", href: "/services/autism-testing", desc: "Comprehensive evaluations" },
+    { label: "New Client Guide", href: "/resources/new-client", desc: "Schedule an intake" },
+  ],
+  business: [
+    { label: "Our Locations", href: "/about/locations", desc: "Office addresses & hours" },
+    { label: "Contact Us", href: "/contact", desc: "Reach our team" },
+    { label: "New Client Guide", href: "/resources/new-client", desc: "Start the intake process" },
+  ],
+  announcements: [
+    { label: "Our Services", href: "/services", desc: "Explore what we offer" },
+    { label: "Accepted Insurances", href: "/resources/insurances-accepted", desc: "Insurance panels" },
+    { label: "New Client Guide", href: "/resources/new-client", desc: "Get started" },
+  ],
+};
+
+const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.announcements;
 ---
 
 <BlogLayout
@@ -128,7 +169,7 @@ const relatedPosts = allPosts
     <section class="border-t border-border bg-surface-soft py-12 px-4">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-6">
-          Related in {categoryMeta.label}
+          You May Also Be Interested In
         </h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {relatedPosts.map((p) => (
@@ -138,4 +179,24 @@ const relatedPosts = allPosts
       </div>
     </section>
   )}
+
+  <!-- Contextual site resource links -->
+  <section class="border-t border-border py-10 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-6">
+        Resources on Our Main Site
+      </h2>
+      <div class="grid gap-3 sm:grid-cols-3">
+        {resourceLinks.map((link) => (
+          <a
+            href={link.href}
+            class="group flex flex-col p-4 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all"
+          >
+            <span class="text-sm font-bold text-site-text group-hover:text-cta transition-colors">{link.label}</span>
+            <span class="text-xs text-site-sub mt-0.5">{link.desc}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 </BlogLayout>
