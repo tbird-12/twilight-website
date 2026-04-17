@@ -12,21 +12,12 @@ interface ChatbotUIProps {
 }
 
 export default function ChatbotUI({ tree }: ChatbotUIProps) {
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    {
-      type: "bot",
-      text: tree["start"]?.text || "Hi there!",
-      actions: tree["start"]?.options?.map((opt) => ({
-        label: opt.label,
-        type: "button" as const,
-        action: () => handleOptionClick(opt.next, opt.label),
-      })),
-    },
-  ]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const [currentNode, setCurrentNode] = useState("start");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const pendingTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
 
   const scrollToBottom = useCallback(() => {
     if (messagesEndRef.current) {
@@ -37,6 +28,13 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
   useEffect(() => {
     scrollToBottom();
   }, [messages, scrollToBottom]);
+
+  // Clean up pending timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (pendingTimeoutRef.current) clearTimeout(pendingTimeoutRef.current);
+    };
+  }, []);
 
   const handleOptionClick = useCallback(
     (nextNode: string, selectedLabel?: string) => {
@@ -60,7 +58,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
       if (!nextNodeData) return;
 
       // Add bot response with slight delay for better UX
-      setTimeout(() => {
+      pendingTimeoutRef.current = setTimeout(() => {
         const botMessage: ChatMessage = {
           type: "bot",
           text: nextNodeData.text,
@@ -94,6 +92,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
   );
 
   const handleReset = useCallback(() => {
+    if (pendingTimeoutRef.current) clearTimeout(pendingTimeoutRef.current);
     setCurrentNode("start");
     setMessages([
       {
@@ -107,6 +106,11 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
       },
     ]);
   }, [tree, handleOptionClick]);
+
+  // Initialize messages on mount
+  useEffect(() => {
+    handleReset();
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div

@@ -35,7 +35,7 @@ export default function CtaButton({
     primary:
       'bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95',
     secondary:
-      'bg-surface text-site-text font-semibold border border-theme-border rounded-lg hover:bg-surface-hover active:scale-95',
+      'bg-surface text-site-text font-semibold border border-button-border rounded-lg hover:bg-surface-hover active:scale-95',
   };
 
   return (

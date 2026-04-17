@@ -5,7 +5,6 @@
  */
 
 import { useState, useRef, useEffect } from 'preact/hooks';
-import { useScrollLock } from './hooks';
 
 interface NavigationDropdownProps {
   title: string;
@@ -99,12 +98,18 @@ export default function NavigationDropdown({
   moreLink,
 }: NavigationDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState('5rem');
   const wrapperRef = useRef<HTMLDivElement>(null);
+
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
-  const { lock: lockScroll, unlock: unlockScroll } = useScrollLock();
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    // Measure actual header height for accurate dropdown positioning
+    const header = document.querySelector('header');
+    if (header) {
+      setHeaderHeight(`${header.offsetHeight}px`);
+    }
     setIsOpen(true);
   };
 
@@ -117,15 +122,6 @@ export default function NavigationDropdown({
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
-
-  // Handle scroll lock when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      lockScroll();
-    } else {
-      unlockScroll();
-    }
-  }, [isOpen, lockScroll, unlockScroll]);
 
   return (
     <div
@@ -152,15 +148,15 @@ export default function NavigationDropdown({
         <>
           {/* Backdrop blur overlay — blurs content below header and dropdown */}
           <div
-            className="fixed left-0 right-0 bottom-0 z-40 bg-black/40 backdrop-blur-lg nav-backdrop-enter"
-            style={{ top: '5rem' }}
+            className="fixed left-0 right-0 bottom-0 z-40 bg-site-text/30 backdrop-blur-lg nav-backdrop-enter"
+            style={{ top: headerHeight }}
             onClick={() => setIsOpen(false)}
           />
 
           {/* Mega menu panel */}
           <div
             className="fixed left-0 right-0 z-50 theme-surface border-t-4 border-t-cta shadow-2xl nav-mega-enter"
-            style={{ top: '5rem' }}
+            style={{ top: headerHeight }}
             role="menu"
             aria-label={`${title} menu`}
           >

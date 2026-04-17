@@ -43,14 +43,18 @@ function useCountUp(target: number, isVisible: boolean, duration = 1200): number
 function StatItem({ stat, isVisible, index }: { stat: Stat; isVisible: boolean; index: number }) {
   const { num, prefix, suffix } = parseStatValue(stat.value);
   const displayNum = useCountUp(num, isVisible, 1200);
+  const prefersReducedMotion = typeof window !== 'undefined'
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
     <span
       className="flex items-center gap-2"
       style={{
         opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(12px)',
-        transition: `opacity 0.5s cubic-bezier(0.4,0,0.2,1) ${index * 80}ms, transform 0.5s cubic-bezier(0.4,0,0.2,1) ${index * 80}ms`,
+        transform: isVisible ? 'translateY(0)' : (prefersReducedMotion ? 'none' : 'translateY(12px)'),
+        transition: prefersReducedMotion
+          ? 'opacity 0.01s'
+          : `opacity 0.5s cubic-bezier(0.4,0,0.2,1) ${index * 80}ms, transform 0.5s cubic-bezier(0.4,0,0.2,1) ${index * 80}ms`,
       }}
     >
       <span className="text-lg sm:text-xl font-serif font-black text-icon">

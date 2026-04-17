@@ -25,10 +25,14 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   const applyTheme = useCallback((dark: boolean) => {
     const root = document.documentElement;
     const theme = dark ? 'dark' : 'light';
+    // Add transition class for smooth theme change
+    root.classList.add('theme-transition');
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
     root.style.colorScheme = theme;
     localStorage.setItem('theme', theme);
+    // Remove transition class after animation completes
+    setTimeout(() => root.classList.remove('theme-transition'), 400);
   }, []);
 
   // Apply theme when isDark changes

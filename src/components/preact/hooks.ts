@@ -29,12 +29,14 @@ let scrollLockCount = 0;
 export function useScrollLock() {
   const lock = useCallback(() => {
     scrollLockCount++;
+    document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
   }, []);
 
   const unlock = useCallback(() => {
     scrollLockCount = Math.max(0, scrollLockCount - 1);
     if (scrollLockCount === 0) {
+      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
     }
   }, []);

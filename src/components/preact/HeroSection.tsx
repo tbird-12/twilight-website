@@ -22,8 +22,12 @@ export default function HeroSection({
 }: HeroSectionProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
+    setPrefersReducedMotion(
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    );
     // Animate on component mount
     setHasAnimated(true);
   }, []);
@@ -42,7 +46,7 @@ export default function HeroSection({
         <h1
           className="font-serif text-[2.0rem] sm:text-4xl md:text-6xl xl:text-7xl font-black text-site-text mb-2 sm:mb-6 tracking-tighter leading-[1.02]"
           style={{
-            animation: hasAnimated ? `focusBlur ${duration.slow}ms ${easing.smooth} both` : 'none',
+            animation: hasAnimated && !prefersReducedMotion ? `focusBlur ${duration.slow}ms ${easing.smooth} both` : 'none',
             animationDelay: `${titleDelay}ms`,
           }}
         >
@@ -55,7 +59,7 @@ export default function HeroSection({
         <p
           className="max-w-xl mx-auto text-base sm:text-lg md:text-xl text-site-sub mb-6 sm:mb-10 leading-relaxed font-medium"
           style={{
-            animation: hasAnimated
+            animation: hasAnimated && !prefersReducedMotion
               ? `fadeInUp ${duration.slow}ms ${easing.smooth} both`
               : 'none',
             animationDelay: `${subtitleDelay}ms`,
@@ -70,7 +74,7 @@ export default function HeroSection({
         <div
           className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center justify-center"
           style={{
-            animation: hasAnimated
+            animation: hasAnimated && !prefersReducedMotion
               ? `fadeInUp ${duration.slow}ms ${easing.smooth} both`
               : 'none',
             animationDelay: `${ctaDelay}ms`,
@@ -99,7 +103,7 @@ export default function HeroSection({
         <div
           className="mt-6 sm:mt-12 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-4"
           style={{
-            animation: hasAnimated
+            animation: hasAnimated && !prefersReducedMotion
               ? `fadeInUp ${duration.slow}ms ${easing.smooth} both`
               : 'none',
             animationDelay: `${statsDelay}ms`,
