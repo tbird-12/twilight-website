@@ -41,11 +41,11 @@ export const blogCategories: BlogCategoryMeta[] = [
 ];
 
 export const categoryColorMap: Record<BlogCategory, string> = {
-  billing: "bg-sky-200 text-sky-900 dark:bg-sky-900/30 dark:text-sky-300",
-  insurance: "bg-violet-200 text-violet-900 dark:bg-violet-900/30 dark:text-violet-300",
-  clinical: "bg-emerald-200 text-emerald-900 dark:bg-emerald-900/30 dark:text-emerald-300",
-  business: "bg-amber-200 text-amber-900 dark:bg-amber-900/30 dark:text-amber-300",
-  announcements: "bg-rose-200 text-rose-900 dark:bg-rose-900/30 dark:text-rose-300",
+  billing: "bg-sky-300 text-sky-950 dark:bg-sky-900/40 dark:text-sky-200",
+  insurance: "bg-violet-300 text-violet-950 dark:bg-violet-900/40 dark:text-violet-200",
+  clinical: "bg-emerald-300 text-emerald-950 dark:bg-emerald-900/40 dark:text-emerald-200",
+  business: "bg-amber-300 text-amber-950 dark:bg-amber-900/40 dark:text-amber-200",
+  announcements: "bg-rose-300 text-rose-950 dark:bg-rose-900/40 dark:text-rose-200",
 };
 
 export function getCategoryMeta(slug: BlogCategory): BlogCategoryMeta {
