@@ -165,6 +165,13 @@
     @apply outline-none ring-2 ring-offset-2 ring-offset-site-bg;
     ring-color: var(--theme-border-strong);
   }
+
+  /* Absolutely-positioned images (e.g. inside overflow-hidden containers) must not
+     have prose-induced margins, which would push them away from top: 0 */
+  img.absolute {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
 }
 
 @layer components {
