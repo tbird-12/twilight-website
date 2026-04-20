@@ -17,7 +17,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
   const [currentNode, setCurrentNode] = useState("start");
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const pendingTimeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const pendingTimeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const scrollToBottom = useCallback(() => {
     if (messagesEndRef.current) {

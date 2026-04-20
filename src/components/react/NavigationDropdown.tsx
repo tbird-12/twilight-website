@@ -21,7 +21,7 @@ function getItemHref(item: any, baseHref: string): string {
 
 function NestedItem({ item }: { item: any }) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -101,7 +101,7 @@ export default function NavigationDropdown({
   const [headerHeight, setHeaderHeight] = useState('5rem');
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);

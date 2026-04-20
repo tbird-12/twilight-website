@@ -23,21 +23,33 @@ export function useKeyPress(targetKey: string, callback: () => void) {
 /**
  * Reference-counted scroll lock shared across all consumers.
  * Prevents one component from unlocking scroll while another still needs it locked.
+ * Uses position:fixed approach for iOS Safari compatibility.
  */
 let scrollLockCount = 0;
+let savedScrollY = 0;
 
 export function useScrollLock() {
   const lock = useCallback(() => {
+    if (scrollLockCount === 0) {
+      savedScrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${savedScrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.overflow = 'hidden';
+    }
     scrollLockCount++;
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
   }, []);
 
   const unlock = useCallback(() => {
     scrollLockCount = Math.max(0, scrollLockCount - 1);
     if (scrollLockCount === 0) {
-      document.documentElement.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
       document.body.style.overflow = '';
+      window.scrollTo(0, savedScrollY);
     }
   }, []);
 
