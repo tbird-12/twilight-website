@@ -39,7 +39,7 @@ export default function ContactTabs({
               href={referralLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+              className="inline-flex self-start items-center rounded-xl bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
             >
               Submit Referral
             </a>
@@ -64,7 +64,7 @@ export default function ContactTabs({
               href={signInLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+              className="inline-flex self-start items-center rounded-xl bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
             >
               Portal Sign In
             </a>
@@ -89,7 +89,7 @@ export default function ContactTabs({
               href={widgetLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex self-start items-center rounded-md bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
+              className="inline-flex self-start items-center rounded-xl bg-cta px-4 py-2 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors duration-300"
             >
               Open Intake Form
             </a>

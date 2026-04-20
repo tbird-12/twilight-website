@@ -3,12 +3,12 @@
  * Features: Scale effect, glow on hover, smooth transitions
  */
 
-import type { ComponentChildren } from 'preact';
+import type { ReactNode } from 'react';
 import { duration, easing } from './animations';
 
 interface CtaButtonProps {
   href: string;
-  children: ComponentChildren;
+  children: ReactNode;
   variant?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
@@ -33,7 +33,7 @@ export default function CtaButton({
 
   const variantClasses = {
     primary:
-      'bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95',
+      'bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95 animate-[glowPulse_3s_ease-in-out_infinite]',
     secondary:
       'bg-surface text-site-text font-semibold border border-button-border rounded-lg hover:bg-surface-hover active:scale-95',
   };
@@ -46,7 +46,7 @@ export default function CtaButton({
       className={`
         inline-block text-center
         transition-all duration-200
-        hover:scale-102
+        hover:scale-[1.02]
         hover:shadow-xl hover:shadow-cta/30
         focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta
         ${sizeClasses[size]}

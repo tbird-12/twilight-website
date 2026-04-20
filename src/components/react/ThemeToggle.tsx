@@ -24,7 +24,7 @@ export default function ThemeToggle() {
     >
       <svg
         className="h-6 w-6 transition-transform duration-300"
-        fill={ "currentColor"} // Sun needs "none" for stroke, Moon needs "fill"
+        fill={isDark ? "none" : "currentColor"}
         stroke={isDark ? "currentColor" : "none"}
         strokeWidth="2"
         strokeLinecap="round"

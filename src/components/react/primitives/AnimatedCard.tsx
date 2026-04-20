@@ -1,4 +1,4 @@
-import type { ComponentChildren } from 'preact';
+import type { ReactNode } from 'react';
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { keyframes, duration as dur, easing } from '../animations';
@@ -9,14 +9,15 @@ interface AnimatedCardProps {
   animation?: AnimationName;
   delay?: number;
   className?: string;
-  hoverEffect?: 'lift' | 'glow' | 'border' | 'none';
-  children: ComponentChildren;
+  hoverEffect?: 'lift' | 'glow' | 'border' | 'scale' | 'none';
+  children: ReactNode;
 }
 
 const hoverClasses: Record<string, string> = {
-  lift: 'hover:-translate-y-1 hover:shadow-lg transition-all duration-200',
-  glow: 'hover:shadow-lg hover:shadow-cta/10 transition-all duration-200',
-  border: 'hover:border-cta/50 transition-all duration-200',
+  lift: 'hover:-translate-y-1.5 hover:shadow-xl hover:shadow-cta/5 transition-all duration-300',
+  glow: 'hover:shadow-lg hover:shadow-cta/15 transition-all duration-300',
+  border: 'hover:border-cta/50 hover:shadow-md transition-all duration-300',
+  scale: 'hover:scale-[1.02] hover:shadow-lg transition-all duration-300',
   none: '',
 };
 
@@ -38,9 +39,9 @@ export default function AnimatedCard({
           animation: `${keyframes[animation]} ${dur.slow}ms ${easing.smooth} both`,
           animationDelay: `${delay}ms`,
         }
-      : { opacity: '0' };
+      : { opacity: '0', transform: 'translateY(12px)' };
 
-  const cls = `group ${hoverClasses[hoverEffect] || ''} ${className}`;
+  const cls = `group will-change-auto ${hoverClasses[hoverEffect] || ''} ${className}`;
 
   if (href) {
     return (

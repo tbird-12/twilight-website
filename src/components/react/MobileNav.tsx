@@ -3,7 +3,7 @@
  * Shows 4 main headers with collapsible sections, one open at a time
  */
 
-import { useState } from 'preact/hooks';
+import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { useKeyPress } from './hooks';
 import {

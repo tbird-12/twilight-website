@@ -1,16 +1,15 @@
 /**
- * Theme Context for managing light/dark mode across Preact components
+ * Theme Context for managing light/dark mode across React components
  * Syncs with document.documentElement classList (light/dark) and localStorage
  */
 
-import { createContext } from 'preact';
-import { useContext, useEffect, useState, useCallback } from 'preact/hooks';
+import { createContext, useContext, useEffect, useState, useCallback } from 'react';
 import type { ThemeContextType } from './types';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export interface ThemeProviderProps {
-  children: preact.ComponentChildren;
+  children: React.ReactNode;
 }
 
 function getInitialTheme(): boolean {

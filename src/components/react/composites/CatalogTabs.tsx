@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'preact/hooks';
+import { useState, useCallback } from 'react';
 import Tabs, { TabPanel } from '../primitives/Tabs';
 
 interface CatalogConcern {
@@ -36,15 +36,15 @@ export default function CatalogTabs({ categories, className = '' }: CatalogTabsP
               {cat.concerns.map((item, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start gap-3 text-sm text-site-sub leading-relaxed rounded-2xl p-4 border"
+                  className="flex items-start gap-3 text-sm text-site-sub leading-relaxed rounded-2xl p-4 border hover:border-cta/30 hover:shadow-sm transition-all duration-300"
                   style={{
                     backgroundColor: 'var(--color-surface)',
                     borderColor: 'var(--color-border)',
-                    animation: `fadeInUp 300ms ease-out both`,
-                    animationDelay: `${idx * 50}ms`,
+                    animation: `floatUp 400ms ease-out both`,
+                    animationDelay: `${idx * 60}ms`,
                   }}
                 >
-                  <span className="text-cta mt-1">✦</span>
+                  <span className="text-cta mt-0.5 text-xs">✦</span>
                   <span>{item.name}</span>
                 </li>
               ))}

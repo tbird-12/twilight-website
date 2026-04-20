@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "preact/hooks";
+import { useState, useMemo, useCallback } from 'react';
 
 interface Provider {
   id: string;
@@ -95,33 +95,33 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
   }, []);
 
   return (
-    <div class="space-y-6">
+    <div className="space-y-6">
       {/* Search bar */}
       <div>
         <input
           type="text"
           placeholder="Search by name or credential..."
           value={searchTerm}
-          onInput={(e) => setSearchTerm(e.currentTarget.value)}
-          class="w-full px-4 py-2 border border-border rounded-lg bg-surface text-site-text placeholder-site-sub focus:outline-none focus:border-icon transition-colors"
+          onChange={(e) => setSearchTerm(e.currentTarget.value)}
+          className="w-full px-4 py-3 border border-border rounded-xl bg-surface text-site-text placeholder-site-sub focus:outline-none focus:border-cta/40 focus:ring-2 focus:ring-cta/10 transition-all duration-200"
         />
       </div>
 
       {/* Filters */}
-      <div class="grid md:grid-cols-2 gap-6 p-4 rounded-lg bg-surface-soft border border-border">
+      <div className="grid md:grid-cols-2 gap-6 p-5 rounded-2xl bg-surface-soft border border-border">
         {/* Services filter */}
         <div>
-          <h3 class="text-sm font-semibold text-site-text mb-3">Services</h3>
-          <div class="space-y-2">
+          <h3 className="text-sm font-semibold text-site-text mb-3">Services</h3>
+          <div className="space-y-2">
             {uniqueServices.map((service) => (
-              <label key={service} class="flex items-center gap-2 cursor-pointer">
+              <label key={service} className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={selectedServices.includes(service)}
                   onChange={() => handleServiceToggle(service)}
-                  class="w-4 h-4 rounded border-border cursor-pointer"
+                  className="w-4 h-4 rounded border-border cursor-pointer"
                 />
-                <span class="text-sm text-site-sub">{service}</span>
+                <span className="text-sm text-site-sub">{service}</span>
               </label>
             ))}
           </div>
@@ -129,17 +129,17 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
 
         {/* States filter */}
         <div>
-          <h3 class="text-sm font-semibold text-site-text mb-3">States</h3>
-          <div class="space-y-2 max-h-48 overflow-y-auto">
+          <h3 className="text-sm font-semibold text-site-text mb-3">States</h3>
+          <div className="space-y-2 max-h-48 overflow-y-auto">
             {uniqueStates.map((state) => (
-              <label key={state} class="flex items-center gap-2 cursor-pointer">
+              <label key={state} className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={selectedStates.includes(state)}
                   onChange={() => handleStateToggle(state)}
-                  class="w-4 h-4 rounded border-border cursor-pointer"
+                  className="w-4 h-4 rounded border-border cursor-pointer"
                 />
-                <span class="text-sm text-site-sub">{state}</span>
+                <span className="text-sm text-site-sub">{state}</span>
               </label>
             ))}
           </div>
@@ -150,7 +150,7 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
       {(selectedServices.length > 0 || selectedStates.length > 0 || searchTerm) && (
         <button
           onClick={handleReset}
-          class="px-4 py-2 text-sm font-semibold text-site-sub hover:text-site-text border border-border rounded-lg hover:bg-surface-soft transition-all"
+          className="px-4 py-2 text-sm font-semibold text-site-sub hover:text-site-text border border-border rounded-xl hover:bg-surface-soft hover:border-cta/30 transition-all duration-200"
         >
           Reset Filters
         </button>
@@ -158,17 +158,17 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
 
       {/* Results */}
       <div>
-        <p class="text-sm text-site-sub mb-4">
+        <p className="text-sm text-site-sub mb-4">
           {filteredProviders.length} provider{filteredProviders.length !== 1 ? "s" : ""} found
         </p>
 
         {filteredProviders.length === 0 ? (
-          <div class="text-center py-12">
-            <p class="text-site-sub">No providers match your filters.</p>
+          <div className="text-center py-12">
+            <p className="text-site-sub">No providers match your filters.</p>
           </div>
         ) : (
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredProviders.map((provider) => {
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {filteredProviders.map((provider, idx) => {
               const isExpanded = expandedCard === provider.id;
               const nameParts = provider.name.split(" ");
               const initials =
@@ -178,33 +178,34 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
               return (
                 <div
                   key={provider.id}
-                  class="p-4 border border-border rounded-lg bg-surface hover:shadow-md hover:border-border-strong transition-all cursor-pointer"
+                  className="p-4 border border-border rounded-2xl bg-surface hover:shadow-lg hover:-translate-y-0.5 hover:border-cta/20 transition-all duration-300 cursor-pointer"
+                  style={{ animation: `blurIn 400ms ease-out both`, animationDelay: `${idx * 60}ms` }}
                   onClick={() => toggleCard(provider.id)}
                 >
                   {/* Header: initials + name */}
-                  <div class="flex gap-3 mb-3">
-                    <div class="w-12 h-12 rounded-full bg-surface-soft flex items-center justify-center text-sm font-semibold text-site-sub shrink-0">
+                  <div className="flex gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-linear-to-br from-cta/10 to-accent/10 flex items-center justify-center text-sm font-semibold text-cta shrink-0">
                       {initials}
                     </div>
-                    <div class="flex-1">
-                      <h3 class="font-semibold text-site-text">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-site-text">
                         {provider.name}
                       </h3>
-                      <p class="text-xs text-site-sub">{provider.credential}</p>
+                      <p className="text-xs text-site-sub">{provider.credential}</p>
                     </div>
                   </div>
 
                   {/* Wait times */}
-                  <div class="space-y-2 mb-3">
-                    <p class="text-xs font-semibold text-site-sub mb-1">Wait Times</p>
-                    <div class="flex flex-wrap gap-2">
+                  <div className="space-y-2 mb-3">
+                    <p className="text-xs font-semibold text-site-sub mb-1">Wait Times</p>
+                    <div className="flex flex-wrap gap-2">
                       {Object.entries(provider.wait_times).map(([key, value]) => (
-                        <div key={key} class="flex flex-col items-start">
-                          <span class="text-[11px] text-site-sub mb-0.5">
+                        <div key={key} className="flex flex-col items-start">
+                          <span className="text-[11px] text-site-sub mb-0.5">
                             {WAIT_TIME_LABELS[key] || key}
                           </span>
                           <span
-                            class={`text-xs font-semibold px-2.5 py-1 rounded-full ${waitTimeBadgeClass(value)}`}
+                            className={`text-xs font-semibold px-2.5 py-1 rounded-full ${waitTimeBadgeClass(value)}`}
                           >
                             {value}
                           </span>
@@ -214,19 +215,19 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
                   </div>
 
                   {/* States */}
-                  <div class="mb-2">
-                    <p class="text-xs font-semibold text-site-sub mb-1">States</p>
-                    <div class="flex flex-wrap gap-1">
+                  <div className="mb-2">
+                    <p className="text-xs font-semibold text-site-sub mb-1">States</p>
+                    <div className="flex flex-wrap gap-1">
                       {provider.states_served.slice(0, 3).map((state) => (
                         <span
                           key={state}
-                          class="text-xs px-2 py-1 bg-surface-soft text-site-sub rounded"
+                          className="text-xs px-2 py-1 bg-surface-soft text-site-sub rounded"
                         >
                           {state}
                         </span>
                       ))}
                       {provider.states_served.length > 3 && (
-                        <span class="text-xs px-2 py-1 text-site-sub">
+                        <span className="text-xs px-2 py-1 text-site-sub">
                           +{provider.states_served.length - 3}
                         </span>
                       )}
@@ -234,26 +235,31 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
                   </div>
 
                   {/* Expand hint */}
-                  <p class="text-[11px] text-site-sub text-right select-none">
+                  <p className="text-[11px] text-site-sub text-right select-none">
                     {isExpanded ? "▲ hide services" : "▼ show services"}
                   </p>
 
                   {/* Expanded services */}
-                  {isExpanded && (
-                    <div class="mt-3 pt-3 border-t border-border">
-                      <p class="text-xs font-semibold text-site-sub mb-1">Services</p>
-                      <div class="flex flex-wrap gap-1">
+                  <div
+                    className="grid transition-all duration-300 ease-in-out"
+                    style={{ gridTemplateRows: isExpanded ? '1fr' : '0fr' }}
+                  >
+                    <div className="overflow-hidden">
+                    <div className="mt-3 pt-3 border-t border-border">
+                      <p className="text-xs font-semibold text-site-sub mb-1">Services</p>
+                      <div className="flex flex-wrap gap-1">
                         {provider.services_offered.map((service) => (
                           <span
                             key={service}
-                            class="text-xs px-2 py-1 bg-surface-soft text-site-sub rounded"
+                            className="text-xs px-2 py-1 bg-surface-soft text-site-sub rounded"
                           >
                             {service}
                           </span>
                         ))}
                       </div>
                     </div>
-                  )}
+                    </div>
+                  </div>
                 </div>
               );
             })}

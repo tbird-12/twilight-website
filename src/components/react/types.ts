@@ -1,8 +1,8 @@
 /**
- * Shared TypeScript types and interfaces for Preact components
+ * Shared TypeScript types and interfaces for React components
  */
 
-import type { ComponentChildren } from 'preact';
+import type { ReactNode } from 'react';
 
 // Theme types
 export interface ThemeContextType {

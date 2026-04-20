@@ -68,16 +68,12 @@ const education = [
         <div
           class="relative w-72 h-96 theme-surface-2 rounded-[2.5rem] overflow-hidden border theme-border shadow-2xl"
         >
-          <div
-            class="relative w-72 h-96 theme-surface-2 rounded-[2.5rem] overflow-hidden border theme-border shadow-2xl"
-          >
-            <Image
-              src={heather.image}
-              alt={`Professional Portrait of ${heather.name}`}
-              class="object-cover w-full h-full rounded-[2.5rem]"
-              loading={"eager"}
-            />
-          </div>
+          <Image
+            src={heather.image}
+            alt={`Professional Portrait of ${heather.name}`}
+            class="absolute inset-0 w-full h-full object-cover object-top rounded-[2.5rem]"
+            loading={"eager"}
+          />
         </div>
       </div>
 

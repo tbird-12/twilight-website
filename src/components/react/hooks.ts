@@ -1,8 +1,8 @@
 /**
- * Reusable Preact hooks for common patterns
+ * Reusable React hooks for common patterns
  */
 
-import { useEffect, useCallback } from 'preact/hooks';
+import { useEffect, useCallback } from 'react';
 
 /**
  * Hook for handling keyboard events (ESC, Enter, etc.)

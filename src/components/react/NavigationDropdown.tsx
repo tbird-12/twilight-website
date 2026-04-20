@@ -4,7 +4,7 @@
  * Matches the Astro NavigationDropdown behavior
  */
 
-import { useState, useRef, useEffect } from 'preact/hooks';
+import { useState, useRef, useEffect } from 'react';
 
 interface NavigationDropdownProps {
   title: string;
@@ -176,7 +176,7 @@ export default function NavigationDropdown({
                     <a
                       key={`${item.slug}-${idx}`}
                       href={getItemHref(item, baseHref)}
-                      className="block px-4 py-3 rounded-xl hover:bg-cta/10 hover:ring-1 hover:ring-cta/20 transition-all"
+                      className="group/item block px-4 py-3 rounded-xl hover:bg-cta/10 hover:ring-1 hover:ring-cta/20 transition-all"
                     >
                       <div className="text-sm font-semibold text-site-text group-hover/item:text-cta transition-colors">
                         {item.name}

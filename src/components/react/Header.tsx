@@ -3,7 +3,7 @@
  * Sticky at top with smooth animations
  */
 
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 import DesktopNav from './DesktopNav';
 import MobileNav from './MobileNav';
 import { useScrollLock } from './hooks';

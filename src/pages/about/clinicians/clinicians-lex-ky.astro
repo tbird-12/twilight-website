@@ -36,11 +36,11 @@ import { Image } from "astro:assets";
               class="group theme-surface-2 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border theme-border"
           >
             <div class="hidden md:block mb-6">
-                <div class="overflow-hidden rounded-2xl border theme-border theme-surface aspect-3/4">
+                <div class="relative overflow-hidden rounded-2xl border theme-border theme-surface aspect-3/4">
                 <Image
                   src={person.image}
                   alt={`Photo of ${person.name}`}
-                  class="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                  class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>

@@ -1,6 +1,6 @@
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { useRef, useEffect, useState } from 'preact/hooks';
+import { useRef, useEffect, useState } from 'react';
 import { keyframes, duration as dur, easing, createStaggerDelay } from '../animations';
 
 interface Stat {
@@ -53,7 +53,7 @@ function AnimatedValue({ value, isInView, reduced }: { value: string; isInView: 
   }, [isInView, value, reduced]);
 
   return (
-    <span ref={ref} className="text-xl sm:text-2xl font-serif font-black text-icon">
+    <span ref={ref} className="text-xl sm:text-2xl font-serif font-black text-icon tabular-nums">
       {value}
     </span>
   );

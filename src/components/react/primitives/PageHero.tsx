@@ -1,4 +1,4 @@
-import type { ComponentChildren } from 'preact';
+import type { ReactNode } from 'react';
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { keyframes, duration as dur, easing } from '../animations';
@@ -10,7 +10,7 @@ interface PageHeroProps {
   accentWord?: string;
   size?: 'sm' | 'md' | 'lg';
   className?: string;
-  children?: ComponentChildren;
+  children?: ReactNode;
 }
 
 function WordReveal({ text, accentWord, baseDelay = 0 }: { text: string; accentWord?: string; baseDelay?: number }) {
@@ -20,7 +20,7 @@ function WordReveal({ text, accentWord, baseDelay = 0 }: { text: string; accentW
   return (
     <>
       {words.map((word, idx) => {
-        if (/^\s+$/.test(word)) return ' ';
+        if (/^\s+$/.test(word)) return <span key={idx}>{' '}</span>;
         const delay = baseDelay + wordIndex * 40;
         wordIndex++;
         const isAccent = accentWord && word.replace(/[^a-zA-Z]/g, '') === accentWord.replace(/[^a-zA-Z]/g, '');
@@ -69,10 +69,10 @@ export default function PageHero({
       ? {}
       : isInView
         ? {
-            animation: `${keyframes.fadeInUp} ${dur.slow}ms ${easing.smooth} both`,
+            animation: `blurIn 500ms ${easing.smooth} both`,
             animationDelay: `${delay}ms`,
           }
-        : { opacity: '0' };
+        : { opacity: '0', filter: 'blur(8px)' };
 
   return (
     <section
@@ -80,6 +80,16 @@ export default function PageHero({
       className={`relative py-20 md:py-28 px-4 text-center border-b overflow-hidden ${className}`}
       style={{ borderColor: 'var(--color-border)' }}
     >
+      {/* Decorative accent line */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 h-px z-10"
+        style={{
+          background: `linear-gradient(90deg, transparent, rgba(var(--rgb-accent-alt), 0.4), transparent)`,
+          animation: isInView && !reduced ? 'drawLine 1s ease-out 0.3s both' : 'none',
+        }}
+        aria-hidden="true"
+      />
+
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Badge */}
         {badge && (
@@ -118,7 +128,7 @@ export default function PageHero({
         {subtitle && (
           <p
             className="text-lg md:text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed"
-            style={animStyle(200)}
+            style={animStyle(250)}
           >
             {subtitle}
           </p>
@@ -126,7 +136,7 @@ export default function PageHero({
 
         {/* Extra content slot */}
         {children && (
-          <div style={animStyle(300)}>
+          <div style={animStyle(350)}>
             {children}
           </div>
         )}
@@ -134,8 +144,8 @@ export default function PageHero({
 
       {/* Background radial glow */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0"
-        style={{ background: 'radial-gradient(circle at center, rgba(var(--rgb-surface-2), 0.4), transparent 65%)' }}
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 60% 50% at center top, rgba(var(--rgb-accent-alt), 0.06), transparent 70%)' }}
         aria-hidden="true"
       />
     </section>

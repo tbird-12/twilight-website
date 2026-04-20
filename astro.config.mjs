@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from '@tailwindcss/vite';
 
 import icon from "astro-icon";
-import preact from "@astrojs/preact";
+import react from "@astrojs/react";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -20,6 +20,6 @@ export default defineConfig({
       },
     },
   },
-  integrations: [icon(), preact(), sitemap()],
+  integrations: [icon(), react(), sitemap()],
   site: "https://www.twilightpsychology.com",
 });

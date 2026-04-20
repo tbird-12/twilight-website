@@ -6,8 +6,8 @@ import heroBg from "../assets/hero-background.svg?raw";
 import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
 import QualityCareTabsWrapper from "../components/QualityCareTabsWrapper.astro";
-import AnimatedSection from "../components/preact/primitives/AnimatedSection";
-import CountUpStats from "../components/preact/CountUpStats";
+import AnimatedSection from "../components/react/primitives/AnimatedSection";
+import CountUpStats from "../components/react/CountUpStats";
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
 
@@ -256,7 +256,7 @@ const qualityCareItems = [
           </p>
         </header>
 
-        <!-- ── Quality Care interactive panel (Preact) ── -->
+        <!-- ── Quality Care interactive panel (React) ── -->
         <QualityCareTabsWrapper
           items={qualityCareItems.map((item) => ({
             title: item.title,
@@ -1025,4 +1025,4 @@ const qualityCareItems = [
   }
 </style>
 
-<!-- Quality care tabs/accordion now handled by QualityCareTabs Preact component -->
+<!-- Quality care tabs/accordion now handled by QualityCareTabs React component -->

@@ -1,6 +1,5 @@
-import type { ComponentChildren } from 'preact';
-import { useState, useCallback, useRef, useEffect } from 'preact/hooks';
-import { toChildArray } from 'preact';
+import type { ReactNode, KeyboardEvent as ReactKeyboardEvent } from 'react';
+import { useState, useCallback, useRef, useEffect, Children } from 'react';
 
 export interface Tab {
   id: string;
@@ -14,7 +13,7 @@ export interface Tab {
 interface TabsProps {
   tabs: Tab[];
   defaultTab?: string;
-  children: ComponentChildren;
+  children: ReactNode;
   variant?: 'pill' | 'underline' | 'card';
   className?: string;
   scrollOnChange?: boolean;
@@ -22,7 +21,7 @@ interface TabsProps {
 
 interface TabPanelProps {
   id: string;
-  children: ComponentChildren;
+  children: ReactNode;
   className?: string;
 }
 
@@ -34,8 +33,8 @@ export function TabPanel({ id, children, className = '' }: TabPanelProps) {
   );
 }
 
-const activeClasses = 'bg-cta text-cta-fg border-cta shadow-lg shadow-cta/20';
-const inactiveClasses = 'bg-surface-soft text-site-text border-border opacity-80 hover:border-cta/50 hover:text-cta hover:opacity-100';
+const activeClasses = 'bg-cta text-cta-fg border-cta shadow-lg shadow-cta/20 scale-[1.02]';
+const inactiveClasses = 'bg-surface-soft text-site-text border-border opacity-80 hover:border-cta/50 hover:text-cta hover:opacity-100 hover:scale-[1.01]';
 
 export default function Tabs({
   tabs,
@@ -63,7 +62,7 @@ export default function Tabs({
     }
   }, [activeTab, scrollOnChange]);
 
-  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+  const handleKeyDown = useCallback((e: ReactKeyboardEvent) => {
     const nonLinkTabs = tabs.filter(t => !t.isLink);
     const currentIndex = nonLinkTabs.findIndex(t => t.id === activeTab);
     let nextIndex = currentIndex;
@@ -89,7 +88,7 @@ export default function Tabs({
     }
   }, [tabs, activeTab]);
 
-  const childArray = toChildArray(children);
+  const childArray = Children.toArray(children);
 
   return (
     <div className={className}>
@@ -139,6 +138,7 @@ export default function Tabs({
                 key={tab.id}
                 type="button"
                 role="tab"
+                id={`tab-${tab.id}`}
                 data-tab-id={tab.id}
                 aria-selected={isActive}
                 aria-controls={`panel-${tab.id}`}
@@ -188,7 +188,7 @@ export default function Tabs({
                 role="tabpanel"
                 aria-labelledby={`tab-${panelId}`}
                 className={isActive ? '' : 'hidden'}
-                style={isActive ? { animation: 'fadeIn 150ms ease-out' } : undefined}
+                style={isActive ? { animation: 'blurIn 250ms ease-out' } : undefined}
               >
                 {child}
               </div>

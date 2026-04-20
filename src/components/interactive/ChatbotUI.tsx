@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "preact/hooks";
+import { useState, useRef, useEffect, useCallback } from 'react';
 import type { ChatTree } from "../../data/chatbot";
 
 interface ChatMessage {
@@ -115,22 +115,26 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
   return (
     <div
       ref={containerRef}
-      class="flex flex-col h-full"
+      className="flex flex-col h-full"
     >
-      <div class="flex-1 overflow-y-auto p-4 space-y-3">
+      <div className="flex-1 overflow-y-auto p-4 space-y-3">
         {messages.map((msg, idx) => (
-          <div key={idx} class={`flex ${msg.type === "bot" ? "justify-start" : "justify-end"}`}>
+          <div
+            key={idx}
+            className={`flex ${msg.type === "bot" ? "justify-start" : "justify-end"}`}
+            style={{ animation: `blurIn 300ms ease-out both`, animationDelay: `${idx * 80}ms` }}
+          >
             <div
-              class={`max-w-xs px-3 py-2 rounded-lg ${
+              className={`max-w-xs px-4 py-3 ${
                 msg.type === "bot"
-                  ? "bg-surface-soft text-site-text"
-                  : "bg-icon text-surface"
+                  ? "bg-surface-soft text-site-text rounded-2xl rounded-tl-sm"
+                  : "bg-cta text-cta-fg rounded-2xl rounded-tr-sm"
               }`}
             >
-              <p class="text-sm leading-relaxed">{msg.text}</p>
+              <p className="text-sm leading-relaxed">{msg.text}</p>
 
               {msg.actions && msg.actions.length > 0 && (
-                <div class="mt-2 flex flex-col gap-2">
+                <div className="mt-2 flex flex-col gap-2">
                   {msg.actions.map((action, actionIdx) => (
                     action.type === "link" ? (
                       <a
@@ -138,7 +142,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
                         href={action.href}
                         target={action.href?.startsWith("http") ? "_blank" : undefined}
                         rel={action.href?.startsWith("http") ? "noopener noreferrer" : undefined}
-                        class="inline-block px-3 py-1 bg-icon text-surface rounded text-xs font-semibold hover:opacity-90 transition-opacity text-center"
+                        className="inline-block px-3 py-1.5 bg-cta text-cta-fg rounded-xl text-xs font-semibold hover:opacity-90 transition-all duration-200 text-center"
                       >
                         {action.label}
                       </a>
@@ -146,7 +150,7 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
                       <button
                         key={actionIdx}
                         onClick={action.action}
-                        class="px-3 py-1 bg-icon text-surface rounded text-xs font-semibold hover:opacity-90 transition-opacity w-full"
+                        className="px-3 py-1.5 bg-surface border border-cta/30 text-cta rounded-xl text-xs font-semibold hover:bg-cta/5 transition-all duration-200 w-full"
                       >
                         {action.label}
                       </button>
@@ -161,10 +165,10 @@ export default function ChatbotUI({ tree }: ChatbotUIProps) {
       </div>
 
       {currentNode !== "start" && (
-        <div class="border-t border-border px-4 py-3">
+        <div className="border-t border-border px-4 py-3">
           <button
             onClick={handleReset}
-            class="w-full px-3 py-2 text-xs font-semibold text-site-sub hover:text-site-text transition-colors border border-border rounded hover:bg-surface-soft"
+            className="w-full px-3 py-2 text-xs font-semibold text-site-sub hover:text-site-text transition-all duration-200 border border-border rounded-xl hover:bg-surface-soft hover:border-cta/30"
           >
             Start Over
           </button>

@@ -1,5 +1,4 @@
-import type { ComponentChildren } from 'preact';
-import { useState, useEffect, useCallback } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 import Accordion from '../primitives/Accordion';
 
 interface CareItem {
@@ -94,7 +93,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
                   setActiveTab((idx - 1 + items.length) % items.length);
                 }
               }}
-              className={`flex items-center gap-3 w-full px-5 py-3.5 text-left rounded-[0.875rem] border transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-3 w-full px-5 py-3.5 text-left rounded-2xl border transition-all duration-200 cursor-pointer ${
                 isActive
                   ? 'border-l-[3px] border-l-cta'
                   : 'border-transparent hover:translate-x-0.5'
@@ -137,7 +136,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
 
       {/* Right: Content panel */}
       <div
-        className="min-h-[22rem] rounded-[1.25rem] p-10 flex flex-col justify-center border"
+        className="min-h-[22rem] rounded-3xl p-10 flex flex-col justify-center border"
         style={{
           background: 'rgba(var(--rgb-accent), 0.12)',
           borderColor: 'rgba(var(--rgb-accent), 0.12)',
@@ -147,7 +146,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
         {items.map((item, idx) => {
           if (idx !== activeTab) return null;
           return (
-            <div key={idx} style={{ animation: 'fadeIn 200ms ease-out' }}>
+            <div key={idx} style={{ animation: 'blurIn 300ms ease-out' }}>
               <p className="text-[0.6rem] font-extrabold tracking-[0.28em] uppercase mb-5" style={{ color: 'var(--theme-section-label)', opacity: 0.4 }}>
                 {String(idx + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
               </p>

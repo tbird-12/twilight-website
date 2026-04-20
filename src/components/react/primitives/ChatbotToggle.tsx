@@ -1,9 +1,9 @@
-import type { ComponentChildren } from 'preact';
-import { useState, useCallback } from 'preact/hooks';
+import type { ReactNode } from 'react';
+import { useState, useCallback } from 'react';
 import { useKeyPress } from '../hooks';
 
 interface ChatbotToggleProps {
-  children: ComponentChildren;
+  children: ReactNode;
 }
 
 export default function ChatbotToggle({ children }: ChatbotToggleProps) {

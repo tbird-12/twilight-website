@@ -29,29 +29,29 @@ export default function FeeTabs({ categories, className = '' }: FeeTabsProps) {
     <Tabs tabs={tabs} defaultTab={categories[0]?.id} className={className}>
       {categories.map((cat) => (
         <div key={cat.id} id={cat.id}>
-          <article className="bg-surface-soft border rounded-3xl p-8" style={{ borderColor: 'var(--color-border-strong)' }}>
+          <article className="bg-surface-soft border rounded-3xl p-6 sm:p-8" style={{ borderColor: 'var(--color-border-strong)' }}>
             <h3 className="font-serif text-2xl font-black text-site-text mb-6 flex items-center gap-3">
-              <span className="w-2 h-8 bg-cta rounded-full" />
+              <span className="w-1 h-8 bg-cta rounded-full" />
               {cat.title}
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-1">
               {cat.services.map((service, idx) => (
                 <div
                   key={idx}
-                  className="flex justify-between items-start py-3 border-b"
+                  className="flex justify-between items-start py-3.5 border-b group/fee hover:bg-surface-soft/50 rounded-lg px-2 -mx-2 transition-colors duration-200"
                   style={{
                     borderColor: 'var(--color-border)',
-                    animation: `fadeInUp 300ms ease-out both`,
-                    animationDelay: `${idx * 40}ms`,
+                    animation: `blurIn 350ms ease-out both`,
+                    animationDelay: `${idx * 50}ms`,
                   }}
                 >
                   <div>
-                    <p className="text-site-text font-bold">{service.name}</p>
+                    <p className="text-site-text font-bold group-hover/fee:text-cta transition-colors duration-200">{service.name}</p>
                     {service.note && (
-                      <p className="text-xs text-site-sub uppercase tracking-wider">{service.note}</p>
+                      <p className="text-xs text-site-sub uppercase tracking-wider mt-0.5">{service.note}</p>
                     )}
                   </div>
-                  <span className="text-cta font-black shrink-0 ml-4">{service.price}</span>
+                  <span className="text-cta font-black shrink-0 ml-4 tabular-nums">{service.price}</span>
                 </div>
               ))}
             </div>

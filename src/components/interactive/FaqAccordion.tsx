@@ -1,4 +1,4 @@
-import { useState, useCallback } from "preact/hooks";
+import { useState, useCallback } from 'react';
 
 interface FaqItem {
   question: string;
@@ -14,79 +14,81 @@ export default function FaqAccordion({ items, title }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = useCallback((index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  }, [openIndex]);
+    setOpenIndex(prev => prev === index ? null : index);
+  }, []);
 
   return (
-    <div class="space-y-3">
+    <div className="space-y-3">
       {title && (
-        <h3 class="text-sm font-semibold uppercase tracking-widest text-site-sub mb-4">
+        <h3 className="text-sm font-semibold uppercase tracking-widest text-site-sub mb-4">
           {title}
         </h3>
       )}
       
-      <div class="space-y-2">
-        {items.map((item, idx) => (
-          <div
-            key={idx}
-            class="border border-border rounded-lg overflow-hidden transition-all duration-200"
-          >
-            <button
-              onClick={() => toggleItem(idx)}
-              class={`w-full flex items-center justify-between gap-4 p-4 text-left transition-all duration-200 ${
-                openIndex === idx
-                  ? "bg-surface-soft text-icon"
-                  : "bg-surface hover:bg-surface-soft text-site-text"
+      <div className="space-y-2">
+        {items.map((item, idx) => {
+          const isOpen = openIndex === idx;
+          return (
+            <div
+              key={idx}
+              className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                isOpen ? 'border-cta/20 shadow-sm' : 'border-border'
               }`}
+              style={{
+                animation: `blurIn 400ms ease-out both`,
+                animationDelay: `${idx * 40}ms`,
+              }}
             >
-              <span class="font-semibold leading-snug pr-2">
-                {item.question}
-              </span>
-              <svg
-                class={`w-5 h-5 shrink-0 transition-transform duration-200 ${
-                  openIndex === idx ? "rotate-180" : ""
+              <button
+                onClick={() => toggleItem(idx)}
+                aria-expanded={isOpen}
+                aria-controls={`faq-panel-${idx}`}
+                className={`w-full flex items-center justify-between gap-4 p-4 sm:p-5 text-left transition-all duration-300 ${
+                  isOpen
+                    ? "bg-surface-soft text-site-text"
+                    : "bg-surface hover:bg-surface-soft text-site-text"
                 }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </button>
+                <span className="font-semibold leading-snug pr-2">
+                  {item.question}
+                </span>
+                <span className={`w-8 h-8 shrink-0 rounded-full flex items-center justify-center transition-all duration-300 ${
+                  isOpen ? 'bg-cta/10 rotate-180' : 'bg-surface-soft'
+                }`}>
+                  <svg
+                    className="w-4 h-4 text-cta"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </span>
+              </button>
 
-            {openIndex === idx && (
               <div
-                class="border-t border-border bg-site-bg px-4 py-4 animate-in fade-in duration-200"
-                style={{
-                  animation: "fadeIn 200ms ease-out",
-                }}
+                id={`faq-panel-${idx}`}
+                role="region"
+                className="grid transition-all duration-300 ease-in-out"
+                style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
               >
-                <p class="text-sm text-site-sub leading-relaxed">
-                  {item.answer}
-                </p>
+                <div className="overflow-hidden">
+                  <div className="border-t border-border bg-site-bg px-4 sm:px-5 py-4">
+                    <p className="text-sm text-site-sub leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
-
-      <style>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            max-height: 0;
-          }
-          to {
-            opacity: 1;
-            max-height: 500px;
-          }
-        }
-      `}</style>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'preact/hooks';
+import { useRef, useState, useEffect } from 'react';
 
 export function useInView(options?: IntersectionObserverInit & { once?: boolean }) {
   const ref = useRef<HTMLElement>(null);

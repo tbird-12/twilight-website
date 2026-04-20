@@ -1,5 +1,5 @@
-import type { ComponentChildren } from 'preact';
-import { createElement } from 'preact';
+import type { ReactNode } from 'react';
+import { createElement } from 'react';
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { keyframes, duration, easing } from '../animations';
@@ -11,7 +11,7 @@ interface AnimatedSectionProps {
   duration?: number;
   className?: string;
   as?: string;
-  children: ComponentChildren;
+  children: ReactNode;
 }
 
 export default function AnimatedSection({
@@ -32,11 +32,11 @@ export default function AnimatedSection({
           animation: `${keyframes[animation]} ${dur}ms ${easing.smooth} both`,
           animationDelay: `${delay}ms`,
         }
-      : { opacity: '0' };
+      : { opacity: '0', transform: 'translateY(12px)' };
 
   return createElement(
     as,
-    { ref, className, style },
+    { ref, className: `will-change-auto ${className}`, style },
     children
   );
 }

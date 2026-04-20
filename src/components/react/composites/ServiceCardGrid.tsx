@@ -1,4 +1,3 @@
-import AnimatedCard from '../primitives/AnimatedCard';
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { createStaggerDelay, keyframes, duration as dur, easing } from '../animations';
@@ -22,24 +21,29 @@ export default function ServiceCardGrid({ items, basePath, className = '' }: Ser
   return (
     <div ref={ref as any} className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 ${className}`}>
       {items.map((item, idx) => {
-        const delay = reduced ? 0 : createStaggerDelay(idx, 80);
+        const delay = reduced ? 0 : createStaggerDelay(idx, 100);
         const style = reduced
           ? {}
           : isInView
             ? {
-                animation: `${keyframes.fadeInUp} ${dur.slow}ms ${easing.smooth} both`,
+                animation: `floatUp ${dur.slower}ms ${easing.smooth} both`,
                 animationDelay: `${delay}ms`,
               }
-            : { opacity: '0' };
+            : { opacity: '0', transform: 'translateY(24px)' };
 
         return (
           <a
             key={item.slug}
             href={`${basePath}/${item.slug}`}
-            className="group bg-surface-soft border rounded-2xl p-6 hover:border-cta/50 hover:shadow-lg hover:shadow-cta/10 transition-all duration-200"
+            className="group relative bg-surface-soft border rounded-2xl p-6 hover:border-cta/40 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-cta/8 transition-all duration-300 overflow-hidden"
             style={{ borderColor: 'var(--color-border)', ...style }}
           >
-            <h3 className="font-serif text-lg font-bold text-site-text mb-2 group-hover:text-cta transition-colors">
+            {/* Subtle top accent bar */}
+            <div
+              className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-cta/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              aria-hidden="true"
+            />
+            <h3 className="font-serif text-lg font-bold text-site-text mb-2 group-hover:text-cta transition-colors duration-200">
               {item.name}
             </h3>
             {item.description && (
@@ -47,7 +51,7 @@ export default function ServiceCardGrid({ items, basePath, className = '' }: Ser
             )}
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-cta/70 group-hover:text-cta transition-colors">
               Learn more
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </span>

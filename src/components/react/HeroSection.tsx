@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'preact/hooks';
-import type { ComponentChildren } from 'preact';
+import { useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
 import { duration, easing } from './animations';
 import CtaButton from './CtaButton';
 
 interface HeroSectionProps {
-  title: ComponentChildren;
-  subtitle?: ComponentChildren;
+  title: ReactNode;
+  subtitle?: ReactNode;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string; target?: string; rel?: string };
   stats?: Array<{ label: string; value: string }>;
