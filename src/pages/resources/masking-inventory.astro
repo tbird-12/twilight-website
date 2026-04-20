@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import MaskingInventoryWrapper from "../../components/interactive/MaskingInventoryWrapper.astro";
+import Schema from "../../components/Schema.astro";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is masking in neurodivergent adults?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Masking is when a neurodivergent person (with ADHD, autism, or related conditions) consciously or unconsciously suppresses their natural traits to appear neurotypical. It often involves rehearsing conversations, copying others' behavior, and hiding emotional reactions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if I am masking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common signs include feeling exhausted after social interactions, rehearsing what to say before conversations, feeling like your 'public self' is very different from who you are alone, and constantly monitoring how others react to you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this masking quiz a diagnostic tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This inventory is a free self-reflection tool based on published CAT-Q research. It is not a clinical assessment and does not constitute a diagnosis. If your score is high, consider speaking with a licensed psychologist."
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Am I Masking? Free Neurodivergent Masking Quiz | Twilight Psychology"
+  description="Take our free 3-minute masking quiz. Based on published CAT-Q research — find out how much energy you spend appearing neurotypical and what it might mean for ADHD or autism."
+>
+  <Schema schema={faqSchema} />
+
+  <section class="bg-site-bg min-h-screen py-16 px-4">
+    <div class="max-w-xl mx-auto">
+
+      <!-- Header -->
+      <header class="text-center mb-8">
+        <p class="text-xs font-black uppercase tracking-widest text-site-sub mb-3">
+          Free · 3 Minutes · Private
+        </p>
+        <h1 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-3 leading-tight">
+          Are You <span class="text-cta">Masking?</span>
+        </h1>
+        <p class="text-site-sub text-base leading-relaxed max-w-sm mx-auto">
+          15 questions. Instant results. Find out how much energy you spend
+          appearing "normal" — and what it might mean.
+        </p>
+      </header>
+
+      <!-- Interactive component -->
+      <MaskingInventoryWrapper />
+
+      <!-- SEO content below the fold -->
+      <div class="mt-16 pt-8 border-t border-border space-y-8 text-sm text-site-sub leading-relaxed">
+
+        <div>
+          <h2 class="text-site-text font-semibold text-base mb-2">What is masking?</h2>
+          <p>
+            Masking — also called camouflaging — is when a neurodivergent person suppresses or hides
+            their natural traits to appear neurotypical. It's common in adults with <a href="/services/adhd-testing" class="text-cta hover:underline">ADHD</a> and
+            <a href="/services/autism-testing" class="text-cta hover:underline">autism</a>, particularly
+            those who were late-diagnosed or high-masking.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-site-text font-semibold text-base mb-2">What does this quiz measure?</h2>
+          <p>
+            This tool is based on the published
+            <strong class="text-site-text">Camouflaging Autistic Traits Questionnaire (CAT-Q)</strong>
+            — Hull et al. (2019), <em>Autism, 23</em>(1), 45–57. It measures three domains:
+            assimilation (fitting in), compensation (coping strategies), and camouflage (hiding yourself).
+            Nothing is stored or transmitted. Your answers exist only in your browser.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-site-text font-semibold text-base mb-2">What if my score is high?</h2>
+          <p>
+            High masking scores are common in adults who were never evaluated for ADHD or autism —
+            especially women and anyone who "always seemed fine." If your result resonates,
+            a <a href="/services/psychological-evaluations" class="text-cta hover:underline">psychological evaluation</a>
+            can give you real answers. Twilight Psychology offers evaluations with some of the
+            <a href="/resources/waitlist-times" class="text-cta hover:underline">shortest waitlists in Kentucky</a>.
+          </p>
+        </div>
+
+        <p class="text-xs">
+          This tool is for educational and self-reflection purposes only. It is not a clinical assessment,
+          diagnosis, or substitute for professional advice.
+          <a href="/resources/new-client" class="text-cta hover:underline ml-1">Connect with a clinician →</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+</Layout>

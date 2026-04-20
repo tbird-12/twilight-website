@@ -10,84 +10,85 @@ import { Image } from "astro:assets";
 >
   <div class="bg-site-bg min-h-screen pb-24">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none prose-custom
+      <div
+        class="prose prose-lg max-w-none prose-custom
                   prose-p:text-site-text
                   prose-headings:text-site-text
                   prose-strong:text-site-text
                   prose-li:text-site-text
-                  mb-12">
-  <section
-    class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
-  >
-    <h1
-      class="font-serif text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter text-center leading-none"
-    >
-      Meet Our <span
-        class="text-cta"
-        >Clinicians</span
+                  mb-12"
       >
-    </h1>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        providers.map((person) => (
-          <a
-            href={`/about/clinicians/${person.slug}`}
-              class="group theme-surface-2 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border theme-border"
+        <section
+          class="relative pt-32 pb-24 px-4 border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent"
+        >
+          <h1
+            class="font-serif text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter text-center leading-none"
           >
-            <div class="hidden md:block mb-6">
-                <div class="relative overflow-hidden rounded-2xl border theme-border theme-surface aspect-3/4">
-                <Image
-                  src={person.image}
-                  alt={`Photo of ${person.name}`}
-                  class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+            Meet Our <span class="text-cta">Clinicians</span>
+          </h1>
 
-            <h3 class="font-serif text-xl font-bold text-site-text mb-2 group-hover:text-cta transition-colors">
-              {person.name}
-            </h3>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+              providers.map((person) => (
+                <a
+                  href={`/about/clinicians/${person.slug}`}
+                  class="group theme-surface-2 rounded-2xl p-8 hover:shadow-2xl transition-all hover:-translate-y-2 border theme-border"
+                >
+                  <div class="hidden md:block mb-6">
+                    <div class="relative overflow-hidden rounded-2xl border theme-border theme-surface aspect-3/4">
+                      <Image
+                        src={person.image}
+                        alt={`Photo of ${person.name}`}
+                        class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
 
-            <p class="text-sm font-semibold text-cta uppercase tracking-wide mb-4">
-              {person.spec}
-            </p>
+                  <h3 class="font-serif text-xl font-bold text-site-text mb-2 group-hover:text-cta transition-colors">
+                    {person.name}
+                  </h3>
 
-            <span class="text-cta group-hover:text-cta font-bold inline-flex items-center gap-2">
-              View Profile
-              <svg
-                class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M9 5l7 7-7 7" stroke-width="2" />
-              </svg>
-            </span>
-          </a>
-        ))
-      }
-    </div>
+                  <p class="text-sm font-semibold text-cta uppercase tracking-wide mb-4">
+                    {person.spec}
+                  </p>
 
-    <div class="max-w-7xl mx-auto mb-10 py-8 text-center flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a
-        href="/about/staff/samantha-rodarte"
-        class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta/90"
-      >
-        <span aria-hidden="true">←</span>
-        Meet our staff
-      </a>
-      <span class="hidden sm:inline text-cta/50">|</span>
-      <a
-        href="/about/careers"
-        class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta/90"
-      >
-        Join our team
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
+                  <span class="text-cta group-hover:text-cta font-bold inline-flex items-center gap-2">
+                    View Profile
+                    <svg
+                      class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M9 5l7 7-7 7" stroke-width="2" />
+                    </svg>
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+
+          <div
+            class="max-w-7xl mx-auto mb-10 py-8 text-center flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <a
+              href="/about/staff/samantha-rodarte"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta/90"
+            >
+              <span aria-hidden="true">←</span>
+              Meet our staff
+            </a>
+            <span class="hidden sm:inline text-cta/50">|</span>
+            <a
+              href="/about/careers"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta/90"
+            >
+              Join our team
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   </div>

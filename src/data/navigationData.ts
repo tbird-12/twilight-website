@@ -51,6 +51,11 @@ export const clientResourcesMenuItems = [
     desc: "Billing Insurance and Networks",
   },
   { name: "New Client", slug: "new-client", desc: "Getting started guide" },
+  {
+    name: "Masking Inventory",
+    slug: "masking-inventory",
+    desc: "Free self-reflection tool",
+  },
   { name: "Blog", slug: "/blog", desc: "Clinical updates and practice news" },
 ];
 
