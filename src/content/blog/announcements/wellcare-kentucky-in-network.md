@@ -19,7 +19,7 @@ If you or a family member are enrolled in Wellcare of Kentucky, you can now sche
 - **Therapy** — Individual therapy sessions with our licensed clinicians.
 - **Medication Management** — Psychiatric medication evaluation and ongoing management for conditions such as ADHD, depression, anxiety, and related concerns.
 
-> **Note:** Psychological testing (e.g., autism and ADHD evaluations) through Wellcare may require prior authorization. Our intake team will verify your benefits and submit any necessary prior authorization requests before scheduling.
+> **Note:** We are not accepting new clients for Psychological testing (e.g., autism and ADHD evaluations) who have Wellcare of KY Medicaid due to the long waitlists. We are able to provide referrals to other agencies who have shorter waitlists and provide the necessary medical services sooner.
 
 ## How to Get Started
 

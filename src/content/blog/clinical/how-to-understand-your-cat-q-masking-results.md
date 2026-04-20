@@ -1,5 +1,5 @@
 ---
-title: "How to understand your CAT-Q masking results"
+title: "How to Understand your CAT-Q Masking Results"
 description: "A practical guide to Twilight Psychology's CAT-Q-based masking tool, what higher or lower patterns may suggest, and why it supports self-reflection only"
 pubDate: 2026-04-20
 category: clinical
@@ -8,7 +8,7 @@ tags: ["cat-q", "masking", "autism", "adhd", "self-reflection"]
 draft: false
 ---
 
-Twilight Psychology recently added a CAT-Q-based masking feature to help people reflect on how much energy they spend adapting, rehearsing, monitoring, or hiding parts of themselves in social situations. It is designed to be private, accessible, and practical. It is also important to be clear about what it is not: this tool is not medical advice, not a diagnosis, and not a substitute for a full psychological evaluation.
+Twilight Psychology recently added a CAT-Q-based (Hull, 2019) masking feature to help people reflect on how much energy they spend adapting, rehearsing, monitoring, or hiding parts of themselves in social situations. It is designed to be private, accessible, and practical. It is also important to be clear about what it is not: this tool is not medical advice, not a diagnosis, and not a substitute for a full psychological evaluation.
 
 ## Why we added a CAT-Q-based masking feature
 
@@ -20,7 +20,7 @@ If you have not taken it yet, you can explore the [masking inventory](/resources
 
 ## What the CAT-Q is actually measuring
 
-CAT-Q stands for Camouflaging Autistic Traits Questionnaire. In plain language, it looks at the strategies people use to get through social situations when being fully natural does not feel easy, safe, or effective.
+CAT-Q stands for Camouflaging Autistic Traits Questionnaire, developed by Hull et al. (2019). In plain language, it looks at the strategies people use to get through social situations when being fully natural does not feel easy, safe, or effective.
 
 That usually includes three broad kinds of patterns:
 
@@ -29,6 +29,12 @@ That usually includes three broad kinds of patterns:
 - Assimilation: trying to fit in, appear typical, or avoid standing out
 
 That matters because a masking score is not simply telling you whether you are shy, outgoing, awkward, or confident. It is describing how much effort may be going into appearing socially smooth or acceptable.
+
+## How this version differs from the original CAT-Q
+
+The original CAT-Q was developed as an adult self-report measure and uses a seven-point response scale. Twilight Psychology's masking feature is still intended for adults, but it adapts the response options into a simpler three-choice system so the tool is faster to complete and easier to use in a self-reflection context.
+
+That means the results you see here are adjusted from the original seven-point CAT-Q format. They are best understood as a directional reflection of masking patterns rather than a one-to-one substitute for formal CAT-Q scoring in a clinical setting. The value of the tool is in helping adults notice effort, strain, and recurring social strategies, not in treating the online result as a stand-alone clinical conclusion.
 
 ## How to think about your results without fixating on a number
 

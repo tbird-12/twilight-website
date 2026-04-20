@@ -51,6 +51,8 @@ const OPTIONS = [
   { value: 5, label: "Very me", emoji: "💯" },
 ];
 
+const RESULTS_GUIDE_HREF = "/blog/clinical/how-to-understand-your-cat-q-masking-results";
+
 interface ScoreBand {
   label: string;
   emoji: string;
@@ -82,7 +84,7 @@ const SCORE_BANDS: ScoreBand[] = [
     tagline: "You work harder than most people realise.",
     narrative: "You've built real skill at adapting and appearing 'fine' — but it costs you. Moderate masking often creates a low-grade exhaustion that's hard to name. Many late-diagnosed adults score in this range.",
     ctaText: "Learn What This Means →",
-    ctaHref: "/blog",
+    ctaHref: RESULTS_GUIDE_HREF,
     accentClass: "text-amber-700 dark:text-amber-300",
     ringClass: "ring-amber-400/50 dark:ring-amber-500/70",
     bgClass: "bg-amber-50/70 dark:bg-amber-950/50",
@@ -273,7 +275,10 @@ export default function MaskingInventory() {
             ))}
           </div>
           <p className="mt-4 text-[11px] text-site-sub leading-relaxed">
-            All 25 items from the CAT-Q (Hull et al., 2019), <em>Autism, 23</em>(1). Reverse-scored items rephrased for positive keying. Not a diagnostic instrument.
+            All 25 items from the CAT-Q (Hull et al., 2019), <em>Autism, 23</em>(1). This adult self-reflection version adapts the original 7-point response scale into 3 choices, and reverse-scored items were rephrased for positive keying. Not a diagnostic instrument. {" "}
+            <a href={RESULTS_GUIDE_HREF} className="text-cta hover:underline">
+              Read how to understand these results.
+            </a>
           </p>
         </div>
 
