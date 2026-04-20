@@ -40,7 +40,6 @@ export default function Tabs({
   tabs,
   defaultTab,
   children,
-  variant = 'pill',
   className = '',
   scrollOnChange = false,
 }: TabsProps) {

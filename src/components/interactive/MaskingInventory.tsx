@@ -10,25 +10,38 @@ interface Question {
   id: number;
   text: string;
   emoji: string;
-  domain: "assimilation" | "compensation" | "camouflage";
+  domain: "assimilation" | "compensation" | "masking";
 }
 
+// Official 25-item CAT-Q (Hull et al., 2019). Items originally reverse-scored
+// (3, 12, 19, 22, 24) have been rephrased so that all items are positively keyed
+// (higher agreement = more camouflaging) to keep the 3-option scale intuitive.
 const QUESTIONS: Question[] = [
-  { id: 1, emoji: "🎭", text: "I adjust how I act depending on who I'm around.", domain: "assimilation" },
-  { id: 2, emoji: "🪞", text: "I mirror other people's speech patterns or gestures without thinking.", domain: "assimilation" },
-  { id: 3, emoji: "👀", text: "I study how people interact so I can do it 'correctly'.", domain: "assimilation" },
-  { id: 4, emoji: "😶", text: "I've learned to hide my anxiety in social situations.", domain: "assimilation" },
-  { id: 5, emoji: "📡", text: "I constantly monitor people's reactions to check if I've said something wrong.", domain: "assimilation" },
-  { id: 6, emoji: "📝", text: "I rehearse conversation starters or responses before social events.", domain: "compensation" },
-  { id: 7, emoji: "🔁", text: "I replay past interactions and analyse what I did wrong.", domain: "compensation" },
-  { id: 8, emoji: "🤔", text: "I ask myself what a 'normal' person would do before reacting.", domain: "compensation" },
-  { id: 9, emoji: "🔋", text: "Social situations drain my energy significantly.", domain: "compensation" },
-  { id: 10, emoji: "🧩", text: "I work hard to seem more like the people around me.", domain: "compensation" },
-  { id: 11, emoji: "🔒", text: "I actively hide my struggles from most people.", domain: "camouflage" },
-  { id: 12, emoji: "🤐", text: "I hold back talking about my interests so I don't seem 'too much'.", domain: "camouflage" },
-  { id: 13, emoji: "🌊", text: "After being social, I need significant time alone to recover.", domain: "camouflage" },
-  { id: 14, emoji: "🎪", text: "My 'public self' feels very different from who I am alone.", domain: "camouflage" },
-  { id: 15, emoji: "💤", text: "I feel exhausted in a way others don't seem to understand.", domain: "camouflage" },
+  { id: 1,  emoji: "🪞", text: "When I'm with someone, I deliberately copy their body language or facial expressions.", domain: "compensation" },
+  { id: 2,  emoji: "😌", text: "I monitor my body language or expressions so that I appear relaxed around others.", domain: "masking" },
+  { id: 3,  emoji: "🎭", text: "I feel the need to put on an act to get through social situations.", domain: "assimilation" },
+  { id: 4,  emoji: "📋", text: "I have developed a script or routine to follow in social situations.", domain: "compensation" },
+  { id: 5,  emoji: "💬", text: "I repeat phrases I've heard others say in the same way I first heard them.", domain: "compensation" },
+  { id: 6,  emoji: "🤔", text: "I adjust my facial expressions so that I appear interested in the person I'm talking to.", domain: "masking" },
+  { id: 7,  emoji: "🎪", text: "In social situations, I feel like I'm 'performing' rather than being myself.", domain: "assimilation" },
+  { id: 8,  emoji: "👀", text: "I use behaviours I've learned from watching other people interact.", domain: "compensation" },
+  { id: 9,  emoji: "📡", text: "I always think about the impression I make on other people.", domain: "masking" },
+  { id: 10, emoji: "🤝", text: "I need the support of other people in order to socialise.", domain: "assimilation" },
+  { id: 11, emoji: "🎬", text: "I practise my facial expressions and body language to make sure they look natural.", domain: "compensation" },
+  { id: 12, emoji: "👁️", text: "I force myself to make eye contact with others even when it feels uncomfortable.", domain: "masking" },
+  { id: 13, emoji: "💪", text: "I have to force myself to interact with people when I am in social situations.", domain: "assimilation" },
+  { id: 14, emoji: "📖", text: "I have tried to improve my understanding of social skills by watching other people.", domain: "compensation" },
+  { id: 15, emoji: "🔍", text: "I track my body language or expressions so that I appear interested in social situations.", domain: "masking" },
+  { id: 16, emoji: "🚪", text: "When in social situations, I try to find ways to avoid interacting with others.", domain: "assimilation" },
+  { id: 17, emoji: "📚", text: "I have researched the rules of social interactions to improve my own social skills.", domain: "compensation" },
+  { id: 18, emoji: "🪟", text: "I am always aware of the impression I make on other people.", domain: "masking" },
+  { id: 19, emoji: "🔒", text: "I find it difficult to be myself when I am with other people.", domain: "assimilation" },
+  { id: 20, emoji: "📺", text: "I watch television or films to learn how people use their bodies and faces to interact.", domain: "compensation" },
+  { id: 21, emoji: "😶", text: "I adjust my expressions or posture so that I appear relaxed in social situations.", domain: "masking" },
+  { id: 22, emoji: "🌊", text: "Conversations with other people feel effortful rather than natural to me.", domain: "assimilation" },
+  { id: 23, emoji: "🎞️", text: "I have spent time learning social skills from TV shows or films and apply them to my interactions.", domain: "compensation" },
+  { id: 24, emoji: "🧐", text: "I constantly monitor what my face and body are doing during conversations.", domain: "masking" },
+  { id: 25, emoji: "🌀", text: "In social situations, I feel like I am pretending to be 'normal'.", domain: "assimilation" },
 ];
 
 // 3 options only — low friction, fast to complete
@@ -50,7 +63,7 @@ interface ScoreBand {
   bgClass: string;
 }
 
-// Score range: 15–75
+// Score range: 25 (all "Not me") – 125 (all "Very me") across 25 items.
 const SCORE_BANDS: ScoreBand[] = [
   {
     label: "Low Masking",
@@ -59,9 +72,9 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "You invest relatively little energy adapting to fit in. That can mean a supportive environment — or that masking simply hasn't been your dominant strategy. If something still feels off, a professional conversation can help clarify it.",
     ctaText: "Explore Our Services",
     ctaHref: "/services",
-    accentClass: "text-emerald-600 dark:text-emerald-400",
-    ringClass: "ring-emerald-400/40",
-    bgClass: "bg-emerald-50/60 dark:bg-emerald-950/20",
+    accentClass: "text-emerald-700 dark:text-emerald-300",
+    ringClass: "ring-emerald-400/50 dark:ring-emerald-500/70",
+    bgClass: "bg-emerald-50/70 dark:bg-emerald-950/50",
   },
   {
     label: "Moderate Masking",
@@ -70,9 +83,9 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "You've built real skill at adapting and appearing 'fine' — but it costs you. Moderate masking often creates a low-grade exhaustion that's hard to name. Many late-diagnosed adults score in this range.",
     ctaText: "Learn What This Means →",
     ctaHref: "/blog",
-    accentClass: "text-amber-600 dark:text-amber-400",
-    ringClass: "ring-amber-400/40",
-    bgClass: "bg-amber-50/60 dark:bg-amber-950/20",
+    accentClass: "text-amber-700 dark:text-amber-300",
+    ringClass: "ring-amber-400/50 dark:ring-amber-500/70",
+    bgClass: "bg-amber-50/70 dark:bg-amber-950/50",
   },
   {
     label: "High Masking",
@@ -81,9 +94,9 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "Your answers point to a significant, sustained effort to manage how you come across. For many people at this level, masking has become automatic — it feels like personality rather than performance. This pattern often precedes a late-in-life ADHD or autism diagnosis.",
     ctaText: "See Our Evaluations →",
     ctaHref: "/services/psychological-evaluations",
-    accentClass: "text-orange-600 dark:text-orange-400",
-    ringClass: "ring-orange-400/40",
-    bgClass: "bg-orange-50/60 dark:bg-orange-950/20",
+    accentClass: "text-orange-700 dark:text-orange-300",
+    ringClass: "ring-orange-400/50 dark:ring-orange-500/70",
+    bgClass: "bg-orange-50/70 dark:bg-orange-950/50",
   },
   {
     label: "Very High Masking",
@@ -92,23 +105,24 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "Scores here often reflect what clinicians call autistic burnout: a deep exhaustion, reduced tolerance, and retreat from things that used to feel manageable. If you feel like you've been performing a version of yourself your whole life, that experience is real and worth exploring.",
     ctaText: "Start Here →",
     ctaHref: "/resources/new-client",
-    accentClass: "text-rose-600 dark:text-rose-400",
-    ringClass: "ring-rose-400/40",
-    bgClass: "bg-rose-50/60 dark:bg-rose-950/20",
+    accentClass: "text-rose-700 dark:text-rose-300",
+    ringClass: "ring-rose-400/50 dark:ring-rose-500/70",
+    bgClass: "bg-rose-50/70 dark:bg-rose-950/50",
   },
 ];
 
+// Score range: 25 (all "Not me") – 125 (all "Very me") across 25 items.
 function getBand(score: number): ScoreBand {
-  if (score <= 30) return SCORE_BANDS[0];
-  if (score <= 45) return SCORE_BANDS[1];
-  if (score <= 58) return SCORE_BANDS[2];
+  if (score <= 50) return SCORE_BANDS[0];
+  if (score <= 75) return SCORE_BANDS[1];
+  if (score <= 100) return SCORE_BANDS[2];
   return SCORE_BANDS[3];
 }
 
 const DOMAIN_META = {
   assimilation: { label: "Fitting In", icon: "🎭" },
   compensation: { label: "Coping Strategies", icon: "🧠" },
-  camouflage: { label: "Hiding Self", icon: "🔒" },
+  masking: { label: "Hiding Self", icon: "🔒" },
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -254,12 +268,12 @@ export default function MaskingInventory() {
         <div className="bg-surface border border-border rounded-2xl p-5 md:p-6">
           <p className="text-xs font-black uppercase tracking-widest text-site-sub mb-4">Your Score Breakdown</p>
           <div className="space-y-4">
-            {(["assimilation", "compensation", "camouflage"] as const).map((d) => (
+            {(["assimilation", "compensation", "masking"] as const).map((d) => (
               <DomainBar key={d} domain={d} score={domainScore(d)} maxScore={domainMax(d)} />
             ))}
           </div>
           <p className="mt-4 text-[11px] text-site-sub leading-relaxed">
-            Based on CAT-Q research by Hull et al. (2019), <em>Autism, 23</em>(1). Not a diagnostic instrument.
+            All 25 items from the CAT-Q (Hull et al., 2019), <em>Autism, 23</em>(1). Reverse-scored items rephrased for positive keying. Not a diagnostic instrument.
           </p>
         </div>
 

@@ -6,7 +6,6 @@ import heroBg from "../assets/hero-background.svg?raw";
 import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
 import QualityCareTabsWrapper from "../components/QualityCareTabsWrapper.astro";
-import AnimatedSection from "../components/react/primitives/AnimatedSection";
 import CountUpStats from "../components/react/CountUpStats";
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
@@ -198,7 +197,7 @@ const qualityCareItems = [
 
         <div class="w-full grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {
-            services.map((service, idx) => (
+            services.map((service, _) => (
               <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 overflow-hidden min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10">
                 <div class="relative z-10 flex h-full flex-col">
                   <div class="mb-3 flex items-center gap-2">
