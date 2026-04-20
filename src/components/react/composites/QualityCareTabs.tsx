@@ -136,7 +136,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
 
       {/* Right: Content panel */}
       <div
-        className="min-h-[22rem] rounded-3xl p-10 flex flex-col justify-center border"
+        className="min-h-88 rounded-3xl p-10 flex flex-col justify-center border"
         style={{
           background: 'rgba(var(--rgb-accent), 0.12)',
           borderColor: 'rgba(var(--rgb-accent), 0.12)',
