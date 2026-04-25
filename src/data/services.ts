@@ -16,4 +16,5 @@ export const services = [
   { name: 'Medication Management', slug: 'medication-management', desc: 'Individualized psychiatric medication management' },
   { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'Evidence-based ADHD assessments and diagnostics' },
   { name: 'Personality Testing', slug: 'personality-profiles', desc: 'In-depth personality and differential diagnostic assessments' },
+  { name: 'Medical Marijuana Consultations', slug: 'medical-marijuana-consultations', desc: 'Clinical evaluations and renewals for medical marijuana treatment in Kentucky' },
 ];
