@@ -2,7 +2,7 @@
 title: "Medical Marijuana Consultations and Renewals Are Now Available"
 description: "Twilight Psychology now offers medical marijuana consultations and renewals for eligible Kentucky residents. Learn about our immediate availability, clinical requirements, and how to get started."
 pubDate: 2026-04-25
-category: announcements
+category: clinical
 author: "Twilight Psychology Team"
 tags: ["medical marijuana", "consultations", "medication", "kentucky", "nicola-allen"]
 draft: false
@@ -88,14 +88,14 @@ Medical marijuana consultations are available for clients with the following dia
 
 ### Clinical Evaluation
 
-**A clinical evaluation is required** unless you are an existing client of Twilight Psychology. This in-person assessment allows us to:
+**A clinical evaluation is required** and submitted to the state irrespective of your client status with Twilight Psychology. This in-person assessment allows us to:
 
 - Review your medical history and current diagnoses
 - Discuss your symptoms and treatment goals
 - Determine whether medical marijuana is an appropriate treatment option
 - Provide guidance on dosing, delivery methods, and safety considerations
 
-Existing Twilight Psychology clients clinical history will be reviewed for medical necessity before being approved for a Cannabis card.
+Existing Twilight Psychology client's clinical history will be shared with Nicola and reviewed for medical necessity before approvals.
 
 ## What to Expect During Your Consultation
 
@@ -133,6 +133,6 @@ If you have questions about eligibility, scheduling, or what to expect during yo
 ## Related Resources
 
 - [Medication Management](/services/medication-management) — Learn about our comprehensive psychiatric medication management services
-- [Nicola Allen, MSN (PMHNP)](/staff/nicola-allen) — View Nicola's full provider profile and services
+- [Nicola Allen, MSN (PMHNP)](/about/clinicians/nicola-allen) — View Nicola's full provider profile and services
 - [New Client Guide](/resources/new-client) — Step-by-step instructions for scheduling your first visit
 - [Frequently Asked Questions](/resources/faq) — Common questions about our services and policies

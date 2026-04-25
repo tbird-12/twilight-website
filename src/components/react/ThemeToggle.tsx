@@ -16,8 +16,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={handleToggle}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface hover:bg-surface-hover p-0 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta"
-      style={{ color: isDark ? "#fcd34d" : "var(--color-icon)" }}
+      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface text-icon hover:bg-surface-hover p-0 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-pressed={isDark}
       title={`Switch to ${isDark ? "light" : "dark"} mode`}

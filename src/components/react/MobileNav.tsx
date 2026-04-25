@@ -40,7 +40,7 @@ function MobileDropdownItem({ item, baseHref, onItemClick }: MobileDropdownItemP
           {item.name}
         </div>
         {item.childLabel && (
-          <div className="px-10 pb-1 text-[10px] uppercase tracking-widest text-site-sub/70 font-black">
+          <div className="px-10 pb-1 text-xs uppercase tracking-widest text-site-sub/70 font-black">
             {item.childLabel}
           </div>
         )}

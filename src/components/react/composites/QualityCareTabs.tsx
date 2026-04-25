@@ -71,7 +71,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
     <div className={`grid gap-10 items-start ${className}`} style={{ gridTemplateColumns: 'minmax(240px, 5fr) 7fr' }}>
       {/* Left: Tab list */}
       <nav className="flex flex-col gap-2" role="tablist" aria-label="Quality care highlights">
-        <p className="px-1 pb-3 text-[0.6rem] font-extrabold tracking-[0.28em] uppercase" style={{ color: 'var(--theme-section-label)', opacity: 0.4 }}>
+        <p className="px-1 pb-3 text-xs font-extrabold tracking-[0.28em] uppercase" style={{ color: 'var(--theme-section-label)', opacity: 0.4 }}>
           Select a topic for details
         </p>
         {items.map((item, idx) => {
@@ -147,7 +147,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
           if (idx !== activeTab) return null;
           return (
             <div key={idx} style={{ animation: 'blurIn 300ms ease-out' }}>
-              <p className="text-[0.6rem] font-extrabold tracking-[0.28em] uppercase mb-5" style={{ color: 'var(--theme-section-label)', opacity: 0.4 }}>
+              <p className="text-xs font-extrabold tracking-[0.28em] uppercase mb-5" style={{ color: 'var(--theme-section-label)', opacity: 0.4 }}>
                 {String(idx + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
               </p>
               <div className="flex items-start gap-4 mb-4">

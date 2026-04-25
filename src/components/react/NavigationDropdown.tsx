@@ -71,7 +71,7 @@ function NestedItem({ item }: { item: any }) {
           className="absolute top-full left-0 mt-1 w-56 bg-surface-2 border-l-4 border-l-cta shadow-2xl rounded-b-xl p-3 z-60 nav-nested-enter"
         >
           {item.childLabel && (
-            <div className="text-[10px] uppercase tracking-widest text-site-sub/80 font-black px-3 py-2">
+            <div className="text-xs uppercase tracking-widest text-site-sub/80 font-black px-3 py-2">
               {item.childLabel}
             </div>
           )}
@@ -100,16 +100,26 @@ export default function NavigationDropdown({
   const [isOpen, setIsOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState('5rem');
   const wrapperRef = useRef<HTMLDivElement>(null);
-
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      const header = document.querySelector('header');
+      if (header) {
+        setHeaderHeight(`${header.getBoundingClientRect().height}px`);
+      }
+    };
+
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+
+    return () => {
+      window.removeEventListener('resize', updateHeaderHeight);
+    };
+  }, []);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    // Measure actual header height for accurate dropdown positioning
-    const header = document.querySelector('header');
-    if (header) {
-      setHeaderHeight(`${header.offsetHeight}px`);
-    }
     setIsOpen(true);
   };
 
@@ -162,7 +172,7 @@ export default function NavigationDropdown({
           >
             <div className="max-w-5xl mx-auto px-8 py-5">
               {sectionLabel && (
-                <div className="text-[10px] uppercase tracking-widest text-site-sub/80 font-black mb-3">
+                <div className="text-xs uppercase tracking-widest text-site-sub/80 font-black mb-3">
                   {sectionLabel}
                 </div>
               )}

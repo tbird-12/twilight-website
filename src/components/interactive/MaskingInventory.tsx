@@ -274,7 +274,7 @@ export default function MaskingInventory() {
               <DomainBar key={d} domain={d} score={domainScore(d)} maxScore={domainMax(d)} />
             ))}
           </div>
-          <p className="mt-4 text-[11px] text-site-sub leading-relaxed">
+          <p className="mt-4 text-xs text-site-sub leading-relaxed">
             All 25 items from the CAT-Q (Hull et al., 2019), <em>Autism, 23</em>(1). This adult self-reflection version adapts the original 7-point response scale into 3 choices, and reverse-scored items were rephrased for positive keying. Not a diagnostic instrument. {" "}
             <a href={RESULTS_GUIDE_HREF} className="text-cta hover:underline">
               Read how to understand these results.
@@ -387,7 +387,7 @@ export default function MaskingInventory() {
       )}
 
       {/* Privacy note */}
-      <p className="mt-6 text-[11px] text-site-sub text-center">
+      <p className="mt-6 text-xs text-site-sub text-center">
         🔒 Answers stay on your device — nothing is stored or transmitted.
       </p>
     </div>

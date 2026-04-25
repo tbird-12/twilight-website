@@ -122,7 +122,7 @@ export default function Tabs({
                     <span className="leading-tight">
                       <span className="block">{tab.label}</span>
                       {tab.sublabel && (
-                        <span className="block text-[10px] uppercase tracking-wider opacity-70">
+                        <span className="block text-xs uppercase tracking-wider opacity-70">
                           {tab.sublabel}
                         </span>
                       )}
@@ -161,7 +161,7 @@ export default function Tabs({
                   <span className="leading-tight">
                     <span className="block">{tab.label}</span>
                     {tab.sublabel && (
-                      <span className="block text-[10px] uppercase tracking-wider opacity-70">
+                      <span className="block text-xs uppercase tracking-wider opacity-70">
                         {tab.sublabel}
                       </span>
                     )}

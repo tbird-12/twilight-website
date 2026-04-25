@@ -36,7 +36,7 @@ export default function AnimatedSection({
 
   return createElement(
     as,
-    { ref, className: `will-change-auto ${className}`, style },
+    { ref, className: `will-change-transform ${className}`, style },
     children
   );
 }

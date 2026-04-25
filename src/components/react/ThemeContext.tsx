@@ -3,7 +3,7 @@
  * Syncs with document.documentElement classList (light/dark) and localStorage
  */
 
-import { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
 import type { ThemeContextType } from './types';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -20,10 +20,15 @@ function getInitialTheme(): boolean {
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [isDark, setIsDark] = useState<boolean>(getInitialTheme);
+  const hasMountedRef = useRef(false);
+  const transitionTimeoutRef = useRef<number | undefined>(undefined);
 
   const applyTheme = useCallback((dark: boolean) => {
     const root = document.documentElement;
     const theme = dark ? 'dark' : 'light';
+    if (transitionTimeoutRef.current) {
+      window.clearTimeout(transitionTimeoutRef.current);
+    }
     // Add transition class for smooth theme change
     root.classList.add('theme-transition');
     root.classList.remove('light', 'dark');
@@ -31,15 +36,38 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     root.style.colorScheme = theme;
     localStorage.setItem('theme', theme);
     // Remove transition class after animation completes
-    setTimeout(() => root.classList.remove('theme-transition'), 400);
+    transitionTimeoutRef.current = window.setTimeout(() => root.classList.remove('theme-transition'), 400);
   }, []);
 
   // Apply theme when isDark changes
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      applyTheme(isDark);
+    if (typeof window === 'undefined') {
+      return;
     }
+
+    const root = document.documentElement;
+    const theme = isDark ? 'dark' : 'light';
+
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      if (!root.classList.contains(theme)) {
+        root.classList.remove('light', 'dark');
+        root.classList.add(theme);
+        root.style.colorScheme = theme;
+      }
+      return;
+    }
+
+    applyTheme(isDark);
   }, [isDark, applyTheme]);
+
+  useEffect(() => {
+    return () => {
+      if (transitionTimeoutRef.current) {
+        window.clearTimeout(transitionTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const toggleTheme = useCallback(() => {
     setIsDark(prev => !prev);

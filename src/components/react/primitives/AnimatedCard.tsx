@@ -41,7 +41,7 @@ export default function AnimatedCard({
         }
       : { opacity: '0', transform: 'translateY(12px)' };
 
-  const cls = `group will-change-auto ${hoverClasses[hoverEffect] || ''} ${className}`;
+  const cls = `group will-change-transform ${hoverClasses[hoverEffect] || ''} ${className}`;
 
   if (href) {
     return (

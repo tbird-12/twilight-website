@@ -4,7 +4,7 @@
  */
 
 import type { ReactNode } from 'react';
-import { duration, easing } from './animations';
+import { duration } from './animations';
 
 interface CtaButtonProps {
   href: string;
@@ -48,7 +48,6 @@ export default function CtaButton({
         transition-all duration-200
         hover:scale-[1.02]
         hover:shadow-xl hover:shadow-cta/30
-        focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta
         ${sizeClasses[size]}
         ${variantClasses[variant]}
         ${className}

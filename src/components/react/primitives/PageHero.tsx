@@ -94,7 +94,7 @@ export default function PageHero({
         {/* Badge */}
         {badge && (
           <div
-            className="inline-block px-3 md:px-4 py-1.5 mb-5 md:mb-6 rounded-full bg-surface-2 border text-cta text-[11px] md:text-xs font-black uppercase tracking-widest"
+            className="inline-block px-3 md:px-4 py-1.5 mb-5 md:mb-6 rounded-full bg-surface-2 border text-cta text-xs md:text-xs font-black uppercase tracking-widest"
             style={{ borderColor: 'var(--color-border-strong)', ...animStyle(50) }}
           >
             {badge}

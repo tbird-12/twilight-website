@@ -1,6 +1,6 @@
 ---
 import ChatbotUI from "./ChatbotUI";
-import { chatbotTree, type ChatTree } from "../../data/chatbot";
+import { chatbotTree } from "../../data/chatbot";
 import { EMAIL_ADDRESS } from "../../data/resource";
 
 // Switch admin contact to email during off-hours (5 PM – 9 AM) Eastern Time
@@ -15,4 +15,4 @@ if (isOffHours && chatbotTree['admin']) {
 }
 ---
 
-<ChatbotUI client:load tree={chatbotTree} />
+<ChatbotUI client:idle tree={chatbotTree} />

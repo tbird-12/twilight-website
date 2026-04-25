@@ -201,7 +201,7 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
                     <div className="flex flex-wrap gap-2">
                       {Object.entries(provider.wait_times).map(([key, value]) => (
                         <div key={key} className="flex flex-col items-start">
-                          <span className="text-[11px] text-site-sub mb-0.5">
+                          <span className="text-xs text-site-sub mb-0.5">
                             {WAIT_TIME_LABELS[key] || key}
                           </span>
                           <span
@@ -235,7 +235,7 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
                   </div>
 
                   {/* Expand hint */}
-                  <p className="text-[11px] text-site-sub text-right select-none">
+                  <p className="text-xs text-site-sub text-right select-none">
                     {isExpanded ? "▲ hide services" : "▼ show services"}
                   </p>
 

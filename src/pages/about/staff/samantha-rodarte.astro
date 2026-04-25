@@ -35,13 +35,15 @@ const expertise = [
                 <Image 
                   src={samantha.image} 
                   alt={samantha.name} 
+                  widths={[288, 576]}
+                  sizes="18rem"
                   class="absolute inset-0 w-full h-full object-cover object-top rounded-[2.5rem]"
                   loading={'eager'}/>
             </div>
         </div>
 
         <div class="flex-1 text-center lg:text-left">
-            <span class="px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full inline-block">
+            <span class="px-4 py-1.5 mb-6 text-xs font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full inline-block">
                 Administrative Assistant
             </span>
             <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter leading-none">
@@ -53,7 +55,7 @@ const expertise = [
             </p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-3">
                 {expertise.map(item => (
-                    <span class="px-4 py-2 bg-surface-soft border border-border rounded-full text-[10px] font-black text-sand uppercase tracking-tighter">
+                    <span class="px-4 py-2 bg-surface-soft border border-border rounded-full text-xs font-black text-sand uppercase tracking-tighter">
                         {item}
                     </span>
                 ))}

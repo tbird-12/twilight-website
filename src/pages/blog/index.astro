@@ -30,7 +30,7 @@ const featuredDate = featuredPost?.data.pubDate.toLocaleDateString("en-US", {
       <p class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-3">
         Twilight Psychology
       </p>
-      <h1 class="font-['Playfair_Display'] text-4xl sm:text-5xl font-bold text-site-text mb-3 leading-tight">
+      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-site-text mb-3 leading-tight">
         Blog &amp; Resources
       </h1>
       <p class="text-lg text-site-sub max-w-2xl leading-relaxed mb-10">
@@ -44,7 +44,7 @@ const featuredDate = featuredPost?.data.pubDate.toLocaleDateString("en-US", {
           class="group block rounded-2xl border border-border bg-surface p-6 sm:p-8 hover:border-border-strong hover:shadow-lg transition-all duration-200"
         >
           <div class="flex flex-wrap items-center gap-3 mb-4">
-            <span class="text-[10px] font-black uppercase tracking-widest text-icon">
+            <span class="text-xs font-black uppercase tracking-widest text-icon">
               Latest
             </span>
             <span class="text-xs text-site-sub">·</span>
@@ -56,7 +56,7 @@ const featuredDate = featuredPost?.data.pubDate.toLocaleDateString("en-US", {
               {featuredDate}
             </time>
           </div>
-          <h2 class="font-['Playfair_Display'] text-2xl sm:text-3xl font-bold text-site-text group-hover:text-icon transition-colors leading-snug mb-3">
+          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-site-text group-hover:text-icon transition-colors leading-snug mb-3">
             {featuredPost.data.title}
           </h2>
           <p class="text-base text-site-sub leading-relaxed max-w-3xl mb-4">
