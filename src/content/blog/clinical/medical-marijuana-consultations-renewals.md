@@ -24,7 +24,7 @@ Medical marijuana contains cannabinoids (primarily THC and CBD) that interact wi
 - **Support symptom management** for cancer patients, including pain, nausea, and loss of appetite
 - **Improve sleep quality** in many patients
 
-The effects vary widely based on the cannabinoid profile (THC/CBD ratio), delivery method (smoking, edibles, tinctures), dosage, and individual body chemistry. Our clinician will work with you to identify the optimal approach for your specific condition and symptoms.
+The effects vary widely based on the cannabinoid profile (THC/CBD ratio), delivery method (edibles vs tinctures), dosage, and individual body chemistry. Our clinician will work with you to identify the optimal approach for your specific condition and symptoms.
 
 ## Medical Marijuana and ADHD Considerations
 
@@ -44,6 +44,7 @@ If you have ADHD and are interested in medical marijuana for a co-occurring qual
 - **Private employment:** Many employers still conduct drug screenings; positive results may affect employment regardless of medical marijuana status in Kentucky
 - **Safety-sensitive positions:** Positions involving heavy machinery, transportation, or security may have zero-tolerance policies
 - **Testing detection:** THC can remain detectable in standard drug tests for days to weeks depending on use frequency and testing method
+- **Smoking THC** Smoking medical marijuana is illegal in Kentucky
 
 ### Federal Legal Status
 
@@ -73,18 +74,18 @@ This is a significant consideration that should be discussed with Nicola Allen d
 
 ### Qualifying Medical Conditions
 
-Medical marijuana consultations are available for clients with the following diagnosed conditions:
+Medical marijuana consultations are available for clients with the following six diagnosed conditions:
 
-- **Cancer**
-- **Chronic or severe pain**
-- **Multiple Sclerosis (MS)**
-- **Chronic nausea or cyclical vomiting syndrome**
-- **Post-Traumatic Stress Disorder (PTSD)**
+1. **Cancer**
+2. **Chronic or severe pain**
+3. **Epilepsy or seizure disorder**
+4. **Multiple Sclerosis (MS)**
+5. **Chronic nausea or cyclical vomiting syndrome**
+6. **Post-Traumatic Stress Disorder (PTSD)**
 
 ### Geographic & Residency Requirements
 
 - Clients must be **located in Kentucky** following the state's legalization of medical marijuana
-- Out-of-state clients are not eligible at this time
 
 ### Clinical Evaluation
 
@@ -122,8 +123,6 @@ All medical marijuana consultations and renewals are conducted **in-person only*
 - **Self-pay basis:** $150 per consultation or renewal
 - **Insurance does not cover** medical marijuana consultations or renewals
 - No insurance reimbursement is available for this service
-
-
 
 
 ## Questions?
