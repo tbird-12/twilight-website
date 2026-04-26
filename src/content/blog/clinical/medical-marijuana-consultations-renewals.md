@@ -44,7 +44,7 @@ If you have ADHD and are interested in medical marijuana for a co-occurring qual
 - **Private employment:** Many employers still conduct drug screenings; positive results may affect employment regardless of medical marijuana status in Kentucky
 - **Safety-sensitive positions:** Positions involving heavy machinery, transportation, or security may have zero-tolerance policies
 - **Testing detection:** THC can remain detectable in standard drug tests for days to weeks depending on use frequency and testing method
-- **Smoking THC** Smoking medical marijuana is illegal in Kentucky
+- **Smoking THC:** Smoking medical marijuana is illegal in Kentucky
 
 ### Federal Legal Status
 
