@@ -60,10 +60,10 @@ interface ScoreBand {
   narrative: string;
   ctaText: string;
   ctaHref: string;
-  accentClass: string;
-  ringClass: string;
-  bgClass: string;
+  tone: SemanticTone;
 }
+
+type SemanticTone = "positive" | "warning" | "caution" | "alert";
 
 // Score range: 25 (all "Not me") – 125 (all "Very me") across 25 items.
 const SCORE_BANDS: ScoreBand[] = [
@@ -74,9 +74,7 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "You invest relatively little energy adapting to fit in. That can mean a supportive environment — or that masking simply hasn't been your dominant strategy. If something still feels off, a professional conversation can help clarify it.",
     ctaText: "Explore Our Services",
     ctaHref: "/services",
-    accentClass: "text-emerald-700 dark:text-emerald-300",
-    ringClass: "ring-emerald-400/50 dark:ring-emerald-500/70",
-    bgClass: "bg-emerald-50/70 dark:bg-emerald-950/50",
+    tone: "positive",
   },
   {
     label: "Moderate Masking",
@@ -85,9 +83,7 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "You've built real skill at adapting and appearing 'fine' — but it costs you. Moderate masking often creates a low-grade exhaustion that's hard to name. Many late-diagnosed adults score in this range.",
     ctaText: "Learn What This Means →",
     ctaHref: RESULTS_GUIDE_HREF,
-    accentClass: "text-amber-700 dark:text-amber-300",
-    ringClass: "ring-amber-400/50 dark:ring-amber-500/70",
-    bgClass: "bg-amber-50/70 dark:bg-amber-950/50",
+    tone: "warning",
   },
   {
     label: "High Masking",
@@ -96,9 +92,7 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "Your answers point to a significant, sustained effort to manage how you come across. For many people at this level, masking has become automatic — it feels like personality rather than performance. This pattern often precedes a late-in-life ADHD or autism diagnosis.",
     ctaText: "See Our Evaluations →",
     ctaHref: "/services/psychological-evaluations",
-    accentClass: "text-orange-700 dark:text-orange-300",
-    ringClass: "ring-orange-400/50 dark:ring-orange-500/70",
-    bgClass: "bg-orange-50/70 dark:bg-orange-950/50",
+    tone: "caution",
   },
   {
     label: "Very High Masking",
@@ -107,9 +101,7 @@ const SCORE_BANDS: ScoreBand[] = [
     narrative: "Scores here often reflect what clinicians call autistic burnout: a deep exhaustion, reduced tolerance, and retreat from things that used to feel manageable. If you feel like you've been performing a version of yourself your whole life, that experience is real and worth exploring.",
     ctaText: "Start Here →",
     ctaHref: "/resources/new-client",
-    accentClass: "text-rose-700 dark:text-rose-300",
-    ringClass: "ring-rose-400/50 dark:ring-rose-500/70",
-    bgClass: "bg-rose-50/70 dark:bg-rose-950/50",
+    tone: "alert",
   },
 ];
 
@@ -164,7 +156,7 @@ function AnimatedCard({ children, animKey, direction }: CardProps) {
 function DomainBar({ domain, score, maxScore }: { domain: keyof typeof DOMAIN_META; score: number; maxScore: number }) {
   const pct = Math.round((score / maxScore) * 100);
   const meta = DOMAIN_META[domain];
-  const color = pct < 45 ? "bg-emerald-500" : pct < 65 ? "bg-amber-500" : pct < 80 ? "bg-orange-500" : "bg-rose-500";
+  const tone: SemanticTone = pct < 45 ? "positive" : pct < 65 ? "warning" : pct < 80 ? "caution" : "alert";
 
   return (
     <div className="space-y-1.5">
@@ -176,7 +168,7 @@ function DomainBar({ domain, score, maxScore }: { domain: keyof typeof DOMAIN_ME
       </div>
       <div className="h-3 rounded-full bg-surface-2 overflow-hidden">
         <div
-          className={`h-full rounded-full transition-all duration-700 ease-out ${color}`}
+          className={`h-full rounded-full transition-all duration-700 ease-out theme-fill-${tone}`}
           style={{ width: `${pct}%` }}
           role="progressbar"
           aria-valuenow={score}
@@ -253,9 +245,9 @@ export default function MaskingInventory() {
     return (
       <div ref={resultsRef} className="space-y-5">
         {/* Score hero */}
-        <div className={`rounded-3xl border ring-4 ${band.ringClass} ${band.bgClass} p-6 md:p-8 text-center`}>
+        <div className={`rounded-3xl p-6 md:p-8 text-center theme-card-${band.tone}`}>
           <div className="text-6xl mb-3">{band.emoji}</div>
-          <p className={`text-xs font-black uppercase tracking-widest mb-1 ${band.accentClass}`}>
+          <p className={`text-xs font-black uppercase tracking-widest mb-1 theme-text-${band.tone}`}>
             {band.label}
           </p>
           <p className="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 tracking-tight">

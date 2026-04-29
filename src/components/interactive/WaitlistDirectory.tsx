@@ -13,6 +13,8 @@ interface WaitlistDirectoryProps {
   providers: Provider[];
 }
 
+type WaitTimeTone = "positive" | "warning" | "caution";
+
 const WAIT_TIME_LABELS: Record<string, string> = {
   testing_insurance: "Testing (Insurance)",
   testing_out_of_pocket: "Testing (Self-Pay)",
@@ -20,15 +22,12 @@ const WAIT_TIME_LABELS: Record<string, string> = {
   medication_management: "Medication Management",
 };
 
-function waitTimeBadgeClass(waitTime: string): string {
+function getWaitTimeTone(waitTime: string): WaitTimeTone | null {
   const lower = waitTime.toLowerCase();
-  if (lower.includes("immediate"))
-    return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400";
-  if (lower.includes("week"))
-    return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400";
-  if (lower.includes("month"))
-    return "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400";
-  return "bg-surface-soft text-site-sub";
+  if (lower.includes("immediate")) return "positive";
+  if (lower.includes("week")) return "warning";
+  if (lower.includes("month")) return "caution";
+  return null;
 }
 
 export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps) {
@@ -199,18 +198,24 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
                   <div className="space-y-2 mb-3">
                     <p className="text-xs font-semibold text-site-sub mb-1">Wait Times</p>
                     <div className="flex flex-wrap gap-2">
-                      {Object.entries(provider.wait_times).map(([key, value]) => (
-                        <div key={key} className="flex flex-col items-start">
-                          <span className="text-xs text-site-sub mb-0.5">
-                            {WAIT_TIME_LABELS[key] || key}
-                          </span>
-                          <span
-                            className={`text-xs font-semibold px-2.5 py-1 rounded-full ${waitTimeBadgeClass(value)}`}
-                          >
-                            {value}
-                          </span>
-                        </div>
-                      ))}
+                      {Object.entries(provider.wait_times).map(([key, value]) => {
+                        const tone = getWaitTimeTone(value);
+
+                        return (
+                          <div key={key} className="flex flex-col items-start">
+                            <span className="text-xs text-site-sub mb-0.5">
+                              {WAIT_TIME_LABELS[key] || key}
+                            </span>
+                            <span
+                              className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${
+                                tone ? `theme-badge-${tone}` : "bg-surface-soft border-border text-site-sub"
+                              }`}
+                            >
+                              {value}
+                            </span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
 

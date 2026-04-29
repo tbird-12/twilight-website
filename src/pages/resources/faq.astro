@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import FaqAccordionWrapper from '../../components/interactive/FaqAccordionWrapper.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
+import { categoryColorMap } from '../../data/blogCategories';
 
 const generalFaqs = [
   {
@@ -69,16 +70,8 @@ const waitTimeFaqs = [
   description="Frequently asked questions about Twilight Psychology services, including testing timelines, insurance coverage, costs, and how to get started in Kentucky."
 >
   <div class="bg-site-bg min-h-screen pb-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none prose-custom
-                  prose-p:text-site-text
-                  prose-headings:text-site-text
-                  prose-strong:text-site-text
-                  prose-li:text-site-text
-                  mb-12">
-
-  <section class="bg-site-bg min-h-screen py-24 px-4">
-    <div class="max-w-3xl mx-auto">
+    <section class="bg-site-bg py-24 px-4">
+      <div class="max-w-3xl mx-auto">
       
       <header class="text-center mb-16">
         <h1 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4">
@@ -122,17 +115,17 @@ const waitTimeFaqs = [
         <h2 class="font-serif text-2xl font-black text-site-text mb-6 text-center">Helpful Blog Posts</h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <a href="/blog/insurance/understanding-health-insurance" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
-            <p class="text-xs font-bold uppercase tracking-widest text-violet-500 mb-2">Insurance</p>
+            <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.insurance}`}>Insurance</p>
             <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Health Insurance</h3>
             <p class="text-xs text-site-sub">Commercial plans, Medicaid MCOs, and Medicare explained.</p>
           </a>
           <a href="/blog/insurance/aetna-better-health-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
-            <p class="text-xs font-bold uppercase tracking-widest text-violet-500 mb-2">Insurance</p>
+            <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.insurance}`}>Insurance</p>
             <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Aetna Better Health — Prior Auth & Appeals</h3>
             <p class="text-xs text-site-sub">What to know about PA for psychological testing.</p>
           </a>
           <a href="/blog/billing/understanding-your-eob" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
-            <p class="text-xs font-bold uppercase tracking-widest text-sky-500 mb-2">Billing</p>
+            <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.billing}`}>Billing</p>
             <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Your EOB</h3>
             <p class="text-xs text-site-sub">How to read the statement your insurance sends after a claim.</p>
           </a>
@@ -142,10 +135,8 @@ const waitTimeFaqs = [
         </div>
       </section>
 
-    </div>
-  </section>
       </div>
-    </div>
+    </section>
   </div>
 </Layout>
 

@@ -10,73 +10,64 @@ import ContactTabsWrapper from "../components/ContactTabsWrapper.astro";
   description="Contact Twilight Psychology by phone, email, or online widget. For emergencies, call 911 or 988."
 >
   <div class="bg-site-bg min-h-screen pb-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none prose-custom
-                  prose-p:text-site-text
-                  prose-headings:text-site-text
-                  prose-strong:text-site-text
-                  prose-li:text-site-text
-                  mb-12">
-  <section class="bg-site-bg min-h-screen py-16 md:py-24 px-4">
-    <div class="max-w-5xl mx-auto">
+    <section class="bg-site-bg py-16 md:py-24 px-4">
+      <div class="max-w-5xl mx-auto">
 
-      <PageHeroWrapper
-        title="How To Reach Us"
-        accentWord="Reach Us"
-        subtitle="Our team is ready to assist you. Reach out by form, phone, or email, and we will guide you through the appropriate next step."
-        badge="Contact Twilight Psychology"
-        size="lg"
-      />
+        <PageHeroWrapper
+          title="How To Reach Us"
+          accentWord="Reach Us"
+          subtitle="Our team is ready to assist you. Reach out by form, phone, or email, and we will guide you through the appropriate next step."
+          badge="Contact Twilight Psychology"
+          size="lg"
+        />
 
-      <AnimatedSection client:visible animation="fadeInUp" delay={100}>
-        <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border-2 border-cta/40 p-6 sm:p-8 md:p-10 relative overflow-hidden">
-          <div class="pointer-events-none absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-cta to-transparent"></div>
-          <div class="inline-block px-3 py-1 mb-4 rounded-full bg-cta/10 border border-cta/30 text-cta text-xs font-black uppercase tracking-widest">
-            Emergencies Only
-          </div>
-          <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
-          <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
-            If you are in immediate danger or need urgent help, do not wait for office response.
-          </p>
-          <div class="grid gap-4 md:grid-cols-3">
-            <a
-              href="tel:911"
-              class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <p class="text-xs font-black uppercase tracking-widest text-cta">Immediate Emergency</p>
-              <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 911</p>
-            </a>
-            <a
-              href="tel:988"
-              class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <p class="text-xs font-black uppercase tracking-widest text-cta">Mental Health Crisis</p>
-              <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 988</p>
-            </a>
-            <div class="rounded-2xl border p-4 sm:px-5 py-5" style="border-color: var(--color-border); background: var(--color-surface)">
-              <p class="text-xs font-black uppercase tracking-widest text-site-sub">Important Note</p>
-              <p class="text-site-sub text-sm mt-2 leading-relaxed">
-                Messages sent through email, phone, or forms are not monitored for emergency response.
-              </p>
+        <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+          <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border-2 border-cta/40 p-6 sm:p-8 md:p-10 relative overflow-hidden">
+            <div class="pointer-events-none absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-cta to-transparent"></div>
+            <div class="inline-block px-3 py-1 mb-4 rounded-full bg-cta/10 border border-cta/30 text-cta text-xs font-black uppercase tracking-widest">
+              Emergencies Only
             </div>
-          </div>
-        </section>
-      </AnimatedSection>
+            <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
+            <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
+              If you are in immediate danger or need urgent help, do not wait for office response.
+            </p>
+            <div class="grid gap-4 md:grid-cols-3">
+              <a
+                href="tel:911"
+                class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <p class="text-xs font-black uppercase tracking-widest text-cta">Immediate Emergency</p>
+                <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 911</p>
+              </a>
+              <a
+                href="tel:988"
+                class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <p class="text-xs font-black uppercase tracking-widest text-cta">Mental Health Crisis</p>
+                <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 988</p>
+              </a>
+              <div class="rounded-2xl border p-4 sm:px-5 py-5" style="border-color: var(--color-border); background: var(--color-surface)">
+                <p class="text-xs font-black uppercase tracking-widest text-site-sub">Important Note</p>
+                <p class="text-site-sub text-sm mt-2 leading-relaxed">
+                  Messages sent through email, phone, or forms are not monitored for emergency response.
+                </p>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
 
-      <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 md:p-10" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
-        <ContactTabsWrapper />
-      </section>
-
-      <AnimatedSection client:visible animation="fadeInUp" delay={200}>
-        <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 text-center" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
-          <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
-          <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
-          <p class="text-site-sub">Sat - Sun: By appointment</p>
+        <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 md:p-10" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
+          <ContactTabsWrapper />
         </section>
-      </AnimatedSection>
-    </div>
-  </section>
+
+        <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+          <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 text-center" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
+            <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
+            <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
+            <p class="text-site-sub">Sat - Sun: By appointment</p>
+          </section>
+        </AnimatedSection>
       </div>
-    </div>
+    </section>
   </div>
 </Layout>

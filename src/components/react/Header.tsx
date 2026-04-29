@@ -41,7 +41,7 @@ export default function Header({ logoHref = '/', logoSrc }: HeaderProps) {
   return (
     <>
       <header className="sticky top-0 z-100 w-full bg-site-bg/80 backdrop-blur-md border-b theme-border font-sans">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 lg:h-24 flex items-center justify-between">
           {/* Mobile Menu Button */}
           <button
             type="button"
