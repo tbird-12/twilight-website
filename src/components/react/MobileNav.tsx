@@ -99,13 +99,13 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
     <>
     {/* Backdrop overlay — closes menu on tap, sits above chatbot (z-60) but below menu content */}
     <div
-      className="md:hidden fixed inset-0 z-[85] bg-site-text/20 backdrop-blur-sm"
+      className="md:hidden fixed inset-0 z-85 bg-site-text/20 backdrop-blur-sm"
       onClick={onClose}
       aria-hidden="true"
     />
     <div
       id="mobile-menu"
-      className="md:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-[90] bg-site-bg overflow-y-auto overscroll-contain mobile-menu-enter"
+      className="md:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-90 bg-site-bg overflow-y-auto overscroll-contain mobile-menu-enter"
       role="navigation"
       aria-label="Mobile navigation"
     >
