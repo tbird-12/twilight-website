@@ -7,6 +7,13 @@ export const FAX_NUMBER_FORMATTED = "(502) 324-3210";
 
 export const EMAIL_ADDRESS = "office@twilightpsychology.com";
 
+export const MAIN_OFFICE_STREET_ADDRESS = "503 Darby Creek Rd., Suite B";
+export const MAIN_OFFICE_STREET_ADDRESS_SCHEMA = "503 Darby Creek Rd, Suite B";
+export const MAIN_OFFICE_CITY_STATE_ZIP = "Lexington, KY 40509";
+export const MAIN_OFFICE_ADDRESS_SINGLE_LINE = `${MAIN_OFFICE_STREET_ADDRESS}, ${MAIN_OFFICE_CITY_STATE_ZIP}`;
+export const MAIN_OFFICE_MAP_LINK =
+  "https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+503+Darby+Creek+Rd+Suite+B,+Lexington,+KY+40509";
+
 export const SIGN_IN_LINK = "https://twilightpsychology.clientsecure.me/sign-in";
 
 export const WIDGET_LINK = "https://twilightpsychology.clientsecure.me/contact-widget";

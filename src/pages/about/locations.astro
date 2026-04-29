@@ -2,15 +2,19 @@
 import Layout from "../../layouts/Layout.astro";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+import {
+  MAIN_OFFICE_STREET_ADDRESS,
+  MAIN_OFFICE_CITY_STATE_ZIP,
+  MAIN_OFFICE_MAP_LINK,
+} from "../../data/resource";
 
 const locations = [
   {
     type: "Main Office",
     providers: "Heather Cornett, Emeli Evans, Jatana Boggs, Jonica Davis, Stephen Shu, Tiffany Roundtree",
-    address: "501 Darby Creek Rd., Suite 7 (Downstairs)",
-    city: "Lexington, KY 40509",
-    mapLink:
-      "https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509",
+    address: MAIN_OFFICE_STREET_ADDRESS,
+    city: MAIN_OFFICE_CITY_STATE_ZIP,
+    mapLink: MAIN_OFFICE_MAP_LINK,
   },
   {
     type: "Medication Management",

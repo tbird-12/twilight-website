@@ -8,6 +8,9 @@ import {
   EMAIL_ADDRESS,
   FAX_NUMBER,
   FAX_NUMBER_FORMATTED,
+  MAIN_OFFICE_STREET_ADDRESS,
+  MAIN_OFFICE_CITY_STATE_ZIP,
+  MAIN_OFFICE_MAP_LINK,
 } from "../../data/resource";
 
 const year = new Date().getFullYear();
@@ -66,12 +69,12 @@ const year = new Date().getFullYear();
           <div>
             <p class="font-semibold text-site-text text-xs uppercase tracking-wide mb-1">Main Office</p>
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509"
+              href={MAIN_OFFICE_MAP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               class="hover:text-site-text transition-colors leading-snug block"
             >
-              501 Darby Creek Rd., Suite 7<br />Lexington, KY 40509
+              {MAIN_OFFICE_STREET_ADDRESS}<br />{MAIN_OFFICE_CITY_STATE_ZIP}
             </a>
           </div>
           <div>

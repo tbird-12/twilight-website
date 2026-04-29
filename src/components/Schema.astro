@@ -1,9 +1,12 @@
 ---
 import logo from "../assets/images/logo.png";
+import { MAIN_OFFICE_STREET_ADDRESS_SCHEMA, MAIN_OFFICE_CITY_STATE_ZIP } from "../data/resource";
 
 const siteUrl = Astro.site || "http://localhost:4321";
 
 const imageUrl = new URL(logo.src, siteUrl).href;
+const [addressLocality, addressRegionAndPostalCode] = MAIN_OFFICE_CITY_STATE_ZIP.split(", ");
+const [addressRegion, postalCode] = addressRegionAndPostalCode.split(" ");
 
 const { type = "WebSite", name, ...extra } = Astro.props;
 
@@ -16,10 +19,10 @@ const schema = {
   url: "https://www.twilightpsychology.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "501 Darby Creek Rd, Suite 7",
-    addressLocality: "Lexington",
-    addressRegion: "KY",
-    postalCode: "40509",
+    streetAddress: MAIN_OFFICE_STREET_ADDRESS_SCHEMA,
+    addressLocality,
+    addressRegion,
+    postalCode,
     addressCountry: "US",
   },
   geo: {

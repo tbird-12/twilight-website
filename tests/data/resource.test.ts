@@ -4,6 +4,11 @@ import {
   PHONE_NUMBER_FORMATTED,
   FAX_NUMBER,
   EMAIL_ADDRESS,
+  MAIN_OFFICE_STREET_ADDRESS,
+  MAIN_OFFICE_STREET_ADDRESS_SCHEMA,
+  MAIN_OFFICE_CITY_STATE_ZIP,
+  MAIN_OFFICE_ADDRESS_SINGLE_LINE,
+  MAIN_OFFICE_MAP_LINK,
   SIGN_IN_LINK,
   WIDGET_LINK,
   REFERRAL_LINK,
@@ -26,7 +31,14 @@ describe("resource constants", () => {
     expect(EMAIL_ADDRESS).toMatch(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
   });
 
+  it("main office address constants stay in sync", () => {
+    expect(MAIN_OFFICE_STREET_ADDRESS).toContain("Darby Creek Rd");
+    expect(MAIN_OFFICE_STREET_ADDRESS_SCHEMA).toContain("Darby Creek Rd");
+    expect(MAIN_OFFICE_ADDRESS_SINGLE_LINE).toBe(`${MAIN_OFFICE_STREET_ADDRESS}, ${MAIN_OFFICE_CITY_STATE_ZIP}`);
+  });
+
   it("all links use HTTPS", () => {
+    expect(MAIN_OFFICE_MAP_LINK).toMatch(/^https:\/\//);
     expect(SIGN_IN_LINK).toMatch(/^https:\/\//);
     expect(WIDGET_LINK).toMatch(/^https:\/\//);
     expect(REFERRAL_LINK).toMatch(/^https:\/\//);

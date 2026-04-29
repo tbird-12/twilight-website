@@ -2,7 +2,15 @@
 const year = new Date().getFullYear();
 import { Image } from "astro:assets";
 import favicon from "../assets/favicons/favicon.svg";
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS, FAX_NUMBER, FAX_NUMBER_FORMATTED } from "../data/resource";
+import {
+  PHONE_NUMBER,
+  PHONE_NUMBER_FORMATTED,
+  EMAIL_ADDRESS,
+  FAX_NUMBER,
+  FAX_NUMBER_FORMATTED,
+  MAIN_OFFICE_ADDRESS_SINGLE_LINE,
+  MAIN_OFFICE_MAP_LINK,
+} from "../data/resource";
 import { Icon } from "astro-icon/components";
 
 const links = [
@@ -69,12 +77,12 @@ const socials = [
         </p>
 
         <a
-          href="https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+501+Darby+Creek+Rd+UNIT+7,+Lexington,+KY+40509"
+          href={MAIN_OFFICE_MAP_LINK}
           target="_blank"
           rel="noopener noreferrer"
           class="footer-link block mb-5"
         >
-          501 Darby Creek Rd. Suite 7, Lexington, KY 40509
+          {MAIN_OFFICE_ADDRESS_SINGLE_LINE}
         </a>
 
         <div class="flex gap-3">

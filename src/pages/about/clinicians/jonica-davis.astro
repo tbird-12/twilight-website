@@ -2,6 +2,10 @@
 import Layout from "../../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { providers } from "../../../data/staff";
+import {
+  MAIN_OFFICE_STREET_ADDRESS,
+  MAIN_OFFICE_CITY_STATE_ZIP,
+} from "../../../data/resource";
 
 const jonica = providers.find(person => person.slug === 'jonica-davis')!;
 
@@ -129,8 +133,8 @@ const specialties = [
           Primary Office
         </h3>
         <p class="text-site-sub text-xs mt-1">
-          501 Darby Creek Rd., Suite 7 (Downstairs)<br />
-          Lexington, KY 40509
+          {MAIN_OFFICE_STREET_ADDRESS}<br />
+          {MAIN_OFFICE_CITY_STATE_ZIP}
         </p>
       </div>
 
