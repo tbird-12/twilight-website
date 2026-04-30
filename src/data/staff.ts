@@ -6,7 +6,6 @@ import stephenShuImg from '../assets/images/staff/stephen-shu.png';
 import jonicaDavisImg from '../assets/images/staff/jonica-davis.png';
 import jatanaBoggsImg from '../assets/images/staff/jatana-boggs.png';
 import tiffanyRoundtreeImg from '../assets/images/staff/tiffany-roundtree.png';
-import surjyaBajpayeeImg from '../assets/images/staff/surjya-bajpayee.png';
 import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
 import oliviaWilliamsImg from '../assets/images/staff/olivia-williams.jpg';
 
@@ -122,19 +121,6 @@ export const providers: Provider[] = [
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
     wait_times: { therapy: 'Immediate' }
-  },
-  {
-    name: 'Surjya Bajpayee',
-    slug: 'surjya-bajpayee',
-    spec: 'Therapy for Adolescents',
-    image: surjyaBajpayeeImg,
-    name_with_education: 'Surjya Bajpayee, MS',
-    credential: 'Clinical Intern',
-    services_offered: ['Therapy'], 
-    out_of_pocket_rates: { therapy: '$25' },
-    states_served: ['Kentucky'], 
-    ins: [], 
-    wait_times: { therapy: 'Immediate availability' } 
   },
   {
     name: 'Olivia Williams',

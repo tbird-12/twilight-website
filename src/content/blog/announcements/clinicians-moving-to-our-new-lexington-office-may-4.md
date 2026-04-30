@@ -5,6 +5,8 @@ pubDate: 2026-04-29
 category: announcements
 author: "Twilight Psychology Team"
 tags: ["lexington", "office-move", "testing", "therapy", "medication-management"]
+heroImage: "./images/twilight-office.jpeg"
+heroImageAlt: "Photo of Twilight Psychology's new Lexington office at 503 Darby Creek Rd., Suite B"
 draft: false
 ---
 
