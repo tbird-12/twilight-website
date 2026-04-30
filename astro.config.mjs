@@ -13,11 +13,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
     build: {
       cssMinify: true,
-      rollupOptions: {
-        output: {
-          manualChunks: undefined,
-        },
-      },
     },
   },
   integrations: [icon(), react(), sitemap()],

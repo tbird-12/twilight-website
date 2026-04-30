@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-import ChatbotWrapper from "./interactive/ChatbotWrapper.astro";
 ---
 
 <div class="fixed bottom-3 right-3 md:bottom-5 md:right-5 z-60">
@@ -30,39 +29,109 @@ import ChatbotWrapper from "./interactive/ChatbotWrapper.astro";
     <button id="close-chat" type="button" class="text-xl md:text-2xl leading-none hover:text-site-sub transition-colors">×</button>
   </div>
 
-  <ChatbotWrapper />
+  <div id="chatbot-root" class="flex-1 min-h-0">
+    <div
+      id="chatbot-loading"
+      class="flex h-full items-center justify-center p-4 text-center text-sm text-site-sub"
+      aria-live="polite"
+    >
+      Loading chat assistant...
+    </div>
+  </div>
 </div>
 
 <script>
+const chatbotRoot = document.getElementById('chatbot-root');
+const chatbotLoading = document.getElementById('chatbot-loading');
 const chatContainer = document.getElementById('chat-container');
 const botTrigger = document.getElementById('bot-trigger');
 const closeChat = document.getElementById('close-chat');
+let chatbotModulePromise: Promise<typeof import('./interactive/chatbot.client')> | undefined;
+let chatbotMountPromise: Promise<void> | undefined;
 
-function toggleChat() {
+function showChatLoading(message = 'Loading chat assistant...') {
+  if (!chatbotLoading) return;
+  chatbotLoading.textContent = message;
+  chatbotLoading.classList.remove('hidden');
+}
+
+function hideChatLoading() {
+  chatbotLoading?.classList.add('hidden');
+}
+
+function loadChatbotModule() {
+  chatbotModulePromise ??= import('./interactive/chatbot.client');
+  return chatbotModulePromise;
+}
+
+async function ensureChatbotMounted() {
+  if (!chatbotRoot) return;
+  if (chatbotRoot.dataset.mounted === 'true') {
+    hideChatLoading();
+    return;
+  }
+
+  chatbotMountPromise ??= loadChatbotModule()
+    .then((module) => {
+      module.mountChatbot(chatbotRoot);
+      chatbotRoot.dataset.mounted = 'true';
+      hideChatLoading();
+    })
+    .catch((error: unknown) => {
+      chatbotModulePromise = undefined;
+      chatbotMountPromise = undefined;
+      showChatLoading('Chat is unavailable right now. Please use the contact page instead.');
+      throw error;
+    });
+
+  showChatLoading();
+  await chatbotMountPromise;
+}
+
+async function openChat() {
+  if (!chatContainer) return;
+  chatContainer.classList.remove('hidden');
+  chatContainer.classList.add('flex');
+  await ensureChatbotMounted();
+}
+
+function closeChatPanel() {
+  if (!chatContainer) return;
+  chatContainer.classList.add('hidden');
+  chatContainer.classList.remove('flex');
+}
+
+async function toggleChat() {
   if (!chatContainer) return;
   const isHidden = chatContainer.classList.contains('hidden');
   if (isHidden) {
-    chatContainer.classList.remove('hidden');
-    chatContainer.classList.add('flex');
-  } else {
-    chatContainer.classList.add('hidden');
-    chatContainer.classList.remove('flex');
+    await openChat();
+    return;
   }
+
+  closeChatPanel();
+}
+
+function prefetchChatbot() {
+  void loadChatbotModule();
 }
 
 if (botTrigger) {
+  botTrigger.addEventListener('pointerenter', prefetchChatbot, { once: true });
+  botTrigger.addEventListener('focus', prefetchChatbot, { once: true });
+  botTrigger.addEventListener('touchstart', prefetchChatbot, { passive: true, once: true });
   botTrigger.addEventListener('click', toggleChat);
   botTrigger.addEventListener('touchend', (event) => {
     event.preventDefault();
-    toggleChat();
+    void toggleChat();
   }, { passive: false });
 }
 
 if (closeChat) {
-  closeChat.addEventListener('click', toggleChat);
+  closeChat.addEventListener('click', closeChatPanel);
   closeChat.addEventListener('touchend', (event) => {
     event.preventDefault();
-    toggleChat();
+    closeChatPanel();
   }, { passive: false });
 }
 </script>
