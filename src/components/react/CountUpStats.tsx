@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useReducedMotion } from './hooks/useReducedMotion';
 
 interface Stat {
   label: string;
@@ -15,12 +16,22 @@ function parseStatValue(value: string): { num: number; prefix: string; suffix: s
   return { num: parseInt(match[2], 10), prefix: match[1], suffix: match[3] };
 }
 
-function useCountUp(target: number, isVisible: boolean, duration = 1200): number {
+function useCountUp(target: number, isVisible: boolean, prefersReducedMotion: boolean, duration = 1200): number {
   const [current, setCurrent] = useState(0);
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible) {
+      setCurrent(0);
+      return;
+    }
+
+    if (prefersReducedMotion) {
+      setCurrent(target);
+      return;
+    }
+
+    setCurrent(0);
 
     const start = performance.now();
     const step = (now: number) => {
@@ -35,16 +46,24 @@ function useCountUp(target: number, isVisible: boolean, duration = 1200): number
     };
     rafRef.current = requestAnimationFrame(step);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [isVisible, target, duration]);
+  }, [duration, isVisible, prefersReducedMotion, target]);
 
   return current;
 }
 
-function StatItem({ stat, isVisible, index }: { stat: Stat; isVisible: boolean; index: number }) {
+function StatItem({
+  stat,
+  isVisible,
+  index,
+  prefersReducedMotion,
+}: {
+  stat: Stat;
+  isVisible: boolean;
+  index: number;
+  prefersReducedMotion: boolean;
+}) {
   const { num, prefix, suffix } = parseStatValue(stat.value);
-  const displayNum = useCountUp(num, isVisible, 1200);
-  const prefersReducedMotion = typeof window !== 'undefined'
-    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const displayNum = useCountUp(num, isVisible, prefersReducedMotion, 1200);
 
   return (
     <span
@@ -70,6 +89,7 @@ function StatItem({ stat, isVisible, index }: { stat: Stat; isVisible: boolean; 
 export default function CountUpStats({ stats }: CountUpStatsProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const el = ref.current;
@@ -93,7 +113,13 @@ export default function CountUpStats({ stats }: CountUpStatsProps) {
       className="mt-6 w-full flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-8 gap-y-3"
     >
       {stats.map((stat, idx) => (
-        <StatItem key={idx} stat={stat} isVisible={isVisible} index={idx} />
+        <StatItem
+          key={idx}
+          stat={stat}
+          isVisible={isVisible}
+          index={idx}
+          prefersReducedMotion={prefersReducedMotion}
+        />
       ))}
     </div>
   );

@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 
 // ---------------------------------------------------------------------------
 // Questions drawn from published CAT-Q (Camouflaging Autistic Traits
@@ -12,6 +12,8 @@ interface Question {
   emoji: string;
   domain: "assimilation" | "compensation" | "masking";
 }
+
+type Domain = Question["domain"];
 
 // Official 25-item CAT-Q (Hull et al., 2019). Items originally reverse-scored
 // (3, 12, 19, 22, 24) have been rephrased so that all items are positively keyed
@@ -119,6 +121,20 @@ const DOMAIN_META = {
   masking: { label: "Hiding Self", icon: "🔒" },
 } as const;
 
+const DOMAIN_KEYS = ["assimilation", "compensation", "masking"] as const;
+
+const DOMAIN_QUESTIONS: Record<Domain, Question[]> = {
+  assimilation: QUESTIONS.filter((question) => question.domain === "assimilation"),
+  compensation: QUESTIONS.filter((question) => question.domain === "compensation"),
+  masking: QUESTIONS.filter((question) => question.domain === "masking"),
+};
+
+const DOMAIN_MAX_SCORES: Record<Domain, number> = {
+  assimilation: DOMAIN_QUESTIONS.assimilation.length * 5,
+  compensation: DOMAIN_QUESTIONS.compensation.length * 5,
+  masking: DOMAIN_QUESTIONS.masking.length * 5,
+};
+
 // ---------------------------------------------------------------------------
 // Animated card transition
 // ---------------------------------------------------------------------------
@@ -133,6 +149,7 @@ function AnimatedCard({ children, animKey, direction }: CardProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    setVisible(false);
     const id = requestAnimationFrame(() => setVisible(true));
     return () => cancelAnimationFrame(id);
   }, [animKey]);
@@ -195,7 +212,7 @@ export default function MaskingInventory() {
   const totalQuestions = QUESTIONS.length;
   const currentQuestion = QUESTIONS[currentIndex];
   const isLast = currentIndex === totalQuestions - 1;
-  const progress = ((currentIndex) / totalQuestions) * 100;
+  const progress = ((currentIndex + 1) / totalQuestions) * 100;
 
   const handleAnswer = useCallback((value: number) => {
     const q = QUESTIONS[currentIndex];
@@ -227,19 +244,33 @@ export default function MaskingInventory() {
 
   useEffect(() => {
     if (showResults && resultsRef.current) {
-      setTimeout(() => {
+      const timeoutId = window.setTimeout(() => {
         resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 150);
+      return () => window.clearTimeout(timeoutId);
     }
   }, [showResults]);
 
-  const totalScore = Object.values(answers).reduce((s, v) => s + v, 0);
+  const totalScore = useMemo(
+    () => Object.values(answers).reduce((s, v) => s + v, 0),
+    [answers],
+  );
   const band = showResults ? getBand(totalScore) : null;
 
-  const domainScore = (d: keyof typeof DOMAIN_META) =>
-    QUESTIONS.filter((q) => q.domain === d).reduce((s, q) => s + (answers[q.id] ?? 0), 0);
-  const domainMax = (d: keyof typeof DOMAIN_META) =>
-    QUESTIONS.filter((q) => q.domain === d).length * 5;
+  const domainScores = useMemo(
+    () =>
+      DOMAIN_KEYS.reduce(
+        (scores, domain) => {
+          scores[domain] = DOMAIN_QUESTIONS[domain].reduce(
+            (sum, question) => sum + (answers[question.id] ?? 0),
+            0,
+          );
+          return scores;
+        },
+        {} as Record<Domain, number>,
+      ),
+    [answers],
+  );
 
   if (showResults && band) {
     return (
@@ -262,8 +293,13 @@ export default function MaskingInventory() {
         <div className="bg-surface border border-border rounded-2xl p-5 md:p-6">
           <p className="text-xs font-black uppercase tracking-widest text-site-sub mb-4">Your Score Breakdown</p>
           <div className="space-y-4">
-            {(["assimilation", "compensation", "masking"] as const).map((d) => (
-              <DomainBar key={d} domain={d} score={domainScore(d)} maxScore={domainMax(d)} />
+            {DOMAIN_KEYS.map((domain) => (
+              <DomainBar
+                key={domain}
+                domain={domain}
+                score={domainScores[domain]}
+                maxScore={DOMAIN_MAX_SCORES[domain]}
+              />
             ))}
           </div>
           <p className="mt-4 text-xs text-site-sub leading-relaxed">
