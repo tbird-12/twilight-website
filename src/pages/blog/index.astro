@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
+import Schema from "../../components/Schema.astro";
 import PostCard from "../../components/blog/PostCard.astro";
 import { blogCategories, getCategoryMeta } from "../../data/blogCategories";
 
@@ -17,12 +18,27 @@ const featuredDate = featuredPost?.data.pubDate.toLocaleDateString("en-US", {
   month: "long",
   day: "numeric",
 });
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Twilight Psychology Blog",
+  description: "Clinical updates, billing guidance, insurance news, and practice announcements from Twilight Psychology.",
+  url: new URL("/blog/", siteUrl).href,
+  publisher: {
+    "@type": "Organization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
 ---
 
 <BlogLayout
-  title="Blog"
+  title="Twilight Psychology Blog"
   description="Insights, updates, and clinical resources from Twilight Psychology — covering billing, insurance, clinical practices, and more."
 >
+  <Schema slot="page-schema" schema={blogSchema} />
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
     <!-- Hero + Featured Post -->

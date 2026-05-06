@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
 import { Image } from "astro:assets";
 import { providers } from "../../../data/staff";
 
@@ -12,12 +13,33 @@ const specialties = [
   "School-Based Advocacy",
   "Developmental Testing",
 ];
+
+const pageDescription =
+  "Tiffany Roundtree, LPCA — Twilight Psychology clinician providing child and adolescent therapy in Kentucky.";
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const profileUrl = new URL(Astro.url.pathname, siteUrl).href;
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: tiffany.name,
+  jobTitle: "Licensed Professional Counselor Associate",
+  description: pageDescription,
+  image: new URL(tiffany.image.src, siteUrl).href,
+  url: profileUrl,
+  knowsAbout: specialties,
+  worksFor: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
 ---
 
 <Layout
-  title="Tiffany Roundtree, M.A.Ed, M.A., LPCA | Child & Adolescent Specialist | Twilight Psychology"
-  description="Tiffany Roundtree, M.A.Ed, M.A., LPCA — Licensed counselor at Twilight Psychology. Child and adolescent therapy in Kentucky."
+  title="Tiffany Roundtree, LPCA | Child & Adolescent Therapy"
+  description={pageDescription}
 >
+  <Schema slot="page-schema" schema={personSchema} />
   <div class="bg-site-bg min-h-screen pb-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom

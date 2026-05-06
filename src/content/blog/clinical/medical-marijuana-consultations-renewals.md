@@ -1,6 +1,8 @@
 ---
 title: "Medical Marijuana Consultations and Renewals Are Now Available"
+seoTitle: "Medical Marijuana Consultations in Kentucky"
 description: "Twilight Psychology now offers medical marijuana consultations and renewals for eligible Kentucky residents. Learn about our immediate availability, clinical requirements, and how to get started."
+seoDescription: "Twilight Psychology offers medical marijuana consultations and renewals in Kentucky. Review eligibility, legal considerations, and next steps."
 pubDate: 2026-04-25
 category: clinical
 author: "Twilight Psychology Team"

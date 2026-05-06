@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Schema from '../../components/Schema.astro';
 import FaqAccordionWrapper from '../../components/interactive/FaqAccordionWrapper.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
 import { categoryColorMap } from '../../data/blogCategories';
@@ -61,14 +62,28 @@ const waitTimeFaqs = [
     answer: "Yes, we maintain a cancellation list for clients who wish to be notified of earlier appointment openings. If a cancellation occurs, we reach out to clients in the order they joined the list to offer them an earlier appointment."
   }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [...generalFaqs, ...waitTimeFaqs].map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: answer.replace(/\s+/g, " ").trim(),
+    },
+  })),
+};
 ---
 
 
 
 <Layout
-  title="FAQ | Twilight Psychology"
+  title="Testing, Insurance & Intake FAQ | Twilight Psychology"
   description="Frequently asked questions about Twilight Psychology services, including testing timelines, insurance coverage, costs, and how to get started in Kentucky."
 >
+  <Schema slot="page-schema" schema={faqSchema} />
   <div class="bg-site-bg min-h-screen pb-24">
     <section class="bg-site-bg py-24 px-4">
       <div class="max-w-3xl mx-auto">

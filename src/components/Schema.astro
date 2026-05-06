@@ -8,14 +8,30 @@ const imageUrl = new URL(logo.src, siteUrl).href;
 const [addressLocality, addressRegionAndPostalCode] = MAIN_OFFICE_CITY_STATE_ZIP.split(", ");
 const [addressRegion, postalCode] = addressRegionAndPostalCode.split(" ");
 
-const { type = "WebSite", name, ...extra } = Astro.props;
+type JsonLd = Record<string, unknown>;
 
-const schema = {
+interface Props {
+  type?: string;
+  name?: string;
+  schema?: JsonLd;
+  schemas?: JsonLd[];
+}
+
+const props = Astro.props as Props & Record<string, unknown>;
+const {
+  type = "WebSite",
+  name,
+  schema,
+  schemas,
+  ...extra
+} = props;
+
+const defaultSchema: JsonLd = {
   "@context": "https://schema.org",
   "@type": type,
   name: name || "Twilight Psychology",
   description:
-    "Neuro-affirming psychological evaluations, therapy, and medication management in Lexington, Kentucky. Among the shortest waitlists in Kentucky for clients seeking a diagnosis with Medicaid or health insurance. Accepting 15+ insurance panels including Medicaid, Medicare, and Tricare.",
+    "Neuro-affirming psychological evaluations, therapy, and medication management in Lexington, Kentucky. Accepting 20+ insurance panels including Medicaid, Medicare, and Tricare.",
   url: "https://www.twilightpsychology.com",
   address: {
     "@type": "PostalAddress",
@@ -79,7 +95,7 @@ const schema = {
           "@type": "MedicalTest",
           name: "ADHD Testing in Kentucky",
           description:
-            "Comprehensive ADHD evaluations for children and adults in Kentucky. Insurance accepted including Medicaid. Among the shortest waitlists in the state.",
+            "Comprehensive ADHD evaluations for children and adults in Kentucky. Insurance accepted including Medicaid and major commercial plans.",
         },
       },
       {
@@ -88,7 +104,7 @@ const schema = {
           "@type": "MedicalTest",
           name: "Autism Evaluation in Kentucky",
           description:
-            "Neuro-affirming autism spectrum evaluations in Lexington, KY. We accept Medicaid and most major insurances with minimal wait times.",
+            "Neuro-affirming autism spectrum evaluations in Lexington, KY. We accept Medicaid and major commercial insurance plans.",
         },
       },
       {
@@ -122,6 +138,12 @@ const schema = {
   },
   ...extra,
 };
+
+const structuredData = schemas ?? (schema ? [schema] : [defaultSchema]);
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+{
+  structuredData.map((entry) => (
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(entry)} />
+  ))
+}

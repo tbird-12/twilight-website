@@ -8,8 +8,8 @@ import AnimatedSection from "../../components/react/primitives/AnimatedSection";
 ---
 
 <Layout
-  title="Our Services | Twilight Psychology"
-  description="Psychological evaluations, ADHD and autism testing, neuro-affirming therapy, medication management, and personality testing at Twilight Psychology."
+  title="Psychological Services | Twilight Psychology"
+  description="Compare psychological evaluations, therapy, and medication management at Twilight Psychology in Kentucky."
 >
   <div class="bg-site-bg min-h-screen pb-24">
     <div class="max-w-4xl mx-auto px-6">
@@ -32,6 +32,20 @@ import AnimatedSection from "../../components/react/primitives/AnimatedSection";
       items={services.map((s) => ({ name: s.name, slug: s.slug, description: s.desc }))}
       basePath="/services"
     />
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 mt-10">
+    <div class="rounded-[2.5rem] border border-border bg-surface-soft p-8 md:p-10">
+      <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+        Start with the service format that matches your goal
+      </h2>
+      <p class="text-site-text leading-relaxed font-medium">
+        Use this page when you already know you need an evaluation, ongoing therapy, or medication support.
+        If you are looking for school-based, legal, or documentation-specific assessments such as IEEs,
+        guardianship, adoption, or ESA evaluations, explore our{" "}
+        <a href="/specialities" class="text-cta hover:underline">specialty evaluations</a>.
+      </p>
+    </div>
   </section>
 
   <section class="max-w-4xl mx-auto px-4 mt-12 mb-10">

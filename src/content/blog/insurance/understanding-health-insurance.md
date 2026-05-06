@@ -1,6 +1,8 @@
 ---
 title: "Understanding Health Insurance: Deductibles, copays, eligibility, and Benefits"
-description:  "This is the first of many posts that explains health insurance and services that can be paid via health insurance"
+seoTitle: "Health Insurance Basics: Deductibles, Copays & Benefits"
+description: "Learn how deductibles, copays, eligibility, and benefits affect therapy, medication management, and psychological testing coverage at Twilight Psychology."
+seoDescription: "Learn how deductibles, copays, coinsurance, eligibility, and benefits affect therapy and testing coverage at Twilight Psychology."
 pubDate: 2026-04-11
 category: insurance
 author: "Twilight Psychology Billing Team"
@@ -11,6 +13,26 @@ draft: false
 > **Disclaimer:** The information on this page is provided for general informational purposes only and may become outdated. It is not legal, financial, or medical advice. You are responsible for verifying current plan details with your insurer or plan administrator. Twilight Psychology does not guarantee accuracy and has no legal responsibility for coverage decisions based on this content.
 
 Health insurance is a large topic with many plan-specific rules. This post focuses only on the main types of coverage you are likely to encounter at Twilight Psychology: Commercial (private) insurance, Kentucky Medicaid (both MCOs and traditional Medicaid), and Medicare (Original vs Medicare Advantage). A follow-up post will explain cost concepts like deductibles and copays and how they typically apply to each plan type. 
+
+---
+
+## Deductibles, copays, coinsurance, eligibility, and benefits — what these terms mean
+
+Before you schedule care, it helps to know the language insurers use when they describe coverage:
+
+- **Deductible:** The amount you must pay out of pocket before your plan starts sharing costs for covered services.
+- **Copay:** A fixed dollar amount you may owe for a visit, such as therapy or medication management.
+- **Coinsurance:** A percentage of the allowed charge that you may owe after your deductible is met.
+- **Eligibility:** Whether your insurance is active on the date of service and whether the listed member information is current.
+- **Benefits:** The details of what your specific plan covers, including visit types, network rules, prior authorization requirements, and your share of the cost.
+
+At Twilight Psychology, we verify **eligibility** to make sure the plan is active, then review your **benefits** to understand whether therapy, medication management, or psychological testing is covered and what out-of-pocket costs may apply.
+
+## Why benefits verification matters before therapy or testing
+
+Two people can have the same insurance company and still have very different coverage. One plan may have a low copay for therapy but no out-of-network benefits. Another may cover testing only after prior authorization and after a deductible is met.
+
+That is why we do not rely on the insurance company name alone. We look at the specific member plan, network status, service type, and any prior-authorization requirements before a testing appointment or longer course of care is scheduled.
 
 ---
 
@@ -71,7 +93,7 @@ How we help: We verify which Medicare path you’re on and whether Twilight is i
 
 ## What’s next
 
-This post limited the discussion to insurance types and plan structures. We will follow up with a dedicated post that explains deductibles, copays, and coinsurance and shows what those cost terms typically look like under commercial plans, Kentucky MCOs, Traditional Medicaid, Original Medicare, and Medicare Advantage.
+This post covered both the main insurance types we see at Twilight Psychology and the most common cost and coverage terms you will hear during scheduling. Your exact deductible, copay, coinsurance, and prior-authorization rules always depend on the specific plan listed on your card.
 
 If you want Twilight to check your coverage for a specific appointment, bring your insurance card or email images of it to our billing team and we’ll send a clear summary of expected coverage and any likely out-of-pocket costs.
 ## Related Posts and Resources

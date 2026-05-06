@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BlogLayout from "../../../layouts/BlogLayout.astro";
+import Schema from "../../../components/Schema.astro";
 import PostCard from "../../../components/blog/PostCard.astro";
 import { blogCategories, getCategoryMeta } from "../../../data/blogCategories";
 import type { BlogCategory } from "../../../content.config";
@@ -19,12 +20,48 @@ const posts = await getCollection(
 );
 
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const canonicalURL = new URL(`/blog/category/${category}/`, siteUrl).href;
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: `${meta.label} Articles`,
+  description: meta.description,
+  url: canonicalURL,
+  isPartOf: {
+    "@type": "Blog",
+    name: "Twilight Psychology Blog",
+    url: new URL("/blog/", siteUrl).href,
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Blog",
+      item: new URL("/blog/", siteUrl).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: meta.label,
+      item: canonicalURL,
+    },
+  ],
+};
 ---
 
 <BlogLayout
-  title={meta.label}
+  title={`${meta.label} Articles | Twilight Psychology Blog`}
   description={`${meta.description} — from Twilight Psychology.`}
+  robots="noindex, follow"
 >
+  <Schema slot="page-schema" schemas={[collectionSchema, breadcrumbSchema]} />
   <!-- Page header -->
   <section class="border-b border-border py-12 px-4">
     <div class="max-w-5xl mx-auto">

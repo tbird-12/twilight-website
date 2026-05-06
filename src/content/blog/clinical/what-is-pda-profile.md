@@ -1,6 +1,8 @@
 ---
 title: "What Is a PDA Profile and How We Assess It"
+seoTitle: "What Is a PDA Profile?"
 description: "Pathological Demand Avoidance (PDA) is a profile on the autism spectrum that is frequently missed in traditional evaluations. Here is how Twilight Psychology approaches this assessment."
+seoDescription: "Learn what a PDA profile is, why it is often missed in autism evaluations, and how Twilight Psychology assesses demand avoidance."
 pubDate: 2026-01-10
 category: clinical
 author: "Twilight Psychology Team"

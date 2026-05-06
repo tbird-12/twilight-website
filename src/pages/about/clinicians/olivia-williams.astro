@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
 import { Image } from "astro:assets";
 import { providers } from "../../../data/staff";
 
@@ -11,12 +12,33 @@ const specialties = [
   "Psyhoeducational Assessments",
   "Dyslexia Assessments",
 ];
+
+const pageDescription =
+  "Olivia Williams, PhD — Twilight Psychology clinician providing psychological assessments for autism, ADHD, and learning needs in Kentucky.";
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const profileUrl = new URL(Astro.url.pathname, siteUrl).href;
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: olivia.name,
+  jobTitle: "Licensed Psychological Associate",
+  description: pageDescription,
+  image: new URL(olivia.image.src, siteUrl).href,
+  url: profileUrl,
+  knowsAbout: specialties,
+  worksFor: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
 ---
 
 <Layout
-  title="Olivia Williams, Ph.D, LPA | Licensed Psychological Associate | Twilight Psychology"
-  description="Olivia Williams, Ph.D, LPA — Licensed psychological associate at Twilight Psychology. Comprehensive psychological assessments."
+  title="Olivia Williams, PhD | Psychological Assessments"
+  description={pageDescription}
 >
+  <Schema slot="page-schema" schema={personSchema} />
   <div class="bg-site-bg min-h-screen pb-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
@@ -88,6 +110,25 @@ const specialties = [
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-4 py-18 space-y-8 text-site-text text-lg">
+    <h2 class="font-serif text-3xl font-black text-site-text italic">
+      Assessment with clarity, warmth, and practical next steps.
+    </h2>
+    <p>
+      I provide psychological assessments for young children, adolescents, and adults
+      who need a more complete understanding of learning, attention, autism, and
+      related developmental differences. My goal is to turn testing into something
+      useful: clear findings, thoughtful interpretation, and recommendations that make
+      sense for real life at home, school, and work.
+    </p>
+    <p>
+      I value careful listening and a thorough review of developmental history, not
+      just test scores in isolation. Whether a family is seeking school-based support
+      or an adult is looking for diagnostic clarity, I aim to make the process feel
+      respectful, organized, and easy to understand from start to finish.
+    </p>
   </section>
 
   <div class="max-w-4xl mx-auto px-6 mt-8 mb-8">
