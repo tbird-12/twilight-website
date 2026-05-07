@@ -18,7 +18,7 @@ Health insurance is a large topic with many plan-specific rules. This post focus
 
 ## Deductibles, copays, coinsurance, eligibility, and benefits — what these terms mean
 
-Before you schedule care, it helps to know the language insurers use when they describe coverage:
+Before you schedule care, it helps to know the language insurers use when they describe coverage.
 
 - **Deductible:** The amount you must pay out of pocket before your plan starts sharing costs for covered services.
 - **Copay:** A fixed dollar amount you may owe for a visit, such as therapy or medication management.

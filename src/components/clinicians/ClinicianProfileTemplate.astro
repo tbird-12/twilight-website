@@ -1,0 +1,245 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import Schema from "../Schema.astro";
+import ClinicianActionPanel from "./ClinicianActionPanel.astro";
+import type { Provider } from "../../data/staff";
+import type {
+  ClinicianDetailCard,
+  ClinicianProfile,
+} from "../../data/clinicianProfiles";
+
+interface Props {
+  provider: Provider;
+  profile: ClinicianProfile;
+  pathname: string;
+}
+
+const { provider, profile, pathname } = Astro.props;
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const profileUrl = new URL(pathname, siteUrl).href;
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: provider.name,
+  jobTitle: profile.jobTitle,
+  description: profile.pageDescription,
+  image: new URL(provider.image.src, siteUrl).href,
+  url: profileUrl,
+  knowsAbout: profile.specialties,
+  worksFor: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
+
+const hasSidebarCards = (profile.sidebarCards?.length ?? 0) > 0;
+const hasDetailCards = (profile.detailCards?.length ?? 0) > 0;
+
+function getCardClasses(card: ClinicianDetailCard) {
+  if (card.variant === "surface") {
+    return "border border-border bg-surface";
+  }
+
+  if (card.variant === "surface-2") {
+    return "border theme-border theme-surface-2";
+  }
+
+  return "border theme-border theme-surface-soft";
+}
+---
+
+<Layout title={profile.pageTitle} description={profile.pageDescription}>
+  <Schema slot="page-schema" schema={personSchema} />
+
+  <div class="min-h-screen bg-site-bg pb-24">
+    <section class="relative border-b theme-border bg-linear-to-b from-site-ann/35 to-transparent px-4 pb-24 pt-32">
+      <div class="mx-auto mb-10 max-w-7xl">
+        <a
+          href="/about/clinicians/clinicians-lex-ky"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-cta/90 hover:text-cta"
+        >
+          <span aria-hidden="true">←</span>
+          Back to all clinicians
+        </a>
+      </div>
+
+      <div class="mx-auto flex max-w-7xl flex-col items-center gap-16 lg:flex-row">
+        <div class="group relative not-prose">
+          <div class="absolute -inset-1 rounded-[3rem] bg-linear-to-r from-cta to-cta blur opacity-25 transition duration-1000 group-hover:opacity-50"></div>
+          <div class="relative h-96 w-72 overflow-hidden rounded-[2.5rem] border theme-border theme-surface-2 shadow-2xl">
+            <Image
+              src={provider.image}
+              alt={`Professional portrait of ${provider.name}`}
+              widths={[288, 576]}
+              sizes="18rem"
+              class="absolute inset-0 h-full w-full rounded-[2.5rem] object-cover object-top"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <div class="flex-1 text-center lg:text-left">
+          <span class="mb-6 inline-block rounded-full border border-cta/20 bg-cta/10 px-4 py-1.5 text-xs font-black uppercase tracking-[0.4em] text-cta">
+            {profile.badge}
+          </span>
+          <h1 class="mb-4 font-serif text-5xl font-black leading-none tracking-tighter text-site-text md:text-7xl">
+            {profile.headingPrimary}
+            <br />
+            <span class="text-cta">{profile.headingAccent}</span>
+          </h1>
+          {profile.intro && (
+            <p class="mb-8 max-w-2xl text-lg leading-relaxed text-site-sub">
+              {profile.intro}
+            </p>
+          )}
+          {profile.specialties.length > 0 && (
+            <div class="flex flex-wrap justify-center gap-3 lg:justify-start">
+              {profile.specialties.map((specialty) => (
+                <span class="rounded-full border px-4 py-2 text-xs font-black uppercase tracking-tighter text-sand theme-border theme-surface-soft">
+                  {specialty}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-4 py-24">
+      <div class:list={["gap-16", hasSidebarCards ? "grid lg:grid-cols-12" : "block"]}>
+        <div class:list={[hasSidebarCards ? "space-y-8 lg:col-span-8" : "mx-auto max-w-4xl space-y-8"]}>
+          {profile.contentBlocks.map((block) =>
+            block.type === "quote" ? (
+              <div
+                class:list={[
+                  "rounded-r-3xl border-l-4 p-8 italic text-site-text",
+                  block.variant === "accent"
+                    ? "border-cta bg-cta/10 font-bold"
+                    : "border-cta theme-surface-2 font-medium",
+                ]}
+              >
+                {block.quote}
+              </div>
+            ) : (
+              <div class="space-y-6 text-site-text">
+                {block.title && (
+                  <h2 class="font-serif text-3xl font-black italic tracking-tight text-site-text">
+                    {block.title}
+                  </h2>
+                )}
+                {block.paragraphs?.map((paragraph) => (
+                  <p class="text-lg leading-relaxed text-site-text">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ),
+          )}
+
+          {hasDetailCards && (
+            <div class="grid gap-6 md:grid-cols-2">
+              {profile.detailCards?.map((card) => (
+                <div
+                  class:list={[
+                    "rounded-[2.5rem] p-6 sm:p-7",
+                    getCardClasses(card),
+                    card.columnSpan === 2 ? "md:col-span-2" : "",
+                  ]}
+                >
+                  {card.eyebrow && (
+                    <p class="mb-4 text-xs font-black uppercase tracking-widest text-cta">
+                      {card.eyebrow}
+                    </p>
+                  )}
+                  <h3 class="mb-4 font-serif text-xl font-black text-site-text">
+                    {card.title}
+                  </h3>
+                  {card.body?.map((paragraph) => (
+                    <p class="mb-3 text-sm leading-relaxed text-site-sub last:mb-0 sm:text-base">
+                      {paragraph}
+                    </p>
+                  ))}
+                  {card.items && card.items.length > 0 && (
+                    <div class="space-y-4">
+                      {card.items.map((item) => (
+                        <div class="border-b pb-4 last:border-0 last:pb-0 theme-border">
+                          <p class="text-sm font-bold text-site-text">{item.title}</p>
+                          {item.subtitle && (
+                            <p class="text-xs text-site-sub sm:text-sm">{item.subtitle}</p>
+                          )}
+                          {item.meta && (
+                            <p class="mt-1 text-xs uppercase text-site-sub">{item.meta}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {hasSidebarCards && (
+          <aside class="space-y-8 lg:col-span-4">
+            {profile.sidebarCards?.map((card) => (
+              <div class:list={["rounded-[2.5rem] p-8", getCardClasses(card)]}>
+                {card.eyebrow && (
+                  <p class="mb-4 text-xs font-black uppercase tracking-widest text-cta">
+                    {card.eyebrow}
+                  </p>
+                )}
+                <h3 class="mb-4 font-serif text-xl font-black text-site-text">
+                  {card.title}
+                </h3>
+                {card.body?.map((paragraph) => (
+                  <p class="mb-3 text-sm leading-relaxed text-site-sub last:mb-0">
+                    {paragraph}
+                  </p>
+                ))}
+                {card.items && card.items.length > 0 && (
+                  <div class="space-y-4">
+                    {card.items.map((item) => (
+                      <div class="border-b pb-4 last:border-0 last:pb-0 theme-border">
+                        <p class="text-sm font-bold text-site-text">{item.title}</p>
+                        {item.subtitle && (
+                          <p class="text-xs text-site-sub">{item.subtitle}</p>
+                        )}
+                        {item.meta && (
+                          <p class="mt-1 text-xs uppercase text-site-sub">{item.meta}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </aside>
+        )}
+      </div>
+    </section>
+
+    {profile.primaryPanel && <ClinicianActionPanel panel={profile.primaryPanel} />}
+    {profile.secondaryPanel && <ClinicianActionPanel panel={profile.secondaryPanel} />}
+
+    <div class="mx-auto mb-8 mt-8 max-w-4xl px-6">
+      <div class="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-border bg-surface p-5">
+        <div>
+          <p class="text-sm text-site-sub">Curious whether you might be masking?</p>
+          <p class="text-xs text-site-sub opacity-70">
+            Take our free 3-minute self-reflection tool.
+          </p>
+        </div>
+        <a
+          href="/resources/masking-inventory"
+          class="whitespace-nowrap text-sm font-semibold text-cta hover:underline"
+        >
+          Free Masking Inventory →
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

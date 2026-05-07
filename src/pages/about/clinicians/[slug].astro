@@ -1,0 +1,31 @@
+---
+import ClinicianProfileTemplate from "../../../components/clinicians/ClinicianProfileTemplate.astro";
+import {
+  clinicianProfiles,
+  getClinicianPageData,
+} from "../../../data/clinicianProfiles";
+
+export function getStaticPaths() {
+  return clinicianProfiles.map((profile) => ({
+    params: { slug: profile.slug },
+  }));
+}
+
+const slug = Astro.params.slug;
+
+if (!slug) {
+  throw new Error("Clinician slug is required.");
+}
+
+const clinicianPageData = getClinicianPageData(slug);
+
+if (!clinicianPageData) {
+  throw new Error(`Unknown clinician profile: ${slug}`);
+}
+---
+
+<ClinicianProfileTemplate
+  provider={clinicianPageData.provider}
+  profile={clinicianPageData.profile}
+  pathname={Astro.url.pathname}
+/>

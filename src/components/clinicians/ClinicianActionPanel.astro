@@ -1,0 +1,83 @@
+---
+import type { ClinicianActionPanel as ClinicianActionPanelData } from "../../data/clinicianProfiles";
+
+interface Props {
+  panel: ClinicianActionPanelData;
+}
+
+const { panel } = Astro.props;
+
+const isAccent = panel.variant === "accent";
+const wrapperClass = isAccent
+  ? "bg-cta text-cta-fg"
+  : "border theme-border theme-surface-2 text-site-text";
+const eyebrowClass = isAccent ? "text-cta-fg/70" : "text-cta/70";
+const descriptionClass = isAccent ? "text-cta-fg/80" : "text-site-sub";
+const itemClass = isAccent
+  ? "border border-cta-fg/10 bg-site-bg/10"
+  : "border theme-border theme-surface-soft";
+const itemValueClass = isAccent ? "text-cta-fg" : "text-site-text";
+const subduedValueClass = isAccent ? "italic text-cta-fg/60" : "italic text-site-sub";
+const buttonClass = isAccent
+  ? "bg-site-bg text-site-text hover:scale-105"
+  : "bg-cta text-cta-fg hover:bg-cta/90";
+---
+
+<section class="max-w-5xl mx-auto px-4 pb-24">
+  <div class:list={["relative overflow-hidden rounded-[4rem] p-12 text-center", wrapperClass]}>
+    <div class="relative z-10">
+      {panel.eyebrow && (
+        <p class:list={["mb-4 text-xs font-black uppercase tracking-widest", eyebrowClass]}>
+          {panel.eyebrow}
+        </p>
+      )}
+      <h2 class="font-serif text-3xl font-bold tracking-tight sm:text-4xl">
+        {panel.title}
+      </h2>
+      {panel.description && (
+        <p class:list={["mx-auto mt-4 max-w-2xl text-sm font-medium leading-relaxed sm:text-base", descriptionClass]}>
+          {panel.description}
+        </p>
+      )}
+
+      {panel.items && panel.items.length > 0 && (
+        <div class="my-8 flex flex-col justify-center gap-6 md:flex-row">
+          {panel.items.map((item) => (
+            <div class:list={["rounded-2xl p-6", itemClass]}>
+              <p class:list={["mb-2 text-xs font-bold uppercase tracking-widest", eyebrowClass]}>
+                {item.label}
+              </p>
+              <p class:list={["text-lg font-semibold sm:text-xl", item.subdued ? subduedValueClass : itemValueClass]}>
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {panel.note && (
+        <p class:list={["mx-auto mb-10 max-w-xl italic leading-relaxed", descriptionClass]}>
+          {panel.note}
+        </p>
+      )}
+
+      {panel.ctaLabel && panel.ctaHref && (
+        <a
+          href={panel.ctaHref}
+          class:list={[
+            "inline-block rounded-full px-10 py-4 font-bold transition-all",
+            buttonClass,
+          ]}
+        >
+          {panel.ctaLabel}
+        </a>
+      )}
+    </div>
+
+    {panel.watermark && (
+      <div class="absolute -bottom-10 -right-10 select-none text-[12rem] font-black uppercase text-site-text/5">
+        {panel.watermark}
+      </div>
+    )}
+  </div>
+</section>
