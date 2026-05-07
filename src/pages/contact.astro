@@ -3,6 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import PageHeroWrapper from "../components/PageHeroWrapper.astro";
 import AnimatedSection from "../components/react/primitives/AnimatedSection";
 import ContactTabsWrapper from "../components/ContactTabsWrapper.astro";
+
+const emergencyContacts = [
+  { href: "tel:911", label: "Immediate Emergency", action: "Call 911" },
+  { href: "tel:988", label: "Mental Health Crisis", action: "Call 988" },
+];
+
+const emergencyActionClass =
+  "rounded-2xl border border-cta/30 bg-cta/10 px-4 py-5 sm:px-5 transition-all duration-200 hover:scale-[1.02] hover:border-cta/60 hover:bg-cta/20 active:scale-[0.98]";
 ---
 
 <Layout
@@ -32,21 +40,13 @@ import ContactTabsWrapper from "../components/ContactTabsWrapper.astro";
               If you are in immediate danger or need urgent help, do not wait for office response.
             </p>
             <div class="grid gap-4 md:grid-cols-3">
-              <a
-                href="tel:911"
-                class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <p class="text-xs font-black uppercase tracking-widest text-cta">Immediate Emergency</p>
-                <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 911</p>
-              </a>
-              <a
-                href="tel:988"
-                class="rounded-2xl border border-cta/30 bg-cta/10 px-4 sm:px-5 py-5 transition-all duration-200 hover:bg-cta/20 hover:border-cta/60 hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <p class="text-xs font-black uppercase tracking-widest text-cta">Mental Health Crisis</p>
-                <p class="text-2xl sm:text-3xl font-black text-site-text mt-1">Call 988</p>
-              </a>
-              <div class="rounded-2xl border p-4 sm:px-5 py-5" style="border-color: var(--color-border); background: var(--color-surface)">
+              {emergencyContacts.map((contact) => (
+                <a href={contact.href} class={emergencyActionClass}>
+                  <p class="text-xs font-black uppercase tracking-widest text-cta">{contact.label}</p>
+                  <p class="mt-1 text-2xl font-black text-site-text sm:text-3xl">{contact.action}</p>
+                </a>
+              ))}
+              <div class="rounded-2xl border border-border bg-surface px-4 py-5 sm:px-5">
                 <p class="text-xs font-black uppercase tracking-widest text-site-sub">Important Note</p>
                 <p class="text-site-sub text-sm mt-2 leading-relaxed">
                   Messages sent through email, phone, or forms are not monitored for emergency response.
@@ -56,12 +56,12 @@ import ContactTabsWrapper from "../components/ContactTabsWrapper.astro";
           </section>
         </AnimatedSection>
 
-        <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 md:p-10" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
+        <section class="mt-10 md:mt-12 rounded-4xl border border-border-strong bg-surface-2 p-6 sm:p-8 md:p-10">
           <ContactTabsWrapper />
         </section>
 
         <AnimatedSection client:visible animation="fadeInUp" delay={200}>
-          <section class="mt-10 md:mt-12 rounded-4xl border p-6 sm:p-8 text-center" style="border-color: var(--color-border-strong); background: var(--color-surface-2)">
+          <section class="mt-10 md:mt-12 rounded-4xl border border-border-strong bg-surface-2 p-6 text-center sm:p-8">
             <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
             <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
             <p class="text-site-sub">Sat - Sun: By appointment</p>

@@ -36,6 +36,71 @@ const differentiators = [
   { icon: "mdi:clock-fast", stat: "7 days", label: "Self-pay testing turnaround" },
   { icon: "mdi:calendar-check-outline", stat: "2,100+", label: "Evaluations completed" },
 ];
+
+const whyTwilightCards = [
+  {
+    icon: "mdi:speedometer",
+    title: "Results in Days, Not Months",
+    description:
+      "Self-pay evaluations can be completed and reports delivered within 7 days of intake. Insurance-based testing starts within weeks.",
+    delay: 0,
+  },
+  {
+    icon: "mdi:video-wireless-outline",
+    title: "Fully Remote Testing Available",
+    description:
+      "No need to travel. Complete your evaluation from home via secure telehealth — available across 40+ states through PSYPACT.",
+    delay: 100,
+  },
+  {
+    icon: "mdi:calendar-weekend-outline",
+    title: "Weekend & Flexible Scheduling",
+    description:
+      "We know your schedule is full. We offer evening and weekend appointments so you don't have to choose between work and getting answers.",
+    delay: 200,
+  },
+];
+
+const insuranceBadges = [
+  "Aetna",
+  "Cigna",
+  "UHC",
+  "Anthem",
+  "Humana",
+  "Medicaid",
+  "Medicare",
+  "Tricare",
+  "Ambetter",
+  "Passport",
+  "UMR",
+];
+
+const onboardingSteps = [
+  {
+    number: "1",
+    title: "Reach Out",
+    description:
+      "Contact us online or call. We'll answer your questions and help determine which service fits your needs.",
+    delay: 0,
+  },
+  {
+    number: "2",
+    title: "Complete Intake",
+    description:
+      "Fill out our intake forms and schedule your appointment. We'll verify benefits and walk you through what to expect.",
+    delay: 120,
+  },
+  {
+    number: "3",
+    title: "Get Answers",
+    description:
+      "Attend your evaluation, therapy, or medication appointment. Receive your results and a clear path forward.",
+    delay: 240,
+  },
+];
+
+const revealDelayStyle = (delay: number) => (delay > 0 ? `--reveal-d:${delay}ms` : undefined);
+const staggerStyle = (index: number) => `--stagger-i:${index}`;
 ---
 
 <LandingLayout
@@ -114,7 +179,7 @@ const differentiators = [
         <!-- Trust bar -->
         <div class="lp-trust-bar lp-reveal lp-reveal-d4 mt-14 sm:mt-20 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-12 gap-y-4">
           {differentiators.map((d, i) => (
-            <div class="lp-stagger flex flex-col items-center gap-1 min-w-20" style={`--stagger-i:${i}`}>
+            <div class="lp-stagger flex flex-col items-center gap-1 min-w-20" style={staggerStyle(i)}>
               <Icon name={d.icon} class="w-5 h-5 text-icon" />
               <span class="text-xl sm:text-2xl font-serif font-black text-site-text">{d.stat}</span>
               <span class="text-xs font-semibold text-site-sub uppercase tracking-wider">{d.label}</span>
@@ -137,7 +202,7 @@ const differentiators = [
 
       <div class="grid gap-5 md:grid-cols-3">
         {services.map((s, i) => (
-          <a href={s.link} class="group lp-reveal lp-card flex flex-col rounded-3xl border border-border p-6 sm:p-8 transition-all duration-300 hover:border-cta/20" style={`--reveal-d:${120 + i * 80}ms`}>
+          <a href={s.link} class="group lp-reveal lp-card flex flex-col rounded-3xl border border-border p-6 sm:p-8 transition-all duration-300 hover:border-cta/20" style={revealDelayStyle(120 + i * 80)}>
             <Icon name={s.icon} class="w-10 h-10 mb-5 text-icon" />
             <h3 class="font-serif text-xl sm:text-2xl font-black text-site-text mb-3 group-hover:text-cta transition-colors tracking-tight">
               {s.title}
@@ -193,13 +258,13 @@ const differentiators = [
             Built for People Who've
             <span class="text-cta"> Been Overlooked</span>
           </h2>
-          <p class="lp-reveal text-site-sub text-base sm:text-lg leading-relaxed mb-8" style="--reveal-d:100ms">
+          <p class="lp-reveal text-site-sub text-base sm:text-lg leading-relaxed mb-8" style={revealDelayStyle(100)}>
             Many adults go years without answers because the system wasn't designed for them. We specialize in assessments for ADHD, Autism, and related conditions — using a neuro-affirming approach that centers your experience rather than dismissing it.
           </p>
           <a
             href="/about/twilight-psychology"
             class="lp-reveal inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
-            style="--reveal-d:200ms"
+            style={revealDelayStyle(200)}
           >
             Read Our Story
             <Icon name="mdi:arrow-right" class="w-4 h-4" />
@@ -207,35 +272,17 @@ const differentiators = [
         </div>
 
         <div class="space-y-4">
-          <div class="lp-reveal lp-slide-right lp-card rounded-2xl border border-border p-5">
-            <div class="flex items-start gap-4">
-              <Icon name="mdi:speedometer" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
-              <div>
-                <h3 class="font-serif text-lg font-black text-site-text mb-1">Results in Days, Not Months</h3>
-                <p class="text-sm text-site-sub leading-relaxed">Self-pay evaluations can be completed and reports delivered within 7 days of intake. Insurance-based testing starts within weeks.</p>
+          {whyTwilightCards.map((card) => (
+            <div class="lp-reveal lp-slide-right lp-card rounded-2xl border border-border p-5" style={revealDelayStyle(card.delay)}>
+              <div class="flex items-start gap-4">
+                <Icon name={card.icon} class="mt-0.5 h-7 w-7 shrink-0 text-icon" />
+                <div>
+                  <h3 class="mb-1 font-serif text-lg font-black text-site-text">{card.title}</h3>
+                  <p class="text-sm leading-relaxed text-site-sub">{card.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="lp-reveal lp-slide-right lp-card rounded-2xl border border-border p-5" style="--reveal-d:100ms">
-            <div class="flex items-start gap-4">
-              <Icon name="mdi:video-wireless-outline" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
-              <div>
-                <h3 class="font-serif text-lg font-black text-site-text mb-1">Fully Remote Testing Available</h3>
-                <p class="text-sm text-site-sub leading-relaxed">No need to travel. Complete your evaluation from home via secure telehealth — available across 40+ states through PSYPACT.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="lp-reveal lp-slide-right lp-card rounded-2xl border border-border p-5" style="--reveal-d:200ms">
-            <div class="flex items-start gap-4">
-              <Icon name="mdi:calendar-weekend-outline" class="w-7 h-7 shrink-0 text-icon mt-0.5" />
-              <div>
-                <h3 class="font-serif text-lg font-black text-site-text mb-1">Weekend &amp; Flexible Scheduling</h3>
-                <p class="text-sm text-site-sub leading-relaxed">We know your schedule is full. We offer evening and weekend appointments so you don't have to choose between work and getting answers.</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
@@ -248,14 +295,14 @@ const differentiators = [
         <h2 class="lp-split-text font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
           Meet the Clinicians
         </h2>
-        <p class="lp-reveal mt-4 max-w-2xl mx-auto text-site-sub text-base leading-relaxed" style="--reveal-d:100ms">
+        <p class="lp-reveal mt-4 max-w-2xl mx-auto text-site-sub text-base leading-relaxed" style={revealDelayStyle(100)}>
           Our team includes licensed psychologists, licensed psychological associates, and a psychiatric nurse practitioner — each specializing in neurodivergent care.
         </p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
         {featuredProviders.map((p, i) => (
-          <a href={`/about/clinicians/${p.slug}`} class="group lp-reveal lp-scale-in text-center" style={`--reveal-d:${i * 100}ms`}>
+          <a href={`/about/clinicians/${p.slug}`} class="group lp-reveal lp-scale-in text-center" style={revealDelayStyle(i * 100)}>
             <div class="lp-avatar-ring mx-auto mb-3 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-border group-hover:border-cta/40 transition-colors">
               <Image
                 src={p.image}
@@ -291,23 +338,15 @@ const differentiators = [
         <h2 class="lp-split-text font-serif text-3xl sm:text-4xl font-black text-site-text tracking-tighter">
           We Work With Your Insurance
         </h2>
-        <p class="lp-reveal mt-4 max-w-xl mx-auto text-site-sub text-sm sm:text-base leading-relaxed" style="--reveal-d:100ms">
+        <p class="lp-reveal mt-4 max-w-xl mx-auto text-site-sub text-sm sm:text-base leading-relaxed" style={revealDelayStyle(100)}>
           We accept most major commercial plans, Medicaid, Medicare, Tricare, and CHAMPVA. Out-of-pocket options are also available with faster turnaround.
         </p>
       </div>
 
-      <div class="lp-reveal flex flex-wrap items-center justify-center gap-6 sm:gap-8 opacity-70" style="--reveal-d:150ms">
-        <span class="lp-ins-badge">Aetna</span>
-        <span class="lp-ins-badge">Cigna</span>
-        <span class="lp-ins-badge">UHC</span>
-        <span class="lp-ins-badge">Anthem</span>
-        <span class="lp-ins-badge">Humana</span>
-        <span class="lp-ins-badge">Medicaid</span>
-        <span class="lp-ins-badge">Medicare</span>
-        <span class="lp-ins-badge">Tricare</span>
-        <span class="lp-ins-badge">Ambetter</span> 
-        <span class="lp-ins-badge">Passport</span>
-        <span class="lp-ins-badge">UMR</span>
+      <div class="lp-reveal flex flex-wrap items-center justify-center gap-6 sm:gap-8 opacity-70" style={revealDelayStyle(150)}>
+        {insuranceBadges.map((badge) => (
+          <span class="lp-ins-badge">{badge}</span>
+        ))}
       </div>
 
       <p class="text-center mt-6 text-xs text-site-sub">
@@ -326,29 +365,15 @@ const differentiators = [
       </div>
 
       <div class="grid gap-5 sm:grid-cols-3">
-        <div class="lp-reveal lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center">
-          <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">1</span>
-          <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Reach Out</h3>
-          <p class="text-sm text-site-sub leading-relaxed">
-            Contact us online or call. We'll answer your questions and help determine which service fits your needs.
-          </p>
-        </div>
-
-        <div class="lp-reveal lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center" style="--reveal-d:120ms">
-          <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">2</span>
-          <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Complete Intake</h3>
-          <p class="text-sm text-site-sub leading-relaxed">
-            Fill out our intake forms and schedule your appointment. We'll verify benefits and walk you through what to expect.
-          </p>
-        </div>
-
-        <div class="lp-reveal lp-step-card relative rounded-3xl border border-border p-6 sm:p-8 text-center" style="--reveal-d:240ms">
-          <span class="lp-step-number font-serif font-black text-cta/20 text-6xl sm:text-7xl leading-none">3</span>
-          <h3 class="font-serif text-lg sm:text-xl font-black text-site-text mt-2 mb-2">Get Answers</h3>
-          <p class="text-sm text-site-sub leading-relaxed">
-            Attend your evaluation, therapy, or medication appointment. Receive your results and a clear path forward.
-          </p>
-        </div>
+        {onboardingSteps.map((step) => (
+          <div class="lp-reveal lp-step-card relative rounded-3xl border border-border p-6 text-center sm:p-8" style={revealDelayStyle(step.delay)}>
+            <span class="lp-step-number font-serif font-black text-cta/20 text-6xl leading-none sm:text-7xl">{step.number}</span>
+            <h3 class="mt-2 mb-2 font-serif text-lg font-black text-site-text sm:text-xl">{step.title}</h3>
+            <p class="text-sm leading-relaxed text-site-sub">
+              {step.description}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -363,10 +388,10 @@ const differentiators = [
           <br class="hidden sm:block" />
           <span class="text-cta">Let's Find Them.</span>
         </h2>
-        <p class="lp-reveal max-w-xl mx-auto text-site-sub text-base sm:text-lg leading-relaxed mb-8" style="--reveal-d:150ms">
+        <p class="lp-reveal max-w-xl mx-auto text-site-sub text-base sm:text-lg leading-relaxed mb-8" style={revealDelayStyle(150)}>
           Whether it's an evaluation, therapy, or medication support — our team is ready when you are. New clients are currently being accepted.
         </p>
-        <div class="lp-reveal flex flex-col sm:flex-row gap-4 justify-center items-center" style="--reveal-d:250ms">
+        <div class="lp-reveal flex flex-col sm:flex-row gap-4 justify-center items-center" style={revealDelayStyle(250)}>
           <a
             href={WIDGET_LINK}
             target="_blank"

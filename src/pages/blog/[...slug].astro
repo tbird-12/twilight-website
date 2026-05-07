@@ -7,6 +7,20 @@ import CategoryBadge from "../../components/blog/CategoryBadge.astro";
 import PostCard from "../../components/blog/PostCard.astro";
 import { getCategoryMeta } from "../../data/blogCategories";
 
+function getHeroImageClasses(isPortrait: boolean) {
+  if (isPortrait) {
+    return {
+      wrapper: "mx-auto mb-10 max-w-md rounded-3xl border border-border bg-surface-soft p-4 sm:p-6",
+      image: "mx-auto h-auto w-full rounded-2xl object-cover",
+    };
+  }
+
+  return {
+    wrapper: "mb-10 overflow-hidden rounded-3xl border border-border bg-surface-soft",
+    image: "h-auto w-full object-cover",
+  };
+}
+
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ data }) => !data.draft);
   return posts.map((post) => ({
@@ -40,12 +54,7 @@ const heroImageHeight = heroImage && heroImageWidth
   ? Math.round((heroImage.height / heroImage.width) * heroImageWidth)
   : undefined;
 const isPortraitHeroImage = heroImage ? heroImage.height > heroImage.width : false;
-const heroImageWrapperClass = isPortraitHeroImage
-  ? "mx-auto mb-10 max-w-md rounded-3xl border border-border bg-surface-soft p-4 sm:p-6"
-  : "mb-10 overflow-hidden rounded-3xl border border-border bg-surface-soft";
-const heroImageClass = isPortraitHeroImage
-  ? "mx-auto h-auto w-full rounded-2xl object-cover"
-  : "h-auto w-full object-cover";
+const heroImageClasses = getHeroImageClasses(isPortraitHeroImage);
 
 const categoryMeta = getCategoryMeta(category);
 
@@ -249,14 +258,14 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     </header>
 
     {heroImage && heroImageAlt && (
-      <div class={heroImageWrapperClass}>
+      <div class={heroImageClasses.wrapper}>
         <Image
           src={heroImage}
           alt={heroImageAlt}
           width={heroImageWidth}
           height={heroImageHeight}
           format="webp"
-          class={heroImageClass}
+          class={heroImageClasses.image}
         />
       </div>
     )}
