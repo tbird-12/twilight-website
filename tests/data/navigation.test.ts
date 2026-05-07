@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {
   aboutMenuItems,
   clientResourcesMenuItems,
+  isNavigationNestedItem,
   servicesMenuItems,
   specialtiesMenuItems,
 } from "../../src/data/navigationData";
@@ -33,5 +34,22 @@ describe("navigation data", () => {
   it("servicesMenuItems and specialtiesMenuItems are non-empty", () => {
     expect(servicesMenuItems.length).toBeGreaterThan(0);
     expect(specialtiesMenuItems.length).toBeGreaterThan(0);
+  });
+
+  it("nested about menu groups include labeled child links", () => {
+    const nestedItems = aboutMenuItems.filter(isNavigationNestedItem);
+
+    expect(nestedItems.length).toBeGreaterThan(0);
+
+    for (const item of nestedItems) {
+      expect(item.childLabel).toBeTruthy();
+      expect(item.childHrefBase).toMatch(/^\/[a-z-/]+$/);
+      expect(item.children.length).toBeGreaterThan(0);
+
+      for (const child of item.children) {
+        expect(child.name).toBeTruthy();
+        expect(child.slug).toMatch(/^[A-Za-z0-9-/]+$/);
+      }
+    }
   });
 });

@@ -4,22 +4,54 @@
  * Matches the Astro NavigationDropdown behavior
  */
 
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from "react";
+import {
+  getNavigationItemHref,
+  isNavigationNestedItem,
+} from "../../data/navigationData";
+import type {
+  NavigationMenuItem,
+  NavigationNestedItem,
+} from "../../data/navigationData";
 
 interface NavigationDropdownProps {
   title: string;
-  items: any[];
+  items: NavigationMenuItem[];
   baseHref: string;
   sectionLabel?: string;
   moreLink?: { href: string; label: string };
 }
 
-function getItemHref(item: any, baseHref: string): string {
-  if (item.slug.startsWith('/')) return item.slug;
-  return `${baseHref}/${item.slug}`;
+function NestedChildren({
+  items,
+  baseHref,
+}: {
+  items: NavigationMenuItem[];
+  baseHref: string;
+}) {
+  return items.map((item, idx) =>
+    isNavigationNestedItem(item) ? (
+      <div key={`${item.slug}-${idx}`} className="px-3 py-2">
+        <div className="text-xs font-black uppercase tracking-widest text-site-sub/80">
+          {item.childLabel}
+        </div>
+        <div className="mt-2 space-y-1">
+          <NestedChildren items={item.children} baseHref={item.childHrefBase} />
+        </div>
+      </div>
+    ) : (
+      <a
+        key={`${item.slug}-${idx}`}
+        href={getNavigationItemHref(item, baseHref)}
+        className="block rounded-lg px-3 py-2 text-sm font-semibold text-site-text transition-all hover:bg-cta/10 hover:text-cta"
+      >
+        {item.name}
+      </a>
+    ),
+  );
 }
 
-function NestedItem({ item }: { item: any }) {
+function NestedItem({ item }: { item: NavigationNestedItem }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
@@ -75,15 +107,7 @@ function NestedItem({ item }: { item: any }) {
               {item.childLabel}
             </div>
           )}
-          {item.children.map((child: any, idx: number) => (
-            <a
-              key={`${child.slug}-${idx}`}
-              href={`${item.childHrefBase}/${child.slug}`}
-              className="block px-3 py-2 rounded-lg hover:bg-cta/10 text-sm font-semibold text-site-text hover:text-cta transition-all"
-            >
-              {child.name}
-            </a>
-          ))}
+          <NestedChildren items={item.children} baseHref={item.childHrefBase} />
         </div>
       )}
     </div>
@@ -179,13 +203,13 @@ export default function NavigationDropdown({
 
               {/* Horizontal item layout */}
               <div className="flex flex-wrap gap-x-8 gap-y-4 items-start">
-                {items.map((item: any, idx: number) =>
-                  item.hasNested ? (
+                {items.map((item, idx) =>
+                  isNavigationNestedItem(item) ? (
                     <NestedItem key={`${item.slug}-${idx}`} item={item} />
                   ) : (
                     <a
                       key={`${item.slug}-${idx}`}
-                      href={getItemHref(item, baseHref)}
+                      href={getNavigationItemHref(item, baseHref)}
                       className="group/item block px-4 py-3 rounded-xl hover:bg-cta/10 hover:ring-1 hover:ring-cta/20 transition-all"
                     >
                       <div className="text-sm font-semibold text-site-text group-hover/item:text-cta transition-colors">

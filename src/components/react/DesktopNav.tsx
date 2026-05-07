@@ -3,14 +3,14 @@
  * Only visible on medium screens and up
  */
 
-import NavigationDropdown from './NavigationDropdown';
-import ThemeToggle from './ThemeToggle';
+import NavigationDropdown from "./NavigationDropdown";
+import ThemeToggle from "./ThemeToggle";
 import {
   aboutMenuItems,
   servicesMenuItems,
   specialtiesMenuItems,
   clientResourcesMenuItems,
-} from '../../data/navigationData';
+} from "../../data/navigationData";
 
 export default function DesktopNav() {
   return (

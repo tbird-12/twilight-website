@@ -1,10 +1,5 @@
 import { specialities, services } from "./services";
 
-export interface NavigationChildItem {
-  name: string;
-  slug: string;
-}
-
 export interface NavigationLinkItem {
   name: string;
   slug: string;
@@ -13,14 +8,26 @@ export interface NavigationLinkItem {
 
 export interface NavigationNestedItem extends NavigationLinkItem {
   hasNested: true;
-  children: NavigationChildItem[];
+  children: NavigationMenuItem[];
   childLabel: string;
   childHrefBase: string;
 }
 
 export type NavigationMenuItem = NavigationLinkItem | NavigationNestedItem;
 
-const providerMenuChildren: NavigationChildItem[] = [
+export function isNavigationNestedItem(item: NavigationMenuItem): item is NavigationNestedItem {
+  return "hasNested" in item && item.hasNested === true;
+}
+
+export function getNavigationItemHref(item: Pick<NavigationLinkItem, "slug">, baseHref: string): string {
+  if (item.slug.startsWith("/")) {
+    return item.slug;
+  }
+
+  return `${baseHref}/${item.slug}`;
+}
+
+const providerMenuChildren: NavigationLinkItem[] = [
   { name: "Heather Cornett", slug: "heather-cornett" },
   { name: "Nicola Allen", slug: "nicola-allen" },
   { name: "Emeli Evans", slug: "emeli-evans" },
@@ -29,11 +36,17 @@ const providerMenuChildren: NavigationChildItem[] = [
   { name: "Jatana Boggs", slug: "jatana-boggs" },
   { name: "Tiffany Roundtree", slug: "tiffany-roundtree" },
   { name: "Olivia Williams", slug: "olivia-williams" },
-];
+].map((item) => ({
+  ...item,
+  desc: "Provider profile",
+}));
 
-const staffMenuChildren: NavigationChildItem[] = [
+const staffMenuChildren: NavigationLinkItem[] = [
   { name: "Samantha Rodarte", slug: "samantha-rodarte" },
-];
+].map((item) => ({
+  ...item,
+  desc: "Staff profile",
+}));
 
 export const aboutMenuItems: NavigationMenuItem[] = [
   {

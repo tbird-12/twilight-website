@@ -103,7 +103,7 @@ const seoDescription =
   <body
     class="flex flex-col min-h-screen"
   >
-    <HeaderWithProvider client:load logoSrc={favicon.src} />
+    <HeaderWithProvider client:load logoSrc={favicon.src} currentPath={Astro.url.pathname} />
 
     <main class="grow">
       <slot />
