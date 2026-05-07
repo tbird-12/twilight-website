@@ -25,7 +25,7 @@ export default function CatalogTabs({ categories, className = '' }: CatalogTabsP
   }));
 
   return (
-    <Tabs tabs={tabs} defaultTab={categories[0]?.id} className={className}>
+    <Tabs tabs={tabs} defaultTab={categories[0]?.id} className={className} scrollOnChange>
       {categories.map((cat) => (
         <div key={cat.id} id={cat.id}>
           <article className="bg-surface-soft border rounded-3xl p-8 md:p-10" style={{ borderColor: 'var(--color-border)' }}>

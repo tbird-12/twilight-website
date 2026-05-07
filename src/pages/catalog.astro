@@ -7,39 +7,63 @@ import AnimatedSection from "../components/react/primitives/AnimatedSection";
 
 const categories = [
   {
-    id: "neurodivergence",
-    title: "Neurodivergence & Testing",
+    id: "neurodivergence-learning",
+    title: "Neurodivergence & Learning",
     concerns: [
-      { name: "Autism Spectrum (including High-Masking)" },
-      { name: "ADHD (Adult & Pediatric)" },
-      { name: "PDA (Pathological Demand Avoidance) Profile" },
-      { name: "Learning Disability Evaluations" },
-      { name: "Medical Marijuana Consultations" },
-      { name: "Comprehensive Psychological Testing" },
-      { name: "Psychoeducational Evaluations" },
+      { name: "High-Masking Autism" },
+      { name: "ADHD Across the Lifespan" },
+      { name: "PDA Profile Support" },
+      { name: "Learning Disabilities, Dyslexia, Dysgraphia, & Dyscalculia" },
+      { name: "Psychoeducational & Cognitive Assessments" },
+      { name: "Diagnostic Clarification for Overlapping Presentations" },
     ],
   },
   {
-    id: "clinical",
-    title: "Clinical Specialties",
+    id: "mood-trauma-personality",
+    title: "Mood, Trauma & Diagnostic Clarity",
     concerns: [
-      { name: "Depression & Persistent Low Mood" },
-      { name: "Anxiety & Panic Disorders" },
-      { name: "Trauma & PTSD" },
-      { name: "Bipolar Disorder" },
-      { name: "Borderline Personality Disorder (BPD)" },
-      { name: "Grief & Loss" },
+      { name: "Anxiety, Panic, & Social Anxiety" },
+      { name: "Depression, Burnout, & Persistent Low Mood" },
+      { name: "Trauma, PTSD, & Religious Trauma" },
+      { name: "Bipolar & Mood Disorder Evaluations" },
+      { name: "Borderline & Other Personality Patterns" },
+      { name: "Substance Use & Recovery-Related Concerns" },
     ],
   },
   {
-    id: "identity",
-    title: "Identity & Specialized Advocacy",
+    id: "identity-relationships",
+    title: "Identity, Relationships & Daily Functioning",
     concerns: [
-      { name: "LGBTQ+ Issues & Gender Affirming Care" },
-      { name: "Women’s Health & Reproductive Transitions" },
-      { name: "Health at Every Size (HAES) Approach" },
-      { name: "Intimacy & Relationship Therapy" },
-      { name: "Life Changes & Self-Esteem Issues" },
+      { name: "LGBTQ+ Affirming Support" },
+      { name: "Gender, Racial, & Identity Development" },
+      { name: "Body Image, Anti-Fat Bias, & HAES-Aligned Care" },
+      { name: "Relationship, Couples, & Family Stress" },
+      { name: "Parenting, School Stress, & Adolescent Support" },
+      { name: "Self-Esteem, Boundaries, & Life Transitions" },
+    ],
+  },
+  {
+    id: "psychiatry-medical",
+    title: "Psychiatry & Medical Support",
+    concerns: [
+      { name: "Medication Support for ADHD" },
+      { name: "Medication Support for Anxiety & Depression" },
+      { name: "Trauma-Informed Psychiatric Care" },
+      { name: "Whole-Person Care with Psychoeducation & Mindfulness" },
+      { name: "THC-Friendly Psychiatric Consultation" },
+      { name: "Medical Marijuana Evaluations & Renewals" },
+    ],
+  },
+  {
+    id: "documentation-advocacy",
+    title: "School, Legal & Documentation Needs",
+    concerns: [
+      { name: "IEP, 504, & School Accommodation Evaluations" },
+      { name: "Independent Educational Evaluations (IEEs)" },
+      { name: "Guardianship & Benefits Documentation" },
+      { name: "Adoption Evaluations" },
+      { name: "ESA Documentation Evaluations" },
+      { name: "Court, Waiver, & Advocacy-Focused Reports" },
     ],
   },
 ];
@@ -68,7 +92,7 @@ const categories = [
   />
 
   <section class="max-w-4xl mx-auto px-4 mt-10">
-    <div class="rounded-[2rem] border border-border bg-surface-soft p-6 md:p-8">
+    <div class="rounded-4xl border border-border bg-surface-soft p-6 md:p-8">
       <h2 class="font-serif text-2xl font-black text-site-text mb-3">
         Organized by concern, not appointment type
       </h2>
