@@ -99,10 +99,10 @@ export const providers: Provider[] = [
   {
     name: 'Jatana Boggs',
     slug: 'jatana-boggs',
-    spec: 'Child Assessments & Therapy',
+    spec: 'Neurodiverse-Affirming Therapy & Assessments',
     image: jatanaBoggsImg,
-    name_with_education: 'Jatana Boggs, MA',
-    credential: 'LPCA',
+    name_with_education: 'Jatana Boggs, MS',
+    credential: 'LPCA (KY), LPC (OH), NCC',
     services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'Psychological evaluations', 'Therapy'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$80' },
     states_served: ['Kentucky', 'Ohio'],

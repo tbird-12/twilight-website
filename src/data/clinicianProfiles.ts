@@ -392,36 +392,78 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "jatana-boggs",
-    pageTitle: "Jatana Boggs, LPCA | Therapy & Testing",
+    pageTitle: "Jatana Boggs, LPCA, LPC, NCC | Therapy & Testing",
     pageDescription:
-      "Jatana Boggs, LPCA — Twilight Psychology clinician providing therapy and psychological testing support in Kentucky.",
+      "Jatana Boggs, LPCA, LPC, NCC — Twilight Psychology clinician providing neurodiverse-affirming psychotherapy and ADHD and autism assessments for children, adolescents, and adults in Kentucky and Ohio.",
     jobTitle: "Licensed Professional Counselor Associate",
     badge: "Licensed Professional Counselor Associate",
     headingPrimary: "Jatana Boggs,",
-    headingAccent: "M.A., LPCA.",
+    headingAccent: "M.S., LPCA, LPC",
+    intro:
+      "I provide neurodiverse-affirming psychotherapy for individuals and couples across all relationship structures, along with comprehensive ADHD and autism assessments for children, adolescents, and adults.",
     specialties: [
-      "Adult ADHD",
-      "Bipolar Disorder",
-      "Substance Use",
-      "Psychological Testing",
-      "Clinical Supervision",
+      "Neurodiverse-Affirming Psychotherapy",
+      "ADHD & Autism Assessments",
+      "Individuals & Couples",
+      "All Relationship Structures",
+      "Life Transitions",
     ],
     contentBlocks: [
       {
         type: "paragraphs",
-        title: "Evidence-Based Care with a Human Connection.",
+        title: "Support Across Neurodivergence, Identity, and Relationship Change.",
         paragraphs: [
-          "With over a decade of experience in community mental health and private practice, I focus on providing diagnostic clarity for complex presentations. I specialize in adult ADHD and mood disorders, ensuring that clients leave with a concrete understanding of their mental health landscape.",
-          "I earned my Master's degree from Morehead State University and have dedicated my career to serving the Kentucky community through comprehensive testing and supervision of upcoming clinical professionals.",
+          "I specialize in supporting clients through neurodivergence, identity, life transitions, infidelity, and betrayal — whether the goal is rebuilding trust, finding clarity about a relationship's future, or healing individually. I work with individuals and couples across all relationship structures, offering a nonjudgmental space that honors everything you bring to the process.",
+        ],
+      },
+      {
+        type: "quote",
+        quote:
+          "At the center of everything is the relationship with self: how we understand who we are, how we carry our histories, and how that shapes our connections with others.",
+        variant: "accent",
+      },
+      {
+        type: "paragraphs",
+        title: "Psychodynamic, Integrative, and Tailored to the Person.",
+        paragraphs: [
+          "My approach is rooted in psychodynamic thinking and is deeply integrative and eclectic, shaped entirely by what each person, couple, or partnership needs for their healing.",
+          "For couples and partners, that inner work becomes the foundation for tending to the primary relationship as well.",
+        ],
+      },
+      {
+        type: "paragraphs",
+        title: "Assessment with Clear Answers and Next Steps.",
+        paragraphs: [
+          "Assessment services provide thorough, individualized evaluations with clear answers and actionable recommendations, especially for those seeking a late-life diagnosis or who have felt unseen by previous providers.",
+        ],
+      },
+    ],
+    sidebarCards: [
+      {
+        title: "Training & Perspective",
+        eyebrow: "Background",
+        variant: "soft",
+        body: [
+          "Credentials: M.S., LPCA (KY), LPC (OH), NCC.",
+          "My master's is in Clinical Counseling from Thomas University in Thomasville, GA. I am pursuing a PhD in Clinical Psychology at Fielding Graduate University in Santa Barbara, CA.",
         ],
       },
     ],
     primaryPanel: {
-      title: "Schedule a Psychological Evaluation",
+      title: "Connect for Therapy or Assessment Services",
       description:
-        "Jatana offers comprehensive psychological testing for ages under 21 in Lexington, KY. Use the link below to contact our team and schedule an intake.",
+        "I provide neurodiverse-affirming psychotherapy for individuals and couples across all relationship structures, along with comprehensive ADHD and autism assessments for children, adolescents, and adults.",
       ctaLabel: "Schedule an Intake",
       ctaHref: WIDGET_LINK,
+      variant: "surface",
+    },
+    secondaryPanel: {
+      eyebrow: "New on the blog",
+      title: "Learn More About Jatana's Services and Fees",
+      description:
+        "Read more about Jatana's therapy services, assessment work, fees, and information about couples counseling coverage.",
+      ctaLabel: "Read the blog post",
+      ctaHref: "/blog/business/introducing-jatana-boggs-therapy-assessments-couples-counseling",
       variant: "surface",
     },
   },
