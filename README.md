@@ -1,136 +1,116 @@
-# Twilight Psychology — Website
+# Twilight Psychology Website
 
-Public marketing & content site for Twilight Psychology built with Astro, Preact and Tailwind.
+Public-facing marketing, services, and blog site for Twilight Psychology.
 
-Production site: https://www.twilightpsychology.com
+**Production:** https://www.twilightpsychology.com
 
 ## Overview
 
-This repository contains the source for the Twilight Psychology website: a content-driven site and blog with interactive components (chatbot, provider directory, FAQs) and a small suite of structured data files used to render pages.
+This repository contains a static Astro site for Twilight Psychology, including:
 
-Key features
-- Static site built with [Astro](astro.config.mjs)
-- Client interactivity with Preact (components under [src/components](src/components) and [src/components/preact](src/components/preact))
-- Tailwind CSS for styling
-- Content collections via [src/content.config.ts](src/content.config.ts)
-- Unit tests with Vitest ([vitest.config.ts](vitest.config.ts))
+- service and specialty landing pages
+- clinician and staff profile pages
+- a blog powered by Astro Content Collections
+- interactive UI such as navigation, tabs, counters, and the chat assistant
 
 ## Tech stack
-- Framework: Astro (v5)
-- UI: Preact
-- Styling: Tailwind CSS v4
-- Language: TypeScript
-- Tests: Vitest
-- Deploy target: Cloudflare (wrangler config present at [wrangler.jsonc](wrangler.jsonc)) — optional, see Deploy below
 
-## Quickstart (local development)
+- **Framework:** Astro 6
+- **Interactive UI:** React 19 via `@astrojs/react`
+- **Styling:** Tailwind CSS v4
+- **Language:** TypeScript 5
+- **Testing:** Vitest
+- **Deployment target:** static build with Cloudflare Wrangler config
 
-1. Install dependencies
+## Local development
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-2. Start dev server
+Start the dev server:
 
 ```bash
 npm run dev
 ```
 
-3. Build for production
+Validate and build:
 
 ```bash
+npm run check
+npm run test
 npm run build
 ```
 
-4. Preview the production build locally
+Preview the production build locally:
 
 ```bash
 npm run preview
 ```
 
-Helpful scripts (see [package.json](package.json))
+## Available scripts
 
-- `dev` — starts Astro dev server
-- `build` — builds the site to `./dist`
-- `preview` — previews the built site
-- `check` — runs `astro check` type checks
-- `test` — runs `vitest run`
-- `test:watch` — runs `vitest` in watch mode
+| Script | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Astro dev server |
+| `npm run check` | Run `astro check` |
+| `npm run test` | Run the Vitest suite |
+| `npm run test:watch` | Run Vitest in watch mode |
+| `npm run build` | Create the production build in `dist/` |
+| `npm run preview` | Preview the built site locally |
 
-## Project layout — important paths
+## Project structure
 
-- Site config: [astro.config.mjs](astro.config.mjs)
-- Content schema: [src/content.config.ts](src/content.config.ts)
-- Pages / routes: [src/pages](src/pages)
-- Layouts: [src/layouts](src/layouts)
-- UI components: [src/components](src/components)
-- Preact components: [src/components/preact](src/components/preact)
-- Structured site data: [src/data](src/data)
-- Tests: [tests](tests)
-- Deploy config: [wrangler.jsonc](wrangler.jsonc)
-- License: [LICENSE.md](LICENSE.md)
+- `src/pages/` - Astro routes and page entrypoints
+- `src/layouts/` - shared page layouts
+- `src/components/` - Astro components and wrapper components
+- `src/components/react/` - interactive React components used as islands
+- `src/components/interactive/` - client-side entrypoints for progressive enhancement
+- `src/data/` - typed site data and content metadata
+- `src/content/blog/` - blog content in Markdown/MDX
+- `src/content.config.ts` - content collection schema
+- `tests/data/` - Vitest coverage for structured data files
+- `public/` - static assets copied as-is
+- `wrangler.jsonc` - Cloudflare deployment config for `dist/`
 
-## Content & data
+## Content and data authoring
 
-Content lives under [src/content](src/content) as Astro Content collections. The content collection and Zod schema are defined in [src/content.config.ts](src/content.config.ts). Site data (services, staff, insurances, navigation, etc.) are stored in [src/data](src/data) and used by pages and components.
+Blog posts live in `src/content/blog/` and use the schema defined in `src/content.config.ts`.
 
-Authoring workflow
-- Add or edit markdown files in `src/content/blog/*` and submit a PR. The content schema enforces required fields — see [src/content.config.ts](src/content.config.ts).
+Required blog frontmatter:
 
-## Tests
+- `title`
+- `description`
+- `pubDate`
+- `category`
+- `author`
 
-Run the test suite with:
+Supported categories:
 
-```bash
-npm run test
-```
+- `billing`
+- `insurance`
+- `clinical`
+- `business`
+- `announcements`
 
-Or run in watch mode during development:
+Structured content such as services, navigation, clinician profiles, insurance data, and site configuration lives in `src/data/` and is covered by tests in `tests/data/`.
 
-```bash
-npm run test:watch
-```
+## Deployment
 
-Test configuration: [vitest.config.ts](vitest.config.ts)
-
-## Deploy
-
-This project includes a Cloudflare-related configuration ([wrangler.jsonc](wrangler.jsonc)).
+Production builds are generated into `dist/`:
 
 ```bash
 npm run build
-# then publish ./dist to your host (Cloudflare Pages, Netlify, Vercel, etc.)
 ```
 
-Examples
-- Cloudflare Pages (using Wrangler or the Pages UI) — follow Cloudflare docs and reference [wrangler.jsonc](wrangler.jsonc).
+The repository includes `wrangler.jsonc`, which points Cloudflare at `./dist`.
 
+## Configuration notes
 
-## Environment variables / secrets
-
-This repo may reference third-party keys (analytics, chatbot). The README lists common placeholders — update with real names/values if you use them:
-
-- `GOOGLE_ANALYTICS_ID` — Google Analytics / GA4 measurement ID
-- `NODE_ENV` — `development` or `production`
-
-Create a local `.env` (not committed) for development values and set secrets in your deployment platform.
-
-## Contributing
-
-Contributions are welcome. Suggested process:
-
-1. Fork the repo
-2. Create a feature branch
-3. Run tests and linters locally
-4. Open a PR against `main` with a clear description
-
-If you have repository-specific conventions (commit style, PR template), add them and I will update this README.
+No environment variables are required for standard local development. Google Analytics is currently configured in `src/data/siteConfig.ts`.
 
 ## License
 
-This project is licensed under the terms in [LICENSE.md](LICENSE.md).
-
-## Maintainers / Contact
-
-Please provide maintainer or contact details to include here (email, team, or issue tracker link).
+See [LICENSE.md](LICENSE.md).
