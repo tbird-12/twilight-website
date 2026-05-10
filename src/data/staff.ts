@@ -34,7 +34,7 @@ export const providers: Provider[] = [
   {
     name: 'Heather Cornett',
     slug: 'heather-cornett',
-    spec: 'Adult Autism',
+    spec: 'Psychological and Psychoeducational Assessments',
     image: heatherCornettImg,
     name_with_education: 'Heather Cornett, PhD',
     credential: 'LP',

@@ -44,7 +44,7 @@ Jatana also offers comprehensive ADHD and autism assessment services. For broade
 
 ## A Note About Couples Counseling and Health Insurance
 
-Couples counseling is **typically not covered by health insurance**. In many cases, relationship concerns are billed with **Z codes** rather than **F-code mental health diagnoses**, and insurance plans generally reimburse services tied to covered mental health diagnoses instead of relationship Z codes.
+Couples counseling is **typically not covered by health insurance**. In many cases, relationship concerns are billed with **Z codes** that describe secondary factors influencing a patient's status rather than an illness or injury, instead of **F-code mental health diagnoses**. Insurance plans generally reimburse services tied to covered mental health diagnoses instead of relationship-focused Z codes.
 
 That means couples work is often handled on a **self-pay basis**, even when one or both partners have active insurance coverage. Coverage rules vary by plan, so clients should always verify benefits directly with their insurance carrier before scheduling if they have coverage questions.
 

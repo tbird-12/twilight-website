@@ -10,7 +10,7 @@ const therapyFocus = [
   {
     title: "Kentucky therapy with insurance options",
     detail:
-      "Twilight Psychology offers therapy in Kentucky that can often be billed to insurance for covered F-code mental health diagnoses, while self-pay options remain available when needed.",
+      "Twilight Psychology offers therapy in Kentucky that can often be billed to insurance for covered mental health diagnoses, while self-pay options remain available when needed.",
   },
   {
     title: "Neurodivergence-specific skills",
@@ -20,7 +20,7 @@ const therapyFocus = [
   {
     title: "Couples counseling and self-pay care",
     detail:
-      "Couples counseling is available as a self-pay option, especially when relationship concerns are billed with Z codes rather than covered F-code diagnoses.",
+      "Couples counseling is available as a self-pay option, especially when care centers on relationship concerns or other secondary factors influencing a patient's status rather than an illness or injury.",
   },
   {
     title: "Flexible weekday and weekend scheduling",
@@ -71,7 +71,7 @@ const therapySchema = {
     "therapy insurance Kentucky",
   ],
   description:
-    "Therapy hub for Twilight Psychology in Kentucky, including insurance-covered therapy for F-code diagnoses, neurodivergent counseling, couples counseling, clinician matching, and therapy after evaluation.",
+    "Therapy hub for Twilight Psychology in Kentucky, including insurance-covered therapy for eligible mental health diagnoses, neurodivergent counseling, couples counseling, clinician matching, and therapy after evaluation.",
   provider: {
     "@type": "MedicalOrganization",
     name: "Twilight Psychology",
@@ -105,7 +105,7 @@ const therapySchema = {
 
 <Layout
   title="Therapy in Kentucky | Insurance, ADHD Support & Couples Counseling"
-  description="Therapy in Kentucky at Twilight Psychology, including insurance-covered therapy for F-code diagnoses, neurodivergent counseling, ADHD support, self-pay couples counseling, and clinician matching."
+  description="Therapy in Kentucky at Twilight Psychology, including insurance-covered therapy for eligible mental health diagnoses, neurodivergent counseling, ADHD support, self-pay couples counseling, and clinician matching."
 >
   <Schema slot="page-schema" schema={therapySchema} />
 
@@ -144,10 +144,12 @@ const therapySchema = {
                   </p>
                   <p>
                     For many Kentucky therapy clients, individual therapy can be billed to insurance when the
-                    work is tied to covered F-code mental health diagnoses. Couples counseling is usually a
-                    self-pay service, and neurodivergence-focused therapy may include skills work around
-                    regulation, executive functioning, accommodations, and everyday coping. Use the therapy
-                    pages below to compare clinicians, couples counseling, and therapy after evaluation.
+                    work is tied to covered mental health diagnoses. Couples counseling is usually a self-pay
+                    service, especially when the focus is on relationship concerns or other secondary factors
+                    influencing a patient&apos;s status rather than an illness or injury. Neurodivergence-focused
+                    therapy may also include skills work around regulation, executive functioning,
+                    accommodations, and everyday coping. Use the therapy pages below to compare clinicians,
+                    couples counseling, and therapy after evaluation.
                   </p>
                 </div>
               </section>
@@ -284,9 +286,10 @@ const therapySchema = {
                   Therapy coverage depends on the kind of care you need
                 </h2>
                 <p class="text-site-sub leading-relaxed mb-4">
-                  Therapy tied to covered F-code mental health diagnoses can often be billed to accepted
-                  Kentucky insurance plans. Couples counseling is more often self-pay because relationship
-                  concerns are frequently coded differently than covered individual mental health treatment.
+                  Therapy tied to covered mental health diagnoses can often be billed to accepted Kentucky
+                  insurance plans. Couples counseling is more often self-pay because relationship concerns
+                  and other secondary factors influencing a patient&apos;s status are often handled differently
+                  for coverage than individual mental health treatment.
                 </p>
                 <a
                   href="/resources/fees"
