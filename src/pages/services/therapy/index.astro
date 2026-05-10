@@ -1,0 +1,355 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
+import { WIDGET_LINK } from "../../../data/resource";
+import PageHeroWrapper from "../../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../../components/react/primitives/AnimatedSection";
+import SidebarCta from "../../../components/react/composites/SidebarCta";
+
+const therapyFocus = [
+  {
+    title: "Kentucky therapy with insurance options",
+    detail:
+      "Twilight Psychology offers therapy in Kentucky that can often be billed to insurance for covered F-code mental health diagnoses, while self-pay options remain available when needed.",
+  },
+  {
+    title: "Neurodivergence-specific skills",
+    detail:
+      "Our therapy team supports ADHD, autism, PDA, high-masking experiences, identity work, regulation, executive functioning, and day-to-day coping skills.",
+  },
+  {
+    title: "Couples counseling and self-pay care",
+    detail:
+      "Couples counseling is available as a self-pay option, especially when relationship concerns are billed with Z codes rather than covered F-code diagnoses.",
+  },
+  {
+    title: "Flexible weekday and weekend scheduling",
+    detail:
+      "Our Lexington office offers weekday appointments plus Saturday and Sunday appointments by request, with timing and availability varying by clinician.",
+  },
+];
+
+const therapyPaths = [
+  {
+    title: "Kentucky therapy clinicians",
+    detail:
+      "Compare therapists by expertise, age range, insurance participation, specialty focus, and current availability.",
+    href: "/services/therapy/clinicians",
+    label: "Meet therapy clinicians",
+  },
+  {
+    title: "Couples counseling in Kentucky",
+    detail:
+      "Learn more about self-pay couples counseling, communication work, betrayal recovery, trust repair, and relationship intensives.",
+    href: "/services/therapy/couples-counseling",
+    label: "View couples counseling",
+  },
+  {
+    title: "Therapy after ADHD or autism evaluation",
+    detail:
+      "See how counseling can support next steps after psychological testing, diagnostic clarification, or medication planning.",
+    href: "/services/therapy/after-evaluation",
+    label: "See therapy after evaluation",
+  },
+];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const therapyUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const therapySchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Therapy Services at Twilight Psychology",
+  url: therapyUrl,
+  keywords: [
+    "therapy in Kentucky",
+    "Kentucky therapy",
+    "Lexington therapy",
+    "neurodivergent therapy Kentucky",
+    "ADHD therapy Kentucky",
+    "couples counseling Kentucky",
+    "therapy insurance Kentucky",
+  ],
+  description:
+    "Therapy hub for Twilight Psychology in Kentucky, including insurance-covered therapy for F-code diagnoses, neurodivergent counseling, couples counseling, clinician matching, and therapy after evaluation.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    {
+      "@type": "State",
+      name: "Kentucky",
+    },
+    {
+      "@type": "State",
+      name: "Ohio",
+    },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Therapy pathways",
+    itemListElement: therapyPaths.map((path) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "PsychologicalTreatment",
+        name: path.title,
+        description: path.detail,
+        url: `${siteUrl.origin}${path.href}`,
+      },
+    })),
+  },
+};
+---
+
+<Layout
+  title="Therapy in Kentucky | Insurance, ADHD Support & Couples Counseling"
+  description="Therapy in Kentucky at Twilight Psychology, including insurance-covered therapy for F-code diagnoses, neurodivergent counseling, ADHD support, self-pay couples counseling, and clinician matching."
+>
+  <Schema slot="page-schema" schema={therapySchema} />
+
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div
+        class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12"
+      >
+        <PageHeroWrapper
+          title="Therapy at Twilight"
+          accentWord="Therapy"
+          badge="Counseling Services"
+          subtitle="Therapy in Kentucky for neurodivergence, ADHD, relationships, life transitions, and meaningful change, with insurance accepted for covered therapy diagnoses."
+          size="lg"
+        />
+
+        <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2 space-y-10">
+            <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+              <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+                <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+                  Therapy that meets you where you are
+                </h2>
+                <div class="space-y-5 text-site-text leading-relaxed text-lg">
+                  <p>
+                    Twilight Psychology offers therapy in Kentucky for teens, adults, couples, and families
+                    who want care that is thoughtful, affirming, and practical. Clients often come to us for
+                    support with anxiety, burnout, identity, masking, neurodivergence, relationship strain,
+                    family stress, school pressure, work stress, or the challenge of making sustainable
+                    change over time.
+                  </p>
+                  <p>
+                    For many Kentucky therapy clients, individual therapy can be billed to insurance when the
+                    work is tied to covered F-code mental health diagnoses. Couples counseling is usually a
+                    self-pay service, and neurodivergence-focused therapy may include skills work around
+                    regulation, executive functioning, accommodations, and everyday coping. Use the therapy
+                    pages below to compare clinicians, couples counseling, and therapy after evaluation.
+                  </p>
+                </div>
+              </section>
+            </AnimatedSection>
+
+            <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+              <section>
+                <h2 class="font-serif text-2xl font-black text-site-text mb-8 tracking-tight">
+                  How we approach therapy
+                </h2>
+                <div class="grid sm:grid-cols-2 gap-6">
+                  {
+                    therapyFocus.map((item) => (
+                      <div class="p-6 bg-surface-soft border border-border rounded-3xl">
+                        <div class="w-10 h-10 rounded-xl bg-cta sm:bg-surface-2 flex items-center justify-center mb-5 border border-border">
+                          <span class="text-cta-fg sm:text-cta text-xl">✦</span>
+                        </div>
+                        <h3 class="font-serif text-site-text font-black mb-2">{item.title}</h3>
+                        <p class="text-site-sub text-sm leading-relaxed">{item.detail}</p>
+                      </div>
+                    ))
+                  }
+                </div>
+              </section>
+            </AnimatedSection>
+          </div>
+
+          <aside class="space-y-8">
+            <AnimatedSection client:visible animation="slideInRight" delay={200}>
+              <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+                <h3 class="font-serif text-xl font-black text-site-text mb-6">Explore therapy options</h3>
+                <nav class="space-y-4">
+                  <a
+                    href="/services/therapy/clinicians"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Therapy clinicians
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/services/therapy/couples-counseling"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Couples counseling
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/services/therapy/after-evaluation"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Therapy after evaluation
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/resources/new-client"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    New client guide
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/resources/fees"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Fees and insurance
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                </nav>
+              </div>
+            </AnimatedSection>
+
+            <SidebarCta
+              client:visible
+              title="Request a Therapy Intake"
+              description="Our intake team can help you decide whether to start with individual therapy, couples counseling, or another service."
+              buttonLabel="Schedule Intake"
+              buttonHref={WIDGET_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+
+            <div class="p-6 bg-surface-soft rounded-3xl border border-border">
+              <p class="text-xs text-site-sub leading-relaxed italic">
+                Therapy availability varies by clinician, but Twilight also offers flexible weekday
+                scheduling and weekend appointments by request through the Lexington office.
+              </p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 mt-24">
+          <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+            <header class="max-w-3xl mb-10">
+              <p class="text-xs font-black uppercase tracking-[0.28em] text-site-sub mb-3">
+                Therapy options
+              </p>
+              <h2 class="font-serif text-3xl font-black text-site-text tracking-tight mb-4">
+                Explore the therapy path that fits your needs
+              </h2>
+              <p class="text-site-sub leading-relaxed">
+                Whether you are choosing a therapist, looking for couples counseling, or planning next steps
+                after an evaluation, these pages can help you find the right place to start.
+              </p>
+            </header>
+
+            <div class="grid gap-6 md:grid-cols-3">
+              {
+                therapyPaths.map((item) => (
+                  <article class="rounded-3xl border border-border bg-surface-soft p-6 flex h-full flex-col">
+                    <h3 class="font-serif text-xl font-black text-site-text mb-3">{item.title}</h3>
+                    <p class="text-site-sub text-sm leading-relaxed mb-5">{item.detail}</p>
+                    <a
+                      href={item.href}
+                      class="mt-auto inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+                    >
+                      {item.label}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </article>
+                ))
+              }
+            </div>
+          </AnimatedSection>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 mt-24">
+          <AnimatedSection client:visible animation="fadeInUp" delay={275}>
+            <div class="grid gap-6 md:grid-cols-2">
+              <div class="rounded-3xl border border-border bg-surface-soft p-8">
+                <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub mb-3">
+                  Insurance and self-pay
+                </p>
+                <h2 class="font-serif text-2xl font-black text-site-text mb-4 tracking-tight">
+                  Therapy coverage depends on the kind of care you need
+                </h2>
+                <p class="text-site-sub leading-relaxed mb-4">
+                  Therapy tied to covered F-code mental health diagnoses can often be billed to accepted
+                  Kentucky insurance plans. Couples counseling is more often self-pay because relationship
+                  concerns are frequently coded differently than covered individual mental health treatment.
+                </p>
+                <a
+                  href="/resources/fees"
+                  class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+                >
+                  Review fees and insurance
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <div class="rounded-3xl border border-border bg-surface-soft p-8">
+                <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub mb-3">
+                  Scheduling flexibility
+                </p>
+                <h2 class="font-serif text-2xl font-black text-site-text mb-4 tracking-tight">
+                  Flexible timing can make therapy easier to start
+                </h2>
+                <p class="text-site-sub leading-relaxed mb-4">
+                  Twilight&apos;s Lexington office offers weekday appointments plus Saturday and Sunday
+                  appointments by appointment. Timing varies by clinician, so the best next step is to review
+                  current waitlist information and clinician-specific availability.
+                </p>
+                <a
+                  href="/resources/waitlist-times"
+                  class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+                >
+                  Check waitlist times
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 mt-24 mb-12">
+          <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+            <div class="p-10 bg-linear-to-r from-cta/10 to-cta/10 border border-cta/20 rounded-[3rem] text-center">
+              <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+                Ready to get started with therapy?
+              </h2>
+              <p class="text-site-sub mb-8 max-w-2xl mx-auto">
+                Start with the new client guide if you are ready to request therapy. If you want more detail
+                first, use the therapy pages above to compare clinicians, couples counseling, and next steps
+                after evaluation.
+              </p>
+              <div class="flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href="/resources/new-client"
+                  class="inline-flex items-center justify-center px-8 py-3 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all"
+                >
+                  New Client Guide
+                </a>
+                <a
+                  href="/services/therapy/clinicians"
+                  class="inline-flex items-center justify-center px-8 py-3 border border-border-strong text-site-text font-bold rounded-full hover:bg-surface transition-colors"
+                >
+                  Meet Therapy Clinicians
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>

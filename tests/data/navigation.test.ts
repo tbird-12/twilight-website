@@ -36,6 +36,16 @@ describe("navigation data", () => {
     expect(specialtiesMenuItems.length).toBeGreaterThan(0);
   });
 
+  it("services menu includes a nested therapy group with child pages", () => {
+    const therapyItem = servicesMenuItems
+      .filter(isNavigationNestedItem)
+      .find((item) => item.slug === "therapy");
+
+    expect(therapyItem).toBeDefined();
+    expect(therapyItem?.childLabel).toBe("Therapy Pages");
+    expect(therapyItem?.children.length).toBeGreaterThan(1);
+  });
+
   it("nested about menu groups include labeled child links", () => {
     const nestedItems = aboutMenuItems.filter(isNavigationNestedItem);
 

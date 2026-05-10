@@ -5,11 +5,12 @@ import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
 
 const clinicianBenefits = [
-  "Competitive Pay (W2 or 1099)",
+  "Compensation Based on Provider Experience",
+  "W2 or 1099 Options",
   "Health & Disability Packages",
-  "Targeted Patient Marketing",
   "Latest HIPAA-Compliant EHR",
   "Current Testing Suite & Protocols",
+  "Assessment-Focused Referral Stream",
   "Automated Billing & Support",
 ];
 
@@ -49,11 +50,11 @@ const therapistBenefits = [
       <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
         <div>
             <div class="flex justify-between items-center mb-6">
-                <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Licensed <br/>Provider</h2>
+                <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Licensed <br/>Psychologist</h2>
                 <span class="text-[9px] font-black text-site-text border border-border-strong px-2 py-1 rounded uppercase">W2/1099</span>
             </div>
             <p class="text-site-sub mb-6 text-xs leading-relaxed">
-              Seeking Doctoral or Master’s level clinicians (LP, T-LP, LPA, T-LPA, LPP) for therapy and assessments in Lexington and surrounding counties.
+              Seeking Kentucky-licensed psychologists (LP or LPP) for a role centered on psychological and psychoeducational assessments in Lexington and surrounding counties. This opportunity is designed for clinicians who want to focus primarily on testing, diagnostic clarification, and report writing rather than ongoing therapy services.
             </p>
             <ul class="space-y-3 mb-8">
               {clinicianBenefits.map(benefit => (
@@ -73,7 +74,7 @@ const therapistBenefits = [
                 <span class="text-[9px] font-black text-cta-fg bg-sand px-2 py-1 rounded uppercase">Clinical</span>
             </div>
             <p class="text-site-sub mb-6 text-xs leading-relaxed">
-              Seeking KY-licensed doctoral Psychology students for 10–15 hours of assessment work per week.
+              Seeking KY-licensed doctoral Psychology students for 15-20 hours of assessment and therapy work per week.
               Gain hands-on experience with a diverse caseload from ages 2 and above.
             </p>
             <div class="space-y-4 mb-8">
@@ -84,6 +85,10 @@ const therapistBenefits = [
                 <div class="bg-surface-soft p-4 rounded-xl border border-border">
                     <p class="text-xs font-black text-cta uppercase mb-1">Focus Area</p>
                     <p class="text-site-text text-xs font-bold leading-relaxed">Comprehensive testing, diagnostic review, and clinical consultation.</p>
+                </div>
+                <div class="bg-surface-soft p-4 rounded-xl border border-border">
+                    <p class="text-xs font-black text-cta uppercase mb-1">Compensation</p>
+                    <p class="text-site-text text-xs font-bold leading-relaxed">Fixed stipend per pay cycle, as agreed upon and within program guidelines.</p>
                 </div>
             </div>
         </div>
@@ -97,12 +102,12 @@ const therapistBenefits = [
                 <span class="text-[9px] font-black text-site-text border border-border-strong px-2 py-1 rounded uppercase">W2/1099</span>
             </div>
             <p class="text-site-sub mb-6 text-xs leading-relaxed">
-              Seeking a Kentucky-licensed therapist passionate about working with children and adolescents, with a focus on neurodivergent populations including autism, ADHD, and related profiles.
+              Seeking a full- or part-time Kentucky-licensed therapist passionate about working with children and adolescents, with a focus on neurodivergent populations including autism, ADHD, and related profiles.
             </p>
             <div class="space-y-4 mb-4">
                 <div class="bg-surface-soft p-4 rounded-xl border border-border">
                     <p class="text-xs font-black text-cta uppercase mb-1">Requirements</p>
-                    <p class="text-site-text text-xs font-bold leading-relaxed">Active KY license (LPCC, LCSW, LMFT, or equivalent). Experience or training in neurodivergence-affirming care for ages 4–17.</p>
+                    <p class="text-site-text text-xs font-bold leading-relaxed">Active KY license (LPCC, LCSW, LMFT, or equivalent). Experience or training in neurodivergence-affirming care for ages 4–12.</p>
                 </div>
             </div>
             <ul class="space-y-3 mb-8">

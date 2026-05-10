@@ -1,0 +1,174 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
+import { WIDGET_LINK } from "../../../data/resource";
+import PageHeroWrapper from "../../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../../components/react/primitives/AnimatedSection";
+import SidebarCta from "../../../components/react/composites/SidebarCta";
+
+const evaluationPathways = [
+  {
+    title: "After ADHD or autism testing",
+    detail:
+      "Therapy can help translate diagnostic insight into regulation strategies, executive functioning support, ADHD coaching-style skills, school or work planning, and day-to-day follow-through.",
+  },
+  {
+    title: "After psychoeducational or personality testing",
+    detail:
+      "Clients often use therapy to process results, understand patterns, build accommodations, and decide what changes are realistic next.",
+  },
+  {
+    title: "Alongside medication management",
+    detail:
+      "Counseling can complement medication support by helping clients build routines, track patterns, and work through the emotional side of treatment changes.",
+  },
+];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const afterEvaluationUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const afterEvaluationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Therapy After Evaluation at Twilight Psychology",
+  url: afterEvaluationUrl,
+  keywords: [
+    "therapy after ADHD testing Kentucky",
+    "therapy after autism evaluation Kentucky",
+    "ADHD coaching Kentucky",
+    "neurodivergent therapy Kentucky",
+    "therapy after psychological evaluation",
+  ],
+  description:
+    "Therapy after psychological evaluation at Twilight Psychology in Kentucky, including support after ADHD testing, autism evaluations, psychoeducational testing, medication planning, and neurodivergence-focused skills work.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
+---
+
+<Layout
+  title="Therapy After ADHD or Autism Evaluation | Twilight Psychology"
+  description="Learn how therapy in Kentucky at Twilight Psychology can support next steps after ADHD testing, autism evaluations, psychoeducational testing, and medication planning."
+>
+  <Schema slot="page-schema" schema={afterEvaluationSchema} />
+
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div
+        class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12"
+      >
+        <PageHeroWrapper
+          title="Therapy After Evaluation"
+          accentWord="Therapy"
+          badge="Connected Care"
+          subtitle="Therapy in Kentucky that helps clients turn evaluation results and treatment recommendations into practical next steps for daily life, school, work, and relationships."
+          size="lg"
+        />
+
+        <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2 space-y-10">
+            <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+              <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+                <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+                  Evaluation gives clarity. Therapy helps with implementation.
+                </h2>
+                <div class="space-y-5 text-site-text leading-relaxed text-lg">
+                  <p>
+                    Many Twilight Psychology clients start with testing and then use therapy to work through
+                    what the results mean in real life. Counseling can create space to process a diagnosis,
+                    build new routines, adjust expectations, and support the emotional impact of finally
+                    understanding long-standing patterns.
+                  </p>
+                  <p>
+                    Therapy can also help families, adolescents, and adults use recommendations more
+                    consistently over time, especially when accommodations, regulation strategies, identity
+                    work, or relationship changes need follow-through beyond the written report.
+                  </p>
+                  <p>
+                    For clients in Kentucky, therapy after evaluation may include insurance-covered treatment
+                    for covered F-code diagnoses, along with practical support for ADHD skills, sensory
+                    regulation, executive functioning, accommodations, and neurodivergence-affirming care.
+                  </p>
+                </div>
+              </section>
+            </AnimatedSection>
+          </div>
+
+          <aside class="space-y-8">
+            <AnimatedSection client:visible animation="slideInRight" delay={150}>
+              <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+                <h3 class="font-serif text-xl font-black text-site-text mb-6">Connected services</h3>
+                <nav class="space-y-4">
+                  <a
+                    href="/services/psychological-evaluations"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Psychological evaluations
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/services/medication-management"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Medication management
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/services/therapy/clinicians"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Therapy clinicians
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                </nav>
+              </div>
+            </AnimatedSection>
+
+            <SidebarCta
+              client:visible
+              title="Need help sorting next steps?"
+              description="Our intake team can help you decide whether therapy, medication support, ADHD coaching-style skills work, or another evaluation follow-up should come first."
+              buttonLabel="Schedule Intake"
+              buttonHref={WIDGET_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          </aside>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 mt-24 mb-12">
+          <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+            <header class="max-w-3xl mb-10">
+              <h2 class="font-serif text-3xl font-black text-site-text tracking-tight mb-4">
+                Common therapy pathways after testing
+              </h2>
+              <p class="text-site-sub leading-relaxed">
+                Therapy after evaluation is often less about starting from scratch and more about carrying
+                recommendations into the settings where life is actually happening.
+              </p>
+            </header>
+
+            <div class="grid gap-6 md:grid-cols-3">
+              {
+                evaluationPathways.map((pathway) => (
+                  <article class="rounded-3xl border border-border bg-surface-soft p-6">
+                    <h3 class="font-serif text-xl font-black text-site-text mb-3">{pathway.title}</h3>
+                    <p class="text-site-sub text-sm leading-relaxed">{pathway.detail}</p>
+                  </article>
+                ))
+              }
+            </div>
+          </AnimatedSection>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,222 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
+import { WIDGET_LINK } from "../../../data/resource";
+import PageHeroWrapper from "../../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../../components/react/primitives/AnimatedSection";
+import SidebarCta from "../../../components/react/composites/SidebarCta";
+
+const couplesTopics = [
+  {
+    title: "Communication and recurring conflict",
+    detail:
+      "Support for couples who get stuck in repeated arguments, withdrawal cycles, defensiveness, resentment, or difficulty staying connected under stress.",
+  },
+  {
+    title: "Trust repair and betrayal recovery",
+    detail:
+      "Structured therapy for couples working through infidelity, secrecy, broken agreements, and the emotional aftermath of damaged trust.",
+  },
+  {
+    title: "Discernment and relationship clarity",
+    detail:
+      "Help for partners who need clearer direction, want to understand persistent patterns, or need support deciding what comes next.",
+  },
+];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const couplesUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const couplesSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Couples Counseling at Twilight Psychology",
+  url: couplesUrl,
+  keywords: [
+    "couples counseling Kentucky",
+    "marriage counseling Lexington KY",
+    "relationship therapy Kentucky",
+    "self-pay couples counseling",
+    "betrayal recovery therapy Kentucky",
+  ],
+  description:
+    "Couples counseling and relationship therapy in Kentucky through Twilight Psychology, including self-pay couples therapy, communication work, trust repair, betrayal recovery, and intensives.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
+---
+
+<Layout
+  title="Couples Counseling in Kentucky | Self-Pay Relationship Therapy"
+  description="Self-pay couples counseling and relationship therapy in Kentucky at Twilight Psychology, including communication work, trust repair, betrayal recovery, and intensives."
+>
+  <Schema slot="page-schema" schema={couplesSchema} />
+
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div
+        class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12"
+      >
+        <PageHeroWrapper
+          title="Couples Counseling"
+          accentWord="Couples"
+          badge="Relationship Therapy"
+          subtitle="Self-pay couples counseling in Kentucky for communication work, trust repair, betrayal recovery, and major relationship decisions."
+          size="lg"
+        />
+
+        <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2 space-y-10">
+            <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+              <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+                <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+                  Relationship therapy with more focus and structure
+                </h2>
+                <div class="space-y-5 text-site-text leading-relaxed text-lg">
+                  <p>
+                    Couples counseling at Twilight Psychology is currently offered through Jatana Boggs. This
+                    care is designed for couples and partners who need focused support around conflict,
+                    emotional disconnection, trust rebuilding, betrayal recovery, intimacy concerns, and
+                    meaningful relationship decisions.
+                  </p>
+                  <p>
+                    Relationship therapy can include weekly sessions, concentrated problem-solving around a
+                    specific issue, or deeper discernment-oriented work when partners are unsure how to move
+                    forward. Care is affirming of varied relationship structures and can also support
+                    relationship-focused individual work when both partners are not attending together.
+                  </p>
+                  <p>
+                    For many Kentucky couples, scheduling matters just as much as fit. Twilight&apos;s Lexington
+                    office offers weekday appointments plus weekend appointments by request, which can make
+                    relationship therapy easier to coordinate for two people at once.
+                  </p>
+                </div>
+              </section>
+            </AnimatedSection>
+          </div>
+
+          <aside class="space-y-8">
+            <AnimatedSection client:visible animation="slideInRight" delay={150}>
+              <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+                <h3 class="font-serif text-xl font-black text-site-text mb-6">Related therapy pages</h3>
+                <nav class="space-y-4">
+                  <a
+                    href="/services/therapy"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Therapy home
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/services/therapy/clinicians"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Therapy clinicians
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/resources/fees"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Fees and insurance
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                </nav>
+              </div>
+            </AnimatedSection>
+
+            <SidebarCta
+              client:visible
+              title="Ask about couples counseling"
+              description="Couples counseling is usually self-pay, so reviewing fit, fee details, and scheduling options is the best next step."
+              buttonLabel="Schedule Intake"
+              buttonHref={WIDGET_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          </aside>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 mt-24">
+          <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+            <header class="max-w-3xl mb-10">
+              <h2 class="font-serif text-3xl font-black text-site-text tracking-tight mb-4">
+                What couples counseling can help address
+              </h2>
+              <p class="text-site-sub leading-relaxed">
+                Relationship therapy is most useful when the work needs more structure than a general support
+                conversation can offer.
+              </p>
+            </header>
+
+            <div class="grid gap-6 md:grid-cols-3">
+              {
+                couplesTopics.map((topic) => (
+                  <article class="rounded-3xl border border-border bg-surface-soft p-6">
+                    <h3 class="font-serif text-xl font-black text-site-text mb-3">{topic.title}</h3>
+                    <p class="text-site-sub text-sm leading-relaxed">{topic.detail}</p>
+                  </article>
+                ))
+              }
+            </div>
+          </AnimatedSection>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 mt-24 mb-12">
+          <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+            <div class="rounded-[2.5rem] border border-border bg-surface-soft p-8 md:p-10">
+              <h2 class="font-serif text-3xl font-black text-site-text mb-4 tracking-tight">
+                Before scheduling couples therapy
+              </h2>
+              <div class="space-y-5 text-site-sub leading-relaxed">
+                <p>
+                  Couples counseling and marriage counseling are often self-pay services. In many cases,
+                  relationship work is billed with Z codes rather than F-code mental health diagnoses, which
+                  means insurance plans frequently do not reimburse the service the way they would covered
+                  individual therapy.
+                </p>
+                <p>
+                  That is why Twilight frames couples counseling as a self-pay option even when one or both
+                  partners carry active insurance. Reviewing fees up front is especially important for
+                  75-minute couples sessions and longer intensives.
+                </p>
+                <p>
+                  If you want more context before booking, you can review Jatana&apos;s clinician page, current
+                  fees, and the existing relationship-focused practice update linked below.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-4 mt-8">
+                <a
+                  href="/about/clinicians/jatana-boggs"
+                  class="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-all"
+                >
+                  Jatana&apos;s clinician profile
+                </a>
+                <a
+                  href="/resources/fees"
+                  class="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-bold text-site-text hover:bg-surface transition-colors"
+                >
+                  Fees and insurance
+                </a>
+                <a
+                  href="/blog/business/introducing-jatana-boggs-therapy-assessments-couples-counseling"
+                  class="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-bold text-site-text hover:bg-surface transition-colors"
+                >
+                  Couples counseling details
+                </a>
+              </div>
+            </div>
+          </AnimatedSection>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>

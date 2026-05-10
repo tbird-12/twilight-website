@@ -1,0 +1,300 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
+import { WIDGET_LINK } from "../../../data/resource";
+import PageHeroWrapper from "../../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../../components/react/primitives/AnimatedSection";
+import SidebarCta from "../../../components/react/composites/SidebarCta";
+import { getClinicianPageData } from "../../../data/clinicianProfiles";
+
+const therapyClinicians = [
+  {
+    slug: "jonica-davis",
+    fit:
+      "Best for Kentucky adults and families looking for a warm, affirming space to process identity, body relationship, autism and ADHD support needs, family systems, and day-to-day life stress.",
+    waitlist: "About 1 month for therapy appointments.",
+    frameworks: [
+      "Dialectical Behavior Therapy (DBT)",
+      "Cognitive Behavioral Therapy (CBT)",
+      "Culturally Responsive Therapy",
+    ],
+  },
+  {
+    slug: "tiffany-roundtree",
+    fit:
+      "Best for adolescents, emerging adults, and parents who need supportive therapy around anxiety, self-worth, school stress, developmental transitions, and school-based support.",
+    waitlist: "About 1 month for therapy appointments.",
+    frameworks: [
+      "Person-Centered Therapy",
+      "Cognitive Behavioral Therapy (CBT)",
+      "Strengths-Based Therapy",
+    ],
+  },
+  {
+    slug: "jatana-boggs",
+    fit:
+      "Best for individual and relationship-focused work involving neurodivergence, identity, betrayal, infidelity, life transitions, couples counseling, and all relationship structures.",
+    waitlist: "About 1 month for therapy appointments.",
+    frameworks: [
+      "Psychodynamic Therapy",
+      "Cognitive Behavioral Therapy (CBT)",
+      "Eclectic Integrative Therapy",
+    ],
+  },
+  {
+    slug: "heather-cornett",
+    fit:
+      "Best for adults who want insight-oriented therapy tied to complex identity questions, late-diagnosed neurodivergence, adult autism, or longer-term diagnostic clarification.",
+    waitlist: "Contact the office for Heather's current therapy availability.",
+    frameworks: [
+      "Dialectical Behavior Therapy (DBT)",
+      "Multicultural Feminist Therapy",
+      "Cognitive Behavioral Therapy (CBT)",
+    ],
+  },
+  {
+    slug: "emeli-evans",
+    fit:
+      "Best for neurodivergent kids, teens, and adults seeking affirming therapy around PDA, high-masking experiences, regulation, ADHD coaching, sex therapy, and everyday accommodation needs.",
+    waitlist: "Therapy availability varies. Contact the office for Emeli's current openings.",
+    frameworks: [
+      "Person-Centered Therapy",
+      "ADHD Coaching",
+      "Sex Therapy",
+    ],
+  },
+].map((entry) => {
+  const clinician = getClinicianPageData(entry.slug);
+
+  if (!clinician) {
+    throw new Error(`Unknown therapy clinician: ${entry.slug}`);
+  }
+
+  return {
+    ...entry,
+    provider: clinician.provider,
+    href: `/about/clinicians/${entry.slug}`,
+  };
+});
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const cliniciansUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const cliniciansSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Therapy Clinicians at Twilight Psychology",
+  url: cliniciansUrl,
+  keywords: [
+    "Kentucky therapy clinicians",
+    "Lexington therapists",
+    "ADHD coaching Kentucky",
+    "sex therapy Kentucky",
+    "neurodivergent therapist Kentucky",
+    "couples counselor Kentucky",
+  ],
+  description:
+    "Compare therapy clinicians at Twilight Psychology in Kentucky by fit, specialty focus, insurance options, waitlist, and therapeutic approach.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Therapy clinicians",
+    itemListElement: therapyClinicians.map((clinician) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "PsychologicalTreatment",
+        name: `${clinician.provider.name} therapy services`,
+        description: clinician.fit,
+      },
+    })),
+  },
+};
+---
+
+<Layout
+  title="Kentucky Therapy Clinicians | ADHD, Neurodivergence & Couples Support"
+  description="Compare Kentucky therapy clinicians at Twilight Psychology by specialty focus, expertise, insurance-covered therapy options, ADHD coaching, sex therapy, couples support, and availability."
+>
+  <Schema slot="page-schema" schema={cliniciansSchema} />
+
+  <div class="bg-site-bg min-h-screen pb-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div
+        class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12"
+      >
+        <PageHeroWrapper
+          title="Therapy Clinicians"
+          accentWord="Therapy"
+          badge="Therapy Team"
+          subtitle="Compare Kentucky therapy clinicians by expertise, age range, insurance participation, specialty focus, and current availability."
+          size="lg"
+        />
+
+        <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2 space-y-10">
+            <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+              <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+                <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+                  Compare clinician fit before you book
+                </h2>
+                <div class="space-y-5 text-site-text leading-relaxed text-lg">
+                  <p>
+                    Each therapist brings a different style, specialty focus, and age-range emphasis. This
+                    page is designed for Kentucky therapy clients who want to compare clinician expertise
+                    before booking, whether the goal is neurodivergence-affirming therapy, ADHD support,
+                    couples counseling, parent support, or deeper insight-oriented work.
+                  </p>
+                  <p>
+                    Most individual therapy visits can be billed to insurance when treatment is tied to a
+                    covered F-code diagnosis. Couples counseling is usually self-pay, and specialized needs
+                    such as ADHD coaching, intimacy-focused therapy, or high-masking support may make one
+                    clinician a stronger fit than another.
+                  </p>
+                </div>
+              </section>
+            </AnimatedSection>
+          </div>
+
+          <aside class="space-y-8">
+            <AnimatedSection client:visible animation="slideInRight" delay={150}>
+              <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+                <h3 class="font-serif text-xl font-black text-site-text mb-6">Therapy navigation</h3>
+                <nav class="space-y-4">
+                  <a
+                    href="/services/therapy"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Therapy home
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/services/therapy/couples-counseling"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Couples counseling
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/services/therapy/after-evaluation"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Therapy after evaluation
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                  <a
+                    href="/resources/waitlist-times"
+                    class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                  >
+                    Waitlist times
+                    <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                  </a>
+                </nav>
+              </div>
+            </AnimatedSection>
+
+            <SidebarCta
+              client:visible
+              title="Need help choosing a therapist?"
+              description="Our intake team can help you sort by fit, therapy expertise, insurance options, age range, and scheduling needs."
+              buttonLabel="Schedule Intake"
+              buttonHref={WIDGET_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
+          </aside>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-4 mt-24">
+          <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {
+                therapyClinicians.map((clinician) => (
+                  <article class="flex h-full flex-col overflow-hidden rounded-4xl border border-border bg-surface-soft">
+                    <div class="relative aspect-4/5 overflow-hidden border-b border-border bg-surface">
+                      <Image
+                        src={clinician.provider.image}
+                        alt={`Professional portrait of ${clinician.provider.name}`}
+                        widths={[320, 640]}
+                        sizes="(min-width: 1280px) 20rem, (min-width: 768px) 50vw, 100vw"
+                        class="absolute inset-0 h-full w-full object-cover object-top"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <div class="flex flex-1 flex-col p-6">
+                      <p class="text-xs font-black uppercase tracking-[0.24em] text-cta mb-2">
+                        {clinician.provider.credential}
+                      </p>
+                      <h2 class="font-serif text-2xl font-black text-site-text mb-1">
+                        {clinician.provider.name}
+                      </h2>
+                      <p class="text-sm font-semibold text-site-sub mb-4">{clinician.provider.spec}</p>
+                      <p class="text-sm leading-relaxed text-site-sub mb-6">{clinician.fit}</p>
+
+                      <div class="mb-6 rounded-2xl border border-border bg-surface px-4 py-4">
+                        <p class="text-[11px] font-black uppercase tracking-[0.22em] text-site-sub mb-2">
+                          Kentucky therapy coverage
+                        </p>
+                        <p class="text-sm font-semibold text-site-text">
+                          Insurance accepted for covered F-code therapy when applicable; self-pay options are
+                          also available.
+                        </p>
+                      </div>
+
+                      <div class="mb-6 rounded-2xl border border-border-strong bg-surface px-4 py-4">
+                        <p class="text-[11px] font-black uppercase tracking-[0.22em] text-site-sub mb-2">
+                          Current therapy routing
+                        </p>
+                        <p class="text-sm font-semibold text-site-text">{clinician.waitlist}</p>
+                      </div>
+
+                      <div class="mb-6">
+                        <p class="text-[11px] font-black uppercase tracking-[0.22em] text-site-sub mb-3">
+                          Frameworks
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                          {
+                            clinician.frameworks.map((framework) => (
+                              <span class="rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-semibold text-site-text">
+                                {framework}
+                              </span>
+                            ))
+                          }
+                        </div>
+                      </div>
+
+                      <div class="mt-auto flex flex-wrap gap-3">
+                        <a
+                          href={clinician.href}
+                          class="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-all"
+                        >
+                          View profile
+                        </a>
+                        <a
+                          href="/resources/new-client"
+                          class="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-bold text-site-text hover:bg-surface transition-colors"
+                        >
+                          Intake details
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                ))
+              }
+            </div>
+          </AnimatedSection>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>

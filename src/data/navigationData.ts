@@ -106,7 +106,44 @@ export const clientResourcesMenuItems: NavigationLinkItem[] = [
   { name: "Blog", slug: "/blog", desc: "Clinical updates and practice news" },
 ];
 
-export const servicesMenuItems: NavigationLinkItem[] = services.slice(0, 4);
+const therapyMenuChildren: NavigationLinkItem[] = [
+  {
+    name: "Therapy Overview",
+    slug: "/services/therapy",
+    desc: "Start with the therapy hub",
+  },
+  {
+    name: "Therapy Clinicians",
+    slug: "/services/therapy/clinicians",
+    desc: "Compare fit and availability",
+  },
+  {
+    name: "Couples Counseling",
+    slug: "/services/therapy/couples-counseling",
+    desc: "Relationship therapy details",
+  },
+  {
+    name: "Therapy After Evaluation",
+    slug: "/services/therapy/after-evaluation",
+    desc: "Connected next-step care",
+  },
+];
+
+function buildServicesMenuItems(items: NavigationLinkItem[]): NavigationMenuItem[] {
+  return items.map((item) =>
+    item.slug === "therapy"
+      ? {
+          ...item,
+          hasNested: true,
+          children: therapyMenuChildren,
+          childLabel: "Therapy Pages",
+          childHrefBase: "/services/therapy",
+        }
+      : item,
+  );
+}
+
+export const servicesMenuItems: NavigationMenuItem[] = buildServicesMenuItems(services.slice(0, 4));
 export const specialtiesMenuItems: NavigationLinkItem[] = specialities.slice(0, 4);
-export const allServicesMenuItems: NavigationLinkItem[] = services;
+export const allServicesMenuItems: NavigationMenuItem[] = buildServicesMenuItems(services);
 export const allSpecialtiesMenuItems: NavigationLinkItem[] = specialities;
