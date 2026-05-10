@@ -31,7 +31,7 @@ const defaultSchema: JsonLd = {
   "@type": type,
   name: name || "Twilight Psychology",
   description:
-    "Neuro-affirming psychological evaluations, therapy, and medication management in Lexington, Kentucky. Accepting 20+ insurance panels including Medicaid, Medicare, and Tricare.",
+    "Neuro-affirming psychoeducational and psychological evaluations, therapy, and medication management in Lexington, Kentucky. ADHD, autism, learning disability, gifted, and twice-exceptional assessments are available alongside therapy and psychiatry services.",
   url: "https://www.twilightpsychology.com",
   address: {
     "@type": "PostalAddress",
@@ -73,14 +73,19 @@ const defaultSchema: JsonLd = {
   paymentAccepted: "Medicaid, Medicare, Tricare, Aetna, Cigna, UnitedHealthcare, Humana, Ambetter, Passport, UMR, CHAMPVA, Self-Pay",
   currenciesAccepted: "USD",
   knowsAbout: [
-    "ADHD Testing",
-    "Autism Evaluation",
-    "Psychological Evaluations",
+    "Psychoeducational Evaluations",
     "Learning Disability Testing",
+    "Gifted Testing",
+    "Twice-Exceptional (2e) Evaluations",
+    "Autism Evaluation",
+    "ADHD Testing",
+    "Independent Educational Evaluations",
+    "Psychological Evaluations",
     "Dyslexia Testing",
+    "School Accommodation Evaluations",
     "Medication Management",
     "Cognitive Behavioral Therapy",
-    "Psychoeducational Evaluations",
+    "Couples Counseling",
     "ESA Evaluations",
     "Adoption Evaluations",
     "Guardianship Evaluations",
@@ -93,9 +98,18 @@ const defaultSchema: JsonLd = {
         "@type": "Offer",
         itemOffered: {
           "@type": "MedicalTest",
+          name: "Psychoeducational Evaluations in Kentucky",
+          description:
+            "Private-pay psychoeducational evaluations for learning differences, giftedness, twice-exceptional profiles, IEP and 504 planning, and school or college accommodation documentation.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "MedicalTest",
           name: "ADHD Testing in Kentucky",
           description:
-            "Comprehensive ADHD evaluations for children and adults in Kentucky. Insurance accepted including Medicaid and major commercial plans.",
+            "Comprehensive ADHD evaluations for children and adults in Kentucky, with insurance options for covered services and private-pay pathways for broader specialty testing.",
         },
       },
       {
@@ -111,9 +125,9 @@ const defaultSchema: JsonLd = {
         "@type": "Offer",
         itemOffered: {
           "@type": "MedicalTest",
-          name: "Psychological Evaluations",
+          name: "Learning Disability and Dyslexia Testing",
           description:
-            "Comprehensive psychological evaluations for learning disorders, personality profiles, and cognitive assessments in Kentucky.",
+            "Educational and cognitive testing for dyslexia, dysgraphia, dyscalculia, giftedness, and related school accommodation questions.",
         },
       },
       {
@@ -122,7 +136,7 @@ const defaultSchema: JsonLd = {
           "@type": "PsychologicalTreatment",
           name: "Therapy Services in Kentucky",
           description:
-            "Evidence-based, neuro-affirming individual therapy for teens and adults in Lexington, KY and via telehealth.",
+            "Evidence-based, neuro-affirming individual therapy and couples counseling for teens and adults in Lexington, KY and via telehealth where available.",
         },
       },
       {

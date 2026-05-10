@@ -1,31 +1,128 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Schema from '../../components/Schema.astro';
 import { WIDGET_LINK } from '../../data/resource';
 
 const evaluationFocus = [
   {
-    title: "Cognitive Assessment",
-    detail: "Standardized IQ testing (WISC-V or WAIS-IV) to understand intellectual potential and processing."
+    title: "Cognitive & Intellectual Profile",
+    detail: "Standardized testing to understand reasoning, processing, memory, and the profile of strengths that may point toward giftedness or uneven development."
   },
   {
-    title: "Adaptive Functioning",
-    detail: "Measuring daily living skills, communication, and social abilities—crucial for Waiver eligibility."
+    title: "Academic Achievement & Learning Differences",
+    detail: "Reading, writing, and math testing to clarify dyslexia, dysgraphia, dyscalculia, and other learning barriers that may be masked by effort or high ability."
   },
   {
-    title: "Waiver Documentation",
-    detail: "Providing the specific clinical documentation required for Kentucky SCL and Michelle P. Waivers."
+    title: "Attention, Executive Functioning, & Overlap",
+    detail: "Clarifying how ADHD, autism, anxiety, processing demands, or burnout are affecting school and day-to-day performance."
   },
   {
-    title: "Educational Planning",
-    detail: "Clear recommendations for IEP/504 plans to ensure success in school and vocational settings."
+    title: "Gifted, 2e, & Accommodation Planning",
+    detail: "Documentation and recommendations for IEPs, 504 plans, high-stakes testing, college disability services, and twice-exceptional support planning."
   }
 ];
+
+const referralGoals = [
+  "IEP and 504 planning",
+  "Gifted and twice-exceptional (2e) clarification",
+  "School, college, and standardized testing accommodations",
+  "Learning disability and dyslexia-related questions",
+  "ADHD or autism concerns with educational impact",
+  "Documentation-rich private specialty assessments",
+];
+
+const faqItems = [
+  {
+    question: "What is a psychoeducational evaluation?",
+    answer:
+      "A psychoeducational evaluation is a comprehensive assessment of cognitive, academic, and related functioning used to answer school, college, accommodation, and learning questions with more depth than a basic screening or diagnosis alone.",
+  },
+  {
+    question: "Do you assess for giftedness and twice-exceptional profiles?",
+    answer:
+      "Yes. We evaluate for giftedness, twice-exceptional (2e) presentations, and uneven learning profiles so high ability is not mistaken for the absence of support needs.",
+  },
+  {
+    question: "Is psychoeducational testing covered by insurance?",
+    answer:
+      "Often, no. When the referral question is primarily educational, accommodation-focused, or documentation-heavy, families usually pursue these services on a private-pay basis because insurance commonly excludes the educational components of testing.",
+  },
+  {
+    question: "Can your report support IEP, 504, college, or testing accommodations?",
+    answer:
+      "Yes. Our reports are designed to provide clear findings, defensible documentation, and practical recommendations that can support school planning, accommodation requests, and related educational decision-making.",
+  },
+];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const canonicalURL = new URL("/specialities/psychoeducational-evaluations/", siteUrl).href;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Psychoeducational Evaluations",
+  description:
+    "Private-pay psychoeducational evaluations in Kentucky for learning differences, giftedness, twice-exceptional students, ADHD, autism, IEP and 504 planning, and accommodation documentation.",
+  url: canonicalURL,
+  serviceType: [
+    "Psychoeducational evaluations",
+    "Gifted testing",
+    "Twice-exceptional evaluations",
+    "Learning disability testing",
+  ],
+  provider: {
+    "@type": "MentalHealthOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: {
+    "@type": "State",
+    name: "Kentucky",
+  },
+  audience: {
+    "@type": "Audience",
+    audienceType: "Children, adolescents, college students, and adults needing educational or accommodation documentation",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Specialty Evaluations",
+      item: new URL("/specialities/", siteUrl).href,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Psychoeducational Evaluations",
+      item: canonicalURL,
+    },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map(({ question, answer }) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: answer,
+    },
+  })),
+};
 ---
 
 <Layout
-  title="Psychoeducational Evaluations | Twilight Psychology PLLC"
-  description="Psychoeducational evaluations in Kentucky for IEP planning, waiver eligibility, and educational accommodations. All ages. Insurance accepted."
+  title="Psychoeducational, Gifted & 2E Evaluations KY | Twilight Psychology"
+  description="Private-pay psychoeducational evaluations in Kentucky for learning differences, giftedness, twice-exceptional (2e) students, ADHD, autism, IEP and 504 planning, and accommodation documentation."
 >
+  <Schema slot="page-schema" schemas={[serviceSchema, breadcrumbSchema, faqSchema]} />
   <div class="bg-site-bg min-h-screen pb-24">
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
@@ -38,13 +135,13 @@ const evaluationFocus = [
     <section class="relative py-24 px-4 overflow-hidden border-b theme-border">
       <div class="max-w-4xl mx-auto text-center relative z-20">
         <span class="px-4 py-1.5 mb-6 text-xs font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full">
-          Specialized Diagnostic Services
+          Private Specialty Evaluations
         </span>
         <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
-          Educational <span class="text-cta">Assessments</span>
+          Psychoeducational <span class="text-cta">Evaluations</span>
         </h1>
         <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
-          Comprehensive psychoeducational evaluations for children, adolescents, and adults who need more than a basic testing summary. We clarify intellectual, adaptive, and educational functioning with the depth required for major decisions.
+          Comprehensive psychoeducational evaluations for children, adolescents, college students, and adults who need more than a basic testing summary. We clarify learning differences, giftedness, twice-exceptional profiles, and accommodation needs with the depth required for major decisions.
         </p>
       </div>
     </section>
@@ -54,14 +151,17 @@ const evaluationFocus = [
       <div class="lg:col-span-2 space-y-12">
         <section class="theme-surface-soft backdrop-blur-md border theme-border p-10 rounded-[2.5rem]">
           <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-6 tracking-tighter leading-tight">
-            Comprehensive Assessment, <span class="text-cta">Meaningful Next Steps.</span>
+            School-Focused Clarity, <span class="text-cta">Meaningful Next Steps.</span>
           </h2>
           <div class="space-y-6 text-site-text leading-relaxed text-lg">
             <p>
-              Psychoeducational evaluations are often requested when an important decision depends on getting the picture right: IEP planning, accommodations for high-stakes testing, twice-exceptional identification, waiver eligibility, or transition planning into adulthood.
+              Psychoeducational evaluations are often requested when an important decision depends on getting the learning picture right: IEP or 504 planning, accommodations for high-stakes testing, gifted and twice-exceptional identification, college support services, or broader school-based advocacy.
             </p>
             <p>
-              A strong evaluation goes well beyond an IQ score. We assess intellectual functioning, adaptive skills, and the practical demands of day-to-day life so families, schools, and agencies have documentation that is detailed, defensible, and genuinely useful.
+              A strong evaluation goes well beyond an IQ score. We assess intellectual functioning, academic achievement, executive functioning, and overlapping neurodevelopmental factors so families, schools, and colleges receive documentation that is detailed, defensible, and genuinely useful.
+            </p>
+            <p>
+              These evaluations are typically pursued as a <strong>private-pay specialty service</strong> when the main referral question is educational or accommodation-focused, because insurance often does not cover the educational components needed for a thorough psychoeducational battery.
             </p>
 
           </div>
@@ -81,25 +181,43 @@ const evaluationFocus = [
             ))}
           </div>
         </section>
+
+        <section class="theme-surface-2 border border-cta/20 p-10 rounded-[2.5rem]">
+          <h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">
+            When Psychoeducational Testing Is the Right Fit
+          </h2>
+          <p class="text-site-text text-lg leading-relaxed mb-8">
+            This service is especially helpful when the referral question centers on school, accommodations, giftedness, or a complex learning profile rather than a brief diagnostic yes-or-no.
+          </p>
+          <div class="grid sm:grid-cols-2 gap-4">
+            {referralGoals.map((goal) => (
+              <div class="flex items-start gap-3 rounded-3xl border theme-border bg-site-bg p-5">
+                <span class="mt-1 text-cta">✦</span>
+                <p class="text-sm font-semibold text-site-text leading-relaxed">{goal}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
 
       <aside class="space-y-8">
         <div class="theme-surface-soft border theme-border p-8 rounded-[2.5rem]">
-          <h3 class="font-serif text-xl font-black text-site-text mb-4">Kentucky Supports</h3>
+          <h3 class="font-serif text-xl font-black text-site-text mb-4">Common Referral Goals</h3>
           <p class="text-site-sub text-sm leading-relaxed mb-4">
-            Our reports meet the criteria for:
+            Families and adult clients often seek this service for:
           </p>
           <ul class="space-y-3 text-sm font-bold text-sand/80">
-            <li class="flex items-center gap-2"><span class="text-cta">✓</span> Michelle P. Waiver</li>
-            <li class="flex items-center gap-2"><span class="text-cta">✓</span> SCL Waiver</li>
-            <li class="flex items-center gap-2"><span class="text-cta">✓</span> Guardianship Proceedings</li>
-            <li class="flex items-center gap-2"><span class="text-cta">✓</span> SSI/SSDI Documentation</li>
+            <li class="flex items-center gap-2"><span class="text-cta">✓</span> IEP and 504 recommendations</li>
+            <li class="flex items-center gap-2"><span class="text-cta">✓</span> Gifted and twice-exceptional identification</li>
+            <li class="flex items-center gap-2"><span class="text-cta">✓</span> College and standardized testing accommodations</li>
+            <li class="flex items-center gap-2"><span class="text-cta">✓</span> Dyslexia and learning disability clarification</li>
+            <li class="flex items-center gap-2"><span class="text-cta">✓</span> Documentation-heavy private evaluations</li>
           </ul>
         </div>
 
         <div class="theme-surface-soft border theme-border p-10 rounded-[2.5rem] text-center">
           <h3 class="font-serif text-2xl font-black text-site-text mb-4 tracking-tight">Request an Evaluation</h3>
-          <p class="text-site-sub text-sm mb-8">Professional assessment for referrals that need depth, accuracy, and documentation that can carry weight.</p>
+          <p class="text-site-sub text-sm mb-8">Professional assessment for referrals that need depth, accuracy, and documentation that can carry weight with schools, colleges, and families.</p>
           <a href={WIDGET_LINK} class="block w-full py-4 bg-sand text-cta-fg font-black rounded-full hover:bg-cta transition-all shadow-lg shadow-sand/10">
             Request Appointment
           </a>
@@ -107,21 +225,51 @@ const evaluationFocus = [
 
         <div class="p-8 bg-cta rounded-[2.5rem] text-cta-fg">
            <h4 class="font-serif font-black uppercase text-xs tracking-widest mb-2 inverted-text">Private Specialty Service</h4>
-           <p class="text-sm font-bold leading-tight inverted-text">These evaluations are offered as a private specialty service so the assessment can remain comprehensive, individualized, and documentation-rich.</p>
+           <p class="text-sm font-bold leading-tight inverted-text">These evaluations are generally pursued on a self-pay basis so the assessment can stay comprehensive, individualized, and documentation-rich when the referral question is educational.</p>
+        </div>
+
+        <div class="theme-surface-soft border theme-border p-8 rounded-[2.5rem]">
+          <h3 class="font-serif text-xl font-black text-site-text mb-4">Related Evaluation Paths</h3>
+          <div class="space-y-4 text-sm font-bold">
+            <a href="/specialities/dyslexia-testing" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
+              Learning Disability & Dyslexia Testing <span class="text-cta">→</span>
+            </a>
+            <a href="/specialities/IEE" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
+              Independent Educational Evaluations <span class="text-cta">→</span>
+            </a>
+            <a href="/resources/fees" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
+              Fees & Self-Pay Information <span class="text-cta">→</span>
+            </a>
+          </div>
         </div>
       </aside>
     </div>
 
+    <section class="max-w-4xl mx-auto px-4 mt-24">
+      <h2 class="font-serif text-3xl font-black text-site-text mb-12 text-center tracking-tight">
+        Frequently Asked <span class="text-sand italic text-4xl">Questions</span>
+      </h2>
+      <div class="space-y-6">
+        {faqItems.map((faq) => (
+          <div class="rounded-3xl border theme-border theme-surface-soft p-8">
+            <h3 class="font-serif text-lg font-black text-site-text mb-3">{faq.question}</h3>
+            <p class="text-sm leading-relaxed text-site-sub">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
     <section class="max-w-7xl mx-auto px-4 mt-32">
        <div class="p-12 theme-surface-2 border theme-border rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-          <div class="max-w-md">
-             <h2 class="font-serif text-3xl font-black text-site-text mb-4 italic">Integrated Care.</h2>
-             <p class="text-site-sub">Following diagnostic clarification, we can help families transition into therapy, medication support, and other ongoing services as needed.</p>
-          </div>
-          <div class="flex flex-wrap justify-center gap-4">
-             <a href="/services/medication-management" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">Medication Support</a>
-             <a href="/services/therapy" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">Counseling</a>
-          </div>
+           <div class="max-w-md">
+              <h2 class="font-serif text-3xl font-black text-site-text mb-4 italic">Integrated Care.</h2>
+              <p class="text-site-sub">Following psychoeducational clarification, we can help families transition into therapy, ADHD or autism assessment, and other ongoing services as needed.</p>
+           </div>
+           <div class="flex flex-wrap justify-center gap-4">
+              <a href="/services/adhd-testing" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">ADHD Evaluations</a>
+              <a href="/services/autism-testing" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">Autism Evaluations</a>
+              <a href="/services/therapy" class="px-6 py-3 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all">Counseling</a>
+           </div>
        </div>
     </section>
 
