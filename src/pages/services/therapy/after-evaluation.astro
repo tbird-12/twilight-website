@@ -65,18 +65,32 @@ const afterEvaluationSchema = {
                   prose-li:text-site-text
                   mb-12"
       >
-        <PageHeroWrapper
-          title="Therapy After Evaluation"
-          accentWord="Therapy"
-          badge="Connected Care"
-          subtitle="Therapy in Kentucky that helps clients turn evaluation results and treatment recommendations into practical next steps for daily life, school, work, and relationships."
-          size="lg"
-        />
+         <PageHeroWrapper
+           title="Therapy After Evaluation"
+           accentWord="Therapy"
+           badge="Connected Care"
+           subtitle="Therapy in Kentucky that helps clients turn evaluation results and treatment recommendations into practical next steps for daily life, school, work, and relationships."
+           size="lg"
+         />
 
-        <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
-          <div class="lg:col-span-2 space-y-10">
-            <AnimatedSection client:visible animation="fadeInUp" delay={100}>
-              <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+          <section class="mt-10 rounded-[2.5rem] border border-cta/20 bg-surface-2 p-6 md:p-8">
+            <div class="max-w-3xl space-y-3">
+              <p class="text-sm font-black uppercase tracking-[0.2em] text-cta">Talk therapy in Kentucky</p>
+              <h2 class="font-serif text-2xl font-black text-site-text tracking-tight">
+                Services on this page are limited to outpatient talk therapy
+              </h2>
+              <p class="text-site-text text-base leading-relaxed">
+                Twilight Psychology does not provide ABA, occupational therapy, play therapy, speech
+                therapy, or other specialty therapy modalities. When those services are needed, we
+                help with referrals to providers closer to the client.
+              </p>
+            </div>
+          </section>
+
+         <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+           <div class="lg:col-span-2 space-y-10">
+             <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+               <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
                 <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
                   Evaluation gives clarity. Therapy helps with implementation.
                 </h2>
