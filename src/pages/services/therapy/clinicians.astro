@@ -12,8 +12,8 @@ const therapyClinicians = [
   {
     slug: "jonica-davis",
     fit:
-      "Best for Kentucky adults and families looking for a warm, affirming space to process identity, body relationship, autism and ADHD support needs, family systems, and day-to-day life stress.",
-    waitlist: "About 1 month for therapy appointments.",
+      "Best for adults and families looking for a warm, affirming space to process identity, body relationship, autism and ADHD support needs, family systems, and day-to-day life stress.",
+    waitlist: "6 weeks for therapy appointments.",
     frameworks: [
       "Dialectical Behavior Therapy (DBT)",
       "Cognitive Behavioral Therapy (CBT)",
@@ -24,7 +24,7 @@ const therapyClinicians = [
     slug: "tiffany-roundtree",
     fit:
       "Best for adolescents, emerging adults, and parents who need supportive therapy around anxiety, self-worth, school stress, developmental transitions, and school-based support.",
-    waitlist: "About 1 month for therapy appointments.",
+    waitlist: "4 weeks for therapy appointments.",
     frameworks: [
       "Person-Centered Therapy",
       "Cognitive Behavioral Therapy (CBT)",
@@ -35,7 +35,7 @@ const therapyClinicians = [
     slug: "jatana-boggs",
     fit:
       "Best for individual and relationship-focused work involving neurodivergence, identity, betrayal, infidelity, life transitions, couples counseling, and all relationship structures.",
-    waitlist: "About 1 month for therapy appointments.",
+    waitlist: "2 weeks for therapy appointments.",
     frameworks: [
       "Psychodynamic Therapy",
       "Cognitive Behavioral Therapy (CBT)",
@@ -56,12 +56,12 @@ const therapyClinicians = [
   {
     slug: "emeli-evans",
     fit:
-      "Best for neurodivergent kids, teens, and adults seeking affirming therapy around PDA, high-masking experiences, regulation, ADHD coaching, sex therapy, and everyday accommodation needs.",
+      "Best for neurodivergent kids, teens, and adults seeking affirming therapy around PDA, high-masking experiences, regulation, ADHD coaching, intimacy therapy, and everyday accommodation needs.",
     waitlist: "Therapy availability varies. Contact the office for Emeli's current openings.",
     frameworks: [
       "Person-Centered Therapy",
       "ADHD Coaching",
-      "Sex Therapy",
+      "Intimacy Therapy",
     ],
   },
 ].map((entry) => {
@@ -136,7 +136,7 @@ const cliniciansSchema = {
           title="Therapy Clinicians"
           accentWord="Therapy"
           badge="Therapy Team"
-          subtitle="Compare Kentucky therapy clinicians by expertise, age range, insurance participation, specialty focus, and current availability."
+          subtitle="Compare therapists by expertise, age range, insurance participation, specialty focus, and current availability."
           size="lg"
         />
 
@@ -149,16 +149,15 @@ const cliniciansSchema = {
                 </h2>
                 <div class="space-y-5 text-site-text leading-relaxed text-lg">
                   <p>
-                    Each therapist brings a different style, specialty focus, and age-range emphasis. This
-                    page is designed for Kentucky therapy clients who want to compare clinician expertise
-                    before booking, whether the goal is neurodivergence-affirming therapy, ADHD support,
-                    couples counseling, parent support, or deeper insight-oriented work.
+                    Each therapist brings a different style, specialty focus, and age-range emphasis. Use
+                    this page to compare clinician expertise before booking, whether you're looking for
+                    neurodivergence-affirming therapy, ADHD support, couples counseling, parent support,
+                    or deeper insight-oriented work.
                   </p>
                   <p>
-                    Most individual therapy visits can be billed to insurance when treatment is tied to a
-                    covered mental health diagnosis. Couples counseling is usually self-pay, and specialized
-                    needs such as ADHD coaching, intimacy-focused therapy, or high-masking support may make
-                    one clinician a stronger fit than another.
+                    Individual therapy can often be billed to insurance for covered mental health diagnoses.
+                    Specialized needs—ADHD coaching, intimacy-focused therapy, high-masking support—may
+                    make one clinician a stronger fit than another.
                   </p>
                 </div>
               </section>
@@ -243,11 +242,10 @@ const cliniciansSchema = {
 
                       <div class="mb-6 rounded-2xl border border-border bg-surface px-4 py-4">
                         <p class="text-[11px] font-black uppercase tracking-[0.22em] text-site-sub mb-2">
-                          Kentucky therapy coverage
+                           Insurance and billing
                         </p>
                         <p class="text-sm font-semibold text-site-text">
-                          Insurance accepted for therapy tied to covered mental health diagnoses when
-                          applicable; self-pay options are also available.
+                          Accepts insurance for covered services; self-pay options are also available.
                         </p>
                       </div>
 
@@ -279,12 +277,6 @@ const cliniciansSchema = {
                           class="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-all"
                         >
                           View profile
-                        </a>
-                        <a
-                          href="/resources/new-client"
-                          class="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-bold text-site-text hover:bg-surface transition-colors"
-                        >
-                          Intake details
                         </a>
                       </div>
                     </div>
