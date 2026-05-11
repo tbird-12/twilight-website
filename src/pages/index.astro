@@ -142,7 +142,7 @@ const qualityCareItems = [
               Getting Answers
               <span class="text-cta block sm:inline"> Should Not Be This Hard</span>
             </h2>
-            <p class="text-site-sub text-base sm:text-lg leading-relaxed max-w-lg font-medium">
+            <p class="max-w-lg text-left text-base font-medium leading-relaxed text-site-sub sm:text-lg">
               Twilight Psychology provides comprehensive evaluations for ADHD, Autism, learning differences,
               psychoeducational planning, and broader neurodivergent diagnostic clarity.
               We also offer documentation-rich specialty services such as gifted and twice-exceptional
@@ -297,7 +297,7 @@ const qualityCareItems = [
         <div class="w-full grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {recentPosts.map((post) => {
             const meta = getCategoryMeta(post.data.category);
-            const colorClass = categoryColorMap[post.data.category];
+            const colorClass = categoryColorMap[post.data.category as keyof typeof categoryColorMap];
             return (
               <a
                 href={`/blog/${post.id}`}
@@ -341,7 +341,7 @@ const qualityCareItems = [
             Ready to Get Started
           </h2>
           <p
-            class="mx-auto mb-12 max-w-2xl text-base sm:text-lg leading-relaxed text-site-sub"
+            class="mx-auto mb-12 max-w-2xl text-left text-base leading-relaxed text-site-sub sm:text-center sm:text-lg"
           >
             Whether you are pursuing diagnostic clarity, individualized therapy,
             or psychiatric medication management, our team is prepared to guide
