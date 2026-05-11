@@ -42,7 +42,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', esa_evaluation: '$200', guardianship_evaluation: '$500', disability_evaluation: '$1,000+', adoption_evaluation: '$1,500' },
     states_served: ['Ohio', 'Kentucky', 'New Mexico', 'Indiana', 'Tennessee', 'Psypact states'],
     ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport'],
-    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks' }
+    wait_times: { testing_insurance: '4 months', testing_out_of_pocket: '3 weeks' }
   },
   {
     name: 'Nicola Allen',
@@ -55,7 +55,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { medication_intake: '$250', medication_followup: '$100', medical_marijuana: '$150' },
     states_served: ['Kentucky'],
     ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport'],
-    wait_times: { medication_management: 'Immediate' }
+    wait_times: { medication_management: '1 week' }
   },
   {
     name: 'Emeli Evans',
@@ -68,7 +68,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$100' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
-    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '2 weeks', therapy: 'Contact for availability' }
+    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks', therapy: 'Contact for availability' }
   },
   {
     name: 'Stephen Shu',
@@ -81,7 +81,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
-    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '2 weeks' }
+    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks' }
   },
   {
     name: 'Jonica Davis',
@@ -94,7 +94,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$80' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
-    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '2 weeks', therapy: '1 month' }
+    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks', therapy: '1 month' }
   },
   {
     name: 'Jatana Boggs',
@@ -103,11 +103,11 @@ export const providers: Provider[] = [
     image: jatanaBoggsImg,
     name_with_education: 'Jatana Boggs, MS',
     credential: 'LPCA (KY), LPC (OH), NCC',
-    services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'Psychological evaluations', 'Therapy'],
-    out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$80' },
+    services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'Psychological evaluations', 'Therapy', 'Couples Counseling *'],
+    out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', couples_therapy: '$200' },
     states_served: ['Kentucky', 'Ohio'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
-    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '2 weeks', therapy: '3 months' }
+    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks', therapy: '1 month' }
   },
   {
     name: 'Tiffany Roundtree',
@@ -120,7 +120,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { therapy: '$80' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
-    wait_times: { therapy: 'Immediate' }
+    wait_times: { therapy: '1 month' }
   },
   {
     name: 'Olivia Williams',
@@ -133,7 +133,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
-    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '4 weeks' }
+    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks' }
   }
 ];
 
