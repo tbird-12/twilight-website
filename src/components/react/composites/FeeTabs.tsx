@@ -41,7 +41,7 @@ export default function FeeTabs({ categories, className = '' }: FeeTabsProps) {
                   className="flex justify-between items-start py-3.5 border-b group/fee hover:bg-surface-soft/50 rounded-lg px-2 -mx-2 transition-colors duration-200"
                   style={{
                     borderColor: 'var(--color-border)',
-                    animation: `blurIn 350ms ease-out both`,
+                    animation: `fadeInUp 350ms ease-out both`,
                     animationDelay: `${idx * 50}ms`,
                   }}
                 >
