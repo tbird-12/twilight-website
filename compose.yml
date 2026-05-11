@@ -1,0 +1,16 @@
+services:
+  site:
+    build:
+      context: .
+      target: dev
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    init: true
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/workspaces/twilight-website
+      - twilight-node-modules:/workspaces/twilight-website/node_modules
+
+volumes:
+  twilight-node-modules:

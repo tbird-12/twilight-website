@@ -24,10 +24,18 @@ This repository contains a static Astro site for Twilight Psychology, including:
 
 ## Local development
 
-Install dependencies:
+Standardize the runtime first:
 
 ```bash
-npm install
+nvm use
+```
+
+If you use Volta instead of `nvm`, the repository also pins Node.js and npm in `package.json`.
+
+Install dependencies with the lockfile:
+
+```bash
+npm ci
 ```
 
 Start the dev server:
@@ -49,6 +57,14 @@ Preview the production build locally:
 ```bash
 npm run preview
 ```
+
+## Runtime and dependency policy
+
+- **Standard runtime:** Node.js `24.15.0`
+- **Standard package manager:** npm `11.12.1`
+- **Version pinning:** `.nvmrc`, `.node-version`, `package.json#packageManager`, `package.json#engines`, and `package.json#volta`
+- **Deterministic installs:** commit `package-lock.json` and use `npm ci`
+- **Future dependency additions:** `.npmrc` enables `save-exact=true` and `engine-strict=true`
 
 ## Available scripts
 
@@ -106,6 +122,40 @@ npm run build
 ```
 
 The repository includes `wrangler.jsonc`, which points Cloudflare at `./dist`.
+
+## Docker
+
+Build the production image:
+
+```bash
+docker build -t twilight-website .
+```
+
+Run the production image locally:
+
+```bash
+docker run --rm -p 8080:8080 twilight-website
+```
+
+The container serves the built static site at http://localhost:8080.
+
+## Docker Compose
+
+Run the Astro dev server in a container:
+
+```bash
+docker compose up --build
+```
+
+The development server is available at http://localhost:4321 and uses a named volume for `node_modules` so host OS package artifacts do not leak into the container.
+
+## Dev container
+
+This repository includes `.devcontainer/devcontainer.json` for VS Code / GitHub Codespaces style development. Reopen the folder in the container to get the pinned Node.js toolchain and then run:
+
+```bash
+npm run dev -- --host 0.0.0.0
+```
 
 ## Configuration notes
 
