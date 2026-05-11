@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import favicon from "../../assets/favicons/favicon.svg";
-import BlogHeaderWithProvider from "../react/BlogHeaderWithProvider";
+import SearchButton from "../react/primitives/SearchButton";
 
 const currentPath = Astro.url.pathname;
 const isIndex = currentPath === "/blog" || currentPath === "/blog/";
@@ -29,7 +29,6 @@ const isIndex = currentPath === "/blog" || currentPath === "/blog/";
 
     <!-- Right: navigation links -->
     <nav class="flex items-center gap-3 text-sm" aria-label="Blog navigation">
-      <BlogHeaderWithProvider client:load />
       {!isIndex && (
         <a
           href="/blog"
@@ -38,6 +37,11 @@ const isIndex = currentPath === "/blog" || currentPath === "/blog/";
           All Posts
         </a>
       )}
+      <SearchButton
+        client:load
+        compact={true}
+        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-site-bg/90 text-site-text shadow-sm transition-colors hover:bg-surface"
+      />
       <a
         href="/"
         class="shrink-0 text-xs font-medium text-site-sub hover:text-site-text transition-colors flex items-center gap-1"

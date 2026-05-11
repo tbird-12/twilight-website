@@ -1,0 +1,91 @@
+---
+import PagefindConfig from "astro-pagefind/components/PagefindConfig.astro";
+---
+
+<div data-pagefind-ignore="all">
+  <PagefindConfig instance="site-search" />
+  <pagefind-modal
+    instance="site-search"
+    reset-on-close
+    class="site-search-modal"
+    data-site-search-modal
+  ></pagefind-modal>
+</div>
+
+<script>
+  (() => {
+    const searchWindow = window as Window & { __twilightSearchBound?: boolean };
+
+    if (searchWindow.__twilightSearchBound) {
+      return;
+    }
+
+    searchWindow.__twilightSearchBound = true;
+
+    const getSearchModal = async () => {
+      await customElements.whenDefined("pagefind-modal");
+      return document.querySelector("pagefind-modal[data-site-search-modal]") as
+        | (Element & { open?: () => void })
+        | null;
+    };
+
+    const openSearchModal = async () => {
+      const searchModal = await getSearchModal();
+      if (searchModal && typeof searchModal.open === "function") {
+        searchModal.open();
+      }
+    };
+
+    const isTypingTarget = (eventTarget: EventTarget | null) => {
+      if (!(eventTarget instanceof HTMLElement)) {
+        return false;
+      }
+
+      return (
+        eventTarget.isContentEditable ||
+        eventTarget.tagName === "INPUT" ||
+        eventTarget.tagName === "TEXTAREA" ||
+        eventTarget.tagName === "SELECT"
+      );
+    };
+
+    window.addEventListener("twilight:open-search", () => {
+      void openSearchModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (isTypingTarget(event.target)) {
+        return;
+      }
+
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        void openSearchModal();
+      }
+    });
+  })();
+</script>
+
+<style>
+  :global(pagefind-modal.site-search-modal) {
+    --pf-text: var(--color-site-text);
+    --pf-text-secondary: var(--color-site-sub);
+    --pf-text-muted: var(--color-site-sub);
+    --pf-background: var(--color-site-bg);
+    --pf-border: var(--color-border);
+    --pf-border-focus: var(--color-border-strong);
+    --pf-hover: var(--color-surface-2);
+    --pf-mark: var(--color-site-text);
+    --pf-outline-focus: var(--color-cta);
+    --pf-input-height: 3rem;
+    --pf-input-font-size: 1rem;
+    --pf-result-title-font-size: 0.95rem;
+    --pf-result-excerpt-font-size: 0.9rem;
+    --pf-modal-max-width: 44rem;
+    --pf-modal-top: 10dvh;
+    --pf-border-radius: 1rem;
+    --pf-shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.06);
+    --pf-shadow-md: 0 16px 40px rgba(0, 0, 0, 0.12);
+    --pf-shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.2);
+  }
+</style>

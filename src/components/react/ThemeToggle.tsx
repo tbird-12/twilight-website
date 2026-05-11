@@ -5,7 +5,11 @@
 
 import { useTheme } from "./ThemeContext";
 
-export default function ThemeToggle() {
+interface ThemeToggleProps {
+  className?: string;
+}
+
+export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
   const { isDark, toggleTheme } = useTheme();
 
   const handleToggle = () => {
@@ -16,7 +20,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={handleToggle}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface text-icon hover:bg-surface-hover p-0 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+      className={`inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface p-0 text-icon shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-surface-hover hover:shadow-md ${className}`.trim()}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-pressed={isDark}
       title={`Switch to ${isDark ? "light" : "dark"} mode`}

@@ -4,7 +4,6 @@
  */
 
 import NavigationDropdown from "./NavigationDropdown";
-import ThemeToggle from "./ThemeToggle";
 import {
   aboutMenuItems,
   servicesMenuItems,
@@ -53,19 +52,6 @@ export default function DesktopNav() {
         baseHref="/resources"
         sectionLabel="Client Resources"
       />
-
-      {/* Theme Toggle */}
-      <ThemeToggle />
-
-      {/* Contact Button */}
-      <a
-        href="/contact"
-        className="hidden md:inline-block bg-cta text-cta-fg px-4 lg:px-8 py-2 lg:py-3 rounded-full font-black text-xs lg:text-sm text-center hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 transition-all duration-200 shadow-lg shadow-cta/20 active:scale-95"
-      >
-        <span className="inline-block lg:inline-block text-center leading-tight">
-          Contact Us
-        </span>
-      </a>
     </nav>
   );
 }

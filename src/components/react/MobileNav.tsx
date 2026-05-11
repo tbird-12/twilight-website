@@ -4,7 +4,6 @@
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
 import { useFocusTrap } from "./hooks/useFocusTrap";
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import {
@@ -38,23 +37,12 @@ interface MobileMenuView {
   overviewLabel?: string;
 }
 
-interface MobileQuickAction {
-  label: string;
-  href: string;
-}
-
 interface MobileNavProps {
   isOpen: boolean;
   onClose: () => void;
   currentPath: string;
   headerHeight: number;
 }
-
-const mobileQuickActions: MobileQuickAction[] = [
-  { label: "Insurances", href: "/resources/insurances-accepted" },
-  { label: "New Client", href: "/resources/new-client" },
-  { label: "Fees", href: "/resources/fees" },
-];
 
 const sections: MobileNavSection[] = [
   {
@@ -494,61 +482,18 @@ export default function MobileNav({
                 )}
               </div>
             ) : (
-              <div className="space-y-6">
-                <div className="rounded-[1.75rem] border border-border bg-surface px-5 py-5 shadow-sm">
-                  <p className="text-[11px] font-black uppercase tracking-[0.2em] text-site-sub">
-                    Quick actions
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {mobileQuickActions.map((action) => {
-                      const isActive = matchesPath(currentPath, action.href);
-
-                      return (
-                        <a
-                          key={action.href}
-                          href={action.href}
-                          onClick={onClose}
-                          aria-current={isActive ? "page" : undefined}
-                          className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
-                            isActive
-                              ? "border-cta bg-cta text-cta-fg"
-                              : "border-border bg-site-bg text-site-text hover:border-border-strong hover:bg-surface-2"
-                          }`}
-                        >
-                          {action.label}
-                        </a>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  {sections.map((section) => (
-                    <MobileSectionCard
-                      key={section.id}
-                      section={section}
-                      currentPath={currentPath}
-                      onOpen={openSection}
-                    />
-                  ))}
-                </div>
+              <div className="space-y-3">
+                {sections.map((section) => (
+                  <MobileSectionCard
+                    key={section.id}
+                    section={section}
+                    currentPath={currentPath}
+                    onOpen={openSection}
+                  />
+                ))}
               </div>
             )}
           </nav>
-
-          <div className="border-t theme-border bg-site-bg/90 px-4 py-4">
-            <div className="flex items-center justify-between rounded-3xl border border-border bg-surface px-4 py-3">
-              <div>
-                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-site-sub">
-                  Appearance
-                </p>
-                <p className="mt-1 text-sm text-site-sub">
-                  Switch themes without leaving the menu.
-                </p>
-              </div>
-              <ThemeToggle />
-            </div>
-          </div>
 
           <style>{`
             @keyframes mobileNavPanelEnter {

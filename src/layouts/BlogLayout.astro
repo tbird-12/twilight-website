@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import BlogHeader from "../components/blog/BlogHeader.astro";
 import BlogFooter from "../components/blog/BlogFooter.astro";
+import SearchModal from "../components/SearchModal.astro";
 import favicon from "../assets/favicons/favicon.svg";
 
 interface Props {
@@ -103,10 +104,81 @@ const ogImageAlt = imageAlt || `${metaTitle} preview image`;
   <body class="bg-site-bg text-site-text antialiased">
     <BlogHeader />
 
-    <main id="main-content">
+    <main id="main-content" data-pagefind-body>
       <slot />
     </main>
 
     <BlogFooter />
+    <button
+      type="button"
+      class="fixed bottom-5 right-5 z-95 inline-flex h-9 w-9 items-center justify-center rounded-full bg-site-bg/90 p-0 text-icon shadow-lg ring-1 ring-border/80 backdrop-blur-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-surface hover:shadow-md"
+      data-blog-theme-toggle
+      aria-label="Switch theme"
+      aria-pressed="false"
+      title="Switch theme"
+    >
+      <svg
+        data-theme-icon="sun"
+        class="hidden h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+      </svg>
+      <svg
+        data-theme-icon="moon"
+        class="hidden h-6 w-6"
+        fill="currentColor"
+        stroke="none"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </svg>
+      <span class="sr-only">Switch theme</span>
+    </button>
+    <SearchModal />
+    <script>
+      const themeToggle = document.querySelector("[data-blog-theme-toggle]");
+
+      if (themeToggle instanceof HTMLButtonElement) {
+        const sunIcon = themeToggle.querySelector('[data-theme-icon="sun"]');
+        const moonIcon = themeToggle.querySelector('[data-theme-icon="moon"]');
+        const srText = themeToggle.querySelector(".sr-only");
+
+        const syncThemeToggle = () => {
+          const isDark = document.documentElement.classList.contains("dark");
+          const nextTheme = isDark ? "light" : "dark";
+
+          themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+          themeToggle.setAttribute("aria-pressed", String(isDark));
+          themeToggle.title = `Switch to ${nextTheme} mode`;
+
+          if (srText) {
+            srText.textContent = `Switch to ${nextTheme} mode`;
+          }
+
+          sunIcon?.classList.toggle("hidden", !isDark);
+          moonIcon?.classList.toggle("hidden", isDark);
+        };
+
+        syncThemeToggle();
+
+        themeToggle.addEventListener("click", () => {
+          const nextTheme = document.documentElement.classList.contains("dark") ? "light" : "dark";
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(nextTheme);
+          document.documentElement.style.colorScheme = nextTheme;
+          localStorage.setItem("theme", nextTheme);
+          syncThemeToggle();
+        });
+      }
+    </script>
   </body>
 </html>

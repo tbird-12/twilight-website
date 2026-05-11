@@ -6,7 +6,10 @@
 import { useEffect, useRef, useState } from "react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
+import ThemeToggle from "./ThemeToggle";
 import { useScrollLock } from "./hooks";
+import { useReducedMotion } from "./hooks/useReducedMotion";
+import SearchButton from "./primitives/SearchButton";
 
 interface HeaderProps {
   logoHref?: string;
@@ -19,6 +22,10 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
   const [headerHeight, setHeaderHeight] = useState(0);
   const { lock: lockScroll, unlock: unlockScroll } = useScrollLock();
   const headerRef = useRef<HTMLElement | null>(null);
+  const prefersReducedMotion = useReducedMotion();
+  const menuButtonTransitionClass = prefersReducedMotion ? "" : "transition-all duration-200";
+  const menuIconTransformClass = prefersReducedMotion ? "" : "transition-transform duration-250";
+  const menuIconOpacityClass = prefersReducedMotion ? "" : "transition-all duration-250";
 
   // Handle scroll lock
   useEffect(() => {
@@ -70,13 +77,13 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
         ref={headerRef}
         className="sticky top-0 z-100 w-full border-b theme-border bg-site-bg/88 font-sans backdrop-blur-xl"
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 lg:h-24 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-1 sm:gap-3 min-w-0">
+        <div className="max-w-6xl mx-auto flex h-16 items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:h-24">
+          <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3">
             {/* Mobile Menu Button */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`group md:hidden -ml-1 inline-flex min-w-[5.75rem] shrink-0 items-center justify-between gap-3 rounded-full border px-4 py-2.5 text-site-text shadow-sm transition-all duration-200 ${
+              className={`group md:hidden inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-site-text shadow-sm ${menuButtonTransitionClass} ${
                 isMobileMenuOpen
                   ? "pointer-events-none opacity-0"
                   : "border-border bg-site-bg/90 hover:border-border-strong hover:bg-surface"
@@ -88,22 +95,19 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
               aria-hidden={isMobileMenuOpen}
               tabIndex={isMobileMenuOpen ? -1 : 0}
             >
-              <span className="text-xs font-black uppercase tracking-[0.18em]">
-                Menu
-              </span>
               <span className="relative flex h-4 w-5 items-center justify-center" aria-hidden="true">
                 <span
-                  className={`absolute h-0.5 w-5 rounded-full bg-current transition-transform duration-250 ${
+                  className={`absolute h-0.5 w-5 rounded-full bg-current ${menuIconTransformClass} ${
                     isMobileMenuOpen ? "rotate-45" : "-translate-y-[6px]"
                   }`}
                 />
                 <span
-                  className={`absolute h-0.5 w-5 rounded-full bg-current transition-all duration-250 ${
+                  className={`absolute h-0.5 w-5 rounded-full bg-current ${menuIconOpacityClass} ${
                     isMobileMenuOpen ? "opacity-0" : "opacity-100"
                   }`}
                 />
                 <span
-                  className={`absolute h-0.5 w-5 rounded-full bg-current transition-transform duration-250 ${
+                  className={`absolute h-0.5 w-5 rounded-full bg-current ${menuIconTransformClass} ${
                     isMobileMenuOpen ? "-rotate-45" : "translate-y-[6px]"
                   }`}
                 />
@@ -113,7 +117,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
             {/* Logo */}
             <a
               href={logoHref}
-              className="flex min-w-0 items-center gap-2 font-sans tracking-tighter text-site-text transition-opacity hover:opacity-80"
+              className="flex min-w-0 items-center gap-2.5 font-sans tracking-tighter text-site-text transition-opacity hover:opacity-80"
               aria-label="Home"
             >
               {logoSrc ? (
@@ -136,19 +140,44 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
           </div>
 
           {/* Mobile shortcut button */}
-          <div className="md:hidden flex shrink-0 items-center gap-2">
+          <div className="md:hidden flex shrink-0 items-center gap-3">
+            <SearchButton
+              compact
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-site-bg text-site-text shadow-sm transition-all hover:border-border-strong hover:bg-surface"
+            />
             <a
               href="/contact"
-              className="flex items-center gap-1 rounded-full bg-cta px-4 py-2 text-xs font-black text-cta-fg shadow-lg shadow-cta/20 transition-all hover:bg-cta/80 hover:ring-4 hover:ring-cta/20"
+              className="flex items-center gap-1 rounded-full bg-cta px-4.5 py-2 text-xs font-black text-cta-fg shadow-lg shadow-cta/20 transition-all hover:bg-cta/80 hover:ring-4 hover:ring-cta/20"
             >
               Contact Us
             </a>
           </div>
 
-          {/* Desktop and Mobile Navigation */}
-          <DesktopNav />
+          <div className="hidden md:flex items-center gap-4 lg:gap-5">
+            <DesktopNav />
+
+            <div className="flex items-center gap-3">
+              <SearchButton
+                compact
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-site-bg text-site-text shadow-sm transition-all duration-200 hover:border-border-strong hover:bg-surface"
+              />
+
+              <a
+                href="/contact"
+                className="inline-flex items-center rounded-full bg-cta px-4 lg:px-8 py-2 lg:py-3 text-center text-xs font-black text-cta-fg shadow-lg shadow-cta/20 transition-all duration-200 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95"
+              >
+                <span className="inline-block text-center leading-tight">
+                  Contact Us
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </header>
+
+      <div className="fixed bottom-5 right-5 z-95">
+        <ThemeToggle className="bg-site-bg/90 shadow-lg ring-1 ring-border/80 backdrop-blur-xl hover:bg-surface" />
+      </div>
 
       {/* Mobile Navigation - rendered outside header to avoid sticky context issues */}
       <MobileNav
