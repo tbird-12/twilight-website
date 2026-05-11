@@ -8,6 +8,7 @@ import jatanaBoggsImg from '../assets/images/staff/jatana-boggs.png';
 import tiffanyRoundtreeImg from '../assets/images/staff/tiffany-roundtree.png';
 import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
 import oliviaWilliamsImg from '../assets/images/staff/olivia-williams.jpg';
+import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
 
 export interface Provider {
   name: string;
@@ -41,7 +42,7 @@ export const providers: Provider[] = [
     services_offered: ['Psychological evaluations', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'IQ testing', 'Guardianship evaluations *', 'Disability evaluations*', 'Adoption evaluations *', 'ESA evaluation *'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', esa_evaluation: '$200', guardianship_evaluation: '$500', disability_evaluation: '$1,000+', adoption_evaluation: '$1,500' },
     states_served: ['Ohio', 'Kentucky', 'New Mexico', 'Indiana', 'Tennessee', 'Psypact states'],
-    ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport'],
+    ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport', 'Anthem'],
     wait_times: { testing_insurance: '4 months', testing_out_of_pocket: '3 weeks' }
   },
   {
@@ -54,7 +55,7 @@ export const providers: Provider[] = [
     services_offered: ['Medication Management', 'Medical Marijuana *'],
     out_of_pocket_rates: { medication_intake: '$250', medication_followup: '$100', medical_marijuana: '$150' },
     states_served: ['Kentucky'],
-    ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport'],
+    ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport', 'Anthem', 'Wellcare'],
     wait_times: { medication_management: '1 week' }
   },
   {
@@ -67,8 +68,21 @@ export const providers: Provider[] = [
     services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Psychological evaluations', 'Personality Disorders', 'IQ testing', 'Therapy', 'Intimacy Therapy *'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$100' },
     states_served: ['Kentucky'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks', therapy: 'Contact for availability' }
+  },
+  {
+    name: 'Michael Burns',
+    slug: 'michael-burns',
+    spec: 'Domestic Violence, Substance Use & Faith-Based Therapy',
+    image: michaelBurnsImg,
+    name_with_education: 'Michael Burns, PhD',
+    credential: 'T-LP, LPCC, LCADC, BIP',
+    services_offered: ['Autism Testing', 'ADHD Testing', 'Therapy'],
+    out_of_pocket_rates: { therapy: '$100' },
+    states_served: ['Kentucky', 'Tennessee'],
+    ins: ['Medicaid', 'Medicare','Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
+    wait_times: { testing_insurance: '1 month', testing_out_of_pocket: '3 weeks', therapy: 'Immediate' }
   },
   {
     name: 'Stephen Shu',
@@ -93,7 +107,7 @@ export const providers: Provider[] = [
     services_offered: ['Therapy', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'IQ testing'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$80' },
     states_served: ['Kentucky'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks', therapy: '1 month' }
   },
   {
@@ -106,7 +120,7 @@ export const providers: Provider[] = [
     services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'Psychological evaluations', 'Therapy', 'Couples Counseling *'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', couples_therapy: '$200' },
     states_served: ['Kentucky', 'Ohio'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks', therapy: '1 month' }
   },
   {
@@ -119,7 +133,7 @@ export const providers: Provider[] = [
     services_offered: ['Therapy'],
     out_of_pocket_rates: { therapy: '$80' },
     states_served: ['Kentucky'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { therapy: '1 month' }
   },
   {
@@ -132,7 +146,7 @@ export const providers: Provider[] = [
     services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Disorders', 'IQ testing', 'Psychological evaluations'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500' },
     states_served: ['Kentucky'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks' }
   }
 ];

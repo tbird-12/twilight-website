@@ -4,7 +4,7 @@
   "version": "0.9.95",
   "packageManager": "npm@11.12.1",
   "engines": {
-    "node": ">=24.15.0 <25",
+    "node": ">=24.15.0",
     "npm": ">=11.12.1 <12"
   },
   "volta": {

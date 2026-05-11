@@ -1,9 +1,12 @@
 # syntax=docker/dockerfile:1.7
 
 ARG NODE_VERSION=24.15.0
+ARG NPM_VERSION=11.12.1
 
 FROM node:${NODE_VERSION}-bookworm-slim AS base
+ARG NPM_VERSION
 WORKDIR /workspaces/twilight-website
+RUN npm install -g npm@${NPM_VERSION}
 
 FROM base AS deps
 COPY package.json package-lock.json .npmrc ./
@@ -14,6 +17,8 @@ COPY . .
 RUN npm run build
 
 FROM base AS dev
+RUN apt-get update && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/*
 EXPOSE 4321
 CMD ["sh", "-c", "npm ci && npm run dev -- --host 0.0.0.0"]
 

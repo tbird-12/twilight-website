@@ -6,6 +6,9 @@
   },
   "workspaceFolder": "/workspaces/twilight-website",
   "overrideCommand": true,
+  "containerEnv": {
+    "CHOKIDAR_USEPOLLING": "true"
+  },
   "forwardPorts": [4321],
   "postCreateCommand": "npm ci",
   "customizations": {

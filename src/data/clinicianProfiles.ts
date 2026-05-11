@@ -511,6 +511,89 @@ export const clinicianProfiles: ClinicianProfile[] = [
     },
   },
   {
+    slug: "michael-burns",
+    pageTitle: "Michael Burns, PhD | Substance Use & DV Therapy in KY",
+    pageDescription:
+      "Dr. Michael Burns, T-LP, LPCC, LCADC, BIP — substance use, domestic violence, PTSD, and faith-integrated counseling at Twilight Psychology in Kentucky.",
+    jobTitle: "Temporary Licensed Psychologist",
+    badge: "PhD · T-LP · LPCC · LCADC · BIP",
+    headingPrimary: "Michael Burns,",
+    headingAccent: "PhD, T-LP, LPCC, LCADC, BIP.",
+    intro:
+      "With 24 years of experience across drug rehabilitation, inpatient settings, and domestic abuse shelters, Michael brings a rare breadth of clinical perspective to substance use disorders, domestic violence recovery, and faith-integrated therapy.",
+    specialties: [
+      "Substance Use & Addiction",
+      "Domestic Violence Recovery",
+      "Faith-Integrated Counseling",
+      "PTSD & Trauma",
+      "Adolescents & Adults",
+    ],
+    contentBlocks: [
+      {
+        type: "paragraphs",
+        title: "A Rare Breadth of Clinical Experience.",
+        paragraphs: [
+          "Hi, I'm Dr. Michael G. Burns. With 24 years of clinical experience, I have worked across some of the most challenging settings in mental health — drug rehabilitation centers, domestic abuse shelters, inpatient psychiatric hospitalization, adolescent group homes, and outpatient treatment. That depth of exposure means I understand the full continuum of care and can meet clients at any stage of their journey.",
+          "I specialize in substance use disorders, domestic violence, relationships, PTSD, and therapy for adolescents and children. My LCADC credential reflects rigorous specialized training in alcohol and drug counseling, while my BIP certification equips me to work with clients in batterers intervention programs — supporting both survivors and those seeking accountability and lasting change.",
+        ],
+      },
+      {
+        type: "quote",
+        quote:
+          "Clients often tell me I am approachable and knowledgeable. I take that as a call to meet people exactly where they are — with honesty, warmth, and evidence-based care.",
+        variant: "accent",
+      },
+      {
+        type: "paragraphs",
+        title: "Faith-Integrated, Evidence-Based Therapy.",
+        paragraphs: [
+          "My therapeutic toolkit includes psychoanalysis, Cognitive Behavioral Therapy (CBT), Rational Emotive Behavior Therapy (REBT), and motivational interviewing — always through a deeply humanistic lens. For clients who want to incorporate their Christian faith into the healing process, I offer a safe, informed, and nonjudgmental space to do exactly that.",
+          "I am originally from Ohio, married to an amazing lady from Indonesia, and together we are raising an intelligent and humble teenage son. Outside the office I enjoy exercising, music, the outdoors, baseball, reading, and coffee. I am active at my church and love spending time with friends and family.",
+        ],
+      },
+    ],
+    sidebarCards: [
+      {
+        title: "Credentials & Supervision",
+        eyebrow: "Background",
+        variant: "soft",
+        items: [
+          {
+            title: "Temporary Licensed Psychologist (T-LP)",
+            subtitle: "Supervised by Dr. Heather Cornett, PhD",
+          },
+          {
+            title: "LPCC — Licensed Professional Clinical Counselor",
+          },
+          {
+            title: "LCADC — Licensed Clinical Alcohol & Drug Counselor",
+          },
+          {
+            title: "BIP — Batterers Intervention Program Certified",
+          },
+        ],
+      },
+      {
+        title: "Clinical Settings",
+        eyebrow: "24 Years of Practice",
+        variant: "surface-2",
+        body: [
+          "Drug rehabilitation centers, domestic abuse shelters, inpatient psychiatric hospitalization, adolescent group homes, and outpatient treatment — Michael has served clients across the full spectrum of care environments.",
+        ],
+      },
+    ],
+    primaryPanel: {
+      eyebrow: "Availability",
+      title: "Immediate Openings for Therapy",
+      description:
+        "Michael offers individual therapy in Kentucky and Tennessee with immediate availability for new clients.",
+      items: [{ label: "Individual Therapy", value: "Immediate" }],
+      ctaLabel: "Request Appointment",
+      ctaHref: requestAppointmentPhoneHref,
+      variant: "surface",
+    },
+  },
+  {
     slug: "olivia-williams",
     pageTitle: "Olivia Williams, PhD | Psychological Assessments",
     pageDescription:
