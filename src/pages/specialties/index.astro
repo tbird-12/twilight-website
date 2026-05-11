@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { specialities } from "../../data/services";
+import { specialties } from "../../data/services";
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
 ---
 
@@ -31,9 +31,9 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
 
   <section class="max-w-5xl mx-auto px-4 mt-16 mb-10">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {specialities.map((specialty) => (
+      {specialties.map((specialty) => (
         <a
-          href={`/specialities/${specialty.slug}`}
+          href={`/specialties/${specialty.slug}`}
           class="group theme-surface-soft border theme-border rounded-2xl p-6 hover:border-cta/50 hover:shadow-lg hover:shadow-cta/10 transition-all duration-200"
         >
           <h2 class="font-serif text-lg font-black text-site-text group-hover:text-cta transition-colors mb-2">

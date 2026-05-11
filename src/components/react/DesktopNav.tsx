@@ -41,9 +41,9 @@ export default function DesktopNav() {
       <NavigationDropdown
         title="Specialties"
         items={specialtiesMenuItems}
-        baseHref="/specialities"
+        baseHref="/specialties"
         sectionLabel="Specialties"
-        moreLink={{ href: '/specialities', label: 'View All Specialties' }}
+        moreLink={{ href: '/specialties', label: 'View All Specialties' }}
       />
 
       {/* Resources Menu */}

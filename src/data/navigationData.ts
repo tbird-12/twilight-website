@@ -1,4 +1,4 @@
-import { specialities, services } from "./services";
+import { specialties, services } from "./services";
 
 export interface NavigationLinkItem {
   name: string;
@@ -144,6 +144,6 @@ function buildServicesMenuItems(items: NavigationLinkItem[]): NavigationMenuItem
 }
 
 export const servicesMenuItems: NavigationMenuItem[] = buildServicesMenuItems(services.slice(0, 4));
-export const specialtiesMenuItems: NavigationLinkItem[] = specialities.slice(0, 4);
+export const specialtiesMenuItems: NavigationLinkItem[] = specialties.slice(0, 4);
 export const allServicesMenuItems: NavigationMenuItem[] = buildServicesMenuItems(services);
-export const allSpecialtiesMenuItems: NavigationLinkItem[] = specialities;
+export const allSpecialtiesMenuItems: NavigationLinkItem[] = specialties;

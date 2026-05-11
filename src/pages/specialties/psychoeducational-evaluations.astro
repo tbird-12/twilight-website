@@ -55,7 +55,7 @@ const faqItems = [
 ];
 
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
-const canonicalURL = new URL("/specialities/psychoeducational-evaluations/", siteUrl).href;
+const canonicalURL = new URL("/specialties/psychoeducational-evaluations/", siteUrl).href;
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -93,7 +93,7 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Specialty Evaluations",
-      item: new URL("/specialities/", siteUrl).href,
+      item: new URL("/specialties/", siteUrl).href,
     },
     {
       "@type": "ListItem",
@@ -119,8 +119,8 @@ const faqSchema = {
 ---
 
 <Layout
-  title="Psychoeducational, Gifted & 2E Evaluations KY | Twilight Psychology"
-  description="Private-pay psychoeducational evaluations in Kentucky for learning differences, giftedness, twice-exceptional (2e) students, ADHD, autism, IEP and 504 planning, and accommodation documentation."
+  title="Psychoeducational & 2E Evaluations KY | Twilight Psychology"
+  description="Private-pay psychoeducational evaluations in Kentucky for learning differences, giftedness, twice-exceptional (2e) students, IEP and 504 planning, and accommodation documentation."
 >
   <Schema slot="page-schema" schemas={[serviceSchema, breadcrumbSchema, faqSchema]} />
   <div class="bg-site-bg min-h-screen pb-24">
@@ -231,10 +231,10 @@ const faqSchema = {
         <div class="theme-surface-soft border theme-border p-8 rounded-[2.5rem]">
           <h3 class="font-serif text-xl font-black text-site-text mb-4">Related Evaluation Paths</h3>
           <div class="space-y-4 text-sm font-bold">
-            <a href="/specialities/dyslexia-testing" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
+            <a href="/specialties/dyslexia-testing" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
               Learning Disability & Dyslexia Testing <span class="text-cta">→</span>
             </a>
-            <a href="/specialities/IEE" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
+            <a href="/specialties/IEE" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
               Independent Educational Evaluations <span class="text-cta">→</span>
             </a>
             <a href="/resources/fees" class="flex items-center justify-between rounded-2xl bg-site-bg p-4 text-site-text hover:text-cta transition-colors">
@@ -274,7 +274,7 @@ const faqSchema = {
     </section>
 
     <nav class="max-w-4xl mx-auto px-6 mt-12 mb-4">
-        <a href="/specialities" class="inline-flex items-center gap-2 text-sm font-bold text-cta hover:text-cta/80 transition-colors">
+        <a href="/specialties" class="inline-flex items-center gap-2 text-sm font-bold text-cta hover:text-cta/80 transition-colors">
             <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
             View All Specialties
         </a>

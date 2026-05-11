@@ -78,8 +78,8 @@ const sections: MobileNavSection[] = [
     title: "Specialties",
     description: "Find focused evaluations and care pathways for specific needs.",
     items: allSpecialtiesMenuItems,
-    baseHref: "/specialities",
-    overviewHref: "/specialities",
+    baseHref: "/specialties",
+    overviewHref: "/specialties",
     overviewLabel: "Browse all Specialties",
   },
   {

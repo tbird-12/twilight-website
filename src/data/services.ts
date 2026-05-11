@@ -1,4 +1,4 @@
-export const specialities = [
+export const specialties = [
   { name: 'Learning Disabilities', slug: 'dyslexia-testing', desc: 'Dyslexia, dyscalculia, and other learning disabilities' },
   { name: 'Psychoeducational Evaluations', slug: 'psychoeducational-evaluations', desc: 'Psychoeducational assessments' },
   { name: 'PDA Profile', slug: 'pda-profile', desc: 'Pathological Demand Avoidance profile assessments' },

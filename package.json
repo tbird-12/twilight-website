@@ -1,7 +1,7 @@
 {
   "name": "twilight_website",
   "type": "module",
-  "version": "0.9.91",
+  "version": "0.9.93",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
