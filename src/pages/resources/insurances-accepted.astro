@@ -14,7 +14,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <Layout
   title="Insurance Coverage | Twilight Psychology"
-  description="Accepted insurance at Twilight Psychology in Kentucky: Aetna, Cigna, UHC, Anthem, Medicaid, Medicare, Tricare, and more. Self-pay and out-of-network options also available."
+  description="Accepted insurance at Twilight Psychology in Kentucky for covered behavioral health services: Aetna, Cigna, UHC, Anthem, Medicaid, Medicare, Tricare, and more."
 >
   <div class="bg-site-bg min-h-screen pb-24">
     <PageHeroWrapper
@@ -61,6 +61,27 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       </AnimatedSection>
 
       <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+      <section class="max-w-4xl mx-auto mt-12">
+        <div class="bg-surface-soft border border-border-strong p-8 rounded-[2.5rem]">
+          <h2 class="font-serif text-2xl font-black text-site-text mb-4">Coverage depends on the service</h2>
+          <div class="space-y-4 text-site-sub leading-relaxed">
+            <p>
+              We accept the plans shown above for <strong class="text-site-text">covered behavioral health services</strong>. That does
+              not mean every testing referral is billable to insurance.
+            </p>
+            <p>
+              For Kentucky Medicaid plans in particular, comprehensive psychological testing usually must be
+              <strong class="text-site-text">treatment-focused, medically necessary, and authorized in advance</strong>. Evaluations
+              requested mainly for school, court, disability or waiver eligibility, benefits paperwork, or other
+              third-party documentation are typically handled through self-pay or another funding source instead of
+              insurance.
+            </p>
+          </div>
+        </div>
+      </section>
+      </AnimatedSection>
+
+      <AnimatedSection client:visible animation="fadeInUp" delay={300}>
       <section class="max-w-4xl mx-auto mt-16">
       <div
         class="bg-cta/10 border border-cta/30 p-10 rounded-[3rem] text-center"
@@ -83,7 +104,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       </section>
       </AnimatedSection>
 
-      <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+      <AnimatedSection client:visible animation="fadeInUp" delay={400}>
       <section class="max-w-4xl mx-auto mt-12">
           <h2 class="font-serif text-2xl font-black text-site-text mb-6">Insurance Resources from Our Blog</h2>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -95,7 +116,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             <a href="/blog/insurance/aetna-better-health-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
               <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.insurance}`}>Insurance</p>
               <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Aetna Better Health — Prior Auth & Appeals</h3>
-              <p class="text-xs text-site-sub">PA requirements, documentation, and the appeal process for testing.</p>
+              <p class="text-xs text-site-sub">Medical necessity, exclusions, prior authorization, and appeals for Kentucky Medicaid testing.</p>
             </a>
             <a href="/blog/announcements/wellcare-kentucky-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
               <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.announcements}`}>Announcement</p>

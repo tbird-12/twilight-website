@@ -4,55 +4,67 @@ seoTitle: "Aetna Better Health Prior Authorization for Testing"
 description: "Information about prior authorization, documentation, medical necessity, and the appeals process for psychological testing under Aetna Better Health of Kentucky."
 seoDescription: "Learn how Aetna Better Health of Kentucky handles prior authorization, medical necessity, and appeals for psychological testing."
 pubDate: 2026-02-20
+updatedDate: 2026-05-12
 category: insurance
 author: "Twilight Psychology Team"
 tags: ["aetna", "medicaid", "insurance", "network"]
 draft: false
 ---
 
-Twilight Psychology is credentialed with **Aetna Better Health of Kentucky**. Since July 2025, Kentucky Medicaid asked managed care organizations to reevaluate whether prior authorizations (PAs) are required post‑COVID; as a result, Aetna Better Health of Kentucky, UnitedHealthcare Community Plan, and WellCare of Kentucky have reinstated PAs for psychological evaluations. However, we have observed an increase in PA denials from Aetna Better Health of Kentucky. This page explains Aetna’s PA requirements for psychological testing, the documentation commonly requested, how medical necessity is evaluated, and the typical appeal pathways if testing is denied.
+Twilight Psychology is credentialed with **Aetna Better Health of Kentucky**, but that does **not** mean every psychological evaluation is a covered Kentucky Medicaid service. Aetna's provider guidance makes clear that psychological and neuropsychological testing must be **treatment-focused** and **medically necessary**. If the main purpose of the testing is for a school, court, attorney, disability program, waiver program, employer, or another third party, Kentucky Medicaid generally does not cover it.
 
 ## What Services Require Prior Authorization
 
-- Most comprehensive psychological testing batteries (e.g., autism or full psychoeducational evaluations, including ADHD evaluations) require prior authorization from Aetna Better Health prior to scheduling.
-- Brief diagnostic or screening visits may or may not require prior authorization depending on the specific service code and member plan.
+- Most comprehensive psychological testing batteries require prior authorization from Aetna Better Health before they can be scheduled as covered services.
+- Brief diagnostic or screening visits may or may not require prior authorization depending on the exact service code and member plan.
+- Prior authorization is only part of the process. Aetna also reviews whether the requested testing is medically necessary under Kentucky Medicaid rules.
 
-Our intake team will confirm benefits and submit prior authorization requests on your behalf once an intake appointment is scheduled.
+Our intake team verifies benefits and helps identify whether a covered testing request is clinically appropriate to submit for authorization.
 
-## Typical Prior-Authorization Documentation Submission
+## What Kentucky Medicaid generally does not cover
 
-To establish the need for testing, Aetna Better Health often requests documentation such as:
+Under Aetna Better Health and Kentucky Medicaid rules, psychological testing is generally **not** covered when it is being done mainly for another agency or decision-maker instead of treatment. Common examples include:
 
-- A recent clinical intake or history describing current concerns and functional impairment
-- Symptom inventories, screening results, or prior standardized scores (if available)
-- Documentation of prior interventions or treatments (school supports, therapy, medication trials) and their outcomes
-- A letter of medical necessity or clinician justification explaining how testing will change treatment or services
-- Specific testing plan: which instruments and domains will be assessed and why they are appropriate for the clinical question
+- Court-ordered or attorney-requested evaluations
+- School or accommodation-focused testing
+- Disability, benefits, or waiver-eligibility evaluations
+- Employment or pre-employment screening
+- Other documentation-only referrals that do not lead to psychiatric intervention or behavioral health treatment from the provider
 
-Providing thorough, focused documentation up front increases the chance of a smooth authorization process.
+This is why some Twilight specialty services are routed to **self-pay**, **school-district funding**, or another third-party pathway instead of being presented as Medicaid-covered treatment.
 
-## Common reasons Aetna Better Health may Deny Testing
+## When Aetna Better Health usually considers testing medically necessary
 
-Aetna Better Health evaluates whether testing is medically necessary and likely to affect clinical management. Common reasons for denial include:
+Aetna Better Health describes psychological testing as medically necessary when the request is tied to a clear clinical need and the results are likely to affect care. In practice, the request usually needs to show all of the following:
 
-- Insufficient documentation of functional impairment or diagnostic uncertainty
-- Lack of evidence that less intensive evaluation or interventions have been attempted when appropriate
-- Requested testing is duplicative of recent testing (e.g., another comprehensive evaluation within a clinically relevant timeframe)
-- The proposed tests are not appropriate for the member’s age or clinical question
-- Use of alcohol or other intoxicants that would invalidate testing
+- There is a **specific clinical question** that testing can answer.
+- The question cannot be answered well enough through interview, records review, observation, therapy, or other routine assessment alone.
+- The proposed testing will help with **diagnosis, treatment planning, rehabilitation, or monitoring change over time**.
+- The results are likely to change the patient's care plan.
+- The patient can participate meaningfully in the testing.
+- Relevant medical, neurologic, or psychiatric evaluation has already been completed when indicated.
 
-## Appeal Process for Denials
+One especially important Medicaid point: for **children with ADHD concerns**, formal psychological or neuropsychological testing is generally **not** considered necessary unless there is strong evidence of a possible neurologic disorder or another complex differential question that cannot be answered through history, structured interviews, and rating scales.
 
-If Aetna Better Health denies a prior authorization or payment for testing, members generally have these options:
+## What helps a prior-authorization request
 
-1. Request a clinical reconsideration (internal appeal) by submitting additional records, a clinician letter of medical necessity, or clarifying information to address the denial reason.
+The strongest prior-authorization requests usually include:
 
-2. File an expedited/urgent appeal if the member’s health would be seriously jeopardized by waiting. This is considered on a case-by-case basis.
+- A recent intake or clinical summary describing the presenting concerns and functional impairment
+- The exact **referral question** the testing is supposed to answer
+- Why interview, therapy observation, rating scales, or other routine assessment have not been enough
+- Prior treatment attempts and what happened with them
+- The proposed tests and why they match the clinical question
+- How the results will change treatment, care coordination, rehabilitation, or recommendations
 
-3. If internal appeals are exhausted, Medicaid members typically have external review or state fair-hearing options through the Kentucky Medicaid appeals process; the denial notice and member handbook explain those next steps.
 
-Timelines and procedures vary whether an appeal is standard or expedited; review your Aetna Better Health member handbook or call the member‑services number on your insurance card for plan‑specific guidance. 
-For general timing and waitlist information, see [FAQ](/resources/faq). Because we receive many Aetna Better Health Medicaid cases, Twilight Psychology does not file appeals on members’ behalf. If an authorization is denied, you may choose to switch to a plan we accept—see accepted plans at [Insurances](/resources/insurances-accepted) or contact us for referral options via [Contact](/contact) page.
+## Twilight Psychology Policy on Aetna PA Denials
+
+If Aetna Better Health denies a prior authorization or payment for testing, members generally have the option to request a reconsideration or appeal them. 
+As a policy, Twilight Psychology is unable to appeal denials on behalf of the clients.
+
+For general timing and waitlist information, see [FAQ](/resources/faq). If Aetna Better Health denies the prior authorization request, we may instead discuss self-pay options or direct you to update your insurance to a different MCO that we accept.
+
 ## Further Reading
 
 - [Understanding Health Insurance](/blog/insurance/understanding-health-insurance) — A broader look at commercial insurance, Kentucky Medicaid MCOs, and Medicare and how each type differs.

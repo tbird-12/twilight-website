@@ -4,6 +4,7 @@ seoTitle: "Health Insurance Basics: Deductibles, Copays & Benefits"
 description: "Learn how deductibles, copays, eligibility, and benefits affect therapy, medication management, and psychological testing coverage at Twilight Psychology."
 seoDescription: "Learn how deductibles, copays, coinsurance, eligibility, and benefits affect therapy and testing coverage at Twilight Psychology."
 pubDate: 2026-04-11
+updatedDate: 2026-05-12
 category: insurance
 author: "Twilight Psychology Billing Team"
 tags: ["Medicare", "Commercial", "insurance", "Anthem"]
@@ -32,7 +33,7 @@ At Twilight Psychology, we verify **eligibility** to make sure the plan is activ
 
 Two people can have the same insurance company and still have very different coverage. One plan may have a low copay for therapy but no out-of-network benefits. Another may cover testing only after prior authorization and after a deductible is met.
 
-That is why we do not rely on the insurance company name alone. We look at the specific member plan, network status, service type, and any prior-authorization requirements before a testing appointment or longer course of care is scheduled.
+That is why we do not rely on the insurance company name alone. We look at the specific member plan, network status, service type, and any prior-authorization requirements before a testing appointment or longer course of care is scheduled. The same insurance card that covers therapy may still exclude a school evaluation, guardianship report, or benefits-related assessment.
 
 ---
 
@@ -66,12 +67,15 @@ What this means for you at Twilight:
 
 - Each MCO has its own network and prior-authorization rules, even though the coverage is Medicaid-based.
 - Medicaid (including MCOs) often carries low or no copays and lower out-of-pocket responsibility than most commercial plans.
+- Coverage still depends on the purpose of the service. Kentucky Medicaid generally covers **treatment-focused, medically necessary** testing, not every kind of evaluation a family, school, court, or agency might request.
+- Comprehensive testing often requires prior authorization plus documentation showing a specific clinical question and how the results will affect treatment or care planning.
+- School, court, disability or benefits, waiver-eligibility, and other documentation-only evaluations are usually not covered Medicaid services even when we accept the plan.
 
 Traditional Kentucky Medicaid:
 
 - Administered directly under state Medicaid rules rather than an MCO; benefits and prior auth rules are set by the state.
 
-How we help: Tell us the plan name from your card and we’ll verify coverage, confirm whether testing needs prior authorization, and explain any member cost responsibility.
+How we help: Tell us the exact plan name from your card and the kind of service you are seeking. We will verify coverage, confirm whether the service is billable as a covered clinical benefit, check prior-authorization requirements, and let you know if a different funding path or self-pay option makes more sense.
 
 ---
 

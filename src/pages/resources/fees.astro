@@ -68,13 +68,21 @@ const feeCategories = [
       <AnimatedSection client:visible animation="fadeInUp" delay={100}>
         <section class="mb-12 bg-surface-soft border-l-4 border-cta p-6 rounded-r-2xl">
           <h2 class="font-serif text-site-text font-bold text-xl mb-2">Insurance Information</h2>
-          <p class="text-site-text leading-relaxed">
+          <div class="space-y-4 text-site-text leading-relaxed">
+          <p>
             Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for 
             <a href="/blog/insurance/understanding-health-insurance" class="text-cta underline">covered services</a>. 
             For <a href="/resources/insurances-accepted" class="text-cta underline">commercial insurance</a>
             we recommend calling 
             <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline">{PHONE_NUMBER_FORMATTED}</a> to determine approximate rates, though you should always confirm benefits, copays, deductibles with your insurance provider prior to your appointment.
           </p>
+          <p>
+            Coverage is always service-specific. Comprehensive psychological testing often requires prior authorization
+            and proof that the testing is medically necessary for diagnosis or treatment planning. Court, school,
+            benefits, ESA, and many educational or accommodation-focused evaluations are usually self-pay or funded by
+            a third party rather than billed to insurance.
+          </p>
+          </div>
         </section>
       </AnimatedSection>
 
