@@ -12,51 +12,51 @@ const services = [
   {
     icon: "mdi:account-heart-outline",
     title: "Therapy",
-    desc: "Evidence-based, neuro-affirming individual counseling for teens and adults. Accepted by most insurance plans we carry.",
+    desc: "Expert, neuro-affirming therapy for teens and adults with clinicians experienced in ADHD, Autism, trauma, and complex presentations.",
     link: "/services/therapy",
   },
   {
     icon: "mdi:medication-outline",
     title: "Medication Management",
-    desc: "Psychiatric medication support from our in-house Nurse Practitioner. Most clients seen immediately.",
+    desc: "Thoughtful psychiatric medication management from our in-house Nurse Practitioner, with care coordinated around your broader treatment goals.",
     link: "/services/medication-management",
   },
   {
     icon: "mdi:head-cog-outline",
     title: "Psychological Testing",
-    desc: "ADHD, Autism, learning disabilities, personality — comprehensive evaluations with self-pay results in 7 days.",
+    desc: "Clinician-led evaluations for ADHD, Autism, learning differences, and personality concerns, with clear recommendations and optional 7-day self-pay turnaround.",
     link: "/services/psychological-evaluations",
   },
 ];
 
 const differentiators = [
-  { icon: "mdi:shield-check-outline", stat: "20+", label: "Insurance panels accepted" },
-  { icon: "mdi:lightning-bolt-outline", stat: "Shortest", label: "Waitlists in KY for insured clients" },
+  { icon: "mdi:stethoscope", stat: "Expert-led", label: "Assessment, therapy, and medication support" },
+  { icon: "mdi:shield-check-outline", stat: "Neuro-affirming", label: "Care for nuanced, often missed presentations" },
   { icon: "mdi:earth", stat: "40+", label: "States via PSYPACT" },
-  { icon: "mdi:clock-fast", stat: "7 days", label: "Self-pay testing turnaround" },
+  { icon: "mdi:clock-fast", stat: "7 days", label: "Optional self-pay testing turnaround" },
   { icon: "mdi:calendar-check-outline", stat: "2,100+", label: "Evaluations completed" },
 ];
 
 const whyTwilightCards = [
   {
-    icon: "mdi:speedometer",
-    title: "Results in Days, Not Months",
+    icon: "mdi:brain",
+    title: "Nuanced Evaluation for Complex Questions",
     description:
-      "Self-pay evaluations can be completed and reports delivered within 7 days of intake. Insurance-based testing starts within weeks.",
+      "Our clinicians assess ADHD, Autism, learning differences, and personality concerns with depth, not one-size-fits-all screening.",
     delay: 0,
   },
   {
-    icon: "mdi:video-wireless-outline",
-    title: "Fully Remote Testing Available",
+    icon: "mdi:source-branch",
+    title: "Integrated Care Beyond the Report",
     description:
-      "No need to travel. Complete your evaluation from home via secure telehealth — available across 40+ states through PSYPACT.",
+      "When ongoing support is helpful, therapy and medication management are available within the same practice for a more connected plan.",
     delay: 100,
   },
   {
     icon: "mdi:calendar-weekend-outline",
-    title: "Weekend & Flexible Scheduling",
+    title: "Flexible Access, High Standards",
     description:
-      "We know your schedule is full. We offer evening and weekend appointments so you don't have to choose between work and getting answers.",
+      "Telehealth, weekend availability, and faster self-pay timelines make it easier to begin care without sacrificing clinical rigor.",
     delay: 200,
   },
 ];
@@ -87,14 +87,14 @@ const onboardingSteps = [
     number: "2",
     title: "Complete Intake",
     description:
-      "Fill out our intake forms and schedule your appointment. We'll verify benefits and walk you through what to expect.",
+      "Fill out intake forms, schedule your appointment, and get a clear overview of what your service will involve.",
     delay: 120,
   },
   {
     number: "3",
     title: "Get Answers",
     description:
-      "Attend your evaluation, therapy, or medication appointment. Receive your results and a clear path forward.",
+      "Meet with the right clinician, receive clear answers, and leave with recommendations tailored to your next step.",
     delay: 240,
   },
 ];
@@ -104,8 +104,8 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
 ---
 
 <LandingLayout
-  title="New Client Welcome | Twilight Psychology Kentucky"
-  description="New to Twilight Psychology? Explore therapy, medication management, and psychological testing, meet the team, and request care in Kentucky."
+  title="Expert Psychological Care in Kentucky | Twilight Psychology"
+  description="Start with Twilight Psychology's expert clinicians for Autism, ADHD, and personality evaluations, neuro-affirming therapy, and medication management in Kentucky."
 >
   <!-- ══ Theme toggle ══ -->
   <button
@@ -146,17 +146,16 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
         </a>
 
         <h1 class="lp-reveal lp-reveal-d1 font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-site-text tracking-tighter leading-[0.92] max-w-4xl">
-          <span class="lp-word-reveal">New</span>{" "}
-          <span class="lp-word-reveal" style="--wr-d:1">Client</span>{" "}
-          <span class="lp-word-reveal" style="--wr-d:2">Care</span>
+          <span class="lp-word-reveal">Specialist</span>{" "}
+          <span class="lp-word-reveal" style="--wr-d:1">Care</span>
           <br class="hidden sm:block" />
-          <span class="lp-word-reveal text-cta" style="--wr-d:3">Starts</span>{" "}
-          <span class="lp-word-reveal text-cta" style="--wr-d:4">Here</span>
+          <span class="lp-word-reveal text-cta" style="--wr-d:2">Starts</span>{" "}
+          <span class="lp-word-reveal text-cta" style="--wr-d:3">Here</span>
         </h1>
 
         <p class="lp-reveal lp-reveal-d2 mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-site-sub leading-relaxed font-medium">
-          If you are considering therapy, medication management, or psychological testing, this page is your starting point.
-          Meet the team, review your options, and request care with a practice that accepts 20+ insurance panels including Medicaid and Medicare.
+          Start with a practice known for nuanced psychological assessment, neuro-affirming therapy, and thoughtful medication management.
+          Explore the clinicians, review your options, and request care designed around clarity, depth, and next steps.
         </p>
 
         <div class="lp-reveal lp-reveal-d3 mt-8 flex flex-col sm:flex-row gap-4 items-center">
@@ -196,7 +195,7 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
       <div class="lp-reveal text-center mb-12 sm:mb-16">
         <p class="lp-label">What We Offer</p>
         <h2 class="lp-split-text font-serif text-3xl sm:text-4xl md:text-5xl font-black text-site-text tracking-tighter">
-          Three Ways We Can Help You
+          Three Expert Services
         </h2>
       </div>
 
@@ -259,7 +258,7 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
             <span class="text-cta"> Been Overlooked</span>
           </h2>
           <p class="lp-reveal text-site-sub text-base sm:text-lg leading-relaxed mb-8" style={revealDelayStyle(100)}>
-            Many adults go years without answers because the system wasn't designed for them. We specialize in assessments for ADHD, Autism, and related conditions — using a neuro-affirming approach that centers your experience rather than dismissing it.
+            Many adults reach us after years of being misunderstood, misdiagnosed, or told their concerns were not significant enough. Our clinicians specialize in ADHD, Autism, personality evaluations, and related diagnostic questions using a neuro-affirming, evidence-based approach.
           </p>
           <a
             href="/about/twilight-psychology"
@@ -296,7 +295,7 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
           Meet the Clinicians
         </h2>
         <p class="lp-reveal mt-4 max-w-2xl mx-auto text-site-sub text-base leading-relaxed" style={revealDelayStyle(100)}>
-          Our team includes licensed psychologists, licensed psychological associates, and a psychiatric nurse practitioner — each specializing in neurodivergent care.
+          Our team includes licensed psychologists, licensed psychological associates, and a psychiatric nurse practitioner with expertise in neurodivergent care, complex assessment, therapy, and medication support.
         </p>
       </div>
 
@@ -334,12 +333,12 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
   <section class="lp-section lp-insurance relative isolate overflow-hidden">
     <div class="mx-auto max-w-6xl px-5 py-16 sm:py-24">
       <div class="lp-reveal text-center mb-10 sm:mb-14">
-        <p class="lp-label">Insurance Accepted</p>
+        <p class="lp-label">Coverage & Payment</p>
         <h2 class="lp-split-text font-serif text-3xl sm:text-4xl font-black text-site-text tracking-tighter">
-          We Work With Your Insurance
+          Insurance Is Available When It Fits
         </h2>
         <p class="lp-reveal mt-4 max-w-xl mx-auto text-site-sub text-sm sm:text-base leading-relaxed" style={revealDelayStyle(100)}>
-          We accept most major commercial plans, Medicaid, Medicare, Tricare, and CHAMPVA. Out-of-pocket options are also available with faster turnaround.
+          We work with many commercial plans plus Medicaid, Medicare, Tricare, and CHAMPVA. Coverage is one part of the process; our priority is matching you with the right clinician and level of care.
         </p>
       </div>
 
@@ -350,7 +349,7 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
       </div>
 
       <p class="text-center mt-6 text-xs text-site-sub">
-        <a href="/resources/insurances-accepted" class="hover:text-cta transition-colors underline underline-offset-2">View full insurance details &rarr;</a>
+        <a href="/resources/insurances-accepted" class="hover:text-cta transition-colors underline underline-offset-2">Review coverage details &rarr;</a>
       </p>
     </div>
   </section>
@@ -389,7 +388,7 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
           <span class="text-cta">Let's Find Them.</span>
         </h2>
         <p class="lp-reveal max-w-xl mx-auto text-site-sub text-base sm:text-lg leading-relaxed mb-8" style={revealDelayStyle(150)}>
-          Whether it's an evaluation, therapy, or medication support — our team is ready when you are. New clients are currently being accepted.
+          Whether you need a nuanced evaluation, therapy with clinical depth, or medication support, you will be guided by specialists who know how to move care forward.
         </p>
         <div class="lp-reveal flex flex-col sm:flex-row gap-4 justify-center items-center" style={revealDelayStyle(250)}>
           <a
