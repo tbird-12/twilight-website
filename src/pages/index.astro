@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSectionWrapper from "../components/HeroSectionWrapper.astro";
 import { Icon } from "astro-icon/components";
+import heroBgDawn from "../assets/hero-dawn.svg?raw";
+import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg?raw";
 import heroBg from "../assets/hero-background.svg?raw";
 import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
@@ -105,14 +107,16 @@ const qualityCareItems = [
     <section
       class="homepage-panel homepage-panel-hero relative isolate overflow-hidden px-4"
     >
-      <!-- SVG Background -->
-      <div class="absolute inset-0 md:hidden opacity-70" aria-hidden="true">
+      <div class="homepage-hero-art homepage-hero-art--mobile homepage-hero-art--light" aria-hidden="true">
+        <Fragment set:html={heroBgDawnMobile} />
+      </div>
+      <div class="homepage-hero-art homepage-hero-art--desktop homepage-hero-art--light" aria-hidden="true">
+        <Fragment set:html={heroBgDawn} />
+      </div>
+      <div class="homepage-hero-art homepage-hero-art--mobile homepage-hero-art--dark" aria-hidden="true">
         <Fragment set:html={heroBgMobile} />
       </div>
-      <div
-        class="absolute inset-0 hidden md:block opacity-80"
-        aria-hidden="true"
-      >
+      <div class="homepage-hero-art homepage-hero-art--desktop homepage-hero-art--dark" aria-hidden="true">
         <Fragment set:html={heroBg} />
       </div>
       <div
@@ -431,6 +435,36 @@ const qualityCareItems = [
     background: rgba(var(--rgb-bg), 0.85);
   }
 
+  .homepage-hero-art {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .homepage-hero-art--light,
+  .homepage-hero-art--dark {
+    display: none;
+  }
+
+  :global(html.light) .homepage-hero-art--light.homepage-hero-art--mobile,
+  :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--mobile {
+    display: block;
+    opacity: 0.88;
+  }
+
+  :global(html.light) .homepage-panel-hero {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(var(--rgb-bg), 0.64),
+        rgba(var(--rgb-bg), 0.82)
+      );
+  }
+
+  :global(html.dark) .homepage-panel-hero {
+    background: rgba(var(--rgb-bg), 0.85);
+  }
+
   @media (min-width: 640px) {
     .homepage-panel-hero {
       --homepage-chrome-offset: 5rem;
@@ -442,6 +476,17 @@ const qualityCareItems = [
   }
 
   @media (min-width: 768px) {
+    :global(html.light) .homepage-hero-art--light.homepage-hero-art--mobile,
+    :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--mobile {
+      display: none;
+    }
+
+    :global(html.light) .homepage-hero-art--light.homepage-hero-art--desktop,
+    :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--desktop {
+      display: block;
+      opacity: 0.82;
+    }
+
     .homepage-panel-hero {
       --homepage-chrome-offset: 6.5rem;
     }
