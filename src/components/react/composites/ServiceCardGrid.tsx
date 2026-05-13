@@ -1,6 +1,6 @@
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { createStaggerDelay, keyframes, duration as dur, easing } from '../animations';
+import { createStaggerDelay, duration as dur, easing } from '../animations';
 
 interface ServiceItem {
   name: string;

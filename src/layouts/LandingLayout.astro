@@ -37,7 +37,7 @@ const seoDescription =
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
@@ -93,8 +93,8 @@ const seoDescription =
     </script>
   </head>
 
-  <body class="min-h-screen bg-site-bg text-site-text">
-    <main>
+  <body class="flex min-h-screen flex-col bg-site-bg text-site-text antialiased">
+    <main id="main-content" class="grow" data-pagefind-body>
       <slot />
     </main>
   </body>

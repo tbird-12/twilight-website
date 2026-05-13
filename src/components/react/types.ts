@@ -2,8 +2,6 @@
  * Shared TypeScript types and interfaces for React components
  */
 
-import type { ReactNode } from 'react';
-
 // Theme types
 export interface ThemeContextType {
   isDark: boolean;

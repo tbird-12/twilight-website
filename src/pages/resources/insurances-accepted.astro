@@ -16,7 +16,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   title="Insurance Coverage | Twilight Psychology"
   description="Accepted insurance at Twilight Psychology in Kentucky for covered behavioral health services: Aetna, Cigna, UHC, Anthem, Medicaid, Medicare, Tricare, and more."
 >
-  <div class="bg-site-bg min-h-screen pb-24">
     <PageHeroWrapper
       title="Accepted Insurances"
       accentWord="Insurances"
@@ -131,25 +130,24 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       </AnimatedSection>
       </div>
     </section>
-  </div>
 </Layout>
 
 <style>
   .insurance-logo-card {
-    background-color: #E0E0E0;
-    border-color: rgba(15, 23, 42, 0.1);
+    background-color: #C0C0C0;
+    border-color: var(--color-border);
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   }
 
   .insurance-logo-card-label,
   .insurance-logo-card-fallback {
-    color: #334155;
+    color: var(--color-site-sub);
   }
 
   @media (min-width: 768px) {
     .insurance-logo-card:hover {
-      background-color: #E0E0E0;
-      border-color: rgba(15, 23, 42, 0.14);
+      background-color: #C0C0C0;
+      border-color: var(--color-border-strong);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
       transform: translateY(-2px);
     }

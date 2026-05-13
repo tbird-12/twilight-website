@@ -42,7 +42,7 @@ const seoDescription =
   
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
@@ -100,12 +100,10 @@ const seoDescription =
     </script>
   </head>
 
-  <body
-    class="flex flex-col min-h-screen"
-  >
+  <body class="flex min-h-screen flex-col bg-site-bg text-site-text antialiased">
     <HeaderWithProvider client:load logoSrc={favicon.src} currentPath={Astro.url.pathname} />
 
-    <main class="grow" data-pagefind-body>
+    <main id="main-content" class="grow pb-12 sm:pb-16 md:pb-24" data-pagefind-body>
       <slot />
     </main>
 

@@ -14,12 +14,19 @@ import {
 } from "../../data/resource";
 
 const year = new Date().getFullYear();
+
+const exploreLinks = [
+  { label: "Services", href: "/services" },
+  { label: "Specialties", href: "/specialties" },
+  { label: "Fees & Insurance", href: "/resources/fees" },
+  { label: "New Client Guide", href: "/resources/new-client" },
+];
 ---
 
 <footer class="border-t border-border bg-site-footer mt-16">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
 
       <!-- Brand / Logo -->
       <div class="lg:col-span-1">
@@ -45,17 +52,17 @@ const year = new Date().getFullYear();
         <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Contact</p>
         <div class="space-y-2 text-sm text-site-sub">
           <p>
-            P:&nbsp;<a href={`tel:${PHONE_NUMBER}`} class="text-site-text hover:text-cta transition-colors">
+            P:&nbsp;<a href={`tel:${PHONE_NUMBER}`} class="footer-link">
               {PHONE_NUMBER_FORMATTED}
             </a>
           </p>
           <p>
-            F:&nbsp;<a href={`fax:${FAX_NUMBER}`} class="text-site-text hover:text-cta transition-colors">
+            F:&nbsp;<a href={`fax:${FAX_NUMBER}`} class="footer-link">
               {FAX_NUMBER_FORMATTED}
             </a>
           </p>
           <p>
-            E:&nbsp;<a href={`mailto:${EMAIL_ADDRESS}`} class="text-site-text hover:text-cta transition-colors break-all">
+            E:&nbsp;<a href={`mailto:${EMAIL_ADDRESS}`} class="footer-link break-all">
               {EMAIL_ADDRESS}
             </a>
           </p>
@@ -72,7 +79,7 @@ const year = new Date().getFullYear();
               href={MAIN_OFFICE_MAP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              class="hover:text-site-text transition-colors leading-snug block"
+              class="footer-link leading-snug block"
             >
               {MAIN_OFFICE_STREET_ADDRESS}<br />{MAIN_OFFICE_CITY_STATE_ZIP}
             </a>
@@ -83,7 +90,7 @@ const year = new Date().getFullYear();
               href="https://www.google.com/maps/search/?api=1&query=1040+Monarch+St+Office+305+Lexington+KY+40513"
               target="_blank"
               rel="noopener noreferrer"
-              class="hover:text-site-text transition-colors leading-snug block"
+              class="footer-link leading-snug block"
             >
               1040 Monarch St., Office 305<br />Lexington, KY 40513
             </a>
@@ -96,8 +103,19 @@ const year = new Date().getFullYear();
         <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Blog Topics</p>
         <nav class="flex flex-col gap-2 text-sm text-site-sub" aria-label="Blog footer topics">
           {blogCategories.map((cat) => (
-            <a href={`/blog/category/${cat.slug}`} class="hover:text-site-text transition-colors">
+            <a href={`/blog/category/${cat.slug}`} class="footer-link">
               {cat.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Explore</p>
+        <nav class="flex flex-col gap-2 text-sm text-site-sub" aria-label="Blog footer site links">
+          {exploreLinks.map((link) => (
+            <a href={link.href} class="footer-link">
+              {link.label}
             </a>
           ))}
         </nav>
@@ -109,7 +127,7 @@ const year = new Date().getFullYear();
 
     <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-site-sub">
       <span>© {year} Twilight Psychology, PLLC. All rights reserved.</span>
-      <a href="/privacy" class="hover:text-site-text transition-colors underline underline-offset-2">
+      <a href="/privacy" class="footer-link underline underline-offset-2">
         Privacy Policy
       </a>
     </div>

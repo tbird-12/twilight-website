@@ -101,10 +101,10 @@ const ogImageAlt = imageAlt || `${metaTitle} preview image`;
     <slot name="page-schema" />
   </head>
 
-  <body class="bg-site-bg text-site-text antialiased">
+  <body class="flex min-h-screen flex-col bg-site-bg text-site-text antialiased">
     <BlogHeader />
 
-    <main id="main-content" data-pagefind-body>
+    <main id="main-content" class="grow" data-pagefind-body>
       <slot />
     </main>
 

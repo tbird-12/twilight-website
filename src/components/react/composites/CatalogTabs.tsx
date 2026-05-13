@@ -1,5 +1,4 @@
-import { useState, useCallback } from 'react';
-import Tabs, { TabPanel } from '../primitives/Tabs';
+import Tabs from '../primitives/Tabs';
 
 interface CatalogConcern {
   name: string;

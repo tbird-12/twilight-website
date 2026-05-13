@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { keyframes, duration as dur, easing } from '../animations';
+import { easing } from '../animations';
 
 interface PageHeroProps {
   title: string;

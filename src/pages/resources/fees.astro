@@ -13,9 +13,9 @@ const feeCategories = [
     services: [
       { name: "ADHD Assessments", price: "$1,300" },
       { name: "Autism Assessments", price: "$1,300" },
-      { name: "Personality Disorder Assessments", price: "$1,300" },
+      { name: "Personality Evaluations", price: "$1,300" },
       { name: "Full Psychological Evaluation", price: "$1,300", note: "Covers Autism, ADHD, and Personality" },
-      { name: "Child Psychological Evaluations", price: "$1,000", note: "Ages 2-6, Personality Disorders n/a" },
+      { name: "Child Psychological Evaluations", price: "$1,000", note: "Ages 2-6; personality evaluation add-on not included" },
       { name: "Learning Disorder (Disability) Assessments", price: "$1,500", note: "Offered on a self-pay basis" },
       { name: "Guardianship Evaluation", price: "$500", note: "Additional cost for court/extra testing" },
       { name: "Emotional Support Animal (ESA) Evaluation", price: "$300" },
@@ -55,7 +55,6 @@ const feeCategories = [
   title="Service Fees & Rates | Twilight Psychology"
   description="Transparent pricing for psychological evaluations, therapy, and medication management at Twilight Psychology. Insurance accepted, flexible payment options."
 >
-  <div class="bg-site-bg min-h-screen pb-24">
     <section class="bg-site-bg py-24 px-4">
       <div class="max-w-4xl mx-auto">
 
@@ -97,7 +96,7 @@ const feeCategories = [
             We offer payment plans where testing costs can be split into 2-3 equal payments due 24 hours before your appointments. 
             For a standard $1,300 battery, this typically looks like:
           </p>
-          <div class="grid grid-cols-3 gap-4 text-center">
+          <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
             <div class="p-4 bg-site-bg rounded-xl border" style="border-color: var(--color-border)">
               <p class="text-xs text-sand uppercase">Intake</p>
               <p class="text-xl font-black text-cta">$450</p>
@@ -173,5 +172,4 @@ const feeCategories = [
 
       </div>
     </section>
-  </div>
 </Layout>

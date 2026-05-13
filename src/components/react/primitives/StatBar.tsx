@@ -1,6 +1,6 @@
 import { useInView } from '../hooks/useInView';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import { keyframes, duration as dur, easing, createStaggerDelay } from '../animations';
 
 interface Stat {
