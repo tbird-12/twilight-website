@@ -11,6 +11,7 @@ import {
   MAIN_OFFICE_ADDRESS_SINGLE_LINE,
   MAIN_OFFICE_MAP_LINK,
 } from "../data/resource";
+import { siteConfig } from "../data/siteConfig";
 import { Icon } from "astro-icon/components";
 
 const links = [
@@ -45,11 +46,6 @@ const links = [
   },
 ];
 
-const socials = [
-  { label: "Facebook", icon: "mdi:facebook", href: "https://www.facebook.com/people/Twilight-Psychology-PLLC/61555270131003/" },
-  { label: "Instagram", icon: "mdi:instagram", href: "https://www.instagram.com/twilight_psychology_pllc/" },
-  { label: "LinkedIn", icon: "mdi:linkedin", href: "https://www.linkedin.com/company/twilight-psychology/?viewAsMember=true" },
-];
 ---
 
 <footer class="relative site-footer">
@@ -87,7 +83,7 @@ const socials = [
 
         <div class="flex gap-3">
           {
-            socials.map((social) => (
+            siteConfig.socialProfiles.map((social) => (
               <a
                 href={social.href}
                 target="_blank"

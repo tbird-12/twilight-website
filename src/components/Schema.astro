@@ -1,8 +1,15 @@
 ---
 import logo from "../assets/images/logo.png";
-import { MAIN_OFFICE_STREET_ADDRESS_SCHEMA, MAIN_OFFICE_CITY_STATE_ZIP } from "../data/resource";
+import {
+  EMAIL_ADDRESS,
+  MAIN_OFFICE_CITY_STATE_ZIP,
+  MAIN_OFFICE_MAP_LINK,
+  MAIN_OFFICE_STREET_ADDRESS_SCHEMA,
+  PHONE_NUMBER,
+} from "../data/resource";
+import { siteConfig } from "../data/siteConfig";
 
-const siteUrl = Astro.site || "http://localhost:4321";
+const siteUrl = Astro.site || new URL(siteConfig.siteUrl);
 
 const imageUrl = new URL(logo.src, siteUrl).href;
 const [addressLocality, addressRegionAndPostalCode] = MAIN_OFFICE_CITY_STATE_ZIP.split(", ");
@@ -29,10 +36,10 @@ const {
 const defaultSchema: JsonLd = {
   "@context": "https://schema.org",
   "@type": type,
-  name: name || "Twilight Psychology",
+  name: name || siteConfig.siteName,
   description:
     "Twilight Psychology provides ADHD testing, autism evaluations, psychoeducational assessments, dyslexia testing, and other documentation-rich specialty services in Lexington, Kentucky, with therapy and medication support when needed.",
-  url: "https://www.twilightpsychology.com",
+  url: siteConfig.siteUrl,
   address: {
     "@type": "PostalAddress",
     streetAddress: MAIN_OFFICE_STREET_ADDRESS_SCHEMA,
@@ -62,7 +69,9 @@ const defaultSchema: JsonLd = {
     },
   ],
   priceRange: "$$",
-  telephone: "+1-859-687-5843",
+  telephone: PHONE_NUMBER,
+  email: EMAIL_ADDRESS,
+  hasMap: MAIN_OFFICE_MAP_LINK,
   image: {
     "@type": "ImageObject",
     url: imageUrl,
@@ -70,6 +79,30 @@ const defaultSchema: JsonLd = {
     width: "400",
   },
   logo: imageUrl,
+  sameAs: siteConfig.socialProfiles.map(({ href }) => href),
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "patient support",
+      telephone: PHONE_NUMBER,
+      email: EMAIL_ADDRESS,
+      availableLanguage: ["en"],
+    },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+      ],
+      opens: "09:00",
+      closes: "19:00",
+    },
+  ],
   paymentAccepted: "Self-Pay, Medicaid, Medicare, Tricare, Aetna, Cigna, UnitedHealthcare, Humana, Ambetter, Passport, UMR, CHAMPVA",
   currenciesAccepted: "USD",
   knowsAbout: [
