@@ -61,7 +61,7 @@ Not every child needs the same battery. Comprehensive does not mean every possib
 
 Families often reach out after spending months on other waitlists, so timeline matters. Twilight Psychology is known for **shorter wait times than many practices in the region**.
 
-For evaluations offered on a **self-pay** basis, families can often be scheduled within about **3 weeks**, with reports frequently completed within **7 days** of the intake and testing process. Insurance-based timelines can be longer because benefits review, prior authorization, and medical-necessity criteria sometimes affect scheduling.
+For evaluations offered on a **self-pay** basis, families can often be scheduled within about **3 weeks**, with reports frequently completed within **7 days** of the intake and testing process. Insurance-based timelines can be longer because benefits review, prior authorization, and medical-necessity criteria affect scheduling, and insurance-approved testing hours must also cover records review, collateral information, interviews, scoring, interpretation, consultation, and documentation.
 
 If you want the latest timeline information, our [waitlist page](/resources/waitlist-times) explains how availability works.
 
@@ -69,7 +69,7 @@ If you want the latest timeline information, our [waitlist page](/resources/wait
 
 Families sometimes assume psychological testing will automatically be self-pay. That is not always the case here.
 
-Twilight Psychology accepts **most major insurance plans for covered evaluations**, including many commercial plans, Kentucky Medicaid plans, and Medicare. Coverage depends on the referral question, your specific benefits, and whether the evaluation meets the plan's medical-necessity rules. In some cases, a referral that is primarily school-focused, accommodation-focused, or documentation-heavy may still be a better fit for a self-pay specialty pathway.
+Twilight Psychology accepts **most major insurance plans for covered evaluations**, including many commercial plans, Kentucky Medicaid plans, and Medicare. Coverage depends on the referral question, your specific benefits, and whether the evaluation meets the plan's medical-necessity rules. Insurance typically limits the number of testing units approved, so we focus on the most clinically relevant measures within those hours. If a referral is primarily school-focused, accommodation-focused, or needs a broader battery or more documentation than a plan allows, self-pay may be the better fit. Medicaid clients cannot be charged beyond covered amounts, so Medicaid evaluations are limited to approved hours.
 
 If insurance is part of your decision-making, review our [accepted insurances](/resources/insurances-accepted) page and our [FAQ](/resources/faq) for testing and prior-authorization details.
 

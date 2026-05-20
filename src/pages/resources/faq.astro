@@ -13,20 +13,19 @@ const generalFaqs = [
   },
   {
     question: "Why get tested at Twilight Psychology?",
-    answer: "We specialize in neuro-affirming care for those frustrated by long waitlists or those who haven't fit traditional diagnostic profiles (e.g., high-masking women or adults). We provide official, comprehensive diagnoses accepted by agencies, including PDA (Pathological Demand Avoidance) profiles."
+    answer: "We offer neuro-affirming evaluations that aim to answer the referral question clearly and produce useful recommendations for treatment, school, work, and daily life. When insurance covers testing, plans often limit the number of units available, so we use the most clinically relevant measures within the hours approved. Self-pay remains available when a referral needs a broader battery or more documentation."
   },
   {
     question: "Do you accept Medicaid?",
-    answer: "Yes, for covered services. We are credentialed with Traditional Kentucky Medicaid, Aetna Better Health, Humana Healthy Horizons, UHC Community Plan, Passport by Molina, and Wellcare of Kentucky. Coverage still depends on the specific service: therapy and medication visits are often straightforward, while comprehensive testing usually requires medical-necessity review and prior authorization. Court, school, benefits, waiver, and other documentation-only evaluations are generally not billed to Medicaid. We cannot accept out-of-state Medicaid."
+    answer: "Yes, for covered services. We are credentialed with Traditional Kentucky Medicaid, Aetna Better Health, Humana Healthy Horizons, UHC Community Plan, Passport by Molina, and Wellcare of Kentucky. Therapy and medication visits are usually the clearest Medicaid-supported services. When Medicaid covers psychological testing, the plan still limits the number of approved hours, and those hours include record review, collateral information, interviewing clients and parents, scoring, interpretation, consultation, and documentation. Medicaid clients cannot be charged beyond covered amounts, so those evaluations must stay within the hours approved. Court, school, benefits, waiver, and other documentation-only evaluations are generally not billed to Medicaid. We cannot accept out-of-state Medicaid."
   },
   {
     question: "What is the cost for Autism or ADHD testing with insurance?",
-    answer: "Costs depend on your specific plan and whether the testing is approved as a covered, medically necessary service. For Kentucky Medicaid and many commercial plans, comprehensive testing may require prior authorization before scheduling is finalized. If a plan excludes the service, approves only part of it, or determines the referral is educational or documentation-focused rather than treatment-focused, we will review self-pay options with you."
+    answer: "Costs depend on your specific plan and whether the testing is approved as a covered, medically necessary service. Insurance usually approves only a limited number of testing units, and those hours include records review, collateral information, client and parent interviews, test administration, scoring, interpretation, consultation, and report writing. We use the most clinically relevant tests within the hours approved. If you want a broader battery or more documentation than a plan allows, we can review self-pay options. Medicaid clients cannot be charged beyond covered amounts, so Medicaid testing must stay within approved hours."
   },
   {
     question: "How long does it take to receive a formal diagnosis?",
-    answer: "Insurance timelines are often constrained by prior authorizations (1-2 weeks), existing client waitlist and clinician availability. \
-    For evaluations offered on a self-pay basis, we can frequently complete the entire intake, assessment, and feedback process within a single week."
+    answer: "Self-pay evaluations can often move from intake to assessment, feedback, and report within a single week. Insurance-based timelines are usually longer because scheduling depends on benefits review, authorization, clinician availability, and the number of testing hours a plan approves for the referral question."
   },
   {
     question: "Will insurance cover learning disability assessments?",
@@ -41,19 +40,19 @@ const generalFaqs = [
 const waitTimeFaqs = [
   {
     question: "How long is the current waitlist?",
-    answer: "Wait times vary by provider and service. We maintain some of the shortest waitlists in Kentucky, often ranging from 3-4 months for Medicaid and insurance evaluations and immediate availability for medication management. For the most current wait times, please visit our Waitlist Times page."
+    answer: "Wait times vary by provider and service. Self-pay evaluations can often be scheduled within 3 weeks, therapy wait times vary by clinician and panel, and medication management may have faster in-network availability. Insurance-based evaluation openings are also available, but timing depends on authorization and the number of testing hours approved. For the most current wait times, please visit our Waitlist Times page."
   },
   {
     question: "How long is the current waitlist for an evaluation?",
-    answer: "We pride ourselves on offering some of the most efficient turnaround times in the region. To maintain high-quality care, we manage our calendar using a dedicated slot system. For clients seeking evaluations through insurance, the wait time is typically around 4 months due to high demand. For those opting for self-pay, we can often schedule an evaluation within 3 weeks, depending on the provider and specific service needed."
+    answer: "Self-pay evaluations can often be scheduled within 3 weeks, depending on the provider and service. Insurance-based evaluation slots are more limited and may run around 4 months because demand, authorization review, and approved testing hours all affect scheduling."
   },
   {
     question: "Why is there a difference in wait times?",
-    answer: "The difference is primarily due to volume and administrative requirements. We reserve a specific number of appointments each week for various payment methods to ensure we can serve a diverse range of clients. Because there is a much higher volume of referrals for insurance-based care, those specific slots fill up much further in advance. In addition, insurance and Medicaid testing often requires benefits review, prior authorization, and a clinical determination of medical necessity before the schedule can be finalized."
+    answer: "The difference is largely administrative. Insurance and Medicaid testing usually requires benefits review, prior authorization, and a medical-necessity determination before the calendar can be finalized. Plans also often cap testing units, and those hours must cover records review, collateral information, interviews, scoring, interpretation, consultation, and documentation, so insurance-based evaluation slots are more limited."
   },
   {
     question: "Can I choose to 'Self-Pay' if I have insurance?",
-    answer: "Yes, you can opt to self-pay for services even if you have insurance. This may be beneficial if you prefer a faster appointment or want to avoid insurance-related administrative processes. Medicaid clients have different rules, please contact our office for more information."
+    answer: "Yes, for many commercial plans. Some clients choose self-pay when they want a broader battery or more documentation than insurance authorizes, or when they want scheduling that does not depend on insurer review. Medicaid clients cannot be charged out of pocket for covered testing, so Medicaid evaluations must stay within the hours approved by the plan."
   },
   {
     question: "Do you offer a \"cancellation list\"?",
@@ -79,7 +78,7 @@ const faqSchema = {
 
 <Layout
   title="Testing, Insurance & Intake FAQ | Twilight Psychology"
-  description="Frequently asked questions about Twilight Psychology services, including testing timelines, insurance coverage, costs, and how to get started in Kentucky."
+  description="Frequently asked questions about Twilight Psychology services, including therapy and medication coverage, evaluation timelines, costs, and how to get started in Kentucky."
 >
   <Schema slot="page-schema" schema={faqSchema} />
     <section class="bg-site-bg py-24 px-4">
@@ -90,7 +89,7 @@ const faqSchema = {
           Frequently Asked <span class="text-cta">Questions</span> 
         </h1>
         <p class="text-sand text-lg font-medium">
-          Answers to common questions about our services, insurance coverage, testing timelines, self-pay options, and how to get started.
+          Answers to common questions about our services, insurance coverage for therapy and medication, evaluation timelines, self-pay options, and how to get started.
         </p>
       </header>
 
@@ -112,7 +111,7 @@ const faqSchema = {
 
       <section class="mt-20 p-8 rounded-3xl bg-surface-2 border border-border-strong text-center">
         <h2 class="font-serif text-2xl font-bold text-site-text mb-2">Still have questions?</h2>
-        <p class="text-site-text mb-6">Contact our administrative team for specific insurance inquiries or to begin your intake process.</p>
+        <p class="text-site-text mb-6">Contact our office for insurance questions about therapy or medication management, or to talk through the best evaluation pathway.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={`tel:${PHONE_NUMBER}`} class="px-8 py-3 bg-cta hover:bg-cta/80 text-cta-fg font-black rounded-full transition-transform hover:scale-105">
             {PHONE_NUMBER_FORMATTED}

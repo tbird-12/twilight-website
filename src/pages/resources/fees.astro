@@ -53,7 +53,7 @@ const feeCategories = [
 
 <Layout
   title="Service Fees & Rates | Twilight Psychology"
-  description="Transparent pricing for psychological evaluations, therapy, and medication management at Twilight Psychology. Insurance accepted, flexible payment options."
+  description="Transparent pricing for psychological evaluations plus therapy and medication management at Twilight Psychology, including insurance-covered care where applicable."
 >
     <section class="bg-site-bg py-24 px-4">
       <div class="max-w-4xl mx-auto">
@@ -61,7 +61,7 @@ const feeCategories = [
       <PageHeroWrapper
         title="Fees & Insurance"
         accentWord="Insurance"
-        subtitle="Transparent fee schedules for psychological evaluations, therapy, and medication management — including what insurance covers, self-pay rates, and specialty evaluation costs."
+        subtitle="Transparent fee schedules for psychological evaluations, therapy, and medication management — including what insurance most often covers for therapy and medication, self-pay evaluation rates, and specialty assessment costs."
       />
 
       <AnimatedSection client:visible animation="fadeInUp" delay={100}>
@@ -69,17 +69,24 @@ const feeCategories = [
           <h2 class="font-serif text-site-text font-bold text-xl mb-2">Insurance Information</h2>
           <div class="space-y-4 text-site-text leading-relaxed">
           <p>
-            Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for 
-            <a href="/blog/insurance/understanding-health-insurance" class="text-cta underline">covered services</a>. 
+            Therapy and medication management are the services most often billed through insurance. Clients
+            with <strong>Kentucky Medicaid</strong> typically have $0 copays for
+            <a href="/blog/insurance/understanding-health-insurance" class="text-cta underline">covered services</a>.
             For <a href="/resources/insurances-accepted" class="text-cta underline">commercial insurance</a>
-            we recommend calling 
-            <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline">{PHONE_NUMBER_FORMATTED}</a> to determine approximate rates, though you should always confirm benefits, copays, deductibles with your insurance provider prior to your appointment.
+            we recommend calling
+            <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline"> {PHONE_NUMBER_FORMATTED}</a> to determine approximate rates,
+            though you should always confirm benefits, copays, and deductibles with your insurance provider prior to your appointment.
           </p>
           <p>
-            Coverage is always service-specific. Comprehensive psychological testing often requires prior authorization
-            and proof that the testing is medically necessary for diagnosis or treatment planning. Court, school,
-            benefits, ESA, and many educational or accommodation-focused evaluations are usually self-pay or funded by
-            a third party rather than billed to insurance.
+            We do accept insurance for select treatment-focused evaluation referrals. Insurance typically authorizes
+            only a limited number of psychological testing units, and those hours include record collection, collateral
+            information, interviewing clients and parents, test administration, reviewing and integrating data,
+            researching concerns, consulting with other providers, and report writing. When we bill insurance, we use
+            the most clinically relevant tests within the hours approved. Self-pay is available when a referral needs a
+            broader battery or more documentation than insurance allows. Kentucky Medicaid clients cannot be charged
+            beyond covered amounts, so Medicaid evaluations are limited to the hours approved by the plan. Court,
+            school, benefits, ESA, and many educational or accommodation-focused evaluations are usually self-pay or
+            funded by a third party rather than billed to insurance.
           </p>
           </div>
         </section>

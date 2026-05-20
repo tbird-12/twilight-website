@@ -16,7 +16,7 @@ interface WaitlistDirectoryProps {
 type WaitTimeTone = "positive" | "warning" | "caution";
 
 const WAIT_TIME_LABELS: Record<string, string> = {
-  testing_insurance: "Testing (Insurance)",
+  testing_insurance: "Testing (Insurance-Based)",
   testing_out_of_pocket: "Testing (Self-Pay)",
   therapy: "Therapy",
   medication_management: "Medication Management",

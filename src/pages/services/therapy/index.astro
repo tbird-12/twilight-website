@@ -10,7 +10,7 @@ const therapyFocus = [
   {
     title: "Evidence-based, assessment-informed care",
     detail:
-      "Our clinicians are trained in evidence-based modalities and draw on neurodevelopmental insights to deliver therapy grounded in clinical depth. Individual sessions can often be billed to accepted insurance plans for covered diagnoses.",
+      "Our clinicians are trained in evidence-based modalities and draw on neurodevelopmental insights to deliver therapy grounded in clinical depth. Individual sessions can often be billed to accepted insurance plans for covered diagnoses and are the most straightforward in-network path at Twilight Psychology.",
   },
   {
     title: "Specialized clinical expertise",
@@ -142,13 +142,14 @@ const therapySchema = {
                     recovery, PTSD, and faith-integrated counseling.
                   </p>
                   <p>
-                    Individual therapy can often be billed to insurance when treatment is tied to a
-                    covered mental health diagnosis. Couples counseling is a private-pay service, since
-                    most insurers handle relationship-focused care separately from individual mental health
-                    treatment. Each clinician brings a different specialty emphasis — neurodivergence,
-                    substance use, domestic violence recovery, faith-integrated counseling, or insight-
-                    oriented work — so reviewing the therapy clinicians page is the fastest way to find
-                    the right fit before booking.
+                    Individual therapy is one of the clearest insurance-supported services we offer.
+                    Many clients use commercial insurance, Kentucky Medicaid, or Medicare for covered
+                    care. Couples counseling is a private-pay service, since most insurers handle
+                    relationship-focused care separately from individual mental health treatment. Each
+                    clinician brings a different specialty emphasis — neurodivergence, substance use,
+                    domestic violence recovery, faith-integrated counseling, or insight-oriented work —
+                    so reviewing the therapy clinicians page is the fastest way to find the right fit
+                    before booking.
                   </p>
                 </div>
               </section>
@@ -230,11 +231,21 @@ const therapySchema = {
               rel="noopener noreferrer"
             />
 
-            <div class="p-6 bg-surface-soft rounded-3xl border border-border">
-              <p class="text-xs text-site-sub leading-relaxed italic">
-                Therapy availability varies by clinician, but Twilight Psychology also offers flexible weekday
-                scheduling and weekend appointments by request through the Lexington office.
+            <div class="p-6 bg-cta/10 rounded-3xl border border-cta/20">
+              <p class="text-xs font-black uppercase tracking-[0.24em] text-cta mb-2">
+                Insurance
               </p>
+              <p class="text-sm text-site-text leading-relaxed mb-3">
+                Therapy is where our insurance participation is broadest. Many clinicians accept major
+                commercial plans, Kentucky Medicaid, or Medicare for covered diagnoses.
+              </p>
+              <a
+                href="/resources/insurances-accepted"
+                class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-site-text transition-colors"
+              >
+                Review accepted plans
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </aside>
         </section>
