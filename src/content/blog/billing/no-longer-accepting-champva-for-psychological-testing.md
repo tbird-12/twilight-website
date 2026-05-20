@@ -29,11 +29,6 @@ Over time, our team has faced several recurring problems when trying to bill CHA
 
 As a practice, we cannot continue carrying the financial and administrative burden created by these requirements. We will cease to accept CHAMPVA as primary coverage for psychological testing.
 
-## Important billing note
-
-Twilight Psychology and other private practices do **not** have a participation contract with CHAMPVA. At the same time, this is **not** a situation where we can simply bill testing to CHAMPVA, wait for non-payment or denial, and then solve the problem through balance billing.
-
-In practical terms, that means CHAMPVA's billing rules do not create a workable path for us to keep offering psychological testing under CHAMPVA as a primary plan. Rather than place families and our practice in an unclear or financially unstable position, we are setting this policy clearly in advance.
 
 ## What CHAMPVA clients can still use at Twilight
 
