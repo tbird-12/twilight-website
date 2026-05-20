@@ -1,6 +1,6 @@
 ---
 title: "No longer accepting CHAMPVA for psychological testing"
-description: "Effective 2026-05-19, CHAMPVA is no longer accepted as primary coverage for Twilight testing, though therapy and medication visits remain eligible"
+description: "Effective 2026-05-19, CHAMPVA is no longer accepted as primary coverage for Psychological testing, though therapy and medication visits remain eligible"
 pubDate: 2026-05-19
 category: billing
 author: "Twilight Psychology Team"
