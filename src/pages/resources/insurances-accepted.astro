@@ -7,9 +7,19 @@ import { categoryColorMap } from "../../data/blogCategories";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
   "../../assets/images/insurance/*.png",
+  { eager: true },
 );
+
+const insuranceCards = insuranceProviders.map((provider) => ({
+  ...provider,
+  image:
+    imageModules[`../../assets/images/insurance/${provider.fileName}`]?.default,
+}));
+
+const insuranceCategoryClass = categoryColorMap.insurance;
+const announcementCategoryClass = categoryColorMap.announcements;
 ---
 
 <Layout
@@ -28,16 +38,13 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       <AnimatedSection client:visible animation="fadeInUp" delay={100}>
       <div class="insurance-logo-grid grid grid-cols-2 md:grid-cols-4 gap-4">
         {
-          insuranceProviders.map((provider) => {
-            // We dynamically build the path to match the imported images
-            const imagePath = `../../assets/images/insurance/${provider.fileName}`;
-
+          insuranceCards.map((provider) => {
             return (
               <div class="insurance-logo-card border rounded-2xl p-6 flex flex-col items-center justify-center group active:scale-95 active:bg-surface-2 transition-all duration-300">
                 <div class="h-16 flex items-center justify-center mb-4">
-                  {images[imagePath] ? (
+                  {provider.image ? (
                     <Image
-                      src={images[imagePath]()}
+                      src={provider.image}
                       alt={provider.name}
                       widths={[200, 300]}
                       sizes="(min-width: 768px) 200px, 150px"
@@ -108,17 +115,17 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
           <h2 class="font-serif text-2xl font-black text-site-text mb-6">Insurance Resources from Our Blog</h2>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <a href="/blog/insurance/understanding-health-insurance" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
-              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.insurance}`}>Insurance</p>
+              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${insuranceCategoryClass}`}>Insurance</p>
               <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Health Insurance</h3>
               <p class="text-xs text-site-sub">Commercial plans, Kentucky Medicaid MCOs, and Medicare explained.</p>
             </a>
             <a href="/blog/insurance/aetna-better-health-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
-              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.insurance}`}>Insurance</p>
+              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${insuranceCategoryClass}`}>Insurance</p>
               <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Aetna Better Health — Prior Auth & Appeals</h3>
               <p class="text-xs text-site-sub">Medical necessity, exclusions, prior authorization, and appeals for Kentucky Medicaid testing.</p>
             </a>
             <a href="/blog/announcements/wellcare-kentucky-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
-              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.announcements}`}>Announcement</p>
+              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${announcementCategoryClass}`}>Announcement</p>
               <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Now In-Network with Wellcare of Kentucky</h3>
               <p class="text-xs text-site-sub">Therapy and medication management under Wellcare benefits.</p>
             </a>
@@ -133,20 +140,21 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 </Layout>
 
 <style>
+  /* Keep insurance cards light in both themes so logos and fallback text stay legible in dark mode. */
   .insurance-logo-card {
-    background-color: #C0C0C0;
+    background-color: #c0c0c0;
     border-color: var(--color-border);
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
   }
 
   .insurance-logo-card-label,
   .insurance-logo-card-fallback {
-    color: var(--color-site-sub);
+    color: #334155;
   }
 
   @media (min-width: 768px) {
     .insurance-logo-card:hover {
-      background-color: #C0C0C0;
+      background-color: #c0c0c0;
       border-color: var(--color-border-strong);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
       transform: translateY(-2px);

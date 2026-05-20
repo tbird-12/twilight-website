@@ -101,3 +101,4 @@ These conventions have been reviewed and applied across all pages. Do not sugges
 - Self-pay waitlist: **3 weeks**.
 - The practice is **neuro-affirming** and serves **neurodivergent** individuals — this should be reflected in page copy.
 - "Personality Evaluations" is the correct term (not "Personality Disorder Evaluations") — applies to titles, descriptions, and hero text.
+- For `src/pages/resources/insurances-accepted.astro`, preserve the current dark-mode UX: insurance logo cards stay on a light neutral surface with high-contrast dark text so carrier logos remain readable. Do not restyle that page to use dark cards or low-contrast muted text in dark mode.

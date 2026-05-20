@@ -32,11 +32,11 @@ export default function AnimatedSection({
           animation: `${keyframes[animation]} ${dur}ms ${easing.smooth} both`,
           animationDelay: `${delay}ms`,
         }
-      : { opacity: '0', transform: 'translateY(12px)' };
+      : { opacity: '0', transform: 'translateY(12px)', willChange: 'transform, opacity' };
 
   return createElement(
     as,
-    { ref, className: `will-change-transform ${className}`, style },
+    { ref, className, style },
     children
   );
 }

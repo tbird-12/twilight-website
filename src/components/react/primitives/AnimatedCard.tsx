@@ -39,9 +39,11 @@ export default function AnimatedCard({
           animation: `${keyframes[animation]} ${dur.slow}ms ${easing.smooth} both`,
           animationDelay: `${delay}ms`,
         }
-      : { opacity: '0', transform: 'translateY(12px)' };
+      : { opacity: '0', transform: 'translateY(12px)', willChange: 'transform, opacity' };
 
-  const cls = `group will-change-transform ${hoverClasses[hoverEffect] || ''} ${className}`;
+  const cls = ['group', hoverEffect === 'none' ? '' : 'hover:will-change-transform', hoverClasses[hoverEffect] || '', className]
+    .filter(Boolean)
+    .join(' ');
 
   if (href) {
     return (
