@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import Schema from "../Schema.astro";
 import ClinicianActionPanel from "./ClinicianActionPanel.astro";
@@ -19,13 +19,18 @@ const { provider, profile, pathname } = Astro.props;
 
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
 const profileUrl = new URL(pathname, siteUrl).href;
+const schemaProfileImage = await getImage({
+  src: provider.image,
+  width: 720,
+  format: "jpg",
+});
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: provider.name,
   jobTitle: profile.jobTitle,
   description: profile.pageDescription,
-  image: new URL(provider.image.src, siteUrl).href,
+  image: new URL(schemaProfileImage.src, siteUrl).href,
   url: profileUrl,
   knowsAbout: profile.specialties,
   worksFor: {

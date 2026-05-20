@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import favicon from "../../assets/favicons/favicon.svg";
 import SearchButton from "../react/primitives/SearchButton";
 
 const currentPath = Astro.url.pathname;
@@ -12,8 +10,8 @@ const isIndex = currentPath === "/blog" || currentPath === "/blog/";
 
     <!-- Left: branding -->
     <a href="/blog" class="flex items-center gap-2 shrink-0 group">
-      <Image
-        src={favicon}
+      <img
+        src="/favicon.svg"
         alt="Twilight Psychology Logo"
         width={120}
         height={90}

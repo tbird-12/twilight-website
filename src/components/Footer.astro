@@ -1,7 +1,5 @@
 ---
 const year = new Date().getFullYear();
-import { Image } from "astro:assets";
-import favicon from "../assets/favicons/favicon.svg";
 import {
   PHONE_NUMBER,
   PHONE_NUMBER_FORMATTED,
@@ -55,8 +53,8 @@ const links = [
       <!-- Brand -->
       <div class="col-span-12 lg:col-span-3">
         <a href="/" class="inline-flex items-center gap-2 mb-4 group">
-          <Image
-            src={favicon}
+          <img
+            src="/favicon.svg"
             alt="Twilight Psychology Logo"
             width={240}
             height={180}

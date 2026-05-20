@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import Schema from "../../components/Schema.astro";
@@ -46,7 +46,16 @@ const {
 const { Content } = await render(post);
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
 const canonicalURL = new URL(`/blog/${post.id}/`, siteUrl).href;
-const ogImage = heroImage ? new URL(heroImage.src, siteUrl).href : new URL("/og-image.png", siteUrl).href;
+const optimizedOgImage = heroImage
+  ? await getImage({
+      src: heroImage,
+      width: 1200,
+      format: "jpg",
+    })
+  : undefined;
+const ogImage = optimizedOgImage
+  ? new URL(optimizedOgImage.src, siteUrl).href
+  : new URL("/og-image.png", siteUrl).href;
 const metaTitle = seoTitle || title;
 const metaDescription = seoDescription || description;
 const heroImageWidth = heroImage ? Math.min(heroImage.width, 1280) : undefined;

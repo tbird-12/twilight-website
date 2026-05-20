@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import Schema from "../../../components/Schema.astro";
 import { EMAIL_ADDRESS } from "../../../data/resource";
-import { Image } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import { staff } from '../../../data/staff';
 
 const samantha = staff.find(person => person.slug === 'samantha-rodarte')!;
@@ -18,6 +18,11 @@ const pageDescription =
   "Samantha Rodarte — Practice manager at Twilight Psychology supporting operations, patient care coordination, and insurance navigation in Lexington, KY.";
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
 const profileUrl = new URL(Astro.url.pathname, siteUrl).href;
+const schemaProfileImage = await getImage({
+  src: samantha.image,
+  width: 720,
+  format: "jpg",
+});
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -25,7 +30,7 @@ const personSchema = {
   jobTitle: "Practice Manager",
   description: pageDescription,
   email: EMAIL_ADDRESS,
-  image: new URL(samantha.image.src, siteUrl).href,
+  image: new URL(schemaProfileImage.src, siteUrl).href,
   url: profileUrl,
   knowsAbout: expertise,
   worksFor: {

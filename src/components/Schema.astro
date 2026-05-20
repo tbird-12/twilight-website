@@ -1,4 +1,5 @@
 ---
+import { getImage } from "astro:assets";
 import logo from "../assets/images/logo.png";
 import {
   EMAIL_ADDRESS,
@@ -10,8 +11,12 @@ import {
 import { siteConfig } from "../data/siteConfig";
 
 const siteUrl = Astro.site || new URL(siteConfig.siteUrl);
-
-const imageUrl = new URL(logo.src, siteUrl).href;
+const schemaLogo = await getImage({
+  src: logo,
+  width: 256,
+  format: "webp",
+});
+const imageUrl = new URL(schemaLogo.src, siteUrl).href;
 const [addressLocality, addressRegionAndPostalCode] = MAIN_OFFICE_CITY_STATE_ZIP.split(", ");
 const [addressRegion, postalCode] = addressRegionAndPostalCode.split(" ");
 
@@ -133,7 +138,7 @@ const defaultSchema: JsonLd = {
           "@type": "MedicalTest",
           name: "Psychoeducational Evaluations in Kentucky",
           description:
-            "Private-pay psychoeducational evaluations for learning differences, giftedness, twice-exceptional profiles, IEP and 504 planning, and school or college accommodation documentation.",
+            "Self-pay psychoeducational evaluations for learning differences, giftedness, twice-exceptional profiles, IEP and 504 planning, and school or college accommodation documentation.",
         },
       },
       {
@@ -160,7 +165,7 @@ const defaultSchema: JsonLd = {
           "@type": "MedicalTest",
           name: "Learning Disability and Dyslexia Testing",
           description:
-            "Private-pay dyslexia and learning disability testing for dyslexia, dysgraphia, dyscalculia, giftedness, and related school accommodation questions.",
+            "Self-pay dyslexia and learning disability testing for dyslexia, dysgraphia, dyscalculia, giftedness, and related school accommodation questions.",
         },
       },
       {

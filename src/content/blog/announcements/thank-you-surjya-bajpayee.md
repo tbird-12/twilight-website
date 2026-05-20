@@ -5,7 +5,7 @@ pubDate: 2026-04-30
 category: announcements
 author: "Twilight Psychology Team"
 tags: ["team", "gratitude", "practicum-student"]
-heroImage: "./images/surjya-bajpayee.png"
+heroImage: "./images/surjya-bajpayee.jpg"
 heroImageAlt: "Portrait of Surjya Bajpayee during her time at Twilight Psychology"
 draft: false
 ---
