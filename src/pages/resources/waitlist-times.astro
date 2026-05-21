@@ -1,6 +1,28 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import WaitlistDirectoryWrapper from '../../components/interactive/WaitlistDirectoryWrapper.astro';
+import PageLinksSection from '../../components/PageLinksSection.astro';
+
+const planningLinks = [
+  {
+    href: "/resources/new-client",
+    label: "New client guide",
+    description:
+      "Use the intake guide when you are ready to move from availability into booking.",
+  },
+  {
+    href: "/services/therapy/clinicians",
+    label: "Therapy clinicians",
+    description:
+      "Compare therapist fit, specialties, and clinician-specific availability.",
+  },
+  {
+    href: "/about/locations",
+    label: "Office locations",
+    description:
+      "Review the Lexington office setup before your appointment is scheduled.",
+  },
+];
 ---
 
 <Layout
@@ -19,6 +41,12 @@ import WaitlistDirectoryWrapper from '../../components/interactive/WaitlistDirec
       </header>
 
       <WaitlistDirectoryWrapper />
+
+      <PageLinksSection
+        title="Plan your next step"
+        description="Once you have a timing sense, these pages help you choose the right clinician, process, or office context."
+        links={planningLinks}
+      />
     </div>
     <div class="text-center mt-12 text-sm text-sand">
       <p>

@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { EMAIL_ADDRESS, WIDGET_LINK } from '../../data/resource';
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+import PageLinksSection from "../../components/PageLinksSection.astro";
 
 const steps = [
   {
@@ -35,6 +36,27 @@ const checklist = [
   "Current medications list",
   "Previous psychiatric records",
   "Completed digital forms"
+];
+
+const resourceLinks = [
+  {
+    href: "/resources/faq",
+    label: "FAQ",
+    description:
+      "Common questions about coverage, evaluations, medication, and scheduling.",
+  },
+  {
+    href: "/resources/fees",
+    label: "Fees and insurance",
+    description:
+      "Compare pricing, billing expectations, and the services most often covered by insurance.",
+  },
+  {
+    href: "/resources/waitlist-times",
+    label: "Waitlist times",
+    description:
+      "Check current scheduling windows before you complete your intake.",
+  },
 ];
 ---
 
@@ -142,4 +164,10 @@ const checklist = [
       </div>
       </div>
     </section>
+
+    <PageLinksSection
+      title="Need a little more detail first?"
+      description="These pages answer the questions most clients ask right before or right after starting intake."
+      links={resourceLinks}
+    />
 </Layout>

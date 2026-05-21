@@ -4,6 +4,7 @@ import Schema from '../../components/Schema.astro';
 import FaqAccordionWrapper from '../../components/interactive/FaqAccordionWrapper.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
 import { categoryColorMap } from '../../data/blogCategories';
+import PageLinksSection from '../../components/PageLinksSection.astro';
 
 const generalFaqs = [
   {
@@ -72,6 +73,27 @@ const faqSchema = {
     },
   })),
 };
+
+const nextStepLinks = [
+  {
+    href: "/resources/new-client",
+    label: "New client guide",
+    description:
+      "See what happens after you reach out and how intake gets scheduled.",
+  },
+  {
+    href: "/resources/fees",
+    label: "Fees and insurance",
+    description:
+      "Review pricing, self-pay options, and common coverage details.",
+  },
+  {
+    href: "/resources/waitlist-times",
+    label: "Waitlist times",
+    description:
+      "Check current availability by service and provider.",
+  },
+];
 ---
 
 
@@ -145,6 +167,12 @@ const faqSchema = {
           <a href="/blog" class="text-cta text-sm font-bold hover:underline">Browse all blog posts →</a>
         </div>
       </section>
+
+      <PageLinksSection
+        title="Still comparing next steps?"
+        description="These are the best companion pages when your question is really about timing, intake, or cost."
+        links={nextStepLinks}
+      />
 
       </div>
     </section>

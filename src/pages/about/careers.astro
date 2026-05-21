@@ -3,6 +3,26 @@ import Layout from "../../layouts/Layout.astro";
 import { PHONE_NUMBER } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+import PageLinksSection from "../../components/PageLinksSection.astro";
+
+type OpeningStatus = "open" | "filled";
+type CtaVariant = "solid" | "outline";
+
+interface CareerOpening {
+  status: OpeningStatus;
+  heroLabel: string;
+  titleLines: [string, string];
+  badgeLabel: string;
+  badgeClass: string;
+  summary: string;
+  highlights?: readonly {
+    label: string;
+    value: string;
+  }[];
+  benefits?: readonly string[];
+  ctaLabel: string;
+  ctaVariant: CtaVariant;
+}
 
 const clinicianBenefits = [
   "Compensation Based on Provider Experience",
@@ -22,11 +42,122 @@ const therapistBenefits = [
   "Latest HIPAA-Compliant EHR",
   "Automated Billing & Support",
 ];
+
+const careerOpenings: CareerOpening[] = [
+  {
+    status: "filled",
+    heroLabel: "licensed psychologists",
+    titleLines: ["Licensed", "Psychologist"],
+    badgeLabel: "W2/1099",
+    badgeClass: "text-site-text border border-border-strong",
+    summary:
+      "Seeking Kentucky-licensed psychologists (LP or LPP) for a role centered on psychological and psychoeducational assessments in Lexington and surrounding counties. This opportunity is designed for clinicians who want to focus primarily on testing, diagnostic clarification, and report writing rather than ongoing therapy services.",
+    benefits: clinicianBenefits,
+    ctaLabel: "Apply to Practice",
+    ctaVariant: "solid",
+  },
+  {
+    status: "filled",
+    heroLabel: "doctoral practicum students",
+    titleLines: ["Doctoral", "Practicum"],
+    badgeLabel: "Clinical",
+    badgeClass: "text-cta-fg bg-sand",
+    summary:
+      "Seeking KY-licensed doctoral Psychology students for 15-20 hours of assessment and therapy work per week. Gain hands-on experience with a diverse caseload from ages 2 and above.",
+    highlights: [
+      {
+        label: "Eligible Licenses",
+        value: "T-LPA, LPCA, LCSW, CSW, LMFT",
+      },
+      {
+        label: "Focus Area",
+        value:
+          "Comprehensive testing, diagnostic review, and clinical consultation.",
+      },
+      {
+        label: "Compensation",
+        value:
+          "Fixed stipend per pay cycle, as agreed upon and within program guidelines.",
+      },
+    ],
+    ctaLabel: "Request Placement",
+    ctaVariant: "outline",
+  },
+  {
+    status: "open",
+    heroLabel: "child and teen therapists",
+    titleLines: ["Child & Teen", "Therapist"],
+    badgeLabel: "W2/1099",
+    badgeClass: "text-site-text border border-border-strong",
+    summary:
+      "Seeking a full- or part-time Kentucky-licensed therapist passionate about working with children and adolescents, with a focus on neurodivergent populations including autism, ADHD, and related profiles.",
+    highlights: [
+      {
+        label: "Requirements",
+        value:
+          "Active KY license (LPCC, LCSW, LMFT, or equivalent). Experience or training in neurodivergence-affirming care for ages 4-12.",
+      },
+    ],
+    benefits: therapistBenefits,
+    ctaLabel: "Apply Now",
+    ctaVariant: "solid",
+  },
+];
+
+const openCareerOpenings = careerOpenings.filter(
+  ({ status }) => status === "open",
+);
+
+const formatOpeningList = (labels: readonly string[]) => {
+  if (labels.length === 0) {
+    return "We do not have any active openings at the moment, but we welcome introductions from clinicians who align with our neuro-affirming practice.";
+  }
+
+  if (labels.length === 1) {
+    return `We are currently hiring ${labels[0]} — with W2/1099 flexibility and industry-leading support.`;
+  }
+
+  if (labels.length === 2) {
+    return `We are currently hiring ${labels[0]} and ${labels[1]} — with W2/1099 flexibility and industry-leading support.`;
+  }
+
+  return `We are currently hiring ${labels.slice(0, -1).join(", ")}, and ${labels[labels.length - 1]} — with W2/1099 flexibility and industry-leading support.`;
+};
+
+const heroSubtitle = formatOpeningList(
+  openCareerOpenings.map(({ heroLabel }) => heroLabel),
+);
+
+const openingsGridClass =
+  openCareerOpenings.length === 1
+    ? "max-w-2xl md:grid-cols-1"
+    : "max-w-6xl md:grid-cols-2 lg:grid-cols-3";
+
+const careerPageLinks = [
+  {
+    href: "/about/twilight-psychology",
+    label: "About the practice",
+    description:
+      "Review Twilight's mission, values, and the kind of clinical environment we are building.",
+  },
+  {
+    href: "/about/clinicians/clinicians-lex-ky",
+    label: "Meet the team",
+    description:
+      "See the clinicians and staff who shape the practice day to day.",
+  },
+  {
+    href: "/about/locations",
+    label: "See our offices",
+    description:
+      "Get a feel for the Lexington spaces where therapy, testing, and medication visits happen.",
+  },
+];
 ---
 
 <Layout
   title="Careers | Join the Team at Twilight Psychology"
-  description="Career opportunities at Twilight Psychology in Lexington, KY. Join our team of psychologists, therapists, and support staff."
+  description="Career opportunities at Twilight Psychology in Lexington, KY. Explore current openings and learn how we support therapists and clinicians."
 >
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
@@ -39,88 +170,91 @@ const therapistBenefits = [
     title="Build Your Career"
     accentWord="Career"
     badge="Join Our Practice"
-    subtitle="We are currently hiring licensed psychologists, child and teen therapists, and accepting doctoral practicum students — with W2/1099 flexibility and industry-leading support."
+    subtitle={heroSubtitle}
     size="lg"
   />
 
     <AnimatedSection client:visible animation="fadeInUp" delay={100}>
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-6 -mt-12 relative z-30">
-      
-      <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
-        <div>
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Licensed <br/>Psychologist</h2>
-                <span class="text-[9px] font-black text-site-text border border-border-strong px-2 py-1 rounded uppercase">W2/1099</span>
+    <div class:list={["mx-auto px-4 grid gap-6 -mt-12 relative z-30", openingsGridClass]}>
+      {openCareerOpenings.length > 0 ? (
+        openCareerOpenings.map((opening) => (
+          <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
+            <div>
+              <div class="flex justify-between items-center gap-4 mb-6">
+                <h2 class="font-serif text-2xl font-black text-site-text leading-tight">
+                  {opening.titleLines[0]} <br /> {opening.titleLines[1]}
+                </h2>
+                <span
+                  class:list={[
+                    "text-[9px] font-black px-2 py-1 rounded uppercase",
+                    opening.badgeClass,
+                  ]}
+                >
+                  {opening.badgeLabel}
+                </span>
+              </div>
+              <p class="text-site-sub mb-6 text-xs leading-relaxed">
+                {opening.summary}
+              </p>
+              {opening.highlights && (
+                <div
+                  class:list={[
+                    "space-y-4",
+                    opening.benefits?.length ? "mb-4" : "mb-8",
+                  ]}
+                >
+                  {opening.highlights.map((highlight) => (
+                    <div class="bg-surface-soft p-4 rounded-xl border border-border">
+                      <p class="text-xs font-black text-cta uppercase mb-1">
+                        {highlight.label}
+                      </p>
+                      <p class="text-site-text text-xs font-bold leading-relaxed">
+                        {highlight.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {opening.benefits && (
+                <ul class="space-y-3 mb-8">
+                  {opening.benefits.map((benefit) => (
+                    <li class="flex items-center gap-2 text-xs font-black text-sand uppercase tracking-wider">
+                      <span class="text-cta">✦</span> {benefit}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
-            <p class="text-site-sub mb-6 text-xs leading-relaxed">
-              Seeking Kentucky-licensed psychologists (LP or LPP) for a role centered on psychological and psychoeducational assessments in Lexington and surrounding counties. This opportunity is designed for clinicians who want to focus primarily on testing, diagnostic clarification, and report writing rather than ongoing therapy services.
-            </p>
-            <ul class="space-y-3 mb-8">
-              {clinicianBenefits.map(benefit => (
-                <li class="flex items-center gap-2 text-xs font-black text-sand uppercase tracking-wider">
-                  <span class="text-cta">✦</span> {benefit}
-                </li>
-              ))}
-            </ul>
+            <a
+              href="mailto:info@twilightpsychology.com"
+              class:list={[
+                "block w-full py-4 text-center font-black rounded-full transition-all text-sm",
+                opening.ctaVariant === "solid"
+                  ? "bg-cta text-cta-fg hover:bg-cta/80 active:scale-95"
+                  : "border border-border-strong text-sand hover:bg-surface-2 italic",
+              ]}
+            >
+              {opening.ctaLabel}
+            </a>
+          </div>
+        ))
+      ) : (
+        <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] text-center">
+          <h2 class="font-serif text-2xl font-black text-site-text mb-4">
+            No active openings right now
+          </h2>
+          <p class="text-site-sub text-sm leading-relaxed mb-6">
+            We still welcome introductions from clinicians who align with our
+            neuro-affirming practice and may be a fit for future roles.
+          </p>
+          <a
+            href="mailto:info@twilightpsychology.com"
+            class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors"
+          >
+            Introduce Yourself
+          </a>
         </div>
-        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-cta text-cta-fg text-center font-black rounded-full hover:bg-cta/80 active:scale-95 transition-all text-sm">Apply to Practice</a>
-      </div>
-
-      <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
-        <div>
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Doctoral <br/>Practicum</h2>
-                <span class="text-[9px] font-black text-cta-fg bg-sand px-2 py-1 rounded uppercase">Clinical</span>
-            </div>
-            <p class="text-site-sub mb-6 text-xs leading-relaxed">
-              Seeking KY-licensed doctoral Psychology students for 15-20 hours of assessment and therapy work per week.
-              Gain hands-on experience with a diverse caseload from ages 2 and above.
-            </p>
-            <div class="space-y-4 mb-8">
-                <div class="bg-surface-soft p-4 rounded-xl border border-border">
-                    <p class="text-xs font-black text-cta uppercase mb-1">Eligible Licenses</p>
-                    <p class="text-site-text text-xs font-bold leading-relaxed">T-LPA, LPCA, LCSW, CSW, LMFT</p>
-                </div>
-                <div class="bg-surface-soft p-4 rounded-xl border border-border">
-                    <p class="text-xs font-black text-cta uppercase mb-1">Focus Area</p>
-                    <p class="text-site-text text-xs font-bold leading-relaxed">Comprehensive testing, diagnostic review, and clinical consultation.</p>
-                </div>
-                <div class="bg-surface-soft p-4 rounded-xl border border-border">
-                    <p class="text-xs font-black text-cta uppercase mb-1">Compensation</p>
-                    <p class="text-site-text text-xs font-bold leading-relaxed">Fixed stipend per pay cycle, as agreed upon and within program guidelines.</p>
-                </div>
-            </div>
-        </div>
-        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 border border-border-strong text-sand text-center font-black rounded-full hover:bg-surface-2 transition-all text-sm italic">Request Placement</a>
-      </div>
-
-      <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
-        <div>
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="font-serif text-2xl font-black text-site-text leading-tight">Child &amp; Teen <br/>Therapist</h2>
-                <span class="text-[9px] font-black text-site-text border border-border-strong px-2 py-1 rounded uppercase">W2/1099</span>
-            </div>
-            <p class="text-site-sub mb-6 text-xs leading-relaxed">
-              Seeking a full- or part-time Kentucky-licensed therapist passionate about working with children and adolescents, with a focus on neurodivergent populations including autism, ADHD, and related profiles.
-            </p>
-            <div class="space-y-4 mb-4">
-                <div class="bg-surface-soft p-4 rounded-xl border border-border">
-                    <p class="text-xs font-black text-cta uppercase mb-1">Requirements</p>
-                    <p class="text-site-text text-xs font-bold leading-relaxed">Active KY license (LPCC, LCSW, LMFT, or equivalent). Experience or training in neurodivergence-affirming care for ages 4–12.</p>
-                </div>
-            </div>
-            <ul class="space-y-3 mb-8">
-              {therapistBenefits.map(benefit => (
-                <li class="flex items-center gap-2 text-xs font-black text-sand uppercase tracking-wider">
-                  <span class="text-cta">✦</span> {benefit}
-                </li>
-              ))}
-            </ul>
-        </div>
-        <a href="mailto:info@twilightpsychology.com" class="block w-full py-4 bg-cta text-cta-fg text-center font-black rounded-full hover:bg-cta/80 active:scale-95 transition-all text-sm">Apply Now</a>
-      </div>
-
-
+      )}
     </div>
 
   <section class="max-w-7xl mx-auto px-4 py-24 border-t border-border">
@@ -129,13 +263,13 @@ const therapistBenefits = [
         <h2 class="font-serif text-4xl font-black text-site-text mb-6 tracking-tighter">
           Clinical <span
             class="text-cta"
-            >Mentorship.</span
+            >Support.</span
           >
         </h2>
         <p class="text-site-sub text-lg leading-relaxed mb-8">
-          We believe that the next generation of psychologists deserves
-          supervision that is as neuro-affirming as the care we deliver to our
-          clients. At Twilight Psychology, mentorship is a collaborative partnership.
+          We invest in consultation, training, and operational support so new
+          team members can focus on thoughtful, neuro-affirming care from the
+          start.
         </p>
 
         <div class="space-y-6">
@@ -146,11 +280,11 @@ const therapistBenefits = [
               <span class="text-cta text-xl"> * </span>
             </div>
             <div>
-              <h4 class="font-serif text-site-text font-bold">Postdoctoral Supervision</h4>
+              <h4 class="font-serif text-site-text font-bold">Case Consultation</h4>
               <p class="text-site-sub text-sm">
-                Full support for candidates seeking licensure in Kentucky,
-                focusing on advanced diagnostic reporting and practice
-                management.
+                Collaborative review for complex child, teen, and
+                neurodivergent presentations so clinicians have room to think
+                through treatment and assessment decisions.
               </p>
             </div>
           </div>
@@ -162,10 +296,11 @@ const therapistBenefits = [
               <span class="text-cta text-xl"> * </span>
             </div>
             <div>
-              <h4 class="font-serif text-site-text font-bold">Assessment Specialization</h4>
+              <h4 class="font-serif text-site-text font-bold">Assessment Training</h4>
               <p class="text-site-sub text-sm">
-                Master the ADOS-2, MIGDAS-2, and complex differential diagnosis
-                under the guidance of seasoned evaluators.
+                Exposure to testing workflows, diagnostic clarification, and
+                polished documentation with support from experienced evaluators
+                and therapists.
               </p>
             </div>
           </div>
@@ -178,21 +313,19 @@ const therapistBenefits = [
         <h3
           class="font-serif text-sand font-black text-xs uppercase tracking-widest mb-6 text-center"
         >
-          The Practicum Experience
+          What Team Members Can Expect
         </h3>
-        <blockquote
-          class="text-2xl font-black text-site-text italic leading-tight text-center mb-8"
-        >
-          "We not only teach you how to test but also a lot of details
-          not taught in the classroom".
-        </blockquote>
+        <p class="text-2xl font-black text-site-text leading-tight text-center mb-8">
+          Structured onboarding, responsive support, and a clinical environment
+          that values collaboration as much as excellent care.
+        </p>
         <div class="flex flex-wrap justify-center gap-3">
           {
             [
-              "Doctoral Hours",
               "Case Consultation",
               "EHR Training",
-              "Insurance Insight",
+              "Scheduling Support",
+              "Billing Support",
             ].map((tag) => (
               <span class="px-4 py-2 bg-surface-soft border border-border rounded-full text-xs font-black text-site-sub uppercase tracking-tighter">
                 {tag}
@@ -203,6 +336,12 @@ const therapistBenefits = [
       </div>
     </div>
   </section>
+
+  <PageLinksSection
+    title="Learn more about the practice"
+    description="If you are considering a future role, these pages give the clearest sense of how Twilight works."
+    links={careerPageLinks}
+  />
 
   
 

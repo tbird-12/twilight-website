@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+import PageLinksSection from "../../components/PageLinksSection.astro";
 
 const values = [
   {
@@ -28,6 +29,27 @@ const values = [
     title: "Authentic Connection",
     desc: "Behind every evaluation and treatment plan is a person. We cultivate a professional yet genuinely warm clinical environment where clients feel both respected and understood—because the strongest outcomes emerge from collaborative relationships built on trust.",
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
+  },
+];
+
+const aboutLinks = [
+  {
+    href: "/about/clinicians/clinicians-lex-ky",
+    label: "Meet our clinicians",
+    description:
+      "See the psychologists, therapists, and prescribers across evaluation, therapy, and medication support.",
+  },
+  {
+    href: "/about/locations",
+    label: "View office locations",
+    description:
+      "Review Lexington office details, suite locations, and appointment logistics.",
+  },
+  {
+    href: "/about/careers",
+    label: "Explore careers",
+    description:
+      "See current openings and how Twilight supports clinicians joining the practice.",
   },
 ];
 ---
@@ -151,6 +173,12 @@ const values = [
     </div>
   </section>
   </AnimatedSection>
+
+  <PageLinksSection
+    title="Explore more about Twilight Psychology"
+    description="If you want the practical side of how the practice works, these pages are the best next stops."
+    links={aboutLinks}
+  />
       </div>
     </div>
 </Layout>

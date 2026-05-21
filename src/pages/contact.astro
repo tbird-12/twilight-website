@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import PageHeroWrapper from "../components/PageHeroWrapper.astro";
 import AnimatedSection from "../components/react/primitives/AnimatedSection";
 import ContactTabsWrapper from "../components/ContactTabsWrapper.astro";
+import PageLinksSection from "../components/PageLinksSection.astro";
 
 const emergencyContacts = [
   { href: "tel:911", label: "Immediate Emergency", action: "Call 911" },
@@ -11,6 +12,27 @@ const emergencyContacts = [
 
 const emergencyActionClass =
   "rounded-2xl border border-cta/30 bg-cta/10 px-4 py-5 sm:px-5 transition-all duration-200 hover:scale-[1.02] hover:border-cta/60 hover:bg-cta/20 active:scale-[0.98]";
+
+const contactLinks = [
+  {
+    href: "/services",
+    label: "Compare services",
+    description:
+      "Review evaluations, therapy, and medication support before you reach out.",
+  },
+  {
+    href: "/resources/new-client",
+    label: "New client guide",
+    description:
+      "See intake steps, required paperwork, and what to expect first.",
+  },
+  {
+    href: "/resources/faq",
+    label: "FAQ",
+    description:
+      "Get quick answers about insurance, wait times, and evaluation coverage.",
+  },
+];
 ---
 
 <Layout
@@ -66,6 +88,12 @@ const emergencyActionClass =
             <p class="text-site-sub">Sat - Sun: By appointment</p>
           </section>
         </AnimatedSection>
+
+        <PageLinksSection
+          title="Need context before you reach out?"
+          description="These pages answer the questions most people are deciding between right before contacting the office."
+          links={contactLinks}
+        />
       </div>
     </section>
 </Layout>

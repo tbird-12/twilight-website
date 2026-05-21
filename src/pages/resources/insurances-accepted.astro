@@ -6,6 +6,7 @@ import { insuranceProviders } from "../../data/insurances";
 import { categoryColorMap } from "../../data/blogCategories";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+import PageLinksSection from "../../components/PageLinksSection.astro";
 
 const imageModules = import.meta.glob<{ default: ImageMetadata }>(
   "../../assets/images/insurance/*.png",
@@ -20,6 +21,27 @@ const insuranceCards = insuranceProviders.map((provider) => ({
 
 const insuranceCategoryClass = categoryColorMap.insurance;
 const announcementCategoryClass = categoryColorMap.announcements;
+
+const insuranceLinks = [
+  {
+    href: "/resources/fees",
+    label: "Fees and insurance",
+    description:
+      "Compare self-pay rates with the services most often billed through insurance.",
+  },
+  {
+    href: "/resources/new-client",
+    label: "New client guide",
+    description:
+      "See what happens after you reach out and how benefit checks fit into intake.",
+  },
+  {
+    href: "/resources/faq",
+    label: "Insurance and intake FAQ",
+    description:
+      "Read common questions about authorizations, Medicaid limits, and scheduling.",
+  },
+];
 ---
 
 <Layout
@@ -141,6 +163,12 @@ const announcementCategoryClass = categoryColorMap.announcements;
         </div>
       </section>
       </AnimatedSection>
+
+      <PageLinksSection
+        title="Coverage questions usually lead here next"
+        description="Use these pages when you need to pair plan information with pricing, intake, or common policy questions."
+        links={insuranceLinks}
+      />
       </div>
     </section>
 </Layout>

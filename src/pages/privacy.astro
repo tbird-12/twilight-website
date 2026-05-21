@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { EMAIL_ADDRESS } from '../data/resource';
+import PageLinksSection from '../components/PageLinksSection.astro';
 
 const policyPoints = [
   {
@@ -15,6 +16,21 @@ const policyPoints = [
     title: "Third-Party Links",
     desc: "Our site contains links to secure portals (like SimplePractice). Once you leave our domain, their specific privacy policies apply."
   }
+];
+
+const privacyLinks = [
+  {
+    href: "/",
+    label: "Back to home",
+    description:
+      "Return to the main site to browse services, clinicians, and resources.",
+  },
+  {
+    href: "/contact",
+    label: "Contact the office",
+    description:
+      "Reach the practice with questions about website communications or next steps.",
+  },
 ];
 ---
 
@@ -81,5 +97,11 @@ const policyPoints = [
         </a>
       </p>
     </div>
+
+    <PageLinksSection
+      title="Related pages"
+      description="If you are done reviewing website privacy details, these are the most likely next stops."
+      links={privacyLinks}
+    />
   </div>
 </Layout>

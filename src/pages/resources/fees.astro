@@ -5,6 +5,7 @@ import { categoryColorMap } from '../../data/blogCategories';
 import PageHeroWrapper from '../../components/PageHeroWrapper.astro';
 import FeeTabsWrapper from '../../components/FeeTabsWrapper.astro';
 import AnimatedSection from '../../components/react/primitives/AnimatedSection';
+import PageLinksSection from '../../components/PageLinksSection.astro';
 
 const feeCategories = [
   {
@@ -47,6 +48,27 @@ const feeCategories = [
       { name: "Medical Marijuana Renewals (Annual)", price: "$150" },
       { name: "Paperwork (e.g., FMLA)", price: "$75", note: "Per hour" },
     ],
+  },
+];
+
+const relatedResourceLinks = [
+  {
+    href: "/resources/insurances-accepted",
+    label: "Accepted insurance plans",
+    description:
+      "See which commercial, Medicaid, Medicare, and other plans we currently accept.",
+  },
+  {
+    href: "/resources/new-client",
+    label: "New client guide",
+    description:
+      "Review the intake sequence, paperwork, and what to bring.",
+  },
+  {
+    href: "/resources/faq",
+    label: "FAQ",
+    description:
+      "Get plain-language answers about costs, coverage, and evaluation timelines.",
   },
 ];
 ---
@@ -176,6 +198,12 @@ const feeCategories = [
           </div>
         </section>
       </AnimatedSection>
+
+      <PageLinksSection
+        title="Keep planning your intake"
+        description="These pages usually answer the follow-up questions that come after pricing."
+        links={relatedResourceLinks}
+      />
 
       </div>
     </section>

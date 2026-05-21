@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+import PageLinksSection from "../../components/PageLinksSection.astro";
 import {
   MAIN_OFFICE_STREET_ADDRESS,
   MAIN_OFFICE_CITY_STATE_ZIP,
@@ -23,6 +24,27 @@ const locations = [
     city: "Lexington, KY 40513",
     mapLink:
       "https://www.google.com/maps/search/?api=1&query=1040+Monarch+St+Office+305+Lexington+KY+40513",
+  },
+];
+
+const locationLinks = [
+  {
+    href: "/about/twilight-psychology",
+    label: "Mission and values",
+    description:
+      "See the principles that shape the practice and the kind of care Twilight aims to provide.",
+  },
+  {
+    href: "/about/clinicians/clinicians-lex-ky",
+    label: "Meet the team",
+    description:
+      "Match each office location with the clinicians and services available there.",
+  },
+  {
+    href: "/about/careers",
+    label: "Careers at Twilight",
+    description:
+      "Learn how our offices support therapists, evaluators, and future openings.",
   },
 ];
 ---
@@ -118,6 +140,12 @@ const locations = [
       </p>
     </div>
   </section>
+
+  <PageLinksSection
+    title="Explore more about the practice"
+    description="Locations make more sense when you can connect them to the team, the mission, and current opportunities."
+    links={locationLinks}
+  />
       </div>
     </div>
 </Layout>

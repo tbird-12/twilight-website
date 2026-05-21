@@ -116,7 +116,7 @@ const webpageSchema = {
         const storedTheme = localStorage.getItem("theme");
         const theme = storedTheme === "light" || storedTheme === "dark"
           ? storedTheme
-          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          : "dark";
 
         root.classList.remove("light", "dark");
         root.classList.add(theme);
