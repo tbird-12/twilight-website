@@ -1,138 +1,242 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
-import PageHeroWrapper from "../components/PageHeroWrapper.astro";
-import CatalogTabsWrapper from "../components/CatalogTabsWrapper.astro";
-import AnimatedSection from "../components/react/primitives/AnimatedSection";
+import Layout from '../layouts/Layout.astro';
+import PageHeroWrapper from '../components/PageHeroWrapper.astro';
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from '../data/resource';
+
+const title = 'Concern Directory | Twilight Psychology';
+const description =
+  'Browse concerns and questions by category to understand where Twilight Psychology can support you through evaluations, therapy, or medication management.';
 
 const categories = [
   {
-    id: "neurodivergence-learning",
-    title: "Neurodivergence & Learning",
+    id: 'neurodivergence',
+    title: 'Neurodivergence & Learning',
     concerns: [
-      { name: "High-Masking Autism" },
-      { name: "ADHD Across the Lifespan" },
-      { name: "PDA Profile Support" },
-      { name: "Learning Disabilities, Dyslexia, Dysgraphia, & Dyscalculia" },
-      { name: "Psychoeducational & Cognitive Assessments" },
-      { name: "Diagnostic Clarification for Overlapping Presentations" },
+      { name: 'Autism evaluations & support' },
+      { name: 'ADHD across the lifespan' },
+      { name: 'Executive functioning challenges' },
+      { name: 'Learning differences & dyslexia' },
+      { name: 'Giftedness and twice-exceptionality' },
+      { name: 'Sensory processing differences' },
     ],
   },
   {
-    id: "mood-trauma-personality",
-    title: "Mood, Trauma & Diagnostic Clarity",
+    id: 'anxiety-mood',
+    title: 'Anxiety, Mood & Trauma',
     concerns: [
-      { name: "Anxiety, Panic, & Social Anxiety" },
-      { name: "Depression, Burnout, & Persistent Low Mood" },
-      { name: "Trauma, PTSD, & Religious Trauma" },
-      { name: "Bipolar & Mood Disorder Evaluations" },
-      { name: "Borderline & Other Personality Patterns" },
-      { name: "Substance Use & Recovery-Related Concerns" },
+      { name: 'Anxiety and panic' },
+      { name: 'OCD and intrusive thoughts' },
+      { name: 'Depression and mood shifts' },
+      { name: 'Burnout and chronic stress' },
+      { name: 'Trauma and PTSD' },
+      { name: 'Sleep concerns related to mental health' },
     ],
   },
   {
-    id: "identity-relationships",
-    title: "Identity, Relationships & Daily Functioning",
+    id: 'identity',
+    title: 'Identity, Family & Relationships',
     concerns: [
-      { name: "LGBTQ+ Affirming Support" },
-      { name: "Gender, Racial, & Identity Development" },
-      { name: "Body Image, Anti-Fat Bias, & HAES-Aligned Care" },
-      { name: "Relationship, Couples, & Family Stress" },
-      { name: "Parenting, School Stress, & Adolescent Support" },
-      { name: "Self-Esteem, Boundaries, & Life Transitions" },
+      { name: 'LGBTQIA+ affirming care' },
+      { name: 'Gender-affirming support letters' },
+      { name: 'Parenting and family dynamics' },
+      { name: 'Relationship challenges' },
+      { name: 'Life transitions and adjustment' },
+      { name: 'Self-esteem and identity exploration' },
     ],
   },
   {
-    id: "psychiatry-medical",
-    title: "Psychiatry & Medical Support",
+    id: 'psychiatry',
+    title: 'Medication & Psychiatry',
     concerns: [
-      { name: "Medication Support for ADHD" },
-      { name: "Medication Support for Anxiety & Depression" },
-      { name: "Trauma-Informed Psychiatric Care" },
-      { name: "Whole-Person Care with Psychoeducation & Mindfulness" },
-      { name: "THC-Friendly Psychiatric Consultation" },
-      { name: "Medical Marijuana Evaluations & Renewals" },
+      { name: 'Medication management for anxiety or depression' },
+      { name: 'ADHD medication support' },
+      { name: 'Psychiatric consultation and follow-up' },
+      { name: 'Coordinating therapy and medication care' },
+      { name: 'Symptom monitoring and treatment adjustments' },
     ],
   },
   {
-    id: "documentation-advocacy",
-    title: "School, Legal & Documentation Needs",
+    id: 'documentation',
+    title: 'Documentation, School & Legal Needs',
     concerns: [
-      { name: "IEP, 504, & School Accommodation Evaluations" },
-      { name: "Independent Educational Evaluations (IEEs)" },
-      { name: "Guardianship & Benefits Documentation" },
-      { name: "Adoption Evaluations" },
-      { name: "ESA Documentation Evaluations" },
-      { name: "Court, Waiver, & Advocacy-Focused Reports" },
+      { name: 'Diagnostic clarification' },
+      { name: 'Accommodation documentation' },
+      { name: 'School-based support recommendations' },
+      { name: 'Neuro-affirming psychoeducational evaluations' },
+      { name: 'Evaluations for care planning' },
     ],
   },
-];
+] as const;
+
+const totalConcerns = categories.reduce((sum, category) => sum + category.concerns.length, 0);
 ---
 
-<Layout
-  title="Conditions & Concerns We Support | Twilight Psychology"
-  description="Browse the conditions, concerns, and identity-affirming support areas Twilight Psychology addresses across testing, therapy, and medication management."
->
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none prose-custom
-                  prose-p:text-site-text
-                  prose-headings:text-site-text
-                  prose-strong:text-site-text
-                  prose-li:text-site-text
-                  mb-12">
+<Layout title={title} description={description}>
+  <div class="prose prose-lg dark:prose-invert max-w-none">
+    <PageHeroWrapper
+      title="Browse by concern, not just service type"
+      subtitle="Use this directory to scan the concerns and questions Twilight Psychology supports, then choose the service path that fits best."
+      badge="Care directory"
+      accentWord="concern"
+    />
 
-  <PageHeroWrapper
-    title="Areas of Care"
-    accentWord="Care"
-    subtitle="Use this care directory to browse common concerns and support areas before choosing a service line."
-    badge="Care Directory"
-    size="lg"
-  />
-
-  <section class="max-w-4xl mx-auto px-4 mt-10">
-    <div class="rounded-4xl border border-border bg-surface-soft p-6 md:p-8">
-      <h2 class="font-serif text-2xl font-black text-site-text mb-3">
-        Organized by concern, not appointment type
-      </h2>
-      <p class="text-site-text leading-relaxed font-medium">
-        This page groups care areas by the concerns you want help with. If you already know you need an
-        evaluation, therapy, or medication support, visit our <a href="/services" class="text-cta hover:underline">core services</a> page.
-        If you need school, legal, or documentation-focused evaluations, go to <a href="/specialties" class="text-cta hover:underline">specialty evaluations</a>.
-      </p>
-    </div>
-  </section>
-
-  <section class="max-w-7xl mx-auto px-4 mt-20">
-    <CatalogTabsWrapper categories={categories} />
-  </section>
-
-  <section class="max-w-4xl mx-auto px-4 mt-20 mb-10">
-    <AnimatedSection client:visible animation="fadeInUp" delay={200}>
-      <div class="bg-surface-2 border p-8 md:p-12 rounded-[2.5rem]" style="border-color: var(--color-border-strong)">
-        <h2 class="font-serif text-3xl font-black text-site-text mb-4">
-          Our approach is rooted in validation, not pathology.
-        </h2>
-        <p class="text-site-text leading-relaxed font-medium mb-8">
-          Whether you are seeking a formal diagnosis or a safe space to process
-          life&apos;s transitions, we prioritize your lived experience. All our
-          clinicians are neuro-affirming and trauma-informed, with specialized
-          training in the unique challenges faced by marginalized communities.
-        </p>
-        <div class="pt-6 border-t" style="border-color: var(--color-border)">
-          <p class="text-xs font-black text-site-sub uppercase tracking-widest mb-2">
-            Ready to start?
+    <section class="max-w-6xl mx-auto px-6 py-8 sm:py-10">
+      <div class="grid gap-6 xl:grid-cols-[minmax(0,1.45fr)_minmax(18rem,0.95fr)]">
+        <div
+          class="rounded-4xl border border-border bg-surface-soft p-8 md:p-10 shadow-sm shadow-black/5"
+        >
+          <p class="text-xs font-bold uppercase tracking-[0.3em] text-cta/80 mb-3">How to use this page</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-black text-site-text mb-4">
+            Start with the concern, then follow the right care path
+          </h2>
+          <p class="text-base md:text-lg text-site-sub leading-relaxed mb-6">
+            If you are still sorting out what kind of support you need, this page gives you a clearer starting point. Browse the categories below, then move into the relevant service line once you know whether you are looking for therapy, medication management, or an evaluation.
           </p>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/services"
+              class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-3 text-sm font-bold text-cta-fg no-underline transition-transform duration-200 hover:-translate-y-0.5 hover:bg-cta/90"
+            >
+              Explore core services
+            </a>
+            <a
+              href="/specialties"
+              class="inline-flex items-center justify-center rounded-full border border-border bg-surface px-5 py-3 text-sm font-bold text-site-text no-underline transition-colors duration-200 hover:border-cta/40 hover:text-cta"
+            >
+              View specialty evaluations
+            </a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3 xl:grid-cols-1">
+          <div class="rounded-[1.75rem] border border-border bg-surface p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-site-sub/80 mb-3">Care groups</p>
+            <p class="font-serif text-4xl font-black text-site-text mb-2">{categories.length}</p>
+            <p class="text-sm text-site-sub leading-relaxed mb-0">High-level categories to help you narrow the right next step.</p>
+          </div>
+          <div class="rounded-[1.75rem] border border-border bg-surface p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-site-sub/80 mb-3">Focus areas</p>
+            <p class="font-serif text-4xl font-black text-site-text mb-2">{totalConcerns}</p>
+            <p class="text-sm text-site-sub leading-relaxed mb-0">Common concerns already organized into a simpler directory.</p>
+          </div>
+          <div class="rounded-[1.75rem] border border-border bg-surface p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-site-sub/80 mb-3">Need help choosing?</p>
+            <p class="font-serif text-2xl font-black text-site-text mb-2">Talk with us</p>
+            <p class="text-sm text-site-sub leading-relaxed mb-4">
+              Contact the practice if you want help deciding which service path fits your concern.
+            </p>
+            <a href={`tel:${PHONE_NUMBER}`} class="text-sm font-bold text-cta no-underline hover:text-cta/80">
+              {PHONE_NUMBER_FORMATTED}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-6 sm:py-8">
+      <div class="rounded-4xl border border-border bg-surface-soft p-6 md:p-8">
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-2xl">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-cta/80 mb-3">Browse the directory</p>
+            <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3">
+              Jump straight to the category that feels closest
+            </h2>
+            <p class="text-base text-site-sub leading-relaxed mb-0">
+              Each section keeps the existing concern list intact, but surfaces everything in a format that is easier to scan at a glance.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            {categories.map((category, index) => (
+              <a
+                href={`#${category.id}`}
+                class="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-sm font-bold text-site-text no-underline transition-colors duration-200 hover:border-cta/40 hover:text-cta"
+              >
+                <span class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-surface-soft text-xs text-site-sub">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                {category.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-6 sm:py-8 space-y-8">
+      {categories.map((category, categoryIndex) => (
+        <article
+          id={category.id}
+          class="scroll-mt-28 rounded-4xl border border-border bg-surface-soft p-8 md:p-10 shadow-sm shadow-black/5"
+        >
+          <div class="flex flex-col gap-6 xl:flex-row xl:items-end xl:justify-between">
+            <div class="max-w-3xl">
+              <p class="text-xs font-bold uppercase tracking-[0.3em] text-cta/80 mb-3">
+                Category {String(categoryIndex + 1).padStart(2, '0')}
+              </p>
+              <h2 class="font-serif text-3xl md:text-4xl font-black text-site-text mb-3">
+                {category.title}
+              </h2>
+              <p class="text-base md:text-lg text-site-sub leading-relaxed mb-0">
+                {category.concerns.length} focus areas in this section.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {category.concerns.slice(0, 3).map((concern) => (
+                <span class="rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-site-sub">
+                  {concern.name}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {category.concerns.map((concern, concernIndex) => (
+              <div class="group rounded-3xl border border-border bg-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-cta/35 hover:shadow-lg hover:shadow-black/5">
+                <div class="flex items-start gap-4">
+                  <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-surface-soft font-serif text-sm font-black text-cta">
+                    {String(concernIndex + 1).padStart(2, '0')}
+                  </span>
+                  <p class="mb-0 text-sm md:text-base font-medium leading-relaxed text-site-text">
+                    {concern.name}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
+      ))}
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 py-8 sm:py-12">
+      <div class="rounded-4xl border border-border bg-surface-soft p-8 md:p-10 text-center">
+        <p class="text-xs font-bold uppercase tracking-[0.3em] text-cta/80 mb-3">Next step</p>
+        <h2 class="font-serif text-3xl md:text-4xl font-black text-site-text mb-4">
+          Ready to move from the concern list into care?
+        </h2>
+        <p class="max-w-3xl mx-auto text-base md:text-lg text-site-sub leading-relaxed mb-6">
+          Once you know which concerns fit best, you can explore the service pages in more detail or contact the practice for help deciding on the right appointment type.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a
+            href="/services"
+            class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-3 text-sm font-bold text-cta-fg no-underline transition-transform duration-200 hover:-translate-y-0.5 hover:bg-cta/90"
+          >
+            Browse services
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center rounded-full border border-border bg-surface px-5 py-3 text-sm font-bold text-site-text no-underline transition-colors duration-200 hover:border-cta/40 hover:text-cta"
+          >
+            Contact the practice
+          </a>
           <a
             href={`tel:${PHONE_NUMBER}`}
-            class="inline-block text-cta font-black text-2xl hover:text-site-text transition-colors"
+            class="inline-flex items-center justify-center rounded-full border border-border bg-surface px-5 py-3 text-sm font-bold text-site-text no-underline transition-colors duration-200 hover:border-cta/40 hover:text-cta"
           >
-            &#128222; {PHONE_NUMBER_FORMATTED}
+            Call {PHONE_NUMBER_FORMATTED}
           </a>
         </div>
       </div>
-    </AnimatedSection>
-  </section>
-
-      </div>
-    </div>
+    </section>
+  </div>
 </Layout>
