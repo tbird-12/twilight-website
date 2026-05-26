@@ -4,6 +4,7 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import Schema from "../../components/Schema.astro";
 import PostCard from "../../components/blog/PostCard.astro";
 import { blogCategories, getCategoryMeta } from "../../data/blogCategories";
+import { getDisplayBlogDate } from "../../utils/blogDates";
 
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -13,11 +14,9 @@ const featuredPost = allPosts[0];
 const remainingPosts = allPosts.slice(1);
 
 const featuredCategory = featuredPost ? getCategoryMeta(featuredPost.data.category) : null;
-const featuredDate = featuredPost?.data.pubDate.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+const featuredDateInfo = featuredPost
+  ? getDisplayBlogDate(featuredPost.data.pubDate, featuredPost.data.updatedDate)
+  : undefined;
 
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
 const blogSchema = {
@@ -54,7 +53,7 @@ const blogSchema = {
         announcements from our team.
       </p>
 
-      {featuredPost && (
+      {featuredPost && featuredDateInfo && (
         <a
           href={`/blog/${featuredPost.id}`}
           class="group block rounded-2xl border border-border bg-surface p-6 sm:p-8 hover:border-border-strong hover:shadow-lg transition-all duration-200"
@@ -68,8 +67,10 @@ const blogSchema = {
               {featuredCategory?.label}
             </span>
             <span class="text-xs text-site-sub">·</span>
-            <time datetime={featuredPost.data.pubDate.toISOString()} class="text-xs text-site-sub">
-              {featuredDate}
+            <time datetime={featuredDateInfo.displayDate.toISOString()} class="text-xs text-site-sub">
+              {featuredDateInfo.isUpdated
+                ? `Updated ${featuredDateInfo.formattedDate}`
+                : featuredDateInfo.formattedDate}
             </time>
           </div>
           <h2 class="font-heading text-2xl sm:text-3xl font-bold text-site-text group-hover:text-icon transition-colors leading-snug mb-3">

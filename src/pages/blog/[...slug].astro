@@ -6,6 +6,7 @@ import Schema from "../../components/Schema.astro";
 import CategoryBadge from "../../components/blog/CategoryBadge.astro";
 import PostCard from "../../components/blog/PostCard.astro";
 import { getCategoryMeta } from "../../data/blogCategories";
+import { formatBlogDate, hasDistinctUpdatedDate } from "../../utils/blogDates";
 
 function getHeroImageClasses(isPortrait: boolean) {
   if (isPortrait) {
@@ -87,17 +88,9 @@ const authorMeta = authorDirectory[author as keyof typeof authorDirectory] ?? {
 };
 const authorUrl = new URL(authorMeta.urlPath, siteUrl).href;
 
-const formattedPubDate = pubDate.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
-
-const formattedUpdatedDate = updatedDate?.toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-});
+const formattedPubDate = formatBlogDate(pubDate);
+const showUpdatedDate = hasDistinctUpdatedDate(pubDate, updatedDate);
+const formattedUpdatedDate = showUpdatedDate ? formatBlogDate(updatedDate!) : undefined;
 
 // Related posts: same category, excluding current
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
@@ -245,10 +238,10 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
         </span>
         <span>·</span>
         <time datetime={pubDate.toISOString()}>Published {formattedPubDate}</time>
-        {updatedDate && (
+        {showUpdatedDate && (
           <>
             <span>·</span>
-            <time datetime={updatedDate.toISOString()}>Updated {formattedUpdatedDate}</time>
+            <time datetime={updatedDate!.toISOString()}>Updated {formattedUpdatedDate}</time>
           </>
         )}
         {tags && tags.length > 0 && (

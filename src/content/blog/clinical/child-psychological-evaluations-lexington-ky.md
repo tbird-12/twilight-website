@@ -4,6 +4,7 @@ seoTitle: "Child Psychological Evaluations in Lexington, KY"
 description: "What families should know about child psychological evaluations at Twilight Psychology, including ages 2+, insurance, and short waitlists"
 seoDescription: "Learn how Twilight Psychology approaches child psychological evaluations in Lexington, including ages served, insurance, comprehensive testing, and common diagnostic limits"
 pubDate: 2026-05-13
+updatedDate: 2026-05-26
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["child-psychological-evaluation", "adhd", "autism", "insurance", "lexington-ky"]
