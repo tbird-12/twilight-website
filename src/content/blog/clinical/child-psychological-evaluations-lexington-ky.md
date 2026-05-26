@@ -12,7 +12,7 @@ draft: false
 
 Families looking for a **child psychological evaluation in Lexington, Kentucky** are often trying to answer more than one question at once. They may be wondering whether a child is showing signs of autism, ADHD, learning differences, emotional regulation challenges, developmental delays, or a more complex overlap that does not fit neatly into one category. At Twilight Psychology, our approach is to slow the process down enough to get the question right, then use comprehensive testing to build a more useful answer.
 
-We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, and **[Jatana Boggs](/about/clinicians/jatana-boggs)**, depending on the child's age, referral question, and clinical fit.
+We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Jatana Boggs](/about/clinicians/jatana-boggs)**, and **[Ethan Puckett](/about/clinicians/ethan-puckett)**, depending on the child's age, referral question, and clinical fit.
 
 ## What families usually mean when they ask for a child psychological evaluation
 
@@ -41,8 +41,9 @@ Child evaluation referrals at Twilight Psychology may be matched with:
 - **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** for comprehensive psychological evaluations, including complex diagnostic clarification and evaluations beginning at age 2
 - **[Emeli Evans, M.S., LPA](/about/clinicians/emeli-evans)** for neuro-affirming assessment work with children and adolescents, especially when autism, PDA-related questions, masking, or broader neurodivergent presentation may be part of the picture
 - **[Jatana Boggs, M.S., LPCA, LPC, NCC](/about/clinicians/jatana-boggs)** for ADHD and autism assessments for children, adolescents, and adults within a neurodiverse-affirming framework
+- **[Ethan Puckett, M.A., T-LPA](/about/clinicians/ethan-puckett)** for psychological and psychoeducational testing, especially for school-based questions involving learning, attention, autism, and broader emotional-behavioral concerns, with strongest fit typically in the 7 to 16 age range
 
-The right fit depends on the referral concern, the child's age, and the kind of recommendations a family needs at the end of the process.
+The right fit depends on the referral concern, the child's age, and the kind of recommendations a family needs at the end of the process. Starting **July 6, 2026**, Ethan also expands Twilight's testing options for children and adolescents who may need a stronger school-based or psychoeducational lens.
 
 ## What makes an evaluation comprehensive
 
@@ -107,5 +108,6 @@ If your main question is whether your child is old enough, whether insurance may
 - [Heather Cornett's clinician profile](/about/clinicians/heather-cornett) — Learn more about evaluations beginning at age 2
 - [Emeli Evans's clinician profile](/about/clinicians/emeli-evans) — Neuro-affirming assessment and therapy for kids, adolescents, and adults
 - [Jatana Boggs's clinician profile](/about/clinicians/jatana-boggs) — ADHD and autism assessment services for children and adolescents
+- [Ethan Puckett's clinician profile](/about/clinicians/ethan-puckett) — Child and adolescent therapy plus psychological and psychoeducational testing
 - [Psychological Evaluations](/services/psychological-evaluations) — Overview of broader diagnostic evaluation services
 - [Waitlist Times](/resources/waitlist-times) — Current scheduling information

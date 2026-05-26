@@ -18,7 +18,7 @@ export const specialties: ServiceLink[] = [
 export const services: ServiceLink[] = [
   { name: 'Psychological Evaluations', slug: 'psychological-evaluations', desc: 'Diagnostic evaluations with careful testing, clear recommendations, and self-pay options when broader documentation is needed' },
   { name: 'Autism Testing', slug: 'autism-testing', desc: 'Neuro-affirming autism evaluations for nuanced and high-masking presentations' },
-  { name: 'Therapy', slug: 'therapy', desc: 'Neuro-affirming therapy for teens and adults, often covered by insurance' },
+  { name: 'Therapy', slug: 'therapy', desc: 'Neuro-affirming therapy for ages 3-99, often covered by insurance' },
   { name: 'Medication Management', slug: 'medication-management', desc: 'Psychiatric medication management, often covered by insurance' },
   { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'ADHD evaluations for complex and high-masking presentations, tailored to the referral question' },
   { name: 'Personality Evaluations', slug: 'personality-profiles', desc: 'Assessments for personality, trauma, and differential diagnosis' },

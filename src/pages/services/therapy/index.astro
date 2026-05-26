@@ -15,7 +15,7 @@ const therapyFocus = [
   {
     title: "Specialized clinical expertise",
     detail:
-      "Our therapy team covers a broad range of needs: ADHD and autism support, high-masking experiences, PDA, substance use disorders, domestic violence recovery, PTSD, faith-integrated counseling, and identity work.",
+      "Our therapy team now supports neurodivergent care across ages 3-99, including ADHD and autism support, high-masking experiences, PDA, substance use disorders, domestic violence recovery, PTSD, faith-integrated counseling, and identity work.",
   },
   {
     title: "Couples and relationship counseling",
@@ -33,7 +33,7 @@ const therapyPaths = [
   {
     title: "Therapy clinicians",
     detail:
-      "Compare therapists by expertise, age range, insurance participation, specialty focus, and current availability.",
+      "Compare therapists by expertise, age range, insurance participation, specialty focus, and current availability across child, teen, adult, and couples care.",
     href: "/services/therapy/clinicians",
     label: "Meet therapy clinicians",
   },
@@ -71,7 +71,7 @@ const therapySchema = {
     "therapy insurance Kentucky",
   ],
   description:
-    "Therapy hub for Twilight Psychology in Kentucky, including insurance-covered therapy for eligible mental health diagnoses, neurodivergent counseling, couples counseling, clinician matching, and therapy after evaluation.",
+    "Therapy hub for Twilight Psychology in Kentucky, including neuro-affirming therapy for ages 3-99, insurance-covered therapy for eligible mental health diagnoses, couples counseling, clinician matching, and therapy after evaluation.",
   provider: {
     "@type": "MedicalOrganization",
     name: "Twilight Psychology",
@@ -105,7 +105,7 @@ const therapySchema = {
 
 <Layout
   title="Therapy in Kentucky | Neurodivergent, ADHD & Couples Counseling"
-  description="Neuro-affirming therapy in Kentucky for neurodivergence, ADHD, anxiety, trauma, and life transitions — specialist clinicians in Lexington with broad insurance acceptance."
+  description="Neuro-affirming therapy in Kentucky for ages 3-99, including support for neurodivergence, ADHD, anxiety, trauma, and life transitions."
 >
   <Schema slot="page-schema" schema={therapySchema} />
 
@@ -122,7 +122,7 @@ const therapySchema = {
           title="Therapy at Twilight Psychology"
           accentWord="Therapy"
           badge="Counseling Services"
-          subtitle="Neuro-affirming therapy in Kentucky for neurodivergence, ADHD, anxiety, substance use, relationships, and life transitions — specialist clinicians with deep expertise and broad insurance access."
+          subtitle="Neuro-affirming therapy in Kentucky for ages 3-99, including support for neurodivergence, ADHD, anxiety, substance use, relationships, and life transitions."
           size="lg"
         />
 
@@ -135,21 +135,22 @@ const therapySchema = {
                 </h2>
                 <div class="space-y-5 text-site-text leading-relaxed text-lg">
                   <p>
-                    Twilight Psychology offers therapy in Kentucky for teens, adults, couples, and families
-                    who want care that is thoughtful, affirming, and practical. Clients come to us for
-                    support with anxiety, burnout, identity, masking, neurodivergence, relationship strain,
-                    family stress, school pressure, work stress, substance use disorders, domestic violence
-                    recovery, PTSD, and faith-integrated counseling.
+                    Twilight Psychology offers therapy in Kentucky for ages 3-99, including children,
+                    teens, adults, couples, and families who want care that is thoughtful, affirming,
+                    and practical. Clients come to us for support with anxiety, burnout, identity,
+                    masking, neurodivergence, relationship strain, family stress, school pressure,
+                    work stress, substance use disorders, domestic violence recovery, PTSD, and
+                    faith-integrated counseling.
                   </p>
                   <p>
                     Individual therapy is one of the clearest insurance-supported services we offer.
                     Many clients use commercial insurance, Kentucky Medicaid, or Medicare for covered
                     care. Couples counseling is a self-pay service, since most insurers handle
                     relationship-focused care separately from individual mental health treatment. Each
-                    clinician brings a different specialty emphasis — neurodivergence, substance use,
-                    domestic violence recovery, faith-integrated counseling, or insight-oriented work —
-                    so reviewing the therapy clinicians page is the fastest way to find the right fit
-                    before booking.
+                    clinician brings a different specialty emphasis — from child therapy for ages 3-18
+                    to adult neurodivergence support, substance use recovery, domestic violence
+                    recovery, faith-integrated counseling, and relationship work — so reviewing the
+                    therapy clinicians page is the fastest way to find the right fit before booking.
                   </p>
                 </div>
               </section>
@@ -224,7 +225,7 @@ const therapySchema = {
             <SidebarCta
               client:visible
               title="Request a Therapy Intake"
-              description="Our intake team can help you decide whether to start with individual therapy, couples counseling, or another service."
+              description="Our intake team can help you decide whether to start with child therapy, individual therapy, couples counseling, or another service."
               buttonLabel="Schedule Intake"
               buttonHref={WIDGET_LINK}
               target="_blank"
@@ -260,8 +261,9 @@ const therapySchema = {
                 Explore the therapy path that fits your needs
               </h2>
               <p class="text-site-sub leading-relaxed">
-                Whether you are choosing a therapist, looking for couples counseling, or planning next steps
-                after an evaluation, these pages can help you find the right place to start.
+                Whether you are looking for therapy for a young child, a teen, yourself, your
+                relationship, or the next step after an evaluation, these pages can help you find
+                the right place to start.
               </p>
             </header>
 
@@ -297,8 +299,9 @@ const therapySchema = {
                 </h2>
                 <p class="text-site-sub leading-relaxed mb-4">
                   Individual therapy tied to a covered mental health diagnosis can often be billed to
-                  accepted insurance plans. Couples counseling and ADHD coaching are typically self-pay,
-                  since insurers handle these differently from standard mental health treatment.
+                  accepted insurance plans across child, adolescent, and adult care. Couples counseling
+                  and ADHD coaching are typically self-pay, since insurers handle these differently
+                  from standard mental health treatment.
                 </p>
                 <a
                   href="/resources/fees"
@@ -318,8 +321,8 @@ const therapySchema = {
                 </h2>
                 <p class="text-site-sub leading-relaxed mb-4">
                   Our Lexington office has weekday and weekend appointments, though timing varies by
-                  clinician. Reviewing current waitlist information and clinician-specific availability
-                  is the best next step.
+                  clinician and age group. Reviewing current waitlist information and clinician-specific
+                  availability is the best next step.
                 </p>
                 <a
                   href="/resources/waitlist-times"
@@ -340,9 +343,9 @@ const therapySchema = {
                 Ready to get started with therapy?
               </h2>
               <p class="text-site-sub mb-8 max-w-2xl mx-auto">
-                Start with the new client guide if you are ready to request therapy. If you want more detail
-                first, use the therapy pages above to compare clinicians, couples counseling, and next steps
-                after evaluation.
+                Start with the new client guide if you are ready to request therapy for ages 3-99.
+                If you want more detail first, use the therapy pages above to compare clinicians,
+                couples counseling, and next steps after evaluation.
               </p>
               <div class="flex flex-wrap items-center justify-center gap-4">
                 <a

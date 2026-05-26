@@ -511,6 +511,104 @@ export const clinicianProfiles: ClinicianProfile[] = [
     },
   },
   {
+    slug: "ethan-puckett",
+    pageTitle: "Ethan Puckett, T-LPA | Child Therapy & Testing",
+    pageDescription:
+      "Ethan Puckett, T-LPA — Twilight Psychology clinician providing neuro-affirming therapy for ages 3-18, with strongest fit for ages 7-16, plus psychological and psychoeducational testing in Kentucky under the supervision of Dr. Heather Cornett.",
+    jobTitle: "Temporary Licensed Psychological Associate",
+    badge: "Temporary Licensed Psychological Associate",
+    headingPrimary: "Ethan",
+    headingAccent: "Puckett, M.A., T-LPA.",
+    intro:
+      "Providing neuro-affirming outpatient therapy for children and adolescents ages 3 to 18, with ideal clinical fit for ages 7 to 16, plus psychological and psychoeducational testing in Kentucky.",
+    specialties: [
+      "Child Therapy Ages 3-18",
+      "Ideal Fit Ages 7-16",
+      "Older Teen In-Person & Virtual Therapy",
+      "Autism & ADHD Support",
+      "Psychological & Psychoeducational Testing",
+      "Behavioral, CBT & ACT",
+      "School-Based Concerns",
+    ],
+    contentBlocks: [
+      {
+        type: "paragraphs",
+        title: "Neuro-affirming therapy and testing for children and adolescents.",
+        paragraphs: [
+          "My name is Ethan Puckett. I graduated with my Masters in Applied Psychology from Western Kentucky University and am on track to graduate with my PsyD in Clinical Psychology from Western Kentucky University in August 2026. I am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
+          "I have previously worked as an outpatient therapist with individuals and families in a community mental health center, where I completed weekly therapy sessions as well as autism evaluations. I have most recently worked as a school psychologist intern completing many school-based evaluations for learning disabilities, autism, ADHD, and other cognitive, emotional, and behavioral concerns.",
+        ],
+      },
+      {
+        type: "quote",
+        quote:
+          "I help children and adolescents understand not only how to cope with ASD, ADHD, anxiety, depression, trauma, and related challenges, but also how to recognize and accentuate their existing strengths.",
+        variant: "accent",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "I specialize in the assessment and treatment of children and adolescents from neurodivergent populations. My ideal client range is 7 to 16, and I also welcome older teens for in-person and virtual therapy sessions starting July 6. I utilize behavioral, Cognitive Behavioral Therapy (CBT), and Acceptance and Commitment Therapy (ACT) techniques with a person-centered approach to understand each individual and help them become the best version of themselves.",
+          "In addition to therapy, I also provide psychological testing and psychoeducational testing, especially when families, schools, and care teams need a clearer picture of learning, attention, autism, or emotional-behavioral functioning.",
+        ],
+      },
+    ],
+    sidebarCards: [
+      {
+        title: "Training & Supervision",
+        eyebrow: "Background",
+        variant: "soft",
+        items: [
+          {
+            title: "M.A. in Applied Psychology",
+            subtitle: "Western Kentucky University",
+          },
+          {
+            title: "PsyD in Clinical Psychology",
+            subtitle: "Western Kentucky University",
+            meta: "Expected August 2026",
+          },
+          {
+            title: "Supervision",
+            subtitle: "Dr. Heather Cornett",
+          },
+        ],
+      },
+      {
+        title: "Clinical Experience",
+        eyebrow: "Focus",
+        variant: "surface-2",
+        body: [
+          "Ethan's background includes community mental health outpatient therapy, autism evaluations, and school-based assessments for learning, attention, and emotional-behavioral concerns. His strongest clinical fit is typically ages 7 to 16, with therapy openings for older teens offered in person and virtually.",
+        ],
+      },
+    ],
+    primaryPanel: {
+      eyebrow: "Availability",
+      title: "Accepting New Therapy Clients Starting July 6",
+      description:
+        "Ethan offers neuro-affirming therapy for ages 3 to 18, with ideal fit for ages 7 to 16, plus in-person and virtual therapy sessions for older teens and testing services in Kentucky.",
+      items: [
+        { label: "Therapy", value: "No waitlist starting July 6" },
+        { label: "Older Teen Therapy", value: "In person and virtual" },
+        { label: "Testing", value: "Psychological and psychoeducational" },
+      ],
+      note:
+        "New child and teen therapy clients can begin with Ethan starting July 6.",
+      ctaLabel: "Schedule an Intake",
+      ctaHref: WIDGET_LINK,
+      variant: "surface",
+    },
+    secondaryPanel: {
+      title: "First Time at Twilight?",
+      description:
+        "Review the intake process, launch timing, and what to expect before the first therapy or testing visit.",
+      ctaLabel: "New Client Guide",
+      ctaHref: "/resources/new-client",
+      variant: "surface",
+    },
+  },
+  {
     slug: "michael-burns",
     pageTitle: "Michael Burns, PhD | Substance Use & DV Therapy in KY",
     pageDescription:

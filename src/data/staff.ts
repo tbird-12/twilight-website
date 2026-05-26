@@ -1,3 +1,5 @@
+import type { ImageMetadata } from 'astro';
+
 // Import all staff images
 import heatherCornettImg from '../assets/images/staff/heather-cornett.png';
 import nicolaAllenImg from '../assets/images/staff/nicola-allen.png';
@@ -9,6 +11,7 @@ import tiffanyRoundtreeImg from '../assets/images/staff/tiffany-roundtree.png';
 import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
 import oliviaWilliamsImg from '../assets/images/staff/olivia-williams.jpg';
 import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
+import ethanPuckettImg from '../assets/images/staff/ethan-puckett.png';
 
 export interface Provider {
   name: string;
@@ -109,6 +112,19 @@ export const providers: Provider[] = [
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks', therapy: '1 month' }
+  },
+  {
+    name: 'Ethan Puckett',
+    slug: 'ethan-puckett',
+    spec: 'Child Therapy & Testing (Ideal Ages 7-16)',
+    image: ethanPuckettImg,
+    name_with_education: 'Ethan Puckett, M.A.',
+    credential: 'T-LPA',
+    services_offered: ['Therapy', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'IQ testing', 'Psychological evaluations'],
+    out_of_pocket_rates: {therapy: '$100', testing_standard: '$1,300', testing_dyslexia: '$1,500' },
+    states_served: ['Kentucky'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
+    wait_times: { therapy: 'Immediate', testing_insurance: '2 months', testing_out_of_pocket: 'Immediate' }
   },
   {
     name: 'Jatana Boggs',

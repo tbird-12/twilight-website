@@ -10,6 +10,18 @@ import { getClinicianPageData } from "../../../data/clinicianProfiles";
 
 const therapyClinicians = [
   {
+    slug: "ethan-puckett",
+    fit:
+      "Best for neurodivergent children and adolescents ages 3-18, with strongest fit for ages 7-16, who need therapy for autism, ADHD, anxiety, depression, trauma, behavioral concerns, and school-related stress. Older teens can be seen in person or virtually.",
+    waitlist: "Accepting new therapy clients July 6 with no waitlist.",
+    frameworks: [
+      "Behavioral Therapy",
+      "Cognitive Behavioral Therapy (CBT)",
+      "Acceptance and Commitment Therapy (ACT)",
+      "Person-Centered Therapy",
+    ],
+  },
+  {
     slug: "michael-burns",
     fit:
       "Best for adults seeking therapy for substance use disorders, domestic violence recovery, PTSD, and relationship challenges. Also works with adolescents and clients seeking faith-integrated Christian counseling. Part-time schedule — limited weekly slots available.",
@@ -109,7 +121,7 @@ const cliniciansSchema = {
     "faith-based therapy Kentucky",
   ],
   description:
-    "Compare therapy clinicians at Twilight Psychology in Kentucky by fit, specialty focus, insurance options, waitlist, and therapeutic approach.",
+    "Compare therapy clinicians at Twilight Psychology in Kentucky by fit, specialty focus, age range, insurance options, waitlist, and therapeutic approach across ages 3-99.",
   provider: {
     "@type": "MedicalOrganization",
     name: "Twilight Psychology",
@@ -132,7 +144,7 @@ const cliniciansSchema = {
 
 <Layout
   title="Kentucky Therapists for Neurodivergence | Twilight Psychology"
-  description="Compare Kentucky therapists at Twilight Psychology by specialty — neurodivergence, ADHD, substance use, domestic violence, PTSD, and faith-integrated care."
+  description="Compare Kentucky therapists at Twilight Psychology by specialty, fit, and age range, including neuro-affirming care for ages 3-99."
 >
   <Schema slot="page-schema" schema={cliniciansSchema} />
 
@@ -149,7 +161,7 @@ const cliniciansSchema = {
           title="Therapy Clinicians"
           accentWord="Therapy"
           badge="Therapy Team"
-          subtitle="Compare therapists by specialty — neurodivergence, ADHD, substance use, domestic violence recovery, PTSD, and faith-integrated counseling — before booking your first appointment."
+          subtitle="Compare therapists by specialty, age range, and clinical fit — including neuro-affirming care for ages 3-99 — before booking your first appointment."
           size="lg"
         />
 
@@ -162,17 +174,19 @@ const cliniciansSchema = {
                 </h2>
                 <div class="space-y-5 text-site-text leading-relaxed text-lg">
                   <p>
-                    Each therapist brings a different style, specialty focus, and age-range emphasis. Use
-                    this page to compare clinician expertise before booking, whether you're looking for
-                    neurodivergence-affirming therapy, ADHD support, couples counseling, substance use
-                    recovery, domestic violence recovery, PTSD support, faith-integrated counseling,
-                    parent support, or deeper insight-oriented work.
+                    Each therapist brings a different style, specialty focus, and age-range emphasis.
+                    Use this page to compare clinician expertise before booking, whether you're looking
+                    for child therapy starting at age 3, teen support, adult neurodivergence-affirming
+                    therapy, couples counseling, substance use recovery, domestic violence recovery,
+                    PTSD support, faith-integrated counseling, parent support, or deeper insight-oriented
+                    work.
                   </p>
                   <p>
                     Individual therapy can often be billed to insurance for covered mental health diagnoses.
-                    Each clinician's specialty focus — neurodivergent support, substance use, domestic
-                    violence recovery, PTSD, faith-integrated counseling, or couples work — may make one
-                    provider a stronger fit than another.
+                    Therapy at Twilight now spans ages 3-99, and each clinician's specialty focus —
+                    neurodivergent support, school stress, family systems, substance use, domestic violence
+                    recovery, PTSD, faith-integrated counseling, or couples work — may make one provider a
+                    stronger fit than another.
                   </p>
                 </div>
               </section>
@@ -219,7 +233,7 @@ const cliniciansSchema = {
             <SidebarCta
               client:visible
               title="Need help choosing a therapist?"
-              description="Our intake team can help you sort by fit, therapy expertise, insurance options, age range, and scheduling needs."
+              description="Our intake team can help you sort by fit, therapy expertise, insurance options, age range, and scheduling needs across ages 3-99."
               buttonLabel="Schedule Intake"
               buttonHref={WIDGET_LINK}
               target="_blank"
@@ -259,7 +273,7 @@ const cliniciansSchema = {
                         Insurance and billing
                       </p>
                       <p class="text-sm font-semibold text-site-text">
-                        Accepts insurance for covered services; self-pay options are also available.
+                        Insurance participation and self-pay options vary by clinician and service.
                       </p>
                     </div>
 
