@@ -170,6 +170,6 @@ export const providers: Provider[] = [
 ];
 
 export const staff: StaffMember[] = [
-  { name: 'Samantha Rodarte', slug: 'samantha-rodarte', spec: 'Admin Assistant', image: samanthaRodarte },
+  { name: 'Samantha Rodarte', slug: 'samantha-rodarte', spec: 'Practice Manager', image: samanthaRodarte },
   { name: 'Ashley Perkins', slug: 'ashley-perkins', spec: 'Administrative Assistant', image: ashleyPerkinsImg },
 ];
