@@ -45,6 +45,7 @@ const providerMenuChildren: NavigationLinkItem[] = [
 
 const staffMenuChildren: NavigationLinkItem[] = [
   { name: "Samantha Rodarte", slug: "samantha-rodarte" },
+  { name: "Ashley Perkins", slug: "ashley-perkins" },
 ].map((item) => ({
   ...item,
   desc: "Staff profile",
