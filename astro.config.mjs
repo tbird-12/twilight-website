@@ -10,6 +10,10 @@ import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   compressHTML: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
   vite: {
     plugins: [tailwindcss()],
     build: {

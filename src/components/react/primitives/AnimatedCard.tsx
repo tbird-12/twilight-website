@@ -39,7 +39,7 @@ export default function AnimatedCard({
           animation: `${keyframes[animation]} ${dur.slow}ms ${easing.smooth} both`,
           animationDelay: `${delay}ms`,
         }
-      : { opacity: '0', transform: 'translateY(12px)', willChange: 'transform, opacity' };
+      : { opacity: '0', transform: 'translateY(12px)' };
 
   const cls = ['group', hoverEffect === 'none' ? '' : 'hover:will-change-transform', hoverClasses[hoverEffect] || '', className]
     .filter(Boolean)

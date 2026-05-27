@@ -1,9 +1,11 @@
 ---
+import { getImage } from "astro:assets";
 import "../styles/global.css";
 import BlogHeader from "../components/blog/BlogHeader.astro";
 import BlogFooter from "../components/blog/BlogFooter.astro";
 import Schema from "../components/Schema.astro";
 import SearchModal from "../components/SearchModal.astro";
+import logoImage from "../assets/images/logo.png";
 import { siteConfig } from "../data/siteConfig";
 import { hasDistinctUpdatedDate } from "../utils/blogDates";
 
@@ -43,7 +45,12 @@ const showModifiedMeta = pubDate ? hasDistinctUpdatedDate(pubDate, updatedDate) 
 const metaTitle = seoTitle || title;
 const ogImage = image || new URL("/og-image.png", siteUrl).href;
 const ogImageAlt = imageAlt || `${metaTitle} preview image`;
-const faviconHref = "/favicon.svg";
+const { src: faviconHref } = await getImage({
+  src: logoImage,
+  width: 64,
+  height: 64,
+  format: "png",
+});
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -77,7 +84,8 @@ const webpageSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/svg+xml" href={faviconHref} />
+    <link rel="icon" type="image/png" sizes="64x64" href={faviconHref} />
+    <link rel="apple-touch-icon" href={faviconHref} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

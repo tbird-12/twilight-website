@@ -56,18 +56,19 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
     }
 
     const updateHeaderHeight = () => {
-      setHeaderHeight(headerElement.getBoundingClientRect().height);
+      const nextHeaderHeight = Math.round(headerElement.getBoundingClientRect().height);
+      setHeaderHeight((currentHeaderHeight) => (
+        currentHeaderHeight === nextHeaderHeight ? currentHeaderHeight : nextHeaderHeight
+      ));
     };
 
     updateHeaderHeight();
 
     const resizeObserver = new ResizeObserver(updateHeaderHeight);
     resizeObserver.observe(headerElement);
-    window.addEventListener("resize", updateHeaderHeight);
 
     return () => {
       resizeObserver.disconnect();
-      window.removeEventListener("resize", updateHeaderHeight);
     };
   }, []);
 
@@ -124,9 +125,12 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
                 <img
                   src={logoSrc}
                   alt="Twilight Psychology Logo"
+                  width={96}
+                  height={96}
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
                   className="h-10 lg:h-14 w-auto mb-1 shrink-0"
-                  width={240}
-                  height={180}
                 />
               ) : (
                 <div className="h-10 lg:h-14 w-auto flex shrink-0 items-center justify-center bg-surface rounded-lg px-2">
@@ -154,7 +158,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
           </div>
 
           <div className="hidden md:flex items-center gap-4 lg:gap-5">
-            <DesktopNav />
+            <DesktopNav headerHeight={headerHeight} />
 
             <div className="flex items-center gap-3">
               <SearchButton

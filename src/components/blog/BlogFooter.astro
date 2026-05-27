@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { blogCategories } from "../../data/blogCategories";
+import logoImage from "../../assets/images/logo.png";
 import {
   PHONE_NUMBER,
   PHONE_NUMBER_FORMATTED,
@@ -29,11 +31,14 @@ const exploreLinks = [
       <!-- Brand / Logo -->
       <div class="lg:col-span-1">
         <a href="/" class="inline-flex items-center gap-2 mb-4 group">
-          <img
-            src="/favicon.svg"
+          <Image
+            src={logoImage}
             alt="Twilight Psychology Logo"
-            width={240}
-            height={180}
+            width={72}
+            height={72}
+            format="webp"
+            loading="lazy"
+            decoding="async"
             class="h-9 w-auto"
           />
           <span class="font-serif font-black text-site-text group-hover:text-cta transition-colors leading-tight">

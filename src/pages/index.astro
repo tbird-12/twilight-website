@@ -228,6 +228,7 @@ const qualityCareItems = [
 
                   <a
                     href={service.link}
+                    data-astro-prefetch="viewport"
                     class="mt-auto inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors"
                   >
                     Explore Service
@@ -293,6 +294,7 @@ const qualityCareItems = [
           </div>
           <a
             href="/blog"
+            data-astro-prefetch="viewport"
             class="text-cta font-black text-sm hover:underline"
           >
             View all posts →
@@ -306,6 +308,7 @@ const qualityCareItems = [
             return (
               <a
                 href={`/blog/${post.id}`}
+                data-astro-prefetch="viewport"
                 class="group flex flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
               >
                 <div class="flex items-center gap-2 mb-3">
@@ -363,12 +366,14 @@ const qualityCareItems = [
           >
             <a
               href="/resources/new-client"
+              data-astro-prefetch="viewport"
               class="px-10 py-4 theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-lg"
             >
               Steps for New Clients
             </a>
             <a
               href="/about/clinicians/clinicians-lex-ky"
+              data-astro-prefetch="viewport"
               class="px-10 py-4 bg-cta text-cta-fg border border-button-border font-black rounded-full theme-hover-surface transition-all"
             >
               Meet Our Clinicians

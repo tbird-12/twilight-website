@@ -15,6 +15,7 @@ import type {
 } from "../../data/navigationData";
 
 interface NavigationDropdownProps {
+  headerHeight: number;
   title: string;
   items: NavigationMenuItem[];
   baseHref: string;
@@ -115,6 +116,7 @@ function NestedItem({ item }: { item: NavigationNestedItem }) {
 }
 
 export default function NavigationDropdown({
+  headerHeight,
   title,
   items,
   baseHref,
@@ -122,25 +124,8 @@ export default function NavigationDropdown({
   moreLink,
 }: NavigationDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState('5rem');
-  const wrapperRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-
-  useEffect(() => {
-    const updateHeaderHeight = () => {
-      const header = document.querySelector('header');
-      if (header) {
-        setHeaderHeight(`${header.getBoundingClientRect().height}px`);
-      }
-    };
-
-    updateHeaderHeight();
-    window.addEventListener('resize', updateHeaderHeight);
-
-    return () => {
-      window.removeEventListener('resize', updateHeaderHeight);
-    };
-  }, []);
+  const dropdownTop = `${Math.max(headerHeight, 80)}px`;
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -159,7 +144,6 @@ export default function NavigationDropdown({
 
   return (
     <div
-      ref={wrapperRef}
       className="relative py-2"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -183,14 +167,14 @@ export default function NavigationDropdown({
           {/* Backdrop blur overlay — blurs content below header and dropdown */}
           <div
             className="fixed left-0 right-0 bottom-0 z-40 bg-site-text/30 backdrop-blur-lg nav-backdrop-enter"
-            style={{ top: headerHeight }}
+            style={{ top: dropdownTop }}
             onClick={() => setIsOpen(false)}
           />
 
           {/* Mega menu panel */}
           <div
             className="fixed left-0 right-0 z-50 theme-surface border-t-4 border-t-cta shadow-2xl nav-mega-enter"
-            style={{ top: headerHeight }}
+            style={{ top: dropdownTop }}
             role="menu"
             aria-label={`${title} menu`}
           >

@@ -28,6 +28,7 @@ const { title, description, links } = Astro.props;
       {links.map((link) => (
         <a
           href={link.href}
+          data-astro-prefetch="viewport"
           class="group rounded-3xl border border-border bg-surface p-6 transition-all hover:border-cta/30 hover:shadow-lg hover:shadow-cta/5"
         >
           <h3 class="font-serif text-lg font-black text-site-text group-hover:text-cta transition-colors mb-2">

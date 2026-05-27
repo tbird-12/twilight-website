@@ -1,6 +1,4 @@
 ---
-import FaqAccordion from "./FaqAccordion";
-
 interface Props {
   items: Array<{ question: string; answer: string }>;
   title?: string;
@@ -9,4 +7,67 @@ interface Props {
 const { items, title } = Astro.props;
 ---
 
-<FaqAccordion client:load items={items} title={title} />
+<div class="space-y-3">
+  {title && (
+    <h3 class="mb-4 text-sm font-semibold uppercase tracking-widest text-site-sub">
+      {title}
+    </h3>
+  )}
+
+  <div class="space-y-2">
+    {items.map((item, idx) => (
+      <details
+        class="faq-item overflow-hidden rounded-2xl border border-border bg-surface transition-colors duration-300"
+        style={`animation: blurIn 400ms ease-out both; animation-delay: ${idx * 40}ms;`}
+      >
+        <summary class="faq-summary flex cursor-pointer list-none items-center justify-between gap-4 p-4 text-left text-site-text transition-colors duration-300 sm:p-5">
+          <span class="pr-2 font-semibold leading-snug">
+            {item.question}
+          </span>
+          <span class="faq-icon flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-surface-soft transition-all duration-300">
+            <svg
+              class="h-4 w-4 text-cta"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </span>
+        </summary>
+
+        <div class="border-t border-border bg-site-bg px-4 py-4 sm:px-5">
+          <p class="text-sm leading-relaxed text-site-sub">
+            {item.answer}
+          </p>
+        </div>
+      </details>
+    ))}
+  </div>
+</div>
+
+<style>
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item[open] {
+    border-color: color-mix(in srgb, var(--color-cta) 20%, transparent);
+    box-shadow: 0 10px 30px rgba(20, 16, 38, 0.06);
+  }
+
+  .faq-item[open] .faq-summary {
+    background: var(--color-surface-soft);
+  }
+
+  .faq-item[open] .faq-icon {
+    background: color-mix(in srgb, var(--color-cta) 10%, var(--color-surface-soft));
+    transform: rotate(180deg);
+  }
+</style>

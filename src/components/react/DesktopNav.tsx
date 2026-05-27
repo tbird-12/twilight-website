@@ -11,7 +11,11 @@ import {
   clientResourcesMenuItems,
 } from "../../data/navigationData";
 
-export default function DesktopNav() {
+interface DesktopNavProps {
+  headerHeight: number;
+}
+
+export default function DesktopNav({ headerHeight }: DesktopNavProps) {
   return (
     <nav
       className="hidden md:flex items-center gap-6 lg:gap-10"
@@ -20,6 +24,7 @@ export default function DesktopNav() {
     >
       {/* About Menu */}
       <NavigationDropdown
+        headerHeight={headerHeight}
         title="About"
         items={aboutMenuItems}
         baseHref="/about"
@@ -29,6 +34,7 @@ export default function DesktopNav() {
 
       {/* Services Menu */}
       <NavigationDropdown
+        headerHeight={headerHeight}
         title="Services"
         items={servicesMenuItems}
         baseHref="/services"
@@ -38,6 +44,7 @@ export default function DesktopNav() {
 
       {/* Specialties Menu */}
       <NavigationDropdown
+        headerHeight={headerHeight}
         title="Specialties"
         items={specialtiesMenuItems}
         baseHref="/specialties"
@@ -47,6 +54,7 @@ export default function DesktopNav() {
 
       {/* Resources Menu */}
       <NavigationDropdown
+        headerHeight={headerHeight}
         title="Resources"
         items={clientResourcesMenuItems}
         baseHref="/resources"
