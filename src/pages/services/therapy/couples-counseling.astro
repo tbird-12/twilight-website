@@ -22,6 +22,11 @@ const couplesTopics = [
     detail:
       "Help for partners who need clearer direction, want to understand persistent patterns, or need support deciding what comes next.",
   },
+  {
+    title: "Neurodivergent relationship dynamics",
+    detail:
+      "Affirming therapy for couples where one or both partners are neurodivergent, including support for ADHD-related patterns, sensory or emotional regulation differences, communication style mismatches, and demand-avoidance dynamics that can strain connection.",
+  },
 ];
 
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
@@ -87,10 +92,17 @@ const couplesSchema = {
                     meaningful relationship decisions.
                   </p>
                   <p>
+                    Jatana's approach is affirming of varied relationship structures and explicitly
+                    neurodivergence-informed — a meaningful difference for couples where one or both
+                    partners have ADHD, autism, a PDA profile, or a late diagnosis that has reshaped how
+                    they understand themselves in relationship. Many couples find that a neurodivergent
+                    lens unlocks patterns that general communication frameworks miss.
+                  </p>
+                  <p>
                     Relationship therapy can include weekly sessions, concentrated problem-solving around a
                     specific issue, or deeper discernment-oriented work when partners are unsure how to move
-                    forward. Care is affirming of varied relationship structures and can also support
-                    relationship-focused individual work when both partners are not attending together.
+                    forward. Care can also support relationship-focused individual work when both partners
+                    are not attending together.
                   </p>
                   <p>
                     Scheduling matters as much as fit when two people need to coordinate. Twilight&apos;s
@@ -156,7 +168,7 @@ const couplesSchema = {
               </p>
             </header>
 
-            <div class="grid gap-6 md:grid-cols-3">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {
                 couplesTopics.map((topic) => (
                   <article class="rounded-3xl border border-border bg-surface-soft p-6">

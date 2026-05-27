@@ -18,6 +18,11 @@ const evaluationPathways = [
       "Clients often use therapy to process results, understand patterns, build accommodations, and decide what changes are realistic next.",
   },
   {
+    title: "After a late-diagnosis evaluation for an adult",
+    detail:
+      "Adults who receive a first diagnosis later in life often benefit from therapy that addresses identity, grief over missed support, and what a new framework means for relationships, work, and self-understanding.",
+  },
+  {
     title: "Alongside medication management",
     detail:
       "Counseling can complement medication support by helping clients build routines, track patterns, and work through the emotional side of treatment changes.",
@@ -67,7 +72,7 @@ const afterEvaluationSchema = {
          <PageHeroWrapper
            title="Therapy After Evaluation"
            accentWord="Therapy"
-           badge="Connected Care"
+           badge="Post-Evaluation Care"
            subtitle="Turn evaluation results and treatment recommendations into practical next steps for daily life, school, work, and relationships."
            size="lg"
          />
@@ -170,7 +175,7 @@ const afterEvaluationSchema = {
               </p>
             </header>
 
-            <div class="grid gap-6 md:grid-cols-3">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {
                 evaluationPathways.map((pathway) => (
                   <article class="rounded-3xl border border-border bg-surface-soft p-6">
