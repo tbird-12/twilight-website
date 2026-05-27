@@ -17,12 +17,15 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
                   mb-12">
   <section class="relative py-24 px-4 text-center border-b theme-border overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10">
+      <span class="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full">
+        Self-Pay Specialty Evaluations
+      </span>
       <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-6 tracking-tight">
         Our <span class="text-cta">Specialties</span>
       </h1>
       <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
-        Beyond our core therapy, medication, and testing services, we offer focused evaluations for school planning,
-        legal questions, accommodations, and other documentation-heavy needs.
+        Focused evaluations for school planning, legal questions, housing accommodation, and benefits documentation.
+        Because these services address documentation rather than medical treatment, they are offered on a self-pay basis — insurance does not typically cover this scope.
       </p>
     </div>
     <div class="specialties-hero-radial absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0"></div>
@@ -35,6 +38,9 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
           href={`/specialties/${specialty.slug}`}
           class="group theme-surface-soft border theme-border rounded-2xl p-6 hover:border-cta/50 hover:shadow-lg hover:shadow-cta/10 transition-all duration-200"
         >
+          <span class="inline-block px-2.5 py-1 mb-3 text-xs font-bold text-cta uppercase tracking-wider bg-cta/10 border border-cta/20 rounded-full">
+            Self-Pay
+          </span>
           <h2 class="font-serif text-lg font-black text-site-text group-hover:text-cta transition-colors mb-2">
             {specialty.name}
           </h2>
