@@ -13,6 +13,8 @@ import oliviaWilliamsImg from '../assets/images/staff/olivia-williams.jpg';
 import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
 import ethanPuckettImg from '../assets/images/staff/ethan-puckett.png';
 
+import ashleyPerkinsImg from '../assets/images/staff/ashley-perkins.jpeg';
+
 export interface Provider {
   name: string;
   slug: string;
@@ -169,4 +171,5 @@ export const providers: Provider[] = [
 
 export const staff: StaffMember[] = [
   { name: 'Samantha Rodarte', slug: 'samantha-rodarte', spec: 'Admin Assistant', image: samanthaRodarte },
+  { name: 'Ashley Perkins', slug: 'ashley-perkins', spec: 'Administrative Assistant', image: ashleyPerkinsImg },
 ];

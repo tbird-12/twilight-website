@@ -1,0 +1,193 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Schema from "../../../components/Schema.astro";
+import { EMAIL_ADDRESS } from "../../../data/resource";
+import PageLinksSection from "../../../components/PageLinksSection.astro";
+import { getImage, Image } from 'astro:assets';
+import { staff } from '../../../data/staff';
+
+const ashley = staff.find(person => person.slug === 'ashley-perkins')!;
+
+const expertise = [
+  "Client Communication",
+  "Insurance Verification",
+  "Client Coordination",
+  "Administrative Support",
+];
+
+const pageDescription =
+  "Ashley Perkins — Administrative assistant at Twilight Psychology supporting client calls, insurance verification, and client coordination in Lexington, KY. Available Monday, Wednesday, and Friday.";
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const profileUrl = new URL(Astro.url.pathname, siteUrl).href;
+const schemaProfileImage = await getImage({
+  src: ashley.image,
+  width: 720,
+  format: "jpg",
+});
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: ashley.name,
+  jobTitle: "Administrative Assistant",
+  description: pageDescription,
+  email: EMAIL_ADDRESS,
+  image: new URL(schemaProfileImage.src, siteUrl).href,
+  url: profileUrl,
+  knowsAbout: expertise,
+  worksFor: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
+
+const supportLinks = [
+  {
+    href: "/about/staff/samantha-rodarte",
+    label: "Meet Samantha Rodarte",
+    description:
+      "Learn about Twilight Psychology's practice manager who leads operations, care coordination, and insurance navigation.",
+  },
+  {
+    href: "/resources/new-client",
+    label: "New client guide",
+    description:
+      "Review intake steps, paperwork, and what clients can expect before the first visit.",
+  },
+  {
+    href: "/resources/waitlist-times",
+    label: "Current waitlist times",
+    description:
+      "Check current availability across therapy, evaluations, and medication support.",
+  },
+];
+---
+
+<Layout
+  title="Ashley Perkins | Administrative Assistant"
+  description={pageDescription}
+>
+  <Schema slot="page-schema" schema={personSchema} />
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-lg max-w-none prose-custom
+                  prose-p:text-site-text
+                  prose-headings:text-site-text
+                  prose-strong:text-site-text
+                  prose-li:text-site-text
+                  mb-12">
+
+    <section class="relative pt-32 pb-24 px-4 border-b border-border bg-linear-to-b from-surface-2/20 to-transparent">
+      <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="relative group not-prose">
+            <div class="absolute -inset-1 bg-linear-to-r from-cta to-cta rounded-[3rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+            <div class="relative w-72 h-96 bg-surface rounded-[2.5rem] overflow-hidden border border-border shadow-2xl">
+                <Image
+                  src={ashley.image}
+                  alt={ashley.name}
+                  widths={[288, 576]}
+                  sizes="18rem"
+                  class="absolute inset-0 w-full h-full object-cover object-top rounded-[2.5rem]"
+                  loading="eager"
+                />
+            </div>
+        </div>
+
+        <div class="flex-1 text-center lg:text-left">
+            <span class="px-4 py-1.5 mb-6 text-xs font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full inline-block">
+                Administrative Assistant
+            </span>
+            <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter leading-none">
+                Ashley <br/>
+                <span class="text-cta">Perkins.</span>
+            </h1>
+            <p class="text-site-sub text-lg leading-relaxed max-w-2xl mb-8">
+                Helping clients navigate their first steps at Twilight Psychology through clear communication, insurance support, and warm coordination.
+            </p>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3">
+                {expertise.map(item => (
+                    <span class="px-4 py-2 bg-surface-soft border border-border rounded-full text-xs font-black text-sand uppercase tracking-tighter">
+                        {item}
+                    </span>
+                ))}
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-24 grid lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-8 space-y-8 text-site-text text-lg leading-relaxed">
+            <h2 class="font-serif text-3xl font-black text-site-text italic tracking-tight">From University Classroom to Clinical Practice.</h2>
+            <p>
+                Ashley recently graduated with a bachelor's degree in psychology from the University of
+                Kentucky, and she brings that academic foundation directly to her work supporting clients
+                and clinicians at Twilight Psychology. Working Monday, Wednesday, and Friday from
+                9&nbsp;AM to 4&nbsp;PM, Ashley is often one of the first people clients connect with —
+                answering calls, coordinating intake appointments, verifying insurance benefits, and
+                helping new and returning clients understand their next steps.
+            </p>
+            <p>
+                Her background in psychology gives her meaningful context for the clinical work that
+                happens at Twilight, and she is actively developing the administrative and coordination
+                skills that make that work accessible to clients. Ashley genuinely enjoys working with
+                people and is committed to making the process of starting care as clear and welcoming
+                as possible.
+            </p>
+
+            <div class="bg-surface-soft border-l-4 border-cta p-8 rounded-r-3xl">
+                <h4 class="font-serif text-site-text font-black text-sm uppercase mb-2">Direct Contact</h4>
+                <p class="text-cta font-black text-lg underline underline-offset-4 decoration-amber-500/30">
+                    <a href={`mailto:${EMAIL_ADDRESS}`} class="text-cta hover:text-cta transition-colors duration-200">{EMAIL_ADDRESS}</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-8">
+            <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+                <h3 class="font-serif text-cta font-black text-xs uppercase tracking-widest mb-4">Core Focus</h3>
+                <p class="text-sm text-site-sub leading-relaxed italic">
+                    "The care team does incredible clinical work — my job is to make sure clients can actually get to it."
+                </p>
+            </div>
+
+            <div class="p-8 bg-surface-soft border border-border rounded-[2.5rem]">
+                <h3 class="font-serif text-site-text font-black text-xs uppercase tracking-widest mb-4">Contact Ashley For:</h3>
+                <ul class="text-xs text-site-sub space-y-3 font-medium">
+                    <li class="flex items-center gap-2"><span class="text-cta">→</span> Intake & Scheduling Calls</li>
+                    <li class="flex items-center gap-2"><span class="text-cta">→</span> Insurance Verification</li>
+                    <li class="flex items-center gap-2"><span class="text-cta">→</span> Client Coordination Questions</li>
+                    <li class="flex items-center gap-2"><span class="text-cta">→</span> New Client Onboarding</li>
+                </ul>
+            </div>
+
+            <div class="p-8 bg-surface-soft border border-border rounded-[2.5rem]">
+                <h3 class="font-serif text-site-text font-black text-xs uppercase tracking-widest mb-4">Office Hours</h3>
+                <ul class="text-xs text-site-sub space-y-2 font-medium">
+                    <li class="flex items-center gap-2"><span class="text-cta">✓</span> Monday · 9:00 AM – 4:00 PM</li>
+                    <li class="flex items-center gap-2"><span class="text-cta">✓</span> Wednesday · 9:00 AM – 4:00 PM</li>
+                    <li class="flex items-center gap-2"><span class="text-cta">✓</span> Friday · 9:00 AM – 4:00 PM</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 py-24 mt-12">
+      <div class="bg-linear-to-r from-cta/10 to-cta/10 border border-cta/20 rounded-3xl p-8 text-center">
+        <h3 class="font-serif text-xl font-black text-site-text mb-4">Wondering About Wait Times?</h3>
+        <p class="text-site-sub mb-6">Check our current waitlist times for different services and get a better idea of when you can be seen.</p>
+        <a
+          href="/resources/waitlist-times"
+          class="inline-block px-8 py-3 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all"
+        >
+          View Waitlist Times
+        </a>
+      </div>
+    </section>
+
+    <PageLinksSection
+      title="Need broader practice information?"
+      description="These pages cover the team, intake process, and scheduling details Ashley helps coordinate."
+      links={supportLinks}
+    />
+      </div>
+    </div>
+</Layout>
