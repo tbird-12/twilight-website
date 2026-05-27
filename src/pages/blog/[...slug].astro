@@ -266,7 +266,11 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
           alt={heroImageAlt}
           width={heroImageWidth}
           height={heroImageHeight}
+          widths={[400, 800, 1200, 1600]}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 900px"
           format="webp"
+          loading="eager"
+          fetchpriority="high"
           class={heroImageClasses.image}
         />
       </div>

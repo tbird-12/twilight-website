@@ -51,6 +51,8 @@ import { Image } from "astro:assets";
                       <Image
                         src={person.image}
                         alt={`Photo of ${person.name}`}
+                        widths={[280, 560]}
+                        sizes="(min-width: 768px) 280px, 0px"
                         class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                         loading="lazy"
                       />
