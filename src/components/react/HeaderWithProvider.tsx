@@ -1,8 +1,7 @@
 /**
- * HeaderWithProvider - wraps Header with ThemeProvider for context
+ * HeaderWithProvider - wraps Header with its required context
  */
 
-import { ThemeProvider } from "./ThemeContext";
 import Header from "./Header";
 
 interface HeaderWithProviderProps {
@@ -12,8 +11,6 @@ interface HeaderWithProviderProps {
 
 export default function HeaderWithProvider({ logoSrc, currentPath }: HeaderWithProviderProps) {
   return (
-    <ThemeProvider>
-      <Header logoSrc={logoSrc} currentPath={currentPath} />
-    </ThemeProvider>
+    <Header logoSrc={logoSrc} currentPath={currentPath} />
   );
 }

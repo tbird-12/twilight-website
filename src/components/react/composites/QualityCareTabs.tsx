@@ -80,8 +80,10 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
             <button
               key={idx}
               type="button"
+              id={`quality-tab-${idx}`}
               role="tab"
               aria-selected={isActive}
+              aria-controls={`quality-panel-${idx}`}
               tabIndex={isActive ? 0 : -1}
               onClick={() => setActiveTab(idx)}
               onKeyDown={(e) => {
@@ -134,7 +136,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
         })}
       </nav>
 
-      {/* Right: Content panel */}
+      {/* Right: Content panels */}
       <div
         className="min-h-88 rounded-3xl p-10 flex flex-col justify-center border"
         style={{
@@ -143,43 +145,48 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
           boxShadow: 'inset 0 1px 0 rgba(var(--rgb-accent), 0.06)',
         }}
       >
-        {items.map((item, idx) => {
-          if (idx !== activeTab) return null;
-          return (
-            <div key={idx} style={{ animation: 'blurIn 300ms ease-out' }}>
-              <p className="text-xs font-extrabold tracking-[0.28em] uppercase mb-5" style={{ color: 'var(--theme-section-label)', opacity: 0.4 }}>
-                {String(idx + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
-              </p>
-              <div className="flex items-start gap-4 mb-4">
-                {item.iconSvg && (
-                  <span
-                    className="w-12 h-12 shrink-0"
-                    style={{ color: 'var(--color-icon)' }}
-                    dangerouslySetInnerHTML={{ __html: item.iconSvg }}
-                  />
-                )}
-                <div>
-                  <h3 className="font-sans text-2xl sm:text-3xl font-semibold tracking-tight text-site-text mb-0 leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-site-sub text-base sm:text-[1.05rem] leading-relaxed max-w-md font-medium mt-3">
-                    {item.description}
-                    {item.link && (
-                      <span className="block mt-3">
-                        <a href={item.link} className="inline-flex items-center text-cta font-semibold hover:underline">
-                          Details about {item.title.toLowerCase()}
-                          <svg className="w-3 h-3 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </a>
-                      </span>
-                    )}
-                  </p>
-                </div>
+        {items.map((item, idx) => (
+          <div
+            key={idx}
+            role="tabpanel"
+            id={`quality-panel-${idx}`}
+            aria-labelledby={`quality-tab-${idx}`}
+            tabIndex={0}
+            hidden={idx !== activeTab}
+            style={idx === activeTab ? { animation: 'blurIn 300ms ease-out' } : undefined}
+          >
+            <p className="text-xs font-extrabold tracking-[0.28em] uppercase mb-5" style={{ color: 'var(--theme-section-label)', opacity: 0.4 }}>
+              {String(idx + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
+            </p>
+            <div className="flex items-start gap-4 mb-4">
+              {item.iconSvg && (
+                <span
+                  className="w-12 h-12 shrink-0"
+                  style={{ color: 'var(--color-icon)' }}
+                  dangerouslySetInnerHTML={{ __html: item.iconSvg }}
+                />
+              )}
+              <div>
+                <h3 className="font-sans text-2xl sm:text-3xl font-semibold tracking-tight text-site-text mb-0 leading-tight">
+                  {item.title}
+                </h3>
+                <p className="text-site-sub text-base sm:text-[1.05rem] leading-relaxed max-w-md font-medium mt-3">
+                  {item.description}
+                  {item.link && (
+                    <span className="block mt-3">
+                      <a href={item.link} className="inline-flex items-center text-cta font-semibold hover:underline">
+                        Details about {item.title.toLowerCase()}
+                        <svg className="w-3 h-3 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    </span>
+                  )}
+                </p>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );

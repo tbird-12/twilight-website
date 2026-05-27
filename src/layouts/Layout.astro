@@ -1,6 +1,7 @@
 ---
 import { getImage } from "astro:assets";
 import HeaderWithProvider from "../components/react/HeaderWithProvider";
+import ThemeToggleWrapper from "../components/interactive/ThemeToggleWrapper.astro";
 import Footer from "../components/Footer.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Schema from "../components/Schema.astro";
@@ -135,6 +136,7 @@ const webpageSchema = {
 
   <body class="flex min-h-screen flex-col bg-site-bg text-site-text antialiased">
     <HeaderWithProvider client:load logoSrc={headerLogoSrc} currentPath={Astro.url.pathname} />
+    <ThemeToggleWrapper />
 
     <main id="main-content" class="grow pb-12 sm:pb-16 md:pb-24" data-pagefind-body>
       <slot />

@@ -6,7 +6,6 @@
 import { useEffect, useRef, useState } from "react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
-import ThemeToggle from "./ThemeToggle";
 import { useScrollLock } from "./hooks";
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import SearchButton from "./primitives/SearchButton";
@@ -178,10 +177,6 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
           </div>
         </div>
       </header>
-
-      <div className="fixed bottom-5 right-5 z-95">
-        <ThemeToggle className="bg-site-bg/90 shadow-lg ring-1 ring-border/80 backdrop-blur-xl hover:bg-surface" />
-      </div>
 
       {/* Mobile Navigation - rendered outside header to avoid sticky context issues */}
       <MobileNav

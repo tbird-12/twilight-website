@@ -177,9 +177,19 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
               return (
                 <div
                   key={provider.id}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={isExpanded}
+                  aria-label={`${provider.name}, ${provider.credential}. ${isExpanded ? 'Hide' : 'Show'} services`}
                   className="p-4 border border-border rounded-2xl bg-surface hover:shadow-lg hover:-translate-y-0.5 hover:border-cta/20 transition-all duration-300 cursor-pointer"
                   style={{ animation: `blurIn 400ms ease-out both`, animationDelay: `${idx * 60}ms` }}
                   onClick={() => toggleCard(provider.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggleCard(provider.id);
+                    }
+                  }}
                 >
                   {/* Header: initials + name */}
                   <div className="flex gap-3 mb-3">
