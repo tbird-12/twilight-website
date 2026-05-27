@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Schema from "../../components/Schema.astro";
 import { WIDGET_LINK } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
@@ -30,12 +31,44 @@ const evaluationTypes = [
     link: "/services/therapy",
   },
 ];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const evalSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Psychological Testing & Evaluations at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "psychological testing near me",
+    "psychological testing Lexington KY",
+    "psychological evaluations Lexington KY",
+    "psychological testing Kentucky",
+    "psychological evaluation near me",
+    "psych testing Lexington KY",
+    "psychological testing for ADHD near me",
+    "psychological testing for autism near me",
+  ],
+  description:
+    "Comprehensive psychological testing and evaluations in Lexington, KY at Twilight Psychology, covering ADHD, autism, personality, learning disabilities, and complex diagnostic questions.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
 ---
 
 <Layout
   title="Psychological Evaluations Lexington KY | Twilight Psychology"
   description="Psychological evaluations in Lexington, KY for ADHD, autism, personality patterns, and diagnostic complexity, with in-network options for covered referrals and self-pay when broader documentation is needed."
 >
+  <Schema slot="page-schema" schema={evalSchema} />
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
                   prose-p:text-site-text
@@ -58,7 +91,7 @@ const evaluationTypes = [
         class="bg-surface-soft backdrop-blur-md border border-border p-10 rounded-[2.5rem]"
       >
         <h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">
-          Clarity With Clinical Depth
+          Psychological Testing in Lexington, KY
         </h2>
         <p class="text-site-text leading-relaxed text-lg mb-6">
           A psychological evaluation should do more than confirm a label. It

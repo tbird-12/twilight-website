@@ -75,9 +75,9 @@ const requestAppointmentPhoneHref = `tel:${PHONE_NUMBER}`;
 export const clinicianProfiles: ClinicianProfile[] = [
   {
     slug: "heather-cornett",
-    pageTitle: "Heather Cornett, PhD | Licensed Psychologist",
+    pageTitle: "Dr. Heather Cornett, PhD | Psychologist in Lexington, KY",
     pageDescription:
-      "Heather Cornett, PhD — Founder of Twilight Psychology and licensed psychologist providing neuro-affirming psychological evaluations in Lexington, KY.",
+      "Dr. Heather Cornett, PhD is the founder and licensed psychologist at Twilight Psychology, providing neuro-affirming psychological evaluations and testing in Lexington, KY.",
     jobTitle: "Founder and Licensed Psychologist",
     badge: "Founder & Licensed Psychologist",
     headingPrimary: "Heather Cornett,",

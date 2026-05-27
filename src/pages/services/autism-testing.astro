@@ -1,8 +1,40 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Schema from '../../components/Schema.astro';
 import { WIDGET_LINK } from '../../data/resource';
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const autismSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Autism Testing at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "autism testing Lexington KY",
+    "autism evaluation Lexington KY",
+    "autism testing Kentucky",
+    "autism diagnosis Lexington",
+    "adult autism testing Lexington KY",
+    "autism evaluation for children Kentucky",
+    "autism testing near me",
+    "ASD evaluation Lexington KY",
+  ],
+  description:
+    "Neuro-affirming autism evaluations in Lexington, KY at Twilight Psychology. Comprehensive ASD testing for children, teens, and adults, including high-masking presentations.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
 
 const evaluationSteps = [
   {
@@ -25,9 +57,10 @@ const evaluationSteps = [
 ---
 
 <Layout
-  title="Autism Testing KY | Twilight Psychology"
-  description="Neuro-affirming autism evaluations in Kentucky for children, teens, and adults, with careful assessment for nuanced and high-masking presentations."
+  title="Autism Testing Lexington KY | Twilight Psychology"
+  description="Neuro-affirming autism evaluations in Lexington, KY for children, teens, and adults, with careful assessment for nuanced and high-masking presentations."
 >
+  <Schema slot="page-schema" schema={autismSchema} />
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
                   prose-p:text-site-text
@@ -40,7 +73,7 @@ const evaluationSteps = [
       title="Autism Testing"
       accentWord="Testing"
       badge="Comprehensive Evaluations"
-      subtitle="Neuro-affirming autism evaluations for children and adults across Kentucky — designed for nuanced presentations, diagnostic depth, and clear reporting."
+      subtitle="Neuro-affirming autism evaluations in Lexington, KY for children, teens, and adults — designed for nuanced presentations, diagnostic depth, and clear reporting."
       size="lg"
     />
 
@@ -50,13 +83,20 @@ const evaluationSteps = [
         
         <AnimatedSection client:visible animation="fadeInUp" delay={100}>
         <section class="bg-surface-soft backdrop-blur-md border border-border p-10 rounded-[2.5rem]">
-          <h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">Beyond the Label</h2>
+          <h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">Autism testing in Lexington, KY</h2>
           <div class="space-y-6 text-site-text leading-relaxed text-lg">
             <p>
-              Autism Spectrum Disorder (ASD) is a developmental condition where the brain processes information differently. At Twilight Psychology, we recognize that autism is not a mental illness but a vital part of a person's identity.
+              Twilight Psychology provides comprehensive autism evaluations in Lexington, KY for
+              children, teens, and adults. Our evaluators are trained to identify autism spectrum
+              disorder (ASD) across the full range of presentations — including nuanced, late-diagnosed,
+              and high-masking cases that are frequently missed by less thorough assessments.
             </p>
             <p>
-              We are especially experienced with individuals who have learned to <span class="text-cta">"mask"</span> or hide their traits, particularly women and girls, ensuring the evaluation reflects the person in front of us rather than a narrow stereotype.
+              We recognize that autism is not a mental illness but a vital part of a person's
+              identity. We are especially experienced with individuals who have learned to{" "}
+              <span class="text-cta">"mask"</span> or hide their traits, particularly women and
+              girls, ensuring the evaluation reflects the person in front of us rather than a
+              narrow stereotype.
             </p>
           </div>
         </section>

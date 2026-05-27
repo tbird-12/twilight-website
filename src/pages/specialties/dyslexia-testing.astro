@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Schema from '../../components/Schema.astro';
 import { WIDGET_LINK } from '../../data/resource';
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
@@ -47,12 +48,44 @@ const faqs = [
     a: "Learning disability evaluations are tailored to the complexity of the referral question and the assessment battery required. We review the expected scope with families up front so they understand the level of testing and documentation involved."
   }
 ];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const dyslexiaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Dyslexia & Learning Disability Testing at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "learning disability testing near me",
+    "dyslexia testing Lexington KY",
+    "learning disability testing Lexington KY",
+    "dyslexia testing near me",
+    "learning disability evaluation Kentucky",
+    "dyslexia evaluation Lexington",
+    "IEP evaluation near me",
+    "504 evaluation Lexington KY",
+  ],
+  description:
+    "Dyslexia and learning disability testing in Lexington, KY at Twilight Psychology, including dysgraphia, dyscalculia, and IEP/504 documentation for schools.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
 ---
 
 <Layout
-  title="Dyslexia Testing KY | Twilight Psychology"
-  description="Self-pay dyslexia and learning disability testing in Lexington, KY for dyslexia, dysgraphia, dyscalculia, and IEP or 504 documentation."
+  title="Dyslexia & Learning Disability Testing KY | Twilight Psychology"
+  description="Learning disability testing in Lexington, KY — dyslexia, dysgraphia, dyscalculia evaluations with IEP or 504 documentation. Schedule an evaluation today."
 >
+  <Schema slot="page-schema" schema={dyslexiaSchema} />
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
                   prose-p:text-site-text

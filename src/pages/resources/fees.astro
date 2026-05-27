@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from '../../data/resource';
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, WIDGET_LINK } from '../../data/resource';
 import { categoryColorMap } from '../../data/blogCategories';
 import PageHeroWrapper from '../../components/PageHeroWrapper.astro';
 import FeeTabsWrapper from '../../components/FeeTabsWrapper.astro';
@@ -104,7 +104,10 @@ const relatedResourceLinks = [
             only a limited number of psychological testing units, and those hours include record collection, collateral
             information, interviewing clients and parents, test administration, reviewing and integrating data,
             researching concerns, consulting with other providers, and report writing. When we bill insurance, we use
-            the most clinically relevant tests within the hours approved. Self-pay is available when a referral needs a
+            the most clinically relevant tests within the hours approved. 
+          </p>
+          <p>  
+            Self-pay is available when a referral needs a
             broader battery or more documentation than insurance allows. Kentucky Medicaid clients cannot be charged
             beyond covered amounts, so Medicaid evaluations are limited to the hours approved by the plan. Court,
             school, benefits, ESA, and many educational or accommodation-focused evaluations are usually self-pay or
@@ -118,25 +121,23 @@ const relatedResourceLinks = [
         <FeeTabsWrapper categories={feeCategories} />
       </section>
 
-      <AnimatedSection client:visible animation="fadeInUp" delay={200}>
-        <section class="mt-12 p-8 bg-surface-2 rounded-3xl border" style="border-color: var(--color-border-strong)">
-          <h3 class="font-serif text-site-text font-black text-xl mb-4">Flexible Payment Plans</h3>
-          <p class="text-site-sub mb-6">
-            We offer payment plans where testing costs can be split into 2-3 equal payments due 24 hours before your appointments. 
-            For a standard $1,300 battery, this typically looks like:
-          </p>
-          <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-            <div class="p-4 bg-site-bg rounded-xl border" style="border-color: var(--color-border)">
-              <p class="text-xs text-sand uppercase">Intake</p>
-              <p class="text-xl font-black text-cta">$450</p>
+      <AnimatedSection client:visible animation="fadeInUp" delay={175}>
+        <section class="mt-10 bg-surface-soft border border-border rounded-[2.5rem] p-10">
+          <h2 class="font-serif text-site-text font-black text-2xl mb-6">Coverage for Therapy & Medication Management</h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-serif text-site-text font-black text-lg mb-3">Kentucky Medicaid</h3>
+              <p class="text-site-sub leading-relaxed mb-4">
+                We accept <strong class="text-site-text">Kentucky Medicaid</strong> for individual therapy and medication management. Medicaid clients typically have <strong class="text-site-text">$0 copays</strong> for covered therapy sessions and psychiatric follow-ups.
+              </p>
+              <a href="/resources/insurances-accepted" class="text-cta text-sm font-black uppercase tracking-widest hover:underline">See all accepted plans →</a>
             </div>
-            <div class="p-4 bg-site-bg rounded-xl border" style="border-color: var(--color-border)">
-              <p class="text-xs text-sand uppercase">Testing</p>
-              <p class="text-xl font-black text-cta">$450</p>
-            </div>
-            <div class="p-4 bg-site-bg rounded-xl border" style="border-color: var(--color-border)">
-              <p class="text-xs text-sand uppercase">Feedback</p>
-              <p class="text-xl font-black text-cta">$400</p>
+            <div>
+              <h3 class="font-serif text-site-text font-black text-lg mb-3">ADHD Testing Cost</h3>
+              <p class="text-site-sub leading-relaxed mb-4">
+                ADHD evaluations are <strong class="text-site-text">$1,300</strong> on a self-pay basis and can be split into 2–3 payments across your appointments. Payment plans are available with no added fees.
+              </p>
+              <a href={WIDGET_LINK} class="text-cta text-sm font-black uppercase tracking-widest hover:underline">Schedule an intake →</a>
             </div>
           </div>
         </section>
@@ -200,7 +201,7 @@ const relatedResourceLinks = [
       </AnimatedSection>
 
       <PageLinksSection
-        title="Keep planning your intake"
+        title="Continue planning your intake"
         description="These pages usually answer the follow-up questions that come after pricing."
         links={relatedResourceLinks}
       />

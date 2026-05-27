@@ -1,0 +1,383 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
+import { WIDGET_LINK } from "../../../data/resource";
+import PageHeroWrapper from "../../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../../components/react/primitives/AnimatedSection";
+import SidebarCta from "../../../components/react/composites/SidebarCta";
+
+const ageGroups = [
+  {
+    title: "Young children (ages 3–6)",
+    detail:
+      "Play-based and parent-guided therapy for early behavioral concerns, anxiety, sensory differences, and developmental challenges. Parents are active partners in the process.",
+  },
+  {
+    title: "School-age children (ages 7–12)",
+    detail:
+      "Support for ADHD, autism, school-related anxiety, learning differences, social difficulties, and emotional regulation — with evidence-based techniques including CBT and ACT adapted for this age range.",
+  },
+  {
+    title: "Teens and adolescents (ages 13–18)",
+    detail:
+      "Therapy for teens navigating identity, anxiety, depression, academic pressure, neurodivergence, peer relationships, and family dynamics. In-person and virtual options available.",
+  },
+  {
+    title: "Neurodivergent children and teens",
+    detail:
+      "Neuro-affirming therapy for kids with ADHD, autism, PDA profile, or late diagnoses who have not connected with more traditional approaches. We meet children where they are — without pathologizing difference.",
+  },
+];
+
+const commonConcerns = [
+  {
+    title: "Anxiety and school refusal",
+    detail:
+      "Worry, perfectionism, test anxiety, school refusal, and social fears are among the most common reasons children and teens start therapy.",
+  },
+  {
+    title: "ADHD and attention difficulties",
+    detail:
+      "Therapy for ADHD focuses on regulation strategies, routines, emotional control, and self-understanding — often most effective alongside evaluation and medication support.",
+  },
+  {
+    title: "Autism and PDA profile",
+    detail:
+      "Support for autistic children and teens, including those with a PDA (Pathological Demand Avoidance) profile who need a demand-sensitive, autonomy-first therapeutic approach.",
+  },
+  {
+    title: "Depression and low mood",
+    detail:
+      "Adolescents dealing with persistent sadness, withdrawal, low motivation, and hopelessness benefit from structured therapy tailored to their developmental stage.",
+  },
+  {
+    title: "Trauma and difficult experiences",
+    detail:
+      "Trauma-informed care for children and teens who have experienced adverse events, family disruption, abuse, or other distressing experiences.",
+  },
+  {
+    title: "School and learning challenges",
+    detail:
+      "Therapy that connects emotional support with school-based advocacy, IEP or 504 plan navigation, and coordination with teachers and families.",
+  },
+];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const childTherapySchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Child and Teen Therapy at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "child psychologist Lexington KY",
+    "child therapist Lexington KY",
+    "teen therapist Kentucky",
+    "pediatric therapy Lexington",
+    "child therapy Lexington KY",
+    "adolescent therapy Kentucky",
+    "child ADHD therapy Kentucky",
+    "autism therapy for children Kentucky",
+  ],
+  description:
+    "Child and teen therapy in Lexington, KY at Twilight Psychology. Neuro-affirming, evidence-based care for ages 3–18 including support for ADHD, autism, anxiety, depression, trauma, and school-based challenges.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
+---
+
+<Layout
+  title="Child & Teen Therapy in Lexington, KY | Twilight Psychology"
+  description="Child and teen therapy in Lexington, KY at Twilight Psychology. Neuro-affirming, evidence-based care for ages 3–18 covering ADHD, autism, anxiety, depression, and school-based challenges."
+>
+  <Schema slot="page-schema" schema={childTherapySchema} />
+
+  <div class="max-w-4xl mx-auto px-6">
+    <div
+      class="prose prose-lg max-w-none prose-custom
+                prose-p:text-site-text
+                prose-headings:text-site-text
+                prose-strong:text-site-text
+                prose-li:text-site-text
+                mb-12"
+    >
+      <PageHeroWrapper
+        title="Child & Teen Therapy"
+        accentWord="Teen"
+        badge="Child & Adolescent Therapy"
+        subtitle="Neuro-affirming therapy in Lexington, KY for children and adolescents ages 3–18, with specialized support for ADHD, autism, anxiety, and school-based challenges."
+        size="lg"
+      />
+
+      <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-10">
+          <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+            <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+              <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+                Child and teen therapy in Lexington, KY
+              </h2>
+              <div class="space-y-5 text-site-text leading-relaxed text-lg">
+                <p>
+                  Twilight Psychology offers therapy for children and adolescents ages 3–18 in
+                  Lexington, Kentucky. Our child and teen therapists use evidence-based approaches
+                  including Cognitive Behavioral Therapy (CBT) and Acceptance and Commitment Therapy
+                  (ACT), adapted for the developmental stage of each client.
+                </p>
+                <p>
+                  Many children come to us after an ADHD or autism evaluation, while others start
+                  directly with therapy for anxiety, school difficulties, depression, trauma, or
+                  behavioral concerns. Therapy for younger children often involves parents as active
+                  participants; teen therapy shifts toward more individual-focused work while keeping
+                  families informed when appropriate.
+                </p>
+                <p>
+                  Individual child and teen therapy is often covered by major commercial insurance,
+                  Kentucky Medicaid, and Medicare for eligible mental health diagnoses. Our intake team
+                  can verify benefits before your first appointment.
+                </p>
+              </div>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+            <section>
+              <h2 class="font-serif text-2xl font-black text-site-text mb-8 tracking-tight">
+                Therapy by age group
+              </h2>
+              <div class="grid sm:grid-cols-2 gap-6">
+                {
+                  ageGroups.map((group) => (
+                    <div class="p-6 bg-surface-soft border border-border rounded-3xl">
+                      <div class="w-10 h-10 rounded-xl bg-cta sm:bg-surface-2 flex items-center justify-center mb-5 border border-border">
+                        <span class="text-cta-fg sm:text-cta text-xl">✦</span>
+                      </div>
+                      <h3 class="font-serif text-site-text font-black mb-2">{group.title}</h3>
+                      <p class="text-site-sub text-sm leading-relaxed">{group.detail}</p>
+                    </div>
+                  ))
+                }
+              </div>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+            <section>
+              <h2 class="font-serif text-2xl font-black text-site-text mb-8 tracking-tight">
+                Common reasons children and teens start therapy
+              </h2>
+              <div class="grid sm:grid-cols-2 gap-4">
+                {
+                  commonConcerns.map((concern) => (
+                    <div class="p-5 bg-surface-soft border border-border rounded-2xl">
+                      <h3 class="font-serif text-base font-black text-site-text mb-2">{concern.title}</h3>
+                      <p class="text-site-sub text-sm leading-relaxed">{concern.detail}</p>
+                    </div>
+                  ))
+                }
+              </div>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+            <section class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+              <h2 class="font-serif text-2xl font-black text-site-text mb-5 tracking-tight">
+                Child therapists at Twilight Psychology
+              </h2>
+              <div class="space-y-5 text-site-text leading-relaxed">
+                <p>
+                  <strong>Ethan Puckett, M.A., T-LPA</strong> specializes in child and adolescent
+                  therapy for ages 3–18, with strongest clinical fit for ages 7–16. He uses
+                  Behavioral, CBT, and ACT techniques and has immediate availability for both therapy
+                  and psychological testing for children. Ethan works with ADHD, autism, anxiety,
+                  depression, trauma, and school-based concerns.
+                </p>
+                <p>
+                  <strong>Tiffany Roundtree, M.A.Ed, M.A., LPCA</strong> specializes in adolescent
+                  therapy and parenting support. She helps teens and young adults deconstruct limiting
+                  beliefs and build a more compassionate understanding of themselves — especially
+                  valuable for adolescents navigating neurodivergence, identity, and social pressure.
+                </p>
+                <p>
+                  <strong>Emeli Evans, MS, LPA</strong> brings a PDA-informed, neuro-affirming
+                  approach to child assessments and therapy, with particular strength in supporting
+                  neurodivergent children who have not responded well to more traditional frameworks.
+                </p>
+                <p>
+                  <strong>Michael Burns, PhD, T-LP</strong> works with adolescents and adults facing
+                  trauma, substance use concerns, behavioral challenges, and family-system difficulties,
+                  including faith-integrated therapy for families who want that integration.
+                </p>
+              </div>
+              <div class="mt-8">
+                <a
+                  href="/services/therapy/clinicians"
+                  class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+                >
+                  Compare all therapy clinicians
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </section>
+          </AnimatedSection>
+        </div>
+
+        <aside class="space-y-8">
+          <AnimatedSection client:visible animation="slideInRight" delay={150}>
+            <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+              <h3 class="font-serif text-xl font-black text-site-text mb-6">Therapy resources</h3>
+              <nav class="space-y-4">
+                <a
+                  href="/services/therapy"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Therapy home
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/therapy/clinicians"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Therapy clinicians
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/adhd-testing"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  ADHD testing
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/autism-testing"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Autism testing
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/resources/fees"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Fees and insurance
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </nav>
+            </div>
+          </AnimatedSection>
+
+          <SidebarCta
+            client:visible
+            title="Request a Child or Teen Therapy Intake"
+            description="Our intake team can match your child or teen with the right clinician based on age, concerns, insurance, and current availability."
+            buttonLabel="Schedule Intake"
+            buttonHref={WIDGET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+
+          <div class="p-6 bg-cta/10 rounded-3xl border border-cta/20">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-cta mb-2">
+              Insurance
+            </p>
+            <p class="text-sm text-site-text leading-relaxed mb-3">
+              Child and teen therapy is often covered by commercial insurance, Kentucky Medicaid, and
+              Medicare for eligible mental health diagnoses. Our clinicians accept most major plans.
+            </p>
+            <a
+              href="/resources/insurances-accepted"
+              class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-site-text transition-colors"
+            >
+              Review accepted plans
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 mt-24">
+        <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+          <div class="rounded-[2.5rem] border border-border bg-surface-soft p-8 md:p-10">
+            <h2 class="font-serif text-3xl font-black text-site-text mb-4 tracking-tight">
+              Starting child or teen therapy at Twilight
+            </h2>
+            <div class="space-y-5 text-site-sub leading-relaxed">
+              <p>
+                Families typically begin with a brief intake call or form through our scheduling
+                system. The intake team will ask about the child's age, presenting concerns, insurance
+                coverage, and scheduling preferences before confirming a clinician match.
+              </p>
+              <p>
+                If you are unsure whether to start with therapy or an evaluation, the new client guide
+                explains the difference and helps you decide. Many children benefit from both, but
+                therapy can begin independently if evaluation is not currently available or not yet
+                needed.
+              </p>
+              <p>
+                Ethan Puckett currently has immediate availability for child and teen therapy in
+                Lexington, KY — making him the fastest path to care for most families right now.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-4 mt-8">
+              <a
+                href={WIDGET_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-all"
+              >
+                Request an intake
+              </a>
+              <a
+                href="/resources/new-client"
+                class="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-bold text-site-text hover:bg-surface transition-colors"
+              >
+                New client guide
+              </a>
+              <a
+                href="/services/therapy/clinicians"
+                class="inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm font-bold text-site-text hover:bg-surface transition-colors"
+              >
+                Meet clinicians
+              </a>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 mt-24 mb-12">
+        <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+          <div class="p-10 bg-linear-to-r from-cta/10 to-cta/10 border border-cta/20 rounded-[3rem] text-center">
+            <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+              Ready to get started?
+            </h2>
+            <p class="text-site-sub mb-8 max-w-2xl mx-auto">
+              Child and teen therapy slots in Lexington, KY are available now. Use the new client
+              guide or request an intake directly to find the right clinician fit.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="/resources/new-client"
+                class="inline-flex items-center justify-center px-8 py-3 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all"
+              >
+                New Client Guide
+              </a>
+              <a
+                href="/services/therapy/clinicians"
+                class="inline-flex items-center justify-center px-8 py-3 border border-border-strong text-site-text font-bold rounded-full hover:bg-surface transition-colors"
+              >
+                Meet Therapy Clinicians
+              </a>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+    </div>
+  </div>
+</Layout>

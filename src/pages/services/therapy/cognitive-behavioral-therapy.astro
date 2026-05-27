@@ -1,0 +1,352 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
+import { WIDGET_LINK } from "../../../data/resource";
+import PageHeroWrapper from "../../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../../components/react/primitives/AnimatedSection";
+import SidebarCta from "../../../components/react/composites/SidebarCta";
+
+const cbtApplications = [
+  {
+    title: "Anxiety and worry",
+    detail:
+      "CBT is the most evidence-supported treatment for anxiety disorders, helping clients identify and restructure the thought patterns that sustain excessive worry, fear, and avoidance.",
+  },
+  {
+    title: "ADHD and executive functioning",
+    detail:
+      "CBT adapted for ADHD targets procrastination, emotional dysregulation, planning difficulties, and the self-critical narratives that often accompany a late or missed diagnosis.",
+  },
+  {
+    title: "Depression",
+    detail:
+      "Behavioral activation and cognitive restructuring interrupt the withdrawal and negative thinking cycles that maintain depressive episodes in adolescents and adults.",
+  },
+  {
+    title: "Autism and neurodivergence",
+    detail:
+      "Neuro-affirming CBT adapted for autistic clients focuses on distress tolerance and self-advocacy rather than masking — a meaningful distinction from traditional CBT protocols.",
+  },
+  {
+    title: "Trauma and PTSD",
+    detail:
+      "Trauma-focused CBT (TF-CBT) and related approaches address intrusive thoughts, avoidance behaviors, and the cognitive distortions that follow adverse experiences.",
+  },
+  {
+    title: "OCD and repetitive behaviors",
+    detail:
+      "Exposure and response prevention (ERP), a CBT-based protocol, is the gold-standard treatment for OCD and related conditions involving compulsive patterns.",
+  },
+];
+
+const cbtProcess = [
+  {
+    title: "Assessment and goal-setting",
+    detail:
+      "The first sessions establish the presenting concerns, identify specific goals, and build an understanding of the thought and behavior patterns most relevant to treatment.",
+  },
+  {
+    title: "Learning the CBT framework",
+    detail:
+      "Clients learn to recognize the connection between thoughts, feelings, and behaviors — the foundation that makes the rest of CBT work. Psychoeducation is woven throughout.",
+  },
+  {
+    title: "Skill-building and practice",
+    detail:
+      "Cognitive restructuring, behavioral experiments, and targeted skill work are applied session by session, with between-session practice accelerating progress.",
+  },
+  {
+    title: "Consolidation and relapse prevention",
+    detail:
+      "Later sessions focus on applying gains to real-life situations, anticipating future triggers, and building confidence in independent use of learned skills.",
+  },
+];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const cbtSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Cognitive Behavioral Therapy (CBT) at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "cognitive behavioral therapy Lexington KY",
+    "CBT Lexington Kentucky",
+    "CBT therapist Kentucky",
+    "cognitive behavioral therapy near me",
+    "CBT for ADHD Kentucky",
+    "CBT for anxiety Kentucky",
+    "evidence-based therapy Lexington KY",
+  ],
+  description:
+    "Cognitive Behavioral Therapy (CBT) in Lexington, KY at Twilight Psychology. Evidence-based CBT for anxiety, ADHD, depression, autism, and trauma in children, teens, and adults.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
+---
+
+<Layout
+  title="Cognitive Behavioral Therapy (CBT) in Kentucky | Twilight Psychology"
+  description="CBT therapy in Lexington, KY at Twilight Psychology. Evidence-based cognitive behavioral therapy for anxiety, ADHD, depression, and trauma in children, teens, and adults."
+>
+  <Schema slot="page-schema" schema={cbtSchema} />
+
+  <div class="max-w-4xl mx-auto px-6">
+    <div
+      class="prose prose-lg max-w-none prose-custom
+                prose-p:text-site-text
+                prose-headings:text-site-text
+                prose-strong:text-site-text
+                prose-li:text-site-text
+                mb-12"
+    >
+      <PageHeroWrapper
+        title="Cognitive Behavioral Therapy"
+        accentWord="Behavioral"
+        badge="Evidence-Based Therapy"
+        subtitle="CBT in Lexington, KY — structured, evidence-based therapy for anxiety, ADHD, depression, and trauma in children, adolescents, and adults."
+        size="lg"
+      />
+
+      <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-10">
+          <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+            <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+              <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+                CBT in Lexington, KY
+              </h2>
+              <div class="space-y-5 text-site-text leading-relaxed text-lg">
+                <p>
+                  Cognitive Behavioral Therapy (CBT) is one of the most researched and
+                  widely-supported forms of psychotherapy available. It works by helping clients
+                  understand the connections between their thoughts, feelings, and behaviors — and
+                  then systematically changing patterns that are causing distress or getting in the
+                  way of functioning.
+                </p>
+                <p>
+                  At Twilight Psychology in Lexington, CBT is offered across the lifespan, from
+                  school-age children through adults. Clinicians adapt CBT techniques to the
+                  individual — using a neuro-affirming lens for neurodivergent clients, a
+                  developmental lens for children and teens, and a skills-focused approach for adults
+                  who want practical tools alongside insight.
+                </p>
+                <p>
+                  CBT therapy sessions are often covered by major commercial insurance plans,
+                  Kentucky Medicaid, and Medicare for eligible mental health diagnoses. Many clients
+                  use the same plan they carry for medical care.
+                </p>
+              </div>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+            <section>
+              <h2 class="font-serif text-2xl font-black text-site-text mb-8 tracking-tight">
+                What CBT can help with
+              </h2>
+              <div class="grid sm:grid-cols-2 gap-6">
+                {
+                  cbtApplications.map((item) => (
+                    <div class="p-6 bg-surface-soft border border-border rounded-3xl">
+                      <div class="w-10 h-10 rounded-xl bg-cta sm:bg-surface-2 flex items-center justify-center mb-5 border border-border">
+                        <span class="text-cta-fg sm:text-cta text-xl">✦</span>
+                      </div>
+                      <h3 class="font-serif text-site-text font-black mb-2">{item.title}</h3>
+                      <p class="text-site-sub text-sm leading-relaxed">{item.detail}</p>
+                    </div>
+                  ))
+                }
+              </div>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+            <section>
+              <h2 class="font-serif text-2xl font-black text-site-text mb-8 tracking-tight">
+                How CBT therapy is structured
+              </h2>
+              <ol class="space-y-4">
+                {
+                  cbtProcess.map((step, i) => (
+                    <li class="flex gap-5 p-5 bg-surface-soft border border-border rounded-2xl">
+                      <span class="flex-shrink-0 w-8 h-8 rounded-full bg-cta text-cta-fg text-sm font-black flex items-center justify-center">
+                        {i + 1}
+                      </span>
+                      <div>
+                        <h3 class="font-serif font-black text-site-text mb-1">{step.title}</h3>
+                        <p class="text-site-sub text-sm leading-relaxed">{step.detail}</p>
+                      </div>
+                    </li>
+                  ))
+                }
+              </ol>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+            <section class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+              <h2 class="font-serif text-2xl font-black text-site-text mb-5 tracking-tight">
+                CBT clinicians at Twilight Psychology
+              </h2>
+              <div class="space-y-5 text-site-text leading-relaxed">
+                <p>
+                  <strong>Ethan Puckett, M.A., T-LPA</strong> uses Behavioral, Cognitive Behavioral
+                  Therapy (CBT), and Acceptance and Commitment Therapy (ACT) techniques with children
+                  and adolescents ages 3–18 (ideal fit ages 7–16). He specializes in ADHD, autism,
+                  anxiety, depression, and school-based concerns, and has immediate availability for
+                  therapy in Lexington, KY.
+                </p>
+                <p>
+                  <strong>Michael Burns, PhD, T-LP, LPCC</strong> uses CBT alongside Rational
+                  Emotive Behavior Therapy (REBT) and motivational interviewing across a broad range
+                  of presentations — including substance use disorders, domestic violence recovery,
+                  trauma, PTSD, and faith-integrated counseling. He works with adolescents and adults.
+                </p>
+              </div>
+              <div class="mt-8">
+                <a
+                  href="/services/therapy/clinicians"
+                  class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-cta/80 transition-colors"
+                >
+                  Compare all therapy clinicians
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </section>
+          </AnimatedSection>
+
+          <AnimatedSection client:visible animation="fadeInUp" delay={325}>
+            <section class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+              <h2 class="font-serif text-2xl font-black text-site-text mb-5 tracking-tight">
+                CBT for neurodivergent clients
+              </h2>
+              <div class="space-y-4 text-site-text leading-relaxed">
+                <p>
+                  Standard CBT protocols were developed primarily for neurotypical presentations and
+                  can feel rigid, prescriptive, or poorly matched to the sensory, executive, and
+                  social profiles of autistic or ADHD clients. At Twilight Psychology, CBT is
+                  delivered through a neuro-affirming lens — meaning the goal is never to eliminate
+                  difference, but to reduce genuine distress and build genuine capacity.
+                </p>
+                <p>
+                  For ADHD, this often means adapting session structure, pacing, and homework formats
+                  to fit attention and working memory profiles. For autism, it means working with the
+                  client's natural communication style and ensuring that cognitive reframes don't
+                  inadvertently pressure masking or conformity.
+                </p>
+              </div>
+            </section>
+          </AnimatedSection>
+        </div>
+
+        <aside class="space-y-8">
+          <AnimatedSection client:visible animation="slideInRight" delay={150}>
+            <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+              <h3 class="font-serif text-xl font-black text-site-text mb-6">Related therapy pages</h3>
+              <nav class="space-y-4">
+                <a
+                  href="/services/therapy"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Therapy home
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/therapy/child-and-teen-therapy"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Child & teen therapy
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/therapy/clinicians"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Therapy clinicians
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/therapy/after-evaluation"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Therapy after evaluation
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/resources/fees"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Fees and insurance
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </nav>
+            </div>
+          </AnimatedSection>
+
+          <SidebarCta
+            client:visible
+            title="Request a CBT Therapy Intake"
+            description="Our intake team can match you with a CBT clinician based on age, presenting concerns, insurance, and current availability."
+            buttonLabel="Schedule Intake"
+            buttonHref={WIDGET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+
+          <div class="p-6 bg-cta/10 rounded-3xl border border-cta/20">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-cta mb-2">
+              Insurance
+            </p>
+            <p class="text-sm text-site-text leading-relaxed mb-3">
+              CBT therapy sessions are often covered by commercial insurance, Kentucky Medicaid,
+              and Medicare for covered mental health diagnoses.
+            </p>
+            <a
+              href="/resources/insurances-accepted"
+              class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-site-text transition-colors"
+            >
+              Review accepted plans
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 mt-24 mb-12">
+        <AnimatedSection client:visible animation="fadeInUp" delay={350}>
+          <div class="p-10 bg-linear-to-r from-cta/10 to-cta/10 border border-cta/20 rounded-[3rem] text-center">
+            <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+              Start CBT therapy in Lexington, KY
+            </h2>
+            <p class="text-site-sub mb-8 max-w-2xl mx-auto">
+              CBT therapy is available now for children, teens, and adults at Twilight Psychology
+              in Lexington. Use the new client guide or request an intake to get started.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="/resources/new-client"
+                class="inline-flex items-center justify-center px-8 py-3 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all"
+              >
+                New Client Guide
+              </a>
+              <a
+                href="/services/therapy/clinicians"
+                class="inline-flex items-center justify-center px-8 py-3 border border-border-strong text-site-text font-bold rounded-full hover:bg-surface transition-colors"
+              >
+                Meet Therapy Clinicians
+              </a>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+    </div>
+  </div>
+</Layout>
