@@ -27,6 +27,13 @@ const locations = [
   },
 ];
 
+const telehealthProviders = [
+  { name: "Heather Cornett, PhD", coverage: "40+ states nationwide via PsyPact" },
+  { name: "Michael Burns, PhD", coverage: "Kentucky & Tennessee" },
+  { name: "Jatana Boggs, MS", coverage: "Kentucky & Ohio" },
+  { name: "All other clinicians", coverage: "Kentucky statewide" },
+];
+
 const locationLinks = [
   {
     href: "/about/twilight-psychology",
@@ -50,8 +57,8 @@ const locationLinks = [
 ---
 
 <Layout
-  title="Office Locations | Twilight Psychology Lexington KY"
-  description="Twilight Psychology office locations in Lexington, KY. Specialized facilities for psychological evaluations, therapy, and medication management."
+  title="Office Locations & Service Area | Twilight Psychology"
+  description="Twilight Psychology has offices in Lexington, KY and offers telehealth services statewide across Kentucky. Select providers are also licensed in Tennessee and Ohio, and Dr. Cornett is available nationwide via PsyPact."
 >
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
@@ -64,8 +71,8 @@ const locationLinks = [
   <PageHeroWrapper
     title="Our Locations"
     accentWord="Locations"
-    badge="Lexington, Kentucky"
-    subtitle="Twilight Psychology is located in Lexington, KY, with dedicated spaces for psychological evaluations, therapy, and medication management."
+    badge="Lexington, KY · Telehealth Statewide"
+    subtitle="Twilight Psychology is located in Lexington, KY, with dedicated spaces for psychological evaluations, therapy, and medication management — and telehealth services available statewide across Kentucky and beyond."
     size="lg"
   />
 
@@ -125,6 +132,40 @@ const locationLinks = [
           </div>
         ))
       }
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <div class="rounded-[2.5rem] border border-border bg-surface p-8 md:p-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl" aria-hidden="true">💻</span>
+        <div>
+          <p class="text-xs font-black uppercase tracking-widest text-site-sub">Virtual Care</p>
+          <h2 class="font-serif text-2xl font-black text-site-text">Telehealth — Statewide & Beyond</h2>
+        </div>
+      </div>
+      <p class="text-site-text leading-relaxed font-medium mb-6">
+        All of our clinical services are also available via secure telehealth for clients who prefer remote appointments or live outside the Lexington area. Several of our providers hold licensure in multiple states, extending telehealth availability well beyond Kentucky.
+      </p>
+      <ul class="space-y-3 mb-8">
+        {telehealthProviders.map((p) => (
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-cta font-black text-sm">✓</span>
+            <div>
+              <span class="font-bold text-site-text text-sm">{p.name}</span>
+              <span class="text-site-sub text-sm"> — {p.coverage}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <a
+        href="/about/service-area"
+        class="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-cta hover:underline"
+      >
+        View full service area & telehealth details →
+      </a>
     </div>
   </section>
   </AnimatedSection>

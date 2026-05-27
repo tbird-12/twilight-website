@@ -43,7 +43,7 @@ const defaultSchema: JsonLd = {
   "@type": type,
   name: name || siteConfig.siteName,
   description:
-    "Twilight Psychology provides ADHD, autism, psychoeducational, and other psychological evaluations in Lexington, Kentucky, with neuro-affirming therapy for ages 3-99 and medication management when ongoing care is needed. For insurance-based testing, batteries are tailored to the units a plan approves, and self-pay is available when broader documentation is needed.",
+    "Twilight Psychology provides ADHD, autism, psychoeducational, and other psychological evaluations in Lexington, Kentucky, with telehealth services available statewide across Kentucky and in select additional states. Neuro-affirming therapy for ages 3-99 and medication management are also offered, with broad insurance participation including Medicaid and Medicare.",
   url: siteConfig.siteUrl,
   address: {
     "@type": "PostalAddress",
@@ -72,7 +72,24 @@ const defaultSchema: JsonLd = {
         name: "Kentucky",
       },
     },
+    {
+      "@type": "State",
+      name: "Tennessee",
+      sameAs: "https://en.wikipedia.org/wiki/Tennessee",
+    },
+    {
+      "@type": "State",
+      name: "Ohio",
+      sameAs: "https://en.wikipedia.org/wiki/Ohio",
+    },
   ],
+  availableChannel: {
+    "@type": "ServiceChannel",
+    name: "Telehealth",
+    serviceType: "Telehealth",
+    availableLanguage: ["en"],
+    serviceUrl: siteConfig.siteUrl,
+  },
   priceRange: "$$",
   telephone: PHONE_NUMBER,
   email: EMAIL_ADDRESS,

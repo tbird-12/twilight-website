@@ -72,12 +72,12 @@ Several Twilight therapists work primarily or exclusively with adults:
 - **[Stephen Shu, MS](/about/clinicians/stephen-shu)** — neuro-affirming therapy and ADHD and autism support for adults
 - **[Jonica Davis, MS](/about/clinicians/jonica-davis)** — psychodynamic and neurodiverse-affirming therapy for individuals and couples
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — therapy for autistic, ADHD, and AuDHD adults, with particular expertise in high-masking presentations, PDA, and identity work; also offers **intimacy therapy**
-- **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism support for adults alongside assessment services
+- **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism support for adults alongside assessment services; **dual-licensed in Kentucky and Tennessee**
 - **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)** — adolescent and adult therapy focused on anxiety disorders and parenting support
 
 ### Couples
 
-Couples counseling is offered by **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** as a self-pay service. Sessions are 75 minutes, priced at $200 per session, with options for weekly work, focused problem-solving, or longer intensives. Our [couples counseling page](/services/therapy/couples-counseling) has the full overview.
+Couples counseling is offered by **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** as a self-pay service. Jatana is **dual-licensed in Kentucky and Ohio** and is available to see clients in both states via telehealth. Sessions are 75 minutes, priced at $200 per session, with options for weekly work, focused problem-solving, or longer intensives. Our [couples counseling page](/services/therapy/couples-counseling) has the full overview.
 
 ## Insurance and scheduling
 
@@ -88,6 +88,8 @@ Couples counseling is **self-pay only** — insurance does not cover relationshi
 Current availability varies meaningfully by clinician. Some therapists have immediate openings; others have 1-month waits. The [waitlist times page](/resources/waitlist-times) has current information, and our intake team can tell you specifically which clinicians have openings for your needs.
 
 Twilight Psychology offers **weekday appointments** in Lexington plus **weekend appointments by request** — contact our intake team to ask about specific availability.
+
+All therapy services are also available via **telehealth across Kentucky**. Dr. Burns accepts telehealth therapy clients in **Tennessee** in addition to Kentucky. Jatana Boggs accepts telehealth clients in **Ohio** in addition to Kentucky. See our [telehealth services page](/services/telehealth) and [service area page](/about/service-area) for details.
 
 ## When therapy follows an evaluation
 

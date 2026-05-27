@@ -1,0 +1,228 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+import PageLinksSection from "../../components/PageLinksSection.astro";
+import { WIDGET_LINK, PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
+
+const kyRegions = [
+  {
+    region: "Central Kentucky",
+    cities: ["Lexington", "Frankfort", "Richmond", "Danville", "Winchester", "Georgetown", "Versailles", "Berea"],
+  },
+  {
+    region: "Louisville Metro & Bluegrass",
+    cities: ["Louisville", "Elizabethtown", "Shepherdsville", "Bardstown", "Radcliff", "La Grange"],
+  },
+  {
+    region: "Northern Kentucky / Greater Cincinnati",
+    cities: ["Covington", "Florence", "Erlanger", "Newport", "Ft. Mitchell", "Ft. Thomas", "Burlington"],
+  },
+  {
+    region: "Western Kentucky",
+    cities: ["Paducah", "Owensboro", "Hopkinsville", "Madisonville", "Murray", "Henderson", "Russellville"],
+  },
+  {
+    region: "Southern Kentucky",
+    cities: ["Bowling Green", "Somerset", "Corbin", "London", "Glasgow", "Campbellsville"],
+  },
+  {
+    region: "Eastern Kentucky",
+    cities: ["Pikeville", "Ashland", "Morehead", "Hazard", "Prestonsburg", "Paintsville", "Jackson"],
+  },
+];
+
+const extendedStates = [
+  {
+    state: "Nationwide (40+ States)",
+    flag: "🇺🇸",
+    provider: "Dr. Heather Cornett, PhD",
+    credential: "LP · PsyPact Certificate",
+    detail: "Dr. Cornett holds a PsyPact certificate, which authorizes her to provide psychological evaluations and services via telehealth to clients in over 40 participating states. This includes all states bordering Kentucky and most of the contiguous United States. PsyPact is specifically designed to expand access to licensed psychologists across state lines without requiring separate licensure in each state.",
+    href: "/about/clinicians/heather-cornett",
+    services: ["Psychological Evaluations", "ADHD Testing", "Autism Evaluations"],
+  },
+  {
+    state: "Tennessee",
+    flag: "🏔️",
+    provider: "Dr. Michael Burns, PhD",
+    credential: "T-LP (KY) · LPCC (TN) · LCADC · BIP",
+    detail: "Dr. Burns is dual-licensed as a Licensed Professional Clinical Counselor in Tennessee in addition to his Kentucky credentials. Tennessee residents can see Dr. Burns for therapy and counseling services via telehealth without needing to travel.",
+    href: "/about/clinicians/michael-burns",
+    services: ["Individual Therapy", "Substance Use Counseling", "Domestic Violence Recovery", "Faith-Integrated Counseling", "PTSD Therapy"],
+  },
+  {
+    state: "Ohio",
+    flag: "🌾",
+    provider: "Jatana Boggs, MS",
+    credential: "LPCA (KY) · LPC (OH) · NCC",
+    detail: "Jatana Boggs holds an active LPC license in Ohio in addition to her Kentucky LPCA license. Ohio residents — including those in the Cincinnati metro area — can access her neurodiverse-affirming therapy and assessment services via telehealth.",
+    href: "/about/clinicians/jatana-boggs",
+    services: ["Neurodiverse-Affirming Therapy", "Couples Counseling", "ADHD & Autism Assessments", "Life Transitions"],
+  },
+];
+
+const serviceAreaLinks = [
+  {
+    href: "/services/telehealth",
+    label: "Telehealth services",
+    description: "How telehealth appointments work, what services are available, and FAQs for remote clients.",
+  },
+  {
+    href: "/about/locations",
+    label: "Office locations",
+    description: "In-person locations in Lexington, KY for evaluations, therapy, and medication management.",
+  },
+  {
+    href: "/about/clinicians/clinicians-lex-ky",
+    label: "Meet the team",
+    description: "View all clinicians, their specialties, and current availability.",
+  },
+];
+---
+
+<Layout
+  title="Service Area — Kentucky Statewide & Beyond | Twilight Psychology"
+  description="Twilight Psychology serves clients in-person in Lexington, KY and via telehealth statewide across Kentucky. Dr. Cornett sees clients in 40+ states via PsyPact. Dr. Burns serves Kentucky and Tennessee. Jatana Boggs serves Kentucky and Ohio."
+>
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="prose prose-lg max-w-none prose-custom
+                prose-p:text-site-text
+                prose-headings:text-site-text
+                prose-strong:text-site-text
+                prose-li:text-site-text
+                mb-12">
+
+  <PageHeroWrapper
+    title="Our Service Area"
+    accentWord="Service Area"
+    badge="Kentucky Statewide · TN · OH · 40+ States"
+    subtitle="Twilight Psychology's office is in Lexington, KY. Through telehealth and multi-state licensure, our team reaches clients across Kentucky and in Tennessee, Ohio, and beyond."
+    size="lg"
+  />
+
+  <!-- Kentucky statewide -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+  <section class="max-w-4xl mx-auto px-4 mt-16 mb-12">
+    <div class="mb-8">
+      <p class="text-xs font-black uppercase tracking-widest text-site-sub mb-2">In-Person & Telehealth</p>
+      <h2 class="font-serif text-3xl font-black text-site-text mb-3">Statewide Across Kentucky</h2>
+      <p class="text-site-sub leading-relaxed font-medium max-w-2xl">
+        Every clinician at Twilight Psychology is licensed in Kentucky and available to see clients statewide via telehealth. Our in-person office is located in Lexington — Kentucky clients anywhere in the state can choose to be seen remotely.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {kyRegions.map((reg) => (
+        <div class="bg-surface border border-border rounded-4xl p-6">
+          <h3 class="font-sans text-sm font-black text-site-text uppercase tracking-wider mb-3">{reg.region}</h3>
+          <ul class="space-y-1">
+            {reg.cities.map((city) => (
+              <li class="text-sm text-site-sub">{city}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-xs text-site-sub mt-4 text-center">
+      All Kentucky residents are eligible for telehealth services regardless of city or county.
+    </p>
+  </section>
+  </AnimatedSection>
+
+  <!-- Extended states -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={150}>
+  <section class="max-w-4xl mx-auto px-4 mb-12">
+    <div class="mb-8">
+      <p class="text-xs font-black uppercase tracking-widest text-site-sub mb-2">Extended Coverage</p>
+      <h2 class="font-serif text-3xl font-black text-site-text mb-3">Beyond Kentucky</h2>
+      <p class="text-site-sub leading-relaxed font-medium max-w-2xl">
+        Several of our providers hold dual licensure or specialized interstate authority. If you live outside Kentucky, you may still be eligible to be seen by one of the following clinicians.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {extendedStates.map((entry) => (
+        <div class="bg-surface-soft border border-border rounded-[2.5rem] p-8 md:p-10">
+          <div class="flex flex-wrap items-start gap-4 mb-4">
+            <span class="text-3xl" aria-hidden="true">{entry.flag}</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-serif text-2xl font-black text-site-text">{entry.state}</h3>
+              <p class="text-sm font-bold text-cta mt-0.5">{entry.provider}</p>
+              <p class="text-xs font-black uppercase tracking-widest text-site-sub mt-0.5">{entry.credential}</p>
+            </div>
+          </div>
+          <p class="text-site-text leading-relaxed font-medium mb-5">{entry.detail}</p>
+          <div class="mb-5">
+            <p class="text-xs font-black uppercase tracking-widest text-site-sub mb-2">Services Available</p>
+            <div class="flex flex-wrap gap-2">
+              {entry.services.map((svc) => (
+                <span class="text-xs font-bold px-3 py-1 bg-surface-2 border border-border rounded-full text-site-text">
+                  {svc}
+                </span>
+              ))}
+            </div>
+          </div>
+          <a href={entry.href} class="text-xs font-black uppercase tracking-widest text-cta hover:underline">
+            View provider profile →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <!-- In-person note -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+  <section class="max-w-4xl mx-auto px-4 mb-12">
+    <div class="bg-surface border border-cta/20 rounded-4xl p-8">
+      <h2 class="font-serif text-2xl font-black text-site-text mb-3">In-Person Office — Lexington, KY</h2>
+      <p class="text-site-sub leading-relaxed font-medium mb-4">
+        Clients who prefer in-person appointments are welcome to visit our Lexington office. Some evaluation types are also best conducted in person — our intake team can advise on whether in-person or telehealth is the better fit for your specific referral question.
+      </p>
+      <a
+        href="/about/locations"
+        class="text-xs font-black uppercase tracking-widest text-cta hover:underline"
+      >
+        View office addresses & directions →
+      </a>
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <!-- CTA -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+  <section class="max-w-4xl mx-auto px-4 mb-16">
+    <div class="rounded-[2.5rem] border border-cta/30 bg-surface p-8 md:p-12 text-center">
+      <h2 class="font-serif text-3xl font-black text-site-text mb-4">Not Sure If We Can See You?</h2>
+      <p class="text-site-sub leading-relaxed font-medium mb-8 max-w-lg mx-auto">
+        Call our intake team or schedule online to confirm telehealth availability for your state and find the right clinician for your needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <a
+          href={WIDGET_LINK}
+          class="inline-block text-center bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 px-10 py-4 text-base transition-all"
+        >
+          Schedule Online
+        </a>
+        <a
+          href={`tel:${PHONE_NUMBER}`}
+          class="text-sm font-bold text-site-sub hover:text-cta transition-colors underline underline-offset-4"
+        >
+          Call {PHONE_NUMBER_FORMATTED}
+        </a>
+      </div>
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <PageLinksSection
+    title="Learn more about how we work"
+    description="Understand our telehealth setup, meet the team, and find our in-person locations."
+    links={serviceAreaLinks}
+  />
+
+    </div>
+  </div>
+</Layout>

@@ -24,6 +24,22 @@ describe("services data", () => {
       expect(s.slug).toMatch(/^[a-z0-9-]+$/);
     }
   });
+
+  it("includes a telehealth service entry", () => {
+    const telehealth = services.find((s) => s.slug === "telehealth");
+    expect(telehealth).toBeDefined();
+    expect(telehealth?.name).toBeTruthy();
+    expect(telehealth?.desc).toBeTruthy();
+  });
+
+  it("includes core clinical service slugs", () => {
+    const slugs = new Set(services.map((s) => s.slug));
+    expect(slugs.has("therapy")).toBe(true);
+    expect(slugs.has("adhd-testing")).toBe(true);
+    expect(slugs.has("autism-testing")).toBe(true);
+    expect(slugs.has("medication-management")).toBe(true);
+    expect(slugs.has("psychological-evaluations")).toBe(true);
+  });
 });
 
 describe("specialties data", () => {

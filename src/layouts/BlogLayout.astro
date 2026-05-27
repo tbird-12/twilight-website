@@ -43,6 +43,9 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).href;
 const isArticle = !!pubDate;
 const showModifiedMeta = pubDate ? hasDistinctUpdatedDate(pubDate, updatedDate) : false;
 const metaTitle = seoTitle || title;
+const pageTitle = metaTitle.includes(siteConfig.siteName)
+  ? metaTitle
+  : `${metaTitle} | ${siteConfig.siteName}`;
 const ogImage = image || new URL("/og-image.png", siteUrl).href;
 const ogImageAlt = imageAlt || `${metaTitle} preview image`;
 const { src: faviconHref } = await getImage({
@@ -61,7 +64,7 @@ const websiteSchema = {
 const webpageSchema = {
   "@context": "https://schema.org",
   "@type": isArticle ? "WebPage" : "CollectionPage",
-  name: metaTitle,
+  name: pageTitle,
   description,
   url: canonicalURL,
   inLanguage: "en-US",
@@ -92,7 +95,7 @@ const webpageSchema = {
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" /></noscript>
-    <title>{metaTitle}</title>
+    <title>{pageTitle}</title>
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
@@ -114,9 +117,11 @@ const webpageSchema = {
     <!-- Open Graph -->
     <meta property="og:type" content={isArticle ? "article" : "website"} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={metaTitle} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ogImageAlt} />
     <meta property="og:site_name" content={siteConfig.siteName} />
     <meta property="og:locale" content="en_US" />
@@ -134,7 +139,7 @@ const webpageSchema = {
     )}
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />

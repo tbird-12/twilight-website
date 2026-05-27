@@ -39,9 +39,9 @@ That matters because many families begin noticing concerns well before elementar
 
 Child evaluation referrals at Twilight Psychology may be matched with:
 
-- **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** for comprehensive psychological evaluations, including complex diagnostic clarification and evaluations beginning at age 2
+- **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** for comprehensive psychological evaluations, including complex diagnostic clarification and evaluations beginning at age 2; holds a **PsyPact certificate** for telehealth evaluations in 40+ states nationwide
 - **[Emeli Evans, M.S., LPA](/about/clinicians/emeli-evans)** for neuro-affirming assessment work with children and adolescents, especially when autism, PDA-related questions, masking, or broader neurodivergent presentation may be part of the picture
-- **[Jatana Boggs, M.S., LPCA, LPC, NCC](/about/clinicians/jatana-boggs)** for ADHD and autism assessments for children, adolescents, and adults within a neurodiverse-affirming framework
+- **[Jatana Boggs, M.S., LPCA, LPC, NCC](/about/clinicians/jatana-boggs)** for ADHD and autism assessments for children, adolescents, and adults within a neurodiverse-affirming framework; **dual-licensed in Kentucky and Ohio**, available to clients in both states via telehealth
 - **[Ethan Puckett, M.A., T-LPA](/about/clinicians/ethan-puckett)** for psychological and psychoeducational testing, especially for school-based questions involving learning, attention, autism, and broader emotional-behavioral concerns, with strongest fit typically in the 7 to 16 age range
 
 The right fit depends on the referral concern, the child's age, and the kind of recommendations a family needs at the end of the process. Starting **July 6, 2026**, Ethan also expands Twilight's testing options for children and adolescents who may need a stronger school-based or psychoeducational lens.
@@ -102,15 +102,18 @@ That is why a strong evaluation should end with recommendations, not just conclu
 
 If you are looking for a **child psychological evaluation in Lexington, KY**, a good next step is to review our [psychological evaluations](/services/psychological-evaluations), [autism testing](/services/autism-testing), and [ADHD testing](/services/adhd-testing) pages, then follow our [new client process](/resources/new-client).
 
+If you live outside Lexington, these services are also available via **telehealth across Kentucky**. Heather Cornett's PsyPact certificate extends her availability to clients in 40+ states, and Jatana Boggs serves clients in Ohio as well as Kentucky. See our [service area page](/about/service-area) for a full breakdown of which providers can serve which states.
+
 If your main question is whether your child is old enough, whether insurance may apply, or which clinician is the best fit, our intake team can help you sort out those details before the process begins.
 
 ## Related resources
 
 - [Heather Cornett's clinician profile](/about/clinicians/heather-cornett) — Learn more about evaluations beginning at age 2
 - [Emeli Evans's clinician profile](/about/clinicians/emeli-evans) — Neuro-affirming assessment and therapy for kids, adolescents, and adults
-- [Jatana Boggs's clinician profile](/about/clinicians/jatana-boggs) — ADHD and autism assessment services for children and adolescents
+- [Jatana Boggs's clinician profile](/about/clinicians/jatana-boggs) — ADHD and autism assessment services for children and adolescents; available in Kentucky and Ohio
 - [Ethan Puckett's clinician profile](/about/clinicians/ethan-puckett) — Child and adolescent therapy plus psychological and psychoeducational testing
 - [Psychological Evaluations](/services/psychological-evaluations) — Overview of broader diagnostic evaluation services
+- [Telehealth Services](/services/telehealth) — How telehealth works at Twilight Psychology and which states are served
 - [ADHD Testing in Lexington, KY — Children and Adults](/blog/clinical/adhd-testing-lexington-ky) — What a comprehensive ADHD evaluation covers at Twilight Psychology, from intake through the feedback session.
 - [Autism Evaluation in Lexington, KY — Children and Adults](/blog/clinical/autism-evaluation-lexington-ky) — What autism evaluation involves at Twilight, including high-masking adults and AuDHD presentations.
 - [Dyslexia and Learning Disability Testing in Lexington, KY](/blog/clinical/dyslexia-learning-disability-testing-lexington-ky) — What evaluation for dyslexia and related learning differences covers when learning concerns overlap with ADHD or autism.

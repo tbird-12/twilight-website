@@ -76,6 +76,11 @@ export const aboutMenuItems: NavigationMenuItem[] = [
     desc: "Learn about our mission and values",
   },
   {
+    name: "Locations & Service Area",
+    slug: "service-area",
+    desc: "In-person in Lexington, KY — telehealth across Kentucky+",
+  },
+  {
     name: "Locations",
     slug: "locations",
     desc: "Find our office locations and hours",

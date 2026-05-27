@@ -29,6 +29,10 @@ Jatana's approach is rooted in **psychodynamic thinking** and is deeply **integr
 
 She is credentialed as **M.S., LPCA (KY), LPC (OH), NCC**. Her master's degree is in **Clinical Counseling from Thomas University in Thomasville, Georgia**, and she is currently **pursuing a PhD in Clinical Psychology at Fielding Graduate University in Santa Barbara, California**.
 
+## Telehealth for Kentucky and Ohio clients
+
+Jatana holds active licensure in both **Kentucky (LPCA)** and **Ohio (LPC)**, which means she is available to see telehealth clients in both states. Ohio residents — including those in the Cincinnati metro area and across greater Ohio — can access her therapy and assessment services via secure video without needing to travel to Lexington.
+
 At the center of Jatana's work is the relationship with self: how people understand who they are, how they carry their histories, and how those histories shape connection with others. For couples and partners, that inner work becomes part of the foundation for caring for the primary relationship as well.
 
 ## Self-Pay Fees for Therapy with Jatana
@@ -58,3 +62,5 @@ If you want to learn more about Jatana's background and services, visit her [cli
 - [Fees & Insurance](/resources/fees) — Review current self-pay pricing for therapy, evaluations, and medication management.
 - [Understanding Health Insurance](/blog/insurance/understanding-health-insurance) — Learn how plan type, deductibles, and benefits affect coverage.
 - [New Client Guide](/resources/new-client) — See what to expect before your first appointment.
+- [Telehealth Services](/services/telehealth) — How telehealth works at Twilight Psychology, including which states each provider can serve.
+- [Service Area](/about/service-area) — States and regions served by Twilight Psychology clinicians via telehealth.

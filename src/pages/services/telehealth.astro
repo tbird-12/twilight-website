@@ -1,0 +1,264 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Schema from "../../components/Schema.astro";
+import { WIDGET_LINK, PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
+
+const telehealthSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Twilight Psychology — Telehealth Services",
+  url: "https://twilightpsychology.com/services/telehealth",
+  description: "Telehealth psychological evaluations, therapy, and medication management available statewide across Kentucky and in select additional states.",
+  areaServed: [
+    { "@type": "State", name: "Kentucky" },
+    { "@type": "State", name: "Tennessee" },
+    { "@type": "State", name: "Ohio" },
+    { "@type": "Country", name: "United States", description: "Select services available nationwide via PsyPact authority" },
+  ],
+  availableChannel: {
+    "@type": "ServiceChannel",
+    name: "Telehealth",
+    serviceType: "Telehealth",
+    availableLanguage: ["en"],
+  },
+};
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+
+const telehealthServices = [
+  {
+    title: "ADHD Testing via Telehealth",
+    detail:
+      "Comprehensive ADHD evaluations for children, teens, and adults conducted via secure video. Structured intake, remote-friendly testing protocols, and a written report with school, work, and treatment recommendations.",
+    href: "/services/adhd-testing",
+  },
+  {
+    title: "Autism Evaluations via Telehealth",
+    detail:
+      "Neuro-affirming autism assessments for children and adults, including high-masking and AuDHD presentations. Remote evaluation protocols adapted for telehealth with the same diagnostic depth as in-person testing.",
+    href: "/services/autism-testing",
+  },
+  {
+    title: "Therapy via Telehealth",
+    detail:
+      "Individual therapy for ages 3–99 conducted via secure video. Evidence-based, neuro-affirming care with broad insurance participation for covered diagnoses. Our therapy team serves clients statewide across Kentucky.",
+    href: "/services/therapy",
+  },
+  {
+    title: "Psychological Evaluations via Telehealth",
+    detail:
+      "Comprehensive psychological evaluations including personality assessments, differential diagnosis, and disability-related evaluations, available via telehealth for eligible referral questions.",
+    href: "/services/psychological-evaluations",
+  },
+  {
+    title: "Medication Management via Telehealth",
+    detail:
+      "Psychiatric medication management via telehealth for Kentucky residents. Our psychiatric nurse practitioner offers intake and follow-up visits by video, with broad insurance participation including Medicaid.",
+    href: "/services/medication-management",
+  },
+];
+
+const teleProviders = [
+  {
+    name: "Dr. Heather Cornett, PhD",
+    credential: "LP · PsyPact",
+    coverage: "40+ states nationwide (PsyPact authority)",
+    detail: "Dr. Cornett holds a PsyPact certificate allowing her to provide psychological evaluations and services via telehealth to clients in over 40 participating states — including all bordering states and most of the country.",
+    href: "/about/clinicians/heather-cornett",
+  },
+  {
+    name: "Dr. Michael Burns, PhD",
+    credential: "T-LP · LPCC · LCADC",
+    coverage: "Kentucky & Tennessee",
+    detail: "Dr. Burns is dual-licensed in Kentucky and Tennessee, making him available for therapy and evaluation services via telehealth to clients in both states.",
+    href: "/about/clinicians/michael-burns",
+  },
+  {
+    name: "Jatana Boggs, MS",
+    credential: "LPCA (KY) · LPC (OH) · NCC",
+    coverage: "Kentucky & Ohio",
+    detail: "Jatana holds active licensure in Kentucky and Ohio, allowing her to provide neurodiverse-affirming therapy and assessments to clients in both states via telehealth.",
+    href: "/about/clinicians/jatana-boggs",
+  },
+  {
+    name: "All other clinicians",
+    credential: "Various credentials",
+    coverage: "Kentucky statewide",
+    detail: "Every Twilight Psychology clinician is licensed in Kentucky and available to see clients across the state via telehealth — from Louisville, Bowling Green, and Owensboro to Covington, Paducah, and beyond.",
+    href: "/about/clinicians/clinicians-lex-ky",
+  },
+];
+
+const kentuckyCities = [
+  "Louisville", "Lexington", "Bowling Green", "Owensboro", "Covington",
+  "Frankfort", "Paducah", "Elizabethtown", "Florence", "Hopkinsville",
+  "Richmond", "Corbin", "London", "Pikeville", "Ashland",
+  "Morehead", "Danville", "Winchester", "Georgetown", "Somerset",
+];
+
+const faqItems = [
+  {
+    q: "Do you accept Medicaid for telehealth appointments?",
+    a: "Yes. Twilight Psychology accepts Kentucky Medicaid for telehealth therapy and medication management visits. Coverage for testing varies — contact our intake team to verify your specific plan.",
+  },
+  {
+    q: "How does telehealth testing work for ADHD or autism?",
+    a: "Telehealth evaluations use remote-adapted testing protocols and structured clinical interviews conducted via secure video. Some portions of in-person testing (like the ADOS-2 for autism) are administered differently, and our clinicians will explain what to expect during your intake call.",
+  },
+  {
+    q: "Do I need to live in Lexington to be seen at Twilight Psychology?",
+    a: "No. All of our services are available via telehealth to residents anywhere in Kentucky. You do not need to travel to Lexington — appointments are conducted via secure video from wherever you are.",
+  },
+  {
+    q: "Can Dr. Cornett see clients outside of Kentucky?",
+    a: "Yes. Dr. Heather Cornett holds a PsyPact certificate, which authorizes her to provide psychological services via telehealth in over 40 participating states. Contact our intake team to confirm your state is covered.",
+  },
+  {
+    q: "Can Dr. Burns or Jatana Boggs see clients in other states?",
+    a: "Dr. Michael Burns is licensed in Kentucky and Tennessee. Jatana Boggs holds licensure in Kentucky (LPCA) and Ohio (LPC). Clients in those states are eligible to be seen by these providers via telehealth.",
+  },
+  {
+    q: "What technology do I need for a telehealth appointment?",
+    a: "A device with a camera and microphone (smartphone, tablet, or computer) and a stable internet connection. Our scheduling system will send you a secure link before your appointment — no special software is required.",
+  },
+];
+---
+
+<Layout
+  title="Telehealth Psychology Services — Kentucky & Beyond | Twilight Psychology"
+  description="Twilight Psychology offers telehealth ADHD testing, autism evaluations, therapy, and medication management across Kentucky. Select providers are licensed in Tennessee, Ohio, and 40+ states via PsyPact."
+>
+  <Schema slot="page-schema" schema={telehealthSchema} />
+
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="prose prose-lg max-w-none prose-custom
+                prose-p:text-site-text
+                prose-headings:text-site-text
+                prose-strong:text-site-text
+                prose-li:text-site-text
+                mb-12">
+
+  <PageHeroWrapper
+    title="Telehealth Psychology Services"
+    accentWord="Telehealth"
+    badge="Kentucky Statewide · Select Additional States"
+    subtitle="All of our clinical services are available via secure telehealth. In-person office in Lexington, KY — telehealth available statewide across Kentucky and beyond."
+    size="lg"
+  />
+
+  <!-- Services via telehealth -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+  <section class="max-w-4xl mx-auto px-4 mt-16 mb-12">
+    <h2 class="font-serif text-3xl font-black text-site-text mb-2">Services Available via Telehealth</h2>
+    <p class="text-site-sub leading-relaxed mb-8 font-medium">
+      You do not need to travel to Lexington to access Twilight Psychology care. The following services are available via secure video to clients anywhere in Kentucky — and in select additional states depending on your provider.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-5">
+      {telehealthServices.map((svc) => (
+        <div class="bg-surface border border-border rounded-[2rem] p-6 flex flex-col hover:border-cta/30 transition-colors">
+          <h3 class="font-serif text-lg font-black text-site-text mb-2">{svc.title}</h3>
+          <p class="text-sm text-site-sub leading-relaxed flex-1 mb-4">{svc.detail}</p>
+          <a href={svc.href} class="text-xs font-black uppercase tracking-widest text-cta hover:underline mt-auto">
+            Learn more →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <!-- Provider coverage -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={150}>
+  <section class="max-w-4xl mx-auto px-4 mb-12">
+    <h2 class="font-serif text-3xl font-black text-site-text mb-2">Telehealth Coverage by Provider</h2>
+    <p class="text-site-sub leading-relaxed mb-8 font-medium">
+      Every Twilight Psychology clinician is licensed in Kentucky. Several also hold licensure in additional states, extending telehealth availability beyond Kentucky borders.
+    </p>
+    <div class="space-y-4">
+      {teleProviders.map((p) => (
+        <div class="bg-surface-soft border border-border rounded-[2rem] p-6 sm:p-8">
+          <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+            <div>
+              <h3 class="font-serif text-xl font-black text-site-text">{p.name}</h3>
+              <p class="text-xs font-black uppercase tracking-widest text-site-sub mt-0.5">{p.credential}</p>
+            </div>
+            <span class="shrink-0 text-xs font-bold px-3 py-1.5 bg-cta/10 border border-cta/20 text-cta rounded-full">
+              {p.coverage}
+            </span>
+          </div>
+          <p class="text-sm text-site-sub leading-relaxed mb-4">{p.detail}</p>
+          <a href={p.href} class="text-xs font-black uppercase tracking-widest text-cta hover:underline">
+            View profile →
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <!-- KY cities -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={200}>
+  <section class="max-w-4xl mx-auto px-4 mb-12">
+    <div class="bg-surface border border-border rounded-[2.5rem] p-8 md:p-10">
+      <h2 class="font-serif text-2xl font-black text-site-text mb-3">Serving Clients Across Kentucky</h2>
+      <p class="text-site-sub leading-relaxed font-medium mb-6">
+        Twilight Psychology's physical office is in Lexington, but our telehealth services reach every corner of the state. Whether you are in a major metro or a rural area, you can access the same clinical team via secure video.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {kentuckyCities.map((city) => (
+          <span class="text-xs font-bold px-3 py-1.5 bg-surface-2 border border-border rounded-full text-site-text">
+            {city}, KY
+          </span>
+        ))}
+        <span class="text-xs font-bold px-3 py-1.5 bg-surface-2 border border-border rounded-full text-site-sub italic">
+          + all of Kentucky
+        </span>
+      </div>
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <!-- FAQ -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+  <section class="max-w-4xl mx-auto px-4 mb-12">
+    <h2 class="font-serif text-3xl font-black text-site-text mb-8">Telehealth FAQs</h2>
+    <div class="space-y-4">
+      {faqItems.map((item) => (
+        <div class="bg-surface-soft border border-border rounded-[1.5rem] p-6">
+          <h3 class="font-sans text-base font-bold text-site-text mb-2">{item.q}</h3>
+          <p class="text-sm text-site-sub leading-relaxed">{item.a}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+  </AnimatedSection>
+
+  <!-- CTA -->
+  <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+  <section class="max-w-4xl mx-auto px-4 mb-16">
+    <div class="rounded-[2.5rem] border border-cta/30 bg-surface p-8 md:p-12 text-center">
+      <h2 class="font-serif text-3xl font-black text-site-text mb-4">Ready to Get Started?</h2>
+      <p class="text-site-sub leading-relaxed font-medium mb-8 max-w-lg mx-auto">
+        You can schedule a telehealth appointment directly through our online intake system — or call our team to find the right clinician and confirm telehealth availability for your state.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+        <a
+          href={WIDGET_LINK}
+          class="inline-block text-center bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 px-10 py-4 text-base transition-all"
+        >
+          Schedule Online
+        </a>
+        <a
+          href={`tel:${PHONE_NUMBER}`}
+          class="text-sm font-bold text-site-sub hover:text-cta transition-colors underline underline-offset-4"
+        >
+          Call {PHONE_NUMBER_FORMATTED}
+        </a>
+      </div>
+    </div>
+  </section>
+  </AnimatedSection>
+
+    </div>
+  </div>
+</Layout>

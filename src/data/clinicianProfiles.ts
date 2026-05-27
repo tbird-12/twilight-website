@@ -75,9 +75,9 @@ const requestAppointmentPhoneHref = `tel:${PHONE_NUMBER}`;
 export const clinicianProfiles: ClinicianProfile[] = [
   {
     slug: "heather-cornett",
-    pageTitle: "Dr. Heather Cornett, PhD | Psychologist in Lexington, KY",
+    pageTitle: "Dr. Heather Cornett, PhD | PsyPact Psychologist — KY & 40+ States",
     pageDescription:
-      "Dr. Heather Cornett, PhD is the founder and licensed psychologist at Twilight Psychology, providing neuro-affirming psychological evaluations and testing in Lexington, KY.",
+      "Dr. Heather Cornett, PhD is the founder and licensed psychologist at Twilight Psychology, providing neuro-affirming psychological evaluations in-person in Lexington, KY and via PsyPact telehealth in 40+ states nationwide.",
     jobTitle: "Founder and Licensed Psychologist",
     badge: "Founder & Licensed Psychologist",
     headingPrimary: "Heather Cornett,",
@@ -147,7 +147,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     primaryPanel: {
       title: "Current Availability",
       description:
-        "Dr. Cornett provides evaluations for ages 2 and up in Lexington, KY and nationwide for adults via telehealth.",
+        "Dr. Cornett provides evaluations for ages 2 and up in Lexington, KY and nationwide for adults via PsyPact telehealth authority (40+ states).",
       items: [
         { label: "Evaluations", value: "Accepting New Clients" },
         { label: "Individual Therapy", value: "Waitlist Only", subdued: true },
@@ -410,9 +410,9 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "jatana-boggs",
-    pageTitle: "Jatana Boggs, LPCA, LPC, NCC | Therapy & Testing",
+    pageTitle: "Jatana Boggs, LPCA, LPC, NCC | Therapy & Testing — KY & OH",
     pageDescription:
-      "Jatana Boggs, LPCA, LPC, NCC — Twilight Psychology clinician providing neurodiverse-affirming psychotherapy and ADHD and autism assessments for children, adolescents, and adults in Kentucky and Ohio.",
+      "Jatana Boggs, LPCA (KY), LPC (OH), NCC — Twilight Psychology clinician providing neurodiverse-affirming psychotherapy and ADHD and autism assessments for children, adolescents, and adults in Kentucky and Ohio.",
     jobTitle: "Licensed Professional Counselor Associate",
     badge: "Licensed Professional Counselor Associate",
     headingPrimary: "Jatana Boggs,",
@@ -462,7 +462,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         eyebrow: "Background",
         variant: "soft",
         body: [
-          "Credentials: M.S., LPCA (KY), LPC (OH), NCC.",
+          "Credentials: M.S., LPCA (KY), LPC (OH), NCC — dual-licensed in Kentucky and Ohio.",
           "My master's is in Clinical Counseling from Thomas University in Thomasville, GA. I am pursuing a PhD in Clinical Psychology at Fielding Graduate University in Santa Barbara, CA.",
         ],
       },
@@ -470,7 +470,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     primaryPanel: {
       title: "Connect for Therapy or Assessment Services",
       description:
-        "I provide neurodiverse-affirming psychotherapy for individuals and couples across all relationship structures, along with comprehensive ADHD and autism assessments for children, adolescents, and adults.",
+        "I provide neurodiverse-affirming psychotherapy for individuals and couples across all relationship structures, along with comprehensive ADHD and autism assessments for children, adolescents, and adults. Accepting clients in Kentucky and Ohio via telehealth.",
       ctaLabel: "Schedule an Intake",
       ctaHref: WIDGET_LINK,
       variant: "surface",
@@ -629,9 +629,9 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "michael-burns",
-    pageTitle: "Michael Burns, PhD | Substance Use & DV Therapy in KY",
+    pageTitle: "Michael Burns, PhD | Substance Use & DV Therapy — KY & TN",
     pageDescription:
-      "Dr. Michael Burns, T-LP, LPCC, LCADC, BIP — substance use, domestic violence, PTSD, and faith-integrated counseling at Twilight Psychology in Kentucky.",
+      "Dr. Michael Burns, T-LP, LPCC, LCADC, BIP — substance use, domestic violence, PTSD, and faith-integrated counseling at Twilight Psychology, serving clients in Kentucky and Tennessee.",
     jobTitle: "Temporary Licensed Psychologist",
     badge: "PhD · T-LP · LPCC · LCADC · BIP",
     headingPrimary: "Michael Burns,",
@@ -703,7 +703,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       eyebrow: "Availability",
       title: "Immediate Openings for Therapy",
       description:
-        "Michael offers individual therapy in Kentucky and Tennessee with immediate availability for new clients.",
+        "Michael offers individual therapy in Kentucky and Tennessee with immediate availability for new clients. He holds dual licensure in both states and accepts telehealth clients across KY and TN.",
       items: [{ label: "Individual Therapy", value: "Immediate" }],
       ctaLabel: "Request Appointment",
       ctaHref: requestAppointmentPhoneHref,

@@ -59,7 +59,7 @@ Ethan begins seeing therapy clients starting **July 6, 2026**, and also accepts 
 ### Other clinicians with child and adolescent overlap
 
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** sees neurodivergent children and adolescents with a focus on AuDHD identity, PDA, and high-masking presentations
-- **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** conducts ADHD and autism evaluations for children alongside therapy services
+- **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** conducts ADHD and autism evaluations for children alongside therapy services; **dual-licensed in Kentucky and Ohio** for telehealth clients in both states
 
 ## Insurance and scheduling
 
