@@ -157,6 +157,15 @@ export const clinicianProfiles: ClinicianProfile[] = [
       variant: "surface",
       watermark: "PsyPact",
     },
+    secondaryPanel: {
+      eyebrow: "From the Blog",
+      title: "Autism Evaluations in Lexington, KY",
+      description:
+        "What autism evaluation involves at Twilight Psychology, including high-masking adults, AuDHD presentations, and the full diagnostic process.",
+      ctaLabel: "Read the post",
+      ctaHref: "/blog/clinical/autism-evaluation-lexington-ky",
+      variant: "surface",
+    },
   },
   {
     slug: "nicola-allen",
@@ -286,6 +295,15 @@ export const clinicianProfiles: ClinicianProfile[] = [
         variant: "accent",
       },
     ],
+    secondaryPanel: {
+      eyebrow: "From the Blog",
+      title: "Autism Evaluation in Lexington, KY",
+      description:
+        "What autism evaluation involves at Twilight Psychology, including high-masking adults, AuDHD presentations, and the ADOS-2 diagnostic process.",
+      ctaLabel: "Read the post",
+      ctaHref: "/blog/clinical/autism-evaluation-lexington-ky",
+      variant: "surface",
+    },
   },
   {
     slug: "stephen-shu",
@@ -600,11 +618,12 @@ export const clinicianProfiles: ClinicianProfile[] = [
       variant: "surface",
     },
     secondaryPanel: {
-      title: "First Time at Twilight?",
+      eyebrow: "From the Blog",
+      title: "Child and Teen Therapy in Lexington, KY",
       description:
-        "Review the intake process, launch timing, and what to expect before the first therapy or testing visit.",
-      ctaLabel: "New Client Guide",
-      ctaHref: "/resources/new-client",
+        "What therapy looks like for children and adolescents at Twilight Psychology, including modalities and how to get started.",
+      ctaLabel: "Read the post",
+      ctaHref: "/blog/clinical/child-therapy-lexington-ky",
       variant: "surface",
     },
   },
@@ -718,6 +737,15 @@ export const clinicianProfiles: ClinicianProfile[] = [
         ],
       },
     ],
+    secondaryPanel: {
+      eyebrow: "From the Blog",
+      title: "Neuropsychological vs. Psychoeducational Evaluation",
+      description:
+        "How to choose the right evaluation type for your referral question — and what psychological testing near you actually covers.",
+      ctaLabel: "Read the post",
+      ctaHref: "/blog/clinical/neuropsychological-vs-psychoeducational-evaluation",
+      variant: "surface",
+    },
   },
 ];
 

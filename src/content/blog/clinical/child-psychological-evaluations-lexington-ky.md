@@ -111,4 +111,7 @@ If your main question is whether your child is old enough, whether insurance may
 - [Jatana Boggs's clinician profile](/about/clinicians/jatana-boggs) — ADHD and autism assessment services for children and adolescents
 - [Ethan Puckett's clinician profile](/about/clinicians/ethan-puckett) — Child and adolescent therapy plus psychological and psychoeducational testing
 - [Psychological Evaluations](/services/psychological-evaluations) — Overview of broader diagnostic evaluation services
+- [ADHD Testing in Lexington, KY — Children and Adults](/blog/clinical/adhd-testing-lexington-ky) — What a comprehensive ADHD evaluation covers at Twilight Psychology, from intake through the feedback session.
+- [Autism Evaluation in Lexington, KY — Children and Adults](/blog/clinical/autism-evaluation-lexington-ky) — What autism evaluation involves at Twilight, including high-masking adults and AuDHD presentations.
+- [Dyslexia and Learning Disability Testing in Lexington, KY](/blog/clinical/dyslexia-learning-disability-testing-lexington-ky) — What evaluation for dyslexia and related learning differences covers when learning concerns overlap with ADHD or autism.
 - [Waitlist Times](/resources/waitlist-times) — Current scheduling information
