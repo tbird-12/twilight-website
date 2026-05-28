@@ -3,11 +3,11 @@ title: "Dyslexia and learning disability testing in Lexington, KY"
 seoTitle: "Dyslexia and Learning Disability Testing in Lexington, KY"
 description: "What dyslexia and learning disability testing covers, when to request an independent evaluation, and how results connect to school supports and IEPs"
 seoDescription: "Dyslexia testing and learning disability evaluations in Lexington, KY at Twilight Psychology. Independent assessments for school supports, IEP, and 504 planning."
-pubDate: 2026-05-27
+pubDate: 2026-05-28
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["dyslexia", "learning-disability", "psychoeducational", "lexington-ky", "iep", "504", "reading"]
-draft: true
+draft: false
 ---
 
 When a child is struggling to read, keep up with schoolwork, or perform in ways that do not match what parents and teachers know the child is capable of, families often reach a point where they need a clear answer. **Dyslexia testing** and **learning disability evaluations** are the formal way to get that answer — and to produce documentation that schools and other providers can actually use.
