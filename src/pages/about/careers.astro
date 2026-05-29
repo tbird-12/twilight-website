@@ -9,6 +9,7 @@ type OpeningStatus = "open" | "filled";
 type CtaVariant = "solid" | "outline";
 
 interface CareerOpening {
+  active: boolean; // ← flip to true to show this posting
   status: OpeningStatus;
   heroLabel: string;
   titleLines: [string, string];
@@ -24,6 +25,16 @@ interface CareerOpening {
   ctaVariant: CtaVariant;
 }
 
+/**
+ * Hiring pause notice — flip `show` to false when openings resume.
+ * This banner replaces the job-card grid whenever no postings are active.
+ */
+const HIRING_PAUSE_NOTICE = {
+  show: true, // ← flip to false when hiring resumes
+  heading: "We're Not Hiring Right Now",
+  body: "We have welcomed new clinicians joining the practice in July and August 2026 and are not currently anticipating additional openings. Please check back later — we appreciate your interest in Twilight Psychology.",
+};
+
 const clinicianBenefits = [
   "Compensation Based on Provider Experience",
   "W2 or 1099 Options",
@@ -34,17 +45,10 @@ const clinicianBenefits = [
   "Automated Billing & Support",
 ];
 
-const therapistBenefits = [
-  "Industry-Leading Compensation",
-  "Health & Medical Benefits",
-  "W2 or 1099 Options",
-  "Targeted Patient Marketing",
-  "Latest HIPAA-Compliant EHR",
-  "Automated Billing & Support",
-];
 
 const careerOpenings: CareerOpening[] = [
   {
+    active: false, // ← flip to true to publish this posting
     status: "filled",
     heroLabel: "licensed psychologists",
     titleLines: ["Licensed", "Psychologist"],
@@ -57,6 +61,7 @@ const careerOpenings: CareerOpening[] = [
     ctaVariant: "solid",
   },
   {
+    active: false, // ← flip to true to publish this posting
     status: "filled",
     heroLabel: "doctoral practicum students",
     titleLines: ["Doctoral", "Practicum"],
@@ -83,30 +88,9 @@ const careerOpenings: CareerOpening[] = [
     ctaLabel: "Request Placement",
     ctaVariant: "outline",
   },
-  {
-    status: "open",
-    heroLabel: "child and teen therapists",
-    titleLines: ["Child & Teen", "Therapist"],
-    badgeLabel: "W2/1099",
-    badgeClass: "text-site-text border border-border-strong",
-    summary:
-      "Seeking a full- or part-time Kentucky-licensed therapist passionate about working with children and adolescents, with a focus on neurodivergent populations including autism, ADHD, and related profiles.",
-    highlights: [
-      {
-        label: "Requirements",
-        value:
-          "Active KY license (LPCC, LCSW, LMFT, or equivalent). Experience or training in neurodivergence-affirming care for ages 4-12.",
-      },
-    ],
-    benefits: therapistBenefits,
-    ctaLabel: "Apply Now",
-    ctaVariant: "solid",
-  },
 ];
 
-const openCareerOpenings = careerOpenings.filter(
-  ({ status }) => status === "open",
-);
+const openCareerOpenings = careerOpenings.filter(({ active }) => active);
 
 const formatOpeningList = (labels: readonly string[]) => {
   if (labels.length === 0) {
@@ -240,19 +224,42 @@ const careerPageLinks = [
         ))
       ) : (
         <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] text-center">
-          <h2 class="font-serif text-2xl font-black text-site-text mb-4">
-            No active openings right now
-          </h2>
-          <p class="text-site-sub text-sm leading-relaxed mb-6">
-            We still welcome introductions from clinicians who align with our
-            neuro-affirming practice and may be a fit for future roles.
-          </p>
-          <a
-            href="mailto:info@twilightpsychology.com"
-            class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors"
-          >
-            Introduce Yourself
-          </a>
+          {HIRING_PAUSE_NOTICE.show ? (
+            <>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-2 border border-border text-xs font-black text-site-sub uppercase tracking-widest mb-5">
+                <span class="w-2 h-2 rounded-full bg-sand inline-block"></span>
+                Positions Filled
+              </div>
+              <h2 class="font-serif text-2xl font-black text-site-text mb-4">
+                {HIRING_PAUSE_NOTICE.heading}
+              </h2>
+              <p class="text-site-sub text-sm leading-relaxed mb-6 max-w-lg mx-auto">
+                {HIRING_PAUSE_NOTICE.body}
+              </p>
+              <a
+                href="mailto:info@twilightpsychology.com"
+                class="inline-flex items-center justify-center rounded-full border border-border-strong px-5 py-2.5 text-sm font-black text-site-sub hover:bg-surface-2 transition-colors"
+              >
+                Introduce Yourself for Future Roles
+              </a>
+            </>
+          ) : (
+            <>
+              <h2 class="font-serif text-2xl font-black text-site-text mb-4">
+                No active openings right now
+              </h2>
+              <p class="text-site-sub text-sm leading-relaxed mb-6">
+                We still welcome introductions from clinicians who align with our
+                neuro-affirming practice and may be a fit for future roles.
+              </p>
+              <a
+                href="mailto:info@twilightpsychology.com"
+                class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-2.5 text-sm font-black text-cta-fg hover:bg-cta/80 transition-colors"
+              >
+                Introduce Yourself
+              </a>
+            </>
+          )}
         </div>
       )}
     </div>
