@@ -3,11 +3,11 @@ title: "Neuropsychological vs. psychoeducational evaluation — what's the diffe
 seoTitle: "Neuropsychological vs. Psychoeducational Evaluation: What's the Difference?"
 description: "How neuropsychological and psychoeducational evaluations differ, when each is appropriate, and what psychological testing near you actually involves"
 seoDescription: "Neuropsychological vs. psychoeducational evaluation explained. What psychological testing near you covers, and how Twilight Psychology in Lexington, KY approaches each type."
-pubDate: 2026-05-27
+pubDate: 2026-05-29
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["neuropsychological-evaluation", "psychoeducational-evaluation", "psychological-testing", "lexington-ky", "neuropsychologist"]
-draft: true
+draft: false
 ---
 
 When families or adults search for **psychological testing near me** or a **neuropsychologist in Lexington, KY**, they are often not sure exactly what they are looking for — they just know they need a comprehensive evaluation and want to understand what the process involves. The terms are sometimes used interchangeably in everyday conversation, but they describe meaningfully different types of assessments.
