@@ -20,6 +20,14 @@ export default defineConfig({
       cssMinify: true,
     },
   },
-  integrations: [icon(), react(), sitemap(), pagefind()],
+  integrations: [
+    icon(),
+    react(),
+    sitemap({
+      // Exclude noindex pages so the sitemap doesn't contradict their robots meta tag
+      filter: (page) => !page.includes("/welcome") && !page.includes("/404"),
+    }),
+    pagefind(),
+  ],
   site: "https://www.twilightpsychology.com",
 });
