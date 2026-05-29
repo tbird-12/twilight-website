@@ -3,7 +3,7 @@ title: "Child and teen therapy in Lexington, KY — when to seek help"
 seoTitle: "Child and Teen Therapy in Lexington, KY"
 description: "When to consider therapy for a child or teenager, what neuro-affirming child therapy looks like at Twilight Psychology, and which clinicians work with kids"
 seoDescription: "Child and teen therapy in Lexington, KY at Twilight Psychology. Neuro-affirming CBT and ACT for children ages 3–18. ADHD, autism, anxiety, and school challenges."
-pubDate: 2026-05-27
+pubDate: 2026-05-28
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["child-therapy", "teen-therapy", "pediatric-therapy", "lexington-ky", "adhd-therapy", "autism-therapy", "anxiety", "child-psychologist"]
