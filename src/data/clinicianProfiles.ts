@@ -710,43 +710,6 @@ export const clinicianProfiles: ClinicianProfile[] = [
       variant: "surface",
     },
   },
-  {
-    slug: "olivia-williams",
-    pageTitle: "Olivia Williams, PhD | Psychological Assessments",
-    pageDescription:
-      "Olivia Williams, PhD — Twilight Psychology clinician providing psychological assessments for autism, ADHD, and learning needs in Kentucky.",
-    jobTitle: "Licensed Psychological Associate",
-    badge: "Licensed Psychological Associate",
-    headingPrimary: "Olivia",
-    headingAccent: "Williams, Ph.D., LPA.",
-    intro: "Specializing in psychological assessments for individuals ages 2 and above.",
-    specialties: [
-      "Psychological Assessments",
-      "Autism & ADHD Support",
-      "Psychoeducational Assessments",
-      "Dyslexia Assessments",
-    ],
-    contentBlocks: [
-      {
-        type: "paragraphs",
-        title: "Assessment with clarity, warmth, and practical next steps.",
-        paragraphs: [
-          "I provide psychological assessments for young children, adolescents, and adults who need a more complete understanding of learning, attention, autism, and related developmental differences.",
-          "My goal is to turn testing into something useful: clear findings, thoughtful interpretation, and recommendations that make sense for real life at home, school, and work.",
-          "I value careful listening and a thorough review of developmental history, not just test scores in isolation. Whether a family is seeking school-based support or an adult is looking for diagnostic clarity, I aim to make the process feel respectful, organized, and easy to understand from start to finish.",
-        ],
-      },
-    ],
-    secondaryPanel: {
-      eyebrow: "From the Blog",
-      title: "Neuropsychological vs. Psychoeducational Evaluation",
-      description:
-        "How to choose the right evaluation type for your referral question — and what psychological testing near you actually covers.",
-      ctaLabel: "Read the post",
-      ctaHref: "/blog/clinical/neuropsychological-vs-psychoeducational-evaluation",
-      variant: "surface",
-    },
-  },
 ];
 
 export function getClinicianPageData(slug: string): ClinicianPageData | undefined {

@@ -61,7 +61,6 @@ Autism evaluations at Twilight Psychology are offered by:
 - **[Jonica Davis, MS](/about/clinicians/jonica-davis)** — neurodiverse-affirming autism and ADHD evaluations
 - **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** — autism assessments within a neurodiverse-affirming framework across the age range; **dual-licensed in Kentucky and Ohio**, available to clients in both states
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — autism testing for children and adolescents, with a strong fit for ages 7–16
-- **[Olivia Williams, PhD](/about/clinicians/olivia-williams)** — psychological and psychoeducational assessments including autism
 
 ## PDA — a profile that is often missed
 

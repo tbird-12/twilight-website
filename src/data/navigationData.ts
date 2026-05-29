@@ -37,7 +37,6 @@ const providerMenuChildren: NavigationLinkItem[] = [
   { name: "Jonica Davis", slug: "jonica-davis" },
   { name: "Jatana Boggs", slug: "jatana-boggs" },
   { name: "Tiffany Roundtree", slug: "tiffany-roundtree" },
-  { name: "Olivia Williams", slug: "olivia-williams" },
 ].map((item) => ({
   ...item,
   desc: "Provider profile",

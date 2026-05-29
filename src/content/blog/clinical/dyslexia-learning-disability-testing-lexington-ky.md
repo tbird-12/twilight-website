@@ -82,7 +82,6 @@ Dyslexia testing and psychoeducational evaluations at Twilight Psychology are of
 - **[Jonica Davis, MS](/about/clinicians/jonica-davis)** — dyslexia testing alongside broader psychological evaluations
 - **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** — psychoeducational assessments including dyslexia
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — psychoeducational and psychological testing for children and adolescents with school-based referral questions, strong fit ages 7–16
-- **[Olivia Williams, PhD](/about/clinicians/olivia-williams)** — psychoeducational assessments and learning disability evaluations
 
 ## Insurance and self-pay considerations
 

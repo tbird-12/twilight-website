@@ -49,7 +49,6 @@ Several Twilight Psychology clinicians conduct ADHD evaluations for children, ad
 - **[Jonica Davis, MS](/about/clinicians/jonica-davis)** — neurodiverse-affirming ADHD and autism evaluations
 - **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** — ADHD and autism assessments within a neurodiverse-affirming framework; **dual-licensed in Kentucky and Ohio**, available to clients in both states
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — ADHD and psychological testing with a strong fit for children and adolescents ages 7–16
-- **[Olivia Williams, PhD](/about/clinicians/olivia-williams)** — psychological and psychoeducational assessments including ADHD and autism
 
 The right clinician depends on the child's or adult's age, the referral question, insurance participation, and current availability. Our intake team can help you sort through those factors before scheduling.
 

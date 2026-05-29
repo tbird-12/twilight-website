@@ -9,7 +9,6 @@ import jonicaDavisImg from '../assets/images/staff/jonica-davis.png';
 import jatanaBoggsImg from '../assets/images/staff/jatana-boggs.png';
 import tiffanyRoundtreeImg from '../assets/images/staff/tiffany-roundtree.png';
 import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
-import oliviaWilliamsImg from '../assets/images/staff/olivia-williams.jpg';
 import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
 import ethanPuckettImg from '../assets/images/staff/ethan-puckett.png';
 
@@ -154,19 +153,6 @@ export const providers: Provider[] = [
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { therapy: '1 month' }
   },
-  {
-    name: 'Olivia Williams',
-    slug: 'olivia-williams',
-    spec: 'Psychological Assessments', 
-    image: oliviaWilliamsImg,
-    name_with_education: 'Olivia Williams, PhD',
-    credential: 'LPA',
-    services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'IQ testing', 'Psychological evaluations'],
-    out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500' },
-    states_served: ['Kentucky'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
-    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks' }
-  }
 ];
 
 export const staff: StaffMember[] = [

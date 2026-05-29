@@ -82,8 +82,6 @@ Twilight Psychology offers **comprehensive psychological evaluations** conducted
 
 **[Heather Cornett, PhD](/about/clinicians/heather-cornett)**, founder and licensed psychologist, conducts comprehensive psychological evaluations for children starting at age 2 and adults, including complex diagnostic presentations.
 
-**[Olivia Williams, PhD](/about/clinicians/olivia-williams)** offers comprehensive psychological and psychoeducational assessments including autism and ADHD evaluation.
-
 Other doctoral-level and supervised master's-level clinicians at Twilight conduct psychoeducational and psychological evaluations as well — see the [evaluating clinicians overview](/services/psychological-evaluations) for the full list.
 
 ## "Neuropsychologist" and what that term means in practice
