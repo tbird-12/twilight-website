@@ -92,7 +92,10 @@ const formattedPubDate = formatBlogDate(pubDate);
 const showUpdatedDate = hasDistinctUpdatedDate(pubDate, updatedDate);
 const formattedUpdatedDate = showUpdatedDate ? formatBlogDate(updatedDate!) : undefined;
 
-// Related posts: same category, excluding current
+const wordCount = post.body ? post.body.trim().split(/\s+/).filter(Boolean).length : 0;
+const readingTimeMinutes = Math.max(1, Math.round(wordCount / 200));
+
+// Related posts and prev/next navigation
 const allPosts = await getCollection("blog", ({ data }) => !data.draft);
 const sameCategoryPosts = allPosts
   .filter((p) => p.id !== post.id && p.data.category === category)
@@ -109,6 +112,12 @@ const otherCategoryPosts = sameCategoryPosts.length < 3
 
 const relatedPosts = [...sameCategoryPosts, ...otherCategoryPosts];
 
+// Prev/next post navigation (sorted newest-first; older = prev, newer = next)
+const sortedAllPosts = [...allPosts].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const currentIndex = sortedAllPosts.findIndex((p) => p.id === post.id);
+const prevPost = currentIndex < sortedAllPosts.length - 1 ? sortedAllPosts[currentIndex + 1] : null;
+const nextPost = currentIndex > 0 ? sortedAllPosts[currentIndex - 1] : null;
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -119,6 +128,7 @@ const articleSchema = {
   dateModified: (updatedDate || pubDate).toISOString(),
   articleSection: categoryMeta.label,
   keywords: tags?.join(", "),
+  wordCount,
   mainEntityOfPage: canonicalURL,
   url: canonicalURL,
   author: {
@@ -245,6 +255,8 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
             <time datetime={updatedDate!.toISOString()}>Updated {formattedUpdatedDate}</time>
           </>
         )}
+        <span>·</span>
+        <span>{readingTimeMinutes} min read</span>
         {tags && tags.length > 0 && (
           <>
             <span>·</span>
@@ -291,7 +303,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     </div>
 
     <!-- Post footer -->
-    <footer class="mt-12 pt-8 border-t border-border">
+    <footer class="mt-12 pt-8 border-t border-border space-y-6">
       <a
         href={`/blog/category/${category}`}
         class="inline-flex items-center gap-1.5 text-sm text-site-sub hover:text-site-text transition-colors"
@@ -301,6 +313,49 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
         </svg>
         More in {categoryMeta.label}
       </a>
+
+      {(prevPost || nextPost) && (
+        <nav class="grid sm:grid-cols-2 gap-3 pt-6 border-t border-border" aria-label="Post navigation">
+          {prevPost && (
+            <a
+              href={`/blog/${prevPost.id}/`}
+              class="group flex flex-col gap-1 rounded-lg border border-border bg-surface p-4 hover:border-border-strong transition-colors"
+            >
+              <span class="text-xs text-site-sub flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3.5 h-3.5">
+                  <path fill-rule="evenodd" d="M14 8a.75.75 0 0 1-.75.75H4.56l3.22 3.22a.75.75 0 1 1-1.06 1.06l-4.5-4.5a.75.75 0 0 1 0-1.06l4.5-4.5a.75.75 0 0 1 1.06 1.06L4.56 7.25H13.25A.75.75 0 0 1 14 8Z" clip-rule="evenodd" />
+                </svg>
+                Older post
+              </span>
+              <span class="text-sm font-semibold text-site-text group-hover:text-icon transition-colors line-clamp-2">
+                {prevPost.data.title}
+              </span>
+              <time class="text-xs text-site-sub" datetime={prevPost.data.pubDate.toISOString()}>
+                {formatBlogDate(prevPost.data.pubDate)}
+              </time>
+            </a>
+          )}
+          {nextPost && (
+            <a
+              href={`/blog/${nextPost.id}/`}
+              class={`group flex flex-col gap-1 rounded-lg border border-border bg-surface p-4 hover:border-border-strong transition-colors${!prevPost ? " sm:col-start-2" : ""}`}
+            >
+              <span class="text-xs text-site-sub flex items-center justify-end gap-1">
+                Newer post
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-3.5 h-3.5">
+                  <path fill-rule="evenodd" d="M2 8a.75.75 0 0 1 .75-.75h8.69L8.22 4.03a.75.75 0 0 1 1.06-1.06l4.5 4.5a.75.75 0 0 1 0 1.06l-4.5 4.5a.75.75 0 0 1-1.06-1.06l3.22-3.22H2.75A.75.75 0 0 1 2 8Z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              <span class="text-sm font-semibold text-site-text group-hover:text-icon transition-colors text-right line-clamp-2">
+                {nextPost.data.title}
+              </span>
+              <time class="text-xs text-site-sub text-right block" datetime={nextPost.data.pubDate.toISOString()}>
+                {formatBlogDate(nextPost.data.pubDate)}
+              </time>
+            </a>
+          )}
+        </nav>
+      )}
     </footer>
   </article>
 

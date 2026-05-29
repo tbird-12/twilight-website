@@ -7,7 +7,7 @@ pubDate: 2026-05-27
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["therapy", "cbt", "cognitive-behavioral-therapy", "lexington-ky", "therapist", "neurodivergent-therapy", "adhd-therapy", "autism-therapy"]
-draft: true
+draft: false
 ---
 
 When people search for a **therapist in Lexington, KY**, they are usually not looking for a specific modality acronym. They are looking for a provider who understands what they are dealing with, can offer practical help, and will not default to a one-size-fits-all approach. That is the frame Twilight Psychology uses to think about therapy.
