@@ -6,6 +6,9 @@
   },
   "workspaceFolder": "/workspaces/twilight-website",
   "overrideCommand": true,
+  "mounts": [
+    "source=twilight-node-modules,target=/workspaces/twilight-website/node_modules,type=volume"
+  ],
   "containerEnv": {
     "CHOKIDAR_USEPOLLING": "true"
   },
@@ -13,6 +16,14 @@
   "postCreateCommand": "npm ci",
   "customizations": {
     "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        }
+      },
       "extensions": [
         "astro-build.astro-vscode",
         "bradlc.vscode-tailwindcss",

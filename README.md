@@ -123,6 +123,20 @@ npm run build
 
 The repository includes `wrangler.jsonc`, which points Cloudflare at `./dist`.
 
+## Cross-platform container workflow
+
+To preserve the same coding environment on Windows, macOS, and Ubuntu, use the repository's Ubuntu-based dev container as the source of truth:
+
+1. Install Docker with Linux container support.
+   - **Windows:** Docker Desktop with the WSL 2 backend enabled
+   - **macOS:** Docker Desktop
+   - **Ubuntu:** Docker Engine + Docker Compose plugin
+2. Open the repo in VS Code (or another editor with Dev Containers support).
+3. Reopen the folder in the dev container. The container runs on **Ubuntu 24.04**, uses **bash** as the shell, and pins the repository's Node.js and npm versions.
+4. Develop inside the container so dependency installs, shell behavior, and file tooling stay consistent across host operating systems.
+
+The dev container also keeps `node_modules` in a Docker volume so host-specific package artifacts do not leak into the workspace.
+
 ## Docker
 
 Build the production image:
@@ -141,7 +155,7 @@ The container serves the built static site at http://localhost:8080.
 
 ## Docker Compose
 
-Run the Astro dev server in a container:
+Run the Astro dev server in the Ubuntu development container:
 
 ```bash
 docker compose up --build
@@ -149,9 +163,15 @@ docker compose up --build
 
 The development server is available at http://localhost:4321 and uses a named volume for `node_modules` so host OS package artifacts do not leak into the container.
 
+Open an interactive bash shell in the same environment:
+
+```bash
+docker compose run --rm site bash
+```
+
 ## Dev container
 
-This repository includes `.devcontainer/devcontainer.json` for VS Code / GitHub Codespaces style development. Reopen the folder in the container to get the pinned Node.js toolchain and then run:
+This repository includes `.devcontainer/devcontainer.json` for VS Code / GitHub Codespaces style development. Reopen the folder in the container to get the Ubuntu/bash environment with the pinned Node.js toolchain and then run:
 
 ```bash
 npm run dev -- --host 0.0.0.0
