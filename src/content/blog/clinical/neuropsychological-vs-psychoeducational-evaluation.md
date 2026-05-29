@@ -78,9 +78,9 @@ The most important first step is usually not choosing between these labels — i
 
 Twilight Psychology offers **comprehensive psychological evaluations** conducted by doctoral-level licensed psychologists and supervised doctoral-level psychological associates. These evaluations include cognitive ability testing (IQ), academic achievement measures, diagnostic assessment for ADHD and autism, emotional and personality measures, and detailed written reports.
 
-**[Michael Burns, PhD](/about/clinicians/michael-burns)** is a licensed psychologist at Twilight whose training and specialty areas include neuropsychological assessments alongside psychological testing and therapy. For complex cases or referral questions involving a broader cognitive workup, he may be the best fit.
+**[Heather Cornett, PhD](/about/clinicians/heather-cornett)**, founder and licensed psychologist, conducts comprehensive psychological evaluations for children starting at age 2 and adults, including complex diagnostic presentations. For complex cases or referral questions involving a broader cognitive workup, she may be the best fit.
 
-**[Heather Cornett, PhD](/about/clinicians/heather-cornett)**, founder and licensed psychologist, conducts comprehensive psychological evaluations for children starting at age 2 and adults, including complex diagnostic presentations.
+**[Michael Burns, PhD](/about/clinicians/michael-burns)** is a Temporary licensed psychologist at Twilight Psychology whose training and specialty areas include assessments alongside and therapy. 
 
 Other doctoral-level and supervised master's-level clinicians at Twilight conduct psychoeducational and psychological evaluations as well — see the [evaluating clinicians overview](/services/psychological-evaluations) for the full list.
 
