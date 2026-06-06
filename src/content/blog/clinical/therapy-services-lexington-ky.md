@@ -3,7 +3,7 @@ title: "Therapy at Twilight Psychology — what we offer in Lexington, KY"
 seoTitle: "Therapy in Lexington, KY — CBT, ACT, and Neuro-Affirming Care"
 description: "An overview of therapy at Twilight Psychology: CBT, ACT, psychodynamic, and neuro-affirming approaches for children, teens, adults, and couples"
 seoDescription: "Therapy in Lexington, KY at Twilight Psychology. CBT, ACT, and neuro-affirming individual therapy for ADHD, autism, anxiety, and trauma. Insurance accepted."
-pubDate: 2026-05-27
+pubDate: 2026-06-04
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["therapy", "cbt", "cognitive-behavioral-therapy", "lexington-ky", "therapist", "neurodivergent-therapy", "adhd-therapy", "autism-therapy"]
@@ -70,7 +70,7 @@ Our dedicated [child and teen therapy page](/services/therapy/child-and-teen-the
 Several Twilight therapists work primarily or exclusively with adults:
 
 - **[Stephen Shu, MS](/about/clinicians/stephen-shu)** — neuro-affirming therapy and ADHD and autism support for adults
-- **[Jonica Davis, MS](/about/clinicians/jonica-davis)** — psychodynamic and neurodiverse-affirming therapy for individuals and couples
+- **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — psychodynamic and neurodiverse-affirming therapy for individuals and couples
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — therapy for autistic, ADHD, and AuDHD adults, with particular expertise in high-masking presentations, PDA, and identity work; also offers **intimacy therapy**
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism support for adults alongside assessment services; **dual-licensed in Kentucky and Tennessee**
 - **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)** — adolescent and adult therapy focused on anxiety disorders and parenting support

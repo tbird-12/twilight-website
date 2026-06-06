@@ -106,7 +106,7 @@ export const providers: Provider[] = [
     slug: 'jonica-davis',
     spec: 'Therapy for Adults',
     image: jonicaDavisImg,
-    name_with_education: 'Jonica Davis, MS',
+    name_with_education: 'Jonica Davis, Psy.D.',
     credential: 'T-LPA',
     services_offered: ['Therapy', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'IQ testing'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$80' },

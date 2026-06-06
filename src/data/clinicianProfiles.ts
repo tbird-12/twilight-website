@@ -348,11 +348,12 @@ export const clinicianProfiles: ClinicianProfile[] = [
     slug: "jonica-davis",
     pageTitle: "Jonica Davis, T-LPA | Neuro-Affirming Therapy",
     pageDescription:
-      "Jonica Davis, T-LPA — Twilight Psychology clinician offering neuro-affirming therapy and assessment support for adults and families in Kentucky.",
-    jobTitle: "Trainee Licensed Psychological Associate",
-    badge: "Licensed Psychological Associate Trainee",
+      "Jonica Davis, Psy.D., T-LPA — Twilight Psychology clinician offering neuro-affirming therapy and assessment support for adults and families in Kentucky.",
+
+    jobTitle: "Psychologist",
+    badge: "Temporary Licensed Psychological Associate",
     headingPrimary: "Jonica",
-    headingAccent: "Davis, M.S., T-LPA.",
+    headingAccent: "Davis, Psy.D., T-LPA",
     intro:
       "Specializing in supportive, neuro-affirming therapy for individuals and families navigating neurodivergent identities.",
     specialties: [
@@ -367,7 +368,8 @@ export const clinicianProfiles: ClinicianProfile[] = [
         type: "paragraphs",
         title: "Authentic Connection in Clinical Care.",
         paragraphs: [
-          "Jonica is currently completing her postdoctoral fellowship under the supervision of Dr. Heather Cornett, PhD. She is a doctoral candidate at Radford University in Counseling Psychology and completed her Master of Science in Counseling Psychology at the University of Kentucky.",
+          "Jonica is currently completing her postdoctoral fellowship under the supervision of Dr. Heather Cornett, PhD. She earned her Psy.D. in Counseling Psychology from Radford University and completed her Master of Science in Counseling Psychology at the University of Kentucky.",
+
           "Jonica is passionate about providing therapy that meets people where they currently are in their lives. She works to offer clients a safe and affirming place to process anything that may be going on in their lives.",
         ],
       },
@@ -391,12 +393,13 @@ export const clinicianProfiles: ClinicianProfile[] = [
         variant: "surface-2",
         items: [
           {
-            title: "Master of Science (M.S.) in Psychology",
+            title: "Doctor of Psychology (Psy.D.) in Counseling Psychology, Radford University",
           },
           {
-            title: "Licensed Psychological Associate Trainee (T-LPA)",
+            title: "Master of Science (M.S.) in Counseling Psychology, University of Kentucky",
           },
         ],
+
       },
     ],
     secondaryPanel: {
