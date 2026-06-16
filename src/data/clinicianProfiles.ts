@@ -715,11 +715,11 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "taylor-pennington",
-    pageTitle: "Taylor Pennington, MS, T-LPA | Psychological Associate",
+    pageTitle: "Taylor Pennington, MS, T-LPA | Psychological Evaluations — KY",
     pageDescription:
       "Taylor Pennington, MS, T-LPA — temporarily licensed psychological associate providing school-based therapy and psychoeducational and psychological testing for children and adolescents in Kentucky, supervised by Dr. Heather Cornett.",
     jobTitle: "Temporary Licensed Psychological Associate",
-    badge: "T-LPA",
+    badge: "Temporary Licensed Psychological Associate",
     headingPrimary: "Taylor",
     headingAccent: "Pennington, MS, T-LPA",
     intro:
@@ -727,7 +727,6 @@ export const clinicianProfiles: ClinicianProfile[] = [
     specialties: [
       "Psychological & Psychoeducational Testing",
       "Autism, ADHD, & Intellectual Disability Evaluations",
-      "Therapy for School-Aged Youth (5–16)",
       "Family-Focused Feedback & School Advocacy",
     ],
     contentBlocks: [
