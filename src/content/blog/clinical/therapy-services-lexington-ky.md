@@ -61,7 +61,7 @@ That distinction matters. A neurodivergent person who has received traditional t
 
 ### Children (ages 3–18)
 
-Child and adolescent therapy at Twilight is provided primarily by **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** and **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)**. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support.
+Child and adolescent therapy at Twilight is provided primarily by **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)**, **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)**, and **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)**. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support. Taylor provides testing and relational-cultural therapy for children and adolescents and is supervised by Dr. Heather Cornett.
 
 Our dedicated [child and teen therapy page](/services/therapy/child-and-teen-therapy) covers the specifics in more depth.
 
@@ -108,4 +108,5 @@ If you are unsure who is the right fit, the [new client guide](/resources/new-cl
 - [Cognitive Behavioral Therapy (CBT)](/services/therapy/cognitive-behavioral-therapy) — CBT in Lexington, KY
 - [Couples Counseling](/services/therapy/couples-counseling) — couples and relationship therapy
 - [Therapy Clinicians](/services/therapy/clinicians) — compare therapists by specialty and availability
+- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing testing and child/adolescent therapy starting August 2026
 - [FAQ](/resources/faq) — common questions about therapy, insurance, and scheduling

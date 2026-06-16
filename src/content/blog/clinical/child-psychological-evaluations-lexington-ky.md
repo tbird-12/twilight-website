@@ -13,7 +13,7 @@ draft: false
 
 Families looking for a **child psychological evaluation in Lexington, Kentucky** are often trying to answer more than one question at once. They may be wondering whether a child is showing signs of autism, ADHD, learning differences, emotional regulation challenges, developmental delays, or a more complex overlap that does not fit neatly into one category. At Twilight Psychology, our approach is to slow the process down enough to get the question right, then use comprehensive testing to build a more useful answer.
 
-We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Jatana Boggs](/about/clinicians/jatana-boggs)**, and **[Ethan Puckett](/about/clinicians/ethan-puckett)**, depending on the child's age, referral question, and clinical fit.
+We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Jatana Boggs](/about/clinicians/jatana-boggs)**, **[Ethan Puckett](/about/clinicians/ethan-puckett)**, and **[Taylor Pennington](/about/clinicians/taylor-pennington)**, depending on the child's age, referral question, and clinical fit.
 
 ## What families usually mean when they ask for a child psychological evaluation
 
@@ -112,6 +112,7 @@ If your main question is whether your child is old enough, whether insurance may
 - [Emeli Evans's clinician profile](/about/clinicians/emeli-evans) — Neuro-affirming assessment and therapy for kids, adolescents, and adults
 - [Jatana Boggs's clinician profile](/about/clinicians/jatana-boggs) — ADHD and autism assessment services for children and adolescents; available in Kentucky and Ohio
 - [Ethan Puckett's clinician profile](/about/clinicians/ethan-puckett) — Child and adolescent therapy plus psychological and psychoeducational testing
+- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing child and adolescent testing starting August 2026
 - [Psychological Evaluations](/services/psychological-evaluations) — Overview of broader diagnostic evaluation services
 - [Telehealth Services](/services/telehealth) — How telehealth works at Twilight Psychology and which states are served
 - [ADHD Testing in Lexington, KY — Children and Adults](/blog/clinical/adhd-testing-lexington-ky) — What a comprehensive ADHD evaluation covers at Twilight Psychology, from intake through the feedback session.

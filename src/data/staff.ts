@@ -164,7 +164,7 @@ export const providers: Provider[] = [
     services_offered: ['Psychological and Psychoeducational Testing', 'Therapy (Ages 5-16)'],
     out_of_pocket_rates: { testing_standard: '$1,300', therapy: '$100' },
     states_served: ['Kentucky'],
-    ins: [],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_out_of_pocket: 'Contact for availability', therapy: 'Contact for availability' }
   },
 ];

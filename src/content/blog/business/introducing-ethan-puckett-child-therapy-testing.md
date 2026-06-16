@@ -51,4 +51,5 @@ If you would like to learn more about Ethan's services and background, visit his
 - [Ethan Puckett's clinician profile](/about/clinicians/ethan-puckett) — Learn more about his therapy and testing services
 - [Therapy clinicians](/services/therapy/clinicians) — Compare therapist fit, specialties, and availability
 - [Psychoeducational evaluations](/specialties/psychoeducational-evaluations) — Learn when school-focused testing is the right fit
+- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing child and adolescent testing at Twilight Psychology
 - [New client guide](/resources/new-client) — See what to expect before your first appointment

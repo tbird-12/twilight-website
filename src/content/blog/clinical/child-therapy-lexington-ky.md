@@ -60,6 +60,7 @@ Ethan begins seeing therapy clients starting **July 6, 2026**, and also accepts 
 
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** sees neurodivergent children and adolescents with a focus on AuDHD identity, PDA, and high-masking presentations
 - **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** conducts ADHD and autism evaluations for children alongside therapy services; **dual-licensed in Kentucky and Ohio** for telehealth clients in both states
+- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing testing and therapy for children and adolescents; supervised by Dr. Heather Cornett. See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.
 
 ## Insurance and scheduling
 
@@ -82,4 +83,5 @@ If you are unsure whether your child needs therapy, a formal evaluation, or both
 - [Therapy Services Overview](/services/therapy) — full list of therapy options at Twilight
 - [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — when an evaluation is the right first step
 - [ADHD Testing in Lexington, KY](/blog/clinical/adhd-testing-lexington-ky) — ADHD evaluation for children and adults
+- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing child and adolescent testing starting August 2026
 - [Waitlist Times](/resources/waitlist-times) — current scheduling availability

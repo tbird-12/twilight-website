@@ -82,6 +82,7 @@ Dyslexia testing and psychoeducational evaluations at Twilight Psychology are of
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — dyslexia testing alongside broader psychological evaluations
 - **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** — psychoeducational assessments including dyslexia
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — psychoeducational and psychological testing for children and adolescents with school-based referral questions, strong fit ages 7–16
+- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing psychological and psychoeducational testing for children and adolescents; supervised by Dr. Heather Cornett. (See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.)
 
 ## Insurance and self-pay considerations
 
@@ -103,5 +104,6 @@ If you are looking for **dyslexia testing in Lexington, KY**, our [dyslexia test
 - [Psychoeducational Evaluations](/specialties/psychoeducational-evaluations) — broader academic and learning evaluation services
 - [IEE — Independent Educational Evaluation](/specialties/IEE) — when and how to request an IEE from the school
 - [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — broader child evaluation information
+- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate offering child and adolescent testing starting August 2026
 - [Waitlist Times](/resources/waitlist-times) — current scheduling availability
 - [FAQ](/resources/faq) — common questions about testing and insurance

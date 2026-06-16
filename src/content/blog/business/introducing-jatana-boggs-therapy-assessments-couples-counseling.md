@@ -64,3 +64,4 @@ If you want to learn more about Jatana's background and services, visit her [cli
 - [New Client Guide](/resources/new-client) — See what to expect before your first appointment.
 - [Telehealth Services](/services/telehealth) — How telehealth works at Twilight Psychology, including which states each provider can serve.
 - [Service Area](/about/service-area) — States and regions served by Twilight Psychology clinicians via telehealth.
+- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate joining Twilight Psychology to provide testing for children and adolescents.
