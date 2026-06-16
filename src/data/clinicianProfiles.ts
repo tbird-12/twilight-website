@@ -713,6 +713,91 @@ export const clinicianProfiles: ClinicianProfile[] = [
       variant: "surface",
     },
   },
+  {
+    slug: "taylor-pennington",
+    pageTitle: "Taylor Pennington, MS, T-LPA | Psychological Associate",
+    pageDescription:
+      "Taylor Pennington, MS, T-LPA — temporarily licensed psychological associate providing school-based therapy and psychoeducational and psychological testing for children and adolescents in Kentucky, supervised by Dr. Heather Cornett.",
+    jobTitle: "Temporary Licensed Psychological Associate",
+    badge: "T-LPA",
+    headingPrimary: "Taylor",
+    headingAccent: "Pennington, MS, T-LPA",
+    intro:
+      "I provide neuro-affirming assessments and therapy for children and adolescents, focusing on accurate testing and family-centered recommendations.",
+    specialties: [
+      "Psychological & Psychoeducational Testing",
+      "Autism, ADHD, & Intellectual Disability Evaluations",
+      "Therapy for School-Aged Youth (5–16)",
+      "Family-Focused Feedback & School Advocacy",
+    ],
+    contentBlocks: [
+      {
+        type: "paragraphs",
+        title: "Accurate assessment, practical recommendations.",
+        paragraphs: [
+          "My name is Taylor Pennington. I hold a master’s degree in counseling psychology from the University of Louisville and am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
+          "My experience includes school-based therapy for middle and high school students and outpatient work providing weekly therapy for individuals with autism, ADHD, and cognitive delays. I have completed evaluations for intellectual disability, autism spectrum disorder, and ADHD.",
+          "I aim to provide accurate assessments that open doors to new opportunities and resources. I am passionate about supporting families who have received a neurodivergent diagnosis and advocating for the children I work with to help them achieve their personal best.",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "My clinical expertise centers on assessment and treatment of children and adolescents from neurodivergent backgrounds. I offer psychological and psychoeducational testing to help families, schools, and care teams better understand learning, attention, autism, or emotional-behavioral functioning. I primarily work with clients aged 5 to 16 and use a relational-cultural therapeutic (RCT) approach that values the therapeutic relationship and family collaboration.",
+        ],
+      },
+    ],
+    sidebarCards: [
+      {
+        title: "Education & Supervision",
+        eyebrow: "Background",
+        variant: "soft",
+        items: [
+          {
+            title: "M.S. in Counseling Psychology",
+            subtitle: "University of Louisville",
+          },
+          {
+            title: "Supervision",
+            subtitle: "Supervised by Dr. Heather Cornett, PhD",
+          },
+        ],
+      },
+      {
+        title: "Ideal Client",
+        variant: "surface-2",
+        body: [
+          "Children and adolescents aged 5 to 16 seeking assessment or therapy support, families navigating neurodivergent diagnoses, and school teams looking for clear, actionable assessment recommendations.",
+        ],
+      },
+      {
+        title: "Start Date & Availability",
+        eyebrow: "Scheduling",
+        variant: "soft",
+        body: [
+          "Start date: August 10, 2026",
+          "Monday: 9:00–4:00 (virtual)",
+          "Tuesday: 9:00–4:00 (virtual)",
+          "Wednesday: 8:00–5:00 (in person)",
+          "Thursday: 8:00–4:00 (in person)",
+          "Friday: 9:00–3:00 (virtual)",
+        ],
+      },
+    ],
+    primaryPanel: {
+      eyebrow: "Services",
+      title: "Assessment & Therapy Services (Ages 5–16)",
+      description:
+        "Psychological and psychoeducational testing, feedback with family- and school-facing recommendations, and relational-cultural therapy for neurodivergent youth.",
+      items: [
+        { label: "Assessments", value: "Contact for availability" },
+        { label: "Therapy", value: "Contact for availability" },
+      ],
+      ctaLabel: "Request Appointment",
+      ctaHref: WIDGET_LINK,
+      variant: "surface",
+    },
+  },
 ];
 
 export function getClinicianPageData(slug: string): ClinicianPageData | undefined {

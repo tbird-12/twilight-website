@@ -11,6 +11,7 @@ import tiffanyRoundtreeImg from '../assets/images/staff/tiffany-roundtree.png';
 import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
 import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
 import ethanPuckettImg from '../assets/images/staff/ethan-puckett.png';
+import taylorPenningtonImg from '../assets/images/staff/taylor-pennington.png';
 
 import ashleyPerkinsImg from '../assets/images/staff/ashley-perkins.jpeg';
 
@@ -152,6 +153,19 @@ export const providers: Provider[] = [
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { therapy: '1 month' }
+  },
+  {
+    name: 'Taylor Pennington',
+    slug: 'taylor-pennington',
+    spec: 'Psychological Associate',
+    image: taylorPenningtonImg,
+    name_with_education: 'Taylor Pennington, MS',
+    credential: 'T-LPA',
+    services_offered: ['Psychological and Psychoeducational Testing', 'Therapy (Ages 5-16)'],
+    out_of_pocket_rates: { testing_standard: '$1,300', therapy: '$100' },
+    states_served: ['Kentucky'],
+    ins: [],
+    wait_times: { testing_out_of_pocket: 'Contact for availability', therapy: 'Contact for availability' }
   },
 ];
 
