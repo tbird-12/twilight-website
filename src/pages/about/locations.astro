@@ -20,10 +20,9 @@ const locations = [
   {
     type: "Medication Management",
     providers: "Nicola Allen",
-    address: "1040 Monarch St., Office 305",
-    city: "Lexington, KY 40513",
-    mapLink:
-      "https://www.google.com/maps/search/?api=1&query=1040+Monarch+St+Office+305+Lexington+KY+40513",
+    address: MAIN_OFFICE_STREET_ADDRESS,
+    city: MAIN_OFFICE_CITY_STATE_ZIP,
+    mapLink: MAIN_OFFICE_MAP_LINK,
   },
 ];
 
@@ -178,6 +177,10 @@ const locationLinks = [
         privacy and specialized clinical environments for our clients. Please double-check
         your appointment reminder for your specific suite number before your
         visit.
+      </p>
+      <p class="text-site-sub leading-relaxed mt-4 mb-0">
+        Nicola Allen's medication management appointments will be based at {MAIN_OFFICE_STREET_ADDRESS} beginning
+        July 1, 2026. See our <a href="/blog/business/nicola-allen-moves-to-darby-creek-rd-july-1" class="text-cta underline hover:text-cta transition-colors">blog post</a> for the latest update.
       </p>
     </div>
   </section>

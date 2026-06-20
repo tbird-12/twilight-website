@@ -25,9 +25,9 @@ This new space will replace our previous clinician office at **501 Darby Creek R
 
 ## Nicola Allen's office update
 
-**Nicola Allen will continue seeing clients at 1040 Monarch Street, Lexington, 40513 through the end of June**. During this transition, she will also have an office at our new location.
+**Nicola Allen will continue seeing clients at 1040 Monarch Street, Lexington, 40513 through the end of June**. Starting **July 1, 2026**, she will be based at **503 Darby Creek Rd., Suite B** for medication management visits.
 
-If you are scheduled with Nicola, please continue to check your appointment reminder for the correct location while this transition is underway.
+If you are scheduled with Nicola, please continue to check your appointment reminder for the correct location while this transition is underway. For the latest update on her move, see our [blog post about her new office location](/blog/business/nicola-allen-moves-to-darby-creek-rd-july-1).
 
 ## Why we made this move
 
@@ -48,3 +48,4 @@ If you are unsure where your appointment will take place, please review your rem
 - [Psychological Evaluations](/services/psychological-evaluations) — Learn more about testing services
 - [Therapy](/services/therapy) — Explore therapy services at Twilight Psychology
 - [Medication Management](/services/medication-management) — Learn more about psychiatric medication services
+- [Nicola Allen moves to 503 Darby Creek Rd on July 1](/blog/business/nicola-allen-moves-to-darby-creek-rd-july-1) — Read the latest update on Nicola's move to the Darby Creek office
