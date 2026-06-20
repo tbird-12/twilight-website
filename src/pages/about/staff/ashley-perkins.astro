@@ -16,7 +16,7 @@ const expertise = [
 ];
 
 const pageDescription =
-  "Ashley Perkins — Administrative assistant at Twilight Psychology supporting client calls, insurance verification, and client coordination in Lexington, KY. Available Monday, Wednesday, and Friday.";
+  "Ashley Perkins — Intake Coordinator at Twilight Psychology supporting client calls, insurance verification, and client coordination in Lexington, KY.";
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
 const profileUrl = new URL(Astro.url.pathname, siteUrl).href;
 const schemaProfileImage = await getImage({
@@ -28,7 +28,7 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: ashley.name,
-  jobTitle: "Administrative Assistant",
+  jobTitle: "Intake Coordinator",
   description: pageDescription,
   email: EMAIL_ADDRESS,
   image: new URL(schemaProfileImage.src, siteUrl).href,
@@ -64,7 +64,7 @@ const supportLinks = [
 ---
 
 <Layout
-  title="Ashley Perkins | Administrative Assistant"
+  title="Ashley Perkins | Intake Coordinator"
   description={pageDescription}
 >
   <Schema slot="page-schema" schema={personSchema} />
@@ -96,7 +96,7 @@ const supportLinks = [
 
         <div class="flex-1 text-center lg:text-left">
             <span class="px-4 py-1.5 mb-6 text-xs font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full inline-block">
-                Administrative Assistant
+                Intake Coordinator
             </span>
             <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text mb-4 tracking-tighter leading-none">
                 Ashley <br/>
@@ -157,15 +157,6 @@ const supportLinks = [
                     <li class="flex items-center gap-2"><span class="text-cta">→</span> Insurance Verification</li>
                     <li class="flex items-center gap-2"><span class="text-cta">→</span> Client Coordination Questions</li>
                     <li class="flex items-center gap-2"><span class="text-cta">→</span> New Client Onboarding</li>
-                </ul>
-            </div>
-
-            <div class="p-8 bg-surface-soft border border-border rounded-[2.5rem]">
-                <h3 class="font-serif text-site-text font-black text-xs uppercase tracking-widest mb-4">Office Hours</h3>
-                <ul class="text-xs text-site-sub space-y-2 font-medium">
-                    <li class="flex items-center gap-2"><span class="text-cta">✓</span> Monday · 9:00 AM – 4:00 PM</li>
-                    <li class="flex items-center gap-2"><span class="text-cta">✓</span> Wednesday · 9:00 AM – 4:00 PM</li>
-                    <li class="flex items-center gap-2"><span class="text-cta">✓</span> Friday · 9:00 AM – 4:00 PM</li>
                 </ul>
             </div>
         </div>

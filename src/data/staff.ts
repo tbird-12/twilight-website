@@ -66,7 +66,7 @@ export const providers: Provider[] = [
   {
     name: 'Emeli Evans',
     slug: 'emeli-evans',
-    spec: 'Child Assessments & PDA Profile',
+    spec: 'Psychological Assessments & PDA Profile',
     image: emeliEvansImg,
     name_with_education: 'Emeli Evans, MS',
     credential: 'LPA',
@@ -92,7 +92,7 @@ export const providers: Provider[] = [
   {
     name: 'Stephen Shu',
     slug: 'stephen-shu',
-    spec: 'Psychological Assessments',
+    spec: 'Adult Psychological Assessments',
     image: stephenShuImg,
     name_with_education: 'Stephen Shu, MS',
     credential: 'LPA',
@@ -118,7 +118,7 @@ export const providers: Provider[] = [
   {
     name: 'Ethan Puckett',
     slug: 'ethan-puckett',
-    spec: 'Child Therapy & Testing (Ideal Ages 7-16)',
+    spec: 'Child Therapy & Psychoeducational Assessments',
     image: ethanPuckettImg,
     name_with_education: 'Ethan Puckett, M.A.',
     credential: 'T-LPA',
@@ -131,7 +131,7 @@ export const providers: Provider[] = [
   {
     name: 'Jatana Boggs',
     slug: 'jatana-boggs',
-    spec: 'Neurodiverse-Affirming Therapy & Assessments',
+    spec: 'Couples Therapy & Psychological Assessments',
     image: jatanaBoggsImg,
     name_with_education: 'Jatana Boggs, MS',
     credential: 'LPCA (KY), LPC (OH), NCC',
@@ -157,7 +157,7 @@ export const providers: Provider[] = [
   {
     name: 'Taylor Pennington',
     slug: 'taylor-pennington',
-    spec: 'Psychological Associate',
+    spec: 'Child Psychological Assessments',
     image: taylorPenningtonImg,
     name_with_education: 'Taylor Pennington, MS',
     credential: 'T-LPA',
@@ -171,5 +171,5 @@ export const providers: Provider[] = [
 
 export const staff: StaffMember[] = [
   { name: 'Samantha Rodarte', slug: 'samantha-rodarte', spec: 'Practice Manager', image: samanthaRodarte },
-  { name: 'Ashley Perkins', slug: 'ashley-perkins', spec: 'Administrative Assistant', image: ashleyPerkinsImg },
+  { name: 'Ashley Perkins', slug: 'ashley-perkins', spec: 'Intake Coordinator', image: ashleyPerkinsImg },
 ];

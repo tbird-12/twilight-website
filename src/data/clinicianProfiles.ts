@@ -81,7 +81,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     jobTitle: "Founder and Licensed Psychologist",
     badge: "Founder & Licensed Psychologist",
     headingPrimary: "Heather Cornett,",
-    headingAccent: "Ph.D., LP.",
+    headingAccent: "Ph.D., L.P., HSP.",
     intro:
       "Specializing in comprehensive psychological evaluations for high-masking neurodivergent adults and complex diagnostic clarification.",
     specialties: [
@@ -96,8 +96,8 @@ export const clinicianProfiles: ClinicianProfile[] = [
         type: "paragraphs",
         title: "A Neuro-Affirming Approach to Clarity.",
         paragraphs: [
-          "Hello! I am a Kentucky native and the founder of Twilight Psychology. My clinical expertise lies in working with individuals who have often been overlooked or misdiagnosed—particularly those who have learned to mask behaviors to fit into neurotypical environments.",
-          "Whether you are an adult seeking answers about Autism or ADHD for the first time, or a parent navigating a complex learning disability, I provide a thorough, evidence-based, and compassionate evaluation process. I believe that a diagnosis is not a deficit; it is a vital piece of your identity that provides the roadmap for profound purpose and fulfillment.",
+          "Hello! I am a Licensed Psychologist and the founder of Twilight Psychology. My clinical expertise lies in working with individuals who have often been overlooked or misdiagnosed—particularly those who have learned to mask behaviors to fit into neurotypical environments.",
+          "Whether you are an adult seeking answers about neurodivergence for the first time, or a parent navigating a complex learning disability, I provide a thorough, evidence-based, and compassionate evaluation process. I have extensive experience working with SPMI (Bipolar, Borderline, Schizophrenia)  populations, and I understand how personality disorders can sometimes overshadow or mask neurodivergent traits. "
         ],
       },
       {
@@ -109,7 +109,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       {
         type: "paragraphs",
         paragraphs: [
-          "Beyond my clinical work, I have served as an Assistant Professor of Psychology for three years and hold a PSYPACT certificate, allowing me to provide psychological services via telehealth to clients in over 40 states.",
+          "Beyond my clinical work, I have served as an Assistant Professor of Psychology for three years and hold a PSYPACT certificate, allowing me to provide psychological services via telehealth to clients in over 40 states. I've served on the Ethics Committee for the Kentucky Psychological Association and am honored to serve on the Kentucky Board of Examiners of Psychology.",
         ],
       },
     ],
@@ -734,7 +734,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         type: "paragraphs",
         title: "Accurate assessment, practical recommendations.",
         paragraphs: [
-          "My name is Taylor Pennington. I hold a master’s degree in counseling psychology from the University of Louisville and am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
+          "My name is Taylor Pennington. I hold a master’s degree in counseling psychology from the University of Louisville and am a temporarily Licensed Psychological Associate practicing under the supervision of Dr. Heather Cornett.",
           "My experience includes school-based therapy for middle and high school students and outpatient work providing weekly therapy for individuals with autism, ADHD, and cognitive delays. I have completed evaluations for intellectual disability, autism spectrum disorder, and ADHD.",
           "I aim to provide accurate assessments that open doors to new opportunities and resources. I am passionate about supporting families who have received a neurodivergent diagnosis and advocating for the children I work with to help them achieve their personal best.",
         ],
@@ -789,7 +789,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       description:
         "Psychological and psychoeducational testing, feedback with family- and school-facing recommendations, and relational-cultural therapy for neurodivergent youth.",
       items: [
-        { label: "Assessments", value: "Contact for availability" },
+        { label: "Assessments", value: "2 months" },
         { label: "Therapy", value: "Contact for availability" },
       ],
       ctaLabel: "Request Appointment",
