@@ -25,9 +25,7 @@ const exploreLinks = [
 
 <footer class="border-t border-border bg-site-footer mt-16">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
-
       <!-- Brand / Logo -->
       <div class="lg:col-span-1">
         <a href="/" class="inline-flex items-center gap-2 mb-4 group">
@@ -41,18 +39,25 @@ const exploreLinks = [
             decoding="async"
             class="h-9 w-auto"
           />
-          <span class="font-serif font-black text-site-text group-hover:text-cta transition-colors leading-tight">
+          <span
+            class="font-serif font-black text-site-text group-hover:text-cta transition-colors leading-tight"
+          >
             Twilight<br />Psychology
           </span>
         </a>
         <p class="text-sm text-site-sub leading-relaxed">
-          Specialized psychological evaluations, psychiatric medication management, and evidence-based therapy.
+          Specialized psychological evaluations, psychiatric medication
+          management, and evidence-based therapy.
         </p>
       </div>
 
       <!-- Contact -->
       <div>
-        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Contact</p>
+        <p
+          class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4"
+        >
+          Contact
+        </p>
         <div class="space-y-2 text-sm text-site-sub">
           <p>
             P:&nbsp;<a href={`tel:${PHONE_NUMBER}`} class="footer-link">
@@ -65,7 +70,10 @@ const exploreLinks = [
             </a>
           </p>
           <p>
-            E:&nbsp;<a href={`mailto:${EMAIL_ADDRESS}`} class="footer-link break-all">
+            E:&nbsp;<a
+              href={`mailto:${EMAIL_ADDRESS}`}
+              class="footer-link break-all"
+            >
               {EMAIL_ADDRESS}
             </a>
           </p>
@@ -74,67 +82,79 @@ const exploreLinks = [
 
       <!-- Locations -->
       <div>
-        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Locations</p>
+        <p
+          class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4"
+        >
+          Locations
+        </p>
         <div class="space-y-4 text-sm text-site-sub">
-          <div>
-            <p class="font-semibold text-site-text text-xs uppercase tracking-wide mb-1">Main Office</p>
-            <a
-              href={MAIN_OFFICE_MAP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer-link leading-snug block"
-            >
-              {MAIN_OFFICE_STREET_ADDRESS}<br />{MAIN_OFFICE_CITY_STATE_ZIP}
-            </a>
-          </div>
-          <div>
-            <p class="font-semibold text-site-text text-xs uppercase tracking-wide mb-1">Medication Management</p>
-            <a
-              href={MAIN_OFFICE_MAP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer-link leading-snug block"
-            >
-              {MAIN_OFFICE_STREET_ADDRESS}<br />{MAIN_OFFICE_CITY_STATE_ZIP}
-              <span class="block mt-1 text-xs text-site-sub">Starting July 1, 2026</span>
-            </a>
-          </div>
+          <p
+            class="font-semibold text-site-text text-xs uppercase tracking-wide mb-1"
+          >
+            Lexington, KY
+          </p>
+          <a
+            href={MAIN_OFFICE_MAP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-link leading-snug block"
+          >
+            {MAIN_OFFICE_STREET_ADDRESS}<br />{MAIN_OFFICE_CITY_STATE_ZIP}
+          </a>
         </div>
       </div>
 
       <!-- Blog categories + quick links -->
       <div>
-        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Blog Topics</p>
-        <nav class="flex flex-col gap-2 text-sm text-site-sub" aria-label="Blog footer topics">
-          {blogCategories.map((cat) => (
-            <a href={`/blog/category/${cat.slug}`} class="footer-link">
-              {cat.label}
-            </a>
-          ))}
+        <p
+          class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4"
+        >
+          Blog Topics
+        </p>
+        <nav
+          class="flex flex-col gap-2 text-sm text-site-sub"
+          aria-label="Blog footer topics"
+        >
+          {
+            blogCategories.map((cat) => (
+              <a href={`/blog/category/${cat.slug}`} class="footer-link">
+                {cat.label}
+              </a>
+            ))
+          }
         </nav>
       </div>
 
       <div>
-        <p class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4">Explore</p>
-        <nav class="flex flex-col gap-2 text-sm text-site-sub" aria-label="Blog footer site links">
-          {exploreLinks.map((link) => (
-            <a href={link.href} class="footer-link">
-              {link.label}
-            </a>
-          ))}
+        <p
+          class="text-xs font-bold tracking-widest uppercase text-site-sub mb-4"
+        >
+          Explore
+        </p>
+        <nav
+          class="flex flex-col gap-2 text-sm text-site-sub"
+          aria-label="Blog footer site links"
+        >
+          {
+            exploreLinks.map((link) => (
+              <a href={link.href} class="footer-link">
+                {link.label}
+              </a>
+            ))
+          }
         </nav>
       </div>
-
     </div>
 
     <hr class="my-8 border-border" />
 
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-site-sub">
+    <div
+      class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-site-sub"
+    >
       <span>© {year} Twilight Psychology, PLLC. All rights reserved.</span>
       <a href="/privacy" class="footer-link underline underline-offset-2">
         Privacy Policy
       </a>
     </div>
-
   </div>
 </footer>
