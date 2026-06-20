@@ -1,7 +1,7 @@
 ---
 title: "Introducing Taylor Pennington, MS, T-LPA"
-seoTitle: "Introducing Taylor Pennington, MS, T-LPA — Twilight Psychology"
-description: "Meet Taylor Pennington, MS, T-LPA — temporarily licensed psychological associate providing testing for children and adolescents in Kentucky."
+seoTitle: "Introducing Taylor Pennington, MS, T-LPA"
+description: "Meet Taylor Pennington, MS, T-LPA — temporarily licensed psychological associate providing testing for children and adolescents in Kentucky"
 pubDate: 2026-06-15
 category: business
 author: "Twilight Psychology Team"

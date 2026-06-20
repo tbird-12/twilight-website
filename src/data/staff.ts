@@ -46,7 +46,7 @@ export const providers: Provider[] = [
     credential: 'LP',
     services_offered: ['Psychological evaluations', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'IQ testing', 'Guardianship evaluations *', 'Disability evaluations*', 'Adoption evaluations *', 'ESA evaluation *'],
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', esa_evaluation: '$200', guardianship_evaluation: '$500', disability_evaluation: '$1,000+', adoption_evaluation: '$1,500' },
-    states_served: ['Ohio', 'Kentucky', 'New Mexico', 'Indiana', 'Tennessee', 'Psypact states'],
+    states_served: ['Ohio', 'Kentucky', 'New Mexico', 'Indiana', 'Tennessee', 'PSYPACT states'],
     ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport', 'Anthem'],
     wait_times: { testing_insurance: '4 months', testing_out_of_pocket: '3 weeks' }
   },

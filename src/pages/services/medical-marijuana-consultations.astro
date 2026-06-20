@@ -1,0 +1,180 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Schema from "../../components/Schema.astro";
+import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
+import PageLinksSection from "../../components/PageLinksSection.astro";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, WIDGET_LINK } from "../../data/resource";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Medical Marijuana Consultations",
+  description:
+    "Clinician-led medical marijuana consultations in Kentucky for eligible adults who need in-person assessment, treatment guidance, and renewal support.",
+  areaServed: {
+    "@type": "State",
+    name: "Kentucky",
+  },
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+};
+
+const qualifyingConditions = [
+  "Cancer",
+  "Chronic or severe pain",
+  "Epilepsy or seizure disorder",
+  "Multiple sclerosis",
+  "Chronic nausea or cyclical vomiting syndrome",
+  "Post-traumatic stress disorder",
+];
+
+const importantConsiderations = [
+  "Consultations and renewals are self-pay and not billed to insurance.",
+  "Appointments are conducted in person for Kentucky clients.",
+  "Employment, firearm ownership, and interstate travel may all carry legal or practical implications.",
+  "Cannabis can interact with psychiatric medications and is not a fit for every diagnosis.",
+];
+
+const relatedLinks = [
+  {
+    href: "/services/medication-management",
+    label: "Medication management",
+    description: "Compare ongoing psychiatric care with medication consultation and follow-up support.",
+  },
+  {
+    href: "/about/clinicians/nicola-allen",
+    label: "Meet Nicola Allen",
+    description: "Learn more about our psychiatric nurse practitioner and authorized practitioner.",
+  },
+  {
+    href: "/resources/new-client",
+    label: "New client guide",
+    description: "See intake steps, scheduling details, and how to prepare for your first visit.",
+  },
+];
+---
+
+<Layout
+  title="Medical Marijuana Consultations in Kentucky"
+  description="Medical marijuana consultations in Kentucky for eligible adults who need clinician-led guidance, in-person assessment, and clear next steps."
+>
+  <Schema slot="page-schema" schema={serviceSchema} />
+
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="prose prose-lg max-w-none prose-custom
+                prose-p:text-site-text
+                prose-headings:text-site-text
+                prose-strong:text-site-text
+                prose-li:text-site-text
+                mb-12">
+      <PageHeroWrapper
+        title="Medical Marijuana Consultations"
+        accentWord="Consultations"
+        badge="Kentucky · In-Person Only"
+        subtitle="Clinician-led consultations and renewals for eligible Kentucky adults who need a careful assessment, practical education, and documentation handled through a real psychiatric visit."
+        size="lg"
+      />
+
+      <section class="max-w-7xl mx-auto px-4 grid lg:grid-cols-3 gap-12 mt-20">
+        <div class="lg:col-span-2 space-y-12">
+          <section class="bg-surface-soft border border-border p-10 rounded-[2.5rem]">
+            <h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">
+              Structured guidance, not a transactional letter
+            </h2>
+            <div class="space-y-6 text-site-text leading-relaxed text-lg">
+              <p>
+                Medical marijuana consultations at Twilight Psychology are handled as formal psychiatric visits.
+                The goal is to review your diagnosis, symptoms, treatment history, risks, and practical
+                considerations before deciding whether cannabis-based treatment is appropriate.
+              </p>
+              <p>
+                These appointments are best suited for adults who want a thoughtful conversation about clinical
+                fit, current medications, and the day-to-day implications of starting or renewing treatment in
+                Kentucky.
+              </p>
+            </div>
+          </section>
+
+          <section class="bg-surface-2 border border-border-strong p-10 rounded-[2.5rem]">
+            <h2 class="font-serif text-2xl font-black text-site-text mb-6 tracking-tight">
+              Qualifying conditions we review
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+              {qualifyingConditions.map((condition) => (
+                <div class="flex items-start gap-3 rounded-3xl border border-border bg-surface p-5">
+                  <span class="mt-1 text-cta">✦</span>
+                  <p class="text-sm font-semibold text-site-text leading-relaxed">{condition}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section class="bg-surface-soft border border-border p-10 rounded-[2.5rem]">
+            <h2 class="font-serif text-2xl font-black text-site-text mb-6 tracking-tight">
+              Important considerations before you book
+            </h2>
+            <ul class="space-y-4 text-site-text leading-relaxed">
+              {importantConsiderations.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 text-cta font-black">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+
+        <aside class="space-y-8">
+          <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+            <h3 class="font-serif text-xl font-black text-site-text mb-4">Visit details</h3>
+            <div class="space-y-4 text-sm">
+              <div>
+                <p class="text-xs font-black uppercase tracking-widest text-cta mb-1">Format</p>
+                <p class="font-bold text-site-text">In-person in Kentucky</p>
+              </div>
+              <div>
+                <p class="text-xs font-black uppercase tracking-widest text-cta mb-1">Coverage</p>
+                <p class="font-bold text-site-text">Self-pay only</p>
+              </div>
+              <div>
+                <p class="text-xs font-black uppercase tracking-widest text-cta mb-1">Cost</p>
+                <p class="font-bold text-site-text">$150 for consultation or renewal</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface-soft border border-border p-10 rounded-[2.5rem] text-center">
+            <h3 class="font-serif text-2xl font-black text-site-text mb-4">Request an Intake</h3>
+            <p class="text-site-sub text-sm mb-8 leading-relaxed">
+              Reach out if you want to discuss eligibility, documentation, or whether this service fits your
+              treatment goals.
+            </p>
+            <div class="space-y-3">
+              <a
+                href={WIDGET_LINK}
+                class="block w-full py-4 bg-cta text-cta-fg font-black rounded-xl hover:bg-cta/80 transition-all shadow-lg shadow-cta/20"
+              >
+                Schedule Online
+              </a>
+              <a
+                href={`tel:${PHONE_NUMBER}`}
+                class="inline-flex items-center justify-center text-sm font-bold text-site-sub hover:text-cta transition-colors underline underline-offset-4"
+              >
+                Call {PHONE_NUMBER_FORMATTED}
+              </a>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <PageLinksSection
+        title="Plan the right next step"
+        description="Use these pages when you need the surrounding context before you schedule."
+        links={relatedLinks}
+      />
+    </div>
+  </div>
+</Layout>

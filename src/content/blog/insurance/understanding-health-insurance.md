@@ -1,13 +1,13 @@
 ---
 title: "Understanding Health Insurance: Deductibles, copays, eligibility, and Benefits"
 seoTitle: "Health Insurance Basics: Deductibles, Copays & Benefits"
-description: "Learn how deductibles, copays, eligibility, and benefits affect therapy, medication management, and psychological testing coverage at Twilight Psychology."
+description: "Learn how deductibles, copays, eligibility, and benefits affect therapy, medication, and testing coverage at Twilight Psychology"
 seoDescription: "Learn how deductibles, copays, coinsurance, eligibility, and benefits affect therapy and testing coverage at Twilight Psychology."
 pubDate: 2026-04-11
 updatedDate: 2026-05-12
 category: insurance
-author: "Twilight Psychology Billing Team"
-tags: ["Medicare", "Commercial", "insurance", "Anthem"]
+author: "Twilight Psychology Team"
+tags: ["medicare", "commercial-insurance", "insurance", "anthem"]
 draft: false
 ---
 

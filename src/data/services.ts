@@ -8,7 +8,7 @@ export const specialties: ServiceLink[] = [
   { name: 'Learning Disabilities', slug: 'dyslexia-testing', desc: 'Dyslexia, dyscalculia, and other learning disability assessments' },
   { name: 'Psychoeducational Evaluations', slug: 'psychoeducational-evaluations', desc: 'Self-pay psychoeducational evaluations for school and accommodation planning' },
   { name: 'PDA Profile', slug: 'pda-profile', desc: 'Pathological Demand Avoidance profile assessments' },
-  { name: 'IEE for KY', slug: 'IEE', desc: 'Independent Educational Evaluations for special education advocacy' },
+  { name: 'IEE in Kentucky', slug: 'iee', desc: 'Independent Educational Evaluations for special education advocacy' },
   { name: 'Adoption Evaluations', slug: 'adoption-evaluations', desc: 'Adoption evaluations prepared for agency and court requirements' },
   { name: 'Psych Evaluations for Benefits', slug: 'benefits-evaluations', desc: 'Evaluations for disability benefits and accommodation requests' },
   { name: 'Guardianship Evaluations', slug: 'guardianship-evaluations', desc: 'Court-informed evaluations for guardianship questions' },

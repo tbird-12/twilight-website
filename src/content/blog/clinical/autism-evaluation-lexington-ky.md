@@ -54,7 +54,7 @@ An evaluation that looks at both — rather than forcing a single-diagnosis fram
 
 Autism evaluations at Twilight Psychology are offered by:
 
-- **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** — founder and licensed psychologist; comprehensive autism evaluations including complex and high-masking presentations, starting from age 2; holds a **PsyPact certificate** for telehealth autism evaluations in 40+ states nationwide
+- **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** — founder and licensed psychologist; comprehensive autism evaluations including complex and high-masking presentations, starting from age 2; holds a **PSYPACT certificate** for telehealth autism evaluations in 40+ states nationwide
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — AuDHD identity, PDA profile, and high-masking support; neuro-affirming assessment with personal lived experience as an AuDHD clinician
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — autism and ADHD evaluations; **dual-licensed in Kentucky and Tennessee**, available to clients in both states
 - **[Stephen Shu, MS](/about/clinicians/stephen-shu)** — autism and ADHD assessments for children, adolescents, and adults
@@ -93,7 +93,7 @@ What the evaluation ends with — beyond a diagnostic conclusion — is a set of
 
 If you are looking for **autism testing in Lexington, KY**, our [autism testing service page](/services/autism-testing) has a full overview of what we offer. Our [new client guide](/resources/new-client) explains the intake process.
 
-If you live outside Lexington, autism evaluations are also available via **telehealth across Kentucky**. Dr. Cornett's PsyPact certificate extends that availability to clients in 40+ states nationwide, and Dr. Burns and Jatana Boggs serve clients in Tennessee and Ohio respectively. See our [telehealth services page](/services/telehealth) for more details on statewide and multi-state availability.
+If you live outside Lexington, autism evaluations are also available via **telehealth across Kentucky**. Dr. Cornett's PSYPACT certificate extends that availability to clients in 40+ states nationwide, and Dr. Burns and Jatana Boggs serve clients in Tennessee and Ohio respectively. See our [telehealth services page](/services/telehealth) for more details on statewide and multi-state availability.
 
 If you have questions about age, insurance, or which clinician is the right fit for your situation, our intake team can help before you schedule.
 

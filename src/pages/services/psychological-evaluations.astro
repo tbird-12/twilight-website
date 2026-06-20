@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Schema from "../../components/Schema.astro";
+import PageLinksSection from "../../components/PageLinksSection.astro";
 import { WIDGET_LINK } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
@@ -62,11 +63,29 @@ const evalSchema = {
     { "@type": "State", name: "Kentucky" },
   ],
 };
+
+const specialtyEvaluationLinks = [
+  {
+    href: "/specialties/psychoeducational-evaluations",
+    label: "Psychoeducational evaluations",
+    description: "School, accommodation, and gifted/2e testing for documentation-heavy referrals.",
+  },
+  {
+    href: "/specialties/dyslexia-testing",
+    label: "Learning disability testing",
+    description: "Clarify dyslexia, dysgraphia, dyscalculia, and overlapping school concerns.",
+  },
+  {
+    href: "/specialties/iee",
+    label: "IEE in Kentucky",
+    description: "Independent Educational Evaluations for families seeking a second school opinion.",
+  },
+];
 ---
 
 <Layout
-  title="Psychological Evaluations Lexington KY | Twilight Psychology"
-  description="Psychological evaluations in Lexington, KY for ADHD, autism, personality patterns, and diagnostic complexity, with in-network options for covered referrals and self-pay when broader documentation is needed."
+  title="Psychological Evaluations Lexington KY"
+  description="Psychological evaluations in Lexington, KY for ADHD, autism, personality patterns, and diagnostic complexity, with clear recommendations and telehealth options."
 >
   <Schema slot="page-schema" schema={evalSchema} />
     <div class="max-w-4xl mx-auto px-6">
@@ -276,6 +295,12 @@ const evalSchema = {
       </a>
     </div>
   </div>
+
+  <PageLinksSection
+    title="Need a specialty evaluation instead?"
+    description="These pages are the best next step when the referral question is school-, accommodation-, or documentation-focused."
+    links={specialtyEvaluationLinks}
+  />
 
   <nav class="max-w-4xl mx-auto px-6 mt-4 mb-4">
     <a href="/services" class="inline-flex items-center gap-2 text-sm font-bold text-cta hover:text-cta/80 transition-colors">

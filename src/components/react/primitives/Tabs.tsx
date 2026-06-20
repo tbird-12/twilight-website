@@ -1,5 +1,5 @@
-import type { ReactNode, KeyboardEvent as ReactKeyboardEvent } from 'react';
-import { useState, useCallback, useRef, useEffect, Children } from 'react';
+import type { ReactElement, ReactNode, KeyboardEvent as ReactKeyboardEvent } from 'react';
+import { useState, useCallback, useRef, useEffect, Children, isValidElement } from 'react';
 
 export interface Tab {
   id: string;
@@ -23,6 +23,11 @@ interface TabPanelProps {
   id: string;
   children: ReactNode;
   className?: string;
+}
+
+interface TabPanelElementProps {
+  id?: string;
+  'data-tab-panel-id'?: string;
 }
 
 export function TabPanel({ id, children, className = '' }: TabPanelProps) {
@@ -176,9 +181,14 @@ export default function Tabs({
       {/* Tab panels */}
       <div className="relative">
         {childArray.map((child) => {
-          if (child && typeof child === 'object' && 'props' in child) {
-            const props = (child as any).props;
-            const panelId = props['id'] || props['data-tab-panel-id'];
+          if (isValidElement(child)) {
+            const props = (child as ReactElement<TabPanelElementProps>).props;
+            const panelId = props.id || props['data-tab-panel-id'];
+
+            if (!panelId) {
+              return child;
+            }
+
             const isActive = panelId === activeTab;
             return (
               <div

@@ -42,7 +42,7 @@ Adult ADHD evaluation at Twilight includes a developmental history component —
 
 Several Twilight Psychology clinicians conduct ADHD evaluations for children, adolescents, and adults:
 
-- **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** — comprehensive psychological evaluations including ADHD and high-masking presentations, beginning at age 2; holds a **PsyPact certificate** allowing telehealth ADHD evaluations in 40+ states nationwide
+- **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** — comprehensive psychological evaluations including ADHD and high-masking presentations, beginning at age 2; holds a **PSYPACT certificate** allowing telehealth ADHD evaluations in 40+ states nationwide
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — neuro-affirming evaluation with a focus on AuDHD identity, PDA, and high-masking ADHD across all ages
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism evaluations; **dual-licensed in Kentucky and Tennessee**, available to clients in both states
 - **[Stephen Shu, MS](/about/clinicians/stephen-shu)** — ADHD and autism assessments for children, adolescents, and adults
@@ -90,7 +90,7 @@ If therapy is part of the next step, Twilight Psychology also offers individual 
 
 If you are looking for **ADHD testing in Lexington, KY**, reviewing our [ADHD testing service page](/services/adhd-testing) is a good starting point. You can also visit our [new client guide](/resources/new-client) to understand the intake process.
 
-If you live outside Lexington, all ADHD evaluation services are also available via **telehealth across Kentucky**. Dr. Cornett's PsyPact authority extends telehealth availability to clients in 40+ states, and Dr. Burns and Jatana Boggs serve clients in Tennessee and Ohio respectively. See our [telehealth services page](/services/telehealth) for details.
+If you live outside Lexington, all ADHD evaluation services are also available via **telehealth across Kentucky**. Dr. Cornett's PSYPACT authority extends telehealth availability to clients in 40+ states, and Dr. Burns and Jatana Boggs serve clients in Tennessee and Ohio respectively. See our [telehealth services page](/services/telehealth) for details.
 
 If you have questions about age, insurance, or which clinician is the right fit, our intake team can help before you schedule.
 

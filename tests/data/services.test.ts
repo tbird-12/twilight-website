@@ -62,7 +62,7 @@ describe("specialties data", () => {
 
   it("specialty slugs are URL-safe", () => {
     for (const s of specialties) {
-      expect(s.slug).toMatch(/^[A-Za-z0-9-]+$/);
+      expect(s.slug).toMatch(/^[a-z0-9-]+$/);
     }
   });
 });

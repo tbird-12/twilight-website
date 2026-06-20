@@ -49,7 +49,7 @@ An **independent educational evaluation (IEE)** or a private psychological evalu
 - A report that the family owns and can share with teachers, tutors, physicians, and other providers
 - Faster turnaround than school evaluation timelines in many cases
 
-If a school has already evaluated your child and the family disagrees with the findings, parents may be entitled to request an IEE at public expense. Our [IEE page](/specialties/IEE) covers that process in more detail.
+If a school has already evaluated your child and the family disagrees with the findings, parents may be entitled to request an IEE at public expense. Our [IEE page](/specialties/iee) covers that process in more detail.
 
 ## How results connect to IEP and 504 plans
 
@@ -102,7 +102,7 @@ If you are looking for **dyslexia testing in Lexington, KY**, our [dyslexia test
 
 - [Dyslexia Testing](/specialties/dyslexia-testing) — service overview and details
 - [Psychoeducational Evaluations](/specialties/psychoeducational-evaluations) — broader academic and learning evaluation services
-- [IEE — Independent Educational Evaluation](/specialties/IEE) — when and how to request an IEE from the school
+- [IEE — Independent Educational Evaluation](/specialties/iee) — when and how to request an IEE from the school
 - [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — broader child evaluation information
 - [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate offering child and adolescent testing starting August 2026
 - [Waitlist Times](/resources/waitlist-times) — current scheduling availability

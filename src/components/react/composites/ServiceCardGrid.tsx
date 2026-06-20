@@ -15,11 +15,11 @@ interface ServiceCardGridProps {
 }
 
 export default function ServiceCardGrid({ items, basePath, className = '' }: ServiceCardGridProps) {
-  const [ref, isInView] = useInView({ threshold: 0.05 });
+  const [ref, isInView] = useInView<HTMLDivElement>({ threshold: 0.05 });
   const reduced = useReducedMotion();
 
   return (
-    <div ref={ref as any} className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 ${className}`}>
+    <div ref={ref} className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 ${className}`}>
       {items.map((item, idx) => {
         const delay = reduced ? 0 : createStaggerDelay(idx, 100);
         const style = reduced

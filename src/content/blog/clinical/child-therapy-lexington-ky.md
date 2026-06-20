@@ -7,7 +7,7 @@ pubDate: 2026-05-28
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["child-therapy", "teen-therapy", "pediatric-therapy", "lexington-ky", "adhd-therapy", "autism-therapy", "anxiety", "child-psychologist"]
-draft: true
+draft: false
 ---
 
 Knowing when a child needs therapy — and finding the right therapist — are two different problems. Many families arrive at the search for a **child therapist in Lexington, KY** after a long period of wondering. They have noticed something: a pattern that is persisting longer than expected, a level of distress that seems beyond typical growing pains, or a disconnect between how capable a child is and how much they are struggling.

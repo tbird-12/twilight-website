@@ -1,12 +1,12 @@
 ---
 title: "Twilight Psychology Is Now In-Network with Wellcare of Kentucky"
 seoTitle: "Wellcare of Kentucky Now In-Network"
-description: "We are pleased to announce that Twilight Psychology is now credentialed and in-network with Wellcare of Kentucky. We are accepting new clients for therapy and medication management."
+description: "Twilight Psychology is now in-network with Wellcare of Kentucky for therapy and medication management, with scheduling open for new clients"
 seoDescription: "Twilight Psychology is now in-network with Wellcare of Kentucky for therapy and medication management services."
 pubDate: 2026-04-13
 category: announcements
 author: "Twilight Psychology Team"
-tags: ["wellcare", "medicaid", "insurance", "network", "therapy", "medication management"]
+tags: ["wellcare", "medicaid", "insurance", "network", "therapy", "medication-management"]
 draft: false
 ---
 

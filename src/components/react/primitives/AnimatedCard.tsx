@@ -29,8 +29,10 @@ export default function AnimatedCard({
   hoverEffect = 'lift',
   children,
 }: AnimatedCardProps) {
-  const [ref, isInView] = useInView({ threshold: 0.1 });
+  const [linkRef, isLinkInView] = useInView<HTMLAnchorElement>({ threshold: 0.1 });
+  const [divRef, isDivInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
   const reduced = useReducedMotion();
+  const isInView = href ? isLinkInView : isDivInView;
 
   const style = reduced
     ? {}
@@ -47,14 +49,14 @@ export default function AnimatedCard({
 
   if (href) {
     return (
-      <a ref={ref as any} href={href} className={cls} style={style}>
+      <a ref={linkRef} href={href} className={cls} style={style}>
         {children}
       </a>
     );
   }
 
   return (
-    <div ref={ref as any} className={cls} style={style}>
+    <div ref={divRef} className={cls} style={style}>
       {children}
     </div>
   );

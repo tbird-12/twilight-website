@@ -1,7 +1,7 @@
 ---
 title: "Aetna Better Health — Prior Authorization, Medical Necessity, and Appeals"
 seoTitle: "Aetna Better Health Prior Authorization for Testing"
-description: "Information about prior authorization, documentation, medical necessity, and the appeals process for psychological testing under Aetna Better Health of Kentucky."
+description: "Information about prior authorization, documentation, medical necessity, and appeals for psychological testing under Aetna Better Health of Kentucky"
 seoDescription: "Learn how Aetna Better Health of Kentucky handles prior authorization, medical necessity, and appeals for psychological testing."
 pubDate: 2026-02-20
 updatedDate: 2026-05-12

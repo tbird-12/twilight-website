@@ -1,6 +1,6 @@
 ---
 title: "Welcome to the Twilight Psychology Blog"
-description: "Introducing our new blog — a place for clinical updates, billing guidance, insurance news, and practice announcements from the Twilight Psychology team."
+description: "Introducing our new blog — a place for clinical updates, billing guidance, insurance news, and practice announcements from the Twilight Psychology team"
 pubDate: 2026-04-05
 category: announcements
 author: "Twilight Psychology Team"
@@ -30,4 +30,3 @@ To get started, explore some of our recent posts:
 You can also browse [all of our services](/services) or review [accepted insurance plans](/resources/insurances-accepted).
 
 Thank you for being part of the Twilight Psychology community.
-

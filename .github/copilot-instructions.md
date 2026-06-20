@@ -5,15 +5,29 @@ Psychology practice website for Twilight Psychology (neuro-affirming evaluations
 
 **Tech stack:** Astro 6 (SSG) · React 19 (islands via `@astrojs/react`) · Tailwind CSS v4 · TypeScript 5 (strict) · Vitest · Cloudflare Workers
 
-## Build & Validation Commands
+## Build, test, and validation commands
+Use the pinned Node/npm toolchain (`nvm use` or the Volta config in `package.json`) and install dependencies with `npm ci` before local work.
+
 ```
 npm run dev        # Astro dev server
-npm run build      # Production build (always run after changes)
-npm run check      # TypeScript type checking (run before committing)
+npm run check      # Astro type checking / diagnostics
 npm run test       # Vitest test suite
-npm run preview    # Preview production build locally
+npm run build      # Production build (always run after changes)
+npm run preview    # Preview the built site locally
 ```
-Always run `npm run check` and `npm run test` after making changes. Both must pass.
+
+- Always run `npm run check` and `npm run test` after making changes. Both should pass.
+- Run a single Vitest file with `npm run test -- tests/data/services.test.ts` or `npx vitest run tests/data/services.test.ts`.
+- Use `npm run test:watch` when iterating on a targeted test.
+- `npm run build` is the best end-to-end verification for this statically generated site.
+
+## High-level architecture
+- The site is a static Astro app with route entrypoints in `src/pages/` and shared page shell/layout logic in `src/layouts/`.
+- Most content is data-driven: services, specialties, staff, insurance, navigation, and site config all live in `src/data/` and are validated by Vitest under `tests/data/`.
+- Blog posts are content collections in `src/content/blog/` with schema enforcement in `src/content.config.ts`.
+- Interactive UI is isolated to React islands under `src/components/react/` and `src/components/interactive/`; Astro wrappers in `src/components/` bridge those islands into pages.
+- SEO and shared structured data are centralized in `src/components/Schema.astro` and the shared layouts, so page-level changes should preserve those conventions.
+- This repository already has source-specific instruction files in `.github/instructions/` for Astro, React, data, content, and SEO/UX; follow those in addition to this file.
 
 ## Architecture Rules
 

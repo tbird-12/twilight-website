@@ -75,9 +75,9 @@ const requestAppointmentPhoneHref = `tel:${PHONE_NUMBER}`;
 export const clinicianProfiles: ClinicianProfile[] = [
   {
     slug: "heather-cornett",
-    pageTitle: "Dr. Heather Cornett, PhD | PsyPact Psychologist — KY & 40+ States",
+    pageTitle: "Dr. Heather Cornett, PhD | PSYPACT Psychologist — KY & 40+ States",
     pageDescription:
-      "Dr. Heather Cornett, PhD is the founder and licensed psychologist at Twilight Psychology, providing neuro-affirming psychological evaluations in-person in Lexington, KY and via PsyPact telehealth in 40+ states nationwide.",
+      "Dr. Heather Cornett, PhD is the founder and licensed psychologist at Twilight Psychology, providing neuro-affirming psychological evaluations in-person in Lexington, KY and via PSYPACT telehealth in 40+ states nationwide.",
     jobTitle: "Founder and Licensed Psychologist",
     badge: "Founder & Licensed Psychologist",
     headingPrimary: "Heather Cornett,",
@@ -89,7 +89,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       "Learning Disability Evaluations",
       "Personality Disorders (BPD/SPMI)",
       "Guardianship & Disability Claims",
-      "PsyPact Telehealth (40+ States)",
+      "PSYPACT Telehealth (40+ States)",
     ],
     contentBlocks: [
       {
@@ -109,7 +109,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       {
         type: "paragraphs",
         paragraphs: [
-          "Beyond my clinical work, I have served as an Assistant Professor of Psychology for three years and hold a PsyPact certificate, allowing me to provide psychological services via telehealth to clients in over 40 states.",
+          "Beyond my clinical work, I have served as an Assistant Professor of Psychology for three years and hold a PSYPACT certificate, allowing me to provide psychological services via telehealth to clients in over 40 states.",
         ],
       },
     ],
@@ -147,7 +147,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     primaryPanel: {
       title: "Current Availability",
       description:
-        "Dr. Cornett provides evaluations for ages 2 and up in Lexington, KY and nationwide for adults via PsyPact telehealth authority (40+ states).",
+        "Dr. Cornett provides evaluations for ages 2 and up in Lexington, KY and nationwide for adults via PSYPACT telehealth authority (40+ states).",
       items: [
         { label: "Evaluations", value: "Accepting New Clients" },
         { label: "Individual Therapy", value: "Waitlist Only", subdued: true },
@@ -155,7 +155,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       ctaLabel: "Schedule an Intake",
       ctaHref: WIDGET_LINK,
       variant: "surface",
-      watermark: "PsyPact",
+      watermark: "PSYPACT",
     },
     secondaryPanel: {
       eyebrow: "From the Blog",
