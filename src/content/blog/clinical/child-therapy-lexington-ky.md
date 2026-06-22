@@ -1,16 +1,17 @@
 ---
 title: "Child and teen therapy in Lexington, KY — when to seek help"
-seoTitle: "Child and Teen Therapy in Lexington, KY"
+seoTitle: "Child therapist in Lexington, KY | Teen therapy"
 description: "When to consider therapy for a child or teenager, what neuro-affirming child therapy looks like at Twilight Psychology, and which clinicians work with kids"
-seoDescription: "Child and teen therapy in Lexington, KY at Twilight Psychology. Neuro-affirming CBT and ACT for children ages 3–18. ADHD, autism, anxiety, and school challenges."
+seoDescription: "Child therapist in Lexington, KY at Twilight Psychology for anxiety, depression, ADHD, autism, school stress, and neuro-affirming teen therapy"
 pubDate: 2026-05-28
+updatedDate: 2026-06-21
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["child-therapy", "teen-therapy", "pediatric-therapy", "lexington-ky", "adhd-therapy", "autism-therapy", "anxiety", "child-psychologist"]
 draft: false
 ---
 
-Knowing when a child needs therapy — and finding the right therapist — are two different problems. Many families arrive at the search for a **child therapist in Lexington, KY** after a long period of wondering. They have noticed something: a pattern that is persisting longer than expected, a level of distress that seems beyond typical growing pains, or a disconnect between how capable a child is and how much they are struggling.
+Knowing when a child needs therapy — and finding the right therapist — are two different problems. Many families arrive at the search for a **child therapist in Lexington, KY**, a **local pediatric therapist**, or a child psychologist after a long period of wondering. They have noticed something: a pattern that is persisting longer than expected, a level of distress that seems beyond typical growing pains, or a disconnect between how capable a child is and how much they are struggling.
 
 At Twilight Psychology, child and teen therapy is offered within a **neuro-affirming framework** — meaning the work is built around understanding how each child's brain works, not around pushing a child toward a neurotypical standard of behavior or emotion.
 

@@ -26,7 +26,9 @@ const sitemapExcludedPaths = [
   "/services/adhd-testing-ky",
   "/services/autism-testing-ky",
   "/services/autism-therapy-ky",
+  "/services/diagnostic-interviews-ky",
   "/services/intellectual-disabilities-ky",
+  "/services/notary-services",
 ];
 
 export default defineConfig({

@@ -1,16 +1,17 @@
 ---
 title: "Therapy at Twilight Psychology — what we offer in Lexington, KY"
-seoTitle: "Therapy in Lexington, KY — CBT, ACT, and Neuro-Affirming Care"
+seoTitle: "Mental Health Therapy in Lexington, KY"
 description: "An overview of therapy at Twilight Psychology: CBT, ACT, psychodynamic, and neuro-affirming approaches for children, teens, adults, and couples"
-seoDescription: "Therapy in Lexington, KY at Twilight Psychology. CBT, ACT, and neuro-affirming individual therapy for ADHD, autism, anxiety, and trauma. Insurance accepted."
+seoDescription: "Mental health therapy in Lexington, KY at Twilight Psychology for ADHD, autism, anxiety, trauma, children, teens, adults, and couples"
 pubDate: 2026-06-04
+updatedDate: 2026-06-21
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["therapy", "cbt", "cognitive-behavioral-therapy", "lexington-ky", "therapist", "neurodivergent-therapy", "adhd-therapy", "autism-therapy"]
 draft: false
 ---
 
-When people search for a **therapist in Lexington, KY**, they are usually not looking for a specific modality acronym. They are looking for a provider who understands what they are dealing with, can offer practical help, and will not default to a one-size-fits-all approach. That is the frame Twilight Psychology uses to think about therapy.
+When people search for **mental health therapy in Lexington, KY**, they are usually not looking for a specific modality acronym. They are looking for a provider who understands what they are dealing with, can offer practical help, and will not default to a one-size-fits-all approach. That is the frame Twilight Psychology uses to think about therapy.
 
 Our therapy team now spans ages 3 to adulthood, with specializations in neurodivergent care, ADHD and autism support, childhood and adolescent mental health, anxiety and trauma, couples counseling, substance use recovery, and faith-integrated care. Insurance is accepted for individual therapy through most of our therapists.
 
