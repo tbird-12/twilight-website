@@ -4,6 +4,7 @@ import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Schema from "../components/Schema.astro";
 import logoImage from "../assets/images/logo.png";
 import { siteConfig } from "../data/siteConfig";
+import { getCanonicalUrl } from "../utils/canonical";
 import "../styles/global.css";
 
 interface Props {
@@ -25,7 +26,7 @@ const {
 } = Astro.props;
 
 const siteUrl = Astro.site || new URL(siteConfig.siteUrl);
-const canonicalURL = canonical || new URL(Astro.url.pathname, siteUrl).href;
+const canonicalURL = canonical || getCanonicalUrl(Astro.url.pathname, siteUrl);
 const ogImage = image || new URL('/og-image.png', siteUrl).href;
 const ogImageAlt = imageAlt || "Twilight Psychology logo";
 const siteName = siteConfig.siteName;

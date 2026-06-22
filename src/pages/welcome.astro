@@ -20,13 +20,14 @@ const differentiators = [
   
 ];
 
-const revealDelayStyle = (delay: number) => (delay > 0 ? `--reveal-d:${delay}ms` : undefined);
 const staggerStyle = (index: number) => `--stagger-i:${index}`;
 ---
 
+<!-- Paid-traffic landing page stays noindex so it does not compete with organic service pages. -->
 <LandingLayout
   title="Get Started"
   description="Psychological evaluations, neuro-affirming therapy for ages 3–99, and medication management in Kentucky. Telehealth available across 40+ states via PSYPACT."
+  robots="noindex, follow"
 >
   <!-- ══ Theme toggle ══ -->
   <button

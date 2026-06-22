@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { siteConfig } from "../data/siteConfig";
+import { getCanonicalUrl } from "../utils/canonical";
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  to: string;
+  ctaLabel?: string;
+}
+
+const {
+  title,
+  description,
+  heading,
+  to,
+  ctaLabel = "Continue to the current page",
+} = Astro.props;
+
+const siteUrl = Astro.site || new URL(siteConfig.siteUrl);
+const canonicalURL = getCanonicalUrl(to, siteUrl);
+---
+
+<!-- Legacy alias pages are noindexed so search engines consolidate outdated URLs into the current canonical route. -->
+<Layout
+  title={title}
+  description={description}
+  canonical={canonicalURL}
+  robots="noindex, follow"
+>
+  <meta slot="head" http-equiv="refresh" content={`0;url=${canonicalURL}`} />
+
+  <section class="mx-auto max-w-3xl px-6 py-24 text-center">
+    <div class="rounded-[2.5rem] border border-border bg-surface-soft p-10 md:p-14">
+      <p class="mb-4 text-xs font-black uppercase tracking-[0.3em] text-cta/80">Updated URL</p>
+      <h1 class="font-serif text-4xl font-black tracking-tight text-site-text md:text-5xl">
+        {heading}
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-site-sub md:text-lg">
+        This page has moved to its current Twilight Psychology URL. You should be redirected automatically.
+      </p>
+      <div class="mt-8">
+        <a
+          href={canonicalURL}
+          class="inline-flex items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-black text-cta-fg transition-colors hover:bg-cta/80"
+        >
+          {ctaLabel}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ canonicalURL }}>
+    window.location.replace(canonicalURL);
+  </script>
+</Layout>

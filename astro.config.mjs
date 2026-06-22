@@ -8,6 +8,27 @@ import pagefind from "astro-pagefind";
 
 import sitemap from "@astrojs/sitemap";
 
+const sitemapExcludedPaths = [
+  "/welcome",
+  "/404",
+  "/client-resources/",
+  "/specialities/",
+  "/about/heather-cornett",
+  "/about/nicola-allen",
+  "/about/emeli-evans",
+  "/about/mike-burns",
+  "/about/stephen-shu",
+  "/about/jonica-davis",
+  "/about/jatana-boggs",
+  "/about/tiffany-roundtree",
+  "/about/samantha-rodarte",
+  "/about/mission-vision-values",
+  "/services/adhd-testing-ky",
+  "/services/autism-testing-ky",
+  "/services/autism-therapy-ky",
+  "/services/intellectual-disabilities-ky",
+];
+
 export default defineConfig({
   compressHTML: true,
   prefetch: {
@@ -24,8 +45,11 @@ export default defineConfig({
     icon(),
     react(),
     sitemap({
-      // Exclude noindex pages so the sitemap doesn't contradict their robots meta tag
-      filter: (page) => !page.includes("/welcome") && !page.includes("/404"),
+      // Exclude noindex pages so the sitemap doesn't contradict their robots meta tag.
+      filter: (page) => {
+        const normalizedPage = page.toLowerCase();
+        return !sitemapExcludedPaths.some((path) => normalizedPage.includes(path.toLowerCase()));
+      },
     }),
     pagefind(),
   ],

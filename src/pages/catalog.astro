@@ -1,69 +1,94 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import PageHeroWrapper from '../components/PageHeroWrapper.astro';
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from '../data/resource';
+import Layout from "../layouts/Layout.astro";
+import PageHeroWrapper from "../components/PageHeroWrapper.astro";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../data/resource";
 
-const title = 'Concern Directory | Twilight Psychology';
+const title = "Mental Health Concerns & Services in Kentucky";
 const description =
-  'Browse concerns and questions by category to understand where Twilight Psychology can support you through evaluations, therapy, or medication management.';
+  "Browse ADHD, autism, anxiety, trauma, school-support, therapy, and psychiatry concerns in Kentucky, then choose the right Twilight Psychology service path.";
 
 const categories = [
   {
-    id: 'neurodivergence',
-    title: 'Neurodivergence & Learning',
+    id: "neurodivergence",
+    title: "Neurodivergence & Learning",
     concerns: [
-      { name: 'Autism evaluations & support' },
-      { name: 'ADHD across the lifespan' },
-      { name: 'Executive functioning challenges' },
-      { name: 'Learning differences & dyslexia' },
-      { name: 'Giftedness and twice-exceptionality' },
-      { name: 'Sensory processing differences' },
+      { name: "Autism evaluations & support" },
+      { name: "ADHD across the lifespan" },
+      { name: "Executive functioning challenges" },
+      { name: "Learning differences & dyslexia" },
+      { name: "Giftedness and twice-exceptionality" },
+      { name: "Sensory processing differences" },
+    ],
+    pathways: [
+      { href: "/services/autism-testing", label: "Autism evaluations" },
+      { href: "/services/adhd-testing", label: "ADHD evaluations" },
+      { href: "/specialties/psychoeducational-evaluations", label: "Psychoeducational evaluations" },
     ],
   },
   {
-    id: 'anxiety-mood',
-    title: 'Anxiety, Mood & Trauma',
+    id: "anxiety-mood",
+    title: "Anxiety, Mood & Trauma",
     concerns: [
-      { name: 'Anxiety and panic' },
-      { name: 'OCD and intrusive thoughts' },
-      { name: 'Depression and mood shifts' },
-      { name: 'Burnout and chronic stress' },
-      { name: 'Trauma and PTSD' },
-      { name: 'Sleep concerns related to mental health' },
+      { name: "Anxiety and panic" },
+      { name: "OCD and intrusive thoughts" },
+      { name: "Depression and mood shifts" },
+      { name: "Burnout and chronic stress" },
+      { name: "Trauma and PTSD" },
+      { name: "Sleep concerns related to mental health" },
+    ],
+    pathways: [
+      { href: "/services/therapy", label: "Therapy in Kentucky" },
+      { href: "/services/therapy/cognitive-behavioral-therapy", label: "Cognitive Behavioral Therapy" },
+      { href: "/services/medication-management", label: "Medication management" },
     ],
   },
   {
-    id: 'identity',
-    title: 'Identity, Family & Relationships',
+    id: "identity",
+    title: "Identity, Family & Relationships",
     concerns: [
-      { name: 'LGBTQIA+ affirming care' },
-      { name: 'Gender-affirming support letters' },
-      { name: 'Parenting and family dynamics' },
-      { name: 'Relationship challenges' },
-      { name: 'Life transitions and adjustment' },
-      { name: 'Self-esteem and identity exploration' },
+      { name: "LGBTQIA+ affirming care" },
+      { name: "Gender-affirming support letters" },
+      { name: "Parenting and family dynamics" },
+      { name: "Relationship challenges" },
+      { name: "Life transitions and adjustment" },
+      { name: "Self-esteem and identity exploration" },
+    ],
+    pathways: [
+      { href: "/services/therapy", label: "Individual therapy" },
+      { href: "/services/therapy/couples-counseling", label: "Couples counseling" },
+      { href: "/services/therapy/clinicians", label: "Match with a therapist" },
     ],
   },
   {
-    id: 'psychiatry',
-    title: 'Medication & Psychiatry',
+    id: "psychiatry",
+    title: "Medication & Psychiatry",
     concerns: [
-      { name: 'Medication management for anxiety or depression' },
-      { name: 'ADHD medication support' },
-      { name: 'Psychiatric consultation and follow-up' },
-      { name: 'Coordinating therapy and medication care' },
-      { name: 'Symptom monitoring and treatment adjustments' },
+      { name: "Medication management for anxiety or depression" },
+      { name: "ADHD medication support" },
+      { name: "Psychiatric consultation and follow-up" },
+      { name: "Coordinating therapy and medication care" },
+      { name: "Symptom monitoring and treatment adjustments" },
+    ],
+    pathways: [
+      { href: "/services/medication-management", label: "Medication management" },
+      { href: "/resources/insurances-accepted", label: "Accepted insurance plans" },
+      { href: "/contact", label: "Contact the practice" },
     ],
   },
   {
-    id: 'documentation',
-    title: 'Documentation, School & Legal Needs',
+    id: "documentation",
+    title: "Documentation, School & Legal Needs",
     concerns: [
-      { name: 'Diagnostic clarification' },
-      { name: 'Accommodation documentation' },
-      { name: 'School-based support recommendations' },
-      { name: 'Neuro-affirming psychoeducational evaluations' },
-      { name: 'Evaluations for care planning' },
+      { name: "Diagnostic clarification" },
+      { name: "Accommodation documentation" },
+      { name: "School-based support recommendations" },
+      { name: "Neuro-affirming psychoeducational evaluations" },
+      { name: "Evaluations for care planning" },
+    ],
+    pathways: [
+      { href: "/services/psychological-evaluations", label: "Psychological evaluations" },
+      { href: "/specialties/dyslexia-testing", label: "Dyslexia & learning disability testing" },
+      { href: "/specialties/iee", label: "Independent Educational Evaluations" },
     ],
   },
 ] as const;
@@ -75,7 +100,7 @@ const totalConcerns = categories.reduce((sum, category) => sum + category.concer
   <div class="prose prose-lg dark:prose-invert max-w-none">
     <PageHeroWrapper
       title="Browse by concern, not just service type"
-      subtitle="Use this directory to scan the concerns and questions Twilight Psychology supports, then choose the service path that fits best."
+      subtitle="Use this Kentucky care directory to compare concerns tied to evaluations, therapy, and medication management before choosing the right next step."
       badge="Care directory"
       accentWord="concern"
     />
@@ -90,7 +115,7 @@ const totalConcerns = categories.reduce((sum, category) => sum + category.concer
             Start with the concern, then follow the right care path
           </h2>
           <p class="text-base md:text-lg text-site-sub leading-relaxed mb-6">
-            If you are still figuring out what kind of support you need, this page is a good starting point. Browse the categories below, then move into the relevant service line once you know whether you are looking for therapy, medication management, or an evaluation.
+            If you are still figuring out what kind of support you need, this page is a good starting point. Browse the categories below, then move into the relevant Kentucky service line once you know whether you are looking for therapy, medication management, or an evaluation.
           </p>
           <div class="flex flex-wrap gap-3">
             <a
@@ -142,7 +167,7 @@ const totalConcerns = categories.reduce((sum, category) => sum + category.concer
               Jump straight to the category that feels closest
             </h2>
             <p class="text-base text-site-sub leading-relaxed mb-0">
-              Each section groups the concerns list and click the category to explore further.
+              Each section groups common concerns and points you to the service pages most likely to help.
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
@@ -202,6 +227,20 @@ const totalConcerns = categories.reduce((sum, category) => sum + category.concer
                 </div>
               </div>
             ))}
+          </div>
+
+          <div class="mt-8 rounded-3xl border border-border bg-surface p-5">
+            <p class="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-cta/80">Recommended pages</p>
+            <div class="flex flex-wrap gap-3">
+              {category.pathways.map((pathway) => (
+                <a
+                  href={pathway.href}
+                  class="inline-flex items-center gap-2 rounded-full border border-border bg-surface-soft px-4 py-2 text-sm font-bold text-site-text no-underline transition-colors duration-200 hover:border-cta/40 hover:text-cta"
+                >
+                  {pathway.label}
+                </a>
+              ))}
+            </div>
           </div>
         </article>
       ))}
