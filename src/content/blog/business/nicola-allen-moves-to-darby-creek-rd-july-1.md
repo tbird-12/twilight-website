@@ -10,7 +10,7 @@ tags: ["nicola-allen", "medication-management", "lexington", "darby-creek"]
 draft: false
 ---
 
-Starting **July 1, 2026**, **Nicola Allen, MSN, PMHNP-BC** will begin seeing medication management clients at **503 Darby Creek Rd., Suite B** in Lexington. Her appointments will be moving from **1040 Monarch St., Office 305** to the new location at the Darby Creek office.
+Starting **July 1, 2026**, **Nicola Allen, MSN, PMHNP-BC** will begin seeing medication management clients at **503 Darby Creek Rd., Suite B** in Lexington. Her appointments will be moving from her previous Lexington location to the new Darby Creek office.
 
 ## What is changing
 

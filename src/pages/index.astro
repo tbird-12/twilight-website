@@ -17,7 +17,7 @@ const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
   .slice(0, 3);
 
 const stats = [
-  { label: "Evaluations", value: "2100+" },
+  { label: "Evaluations", value: "2200+" },
   { label: "Years Experience", value: "8+" },
   { label: "Weeks Self-Pay Waitlist", value: "3" },
   { label: "Days to Self-Pay Report", value: "7" },
@@ -26,13 +26,13 @@ const stats = [
 const services = [
   {
     title: "Psychological Evaluations",
-    desc: "ADHD, autism, and broader diagnostic evaluations for children, teens, and adults who need clear answers, clinically relevant testing, and usable recommendations.",
+    desc: "ADHD, autism, and broader diagnostic evaluations for children, teens, and adults who need specialty depth, careful interpretation, and recommendations they can act on.",
     icon: "mdi:brain",
     link: "/services/psychological-evaluations",
   },
   {
     title: "Psychoeducational Evaluations",
-    desc: "Private specialty assessments for dyslexia, learning differences, giftedness, twice-exceptional profiles, and IEP, 504, or college accommodation planning.",
+    desc: "Private specialty assessments for dyslexia, learning differences, giftedness, twice-exceptional profiles, and the school or college decisions that need thorough documentation.",
     icon: "mdi:school-outline",
     link: "/specialties/psychoeducational-evaluations",
   },
@@ -63,7 +63,7 @@ const problemPoints = [
   },
   {
     title: "Limited expertise options",
-    desc: "When families need psychoeducational clarity, gifted or 2e identification, or school-focused documentation, finding experienced clinicians can be challenging.",
+    desc: "When families need psychoeducational clarity or a clinician who can assess high-masking or PDA-trait autism presentations, the local options narrow fast.",
   },
   {
     title: "Adults can be harder to assess",
@@ -77,8 +77,8 @@ const problemPoints = [
 
 const qualityCareItems = [
   {
-    title: "Learning, gifted, and 2E questions addressed directly",
-    desc: "We offer psychoeducational evaluations for learning differences, giftedness, twice-exceptional profiles, and accommodations when you need more than a brief testing summary.",
+    title: "Rare school-focused expertise in-house",
+    desc: "We offer psychoeducational evaluations for learning differences, giftedness, twice-exceptional profiles, and accommodations with a level of school-facing depth many general practices do not maintain.",
     link: "/specialties/psychoeducational-evaluations",
   },
   {
@@ -87,8 +87,8 @@ const qualityCareItems = [
     link: "/resources/waitlist-times",
   },
   {
-    title: "Specialty evaluations beyond standard coverage",
-    desc: "We offer psychoeducational evaluations, dyslexia testing, IEEs, and other specialty referrals that are often handled outside insurance because the question is educational, legal, or documentation-focused.",
+    title: "PDA-informed autism assessment",
+    desc: "We evaluate high-masking and demand-avoidant autism presentations with clinicians who know when PDA traits belong in the formulation rather than being dismissed as behavior alone.",
     link: "/specialties",
   },
   {
@@ -107,7 +107,7 @@ const qualityCareItems = [
 
 <Layout
   title="Psychological Evaluations & Therapy in KY"
-  description="Twilight Psychology offers ADHD testing, autism evaluations, psychoeducational assessments, neuro-affirming therapy, and medication management — in-person in Lexington, KY and via telehealth across Kentucky and beyond."
+  description="Twilight Psychology offers ADHD testing, autism evaluations, psychoeducational assessments, specialty therapy, and medication management in Lexington, KY and via telehealth across Kentucky."
 >
   <div class="homepage-shell bg-site-bg">
     <section
@@ -155,10 +155,10 @@ const qualityCareItems = [
             <p class="max-w-lg text-left text-base font-medium leading-relaxed text-site-sub sm:text-lg">
               Twilight Psychology provides ADHD testing, autism evaluations, dyslexia and learning disability
               testing, psychoeducational evaluations, and broader neurodivergent diagnostic clarity. Our
-              evaluation model is built around careful interpretation, clinically relevant testing,
-              and recommendations people can actually use. We also offer specialty services
-              such as independent educational evaluations, gifted and twice-exceptional assessment pathways,
-              guardianship evaluations, and other high-context referrals.
+              practice is built around specialty evaluations that can be difficult to find in one place —
+              from gifted and twice-exceptional questions to autism evaluations that account for masking
+              and PDA traits. We pair that depth with careful interpretation, clinically relevant testing,
+              and recommendations people can actually use.
               <a href="/specialties" class="text-cta font-semibold hover:underline">
                 Explore our specialty evaluations
               </a>
@@ -269,7 +269,7 @@ const qualityCareItems = [
             class="text-site-sub text-lg max-w-2xl mx-auto text-center leading-relaxed"
           >
             Our evaluation process is built for precision and efficiency,
-            especially for clients who want a more attentive experience than a
+            especially for clients who want specialty-level depth beyond what a
             routine, insurance-first pathway can usually support.
           </p>
         </header>

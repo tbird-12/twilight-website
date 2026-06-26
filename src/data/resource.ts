@@ -12,7 +12,7 @@ export const MAIN_OFFICE_STREET_ADDRESS_SCHEMA = "503 Darby Creek Rd, Suite B";
 export const MAIN_OFFICE_CITY_STATE_ZIP = "Lexington, KY 40509";
 export const MAIN_OFFICE_ADDRESS_SINGLE_LINE = `${MAIN_OFFICE_STREET_ADDRESS}, ${MAIN_OFFICE_CITY_STATE_ZIP}`;
 export const MAIN_OFFICE_MAP_LINK =
-  "https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+503+Darby+Creek+Rd+Suite+B,+Lexington,+KY+40509";
+  "https://www.google.com/maps/search/?api=1&query=Twilight+Psychology,+PLLC,+503+Darby+Creek+Rd+Suite+B,+Lexington,+KY+40509&query_place_id=ChIJ53_RNl9FQogRJnkI960-tnA";
 
 export const SIGN_IN_LINK = "https://twilightpsychology.clientsecure.me/sign-in";
 

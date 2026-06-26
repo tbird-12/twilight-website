@@ -11,15 +11,8 @@ import {
 
 const locations = [
   {
-    type: "Main Office",
-    providers: "Heather Cornett, Emeli Evans, Jatana Boggs, Jonica Davis, Stephen Shu, Tiffany Roundtree, Ethan Puckett",
-    address: MAIN_OFFICE_STREET_ADDRESS,
-    city: MAIN_OFFICE_CITY_STATE_ZIP,
-    mapLink: MAIN_OFFICE_MAP_LINK,
-  },
-  {
-    type: "Medication Management",
-    providers: "Nicola Allen",
+    type: "Lexington Office",
+    providers: "Psychological evaluations, therapy, and medication management",
     address: MAIN_OFFICE_STREET_ADDRESS,
     city: MAIN_OFFICE_CITY_STATE_ZIP,
     mapLink: MAIN_OFFICE_MAP_LINK,
@@ -44,19 +37,19 @@ const locationLinks = [
     href: "/about/clinicians/clinicians-lex-ky",
     label: "Meet the team",
     description:
-      "Match each office location with the clinicians and services available there.",
+      "See the clinicians who provide evaluations, therapy, and medication support through the practice.",
   },
   {
     href: "/about/careers",
     label: "Careers at Twilight",
     description:
-      "Learn how our offices support therapists, evaluators, and future openings.",
+      "Learn how our Lexington office supports therapists, evaluators, and future openings.",
   },
 ];
 ---
 
 <Layout
-  title="Twilight Psychology Offices in Lexington, KY"
+  title="Twilight Psychology Location in Lexington, KY"
   description="Get directions to Twilight Psychology in Lexington, KY, review appointment-only office details, and see Kentucky telehealth coverage before you book."
 >
     <div class="max-w-4xl mx-auto px-6">
@@ -68,10 +61,10 @@ const locationLinks = [
                   mb-12">
   
   <PageHeroWrapper
-    title="Our Locations"
-    accentWord="Locations"
+    title="Our Location"
+    accentWord="Location"
     badge="Lexington, KY · Telehealth Statewide"
-    subtitle="Twilight Psychology is located in Lexington, KY, with dedicated spaces for psychological evaluations, therapy, and medication management — and telehealth services available statewide across Kentucky and beyond."
+    subtitle="Twilight Psychology sees clients from one appointment-only Lexington office, with telehealth services available statewide across Kentucky and beyond."
     size="lg"
   />
 
@@ -171,16 +164,12 @@ const locationLinks = [
 
   <section class="max-w-4xl mx-auto px-4 py-24 text-center">
     <div class="p-12 bg-surface-soft border border-border rounded-[3rem]">
-      <h3 class="font-serif text-2xl font-black mb-4 italic text-site-text!">Choosing the Right Door</h3>
+      <h3 class="font-serif text-2xl font-black mb-4 italic text-site-text!">One Office, Coordinated Care</h3>
       <p class="text-site-sub leading-relaxed mb-0">
-        Twilight Psychology operates out of two distinct suites to provide
-        privacy and specialized clinical environments for our clients. Please double-check
-        your appointment reminder for your specific suite number before your
-        visit.
+        Twilight Psychology now sees in-person clients at one Lexington office for evaluations, therapy, and medication management. Your appointment reminder will confirm whether your visit is in person or virtual and include any arrival details you need.
       </p>
       <p class="text-site-sub leading-relaxed mt-4 mb-0">
-        Nicola Allen's medication management appointments will be based at {MAIN_OFFICE_STREET_ADDRESS} beginning
-        July 1, 2026. See our <a href="/blog/business/nicola-allen-moves-to-darby-creek-rd-july-1" class="text-cta underline hover:text-cta transition-colors">blog post</a> for the latest update.
+        If you are ever unsure about where to go, please check your reminder or contact our office before visiting.
       </p>
     </div>
   </section>
