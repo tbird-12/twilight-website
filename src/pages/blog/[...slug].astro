@@ -228,14 +228,14 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     </nav>
 
     <!-- Post header -->
-    <header class="mb-10">
+    <header class="aurora-panel mb-10 rounded-[2rem] border border-border bg-surface-soft px-5 py-6 sm:px-8 sm:py-8">
       <CategoryBadge category={category} size="md" />
 
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold text-site-text mt-4 mb-5 leading-tight">
+      <h1 class="blog-gradient-text fluid-display-md font-heading font-bold mt-4 mb-5">
         {title}
       </h1>
 
-      <p class="text-lg text-site-sub leading-relaxed mb-6">
+      <p class="fluid-lead text-site-sub mb-6">
         {description}
       </p>
 
@@ -365,7 +365,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
         <h2 class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-6">
           You May Also Be Interested In
         </h2>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bento-grid reveal-children">
           {relatedPosts.map((p) => (
             <PostCard post={p} />
           ))}
@@ -380,7 +380,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
       <h2 class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-6">
         Resources on Our Main Site
       </h2>
-      <div class="grid gap-3 sm:grid-cols-3">
+      <div class="bento-grid reveal-children">
         {resourceLinks.map((link) => (
           <a
             href={link.href}

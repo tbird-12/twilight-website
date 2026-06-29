@@ -51,9 +51,9 @@ function WordReveal({ text, accentWord, baseDelay = 0 }: { text: string; accentW
 }
 
 const sizeClasses = {
-  sm: 'text-3xl md:text-4xl',
-  md: 'text-4xl md:text-5xl lg:text-6xl',
-  lg: 'text-5xl md:text-7xl',
+  sm: 'fluid-display-sm',
+  md: 'fluid-display-md',
+  lg: 'fluid-display-xl',
 };
 
 export default function PageHero({
@@ -93,7 +93,7 @@ export default function PageHero({
 
         {/* Title */}
         <h1
-          className={`font-serif ${sizeClasses[size]} font-black text-site-text mb-4 md:mb-6 tracking-tight leading-tight motion-reduce:[animation:none!important]`}
+          className={`font-serif ${sizeClasses[size]} font-black text-site-text mb-4 md:mb-6 motion-reduce:[animation:none!important]`}
           style={buildAnimationStyle('blurIn', 100, 500)}
         >
           {accentWord ? (
@@ -106,7 +106,7 @@ export default function PageHero({
         {/* Subtitle */}
         {subtitle && (
           <p
-            className="text-lg md:text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed motion-reduce:[animation:none!important]"
+            className="fluid-lead text-site-sub font-medium max-w-2xl mx-auto motion-reduce:[animation:none!important]"
             style={buildAnimationStyle('blurIn', 250, 500)}
           >
             {subtitle}

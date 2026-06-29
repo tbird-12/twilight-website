@@ -19,7 +19,7 @@ export default function ServiceCardGrid({ items, basePath, className = '' }: Ser
   const reduced = useReducedMotion();
 
   return (
-    <div ref={ref} className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3 ${className}`}>
+    <div ref={ref} className={`bento-grid gap-6 ${className}`}>
       {items.map((item, idx) => {
         const delay = reduced ? 0 : createStaggerDelay(idx, 100);
         const style = reduced

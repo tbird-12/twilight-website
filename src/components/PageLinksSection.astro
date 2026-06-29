@@ -14,8 +14,8 @@ interface Props {
 const { title, description, links } = Astro.props;
 ---
 
-<section class="max-w-7xl mx-auto px-4 mt-16">
-  <div class="rounded-[2.5rem] border border-border bg-surface-soft p-8 md:p-10">
+<section class="reveal-in-view max-w-7xl mx-auto px-4 mt-16">
+  <div class="aurora-panel rounded-[2.5rem] border border-border bg-surface-soft p-8 md:p-10">
     <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-4 tracking-tight">
       {title}
     </h2>
@@ -24,7 +24,7 @@ const { title, description, links } = Astro.props;
         {description}
       </p>
     )}
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="bento-grid reveal-children">
       {links.map((link) => (
         <a
           href={link.href}

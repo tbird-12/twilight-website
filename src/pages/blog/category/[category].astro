@@ -63,7 +63,7 @@ const breadcrumbSchema = {
   <Schema slot="page-schema" schemas={[collectionSchema, breadcrumbSchema]} />
   <!-- Page header -->
   <section class="border-b border-border py-12 px-4">
-    <div class="max-w-5xl mx-auto">
+    <div class="aurora-panel max-w-5xl mx-auto rounded-[2rem] border border-border bg-surface-soft px-6 py-8 sm:px-8">
       <a
         href="/blog"
         class="inline-flex items-center gap-1 text-xs text-site-sub hover:text-site-text transition-colors mb-5"
@@ -74,10 +74,10 @@ const breadcrumbSchema = {
         All posts
       </a>
 
-      <h1 class="font-heading text-3xl sm:text-4xl font-bold text-site-text mb-3">
+      <h1 class="blog-gradient-text fluid-display-md font-heading font-bold mb-3">
         {meta.label}
       </h1>
-      <p class="text-base text-site-sub max-w-xl">
+      <p class="fluid-lead text-site-sub max-w-xl">
         {meta.description}
       </p>
 
@@ -98,7 +98,7 @@ const breadcrumbSchema = {
           </a>
         </div>
       ) : (
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bento-grid reveal-children">
           {posts.map((post) => (
             <PostCard post={post} />
           ))}

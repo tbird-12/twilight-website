@@ -41,14 +41,14 @@ const blogSchema = {
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
     <!-- Hero + Featured Post -->
-    <section class="pt-14 pb-10">
+    <section class="aurora-panel rounded-[2rem] border border-border bg-surface-soft px-6 py-10 sm:px-8 sm:py-12">
       <p class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-3">
         Twilight Psychology
       </p>
-      <h1 class="font-heading text-4xl sm:text-5xl font-bold text-site-text mb-3 leading-tight">
+      <h1 class="blog-gradient-text fluid-display-lg font-heading font-bold mb-3">
         Blog &amp; Resources
       </h1>
-      <p class="text-lg text-site-sub max-w-2xl leading-relaxed mb-10">
+      <p class="fluid-lead text-site-sub max-w-2xl mb-10">
         Clinical updates, billing guidance, insurance news, and practice
         announcements from our team.
       </p>
@@ -73,7 +73,7 @@ const blogSchema = {
                 : featuredDateInfo.formattedDate}
             </time>
           </div>
-          <h2 class="font-heading text-2xl sm:text-3xl font-bold text-site-text group-hover:text-icon transition-colors leading-snug mb-3">
+          <h2 class="font-heading text-[clamp(1.65rem,1.35rem+1.5vw,2.4rem)] font-bold text-site-text group-hover:text-icon transition-colors leading-snug mb-3">
             {featuredPost.data.title}
           </h2>
           <p class="text-base text-site-sub leading-relaxed max-w-3xl mb-4">
@@ -112,7 +112,7 @@ const blogSchema = {
     <!-- All Posts grid -->
     {remainingPosts.length > 0 && (
       <section class="py-10">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bento-grid reveal-children">
           {remainingPosts.map((post) => (
             <PostCard post={post} />
           ))}

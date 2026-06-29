@@ -25,28 +25,29 @@ const stats = [
 
 const services = [
   {
-    title: "Psychological Evaluations",
-    desc: "ADHD, autism, and broader diagnostic evaluations for children, teens, and adults who need specialty depth, careful interpretation, and recommendations they can act on.",
-    icon: "mdi:brain",
-    link: "/services/psychological-evaluations",
-  },
-  {
     title: "Psychoeducational Evaluations",
     desc: "Private specialty assessments for dyslexia, learning differences, giftedness, twice-exceptional profiles, and the school or college decisions that need thorough documentation.",
     icon: "mdi:school-outline",
     link: "/specialties/psychoeducational-evaluations",
   },
   {
-    title: "Medication Management",
-    desc: "Individualized medication management with broad insurance participation through our dedicated Psychiatric Nurse Practitioner.",
-    icon: "mdi:stethoscope",
-    link: "/services/medication-management",
-  },
-  {
     title: "Therapy",
     desc: "Evidence-based, neuro-affirming therapy for ages 3-99 with broad insurance participation for covered individual care.",
     icon: "mdi:account-heart-outline",
     link: "/services/therapy",
+  },  
+  {
+    title: "Psychological Evaluations",
+    desc: "ADHD, autism, and broader diagnostic evaluations for children, teens, and adults who need specialty depth, careful interpretation, and recommendations they can act on.",
+    icon: "mdi:brain",
+    link: "/services/psychological-evaluations",
+  },
+  
+  {
+    title: "Medication Management",
+    desc: "Individualized medication management with broad insurance participation through our dedicated Psychiatric Nurse Practitioner.",
+    icon: "mdi:stethoscope",
+    link: "/services/medication-management",
   },
   {
     title: "Couples Counseling",
@@ -147,7 +148,7 @@ const qualityCareItems = [
           <div class="problem-statement">
             <p class="homepage-section-label">The Reality</p>
             <h2
-              class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-site-text tracking-tighter leading-[1.05] mb-6"
+              class="fluid-display-sm font-serif font-black text-site-text mb-6"
             >
               Getting Answers
               <span class="text-cta block sm:inline"> Should Not Be This Hard</span>
@@ -200,7 +201,7 @@ const qualityCareItems = [
           <div>
             <p class="homepage-section-label">Core services</p>
             <h2
-              class="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-site-text tracking-tighter"
+              class="fluid-display-sm font-serif font-black text-site-text"
             >
               How We Can Help
             </h2>
@@ -213,7 +214,7 @@ const qualityCareItems = [
           </p>
         </div>
 
-        <div class="w-full grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div class="bento-grid reveal-children w-full gap-5">
           {
             services.map((service, _) => (
               <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 overflow-hidden min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10">
@@ -261,7 +262,7 @@ const qualityCareItems = [
         <header class="mx-auto mb-12 max-w-3xl text-center">
           <p class="homepage-section-label">Designed for clarity</p>
           <h2
-            class="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-site-text mb-5"
+            class="fluid-display-md font-serif font-black text-site-text mb-5"
           >
             Elevated Care, <span class="text-cta">Five</span> Fewer Barriers
           </h2>
@@ -294,7 +295,7 @@ const qualityCareItems = [
         <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p class="homepage-section-label">From our blog</p>
-            <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text tracking-tighter">
+            <h2 class="fluid-display-md font-serif font-black text-site-text">
               Insights & Updates
             </h2>
           </div>
@@ -307,7 +308,7 @@ const qualityCareItems = [
           </a>
         </div>
 
-        <div class="w-full grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div class="bento-grid reveal-children w-full gap-5">
           {recentPosts.map((post) => {
             const meta = getCategoryMeta(post.data.category);
             const colorClass = categoryColorMap[post.data.category as keyof typeof categoryColorMap];
