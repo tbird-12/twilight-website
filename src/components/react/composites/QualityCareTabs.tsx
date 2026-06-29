@@ -33,7 +33,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
                   borderColor: isActive ? 'rgba(var(--rgb-accent), 0.18)' : 'rgba(var(--rgb-accent), 0.1)',
                   background: isActive
                     ? 'linear-gradient(135deg, rgba(var(--rgb-accent), 0.08), rgba(var(--rgb-accent-alt), 0.04))'
-                    : 'rgba(var(--rgb-accent), 0.025)',
+                    : 'var(--color-surface)',
                   boxShadow: isActive ? 'inset 0 1px 0 rgba(var(--rgb-accent), 0.08)' : 'none',
                 }}
               >
@@ -115,7 +115,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
                   borderColor: isActive ? 'rgba(var(--rgb-accent), 0.16)' : 'rgba(var(--rgb-accent), 0.1)',
                   background: isActive
                     ? 'linear-gradient(135deg, rgba(var(--rgb-accent), 0.08), rgba(var(--rgb-accent-alt), 0.04))'
-                    : 'rgba(var(--rgb-accent), 0.025)',
+                    : 'var(--color-surface)',
                   boxShadow: isActive ? 'inset 0 1px 0 rgba(var(--rgb-accent), 0.08)' : 'none',
                 }}
               >
