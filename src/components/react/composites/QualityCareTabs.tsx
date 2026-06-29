@@ -20,7 +20,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
     <div className={`space-y-5 ${className}`}>
       <div className="grid gap-4 lg:hidden">
         <article
-          className="glass-card-premium rounded-[2rem] border border-border/70 p-5 sm:p-6"
+          className="glass-card-premium rounded-4xl border border-border/70 p-5 sm:p-6"
           style={{
             borderColor: 'rgba(var(--rgb-accent), 0.12)',
             background:
@@ -142,7 +142,7 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
         </div>
 
         <article
-          className="glass-card-premium rounded-[2rem] border border-border/70 p-8 xl:p-10"
+          className="glass-card-premium rounded-4xl border border-border/70 p-8 xl:p-10"
           style={{
             borderColor: 'rgba(var(--rgb-accent), 0.12)',
             background:
