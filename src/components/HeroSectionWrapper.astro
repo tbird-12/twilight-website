@@ -1,45 +1,46 @@
 ---
-import { REFERRAL_LINK } from '../data/resource';
+import { REFERRAL_LINK } from "../data/resource";
 
 interface Props {
   title?: string;
   subtitle?: string;
 }
 
-const { 
+const {
   title = "Answers You Deserve, Care You Can Trust",
-  subtitle = "ADHD, autism, psychoeducational, and other psychological evaluations — including uncommon school-focused and PDA-informed autism pathways — in-person in Lexington, Kentucky and via telehealth across Kentucky and beyond."
+  subtitle = "ADHD, autism, psychoeducational, and other psychological evaluations — including uncommon school-focused and PDA-informed autism pathways — in-person in Lexington, Kentucky and via telehealth across Kentucky and beyond.",
 } = Astro.props;
-
 ---
 
 <div class="hero-section text-center">
-  <h1 class="hero-title display-gradient-text font-serif text-[2rem] sm:text-4xl md:text-6xl xl:text-7xl font-black mb-3 sm:mb-6">
+  <h1
+    class="hero-title display-gradient-text font-serif text-[2rem] sm:text-4xl md:text-6xl xl:text-7xl font-black mb-3 sm:mb-6"
+  >
     {title}
   </h1>
 
-  <p class="hero-subtitle max-w-2xl mx-auto text-balance text-base sm:text-lg md:text-xl text-site-sub mb-6 sm:mb-10 leading-relaxed font-normal sm:font-medium">
+  <p
+    class="hero-subtitle max-w-2xl mx-auto text-balance text-base sm:text-lg md:text-xl text-site-sub mb-6 sm:mb-10 leading-relaxed font-normal sm:font-medium"
+  >
     {subtitle}
   </p>
 
   <div class="hero-actions mx-auto w-full max-w-2xl">
-    <div class="glass-card-premium flex flex-col items-center justify-center gap-4 rounded-[2rem] px-5 py-5 sm:flex-row sm:gap-5 sm:px-6 sm:py-6">
-      <a
-        href="/catalog"
-        data-astro-prefetch="viewport"
-        class="inline-block text-center bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95 animate-[glowPulse_3s_ease-in-out_infinite] px-10 py-3 sm:px-12 sm:py-4 text-base transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-cta/30"
-      >
-        Browse by Concern Directory
-      </a>
-      <a
-        href={REFERRAL_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm font-bold text-site-sub hover:text-icon transition-colors underline underline-offset-4 decoration-site-sub/30 hover:decoration-cta/50"
-      >
-        Referring a client? Submit a referral →
-      </a>
-    </div>
+    <a
+      href="/catalog"
+      data-astro-prefetch="viewport"
+      class="inline-block text-center bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95 animate-[glowPulse_3s_ease-in-out_infinite] px-10 py-3 sm:px-12 sm:py-4 text-base transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-cta/30"
+    >
+      Browse by Concern Directory
+    </a>
+    <a
+      href={REFERRAL_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-sm font-bold text-site-sub hover:text-icon transition-colors underline underline-offset-4 decoration-site-sub/30 hover:decoration-cta/50"
+    >
+      Referring a client? Submit a referral →
+    </a>
   </div>
 </div>
 
