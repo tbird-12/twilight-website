@@ -227,7 +227,7 @@ const qualityCareItems = [
         <div class="bento-grid reveal-children w-full gap-5">
           {
             services.map((service) => (
-              <div class={`group homepage-service-card glass-card-premium ${service.cardClass ?? ""} relative flex h-full flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10`}>
+              <div class={`group homepage-service-card homepage-card-strong glass-card-premium ${service.cardClass ?? ""} relative flex h-full flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10`}>
                 <div class="relative z-10 flex h-full flex-col">
                   <div class="mb-3 flex items-center gap-2">
                     <Icon
@@ -328,7 +328,7 @@ const qualityCareItems = [
               <a
                 href={`/blog/${post.id}`}
                 data-astro-prefetch="viewport"
-                class="group glass-card-premium flex flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
+                class="group homepage-card-strong glass-card-premium flex flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
               >
                 <div class="flex items-center gap-2 mb-3">
                   <span class={`text-xs px-2.5 py-0.5 rounded-full font-semibold ${colorClass}`}>
@@ -763,6 +763,22 @@ const qualityCareItems = [
     );
     opacity: 0;
     transition: opacity 0.3s ease;
+  }
+
+  .homepage-card-strong {
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in oklab, var(--theme-surface) 90%, transparent) 0%,
+        color-mix(in oklab, var(--theme-glass-bg) 96%, transparent) 100%
+      );
+    box-shadow:
+      inset 0 1px 0 rgba(var(--rgb-accent), 0.14),
+      0 24px 50px rgba(0, 0, 0, 0.16);
+  }
+
+  .homepage-card-strong::before {
+    opacity: 0.92;
   }
 
   .homepage-service-card:hover::before {

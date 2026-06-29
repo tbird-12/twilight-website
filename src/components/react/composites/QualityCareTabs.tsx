@@ -19,6 +19,43 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
   return (
     <div className={`space-y-5 ${className}`}>
       <div className="grid gap-4 lg:hidden">
+       <div className="grid gap-3 sm:grid-cols-2">
+         {items.map((item, idx) => {
+            const isActive = idx === activeTab;
+            return (
+              <button
+                key={idx}
+                type="button"
+                aria-pressed={isActive}
+                onClick={() => setActiveTab(idx)}
+                className="group cursor-pointer rounded-[1.4rem] border p-4 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
+                style={{
+                  borderColor: isActive ? 'rgba(var(--rgb-accent), 0.18)' : 'rgba(var(--rgb-accent), 0.1)',
+                  background: isActive
+                    ? 'linear-gradient(135deg, rgba(var(--rgb-accent), 0.08), rgba(var(--rgb-accent-alt), 0.04))'
+                    : 'rgba(var(--rgb-accent), 0.025)',
+                  boxShadow: isActive ? 'inset 0 1px 0 rgba(var(--rgb-accent), 0.08)' : 'none',
+                }}
+              >
+                <div className="mb-3 flex items-center justify-between gap-3">
+                  <span className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-site-sub">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: isActive ? 'var(--color-cta)' : 'rgba(var(--rgb-accent), 0.24)' }} />
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg font-semibold leading-tight text-site-text">
+                    {item.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-site-sub">
+                    {isActive ? 'Currently selected' : 'Tap to view this strength'}
+                  </p>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
         <article
           className="glass-card-premium rounded-4xl border border-border/70 p-5 sm:p-6"
           style={{
@@ -61,43 +98,6 @@ export default function QualityCareTabs({ items, className = '' }: QualityCareTa
             </a>
           )}
         </article>
-
-        <div className="grid gap-3 sm:grid-cols-2">
-          {items.map((item, idx) => {
-            const isActive = idx === activeTab;
-            return (
-              <button
-                key={idx}
-                type="button"
-                aria-pressed={isActive}
-                onClick={() => setActiveTab(idx)}
-                className="group cursor-pointer rounded-[1.4rem] border p-4 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
-                style={{
-                  borderColor: isActive ? 'rgba(var(--rgb-accent), 0.18)' : 'rgba(var(--rgb-accent), 0.1)',
-                  background: isActive
-                    ? 'linear-gradient(135deg, rgba(var(--rgb-accent), 0.08), rgba(var(--rgb-accent-alt), 0.04))'
-                    : 'rgba(var(--rgb-accent), 0.025)',
-                  boxShadow: isActive ? 'inset 0 1px 0 rgba(var(--rgb-accent), 0.08)' : 'none',
-                }}
-              >
-                <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.28em] text-site-sub">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: isActive ? 'var(--color-cta)' : 'rgba(var(--rgb-accent), 0.24)' }} />
-                </div>
-                <div>
-                  <h4 className="font-serif text-lg font-semibold leading-tight text-site-text">
-                    {item.title}
-                  </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-site-sub">
-                    {isActive ? 'Currently selected' : 'Tap to view this strength'}
-                  </p>
-                </div>
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       <div className="hidden gap-5 lg:grid" style={{ gridTemplateColumns: 'minmax(300px, 0.9fr) minmax(0, 1.1fr)' }}>
