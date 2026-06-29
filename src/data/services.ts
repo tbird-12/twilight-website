@@ -5,9 +5,9 @@ export interface ServiceLink {
 }
 
 export const specialties: ServiceLink[] = [
-  { name: 'Learning Disabilities', slug: 'dyslexia-testing', desc: 'Dyslexia, dyscalculia, and other learning disability assessments' },
-  { name: 'Psychoeducational Evaluations', slug: 'psychoeducational-evaluations', desc: 'School-focused specialty evaluations for accommodations, giftedness, 2e profiles, and learning clarity' },
-  { name: 'PDA Profile', slug: 'pda-profile', desc: 'Specialty autism evaluations for demand-avoidant, high-masking, and autonomy-driven presentations' },
+  { name: 'Learning Disabilities', slug: 'dyslexia-testing', desc: 'Dyslexia, dyscalculia, and learning disability testing with documentation for school and accommodations' },
+  { name: 'Psychoeducational Evaluations', slug: 'psychoeducational-evaluations', desc: 'The private specialty school evaluation most practices refer out — for 2e, giftedness, and accommodation-ready documentation' },
+  { name: 'PDA Profile', slug: 'pda-profile', desc: 'A rare in-house specialty: demand-avoidant and high-masking autism profiles assessed with clinical depth' },
   { name: 'IEE in Kentucky', slug: 'iee', desc: 'Independent Educational Evaluations for special education advocacy' },
   { name: 'Adoption Evaluations', slug: 'adoption-evaluations', desc: 'Adoption evaluations prepared for agency and court requirements' },
   { name: 'Psych Evaluations for Benefits', slug: 'benefits-evaluations', desc: 'Evaluations for disability benefits and accommodation requests' },
@@ -16,11 +16,11 @@ export const specialties: ServiceLink[] = [
 ];
 
 export const services: ServiceLink[] = [
-  { name: 'Psychological Evaluations', slug: 'psychological-evaluations', desc: 'Diagnostic evaluations with specialty depth, clear recommendations, and self-pay options for extended documentation' },
-  { name: 'Autism Testing', slug: 'autism-testing', desc: 'Neuro-affirming autism evaluations for nuanced, high-masking, and PDA-trait presentations' },
-  { name: 'Therapy', slug: 'therapy', desc: 'Neuro-affirming therapy for ages 3-99, often covered by insurance' },
-  { name: 'Medication Management', slug: 'medication-management', desc: 'Psychiatric medication management, often covered by insurance' },
-  { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'ADHD evaluations for complex and high-masking presentations, tailored to the referral question' },
+  { name: 'Psychological Evaluations', slug: 'psychological-evaluations', desc: 'Specialty-depth evaluations for ADHD, autism, and complex referrals — self-pay reports often in 7 days' },
+  { name: 'Autism Testing', slug: 'autism-testing', desc: 'Neuro-affirming autism evaluations including high-masking, PDA-trait, and AuDHD presentations' },
+  { name: 'Therapy', slug: 'therapy', desc: 'Neuro-affirming therapy for ages 3–99, often covered by insurance' },
+  { name: 'Medication Management', slug: 'medication-management', desc: 'Psychiatric prescribing — including controlled substances for ADHD — with a short current access wait' },
+  { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'ADHD evaluations for complex and high-masking presentations, with school documentation available' },
   { name: 'Personality Evaluations', slug: 'personality-profiles', desc: 'Assessments for personality, trauma, and differential diagnosis' },
   { name: 'Medical Marijuana Consultations', slug: 'medical-marijuana-consultations', desc: 'Clinical evaluations and renewals for medical marijuana treatment in Kentucky' },
   { name: 'Telehealth Services', slug: 'telehealth', desc: 'Telehealth psychology, therapy, and evaluations across Kentucky and select additional states' },

@@ -7,7 +7,6 @@ import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg?raw";
 import heroBg from "../assets/hero-background.svg?raw";
 import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
-import QualityCareTabsWrapper from "../components/QualityCareTabsWrapper.astro";
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
 
@@ -68,47 +67,47 @@ const services = [
 
 const problemPoints = [
   {
-    title: "Long waits for testing",
-    desc: "Traditional evaluation pathways can stretch for months, making it hard to move forward when you need clear answers now.",
+    title: "Psychoeducational evaluations are hard to access well",
+    desc: "Most practices refer out school-focused testing or limit the battery to what insurance allows — leaving families without the documentation depth that IEP, 504, and accommodation decisions actually require.",
   },
   {
-    title: "Limited expertise options",
-    desc: "When families need psychoeducational clarity or a clinician who can assess high-masking or PDA-trait autism presentations, the local options narrow fast.",
+    title: "PDA is routinely missed or misdiagnosed",
+    desc: "Demand-avoidant autism presentations are often labelled oppositional or non-compliant. Finding a clinician who evaluates specifically for PDA traits within a neuro-affirming framework remains genuinely rare.",
   },
   {
-    title: "Adults can be harder to assess",
-    desc: "Many assessment approaches were originally developed for children. Adults who've adapted over time may need a more nuanced, experienced evaluation.",
+    title: "Medication access can take months",
+    desc: "Wait times for psychiatric prescribers — especially those who can prescribe controlled substances for ADHD — are long. A short access window to a qualified NP makes a real clinical difference.",
   },
   {
-    title: "What comes after the diagnosis?",
-    desc: "A diagnosis is just the starting point. Having therapy, medication management, and ongoing support available in one place makes all the difference.",
+    title: "A diagnosis without follow-through isn't enough",
+    desc: "An evaluation is only valuable if the next steps are clear. Having therapy, medication management, and school-ready documentation available in one practice changes the outcome.",
   },
 ];
 
 const qualityCareItems = [
   {
-    title: "Rare school-focused expertise in-house",
-    desc: "We offer psychoeducational evaluations for learning differences, giftedness, twice-exceptional profiles, and accommodations with a level of school-facing depth many general practices do not maintain.",
+    title: "School-ready depth most practices refer out",
+    desc: "Private psychoeducational evaluations for learning differences, giftedness, 2e, and accommodation documentation.",
     link: "/specialties/psychoeducational-evaluations",
   },
   {
-    title: "Rapid diagnostic clarity in 7 days",
-    desc: "No prolonged wait for answers and no expedited fees. For evaluations offered on a self-pay basis, testing can often be completed and the written report delivered within seven days of your intake appointment.",
+    title: "Self-pay reports in 7 days — no rush fee",
+    desc: "Self-pay evaluations typically completed and reported within seven days of intake, without an expedited charge.",
     link: "/resources/waitlist-times",
   },
   {
-    title: "PDA-informed autism assessment",
-    desc: "We evaluate high-masking and demand-avoidant autism presentations with clinicians who know when PDA traits belong in the formulation rather than being dismissed as behavior alone.",
-    link: "/specialties",
+    title: "PDA evaluation — a rare in-house specialty",
+    desc: "Demand-avoidant and high-masking autism profiles assessed by clinicians who understand PDA as a distinct presentation.",
+    link: "/specialties/pda-profile",
   },
   {
-    title: "Integrated psychiatric support",
-    desc: "When evaluation results indicate that medication may be beneficial, our in-house psychiatric provider offers ongoing care that is often billable to major plans, Kentucky Medicaid, and Medicare.",
+    title: "Short wait to prescribe — including stimulants",
+    desc: "Our psychiatric NP prescribes controlled substances when clinically appropriate, with a short current access window.",
     link: "/services/medication-management",
   },
   {
-    title: "Actionable insights after diagnosis with therapy",
-    desc: "Our clinical team offers both evaluations and therapy for ages 3-99, giving you a clear handoff into ongoing care that is often billable to insurance for covered diagnoses.",
+    title: "Evaluation, therapy, and medication in one practice",
+    desc: "Continuity from report to ongoing care — therapy for ages 3–99 and medication management, often billable to insurance.",
     link: "/services/therapy/after-evaluation",
   },
 ];
@@ -116,7 +115,7 @@ const qualityCareItems = [
 
 <Layout
   title="Psychological Evaluations & Therapy in KY"
-  description="Twilight Psychology offers ADHD testing, autism evaluations, psychoeducational assessments, specialty therapy, and medication management in Lexington, KY and via telehealth across Kentucky."
+  description="ADHD testing, autism evaluations, psychoeducational assessments, therapy, and medication management in Lexington, KY. Telehealth available across Kentucky."
 >
   <div class="homepage-shell bg-site-bg">
     <section
@@ -272,29 +271,45 @@ const qualityCareItems = [
       >
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <header class="mx-auto mb-8 max-w-3xl text-center">
-          <p class="homepage-section-label">Designed for clarity</p>
+        <header class="mx-auto mb-10 max-w-3xl text-center">
+          <p class="homepage-section-label">Why families choose us</p>
           <h2
             class="mb-5 text-3xl font-serif font-black tracking-[-0.025em] text-site-text sm:text-4xl lg:text-[2.7rem]"
           >
-            Specialized Care, <span class="text-cta">Five</span> Distinct Advantages
+            <span class="text-cta">Specialized Care,</span> Five Distinct Advantages
           </h2>
           <p
             class="mx-auto max-w-2xl text-center text-base leading-relaxed text-site-sub sm:text-lg"
           >
-            Twilight Psychology offers the clinical depth, speed, and follow-through
-            that distinguishes our evaluations from others.
+            Twilight Psychology offers the clinical depth, speed, 
+            and follow-through that distinguishes our evaluations from others.
           </p>
         </header>
 
-        <!-- ── Quality Care interactive panel (React) ── -->
-        <QualityCareTabsWrapper
-          items={qualityCareItems.map((item) => ({
-            title: item.title,
-            description: item.desc,
-            link: item.link,
-          }))}
-        />
+        <div class="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-3 ">
+          {
+            qualityCareItems.map((item) => (
+              <a
+                href={item.link}
+                data-astro-prefetch="viewport"
+                class="group homepage-card-strong glass-card-premium rounded-3xl p-6 sm:p-7 flex flex-col transition-all duration-300 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
+              >
+                <h3 class="font-serif text-base sm:text-lg font-black text-site-text mb-3 leading-tight group-hover:text-cta transition-colors">
+                  {item.title}
+                </h3>
+                <p class="text-xs sm:text-sm leading-relaxed text-site-sub flex-1">
+                  {item.desc}
+                </p>
+                <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-cta/70 group-hover:text-cta transition-colors">
+                  Learn more
+                  <svg class="h-3 w-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            ))
+          }
+        </div>
       </div>
     </section>
 
@@ -893,4 +908,3 @@ const qualityCareItems = [
   }
 </style>
 
-<!-- Quality care tabs/accordion now handled by QualityCareTabs React component -->
