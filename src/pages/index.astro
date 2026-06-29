@@ -8,7 +8,6 @@ import heroBg from "../assets/hero-background.svg?raw";
 import heroBgMobile from "../assets/hero-mobile.svg?raw";
 
 import QualityCareTabsWrapper from "../components/QualityCareTabsWrapper.astro";
-import CountUpStats from "../components/react/CountUpStats";
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
 
@@ -26,18 +25,16 @@ const stats = [
 const services = [
   {
     title: "Psychoeducational Evaluations",
+    kicker: "School & college support",
     desc: "Private specialty assessments for dyslexia, learning differences, giftedness, twice-exceptional profiles, and the school or college decisions that need thorough documentation.",
     icon: "mdi:school-outline",
     link: "/specialties/psychoeducational-evaluations",
+    cardClass: "homepage-service-card--feature",
   },
-  {
-    title: "Therapy",
-    desc: "Evidence-based, neuro-affirming therapy for ages 3-99 with broad insurance participation for covered individual care.",
-    icon: "mdi:account-heart-outline",
-    link: "/services/therapy",
-  },  
+
   {
     title: "Psychological Evaluations",
+    kicker: "ADHD, autism, diagnostics",
     desc: "ADHD, autism, and broader diagnostic evaluations for children, teens, and adults who need specialty depth, careful interpretation, and recommendations they can act on.",
     icon: "mdi:brain",
     link: "/services/psychological-evaluations",
@@ -45,15 +42,27 @@ const services = [
   
   {
     title: "Medication Management",
+    kicker: "Insurance-friendly follow-through",
     desc: "Individualized medication management with broad insurance participation through our dedicated Psychiatric Nurse Practitioner.",
     icon: "mdi:stethoscope",
     link: "/services/medication-management",
+    cardClass: "homepage-service-card--tall",
   },
-  {
+
+    {
+    title: "Therapy",
+    kicker: "Ages 3-99",
+    desc: "Evidence-based, neuro-affirming therapy for ages 3-99 with broad insurance participation for covered individual care.",
+    icon: "mdi:account-heart-outline",
+    link: "/services/therapy",
+  },  
+    {
     title: "Couples Counseling",
+    kicker: "Relationship repair & support",
     desc: "Relationship therapy for couples navigating communication, conflict, and connection with intensive sessions availability.",
     icon: "mdi:heart-half-full",
     link: "/services/therapy/couples-counseling",
+    cardClass: "homepage-service-card--wide",
   },
 ];
 
@@ -100,7 +109,6 @@ const qualityCareItems = [
   {
     title: "Actionable insights after diagnosis with therapy",
     desc: "Our clinical team offers both evaluations and therapy for ages 3-99, giving you a clear handoff into ongoing care that is often billable to insurance for covered diagnoses.",
-    cardClass: "sm:col-span-2 lg:col-span-1",
     link: "/services/therapy/after-evaluation",
   },
 ];
@@ -112,7 +120,7 @@ const qualityCareItems = [
 >
   <div class="homepage-shell bg-site-bg">
     <section
-      class="homepage-panel homepage-panel-hero relative isolate overflow-hidden px-4"
+      class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
     >
       <div class="homepage-hero-art homepage-hero-art--mobile homepage-hero-art--light" aria-hidden="true">
         <Fragment set:html={heroBgDawnMobile} />
@@ -129,7 +137,9 @@ const qualityCareItems = [
       <div
         class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-4xl text-center px-4 sm:px-6"
       >
-        <HeroSectionWrapper />
+        <div class="homepage-hero-frame glass-card-premium mx-auto max-w-5xl rounded-4xl px-5 py-8 sm:rounded-[2.5rem] sm:px-8 sm:py-10 md:px-12 md:py-14">
+          <HeroSectionWrapper />
+        </div>
       </div>
     </section>
 
@@ -167,7 +177,7 @@ const qualityCareItems = [
           </div>
 
           <!-- Right: staggered pain points -->
-          <div class="problem-points" role="list">
+          <div class="problem-points glass-card-premium rounded-4xl px-6 py-4 sm:px-8 sm:py-5" role="list">
             {problemPoints.map((point) => (
               <div class="problem-point" role="listitem">
                 <span class="problem-point-marker" aria-hidden="true"></span>
@@ -216,8 +226,8 @@ const qualityCareItems = [
 
         <div class="bento-grid reveal-children w-full gap-5">
           {
-            services.map((service, _) => (
-              <div class="group homepage-service-card relative flex h-full flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 overflow-hidden min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10">
+            services.map((service) => (
+              <div class={`group homepage-service-card glass-card-premium ${service.cardClass ?? ""} relative flex h-full flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10`}>
                 <div class="relative z-10 flex h-full flex-col">
                   <div class="mb-3 flex items-center gap-2">
                     <Icon
@@ -225,10 +235,13 @@ const qualityCareItems = [
                       class="w-8 h-8 text-site-sub shrink-0"
                       style="color: var(--color-icon);"
                     />
-                    <h3 class="font-serif text-lg sm:text-xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
-                      {service.title}
-                    </h3>
                   </div>
+                  <p class="mb-3 text-[11px] font-black uppercase tracking-[0.24em] text-site-sub/80">
+                    {service.kicker}
+                  </p>
+                  <h3 class="mb-3 font-serif text-lg sm:text-xl font-black text-site-text tracking-tight group-hover:text-cta transition-colors">
+                    {service.title}
+                  </h3>
                   <p class="mb-4 text-xs sm:text-sm leading-relaxed text-site-sub">
                     {service.desc}
                   </p>
@@ -259,19 +272,18 @@ const qualityCareItems = [
       >
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <header class="mx-auto mb-12 max-w-3xl text-center">
+        <header class="mx-auto mb-8 max-w-3xl text-center">
           <p class="homepage-section-label">Designed for clarity</p>
           <h2
-            class="fluid-display-md font-serif font-black text-site-text mb-5"
+            class="mb-5 text-3xl font-serif font-black tracking-[-0.025em] text-site-text sm:text-4xl lg:text-[2.7rem]"
           >
-            Elevated Care, <span class="text-cta">Five</span> Fewer Barriers
+            Specialized Care, <span class="text-cta">Five</span> Distinct Advantages
           </h2>
           <p
-            class="text-site-sub text-lg max-w-2xl mx-auto text-center leading-relaxed"
+            class="mx-auto max-w-2xl text-center text-base leading-relaxed text-site-sub sm:text-lg"
           >
-            Our evaluation process is built for precision and efficiency,
-            especially for clients who want specialty-level depth beyond what a
-            routine, insurance-first pathway can usually support.
+            Twilight Psychology offers the clinical depth, speed, and follow-through
+            that distinguishes our evaluations from others.
           </p>
         </header>
 
@@ -295,7 +307,7 @@ const qualityCareItems = [
         <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p class="homepage-section-label">From our blog</p>
-            <h2 class="fluid-display-md font-serif font-black text-site-text">
+            <h2 class="fluid-display-sm font-serif font-black text-site-text">
               Insights & Updates
             </h2>
           </div>
@@ -316,7 +328,7 @@ const qualityCareItems = [
               <a
                 href={`/blog/${post.id}`}
                 data-astro-prefetch="viewport"
-                class="group flex flex-col rounded-4xl border theme-border p-6 sm:p-8 transition-all duration-500 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
+                class="group glass-card-premium flex flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
               >
                 <div class="flex items-center gap-2 mb-3">
                   <span class={`text-xs px-2.5 py-0.5 rounded-full font-semibold ${colorClass}`}>
@@ -347,11 +359,11 @@ const qualityCareItems = [
     >
       <div class="homepage-panel-inner mx-auto max-w-5xl">
         <div
-          class="homepage-cta-shell rounded-[2.5rem] border theme-border px-6 py-10 sm:px-10 sm:py-14 text-center"
+          class="homepage-cta-shell glass-card-premium rounded-[2.5rem] px-6 py-10 sm:px-10 sm:py-14 text-center"
         >
           <p class="homepage-section-label justify-center">Next step</p>
           <h2
-            class="font-serif text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter text-site-text"
+            class="display-gradient-text font-serif text-4xl md:text-5xl lg:text-6xl font-black mb-6"
           >
             Ready to Get Started
           </h2>
@@ -365,7 +377,18 @@ const qualityCareItems = [
 
           <div class="mb-12">
             <p class="homepage-section-label justify-center">By the Numbers</p>
-            <CountUpStats client:visible stats={stats} />
+            <div class="homepage-stat-grid reveal-children mx-auto mt-6 max-w-4xl" role="list">
+              {stats.map((stat) => (
+                <div class="homepage-stat-card glass-card-premium rounded-[1.75rem] px-5 py-5 text-left sm:px-6" role="listitem">
+                  <p class="mb-2 font-serif text-3xl font-black tracking-[-0.04em] text-site-text sm:text-4xl">
+                    {stat.value}
+                  </p>
+                  <p class="text-xs font-black uppercase tracking-[0.2em] text-site-sub">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div
@@ -412,12 +435,14 @@ const qualityCareItems = [
   }
 
   .homepage-shell::before {
-    /* Top radial glow removed to prevent movement while scrolling */
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background: none;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.75'/%3E%3C/svg%3E");
+    opacity: 0.022;
+    mix-blend-mode: soft-light;
     z-index: 0;
   }
 
@@ -439,8 +464,8 @@ const qualityCareItems = [
     position: relative;
     z-index: 1;
     width: 100%;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .homepage-panel-hero {
@@ -483,8 +508,8 @@ const qualityCareItems = [
       --homepage-chrome-offset: 5rem;
     }
     .homepage-panel-inner {
-      padding-top: 4rem;
-      padding-bottom: 4rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
     }
   }
 
@@ -504,8 +529,8 @@ const qualityCareItems = [
       --homepage-chrome-offset: 6.5rem;
     }
     .homepage-panel-inner {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
     }
   }
 
@@ -517,6 +542,10 @@ const qualityCareItems = [
     min-height: calc(100svh - var(--homepage-chrome-offset, 4rem));
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .homepage-hero-frame {
+    width: 100%;
   }
 
   @media (min-width: 640px) {
@@ -644,7 +673,7 @@ const qualityCareItems = [
     position: absolute;
     border-radius: 9999px;
     filter: blur(80px);
-    opacity: 0.7;
+    opacity: 0.45;
     pointer-events: none;
     animation: panelGlowBreath 8s ease-in-out infinite;
   }
@@ -671,7 +700,7 @@ const qualityCareItems = [
     left: 2%;
     width: 18rem;
     height: 18rem;
-    background: rgba(var(--rgb-accent), 0.07);
+    background: rgba(var(--rgb-accent), 0.05);
     animation-delay: 2.6s;
   }
 
@@ -680,32 +709,26 @@ const qualityCareItems = [
     top: 40%;
     width: 18rem;
     height: 18rem;
-    background: rgba(var(--rgb-accent), 0.07);
+    background: rgba(var(--rgb-accent), 0.05);
     animation-delay: 3.4s;
   }
 
-  .homepage-feature-card,
-  .homepage-glass-card,
   .homepage-service-card {
-    background: rgba(var(--rgb-accent), 0.06);
-    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.08);
-    backdrop-filter: blur(20px);
+    min-height: 100%;
   }
 
   .homepage-cta-shell {
-    background: rgba(var(--rgb-surface), 0.55);
-    box-shadow: none;
-    backdrop-filter: none;
+    background: rgba(var(--rgb-surface), 0.5);
   }
 
   .homepage-stat-card {
-    padding: 1.25rem 0;
-    border-top: 1px solid rgba(var(--rgb-accent), 0.1);
+    min-width: 0;
   }
 
-  .homepage-stat-card:first-of-type {
-    border-top: 0;
-    padding-top: 0.25rem;
+  .homepage-stat-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .homepage-section-label {
@@ -746,12 +769,26 @@ const qualityCareItems = [
     opacity: 1;
   }
 
+  @media (min-width: 64rem) {
+    .bento-grid > .homepage-service-card--feature {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
+
+    .bento-grid > .homepage-service-card--tall {
+      grid-column: span 3;
+      grid-row: span 2;
+    }
+
+    .bento-grid > .homepage-service-card--wide {
+      grid-column: span 6;
+    }
+  }
+
   @media (min-width: 768px) {
     :global(body:has(.homepage-shell)) {
       scroll-snap-type: y mandatory;
     }
-
-    /* Removed homepage-shell::before animation-duration */
 
     .homepage-panel-glow {
       animation-duration: 7s;
@@ -771,17 +808,15 @@ const qualityCareItems = [
       min-height: 100svh;
     }
 
-    /* Removed homepage-shell::before animation-duration and opacity */
-
     .homepage-panel-glow {
       animation-duration: 12s;
-      opacity: 0.5;
+      opacity: 0.35;
       filter: blur(66px);
     }
 
     .homepage-panel-inner {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: 2.75rem;
+      padding-bottom: 2.75rem;
     }
 
     .homepage-panel-hero .homepage-panel-inner {
@@ -795,256 +830,21 @@ const qualityCareItems = [
     }
   }
 
-  @media (min-width: 1280px) {
-    /* Removed homepage-shell::before animation-duration */
+  @media (min-width: 640px) {
+    .homepage-stat-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
 
+  @media (min-width: 1280px) {
     .homepage-panel-glow {
       opacity: 0.8;
       filter: blur(88px);
     }
   }
 
-  /* ── Mobile accordion (< lg) ── */
-
-  .care-accordion {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    .care-accordion {
-      display: none;
-    }
-  }
-
-  .care-accordion-item {
-    border: 1px solid rgba(var(--rgb-accent), 0.12);
-    border-radius: 1rem;
-    background: rgba(var(--rgb-accent), 0.04);
-    overflow: hidden;
-    transition: background 0.2s ease, border-color 0.2s ease;
-  }
-
-  .care-accordion-item.open {
-    border-color: rgba(var(--rgb-accent), 0.22);
-    background: rgba(var(--rgb-accent), 0.08);
-  }
-
-  .care-accordion-trigger {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 1rem 1.25rem;
-    text-align: left;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: inherit;
-  }
-
-  .care-accordion-trigger:focus-visible {
-    outline: 2px solid rgba(var(--rgb-accent), 0.85);
-    outline-offset: -2px;
-    border-radius: 1rem;
-  }
-
-  .care-accordion-icon {
-    opacity: 0.5;
-    transition: opacity 0.2s ease;
-  }
-
-  .care-accordion-item.open .care-accordion-icon {
-    opacity: 1;
-  }
-
-  .care-accordion-title {
-    color: var(--color-site-sub);
-    transition: color 0.2s ease;
-  }
-
-  .care-accordion-item.open .care-accordion-title {
-    color: var(--color-site-text);
-  }
-
-  .care-accordion-chevron {
-    color: var(--color-site-sub);
-    transition: transform 0.3s ease, color 0.2s ease;
-  }
-
-  .care-accordion-item.open .care-accordion-chevron {
-    transform: rotate(180deg);
-    color: var(--color-cta);
-  }
-
-  .care-accordion-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease;
-  }
-
-  .care-accordion-item.open .care-accordion-body {
-    grid-template-rows: 1fr;
-  }
-
-  .care-accordion-content {
-    overflow: hidden;
-    padding: 0 1.25rem;
-    min-height: 0;
-  }
-
-  .care-accordion-item.open .care-accordion-content {
-    padding-bottom: 1.25rem;
-  }
-
-  :root.light .care-accordion-item {
-    background: rgba(var(--rgb-surface), 0.5);
-  }
-
-  :root.light .care-accordion-item.open {
-    background: rgba(var(--rgb-surface), 0.8);
-  }
-
-  /* ── Desktop tab/panel (visible lg+) ── */
-
-  .care-two-panel {
-    display: none;
-  }
-
-  @media (min-width: 1024px) {
-    .care-two-panel {
-      display: grid;
-      gap: 2.5rem;
-      align-items: start;
-      grid-template-columns: minmax(240px, 5fr) 7fr;
-    }
-  }
-
-  .care-hint {
-    padding: 0 0.25rem 0.75rem;
-    font-size: 0.6rem;
-    font-weight: 800;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--theme-section-label);
-    opacity: 0.4;
-  }
-
-  .care-tab-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .care-tab {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 0.875rem 1.25rem;
-    text-align: left;
-    border: 1px solid rgba(var(--rgb-accent), 0.1);
-    border-left: 3px solid transparent;
-    border-radius: 0.875rem;
-    background: rgba(var(--rgb-accent), 0.15);
-    cursor: pointer;
-    transition:
-      background 0.2s ease,
-      border-color 0.2s ease,
-      transform 0.15s ease;
-  }
-
-  .care-tab:hover:not(.active) {
-    background: rgba(var(--rgb-accent), 0.06);
-    transform: translateX(2px);
-  }
-
-  .care-tab:focus-visible {
-    outline: 2px solid rgba(var(--rgb-accent), 0.85);
-    outline-offset: 2px;
-  }
-
-  .care-tab-icon {
-    opacity: 0.4;
-    transition: opacity 0.2s ease;
-  }
-
-  .care-tab-title {
-    color: var(--color-site-sub);
-    transition: color 0.2s ease;
-  }
-
-  .care-tab-arrow {
-    opacity: 0;
-    color: var(--color-cta);
-    transform: translateX(-6px);
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  .care-tab.active {
-    border-color: rgba(var(--rgb-accent), 0.2);
-    border-left-color: var(--color-cta);
-    background: rgba(var(--rgb-accent), 0.09);
-  }
-
-  .care-tab.active .care-tab-icon {
-    opacity: 1;
-  }
-
-  .care-tab.active .care-tab-title {
-    color: var(--color-site-text);
-  }
-
-  .care-tab.active .care-tab-arrow {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  :root:not(.light) .waitlist-context {
-    color: var(--color-site-sub);
-  }
-
-  .care-panels {
-    display: grid;
-    min-height: 22rem;
-    border: 1px solid rgba(var(--rgb-accent), 0.12);
-    border-radius: 1.25rem;
-    background: rgba(var(--rgb-accent), 0.12);
-    box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.06);
-  }
-
-  .care-panel {
-    grid-row: 1;
-    grid-column: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2.5rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .care-panel.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .care-panel-eyebrow {
-    font-size: 0.6rem;
-    font-weight: 800;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: var(--theme-section-label);
-    opacity: 0.4;
-    margin-bottom: 1.25rem;
-  }
-
   :root.light .homepage-shell::before {
-    background: none;
+    opacity: 0.015;
   }
 
   :root.light .homepage-panel {
@@ -1060,25 +860,12 @@ const qualityCareItems = [
     );
   }
 
-  :root.light .homepage-feature-card,
-  :root.light .homepage-glass-card,
   :root.light .homepage-service-card {
-    background: rgba(var(--rgb-surface), 0.9);
     box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.15);
   }
 
   :root.light .homepage-cta-shell {
-    background: rgba(var(--rgb-surface), 0.8);
-    box-shadow: none;
-    backdrop-filter: none;
-  }
-
-  :root.light .care-tab {
-    background: rgba(var(--rgb-surface), 0.7);
-  }
-
-  :root.light .care-panels {
-    background: rgba(var(--rgb-surface), 0.75);
+    background: rgba(var(--rgb-surface), 0.82);
   }
 
   @media (prefers-reduced-motion: reduce) {
