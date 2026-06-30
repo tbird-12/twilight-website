@@ -2,7 +2,7 @@
 title: "Therapy at Twilight Psychology — what we offer in Lexington, KY"
 seoTitle: "Mental Health Therapy in Lexington, KY"
 description: "An overview of therapy at Twilight Psychology: CBT, ACT, psychodynamic, and neuro-affirming approaches for children, teens, adults, and couples"
-seoDescription: "Mental health therapy in Lexington, KY at Twilight Psychology for ADHD, autism, anxiety, trauma, children, teens, adults, and couples"
+seoDescription: "Mental health therapy in Lexington, KY for ADHD, autism, anxiety, and trauma. Neuro-affirming care for children, teens, adults, and couples."
 pubDate: 2026-06-04
 updatedDate: 2026-06-21
 category: clinical

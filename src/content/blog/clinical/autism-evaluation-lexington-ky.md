@@ -2,7 +2,7 @@
 title: "Autism evaluations in Lexington, KY — children and adults"
 seoTitle: "Autism Evaluation in Lexington, KY — Children and Adults"
 description: "What autism evaluations look like at Twilight Psychology, who conducts them, how adults differ from children, and what insurance covers"
-seoDescription: "Autism testing in Lexington, KY for children and adults. Neuro-affirming evaluations using ADOS-2. Insurance accepted. Twilight Psychology."
+seoDescription: "Autism testing in Lexington, KY for children, teens, and adults. Neuro-affirming evaluations using ADOS-2. Insurance accepted. Self-pay reports in 7 days."
 pubDate: 2026-05-27
 category: clinical
 author: "Twilight Psychology Team"
