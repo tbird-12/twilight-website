@@ -136,7 +136,7 @@ const qualityCareItems = [
       <div
         class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-4xl text-center px-4 sm:px-6"
       >
-        <div class="homepage-hero-frame glass-card-premium mx-auto max-w-5xl rounded-4xl px-5 py-8 sm:rounded-[2.5rem] sm:px-8 sm:py-10 md:px-12 md:py-14">
+        <div class="homepage-hero-frame mx-auto max-w-5xl rounded-4xl px-5 py-8 sm:rounded-[2.5rem] sm:px-8 sm:py-10 md:px-12 md:py-14">
           <HeroSectionWrapper />
         </div>
       </div>
@@ -502,20 +502,20 @@ const qualityCareItems = [
   :global(html.light) .homepage-hero-art--light.homepage-hero-art--mobile,
   :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--mobile {
     display: block;
-    opacity: 0.88;
+    opacity: 0.92;
   }
 
   :global(html.light) .homepage-panel-hero {
     background:
       linear-gradient(
         180deg,
-        rgba(var(--rgb-bg), 0.64),
-        rgba(var(--rgb-bg), 0.82)
+        rgba(var(--rgb-bg), 0.44),
+        rgba(var(--rgb-bg), 0.68)
       );
   }
 
   :global(html.dark) .homepage-panel-hero {
-    background: rgba(var(--rgb-bg), 0.85);
+    background: rgba(var(--rgb-bg), 0.78);
   }
 
   @media (min-width: 640px) {
@@ -537,7 +537,7 @@ const qualityCareItems = [
     :global(html.light) .homepage-hero-art--light.homepage-hero-art--desktop,
     :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--desktop {
       display: block;
-      opacity: 0.82;
+      opacity: 0.90;
     }
 
     .homepage-panel-hero {
@@ -559,8 +559,43 @@ const qualityCareItems = [
     padding-bottom: 2rem;
   }
 
+  /* ── Hero glass frame — lighter than glass-card-premium, lets SVG breathe ── */
   .homepage-hero-frame {
     width: 100%;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: rgba(var(--rgb-bg), 0.46);
+    border: 1px solid rgba(var(--rgb-accent), 0.07);
+    box-shadow:
+      inset 0 1px 0 rgba(var(--rgb-accent), 0.1),
+      0 12px 44px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14px) saturate(115%);
+  }
+
+  /* Subtle corner highlight overlay */
+  .homepage-hero-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(145deg, rgba(var(--rgb-accent), 0.06), transparent 44%),
+      radial-gradient(circle at top right, rgba(var(--rgb-accent-alt), 0.07), transparent 36%);
+    z-index: 0;
+  }
+
+  .homepage-hero-frame > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  :root.light .homepage-hero-frame {
+    background: rgba(var(--rgb-surface), 0.80);
+    border-color: rgba(var(--rgb-accent), 0.09);
+    box-shadow:
+      inset 0 1px 0 rgba(var(--rgb-accent), 0.13),
+      0 10px 36px rgba(0, 0, 0, 0.05);
   }
 
   @media (min-width: 640px) {

@@ -13,6 +13,12 @@ const {
 ---
 
 <div class="hero-section text-center">
+  <!-- Location / context eyebrow pill -->
+  <p class="hero-eyebrow" aria-label="Practice location">
+    <span class="hero-location-dot" aria-hidden="true"></span>
+    Assessments &middot; Therapy  &middot; Medication Management 
+  </p>
+
   <h1
     class="hero-title display-gradient-text font-serif text-[2rem] sm:text-4xl md:text-6xl xl:text-7xl font-black mb-3 sm:mb-6"
   >
@@ -20,55 +26,157 @@ const {
   </h1>
 
   <p
-    class="hero-subtitle max-w-2xl mx-auto text-balance text-base sm:text-lg md:text-xl text-site-sub mb-6 sm:mb-10 leading-relaxed font-normal sm:font-medium"
+    class="hero-subtitle max-w-2xl mx-auto text-balance text-base sm:text-lg md:text-xl text-site-sub mb-8 sm:mb-10 leading-relaxed font-normal sm:font-medium"
   >
     {subtitle}
   </p>
 
+  <!-- Two-button CTA row -->
   <div class="hero-actions mx-auto w-full max-w-2xl">
-    <a
-      href="/catalog"
-      data-astro-prefetch="viewport"
-      class="inline-block text-center bg-cta text-cta-fg font-black rounded-full shadow-lg shadow-cta/20 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95 animate-[glowPulse_3s_ease-in-out_infinite] px-10 py-3 sm:px-12 sm:py-4 text-base transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-cta/30"
-    >
-      Browse by Concern Directory
-    </a>
-    <a
-      href={REFERRAL_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-sm font-bold text-site-sub hover:text-icon transition-colors underline underline-offset-4 decoration-site-sub/30 hover:decoration-cta/50"
-    >
-      Referring a client? Submit a referral →
-    </a>
+    <div class="hero-cta-row">
+      <a
+        href="/catalog"
+        data-astro-prefetch="viewport"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3 text-base font-black text-cta-fg shadow-lg shadow-cta/20 transition-all duration-200 hover:bg-cta/80 hover:scale-[1.02] hover:ring-4 hover:ring-cta/30 hover:shadow-xl hover:shadow-cta/30 active:scale-95 animate-[glowPulse_3s_ease-in-out_infinite] sm:px-10 sm:py-4"
+      >
+        Browse by Concern
+      </a>
+      <a
+        href={REFERRAL_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hero-btn-referral"
+      >
+        Referring a client?
+        <svg
+          class="h-4 w-4 shrink-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          />
+        </svg>
+      </a>
+    </div>
   </div>
 </div>
 
 <style>
+  .hero-eyebrow,
   .hero-title,
   .hero-subtitle,
   .hero-actions {
     animation-fill-mode: both;
   }
 
+  /* ── Eyebrow location pill ── */
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 0.3rem 0.875rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-site-sub);
+    animation: fadeIn 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-location-dot {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 9999px;
+    background-color: var(--color-icon);
+    animation: heroLocDotPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* ── Title / subtitle staggered entrance ── */
   .hero-title {
     animation: focusBlur 700ms cubic-bezier(0.4, 0, 0.2, 1);
+    animation-delay: 80ms;
   }
 
   .hero-subtitle {
     animation: fadeInUp 700ms cubic-bezier(0.4, 0, 0.2, 1);
-    animation-delay: 100ms;
+    animation-delay: 180ms;
   }
 
   .hero-actions {
     animation: fadeInUp 700ms cubic-bezier(0.4, 0, 0.2, 1);
-    animation-delay: 200ms;
+    animation-delay: 280ms;
+  }
+
+  /* ── CTA row: stacked mobile → side-by-side ≥480px ── */
+  .hero-cta-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 480px) {
+    .hero-cta-row {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  /* ── Secondary "Referring a client?" button ── */
+  .hero-btn-referral {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: 9999px;
+    border: 1.5px solid var(--color-border-strong);
+    background: transparent;
+    padding: 0.75rem 1.625rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-site-text);
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.15s ease;
+  }
+
+  .hero-btn-referral:hover {
+    background-color: var(--color-surface);
+    border-color: var(--color-border-strong);
+    transform: scale(1.02);
+  }
+
+  .hero-btn-referral:active {
+    transform: scale(0.97);
+  }
+
+  @keyframes heroLocDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.8); }
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .hero-eyebrow,
     .hero-title,
     .hero-subtitle,
     .hero-actions {
+      animation: none;
+    }
+    .hero-location-dot {
       animation: none;
     }
   }
