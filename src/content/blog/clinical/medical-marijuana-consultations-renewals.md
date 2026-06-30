@@ -7,7 +7,7 @@ pubDate: 2026-04-25
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["medical-marijuana", "consultations", "medication", "kentucky", "nicola-allen"]
-draft: false
+draft: true
 ---
 
 Twilight Psychology is excited to announce that we now offer **medical marijuana consultations and renewals** for eligible clients in Kentucky. Our Authorized Practitioner, **Nicola Allen, MSN (PMHNP)**, is currently accepting new patients with **immediate availability**.

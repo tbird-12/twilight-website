@@ -57,8 +57,8 @@ export const providers: Provider[] = [
     image: nicolaAllenImg,
     name_with_education: 'Nicola Allen, MSN',
     credential: 'PMHNP',
-    services_offered: ['Medication Management', 'Medical Marijuana *'],
-    out_of_pocket_rates: { medication_intake: '$250', medication_followup: '$100', medical_marijuana: '$150' },
+    services_offered: ['Medication Management'],
+    out_of_pocket_rates: { medication_intake: '$250', medication_followup: '$100' },
     states_served: ['Kentucky'],
     ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport', 'Anthem', 'Wellcare'],
     wait_times: { medication_management: '1 week' }

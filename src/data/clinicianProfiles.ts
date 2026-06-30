@@ -246,10 +246,9 @@ export const clinicianProfiles: ClinicianProfile[] = [
         ],
       },
       {
-        title: "Additional Services & Safety",
+        title: "Safe Prescribing",
         variant: "surface-2",
         body: [
-          "I am a THC-friendly provider and offer medical cannabis certification evaluations when clinically appropriate.",
           "At Twilight Psychology, we follow all Drug Enforcement Administration regulations and use Prescription Drug Monitoring Program checks to support safe, informed, individualized care.",
         ],
       },

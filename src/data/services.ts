@@ -22,6 +22,5 @@ export const services: ServiceLink[] = [
   { name: 'Medication Management', slug: 'medication-management', desc: 'Psychiatric prescribing — including controlled substances for ADHD — with a short current access wait' },
   { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'ADHD evaluations for complex and high-masking presentations, with school documentation available' },
   { name: 'Personality Evaluations', slug: 'personality-profiles', desc: 'Assessments for personality, trauma, and differential diagnosis' },
-  { name: 'Medical Marijuana Consultations', slug: 'medical-marijuana-consultations', desc: 'Clinical evaluations and renewals for medical marijuana treatment in Kentucky' },
   { name: 'Telehealth Services', slug: 'telehealth', desc: 'Telehealth psychology, therapy, and evaluations across Kentucky and select additional states' },
 ];
