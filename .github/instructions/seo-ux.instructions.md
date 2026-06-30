@@ -114,13 +114,23 @@ When a clinician gains licensure in a new state or telehealth coverage expands:
 ## Internal Linking
 
 ### Blog category resource sidebar
-`src/pages/blog/[...slug].astro` renders contextual resource links per category. When adding new service or resource pages, **update the matching category links**:
-- `clinical` → link to `/services/telehealth`, `/about/service-area`, `/resources/new-client`
-- `billing` → link to `/resources/fees`, `/resources/insurances-accepted`, `/contact`
-- `insurance` → link to `/resources/insurances-accepted`, `/resources/fees`, `/resources/new-client`
-- `business` / `announcements` → link to `/about/locations`, `/contact`, `/resources/new-client`
+`src/pages/blog/[...slug].astro` renders contextual resource links per category. Keep **4–5 links per category** — enough to be useful without overwhelming the reader. When adding new service or resource pages, **update the matching category links**:
+
+- `clinical` → `/services/psychological-evaluations`, `/services/therapy`, `/services/telehealth`, `/resources/new-client`, `/resources/waitlist-times`
+- `billing` → `/resources/fees`, `/resources/insurances-accepted`, `/resources/faq`, `/resources/new-client`, `/contact`
+- `insurance` → `/resources/insurances-accepted`, `/resources/fees`, `/resources/faq`, `/resources/new-client`, `/contact`
+- `business` → `/about/locations`, `/about/clinicians/clinicians-lex-ky`, `/about/service-area`, `/resources/new-client`, `/contact`
+- `announcements` → `/about/locations`, `/resources/insurances-accepted`, `/resources/faq`, `/resources/new-client`, `/contact`
 
 Do not link to generic `/services` alone when a more specific page exists.
+
+### Blog post "Related resources" section
+Each blog post may end with a `## Related resources` section. Keep it to **4–5 links maximum**. Prioritize:
+1. The most directly relevant service or specialty page for this post's topic
+2. One or two closely related blog posts (different angle, not a repeat)
+3. A resource page (FAQ, waitlist times, new client guide) when it adds practical value
+
+Do not cross-link to every tangentially related page. Remove any link that a reader who just finished the post would not plausibly need next.
 
 ### Cross-linking specialty ↔ service
 - Specialty pages (e.g. `/specialties/dyslexia-testing/`) should link to the parent service (`/services/psychological-evaluations/`).

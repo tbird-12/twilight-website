@@ -103,7 +103,6 @@ If you want Twilight to check your coverage for a specific appointment, bring yo
 ## Related Posts and Resources
 
 - [Aetna Better Health — Prior Authorization, Medical Necessity, and Appeals](/blog/insurance/aetna-better-health-in-network) — A detailed look at the prior authorization process for one of Kentucky's most common Medicaid MCOs.
-- [Twilight Psychology Is Now In-Network with Wellcare of Kentucky](/blog/announcements/wellcare-kentucky-in-network) — Our latest Medicaid network addition.
 - [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — How to read the summary your insurance sends after a claim is processed.
 - [Accepted Insurance Plans](/resources/insurances-accepted) — Full list of insurance providers we are credentialed with.
 - [Fees & Pricing](/resources/fees) — Current self-pay rates for evaluations, therapy, and medication management.

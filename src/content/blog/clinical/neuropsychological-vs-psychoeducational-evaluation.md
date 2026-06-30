@@ -80,7 +80,7 @@ Twilight Psychology offers **comprehensive psychological evaluations** conducted
 
 **[Heather Cornett, PhD](/about/clinicians/heather-cornett)**, founder and licensed psychologist, conducts comprehensive psychological evaluations for children starting at age 2 and adults, including complex diagnostic presentations. For complex cases or referral questions involving a broader cognitive workup, she may be the best fit.
 
-**[Michael Burns, PhD](/about/clinicians/michael-burns)** is a Temporary licensed psychologist at Twilight Psychology whose training and specialty areas include assessments alongside and therapy. 
+**[Michael Burns, PhD](/about/clinicians/michael-burns)** is a temporarily licensed psychologist at Twilight Psychology whose training spans psychological assessments and therapy.
 
 Other doctoral-level and supervised master's-level clinicians at Twilight conduct psychoeducational and psychological evaluations as well — see the [evaluating clinicians overview](/services/psychological-evaluations) for the full list. Additionally, temporarily licensed associates such as **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** provide psychological and psychoeducational testing for children and adolescents under supervision; see our announcement [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.
 
@@ -102,7 +102,4 @@ If you are unsure whether you need a psychological evaluation, psychoeducational
 - [Psychoeducational Evaluations](/specialties/psychoeducational-evaluations) — learning and academic testing
 - [Dyslexia Testing](/specialties/dyslexia-testing) — reading and learning disability evaluations
 - [ADHD Testing in Lexington, KY](/blog/clinical/adhd-testing-lexington-ky) — ADHD evaluation for children and adults
-- [Autism Evaluation in Lexington, KY](/blog/clinical/autism-evaluation-lexington-ky) — comprehensive autism assessments
-- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing testing for children and adolescents starting August 2026
 - [Waitlist Times](/resources/waitlist-times) — current scheduling availability
-- [FAQ](/resources/faq) — common questions about psychological testing

@@ -37,3 +37,6 @@ draft: true
 - Use MDX (`.mdx`) only if you need interactive components embedded in the post; otherwise use plain Markdown (`.md`)
 - Headings start at `##` (H2) — the post `title` renders as H1 in the layout
 - Do not embed raw HTML unless absolutely necessary
+
+### Related Resources Section
+Each blog post should end with a `## Related resources` section (title case is fine but lowercase is preferred). Keep it to **4–5 links maximum**. Prioritise the most directly relevant service or specialty page, then 1–2 closely related blog posts, then a practical resource (FAQ, waitlist, new client guide). Do not cross-link to every tangentially related page — trim to the links a reader would plausibly want after finishing the post.

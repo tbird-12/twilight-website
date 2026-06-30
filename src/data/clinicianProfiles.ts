@@ -785,7 +785,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Services",
-      title: "Assessment & Therapy Services (Ages 5–16)",
+      title: "Assessment & Therapy Services",
       description:
         "Psychological and psychoeducational testing, feedback with family- and school-facing recommendations, and relational-cultural therapy for neurodivergent youth.",
       items: [

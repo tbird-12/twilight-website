@@ -172,32 +172,42 @@ const breadcrumbSchema = {
   ],
 };
 
-// Contextual site links based on blog category
+// Contextual site links based on blog category (4–5 per category, most relevant first)
 const categoryResourceLinks: Record<string, Array<{ label: string; href: string; desc: string }>> = {
   billing: [
-    { label: "Fees & Pricing", href: "/resources/fees", desc: "Current self-pay rates" },
+    { label: "Fees & Pricing", href: "/resources/fees", desc: "Current self-pay rates for all services" },
     { label: "Accepted Insurances", href: "/resources/insurances-accepted", desc: "View our insurance panels" },
-    { label: "Contact Us", href: "/contact", desc: "Billing questions" },
+    { label: "FAQ", href: "/resources/faq", desc: "Common billing and coverage questions" },
+    { label: "New Client Guide", href: "/resources/new-client", desc: "Start the intake process" },
+    { label: "Contact Us", href: "/contact", desc: "Reach our billing team" },
   ],
   insurance: [
-    { label: "Accepted Insurances", href: "/resources/insurances-accepted", desc: "Full provider list" },
-    { label: "Fees & Pricing", href: "/resources/fees", desc: "Self-pay options" },
-    { label: "New Client Guide", href: "/resources/new-client", desc: "Start the intake process" },
+    { label: "Accepted Insurances", href: "/resources/insurances-accepted", desc: "Full provider list by service type" },
+    { label: "Fees & Pricing", href: "/resources/fees", desc: "Self-pay rates when insurance doesn't apply" },
+    { label: "FAQ", href: "/resources/faq", desc: "Common insurance and coverage questions" },
+    { label: "New Client Guide", href: "/resources/new-client", desc: "How insurance verification works at intake" },
+    { label: "Contact Us", href: "/contact", desc: "Insurance questions before scheduling" },
   ],
   clinical: [
+    { label: "Psychological Evaluations", href: "/services/psychological-evaluations", desc: "ADHD, autism, and full diagnostic evaluations" },
+    { label: "Therapy Services", href: "/services/therapy", desc: "Neuro-affirming therapy for all ages" },
     { label: "Telehealth Services", href: "/services/telehealth", desc: "Kentucky-wide & multi-state coverage" },
-    { label: "Service Area", href: "/about/service-area", desc: "Who we can serve and where" },
     { label: "New Client Guide", href: "/resources/new-client", desc: "Schedule an intake" },
+    { label: "Waitlist Times", href: "/resources/waitlist-times", desc: "Current availability by clinician" },
   ],
   business: [
     { label: "Our Locations", href: "/about/locations", desc: "Office addresses & hours" },
-    { label: "Contact Us", href: "/contact", desc: "Reach our team" },
+    { label: "Our Clinicians", href: "/about/clinicians/clinicians-lex-ky", desc: "Meet our clinical team" },
+    { label: "Service Area", href: "/about/service-area", desc: "In-person and telehealth coverage" },
     { label: "New Client Guide", href: "/resources/new-client", desc: "Start the intake process" },
+    { label: "Contact Us", href: "/contact", desc: "Reach our team" },
   ],
   announcements: [
-    { label: "Our Locations", href: "/about/locations", desc: "Office addresses and service context" },
+    { label: "Our Locations", href: "/about/locations", desc: "Office addresses and directions" },
+    { label: "Accepted Insurances", href: "/resources/insurances-accepted", desc: "Current insurance panels" },
+    { label: "FAQ", href: "/resources/faq", desc: "Common questions about our services" },
+    { label: "New Client Guide", href: "/resources/new-client", desc: "Get started as a new client" },
     { label: "Contact Us", href: "/contact", desc: "Reach our team" },
-    { label: "New Client Guide", href: "/resources/new-client", desc: "Get started" },
   ],
 };
 

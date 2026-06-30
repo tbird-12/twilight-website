@@ -102,6 +102,5 @@ If you have questions about age, insurance, or which clinician is the right fit 
 - [Autism Testing](/services/autism-testing) — service overview and scheduling information
 - [What Is a PDA Profile and How We Assess It](/blog/clinical/what-is-pda-profile) — PDA on the autism spectrum
 - [How to Understand Your CAT-Q Masking Results](/blog/clinical/how-to-understand-your-cat-q-masking-results) — masking patterns and self-reflection
-- [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — child-specific evaluation information
 - [ADHD Testing in Lexington, KY](/blog/clinical/adhd-testing-lexington-ky) — when ADHD and autism overlap
 - [Waitlist Times](/resources/waitlist-times) — current scheduling availability

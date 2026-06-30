@@ -38,5 +38,5 @@ Please contact our office at the number listed on the [Contact](/contact) page o
 
 - [Our Locations](/about/locations) — View office addresses and directions for all Twilight Psychology locations.
 - [New Client Guide](/resources/new-client) — Steps to schedule your first appointment, including intake forms and insurance verification.
-- [Welcome to the Twilight Psychology Blog](/blog/announcements/welcome-to-the-blog) — An introduction to our blog and the topics we cover.
 - [Accepted Insurance Plans](/resources/insurances-accepted) — Confirm your coverage before scheduling.
+- [Contact Us](/contact) — Reach our team with scheduling or location questions.

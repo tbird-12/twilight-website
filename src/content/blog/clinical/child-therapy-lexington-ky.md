@@ -80,9 +80,7 @@ If you are unsure whether your child needs therapy, a formal evaluation, or both
 ## Related resources
 
 - [Child and Teen Therapy](/services/therapy/child-and-teen-therapy) — service overview for pediatric therapy
-- [Cognitive Behavioral Therapy (CBT)](/services/therapy/cognitive-behavioral-therapy) — CBT in Lexington for children and adults
 - [Therapy Services Overview](/services/therapy) — full list of therapy options at Twilight
 - [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — when an evaluation is the right first step
-- [ADHD Testing in Lexington, KY](/blog/clinical/adhd-testing-lexington-ky) — ADHD evaluation for children and adults
-- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing child and adolescent testing starting August 2026
+- [Therapy Clinicians](/services/therapy/clinicians) — compare therapists by specialty and availability
 - [Waitlist Times](/resources/waitlist-times) — current scheduling availability

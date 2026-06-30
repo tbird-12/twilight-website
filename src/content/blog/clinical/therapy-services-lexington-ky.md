@@ -106,8 +106,6 @@ If you are unsure who is the right fit, the [new client guide](/resources/new-cl
 
 - [Therapy Services](/services/therapy) — full overview of therapy at Twilight
 - [Child and Teen Therapy](/services/therapy/child-and-teen-therapy) — neuro-affirming therapy for children and adolescents
-- [Cognitive Behavioral Therapy (CBT)](/services/therapy/cognitive-behavioral-therapy) — CBT in Lexington, KY
 - [Couples Counseling](/services/therapy/couples-counseling) — couples and relationship therapy
 - [Therapy Clinicians](/services/therapy/clinicians) — compare therapists by specialty and availability
-- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing testing and child/adolescent therapy starting August 2026
 - [FAQ](/resources/faq) — common questions about therapy, insurance, and scheduling

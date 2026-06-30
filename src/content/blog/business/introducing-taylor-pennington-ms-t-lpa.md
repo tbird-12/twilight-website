@@ -29,9 +29,8 @@ To learn more about Taylor's services or to request an appointment starting Augu
 
 - [Taylor Pennington's clinician profile](/about/clinicians/taylor-pennington) — Full bio, services, and current availability
 - [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — How Twilight approaches evaluations for children ages 2+
-- [ADHD Testing in Lexington, KY](/blog/clinical/adhd-testing-lexington-ky) — What ADHD testing looks like at Twilight and which clinicians conduct evaluations
-- [Autism Evaluation in Lexington, KY](/blog/clinical/autism-evaluation-lexington-ky) — Autism assessment process, including high-masking presentations
 - [Child and Teen Therapy](/services/therapy/child-and-teen-therapy) — Therapy options and when to combine evaluation with therapy
+- [Psychological Evaluations](/services/psychological-evaluations) — Full evaluation services overview at Twilight
 - [New Client Guide](/resources/new-client) — What to expect during intake and the evaluation process
 
 We welcome Taylor to the team and look forward to the thoughtful, family-centered care they bring to our clinic.

@@ -12,6 +12,8 @@ import {
   SIGN_IN_LINK,
   WIDGET_LINK,
   REFERRAL_LINK,
+  SELF_PAY_REPORT_TURNAROUND_DAYS,
+  SELF_PAY_WAITLIST_WEEKS,
 } from "../../src/data/resource";
 
 describe("resource constants", () => {
@@ -42,5 +44,10 @@ describe("resource constants", () => {
     expect(SIGN_IN_LINK).toMatch(/^https:\/\//);
     expect(WIDGET_LINK).toMatch(/^https:\/\//);
     expect(REFERRAL_LINK).toMatch(/^https:\/\//);
+  });
+
+  it("self-pay benchmarks are positive integers", () => {
+    expect(SELF_PAY_REPORT_TURNAROUND_DAYS).toBe(7);
+    expect(SELF_PAY_WAITLIST_WEEKS).toBe(3);
   });
 });

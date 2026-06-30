@@ -108,14 +108,8 @@ If your main question is whether your child is old enough, whether insurance may
 
 ## Related resources
 
-- [Heather Cornett's clinician profile](/about/clinicians/heather-cornett) — Learn more about evaluations beginning at age 2
-- [Emeli Evans's clinician profile](/about/clinicians/emeli-evans) — Neuro-affirming assessment and therapy for kids, adolescents, and adults
-- [Jatana Boggs's clinician profile](/about/clinicians/jatana-boggs) — ADHD and autism assessment services for children and adolescents; available in Kentucky and Ohio
-- [Ethan Puckett's clinician profile](/about/clinicians/ethan-puckett) — Child and adolescent therapy plus psychological and psychoeducational testing
-- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate providing child and adolescent testing starting August 2026
 - [Psychological Evaluations](/services/psychological-evaluations) — Overview of broader diagnostic evaluation services
-- [Telehealth Services](/services/telehealth) — How telehealth works at Twilight Psychology and which states are served
-- [ADHD Testing in Lexington, KY — Children and Adults](/blog/clinical/adhd-testing-lexington-ky) — What a comprehensive ADHD evaluation covers at Twilight Psychology, from intake through the feedback session.
-- [Autism Evaluation in Lexington, KY — Children and Adults](/blog/clinical/autism-evaluation-lexington-ky) — What autism evaluation involves at Twilight, including high-masking adults and AuDHD presentations.
-- [Dyslexia and Learning Disability Testing in Lexington, KY](/blog/clinical/dyslexia-learning-disability-testing-lexington-ky) — What evaluation for dyslexia and related learning differences covers when learning concerns overlap with ADHD or autism.
+- [ADHD Testing in Lexington, KY](/blog/clinical/adhd-testing-lexington-ky) — What a comprehensive ADHD evaluation covers, from intake through feedback
+- [Autism Evaluation in Lexington, KY](/blog/clinical/autism-evaluation-lexington-ky) — What autism evaluation involves, including high-masking and AuDHD presentations
+- [Telehealth Services](/services/telehealth) — How telehealth works at Twilight and which states are served
 - [Waitlist Times](/resources/waitlist-times) — Current scheduling information

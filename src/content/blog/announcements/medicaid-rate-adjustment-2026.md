@@ -67,7 +67,6 @@ If you have questions about how this affects your care, coverage, or next steps,
 - [Fees & Insurance](/resources/fees) — Review self-pay rates and what to expect with insurance coverage
 - [Accepted Insurances](/resources/insurances-accepted) — See which plans we accept for each service type
 - [Psychological Evaluations](/services/psychological-evaluations) — Learn more about our comprehensive evaluation process
-- [New Client Information](/resources/new-client) — Information for patients new to our practice
 - [Contact Twilight Psychology](/contact) — Reach out if you have questions about service availability or your care
 
 Thank you for your continued trust in Twilight Psychology.

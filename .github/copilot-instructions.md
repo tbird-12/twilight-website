@@ -43,9 +43,9 @@ npm run preview    # Preview the built site locally
 - Avoid `client:only`
 
 ### Wrapper Pattern (mandatory)
-Every interactive Preact component has exactly two files:
+Every interactive React component has exactly two files:
 ```
-FaqAccordion.tsx           ← Preact logic, props interface, no hydration concern
+FaqAccordion.tsx           ← React logic, props interface, no hydration concern
 FaqAccordionWrapper.astro  ← Astro bridge: imports data, passes serializable props, applies client:*
 ```
 Pass only serializable types through wrappers: primitives, plain arrays, plain objects.
@@ -62,7 +62,7 @@ Use CSS token classes — never raw Tailwind colors or arbitrary hex values:
 - Backgrounds: `bg-site-bg`, `bg-surface`, `bg-surface-2`
 - Text: `text-site-text`, `text-cta`
 - Borders: `border-border`, `border-border-strong`
-- CTA button: `bg-cta`, `text-cta`, `hover:bg-cta/90`
+- CTA button: `bg-cta`, `text-cta-fg`, `hover:bg-cta/80`
 - Tokens are defined via `@theme {}` in `src/styles/global.css`
 
 ## TypeScript Conventions

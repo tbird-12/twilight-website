@@ -45,7 +45,6 @@ If you are unsure where your appointment will take place, please review your rem
 
 - [Our Locations](/about/locations) — View current office addresses and directions
 - [New Client Guide](/resources/new-client) — Learn what to expect before your first appointment
-- [Psychological Evaluations](/services/psychological-evaluations) — Learn more about testing services
 - [Therapy](/services/therapy) — Explore therapy services at Twilight Psychology
 - [Medication Management](/services/medication-management) — Learn more about psychiatric medication services
 - [Nicola Allen moves to 503 Darby Creek Rd on July 1](/blog/business/nicola-allen-moves-to-darby-creek-rd-july-1) — Read the latest update on Nicola's move to the Darby Creek office

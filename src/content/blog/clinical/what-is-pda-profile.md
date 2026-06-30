@@ -31,7 +31,7 @@ At Twilight Psychology, our evaluators are trained to:
 
 ## Why This Matters
 
-A formal PDA diagnosis opens access to appropriate educational accommodations, therapeutic strategies, and, where applicable, disability support services.
+A formal evaluation that identifies a PDA profile can open access to appropriate educational accommodations, therapeutic strategies, and, where applicable, disability support services.
 
 If you believe you or your child may have a PDA profile, please visit our [PDA Profile](/specialties/pda-profile) page for more information or contact our office to schedule an intake.
 

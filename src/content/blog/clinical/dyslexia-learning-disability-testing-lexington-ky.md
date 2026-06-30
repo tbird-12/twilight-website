@@ -104,6 +104,4 @@ If you are looking for **dyslexia testing in Lexington, KY**, our [dyslexia test
 - [Psychoeducational Evaluations](/specialties/psychoeducational-evaluations) — broader academic and learning evaluation services
 - [IEE — Independent Educational Evaluation](/specialties/iee) — when and how to request an IEE from the school
 - [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — broader child evaluation information
-- [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) — New temporarily licensed psychological associate offering child and adolescent testing starting August 2026
-- [Waitlist Times](/resources/waitlist-times) — current scheduling availability
 - [FAQ](/resources/faq) — common questions about testing and insurance

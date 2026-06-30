@@ -33,7 +33,7 @@ const { title, description = "Default" } = Astro.props;
 - Never use `client:only`
 
 ### Wrapper Components
-When bridging a Preact component into an Astro page:
+When bridging a React component into an Astro page:
 1. Import the Preact component in the wrapper's frontmatter
 2. Pass only serializable props (primitives, plain arrays, plain objects — no functions, classes, Maps)
 3. Apply the `client:*` directive on the Preact component element
