@@ -17,7 +17,7 @@ export const MAIN_OFFICE_MAP_LINK =
 export const SIGN_IN_LINK = "https://twilightpsychology.clientsecure.me/sign-in";
 
 export const WIDGET_LINK = "https://twilightpsychology.clientsecure.me/contact-widget";
-export const REFERRAL_LINK = "https://drive.google.com/file/d/1vbZEcdD4eeSjRtlM6aLfeiebtA8HeYBQ/view?usp=sharing";
+export const REFERRAL_LINK = "/documents/Referral_Twilight.pdf";
 
 // Self-pay scheduling benchmarks — update here when wait times change; consume
 // these constants wherever copy references turnaround or waitlist duration.
