@@ -575,7 +575,7 @@ export default function MobileNav({
           <div className="border-t border-border px-4 py-3">
             <div className="flex items-center gap-2">
               <a
-                href="/resources/blog"
+                href="/blog"
                 onClick={onClose}
                 className="flex flex-1 items-center justify-center rounded-full bg-cta px-4 py-2.5 text-xs font-black text-cta-fg shadow-sm shadow-cta/20 transition-all duration-150 hover:bg-cta/90 active:scale-[0.97]"
               >
