@@ -199,7 +199,7 @@ function MobileMenuListItem({
       href={href}
       onClick={onNavigate}
       aria-current={isActive ? "page" : undefined}
-      className={`group relative flex min-h-[52px] items-center gap-3 px-5 py-3.5 transition-colors duration-150 ${
+      className={`group relative flex min-h-13 items-center gap-3 px-5 py-3.5 transition-colors duration-150 ${
         isActive ? "bg-cta/10" : "hover:bg-surface-2"
       }`}
     >
@@ -260,7 +260,7 @@ function MobileMenuGroupListItem({
     <button
       type="button"
       onClick={() => onOpen(item)}
-      className={`group relative flex w-full min-h-[52px] items-center gap-3 px-5 py-3.5 text-left transition-colors duration-150 ${
+      className={`group relative flex w-full min-h-13 items-center gap-3 px-5 py-3.5 text-left transition-colors duration-150 ${
         isActive ? "bg-cta/10" : "hover:bg-surface-2"
       }`}
       aria-haspopup="true"
@@ -487,7 +487,7 @@ export default function MobileNav({
                       <a
                         href={currentView.overviewHref}
                         onClick={onClose}
-                        className={`group relative flex min-h-[52px] items-center gap-3 px-5 py-3.5 transition-colors duration-150 ${
+                        className={`group relative flex min-h-13 items-center gap-3 px-5 py-3.5 transition-colors duration-150 ${
                           matchesPath(currentPath, currentView.overviewHref)
                             ? "bg-cta/10"
                             : "hover:bg-surface-2"
@@ -575,11 +575,11 @@ export default function MobileNav({
           <div className="border-t border-border px-4 py-3">
             <div className="flex items-center gap-2">
               <a
-                href="/contact"
+                href="/resources/blog"
                 onClick={onClose}
                 className="flex flex-1 items-center justify-center rounded-full bg-cta px-4 py-2.5 text-xs font-black text-cta-fg shadow-sm shadow-cta/20 transition-all duration-150 hover:bg-cta/90 active:scale-[0.97]"
               >
-                Contact Us
+                Blog
               </a>
               <a
                 href="/resources/new-client"
