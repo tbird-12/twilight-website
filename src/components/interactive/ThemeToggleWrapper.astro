@@ -2,9 +2,20 @@
 import ThemeToggleWithProvider from "../react/ThemeToggleWithProvider";
 ---
 
-<div class="fixed bottom-5 right-5 z-95">
+<div class="fixed bottom-5 right-5 z-95 theme-toggle-wrapper">
   <ThemeToggleWithProvider
     client:idle
     className="bg-site-bg/90 shadow-lg ring-1 ring-border/80 backdrop-blur-xl hover:bg-surface"
   />
 </div>
+
+<style>
+  .theme-toggle-wrapper {
+    z-index: 95;
+  }
+
+  /* Lower z-index when mobile nav is open to prevent overlap with blog button */
+  :root[data-mobile-nav-open="true"] .theme-toggle-wrapper {
+    z-index: 40;
+  }
+</style>

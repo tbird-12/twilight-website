@@ -16,6 +16,7 @@ import {
   isNavigationNestedItem,
 } from "../../data/navigationData";
 import type { NavigationMenuItem, NavigationNestedItem } from "../../data/navigationData";
+import { SIGN_IN_LINK } from "../../data/resource";
 
 interface MobileNavSection {
   id: string;
@@ -575,18 +576,18 @@ export default function MobileNav({
           <div className="border-t border-border px-4 py-3">
             <div className="flex items-center gap-2">
               <a
-                href="/blog"
+                href={SIGN_IN_LINK}
                 onClick={onClose}
                 className="flex flex-1 items-center justify-center rounded-full bg-cta px-4 py-2.5 text-xs font-black text-cta-fg shadow-sm shadow-cta/20 transition-all duration-150 hover:bg-cta/90 active:scale-[0.97]"
               >
-                Blog
+                Client Portal Login
               </a>
               <a
-                href="/resources/new-client"
+                href="/blog"
                 onClick={onClose}
-                className="flex flex-1 items-center justify-center rounded-full border border-border bg-surface px-4 py-2.5 text-xs font-semibold text-site-text transition-all duration-150 hover:bg-surface-2 active:scale-[0.97]"
+                className="flex flex-1 items-center justify-center rounded-full border border-icon bg-surface px-4 py-2.5 text-xs font-semibold text-site-text transition-all duration-150 hover:bg-surface-2 active:scale-[0.97]"
               >
-                New Client Guide
+                Blog
               </a>
             </div>
           </div>

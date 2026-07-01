@@ -26,12 +26,14 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
   const menuIconTransformClass = prefersReducedMotion ? "" : "transition-transform duration-250";
   const menuIconOpacityClass = prefersReducedMotion ? "" : "transition-all duration-250";
 
-  // Handle scroll lock
+  // Handle scroll lock and document attribute for mobile nav state
   useEffect(() => {
     if (isMobileMenuOpen) {
       lockScroll();
+      document.documentElement.setAttribute("data-mobile-nav-open", "true");
     } else {
       unlockScroll();
+      document.documentElement.removeAttribute("data-mobile-nav-open");
     }
   }, [isMobileMenuOpen, lockScroll, unlockScroll]);
 
@@ -98,7 +100,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
               <span className="relative flex h-4 w-5 items-center justify-center" aria-hidden="true">
                 <span
                   className={`absolute h-0.5 w-5 rounded-full bg-current ${menuIconTransformClass} ${
-                    isMobileMenuOpen ? "rotate-45" : "-translate-y-[6px]"
+                    isMobileMenuOpen ? "rotate-45" : "-translate-y-1.5"
                   }`}
                 />
                 <span
@@ -108,7 +110,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
                 />
                 <span
                   className={`absolute h-0.5 w-5 rounded-full bg-current ${menuIconTransformClass} ${
-                    isMobileMenuOpen ? "-rotate-45" : "translate-y-[6px]"
+                    isMobileMenuOpen ? "-rotate-45" : "translate-y-1.5"
                   }`}
                 />
               </span>
