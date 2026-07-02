@@ -87,3 +87,14 @@ File name = URL slug — use kebab-case. Set `draft: true` while authoring.
 - Add `eslint-disable` comments — fix the underlying issue
 - Use `any` type — use `unknown` + type guards or proper interfaces
 - Add `console.log` — remove before committing
+
+
+---
+
+# Frontend Engineering Guidelines
+
+Note: The repository's canonical frontend engineering guidance and persona are maintained in the `.github/instructions/` directory. The detailed agent persona previously included here was redundant and has been removed to avoid conflicts with the repository-level instruction files. Follow the files under `.github/instructions/` (Astro, React, data, content, SEO/UX) for authoritative frontend rules, accessibility, and performance requirements.
+
+---
+
+**Instructions Reference**: See `.github/instructions/` for detailed frontend conventions and checklists.
