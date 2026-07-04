@@ -59,7 +59,6 @@ Adults seeking autism testing at Twilight Psychology often start by reviewing th
 - **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** — complex and high-masking autism evaluations, including PSYPACT telehealth
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — AuDHD identity, PDA, and high-masking adult presentations
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — adult autism and ADHD evaluations in Kentucky and Tennessee
-- **[Stephen Shu, MS](/about/clinicians/stephen-shu)** — autism assessments for adolescents and adults
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — neurodiverse-affirming autism and ADHD evaluations
 
 If you are not sure who fits your age, insurance, or clinical question, the intake team can help sort that before you book.

@@ -4,7 +4,6 @@ import type { ImageMetadata } from 'astro';
 import heatherCornettImg from '../assets/images/staff/heather-cornett.png';
 import nicolaAllenImg from '../assets/images/staff/nicola-allen.png';
 import emeliEvansImg from '../assets/images/staff/emeli-evans.png';
-import stephenShuImg from '../assets/images/staff/stephen-shu.png';
 import jonicaDavisImg from '../assets/images/staff/jonica-davis.png';
 import jatanaBoggsImg from '../assets/images/staff/jatana-boggs.png';
 import tiffanyRoundtreeImg from '../assets/images/staff/tiffany-roundtree.png';
@@ -88,19 +87,6 @@ export const providers: Provider[] = [
     states_served: ['Kentucky', 'Tennessee'],
     ins: ['Medicaid', 'Medicare','Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_insurance: '1 month', testing_out_of_pocket: '3 weeks', therapy: 'Immediate' }
-  },
-  {
-    name: 'Stephen Shu',
-    slug: 'stephen-shu',
-    spec: 'Adult Psychological Assessments',
-    image: stephenShuImg,
-    name_with_education: 'Stephen Shu, MS',
-    credential: 'LPA',
-    services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Psychological evaluations', 'Personality Evaluations', 'IQ testing'],
-    out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500' },
-    states_served: ['Kentucky'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna'],
-    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks' }
   },
   {
     name: 'Jonica Davis',

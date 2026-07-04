@@ -304,45 +304,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       variant: "surface",
     },
   },
-  {
-    slug: "stephen-shu",
-    pageTitle: "Stephen Shu, LPA | Psychological Assessments",
-    pageDescription:
-      "Stephen Shu, LPA — Twilight Psychology clinician providing psychological and neuropsychological assessments in Lexington, KY.",
-    jobTitle: "Licensed Psychological Associate",
-    badge: "Licensed Psychological Associate",
-    headingPrimary: "Stephen Shu,",
-    headingAccent: "M.A., LPA.",
-    specialties: [
-      "Neuropsychological Assessments",
-      "Psychological Testing",
-      "Marriage & Family Therapy",
-      "Cognitive Behavioral Functioning",
-    ],
-    contentBlocks: [
-      {
-        type: "paragraphs",
-        title: "Clarity Through Comprehensive Evaluation.",
-        paragraphs: [
-          "I am a Licensed Psychological Associate practicing under the supervision of Dr. Heather Cornett. Currently completing my doctoral degree at the University of Hartford, I earned my master's from Pepperdine University with an emphasis in Marriage and Family Therapy.",
-          "I am passionate about neuropsychology and providing assessments that empower individuals to navigate their lives with greater confidence and insight. I strive to create a calm, supportive environment where everyone feels safe and respected throughout the evaluation process.",
-        ],
-      },
-    ],
-    primaryPanel: {
-      title: "Current Availability",
-      description: "Stephen provides evaluations for ages 12 and up in Lexington, KY.",
-      items: [
-        { label: "Evaluations", value: "Not accepting new clients" },
-        { label: "Individual Therapy", value: "Waitlist Only", subdued: true },
-      ],
-      note:
-        "If you are looking for assessment support, our intake team can help match you with the right next step.",
-      ctaLabel: "Schedule an Intake",
-      ctaHref: WIDGET_LINK,
-      variant: "accent",
-    },
-  },
+
   {
     slug: "jonica-davis",
     pageTitle: "Jonica Davis, T-LPA | Neuro-Affirming Therapy",

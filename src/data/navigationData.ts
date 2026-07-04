@@ -31,7 +31,6 @@ const providerMenuChildren: NavigationLinkItem[] = [
   { name: "Heather Cornett", slug: "heather-cornett" },
   { name: "Nicola Allen", slug: "nicola-allen" },
   { name: "Emeli Evans", slug: "emeli-evans" },
-  { name: "Stephen Shu", slug: "stephen-shu" },
   { name: "Ethan Puckett", slug: "ethan-puckett" },
   { name: "Michael Burns", slug: "michael-burns" },
   { name: "Jonica Davis", slug: "jonica-davis" },

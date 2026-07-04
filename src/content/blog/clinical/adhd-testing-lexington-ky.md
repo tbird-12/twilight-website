@@ -45,7 +45,6 @@ Several Twilight Psychology clinicians conduct ADHD evaluations for children, ad
 - **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** — comprehensive psychological evaluations including ADHD and high-masking presentations, beginning at age 2; holds a **PSYPACT certificate** allowing telehealth ADHD evaluations in 40+ states nationwide
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — neuro-affirming evaluation with a focus on AuDHD identity, PDA, and high-masking ADHD across all ages
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism evaluations; **dual-licensed in Kentucky and Tennessee**, available to clients in both states
-- **[Stephen Shu, MS](/about/clinicians/stephen-shu)** — ADHD and autism assessments for children, adolescents, and adults
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — neurodiverse-affirming ADHD and autism evaluations
 - **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** — ADHD and autism assessments within a neurodiverse-affirming framework; **dual-licensed in Kentucky and Ohio**, available to clients in both states
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — ADHD and psychological testing with a strong fit for children and adolescents ages 7–16

@@ -70,7 +70,6 @@ Our dedicated [child and teen therapy page](/services/therapy/child-and-teen-the
 
 Several Twilight therapists work primarily or exclusively with adults:
 
-- **[Stephen Shu, MS](/about/clinicians/stephen-shu)** — neuro-affirming therapy and ADHD and autism support for adults
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — psychodynamic and neurodiverse-affirming therapy for individuals and couples
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — therapy for autistic, ADHD, and AuDHD adults, with particular expertise in high-masking presentations, PDA, and identity work; also offers **intimacy therapy**
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism support for adults alongside assessment services; **dual-licensed in Kentucky and Tennessee**

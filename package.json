@@ -1,7 +1,7 @@
 {
   "name": "twilight_website",
   "type": "module",
-  "version": "0.10.6",
+  "version": "0.10.7",
   "packageManager": "npm@11.12.1",
   "engines": {
     "node": ">=24.15.0",
