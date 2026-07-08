@@ -106,7 +106,7 @@ export const providers: Provider[] = [
     slug: 'ethan-puckett',
     spec: 'Child Therapy & Psychoeducational Assessments',
     image: ethanPuckettImg,
-    name_with_education: 'Ethan Puckett, M.A.',
+    name_with_education: 'Ethan Puckett, Psy.D.',
     credential: 'T-LPA',
     services_offered: ['Therapy', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'IQ testing', 'Psychological evaluations'],
     out_of_pocket_rates: {therapy: '$100', testing_standard: '$1,300', testing_dyslexia: '$1,500' },

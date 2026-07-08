@@ -500,7 +500,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     jobTitle: "Temporary Licensed Psychological Associate",
     badge: "Temporary Licensed Psychological Associate",
     headingPrimary: "Ethan",
-    headingAccent: "Puckett, M.A., T-LPA.",
+    headingAccent: "Puckett, Psy.D., T-LPA.",
     intro:
       "Providing neuro-affirming outpatient therapy for children and adolescents ages 3 to 18, with ideal clinical fit for ages 7 to 16, plus psychological and psychoeducational testing in Kentucky.",
     specialties: [
@@ -517,7 +517,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         type: "paragraphs",
         title: "Neuro-affirming therapy and testing for children and adolescents.",
         paragraphs: [
-          "My name is Ethan Puckett. I graduated with my Masters in Applied Psychology from Western Kentucky University and am on track to graduate with my PsyD in Clinical Psychology from Western Kentucky University in August 2026. I am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
+          "My name is Ethan Puckett. I graduated with my Masters in Applied Psychology from Western Kentucky University and earned my Psy.D. in Clinical Psychology from Western Kentucky University. I am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
           "I have previously worked as an outpatient therapist with individuals and families in a community mental health center, where I completed weekly therapy sessions as well as autism evaluations. I have most recently worked as a school psychologist intern completing many school-based evaluations for learning disabilities, autism, ADHD, and other cognitive, emotional, and behavioral concerns.",
         ],
       },
@@ -530,7 +530,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       {
         type: "paragraphs",
         paragraphs: [
-          "I specialize in the assessment and treatment of children and adolescents from neurodivergent populations. My ideal client range is 7 to 16, and I also welcome older teens for in-person and virtual therapy sessions starting July 6. I utilize behavioral, Cognitive Behavioral Therapy (CBT), and Acceptance and Commitment Therapy (ACT) techniques with a person-centered approach to understand each individual and help them become the best version of themselves.",
+          "I specialize in the assessment and treatment of children and adolescents from neurodivergent populations. My ideal client range is 7 to 16, and I also welcome older teens for in-person and virtual therapy sessions. I utilize behavioral, Cognitive Behavioral Therapy (CBT), and Acceptance and Commitment Therapy (ACT) techniques with a person-centered approach to understand each individual and help them become the best version of themselves.",
           "In addition to therapy, I also provide psychological testing and psychoeducational testing, especially when families, schools, and care teams need a clearer picture of learning, attention, autism, or emotional-behavioral functioning.",
         ],
       },
@@ -546,9 +546,8 @@ export const clinicianProfiles: ClinicianProfile[] = [
             subtitle: "Western Kentucky University",
           },
           {
-            title: "PsyD in Clinical Psychology",
+            title: "Psy.D. in Clinical Psychology",
             subtitle: "Western Kentucky University",
-            meta: "Expected August 2026",
           },
           {
             title: "Supervision",
@@ -567,16 +566,16 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Accepting New Therapy Clients Starting July 6",
+      title: "Immediate Availability for Therapy & Self-Pay Evaluations",
       description:
         "Ethan offers neuro-affirming therapy for ages 3 to 18, with ideal fit for ages 7 to 16, plus in-person and virtual therapy sessions for older teens and testing services in Kentucky.",
       items: [
-        { label: "Therapy", value: "No waitlist starting July 6" },
+        { label: "Therapy", value: "Immediate" },
+        { label: "Self-Pay Evaluations", value: "Immediate" },
         { label: "Older Teen Therapy", value: "In person and virtual" },
-        { label: "Testing", value: "Psychological and psychoeducational" },
       ],
       note:
-        "New child and teen therapy clients can begin with Ethan starting July 6.",
+        "New child and teen therapy clients can begin with Ethan immediately.",
       ctaLabel: "Schedule an Intake",
       ctaHref: WIDGET_LINK,
       variant: "surface",

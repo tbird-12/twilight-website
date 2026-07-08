@@ -30,10 +30,10 @@ export function getNavigationItemHref(item: Pick<NavigationLinkItem, "slug">, ba
 const providerMenuChildren: NavigationLinkItem[] = [
   { name: "Heather Cornett", slug: "heather-cornett" },
   { name: "Nicola Allen", slug: "nicola-allen" },
+  { name: "Jonica Davis", slug: "jonica-davis" },
   { name: "Emeli Evans", slug: "emeli-evans" },
   { name: "Ethan Puckett", slug: "ethan-puckett" },
   { name: "Michael Burns", slug: "michael-burns" },
-  { name: "Jonica Davis", slug: "jonica-davis" },
   { name: "Jatana Boggs", slug: "jatana-boggs" },
   { name: "Tiffany Roundtree", slug: "tiffany-roundtree" },
   { name: "Taylor Pennington", slug: "taylor-pennington" },
