@@ -5,6 +5,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import type { KeyboardEvent as ReactKeyboardEvent } from "react";
 import {
   getNavigationItemHref,
   isNavigationNestedItem,
@@ -55,6 +56,7 @@ function NestedChildren({
 function NestedItem({ item }: { item: NavigationNestedItem }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -65,21 +67,39 @@ function NestedItem({ item }: { item: NavigationNestedItem }) {
     timeoutRef.current = setTimeout(() => setIsExpanded(false), 100);
   };
 
+  const handleButtonClick = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Escape' && isExpanded) {
+      event.stopPropagation();
+      setIsExpanded(false);
+      buttonRef.current?.focus();
+    }
+  };
+
   useEffect(() => {
     return () => { if (timeoutRef.current) clearTimeout(timeoutRef.current); };
   }, []);
+
+  const menuId = `nested-menu-${item.slug}`;
 
   return (
     <div
       className="relative group/nested"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onKeyDown={handleKeyDown}
     >
       <button
+        ref={buttonRef}
         type="button"
+        onClick={handleButtonClick}
         className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-cta/10 hover:ring-1 hover:ring-cta/20 transition-all cursor-pointer"
-        aria-haspopup="true"
+        aria-haspopup="menu"
         aria-expanded={isExpanded}
+        aria-controls={menuId}
       >
         <div className="text-left">
           <div className="text-sm font-semibold text-site-text group-hover/nested:text-cta transition-colors">
@@ -101,6 +121,9 @@ function NestedItem({ item }: { item: NavigationNestedItem }) {
 
       {isExpanded && item.children && (
         <div
+          id={menuId}
+          role="menu"
+          aria-label={`${item.name} submenu`}
           className="absolute top-full left-0 mt-1 w-56 bg-surface-2 border-l-4 border-l-cta shadow-2xl rounded-b-xl p-3 z-60 nav-nested-enter"
         >
           {item.childLabel && (
@@ -125,7 +148,9 @@ export default function NavigationDropdown({
 }: NavigationDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const dropdownTop = `${Math.max(headerHeight, 80)}px`;
+  const menuId = `nav-menu-${title.toLowerCase().replace(/\s+/g, '-')}`;
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -134,6 +159,17 @@ export default function NavigationDropdown({
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => setIsOpen(false), 150);
+  };
+
+  const handleButtonClick = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape' && isOpen) {
+      setIsOpen(false);
+      buttonRef.current?.focus();
+    }
   };
 
   useEffect(() => {
@@ -147,13 +183,17 @@ export default function NavigationDropdown({
       className="relative py-2"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onKeyDown={handleKeyDown}
     >
       {/* Trigger Button */}
       <button
+        ref={buttonRef}
         type="button"
+        onClick={handleButtonClick}
         className="flex items-center gap-1 text-[15px] font-semibold text-site-text hover:text-cta transition-colors"
         aria-haspopup="menu"
         aria-expanded={isOpen}
+        aria-controls={menuId}
       >
         {title}
         <svg className="w-4 h-4 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -173,6 +213,7 @@ export default function NavigationDropdown({
 
           {/* Mega menu panel */}
           <div
+            id={menuId}
             className="fixed left-0 right-0 z-50 theme-surface border-t-4 border-t-cta shadow-2xl nav-mega-enter"
             style={{ top: dropdownTop }}
             role="menu"

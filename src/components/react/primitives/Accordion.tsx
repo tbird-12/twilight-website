@@ -53,6 +53,7 @@ export default function Accordion({
             }}
           >
             <button
+              id={`accordion-trigger-${item.id}`}
               type="button"
               onClick={() => toggle(item.id)}
               aria-expanded={isOpen}
@@ -83,6 +84,7 @@ export default function Accordion({
             <div
               id={`accordion-${item.id}`}
               role="region"
+              aria-labelledby={`accordion-trigger-${item.id}`}
               className="grid transition-all duration-300 ease-in-out"
               style={{
                 gridTemplateRows: isOpen ? '1fr' : '0fr',

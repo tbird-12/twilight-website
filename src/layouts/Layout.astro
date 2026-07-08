@@ -140,6 +140,8 @@ const webpageSchema = {
   </head>
 
   <body class="flex min-h-screen flex-col bg-site-bg text-site-text antialiased">
+    {/* Skip link — WCAG 2.4.1 Bypass Blocks (Level A) */}
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <HeaderWithProvider client:load logoSrc={headerLogoSrc} currentPath={Astro.url.pathname} />
     <ThemeToggleWrapper />
 

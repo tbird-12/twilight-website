@@ -388,11 +388,20 @@ export default function MobileNav({
         : "nav-content-back";
 
   if (!isOpen) {
-    return null;
+    // Always render the live region so screen readers can announce state changes
+    return (
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        Navigation menu closed
+      </div>
+    );
   }
 
   return (
     <>
+      {/* Persistent ARIA live region — WCAG 4.1.3 Status Messages (AAA) */}
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        Navigation menu opened
+      </div>
       {/* Backdrop */}
       <div
         className={`fixed inset-0 z-85 bg-site-text/20 md:hidden ${
