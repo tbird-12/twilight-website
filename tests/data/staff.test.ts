@@ -47,10 +47,4 @@ describe("staff provider data", () => {
     expect(burns).toBeDefined();
     expect(burns!.states_served).toContain("Tennessee");
   });
-
-  it("Boggs is dual-licensed in Ohio", () => {
-    const boggs = providers.find((p) => p.slug === "jatana-boggs");
-    expect(boggs).toBeDefined();
-    expect(boggs!.states_served).toContain("Ohio");
-  });
 });

@@ -50,7 +50,7 @@ If masking is part of your question, our [CAT-Q masking guide](/blog/clinical/ho
 
 Twilight Psychology is based in **Lexington, KY**, and adult autism evaluations are available in person there. For clients outside Lexington, telehealth expands access statewide across Kentucky.
 
-Dr. Heather Cornett also serves adults in **40+ states via PSYPACT**, while Dr. Michael Burns serves telehealth clients in **Tennessee** and Jatana Boggs serves telehealth clients in **Ohio** in addition to Kentucky. Kentucky remains the primary service area, with Lexington as the in-person hub.
+Dr. Heather Cornett also serves adults in **40+ states via PSYPACT**, while Dr. Michael Burns serves telehealth clients in **Tennessee**. Kentucky remains the primary service area, with Lexington as the in-person hub.
 
 ## Clinicians who may be a fit for adult autism testing
 

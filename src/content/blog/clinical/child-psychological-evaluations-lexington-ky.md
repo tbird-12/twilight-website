@@ -13,7 +13,7 @@ draft: false
 
 Families looking for a **child psychological evaluation in Lexington, Kentucky** are often trying to answer more than one question at once. They may be wondering whether a child is showing signs of autism, ADHD, learning differences, emotional regulation challenges, developmental delays, or a more complex overlap that does not fit neatly into one category. At Twilight Psychology, our approach is to slow the process down enough to get the question right, then use comprehensive testing to build a more useful answer.
 
-We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Jatana Boggs](/about/clinicians/jatana-boggs)**, **[Ethan Puckett](/about/clinicians/ethan-puckett)**, and **[Taylor Pennington](/about/clinicians/taylor-pennington)**, depending on the child's age, referral question, and clinical fit.
+We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Ethan Puckett](/about/clinicians/ethan-puckett)**, and **[Taylor Pennington](/about/clinicians/taylor-pennington)**, depending on the child's age, referral question, and clinical fit.
 
 ## What families usually mean when they ask for a child psychological evaluation
 
@@ -41,7 +41,6 @@ Child evaluation referrals at Twilight Psychology may be matched with:
 
 - **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** for comprehensive psychological evaluations, including complex diagnostic clarification and evaluations beginning at age 2; holds a **PSYPACT certificate** for telehealth evaluations in 40+ states nationwide
 - **[Emeli Evans, M.S., LPA](/about/clinicians/emeli-evans)** for neuro-affirming assessment work with children and adolescents, especially when autism, PDA-related questions, masking, or broader neurodivergent presentation may be part of the picture
-- **[Jatana Boggs, M.S., LPCA, LPC, NCC](/about/clinicians/jatana-boggs)** for ADHD and autism assessments for children, adolescents, and adults within a neurodiverse-affirming framework; **dual-licensed in Kentucky and Ohio**, available to clients in both states via telehealth
 - **[Ethan Puckett, M.A., T-LPA](/about/clinicians/ethan-puckett)** for psychological and psychoeducational testing, especially for school-based questions involving learning, attention, autism, and broader emotional-behavioral concerns, with strongest fit typically in the 7 to 16 age range
 
 The right fit depends on the referral concern, the child's age, and the kind of recommendations a family needs at the end of the process. Starting **July 6, 2026**, Ethan also expands Twilight's testing options for children and adolescents who may need a stronger school-based or psychoeducational lens.
@@ -102,7 +101,7 @@ That is why a strong evaluation should end with recommendations, not just conclu
 
 If you are looking for a **child psychological evaluation in Lexington, KY**, a good next step is to review our [psychological evaluations](/services/psychological-evaluations), [autism testing](/services/autism-testing), and [ADHD testing](/services/adhd-testing) pages, then follow our [new client process](/resources/new-client).
 
-If you live outside Lexington, these services are also available via **telehealth across Kentucky**. Heather Cornett's PSYPACT certificate extends her availability to clients in 40+ states, and Jatana Boggs serves clients in Ohio as well as Kentucky. See our [service area page](/about/service-area) for a full breakdown of which providers can serve which states.
+If you live outside Lexington, these services are also available via **telehealth across Kentucky**. Heather Cornett's PSYPACT certificate extends her availability to clients in 40+ states. See our [service area page](/about/service-area) for a full breakdown of which providers can serve which states.
 
 If your main question is whether your child is old enough, whether insurance may apply, or which clinician is the best fit, our intake team can help you sort out those details before the process begins.
 

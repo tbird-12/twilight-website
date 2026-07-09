@@ -77,7 +77,7 @@ Several Twilight therapists work primarily or exclusively with adults:
 
 ### Couples
 
-Couples counseling is offered by **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** as a self-pay service. Jatana is **dual-licensed in Kentucky and Ohio** and is available to see clients in both states via telehealth. Sessions are 75 minutes, priced at $200 per session, with options for weekly work, focused problem-solving, or longer intensives. Our [couples counseling page](/services/therapy/couples-counseling) has the full overview.
+Couples counseling services are temporarily unavailable at Twilight Psychology. We are evaluating future capacity for this service. Please see our [couples counseling page](/services/therapy/couples-counseling) for more information and to contact us about available alternatives.
 
 ## Insurance and scheduling
 
@@ -89,7 +89,7 @@ Current availability varies meaningfully by clinician. Some therapists have imme
 
 Twilight Psychology offers **weekday appointments** in Lexington plus **weekend appointments by request** — contact our intake team to ask about specific availability.
 
-All therapy services are also available via **telehealth across Kentucky**. Dr. Burns accepts telehealth therapy clients in **Tennessee** in addition to Kentucky. Jatana Boggs accepts telehealth clients in **Ohio** in addition to Kentucky. See our [telehealth services page](/services/telehealth) and [service area page](/about/service-area) for details.
+All therapy services are also available via **telehealth across Kentucky**. Dr. Burns accepts telehealth therapy clients in **Tennessee** in addition to Kentucky. See our [telehealth services page](/services/telehealth) and [service area page](/about/service-area) for details.
 
 ## When therapy follows an evaluation
 

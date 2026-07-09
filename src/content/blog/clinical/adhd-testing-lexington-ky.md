@@ -46,7 +46,6 @@ Several Twilight Psychology clinicians conduct ADHD evaluations for children, ad
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — neuro-affirming evaluation with a focus on AuDHD identity, PDA, and high-masking ADHD across all ages
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism evaluations; **dual-licensed in Kentucky and Tennessee**, available to clients in both states
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — neurodiverse-affirming ADHD and autism evaluations
-- **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** — ADHD and autism assessments within a neurodiverse-affirming framework; **dual-licensed in Kentucky and Ohio**, available to clients in both states
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — ADHD and psychological testing with a strong fit for children and adolescents ages 7–16
 - **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing psychological and psychoeducational testing for children and adolescents; supervised by Dr. Heather Cornett. (See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.)
 
@@ -89,7 +88,7 @@ If therapy is part of the next step, Twilight Psychology also offers individual 
 
 If you are looking for **ADHD testing in Lexington, KY**, reviewing our [ADHD testing service page](/services/adhd-testing) is a good starting point. You can also visit our [new client guide](/resources/new-client) to understand the intake process.
 
-If you live outside Lexington, all ADHD evaluation services are also available via **telehealth across Kentucky**. Dr. Cornett's PSYPACT authority extends telehealth availability to clients in 40+ states, and Dr. Burns and Jatana Boggs serve clients in Tennessee and Ohio respectively. See our [telehealth services page](/services/telehealth) for details.
+If you live outside Lexington, all ADHD evaluation services are also available via **telehealth across Kentucky**. Dr. Cornett's PSYPACT authority extends telehealth availability to clients in 40+ states, and Dr. Burns serves clients in Tennessee. See our [telehealth services page](/services/telehealth) for details.
 
 If you have questions about age, insurance, or which clinician is the right fit, our intake team can help before you schedule.
 

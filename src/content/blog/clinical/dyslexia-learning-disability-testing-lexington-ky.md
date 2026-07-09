@@ -79,7 +79,6 @@ Dyslexia testing and psychoeducational evaluations at Twilight Psychology are of
 - **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** — comprehensive psychological evaluations including learning disability assessments and IQ testing
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — psychoeducational assessments including dyslexia testing
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — dyslexia testing alongside broader psychological evaluations
-- **[Jatana Boggs, MS](/about/clinicians/jatana-boggs)** — psychoeducational assessments including dyslexia
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — psychoeducational and psychological testing for children and adolescents with school-based referral questions, strong fit ages 7–16
 - **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing psychological and psychoeducational testing for children and adolescents; supervised by Dr. Heather Cornett. (See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.)
 

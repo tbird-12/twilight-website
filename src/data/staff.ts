@@ -5,7 +5,6 @@ import heatherCornettImg from '../assets/images/staff/heather-cornett.png';
 import nicolaAllenImg from '../assets/images/staff/nicola-allen.png';
 import emeliEvansImg from '../assets/images/staff/emeli-evans.png';
 import jonicaDavisImg from '../assets/images/staff/jonica-davis.png';
-import jatanaBoggsImg from '../assets/images/staff/jatana-boggs.png';
 import tiffanyRoundtreeImg from '../assets/images/staff/tiffany-roundtree.png';
 import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
 import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
@@ -113,19 +112,6 @@ export const providers: Provider[] = [
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { therapy: 'Immediate', testing_insurance: '2 months', testing_out_of_pocket: 'Immediate' }
-  },
-  {
-    name: 'Jatana Boggs',
-    slug: 'jatana-boggs',
-    spec: 'Couples Therapy & Psychological Assessments',
-    image: jatanaBoggsImg,
-    name_with_education: 'Jatana Boggs, MS',
-    credential: 'LPCA (KY), LPC (OH), NCC',
-    services_offered: ['Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'Psychological evaluations', 'Therapy', 'Couples Counseling *'],
-    out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$150', couples_therapy: '$200' },
-    states_served: ['Kentucky', 'Ohio'],
-    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
-    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks', therapy: '1 month' }
   },
   {
     name: 'Tiffany Roundtree',

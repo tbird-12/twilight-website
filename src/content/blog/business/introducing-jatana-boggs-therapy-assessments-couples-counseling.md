@@ -5,7 +5,11 @@ pubDate: 2026-05-08
 category: business
 author: "Twilight Psychology Team"
 tags: ["jatana-boggs", "therapy", "couples-counseling", "adhd", "autism"]
-draft: false
+draft: true
+---
+
+**Note**: Jatana Boggs concluded her practicum at Twilight Psychology on July 10th, 2026. This post is archived. She is not accepting or seeing new or existing clients. Thank you, Jatana, for your contributions to the practice.
+
 ---
 
 We are pleased to welcome **Jatana Boggs, M.S., LPCA, LPC, NCC** to Twilight Psychology. Jatana provides **neurodiverse-affirming psychotherapy for individuals and couples across all relationship structures**, along with **comprehensive ADHD and autism assessments for children, adolescents, and adults**.
