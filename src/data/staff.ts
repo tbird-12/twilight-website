@@ -143,7 +143,7 @@ export const providers: Provider[] = [
   {
     name: 'Elise Van Meter',
     slug: 'elise-vanmeter',
-    spec: 'Therapy & Adult Neurodivergent Assessments',
+    spec: 'Therapy & Adult Psychological Assessments',
     image: eliseVanMeterImg,
     name_with_education: 'Elise Van Meter, MA',
     credential: 'T-LPA',

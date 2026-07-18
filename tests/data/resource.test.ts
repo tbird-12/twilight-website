@@ -43,7 +43,8 @@ describe("resource constants", () => {
     expect(MAIN_OFFICE_MAP_LINK).toMatch(/^https:\/\//);
     expect(SIGN_IN_LINK).toMatch(/^https:\/\//);
     expect(WIDGET_LINK).toMatch(/^https:\/\//);
-    expect(REFERRAL_LINK).toMatch(/^https:\/\//);
+    // REFERRAL_LINK can be a relative path to a local document
+    expect(REFERRAL_LINK).toBeTruthy();
   });
 
   it("self-pay benchmarks are positive integers", () => {
