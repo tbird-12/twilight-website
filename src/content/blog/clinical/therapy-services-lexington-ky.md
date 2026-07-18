@@ -74,6 +74,7 @@ Several Twilight therapists work primarily or exclusively with adults:
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — therapy for autistic, ADHD, and AuDHD adults, with particular expertise in high-masking presentations, PDA, and identity work; also offers **intimacy therapy**
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism support for adults alongside assessment services; **dual-licensed in Kentucky and Tennessee**
 - **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)** — adolescent and adult therapy focused on anxiety disorders and parenting support
+- **[Elise Van Meter, MA, T-LPA](/about/clinicians/elise-vanmeter)** — evidence-based CBT for adolescents and adults experiencing anxiety, depression, trauma, and neurodivergent support
 
 ### Couples
 

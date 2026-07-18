@@ -10,6 +10,7 @@ import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
 import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
 import ethanPuckettImg from '../assets/images/staff/ethan-puckett.png';
 import taylorPenningtonImg from '../assets/images/staff/taylor-pennington.png';
+import eliseVanMeterImg from '../assets/images/staff/elise-vanmeter.png';
 
 import ashleyPerkinsImg from '../assets/images/staff/ashley-perkins.jpeg';
 
@@ -138,6 +139,19 @@ export const providers: Provider[] = [
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
     wait_times: { testing_out_of_pocket: 'Contact for availability', therapy: 'Contact for availability' }
+  },
+  {
+    name: 'Elise Van Meter',
+    slug: 'elise-vanmeter',
+    spec: 'Therapy & Adult Neurodivergent Assessments',
+    image: eliseVanMeterImg,
+    name_with_education: 'Elise Van Meter, MA',
+    credential: 'T-LPA',
+    services_offered: ['Therapy (Adolescents & Adults)', 'Autism Testing (Adults)', 'ADHD Testing (Adults)', 'Personality Evaluations'],
+    out_of_pocket_rates: { therapy: '$125', testing_standard: '$1,300' },
+    states_served: ['Kentucky'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem', 'Wellcare'],
+    wait_times: { therapy: 'Immediate', testing_insurance: '2 months', testing_out_of_pocket: '3 weeks' }
   },
 ];
 

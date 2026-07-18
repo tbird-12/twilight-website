@@ -680,6 +680,111 @@ export const clinicianProfiles: ClinicianProfile[] = [
       variant: "surface",
     },
   },
+  {
+    slug: "elise-vanmeter",
+    pageTitle: "Jennifer Elise Van Meter, MA, T-LPA | Therapy & Adult Neurodivergent Assessments — KY",
+    pageDescription:
+      "Elise Van Meter, MA, T-LPA — providing neuro-affirming therapy for adolescents and adults plus psychological assessments for neurodivergent adults in Kentucky.",
+    jobTitle: "Temporary Licensed Psychological Associate",
+    badge: "Temporary Licensed Psychological Associate",
+    headingPrimary: "Jennifer Elise",
+    headingAccent: "Van Meter, MA, T-LPA",
+    intro:
+      "Providing evidence-based therapy for adolescents and adults and comprehensive psychological assessments for neurodivergent adults in Kentucky.",
+    specialties: [
+      "Adult Therapy",
+      "Adolescent Therapy",
+      "Adult Autism & ADHD Assessment",
+      "Cognitive Behavioral Therapy (CBT)",
+      "Personality Evaluations",
+      "High-Masking Neurodivergent Support",
+    ],
+    contentBlocks: [
+      {
+        type: "paragraphs",
+        title: "Evidence-based therapy and comprehensive assessment.",
+        paragraphs: [
+          "My name is Jennifer Elise Van Meter and I go by Elise. I hold a master's degree in clinical psychology from Western Kentucky University and am currently pursuing my doctorate in applied psychology. I am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
+          "Over the past four years, I have provided therapy and assessment services across a range of settings, including private practice and community mental health. My clinical work focuses on supporting neurodivergent adolescents and adults as they navigate identity, relationships, trauma, and daily functioning.",
+          "I specialize in comprehensive psychological assessments for adults seeking clarity around autism, ADHD, mood disorders, and personality functioning. My assessments integrate clinical interview, cognitive testing, adaptive measures, and personality inventories to provide diagnostic clarity and actionable recommendations.",
+        ],
+      },
+      {
+        type: "quote",
+        quote:
+          "I believe in meeting clients where they are and providing care that is both affirming and evidence-based.",
+        variant: "accent",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "In therapy, I work primarily with adolescents and adults experiencing anxiety, depression, stress, trauma, attention deficits, relationship issues, and the complexities of living as a neurodivergent person in a neurotypical world. I use cognitive-behavioral therapy (CBT) to help clients develop individualized coping strategies, challenge unhelpful thought patterns, and create sustainable change.",
+          "Whether you're seeking a diagnostic evaluation to better understand yourself or ongoing therapy to support your mental health, I'm here to provide thoughtful, compassionate, and clinically rigorous care.",
+        ],
+      },
+    ],
+    sidebarCards: [
+      {
+        title: "Education & Supervision",
+        eyebrow: "Background",
+        variant: "soft",
+        items: [
+          {
+            title: "M.A. in Clinical Psychology",
+            subtitle: "Western Kentucky University",
+          },
+          {
+            title: "Psy.D. in Applied Psychology (in progress)",
+            subtitle: "Western Kentucky University",
+          },
+          {
+            title: "Supervision",
+            subtitle: "Supervised by Dr. Heather Cornett, PhD",
+          },
+        ],
+      },
+      {
+        title: "Clinical Experience",
+        eyebrow: "Focus",
+        variant: "surface-2",
+        body: [
+          "Elise's background includes four years in private practice providing therapy and assessments for neurodivergent adolescents and adults. She has completed assessments for autism spectrum disorder, ADHD, guardianship determination, mood and personality disorders, and learning disabilities.",
+        ],
+      },
+      {
+        title: "Ideal Client",
+        variant: "soft",
+        body: [
+          "Adolescents and adults seeking evidence-based therapy for anxiety, depression, trauma, or relationship concerns. Adults seeking diagnostic clarity around autism, ADHD, or personality functioning.",
+        ],
+      },
+    ],
+    primaryPanel: {
+      eyebrow: "Availability",
+      title: "Immediate Availability for Therapy, 3-Week Wait for Self-Pay Testing",
+      description:
+        "Elise offers therapy for adolescents and adults and psychological assessments for neurodivergent adults in Kentucky.",
+      items: [
+        { label: "Therapy", value: "Immediate" },
+        { label: "Self-Pay Testing", value: "3 weeks" },
+        { label: "Insurance Testing", value: "2 months" },
+      ],
+      note:
+        "New therapy clients can begin immediately. Testing availability varies by insurance status.",
+      ctaLabel: "Schedule an Intake",
+      ctaHref: WIDGET_LINK,
+      variant: "surface",
+    },
+    secondaryPanel: {
+      eyebrow: "From the Blog",
+      title: "Adult Autism Testing in Kentucky",
+      description:
+        "What adult autism evaluation involves at Twilight Psychology, including high-masking presentations and the ADOS-2 diagnostic process.",
+      ctaLabel: "Read the post",
+      ctaHref: "/blog/clinical/adult-autism-testing-kentucky",
+      variant: "surface",
+    },
+  },
 ];
 
 export function getClinicianPageData(slug: string): ClinicianPageData | undefined {

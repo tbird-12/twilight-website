@@ -46,6 +46,7 @@ Several Twilight Psychology clinicians conduct ADHD evaluations for children, ad
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — neuro-affirming evaluation with a focus on AuDHD identity, PDA, and high-masking ADHD across all ages
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism evaluations; **dual-licensed in Kentucky and Tennessee**, available to clients in both states
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — neurodiverse-affirming ADHD and autism evaluations
+- **[Elise Van Meter, MA, T-LPA](/about/clinicians/elise-vanmeter)** — comprehensive psychological assessments for neurodivergent adults including ADHD, autism, and personality evaluations
 - **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — ADHD and psychological testing with a strong fit for children and adolescents ages 7–16
 - **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing psychological and psychoeducational testing for children and adolescents; supervised by Dr. Heather Cornett. (See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.)
 

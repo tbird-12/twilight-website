@@ -60,6 +60,7 @@ Adults seeking autism testing at Twilight Psychology often start by reviewing th
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — AuDHD identity, PDA, and high-masking adult presentations
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — adult autism and ADHD evaluations in Kentucky and Tennessee
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — neurodiverse-affirming autism and ADHD evaluations
+- **[Elise Van Meter, MA, T-LPA](/about/clinicians/elise-vanmeter)** — comprehensive psychological assessments for neurodivergent adults including autism and ADHD
 
 If you are not sure who fits your age, insurance, or clinical question, the intake team can help sort that before you book.
 
