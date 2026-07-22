@@ -1,6 +1,6 @@
 ---
 import { getImage } from "astro:assets";
-import HeaderWithProvider from "../components/react/HeaderWithProvider";
+import Header from "../components/react/Header";
 import ThemeToggleWrapper from "../components/interactive/ThemeToggleWrapper.astro";
 import Footer from "../components/Footer.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
@@ -85,8 +85,12 @@ const webpageSchema = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" /></noscript>
     <GoogleAnalytics gaId={siteConfig.gaId} />
 
@@ -142,7 +146,7 @@ const webpageSchema = {
   <body class="flex min-h-screen flex-col bg-site-bg text-site-text antialiased">
     {/* Skip link — WCAG 2.4.1 Bypass Blocks (Level A) */}
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <HeaderWithProvider client:load logoSrc={headerLogoSrc} currentPath={Astro.url.pathname} />
+    <Header client:load logoSrc={headerLogoSrc} currentPath={Astro.url.pathname} />
     <ThemeToggleWrapper />
 
     <main id="main-content" class="grow pb-12 sm:pb-16 md:pb-24" data-pagefind-body>

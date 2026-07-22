@@ -23,7 +23,7 @@ All of our other services remain available and fully operational:
 
 - **Medication management** — Nicola Allen, MSN, PMHNP-BC continues to accept new patients for psychiatric medication management with a short wait.
 - **Psychological evaluations** — comprehensive neuropsychological and psychoeducational assessments remain available across our clinician team.
-- **Therapy** — individual and couples therapy across multiple insurances and self-pay rates.
+- **Therapy** — individual therapy for ages 3-99 across multiple insurances and self-pay rates.
 
 We remain committed to accessible, high-quality psychiatric and psychological care for our community in Kentucky.
 

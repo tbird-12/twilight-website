@@ -4,8 +4,9 @@
  * Matches the Astro NavigationDropdown behavior
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { KeyboardEvent as ReactKeyboardEvent } from "react";
+import { useFocusTrap } from "./hooks/useFocusTrap";
 import {
   getNavigationItemHref,
   isNavigationNestedItem,
@@ -149,6 +150,7 @@ export default function NavigationDropdown({
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const menuContainerRef = useRef<HTMLDivElement | null>(null);
   const dropdownTop = `${Math.max(headerHeight, 80)}px`;
   const menuId = `nav-menu-${title.toLowerCase().replace(/\s+/g, '-')}`;
 
@@ -168,9 +170,19 @@ export default function NavigationDropdown({
   const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Escape' && isOpen) {
       setIsOpen(false);
-      buttonRef.current?.focus();
     }
   };
+
+  const onEscapeMenu = useCallback(() => {
+    setIsOpen(false);
+    // focus restoration is handled by useFocusTrap cleanup (returns to previousActiveElement)
+  }, []);
+
+  useFocusTrap({
+    containerRef: menuContainerRef,
+    isActive: isOpen,
+    onEscape: onEscapeMenu,
+  });
 
   useEffect(() => {
     return () => {
@@ -213,6 +225,7 @@ export default function NavigationDropdown({
 
           {/* Mega menu panel */}
           <div
+            ref={menuContainerRef}
             id={menuId}
             className="fixed left-0 right-0 z-50 theme-surface border-t-4 border-t-cta shadow-2xl nav-mega-enter"
             style={{ top: dropdownTop }}
@@ -267,24 +280,6 @@ export default function NavigationDropdown({
           </div>
         </>
       )}
-
-      <style>{`
-        @keyframes navMegaEnter {
-          from { opacity: 0; transform: translateY(-8px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes navBackdropEnter {
-          from { opacity: 0; }
-          to   { opacity: 1; }
-        }
-        @keyframes navNestedEnter {
-          from { opacity: 0; transform: translateY(-4px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .nav-mega-enter    { animation: navMegaEnter 250ms cubic-bezier(.4,0,.2,1) forwards; }
-        .nav-backdrop-enter { animation: navBackdropEnter 200ms ease forwards; }
-        .nav-nested-enter   { animation: navNestedEnter 200ms cubic-bezier(.4,0,.2,1) forwards; }
-      `}</style>
     </div>
   );
 }

@@ -90,7 +90,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
                   ? "pointer-events-none opacity-0"
                   : "border-border bg-site-bg/90 hover:border-border-strong hover:bg-surface"
               }`}
-              aria-label="Open main menu"
+              aria-label={isMobileMenuOpen ? "Close main menu" : "Open main menu"}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
               aria-haspopup="dialog"
@@ -187,19 +187,6 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
         currentPath={currentPath}
         headerHeight={headerHeight}
       />
-
-      <style>{`
-        @keyframes slideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-12px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </>
   );
 }

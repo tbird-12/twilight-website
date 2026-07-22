@@ -22,6 +22,7 @@ interface Props {
   imageAlt?: string;
   seoTitle?: string;
   robots?: string;
+  authorUrl?: string;
 }
 
 const {
@@ -36,6 +37,7 @@ const {
   imageAlt,
   seoTitle,
   robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+  authorUrl,
 } = Astro.props;
 
 const siteUrl = Astro.site || new URL(siteConfig.siteUrl);
@@ -93,14 +95,22 @@ const webpageSchema = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" /></noscript>
     <title>{pageTitle}</title>
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     {author && <meta name="author" content={author} />}
+    <meta name="geo.region" content="US-KY" />
+    <meta name="geo.placename" content="Lexington, Kentucky" />
+    <meta name="geo.position" content="38.0406;-84.5037" />
+    <meta name="ICBM" content="38.0406, -84.5037" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0c" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fcfcf9" />
 
@@ -133,7 +143,7 @@ const webpageSchema = {
       <meta property="article:modified_time" content={updatedDate.toISOString()} />
     )}
     {isArticle && author && (
-      <meta property="article:author" content={author} />
+      <meta property="article:author" content={authorUrl || `${siteConfig.siteUrl}/about/twilight-psychology`} />
     )}
     {isArticle && category && (
       <meta property="article:section" content={category} />

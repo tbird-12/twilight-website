@@ -58,7 +58,7 @@ Autism evaluations at Twilight Psychology are offered by:
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — AuDHD identity, PDA profile, and high-masking support; neuro-affirming assessment with personal lived experience as an AuDHD clinician
 - **[Michael Burns, PhD](/about/clinicians/michael-burns)** — autism and ADHD evaluations; **dual-licensed in Kentucky and Tennessee**, available to clients in both states
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — neurodiverse-affirming autism and ADHD evaluations
-- **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)** — autism testing for children and adolescents, with a strong fit for ages 7–16
+- **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)** — autism testing for children and adolescents, with a strong fit for ages 7–16
 - **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — joining August 10, 2026; provides testing and therapy for children and adolescents (ages 5–16), with experience in school-based services and outpatient autism/ADHD evaluations
 
 ## PDA — a profile that is often missed

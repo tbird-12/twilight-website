@@ -13,7 +13,7 @@ draft: false
 
 When people search for **mental health therapy in Lexington, KY**, they are usually not looking for a specific modality acronym. They are looking for a provider who understands what they are dealing with, can offer practical help, and will not default to a one-size-fits-all approach. That is the frame Twilight Psychology uses to think about therapy.
 
-Our therapy team now spans ages 3 to adulthood, with specializations in neurodivergent care, ADHD and autism support, childhood and adolescent mental health, anxiety and trauma, couples counseling, substance use recovery, and faith-integrated care. Insurance is accepted for individual therapy through most of our therapists.
+Our therapy team now spans ages 3 to adulthood, with specializations in neurodivergent care, ADHD and autism support, childhood and adolescent mental health, anxiety and trauma, substance use recovery, and faith-integrated care. Insurance is accepted for individual therapy through most of our therapists.
 
 ## Evidence-based modalities we use
 
@@ -62,7 +62,7 @@ That distinction matters. A neurodivergent person who has received traditional t
 
 ### Children (ages 3–18)
 
-Child and adolescent therapy at Twilight is provided primarily by **[Ethan Puckett, MA](/about/clinicians/ethan-puckett)**, **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)**, and **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)**. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support. Taylor provides testing and relational-cultural therapy for children and adolescents and is supervised by Dr. Heather Cornett.
+Child and adolescent therapy at Twilight is provided primarily by **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)**, **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)**, and **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)**. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support. Taylor provides testing and relational-cultural therapy for children and adolescents and is supervised by Dr. Heather Cornett.
 
 Our dedicated [child and teen therapy page](/services/therapy/child-and-teen-therapy) covers the specifics in more depth.
 
@@ -78,13 +78,13 @@ Several Twilight therapists work primarily or exclusively with adults:
 
 ### Couples
 
-Couples counseling services are temporarily unavailable at Twilight Psychology. We are evaluating future capacity for this service. Please see our [couples counseling page](/services/therapy/couples-counseling) for more information and to contact us about available alternatives.
+Couples counseling services are **temporarily unavailable** at Twilight Psychology. We are evaluating future capacity for this service. Please see our [couples counseling page](/services/therapy/couples-counseling) for more information and to contact us about available alternatives.
 
 ## Insurance and scheduling
 
 Individual therapy is billable to accepted insurance plans for covered mental health diagnoses. Most of our therapy clinicians participate with major commercial plans and Kentucky Medicaid plans.
 
-Couples counseling is **self-pay only** — insurance does not cover relationship therapy.
+Couples counseling is **temporarily unavailable** at Twilight Psychology. We are evaluating future capacity. Please see our [couples counseling page](/services/therapy/couples-counseling) for current status.
 
 Current availability varies meaningfully by clinician. Some therapists have immediate openings; others have 1-month waits. The [waitlist times page](/resources/waitlist-times) has current information, and our intake team can tell you specifically which clinicians have openings for your needs.
 
@@ -106,6 +106,6 @@ If you are unsure who is the right fit, the [new client guide](/resources/new-cl
 
 - [Therapy Services](/services/therapy) — full overview of therapy at Twilight
 - [Child and Teen Therapy](/services/therapy/child-and-teen-therapy) — neuro-affirming therapy for children and adolescents
-- [Couples Counseling](/services/therapy/couples-counseling) — couples and relationship therapy
+- [Couples Counseling](/services/therapy/couples-counseling) — couples counseling is temporarily unavailable; see the page for updates
 - [Therapy Clinicians](/services/therapy/clinicians) — compare therapists by specialty and availability
 - [FAQ](/resources/faq) — common questions about therapy, insurance, and scheduling

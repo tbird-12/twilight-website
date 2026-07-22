@@ -7,6 +7,7 @@ import CategoryBadge from "../../components/blog/CategoryBadge.astro";
 import PostCard from "../../components/blog/PostCard.astro";
 import { getCategoryMeta } from "../../data/blogCategories";
 import { formatBlogDate, hasDistinctUpdatedDate } from "../../utils/blogDates";
+import logoAsset from "../../assets/images/logo.png";
 
 function getHeroImageClasses(isPortrait: boolean) {
   if (isPortrait) {
@@ -57,6 +58,8 @@ const optimizedOgImage = heroImage
 const ogImage = optimizedOgImage
   ? new URL(optimizedOgImage.src, siteUrl).href
   : new URL("/og-image.png", siteUrl).href;
+const publisherLogo = await getImage({ src: logoAsset, width: 256, height: 256, format: "webp" });
+const publisherLogoUrl = new URL(publisherLogo.src, siteUrl).href;
 const metaTitle = seoTitle || title;
 const metaDescription = seoDescription || description;
 const heroImageWidth = heroImage ? Math.min(heroImage.width, 1280) : undefined;
@@ -142,7 +145,9 @@ const articleSchema = {
     url: "https://www.twilightpsychology.com",
     logo: {
       "@type": "ImageObject",
-      url: new URL("/og-image.png", siteUrl).href,
+      url: publisherLogoUrl,
+      width: "256",
+      height: "256",
     },
   },
 };
@@ -220,6 +225,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
   pubDate={pubDate}
   updatedDate={updatedDate}
   author={author}
+  authorUrl={authorUrl}
   category={categoryMeta.label}
   image={ogImage}
   imageAlt={heroImageAlt || `${title} preview image`}

@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import HeroSectionWrapper from "../components/HeroSectionWrapper.astro";
 import { Icon } from "astro-icon/components";
-import heroBgDawn from "../assets/hero-dawn.svg?raw";
-import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg?raw";
-import heroBg from "../assets/hero-background.svg?raw";
-import heroBgMobile from "../assets/hero-mobile.svg?raw";
+import heroBgDawn from "../assets/hero-dawn.svg";
+import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg";
+import heroBg from "../assets/hero-background.svg";
+import heroBgMobile from "../assets/hero-mobile.svg";
 
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
@@ -67,7 +67,7 @@ const services = [
 
 const problemPoints = [
   {
-    title: "Psychoeducational evaluations are hard to access well",
+    title: "Psychoeducational evaluations are harder to access",
     desc: "Most practices refer out school-focused testing or limit the battery to what insurance allows — leaving families without the documentation depth that IEP, 504, and accommodation decisions actually require.",
   },
   {
@@ -122,16 +122,16 @@ const qualityCareItems = [
       class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
     >
       <div class="homepage-hero-art homepage-hero-art--mobile homepage-hero-art--light" aria-hidden="true">
-        <Fragment set:html={heroBgDawnMobile} />
+        <img src={heroBgDawnMobile.src} alt="" loading="lazy" decoding="async" class="w-full h-full object-cover block" />
       </div>
       <div class="homepage-hero-art homepage-hero-art--desktop homepage-hero-art--light" aria-hidden="true">
-        <Fragment set:html={heroBgDawn} />
+        <img src={heroBgDawn.src} alt="" loading="lazy" decoding="async" class="w-full h-full object-cover block" />
       </div>
       <div class="homepage-hero-art homepage-hero-art--mobile homepage-hero-art--dark" aria-hidden="true">
-        <Fragment set:html={heroBgMobile} />
+        <img src={heroBgMobile.src} alt="" loading="lazy" decoding="async" class="w-full h-full object-cover block" />
       </div>
       <div class="homepage-hero-art homepage-hero-art--desktop homepage-hero-art--dark" aria-hidden="true">
-        <Fragment set:html={heroBg} />
+        <img src={heroBg.src} alt="" loading="lazy" decoding="async" class="w-full h-full object-cover block" />
       </div>
       <div
         class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-4xl text-center px-4 sm:px-6"

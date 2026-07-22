@@ -8,7 +8,7 @@ tags: ["ethan-puckett", "therapy", "child-therapy", "psychological-testing", "ps
 draft: false
 ---
 
-We are pleased to welcome **Ethan Puckett, M.A., T-LPA** to Twilight Psychology. Ethan joins the practice on **July 6, 2026** and will provide **neuro-affirming therapy for children and adolescents ages 3 to 18**, with his strongest clinical fit typically in the **7 to 16** age range.
+We are pleased to welcome **Ethan Puckett, Psy.D., T-LPA** to Twilight Psychology. Ethan joins the practice on **July 6, 2026** and will provide **neuro-affirming therapy for children and adolescents ages 3 to 18**, with his strongest clinical fit typically in the **7 to 16** age range.
 
 He will also provide **psychological testing** and **psychoeducational testing** for families who need more clarity around learning, attention, autism, and emotional-behavioral concerns.
 
@@ -27,7 +27,7 @@ This gives families another flexible option when transportation, school schedule
 
 ## Ethan's background and training
 
-Ethan graduated with his **Master's in Applied Psychology from Western Kentucky University** and is on track to graduate with his **PsyD in Clinical Psychology from Western Kentucky University in August 2026**.
+Ethan graduated with his **Master's in Applied Psychology from Western Kentucky University** and completed his **Psy.D. in Clinical Psychology from Western Kentucky University**.
 
 He is a **temporarily licensed psychological associate** practicing under the supervision of **Dr. Heather Cornett**.
 

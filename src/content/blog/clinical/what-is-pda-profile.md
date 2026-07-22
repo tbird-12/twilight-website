@@ -39,6 +39,6 @@ If you believe you or your child may have a PDA profile, please visit our [PDA P
 
 - [Autism Testing](/services/autism-testing) — Learn about our comprehensive autism spectrum evaluations, including ADOS-2 and MIGDAS-2 assessments.
 - [Autism Evaluation in Lexington, KY — Children and Adults](/blog/clinical/autism-evaluation-lexington-ky) — What the evaluation process at Twilight Psychology involves, including high-masking adults, AuDHD presentations, and the diagnostic timeline.
-- [Understanding Health Insurance](/blog/insurance/understanding-health-insurance) — Overview of insurance types and how they apply to psychological testing.
+- [PDA Profile](/specialties/pda-profile) — Dedicated overview of the PDA profile and how we approach demand-avoidance presentations in our evaluations.
 - [New Client Guide](/resources/new-client) — Steps to schedule your first evaluation at Twilight Psychology.
 - [Frequently Asked Questions](/resources/faq) — Common questions about testing timelines, insurance coverage, and our process.

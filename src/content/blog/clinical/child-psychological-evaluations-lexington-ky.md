@@ -13,7 +13,7 @@ draft: false
 
 Families looking for a **child psychological evaluation in Lexington, Kentucky** are often trying to answer more than one question at once. They may be wondering whether a child is showing signs of autism, ADHD, learning differences, emotional regulation challenges, developmental delays, or a more complex overlap that does not fit neatly into one category. At Twilight Psychology, our approach is to slow the process down enough to get the question right, then use comprehensive testing to build a more useful answer.
 
-We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Ethan Puckett](/about/clinicians/ethan-puckett)**, and **[Taylor Pennington](/about/clinicians/taylor-pennington)**, depending on the child's age, referral question, and clinical fit.
+We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)**, and **[Taylor Pennington](/about/clinicians/taylor-pennington)**, depending on the child's age, referral question, and clinical fit.
 
 ## What families usually mean when they ask for a child psychological evaluation
 
@@ -41,7 +41,7 @@ Child evaluation referrals at Twilight Psychology may be matched with:
 
 - **[Heather Cornett, PhD](/about/clinicians/heather-cornett)** for comprehensive psychological evaluations, including complex diagnostic clarification and evaluations beginning at age 2; holds a **PSYPACT certificate** for telehealth evaluations in 40+ states nationwide
 - **[Emeli Evans, M.S., LPA](/about/clinicians/emeli-evans)** for neuro-affirming assessment work with children and adolescents, especially when autism, PDA-related questions, masking, or broader neurodivergent presentation may be part of the picture
-- **[Ethan Puckett, M.A., T-LPA](/about/clinicians/ethan-puckett)** for psychological and psychoeducational testing, especially for school-based questions involving learning, attention, autism, and broader emotional-behavioral concerns, with strongest fit typically in the 7 to 16 age range
+- **[Ethan Puckett, Psy.D., T-LPA](/about/clinicians/ethan-puckett)** for psychological and psychoeducational testing, especially for school-based questions involving learning, attention, autism, and broader emotional-behavioral concerns, with strongest fit typically in the 7 to 16 age range
 
 The right fit depends on the referral concern, the child's age, and the kind of recommendations a family needs at the end of the process. Starting **July 6, 2026**, Ethan also expands Twilight's testing options for children and adolescents who may need a stronger school-based or psychoeducational lens.
 

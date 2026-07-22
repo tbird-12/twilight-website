@@ -140,89 +140,11 @@
     @apply scroll-smooth;
   }
 
-  html.theme-transition body,
-  html.theme-transition body :where(
-    a,
-    button,
-    input,
-    textarea,
-    select,
-    summary,
-    svg,
-    path,
-    main,
-    header,
-    footer,
-    nav,
-    section,
-    article,
-    aside,
-    div,
-    span,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    li,
-    ul,
-    ol
-  ),
-  html.theme-transition body :where(
-    a,
-    button,
-    input,
-    textarea,
-    select,
-    summary,
-    svg,
-    path,
-    main,
-    header,
-    footer,
-    nav,
-    section,
-    article,
-    aside,
-    div,
-    span,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    li,
-    ul,
-    ol
-  )::before,
-  html.theme-transition body :where(
-    a,
-    button,
-    input,
-    textarea,
-    select,
-    summary,
-    svg,
-    path,
-    main,
-    header,
-    footer,
-    nav,
-    section,
-    article,
-    aside,
-    div,
-    span,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    li,
-    ul,
-    ol
-  )::after {
-    transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+  /* Simplified universal theme-transition selector (replaces the 84-entry :where() block) */
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease !important;
   }
 
   body {
@@ -436,6 +358,11 @@
     background-color: var(--theme-alert-fill);
   }
 
+/* ── Navigation mega menu animations ── */
+  .nav-mega-enter    { animation: navMegaEnter    250ms cubic-bezier(.4,0,.2,1) forwards; }
+  .nav-backdrop-enter { animation: navBackdropEnter 200ms ease forwards; }
+  .nav-nested-enter   { animation: navNestedEnter  200ms cubic-bezier(.4,0,.2,1) forwards; }
+
   .site-footer {
     background-color: var(--theme-site-footer);
     border-top: 1px solid var(--theme-border);
@@ -509,7 +436,6 @@
     background:
       radial-gradient(circle at center, rgba(var(--rgb-accent-alt), 0.22) 0, transparent 58%),
       radial-gradient(circle at 35% 35%, rgba(var(--rgb-accent), 0.12) 0, transparent 62%);
-    animation: auroraDrift 18s ease-in-out infinite alternate;
   }
 
   .aurora-panel::after {
@@ -520,7 +446,6 @@
     background:
       radial-gradient(circle at center, rgba(var(--rgb-accent-alt), 0.14) 0, transparent 55%),
       radial-gradient(circle at 65% 40%, rgba(var(--rgb-accent), 0.08) 0, transparent 60%);
-    animation: auroraDriftReverse 22s ease-in-out infinite alternate;
   }
 
   .aurora-panel > * {
@@ -649,7 +574,6 @@
         rgba(var(--rgb-accent-alt), 0.04),
         rgba(var(--rgb-accent-alt), 0.14)
       );
-    animation: auroraDrift 24s ease-in-out infinite alternate;
   }
 
   .aurora-surface::after {
@@ -660,12 +584,19 @@
     background:
       radial-gradient(circle at center, rgba(var(--rgb-accent-alt), 0.12) 0, transparent 54%),
       radial-gradient(circle at 40% 40%, rgba(var(--rgb-accent), 0.08) 0, transparent 58%);
-    animation: auroraDriftReverse 28s ease-in-out infinite alternate;
   }
 
   .aurora-surface > * {
     position: relative;
     z-index: 1;
+  }
+
+  /* Aurora animations are purely decorative — opt-in only when user has no motion preference */
+  @media (prefers-reduced-motion: no-preference) {
+    .aurora-panel::before  { animation: auroraDrift        18s ease-in-out infinite alternate; }
+    .aurora-panel::after   { animation: auroraDriftReverse 22s ease-in-out infinite alternate; }
+    .aurora-surface::before { animation: auroraDrift       24s ease-in-out infinite alternate; }
+    .aurora-surface::after  { animation: auroraDriftReverse 28s ease-in-out infinite alternate; }
   }
 
   @media (min-width: 40rem) {
@@ -763,6 +694,18 @@ a[class*="rounded-"] {
 }
 
 /* ── Global Animation Keyframes ── */
+@keyframes navMegaEnter {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes navBackdropEnter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes navNestedEnter {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }

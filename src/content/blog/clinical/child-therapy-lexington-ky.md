@@ -47,7 +47,7 @@ For parents supporting a neurodivergent child, the parent component is often whe
 
 ## Clinicians who work with children and teens at Twilight
 
-### Ethan Puckett, MA — child and teen therapy
+### Ethan Puckett, Psy.D. — child and teen therapy
 
 **[Ethan Puckett](/about/clinicians/ethan-puckett)** specializes in the assessment and treatment of children and adolescents from neurodivergent populations. His ideal clinical fit is **ages 7 to 16**, with therapy using CBT, ACT, and a person-centered behavioral approach.
 

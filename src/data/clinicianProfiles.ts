@@ -417,9 +417,9 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "ethan-puckett",
-    pageTitle: "Ethan Puckett, T-LPA | Child Therapy & Testing",
+    pageTitle: "Ethan Puckett, Psy.D., T-LPA | Child Therapy & Testing",
     pageDescription:
-      "Ethan Puckett, T-LPA — Twilight Psychology clinician providing neuro-affirming therapy for ages 3-18, with strongest fit for ages 7-16, plus psychological and psychoeducational testing in Kentucky under the supervision of Dr. Heather Cornett.",
+      "Ethan Puckett, Psy.D., T-LPA — Twilight Psychology clinician providing neuro-affirming therapy for ages 3-18, with strongest fit for ages 7-16, plus psychological and psychoeducational testing in Kentucky under the supervision of Dr. Heather Cornett.",
     jobTitle: "Temporary Licensed Psychological Associate",
     badge: "Temporary Licensed Psychological Associate",
     headingPrimary: "Ethan",
