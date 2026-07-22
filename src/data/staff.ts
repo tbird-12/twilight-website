@@ -10,7 +10,7 @@ import samanthaRodarte from '../assets/images/staff/samantha-rodarte.png';
 import michaelBurnsImg from '../assets/images/staff/michael-burns.jpg';
 import ethanPuckettImg from '../assets/images/staff/ethan-puckett.png';
 import taylorPenningtonImg from '../assets/images/staff/taylor-pennington.png';
-import eliseVanMeterImg from '../assets/images/staff/elise-vanmeter.png';
+import eliseVanMeterImg from '../assets/images/staff/elise-vanmeter.jpeg';
 
 import ashleyPerkinsImg from '../assets/images/staff/ashley-perkins.jpeg';
 
