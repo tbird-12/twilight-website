@@ -18,7 +18,7 @@ interface DesktopNavProps {
 export default function DesktopNav({ headerHeight }: DesktopNavProps) {
   return (
     <nav
-      className="hidden md:flex items-center gap-6 lg:gap-10"
+      className="flex items-center gap-6 lg:gap-10"
       role="navigation"
       aria-label="Main navigation"
     >
