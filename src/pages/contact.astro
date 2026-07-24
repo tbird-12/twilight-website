@@ -2,98 +2,537 @@
 import Layout from "../layouts/Layout.astro";
 import PageHeroWrapper from "../components/PageHeroWrapper.astro";
 import AnimatedSection from "../components/react/primitives/AnimatedSection";
-import ContactTabsWrapper from "../components/ContactTabsWrapper.astro";
-import PageLinksSection from "../components/PageLinksSection.astro";
+import { Icon } from "astro-icon/components";
+import {
+  EMAIL_ADDRESS,
+  FAX_NUMBER_FORMATTED,
+  MAIN_OFFICE_CITY_STATE_ZIP,
+  MAIN_OFFICE_MAP_LINK,
+  MAIN_OFFICE_STREET_ADDRESS,
+  MAIN_OFFICE_STREET_ADDRESS_SCHEMA,
+  PHONE_NUMBER,
+  PHONE_NUMBER_FORMATTED,
+  REFERRAL_LINK,
+  SIGN_IN_LINK,
+  WIDGET_LINK,
+} from "../data/resource";
+import { siteConfig } from "../data/siteConfig";
 
 const emergencyContacts = [
-  { href: "tel:911", label: "Immediate Emergency", action: "Call 911" },
-  { href: "tel:988", label: "Mental Health Crisis", action: "Call 988" },
+  {
+    href: "tel:911",
+    label: "Immediate emergency",
+    action: "Call 911",
+    description: "Use for immediate danger, medical emergencies, or when someone cannot stay safe.",
+  },
+  {
+    href: "tel:988",
+    label: "Mental health crisis",
+    action: "Call 988",
+    description: "Use for urgent emotional distress, suicidal thoughts, or crisis support.",
+  },
 ];
 
-const emergencyActionClass =
-  "rounded-2xl border border-cta/30 bg-cta/10 px-4 py-5 sm:px-5 transition-all duration-200 hover:scale-[1.02] hover:border-cta/60 hover:bg-cta/20 active:scale-[0.98]";
+const buildMailto = (email: string, subject: string) =>
+  `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
-const contactLinks = [
+const ESCALATION_EMAIL_ADDRESS = "info@twilightpsychology.com";
+const GOOGLE_MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent(
+  `Twilight Psychology, ${MAIN_OFFICE_STREET_ADDRESS_SCHEMA}, ${MAIN_OFFICE_CITY_STATE_ZIP}`,
+)}&output=embed`;
+
+const directChannels = [
   {
-    href: "/services",
-    label: "Compare services",
+    eyebrow: "Call the office",
+    title: PHONE_NUMBER_FORMATTED,
     description:
-      "Review evaluations, therapy, and medication support before you reach out.",
+      "Best for appointment changes, arrival questions, or anything that feels easier to handle in one conversation.",
+    href: `tel:${PHONE_NUMBER}`,
+    action: "Call now",
+  },
+  {
+    eyebrow: "Email the team",
+    title: EMAIL_ADDRESS,
+    description:
+      "Use email for general outreach, routing help, records questions, or when you want a written next step.",
+    href: `mailto:${EMAIL_ADDRESS}`,
+    action: "Send email",
+  },
+  {
+    eyebrow: "Request care",
+    title: "New client interest form",
+    description:
+      "Share what kind of support you need and our intake flow will help route you to the right service.",
+    href: WIDGET_LINK,
+    action: "Open intake form",
+    external: true,
+  },
+  {
+    eyebrow: "Secure messaging",
+    title: "Existing client login",
+    description:
+      "Current clients can message their provider, review documents, and manage upcoming appointments in one place.",
+    href: SIGN_IN_LINK,
+    action: "Portal sign in",
+    external: true,
+  },
+];
+
+const routingHelpers = [
+  {
+    eyebrow: "Providers",
+    title: "Referral form",
+    description: `Send referral paperwork and fax completed documents to ${FAX_NUMBER_FORMATTED}.`,
+    href: REFERRAL_LINK,
+    action: "Open referral form",
+    external: true,
+  },
+  {
+    eyebrow: "Scheduling",
+    title: "Appointment concerns",
+    description: "Call the office for late arrivals, rescheduling needs, or help confirming visit details.",
+    href: `tel:${PHONE_NUMBER}`,
+    action: "Call scheduling support",
+  },
+  {
+    eyebrow: "Billing",
+    title: "Billing and insurance questions",
+    description: "Route questions about statements, claims, superbills, or coverage review to the office team.",
+    href: buildMailto(EMAIL_ADDRESS, "Billing question"),
+    action: "Email billing support",
+  },
+  {
+    eyebrow: "Documents",
+    title: "Records request",
+    description: "Request release forms, paperwork updates, or support with records and documentation.",
+    href: buildMailto(EMAIL_ADDRESS, "Records request"),
+    action: "Start a records request",
+  },
+  {
+    eyebrow: "Office help",
+    title: "Location and arrival questions",
+    description: "Review office details, directions, and appointment-only guidance before visiting.",
+    href: "/about/locations",
+    action: "View offices",
+  },
+  {
+    eyebrow: "Leadership",
+    title: "Complaints or escalations",
+    description: "If something needs practice leadership review, send it directly to the general info inbox.",
+    href: buildMailto(ESCALATION_EMAIL_ADDRESS, "Concern or escalation"),
+    action: `Email ${ESCALATION_EMAIL_ADDRESS}`,
+  },
+];
+
+const expectationHighlights = [
+  {
+    label: "Response timing",
+    value: "Reviewed during business hours",
+    detail: "Messages sent after hours are queued for the next business day.",
+  },
+  {
+    label: "Business hours",
+    value: "Mon - Fri · 9 AM - 7 PM",
+    detail: "Weekend visits may be available by appointment, but office routing happens on weekdays.",
+  },
+  {
+    label: "Privacy",
+    value: "Use the portal for sensitive details",
+    detail: "Portal messaging is the best fit for non-urgent clinical communication once you are an established client.",
+  },
+];
+
+const nextSteps = [
+  {
+    number: "01",
+    title: "Choose the closest match",
+    description: "Pick the call, email, portal, or form option that feels most accurate. You do not need the perfect wording.",
+  },
+  {
+    number: "02",
+    title: "We route your message",
+    description: "Scheduling, billing, records, and provider questions are directed to the person or workflow that can help fastest.",
+  },
+  {
+    number: "03",
+    title: "You get a clear next step",
+    description: "That may be a portal reply, intake instructions, scheduling follow-up, paperwork, or an answer to your question.",
+  },
+];
+
+const selfServiceLinks = [
+  {
+    href: "/resources/faq",
+    title: "FAQ",
+    description: "Start with quick answers about insurance, intake, testing, and scheduling.",
   },
   {
     href: "/resources/new-client",
-    label: "New client guide",
-    description:
-      "See intake steps, required paperwork, and what to expect first.",
+    title: "New client guide",
+    description: "See the intake sequence, paperwork expectations, and what happens before a first visit.",
   },
   {
-    href: "/resources/faq",
-    label: "FAQ",
-    description:
-      "Get quick answers about insurance, wait times, and evaluation coverage.",
+    href: "/resources/waitlist-times",
+    title: "Waitlist times",
+    description: "Check current scheduling windows before you submit a request.",
+  },
+  {
+    href: "/resources/fees",
+    title: "Fees and insurance",
+    description: "Review billing expectations, coverage context, and self-pay details.",
   },
 ];
 ---
 
 <Layout
   title="Contact Twilight Psychology in Lexington, KY"
-  description="Call, email, or request an appointment with Twilight Psychology in Lexington, KY for evaluations, therapy, medication management, and intake support."
+  description="Contact Twilight Psychology in Lexington, KY for scheduling, referrals, records, billing questions, and support for therapy, testing, or medication care."
 >
-    <section class="bg-site-bg py-16 md:py-24 px-4">
-      <div class="max-w-5xl mx-auto">
+  <section class="bg-site-bg px-4 pb-20 md:pb-24">
+    <div class="mx-auto max-w-6xl">
+      <PageHeroWrapper
+        title="Get in Touch"
+        accentWord="Touch"
+        subtitle="Share what you need and we will help you find the right next step without expecting you to know the perfect form first."
+        badge="Lexington office · Kentucky telehealth"
+        size="lg"
+      />
 
-        <PageHeroWrapper
-          title="How To Reach Us"
-          accentWord="Reach Us"
-          subtitle="Contact Twilight Psychology in Lexington, KY for evaluations, therapy, medication management, scheduling, paperwork, and intake questions."
-          badge="Contact Twilight Psychology"
-          size="lg"
-        />
+      <AnimatedSection client:visible animation="fadeInUp" delay={100} className="-mt-8 md:-mt-10 relative z-20">
+        <section aria-label="Direct contact channels">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {directChannels.map((channel) => (
+              <a
+                href={channel.href}
+                target={channel.external ? "_blank" : undefined}
+                rel={channel.external ? "noopener noreferrer" : undefined}
+                class="group flex h-full flex-col rounded-[2rem] border border-border-strong bg-surface-soft p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cta/40 hover:shadow-lg hover:shadow-cta/5"
+              >
+                <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">{channel.eyebrow}</p>
+                <h2 class="mt-3 font-serif text-xl font-black text-site-text transition-colors group-hover:text-cta">
+                  {channel.title}
+                </h2>
+                <p class="mt-3 text-sm leading-relaxed text-site-sub">{channel.description}</p>
+                <span class="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-black text-cta">
+                  {channel.action}
+                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
 
-        <AnimatedSection client:visible animation="fadeInUp" delay={100}>
-          <section class="contact-emergency-shell mb-8 md:mb-10 rounded-4xl border-2 border-cta/40 p-6 sm:p-8 md:p-10 relative overflow-hidden">
-            <div class="pointer-events-none absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-cta to-transparent"></div>
-            <div class="inline-block px-3 py-1 mb-4 rounded-full bg-cta/10 border border-cta/30 text-cta text-xs font-black uppercase tracking-widest">
-              Emergencies Only
-            </div>
-            <h2 class="font-serif text-2xl md:text-3xl font-black text-site-text mb-3 md:mb-4">Emergency Support</h2>
-            <p class="text-site-text leading-relaxed mb-5 md:mb-6 text-sm sm:text-base">
-              If you are in immediate danger or need urgent help, do not wait for office response.
-            </p>
-            <div class="grid gap-4 md:grid-cols-3">
-              {emergencyContacts.map((contact) => (
-                <a href={contact.href} class={emergencyActionClass}>
-                  <p class="text-xs font-black uppercase tracking-widest text-cta">{contact.label}</p>
-                  <p class="mt-1 text-2xl font-black text-site-text sm:text-3xl">{contact.action}</p>
-                </a>
-              ))}
-              <div class="rounded-2xl border border-border bg-surface px-4 py-5 sm:px-5">
-                <p class="text-xs font-black uppercase tracking-widest text-site-sub">Important Note</p>
-                <p class="text-site-sub text-sm mt-2 leading-relaxed">
-                  Messages sent through email, phone, or forms are not monitored for emergency response.
+      <div class="mt-10 grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+        <AnimatedSection client:visible animation="fadeInUp" delay={150}>
+          <section class="aurora-panel rounded-[2.5rem] border border-border bg-surface-soft p-6 sm:p-8 md:p-10">
+            <div class="flex flex-col gap-8">
+              <div>
+                <p class="text-xs font-black uppercase tracking-[0.24em] text-cta">What to expect</p>
+                <h2 class="mt-3 font-serif text-3xl font-black text-site-text">Calm, clear routing from first message to next step.</h2>
+                <p class="mt-4 max-w-3xl text-site-sub leading-relaxed">
+                  The contact page is meant to lower the guesswork. If you are not sure which option is best, start with the one that feels closest and we will help route the rest.
                 </p>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-3">
+                {expectationHighlights.map((item) => (
+                  <div class="rounded-[1.75rem] border border-border bg-surface p-5">
+                    <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub">{item.label}</p>
+                    <p class="mt-3 text-lg font-black text-site-text">{item.value}</p>
+                    <p class="mt-2 text-sm leading-relaxed text-site-sub">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+                <div class="rounded-[2rem] border border-border bg-surface p-6 sm:p-8">
+                  <h3 class="font-serif text-2xl font-black text-site-text">What happens next</h3>
+                  <div class="mt-8 space-y-8">
+                    {nextSteps.map((step) => (
+                      <div class="relative pl-16">
+                        <div class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center rounded-2xl border border-cta/30 bg-cta/10 font-black text-cta">
+                          {step.number}
+                        </div>
+                        <h4 class="font-serif text-lg font-black text-site-text">{step.title}</h4>
+                        <p class="mt-2 text-sm leading-relaxed text-site-sub">{step.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div class="rounded-[2rem] border border-border-strong bg-surface-2 p-6 sm:p-8">
+                  <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Helpful guardrails</p>
+                  <ul class="mt-5 space-y-4 text-sm leading-relaxed text-site-sub">
+                    <li class="flex gap-3">
+                      <span class="mt-0.5 font-black text-cta">•</span>
+                      <span>For established clients, secure portal messaging is the best fit for non-urgent clinical updates.</span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="mt-0.5 font-black text-cta">•</span>
+                      <span>For records, billing, or referral paperwork, email usually gives the clearest paper trail.</span>
+                    </li>
+                    <li class="flex gap-3">
+                      <span class="mt-0.5 font-black text-cta">•</span>
+                      <span>If you are deciding whether therapy, testing, or medication management is the right fit, the intake form is the easiest place to start.</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
         </AnimatedSection>
 
-        <section class="mt-10 md:mt-12 rounded-4xl border border-border-strong bg-surface-2 p-6 sm:p-8 md:p-10">
-          <ContactTabsWrapper />
-        </section>
+        <AnimatedSection client:visible animation="slideInRight" delay={200}>
+          <section class="space-y-6">
+            <div class="theme-card-alert rounded-[2.5rem] p-6 sm:p-8">
+              <p class="theme-text-alert text-xs font-black uppercase tracking-[0.24em]">Urgent support</p>
+              <h2 class="mt-3 font-serif text-3xl font-black text-site-text">911 / 988 emergency guidance</h2>
+              <p class="mt-4 text-sm leading-relaxed text-site-sub">
+                If you are in immediate danger or need urgent crisis support, do not wait for a callback, email, portal message, or intake response.
+              </p>
+              <div class="mt-6 space-y-4">
+                {emergencyContacts.map((contact) => (
+                  <a
+                    href={contact.href}
+                    class="block rounded-[1.75rem] border border-border bg-surface px-5 py-5 transition-all duration-300 hover:border-cta/40 hover:bg-surface-2"
+                  >
+                    <p class="theme-text-alert text-xs font-black uppercase tracking-[0.22em]">{contact.label}</p>
+                    <p class="mt-2 text-2xl font-black text-site-text">{contact.action}</p>
+                    <p class="mt-2 text-sm leading-relaxed text-site-sub">{contact.description}</p>
+                  </a>
+                ))}
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-site-sub">
+                Standard phone, email, portal, and intake channels are not monitored for emergency response.
+              </p>
+            </div>
 
-        <AnimatedSection client:visible animation="fadeInUp" delay={200}>
-          <section class="mt-10 md:mt-12 rounded-4xl border border-border-strong bg-surface-2 p-6 text-center sm:p-8">
-            <h2 class="font-serif text-2xl font-black text-site-text mb-3">Clinical Hours</h2>
-            <p class="text-site-sub text-sm sm:text-base mb-1">Mon - Fri: 8:00 AM - 7:00 PM</p>
-            <p class="text-site-sub">Sat - Sun: By appointment</p>
+            <div class="rounded-[2.5rem] border border-border bg-surface p-6 sm:p-8">
+              <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Not sure where to start?</p>
+              <h3 class="mt-3 font-serif text-2xl font-black text-site-text">Call or email the office and we will help route you.</h3>
+              <p class="mt-4 text-sm leading-relaxed text-site-sub">
+                You do not need to know the exact service name before reaching out. A brief description of what you need is enough.
+              </p>
+              <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={`tel:${PHONE_NUMBER}`}
+                  class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-3 text-sm font-black text-cta-fg transition-colors hover:bg-cta/80"
+                >
+                  Call {PHONE_NUMBER_FORMATTED}
+                </a>
+                <a
+                  href={`mailto:${EMAIL_ADDRESS}`}
+                  class="inline-flex items-center justify-center rounded-full border border-border-strong bg-surface-soft px-5 py-3 text-sm font-black text-site-text transition-colors hover:border-cta/40 hover:text-cta"
+                >
+                  Email {EMAIL_ADDRESS}
+                </a>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+      </div>
+
+      <AnimatedSection client:visible animation="fadeInUp" delay={250}>
+        <section class="mt-10 rounded-[2.5rem] border border-border bg-surface p-6 sm:p-8 md:p-10">
+          <div class="mb-8 max-w-3xl">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Routing helpers</p>
+            <h2 class="mt-3 font-serif text-3xl font-black text-site-text">Choose the path that matches your question.</h2>
+            <p class="mt-4 text-site-sub leading-relaxed">
+              These routes are designed to keep clients from bouncing between inboxes. Pick the closest match and the office can take it from there.
+            </p>
+          </div>
+
+          <div class="bento-grid reveal-children">
+            {routingHelpers.map((item) => (
+              <a
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                class="group flex h-full flex-col rounded-[2rem] border border-border bg-surface-soft p-6 transition-all duration-300 hover:border-cta/30 hover:shadow-lg hover:shadow-cta/5"
+              >
+                <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub">{item.eyebrow}</p>
+                <h3 class="mt-3 font-serif text-xl font-black text-site-text transition-colors group-hover:text-cta">
+                  {item.title}
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-site-sub">{item.description}</p>
+                <span class="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-black text-cta">
+                  {item.action}
+                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      <div class="mt-10 grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
+        <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+          <section class="rounded-[2.5rem] border border-border bg-surface-soft p-6 sm:p-8 md:p-10">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Location and presence</p>
+            <h2 class="mt-3 font-serif text-3xl font-black text-site-text">Visit the Lexington office by appointment.</h2>
+            <p class="mt-4 text-site-sub leading-relaxed">
+              Twilight Psychology sees in-person clients from one Lexington location, with telehealth options available across Kentucky and beyond.
+            </p>
+
+            <div class="mt-8 rounded-[2rem] border border-border bg-surface p-6">
+              <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub">Main office</p>
+              <p class="mt-3 text-xl font-black text-site-text">{MAIN_OFFICE_STREET_ADDRESS}</p>
+              <p class="text-site-sub">{MAIN_OFFICE_CITY_STATE_ZIP}</p>
+              <ul class="mt-5 space-y-3 text-sm leading-relaxed text-site-sub">
+                <li class="flex gap-3">
+                  <span class="mt-0.5 font-black text-cta">•</span>
+                  <span>All visits are by appointment only.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-0.5 font-black text-cta">•</span>
+                  <span>Check your reminder for whether your visit is in person or virtual.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="mt-0.5 font-black text-cta">•</span>
+                  <span>Use the offices page for additional location context and arrival details.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={MAIN_OFFICE_MAP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-3 text-sm font-black text-cta-fg transition-colors hover:bg-cta/80"
+              >
+                Get directions
+              </a>
+              <a
+                href="/about/locations"
+                class="inline-flex items-center justify-center rounded-full border border-border-strong bg-surface px-5 py-3 text-sm font-black text-site-text transition-colors hover:border-cta/40 hover:text-cta"
+              >
+                View offices
+              </a>
+            </div>
           </section>
         </AnimatedSection>
 
-        <PageLinksSection
-          title="Need context before you reach out?"
-          description="These pages answer the questions most people are deciding between right before contacting the office."
-          links={contactLinks}
-        />
+        <AnimatedSection client:visible animation="fadeInUp" delay={350}>
+          <section class="rounded-[2.5rem] border border-border bg-surface p-3 sm:p-4">
+            <div class="overflow-hidden rounded-[2rem] border border-border bg-white">
+              <iframe
+                title="Map to Twilight Psychology in Lexington, Kentucky"
+                src={GOOGLE_MAP_EMBED_URL}
+                class="h-[320px] w-full md:h-[420px]"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </section>
+        </AnimatedSection>
       </div>
-    </section>
+
+      <div class="mt-10 grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
+        <AnimatedSection client:visible animation="fadeInUp" delay={400}>
+          <section class="rounded-[2.5rem] border border-border bg-surface p-6 sm:p-8 md:p-10">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Self-service options</p>
+            <h2 class="mt-3 font-serif text-3xl font-black text-site-text">Answer the common questions before you reach out.</h2>
+            <p class="mt-4 max-w-3xl text-site-sub leading-relaxed">
+              When you want quick context without waiting on email, these are the fastest places to check first.
+            </p>
+
+            <div class="mt-8 grid gap-4 md:grid-cols-2">
+              {selfServiceLinks.map((link) => (
+                <a
+                  href={link.href}
+                  class="group flex h-full flex-col rounded-[2rem] border border-border bg-surface-soft p-6 transition-all duration-300 hover:border-cta/30 hover:shadow-lg hover:shadow-cta/5"
+                >
+                  <h3 class="font-serif text-xl font-black text-site-text transition-colors group-hover:text-cta">
+                    {link.title}
+                  </h3>
+                  <p class="mt-3 text-sm leading-relaxed text-site-sub">{link.description}</p>
+                  <span class="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-black text-cta">
+                    Open page
+                    <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <div class="mt-6 rounded-[2rem] border border-border-strong bg-surface-soft p-6">
+              <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub">Site search</p>
+                  <h3 class="mt-2 font-serif text-2xl font-black text-site-text">Search the website directly</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-site-sub">
+                    Use search when you know the topic but do not want to browse menus. Keyboard shortcut: Ctrl/Cmd + K.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  data-contact-search-trigger
+                  class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-3 text-sm font-black text-cta-fg transition-colors hover:bg-cta/80"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+          </section>
+        </AnimatedSection>
+
+        <AnimatedSection client:visible animation="fadeInUp" delay={450}>
+          <section class="rounded-[2.5rem] border border-border bg-surface-soft p-6 sm:p-8 md:p-10">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Social and updates</p>
+            <h2 class="mt-3 font-serif text-3xl font-black text-site-text">Stay connected outside the inbox.</h2>
+            <p class="mt-4 text-site-sub leading-relaxed">
+              Follow the practice on social media or browse the blog for billing guidance, clinical resources, and practice updates.
+            </p>
+
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              {siteConfig.socialProfiles.map((social) => (
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex items-center gap-4 rounded-[1.75rem] border border-border bg-surface p-5 transition-all duration-300 hover:border-cta/30 hover:shadow-lg hover:shadow-cta/5"
+                >
+                  <span class="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-surface-soft">
+                    <Icon name={social.icon} class="h-5 w-5 text-icon" />
+                  </span>
+                  <div>
+                    <p class="font-serif text-lg font-black text-site-text transition-colors group-hover:text-cta">
+                      {social.label}
+                    </p>
+                    <p class="text-sm text-site-sub">Open profile</p>
+                  </div>
+                </a>
+              ))}
+
+              <a
+                href="/blog"
+                class="group flex h-full flex-col rounded-[2rem] border border-border bg-surface p-6 transition-all duration-300 hover:border-cta/30 hover:shadow-lg hover:shadow-cta/5 sm:col-span-2"
+              >
+                <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub">Blog</p>
+                <h3 class="mt-3 font-serif text-2xl font-black text-site-text transition-colors group-hover:text-cta">
+                  Read clinical, insurance, and practice updates
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-site-sub">
+                  The blog is the best place for longer-form answers about insurance, referrals, timelines, and practice news.
+                </p>
+                <span class="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-black text-cta">
+                  Visit the blog
+                  <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+              </a>
+            </div>
+          </section>
+        </AnimatedSection>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll("[data-contact-search-trigger]").forEach((button) => {
+      button.addEventListener("click", () => {
+        window.dispatchEvent(new CustomEvent("twilight:open-search"));
+      });
+    });
+  </script>
 </Layout>
