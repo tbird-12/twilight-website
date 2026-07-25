@@ -18,6 +18,15 @@ import {
 } from "../data/resource";
 import { siteConfig } from "../data/siteConfig";
 
+interface ContactChannel {
+  eyebrow: string;
+  title: string;
+  description: string;
+  href: string;
+  action: string;
+  external?: boolean;
+}
+
 const emergencyContacts = [
   {
     href: "tel:911",
@@ -41,7 +50,7 @@ const GOOGLE_MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent
   `Twilight Psychology, ${MAIN_OFFICE_STREET_ADDRESS_SCHEMA}, ${MAIN_OFFICE_CITY_STATE_ZIP}`,
 )}&output=embed`;
 
-const directChannels = [
+const directChannels: ContactChannel[] = [
   {
     eyebrow: "Refer a client",
     title: "Referral line",
@@ -70,7 +79,7 @@ const directChannels = [
   },
 ];
 
-const routingHelpers = [
+const routingHelpers: ContactChannel[] = [
   {
     eyebrow: "1. Scheduling",
     title: "Appointment concerns",
