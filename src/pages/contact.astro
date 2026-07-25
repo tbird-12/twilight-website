@@ -43,20 +43,12 @@ const GOOGLE_MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent
 
 const directChannels = [
   {
-    eyebrow: "Call the office",
-    title: PHONE_NUMBER_FORMATTED,
+    eyebrow: "Refer a client",
+    title: "Referral line",
     description:
-      "Best for appointment changes, arrival questions, or anything that feels easier to handle in one conversation.",
-    href: `tel:${PHONE_NUMBER}`,
-    action: "Call now",
-  },
-  {
-    eyebrow: "Email the team",
-    title: EMAIL_ADDRESS,
-    description:
-      "Use email for general outreach, routing help, records questions, or when you want a written next step.",
-    href: `mailto:${EMAIL_ADDRESS}`,
-    action: "Send email",
+      "Best for sending referral paperwork, asking questions about potential clients, or anything that feels easier to handle in one conversation.",
+    href: REFERRAL_LINK,
+    action: "Open Referral Form",
   },
   {
     eyebrow: "Request care",
@@ -80,43 +72,35 @@ const directChannels = [
 
 const routingHelpers = [
   {
-    eyebrow: "Providers",
-    title: "Referral form",
-    description: `Send referral paperwork and fax completed documents to ${FAX_NUMBER_FORMATTED}.`,
-    href: REFERRAL_LINK,
-    action: "Open referral form",
-    external: true,
-  },
-  {
-    eyebrow: "Scheduling",
+    eyebrow: "1. Scheduling",
     title: "Appointment concerns",
     description: "Call the office for late arrivals, rescheduling needs, or help confirming visit details.",
     href: `tel:${PHONE_NUMBER}`,
     action: "Call scheduling support",
   },
   {
-    eyebrow: "Billing",
+    eyebrow: "2. Billing",
     title: "Billing and insurance questions",
     description: "Route questions about statements, claims, superbills, or coverage review to the office team.",
     href: buildMailto(EMAIL_ADDRESS, "Billing question"),
     action: "Email billing support",
   },
   {
-    eyebrow: "Documents",
+    eyebrow: "3. Documents",
     title: "Records request",
     description: "Request release forms, paperwork updates, or support with records and documentation.",
     href: buildMailto(EMAIL_ADDRESS, "Records request"),
     action: "Start a records request",
   },
   {
-    eyebrow: "Office help",
+    eyebrow: "4. Office help",
     title: "Location and arrival questions",
     description: "Review office details, directions, and appointment-only guidance before visiting.",
     href: "/about/locations",
     action: "View offices",
   },
   {
-    eyebrow: "Leadership",
+    eyebrow: "5. Leadership",
     title: "Complaints or escalations",
     description: "If something needs practice leadership review, send it directly to the general info inbox.",
     href: buildMailto(ESCALATION_EMAIL_ADDRESS, "Concern or escalation"),
@@ -142,23 +126,6 @@ const expectationHighlights = [
   },
 ];
 
-const nextSteps = [
-  {
-    number: "01",
-    title: "Choose the closest match",
-    description: "Pick the call, email, portal, or form option that feels most accurate. You do not need the perfect wording.",
-  },
-  {
-    number: "02",
-    title: "We route your message",
-    description: "Scheduling, billing, records, and provider questions are directed to the person or workflow that can help fastest.",
-  },
-  {
-    number: "03",
-    title: "You get a clear next step",
-    description: "That may be a portal reply, intake instructions, scheduling follow-up, paperwork, or an answer to your question.",
-  },
-];
 
 const selfServiceLinks = [
   {
@@ -200,7 +167,7 @@ const selfServiceLinks = [
 
       <AnimatedSection client:visible animation="fadeInUp" delay={100} className="-mt-8 md:-mt-10 relative z-20">
         <section aria-label="Direct contact channels">
-          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {directChannels.map((channel) => (
               <a
                 href={channel.href}
@@ -245,40 +212,6 @@ const selfServiceLinks = [
                 ))}
               </div>
 
-              <div class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-                <div class="rounded-4xl border border-border bg-surface p-6 sm:p-8">
-                  <h3 class="font-serif text-2xl font-black text-site-text">What happens next</h3>
-                  <div class="mt-8 space-y-8">
-                    {nextSteps.map((step) => (
-                      <div class="relative pl-16">
-                        <div class="absolute left-0 top-0 flex h-11 w-11 items-center justify-center rounded-2xl border border-cta/30 bg-cta/10 font-black text-cta">
-                          {step.number}
-                        </div>
-                        <h4 class="font-serif text-lg font-black text-site-text">{step.title}</h4>
-                        <p class="mt-2 text-sm leading-relaxed text-site-sub">{step.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div class="rounded-4xl border border-border-strong bg-surface-2 p-6 sm:p-8">
-                  <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Helpful guardrails</p>
-                  <ul class="mt-5 space-y-4 text-sm leading-relaxed text-site-sub">
-                    <li class="flex gap-3">
-                      <span class="mt-0.5 font-black text-cta">•</span>
-                      <span>For established clients, secure portal messaging is the best fit for non-urgent clinical updates.</span>
-                    </li>
-                    <li class="flex gap-3">
-                      <span class="mt-0.5 font-black text-cta">•</span>
-                      <span>For records, billing, or referral paperwork, email usually gives the clearest paper trail.</span>
-                    </li>
-                    <li class="flex gap-3">
-                      <span class="mt-0.5 font-black text-cta">•</span>
-                      <span>If you are deciding whether therapy, testing, or medication management is the right fit, the intake form is the easiest place to start.</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </section>
         </AnimatedSection>
@@ -308,27 +241,6 @@ const selfServiceLinks = [
               </p>
             </div>
 
-            <div class="rounded-[2.5rem] border border-border bg-surface p-6 sm:p-8">
-              <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub">Not sure where to start?</p>
-              <h3 class="mt-3 font-serif text-2xl font-black text-site-text">Call or email the office and we will help route you.</h3>
-              <p class="mt-4 text-sm leading-relaxed text-site-sub">
-                You do not need to know the exact service name before reaching out. A brief description of what you need is enough.
-              </p>
-              <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={`tel:${PHONE_NUMBER}`}
-                  class="inline-flex items-center justify-center rounded-full bg-cta px-5 py-3 text-sm font-black text-cta-fg transition-colors hover:bg-cta/80"
-                >
-                  Call {PHONE_NUMBER_FORMATTED}
-                </a>
-                <a
-                  href={`mailto:${EMAIL_ADDRESS}`}
-                  class="inline-flex items-center justify-center rounded-full border border-border-strong bg-surface-soft px-5 py-3 text-sm font-black text-site-text transition-colors hover:border-cta/40 hover:text-cta"
-                >
-                  Email {EMAIL_ADDRESS}
-                </a>
-              </div>
-            </div>
           </section>
         </AnimatedSection>
       </div>
