@@ -20,7 +20,6 @@ const insuranceCards = insuranceProviders.map((provider) => ({
 }));
 
 const insuranceCategoryClass = categoryColorMap.insurance;
-const announcementCategoryClass = categoryColorMap.announcements;
 
 const insuranceLinks = [
   {
@@ -152,10 +151,10 @@ const insuranceLinks = [
               <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Aetna Better Health — Prior Auth & Appeals</h3>
               <p class="text-xs text-site-sub">Medical necessity, exclusions, prior authorization, and appeals for Kentucky Medicaid testing.</p>
             </a>
-            <a href="/blog/announcements/wellcare-kentucky-in-network" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
-              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${announcementCategoryClass}`}>Announcement</p>
-              <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Now In-Network with Wellcare of Kentucky</h3>
-              <p class="text-xs text-site-sub">Therapy and medication management under Wellcare benefits.</p>
+            <a href="/blog/insurance/assignment-and-provider-participation" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+              <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${insuranceCategoryClass}`}>Insurance</p>
+              <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Assignment, Credentialing, and Provider Participation</h3>
+              <p class="text-xs text-site-sub">Why a provider may be in-network but still limit new patients or certain services.</p>
             </a>
         </div>
         <div class="mt-4 text-center">

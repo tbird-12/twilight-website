@@ -33,7 +33,7 @@ At Twilight Psychology, we verify **eligibility** to make sure the plan is activ
 
 Two people can have the same insurance company and still have very different coverage. One plan may have a low copay for therapy but no out-of-network benefits. Another may cover testing only after prior authorization and after a deductible is met.
 
-That is why we do not rely on the insurance company name alone. We look at the specific member plan, network status, service type, and any prior-authorization requirements before a testing appointment or longer course of care is scheduled. The same insurance card that covers therapy may still exclude a school evaluation, guardianship report, or benefits-related assessment.
+That is why we do not rely on the insurance company name alone. We look at the specific member plan, network status, service type, and any prior-authorization requirements before a testing appointment or longer course of care is scheduled. The same insurance card that covers therapy may still exclude a school evaluation, guardianship report, or benefits-related assessment. If you have ever wondered why an in-network provider may still be closed to new patients or limit certain services, read [What Insurance Assignment Means for Providers](/blog/insurance/assignment-and-provider-participation).
 
 ---
 

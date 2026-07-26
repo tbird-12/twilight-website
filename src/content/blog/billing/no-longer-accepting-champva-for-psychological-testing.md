@@ -27,7 +27,7 @@ Over time, our team has faced several recurring problems when trying to bill CHA
 - **Extensive administrative follow-up** for claims that already require substantial staff time
 - **Extensive documentation requirements** that still often end in denial
 
-As a practice, we cannot continue carrying the financial and administrative burden created by these requirements. We will cease to accept CHAMPVA as primary coverage for psychological testing.
+As a practice, we cannot continue carrying the financial and administrative burden created by these requirements. We will cease to accept CHAMPVA as primary coverage for psychological testing. If you want the broader context behind decisions like this, see [What Insurance Assignment Means for Providers](/blog/insurance/assignment-and-provider-participation).
 
 
 ## What CHAMPVA clients can still use at Twilight
@@ -49,4 +49,5 @@ We know this change may be frustrating, especially for families who have been tr
 - [Accepted Insurances](/resources/insurances-accepted) — Learn how coverage can differ by service type
 - [Fees & Insurance](/resources/fees) — Review self-pay rates and insurance notes for evaluations, therapy, and medication management
 - [Understanding Health Insurance: Deductibles, copays, eligibility, and Benefits](/blog/insurance/understanding-health-insurance) — A broader guide to plan rules, prior authorization, and service-specific coverage
+- [What Insurance Assignment Means for Providers](/blog/insurance/assignment-and-provider-participation) — Why a clinician may stay credentialed with a plan while limiting certain services or new patients
 - [Contact](/contact) — Reach out before scheduling if you want help reviewing primary vs secondary coverage
