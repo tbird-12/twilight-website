@@ -35,25 +35,25 @@ These terms overlap, but they are not identical. A clinician can be credentialed
 
 A provider may be fully credentialed with an insurance plan and still choose to stop taking new clients for that plan for several practical reasons.
 
-### Continuity of care for existing patients
+### A. Continuity of care for existing patients
 
 Many clinicians prioritize the patients they are already treating. If a practice is already carrying a full caseload, the clinician may decide not to open new insurance-based slots so they can maintain continuity of care for established patients.
 
 This is especially common in mental health, where ongoing therapy and treatment plans can be emotionally and clinically complex. A clinician may decide that protecting the stability of current patients is more important than accepting a new referral who would need to be started under the same plan terms.
 
-### Rate cuts and lower reimbursement
+### B. Rate cuts and lower reimbursement
 
 Insurance reimbursement is not always stable. When a payer reduces payment rates or changes the fee schedule, a practice may need to reassess whether it is financially sustainable to continue accepting that plan for new patients.
 
 Even when a provider remains credentialed, the practice may decide to limit panel size or stop taking new patients for that plan if the allowed payments no longer support the time and expertise required for evaluation, treatment planning, documentation, and follow-up.
 
-### Caps on patient volume under insurance or Medicaid
+### C. Caps on patient volume under insurance or Medicaid
 
 Some practices set a cap on how many patients they will carry under a given payer or program. This may be a practical response to patient demand, staffing limits, the amount of paperwork required, and the risk of overextension.
 
 This can be especially relevant with Medicaid or other publicly funded programs when the reimbursement rate is low relative to the time needed for treatment, progress notes, care coordination, and claim follow-up. A practice may decide to keep the number of patients under a certain payer below a certain threshold to preserve financial sustainability.
 
-### Administrative burden, prompt payment, and claim follow-up
+### D. Administrative burden, prompt payment, and claim follow-up
 
 Insurance participation can create a significant administrative load. That load may include:
 
@@ -65,13 +65,13 @@ Insurance participation can create a significant administrative load. That load 
 
 Some plans also have slower payment cycles or more frequent claim issues. A clinician may decide that the extra administrative effort is no longer worth the financial return for new patients, even if the practice remains credentialed.
 
-### Exposure to claim problems and payment disputes
+### E. Exposure to claim problems and payment disputes
 
 A clinician can also decide to limit exposure to a payer when the plan has a history of low reimbursement, denial patterns, billing confusion, or repeated payment disputes. That choice is not unusual. It is a business decision meant to reduce risk and protect the practice from ongoing claim problems or unpaid balances.
 
-### Some services are easier to support through insurance than others
+### F. Ease of support through insurance for Services
 
-At Twilight Psychology, therapy and medication management are often the clearest in-network services. Psychological testing can be different because it may require more prior authorization, more medical-necessity documentation, and tighter limits on the number of hours a plan will approve.
+At Twilight Psychology, therapy and medication management are often the clearest in-network services. Psychological testing can be different because it may require more effort for prior authorization, more medical-necessity documentation, and tighter limits on the number of hours a plan will approve to justify financial feasibility.
 
 So a practice may still accept an insurance plan generally, while limiting a specific service line under that plan. That is often easier for prospective clients to understand than thinking of insurance acceptance as a simple yes-or-no question.
 
