@@ -117,25 +117,6 @@ const routingHelpers: ContactChannel[] = [
   },
 ];
 
-const expectationHighlights = [
-  {
-    label: "Response timing",
-    value: "Reviewed during business hours",
-    detail: "Messages sent after hours are queued for the next business day.",
-  },
-  {
-    label: "Business hours",
-    value: "Mon - Fri · 9 AM - 7 PM",
-    detail: "Weekend visits may be available by appointment, but office routing happens on weekdays.",
-  },
-  {
-    label: "Privacy",
-    value: "Use the portal for sensitive details",
-    detail: "Portal messaging is the best fit for non-urgent clinical communication once you are an established client.",
-  },
-];
-
-
 const selfServiceLinks = [
   {
     href: "/resources/faq",
@@ -200,30 +181,6 @@ const selfServiceLinks = [
       </AnimatedSection>
 
       <div class="mt-10 grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
-        <AnimatedSection client:visible animation="fadeInUp" delay={150}>
-          <section class="aurora-panel rounded-[2.5rem] border border-border bg-surface-soft p-6 sm:p-8 md:p-10">
-            <div class="flex flex-col gap-8">
-              <div>
-                <p class="text-xs font-black uppercase tracking-[0.24em] text-cta">What to expect</p>
-                <h2 class="mt-3 font-serif text-3xl font-black text-site-text">Calm, clear routing from first message to next step.</h2>
-                <p class="mt-4 max-w-3xl text-site-sub leading-relaxed">
-                  The contact page is meant to lower the guesswork. If you are not sure which option is best, start with the one that feels closest and we will help route the rest.
-                </p>
-              </div>
-
-              <div class="grid gap-4 sm:grid-cols-3">
-                {expectationHighlights.map((item) => (
-                  <div class="rounded-[1.75rem] border border-border bg-surface p-5">
-                    <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub">{item.label}</p>
-                    <p class="mt-3 text-lg font-black text-site-text">{item.value}</p>
-                    <p class="mt-2 text-sm leading-relaxed text-site-sub">{item.detail}</p>
-                  </div>
-                ))}
-              </div>
-
-            </div>
-          </section>
-        </AnimatedSection>
 
         <AnimatedSection client:visible animation="slideInRight" delay={200}>
           <section class="space-y-6">
@@ -250,6 +207,26 @@ const selfServiceLinks = [
               </p>
             </div>
 
+          </section>
+        </AnimatedSection>
+
+        <AnimatedSection client:visible animation="fadeInUp" delay={150}>
+          <section class="aurora-panel rounded-[2.5rem] border border-border bg-surface-soft p-6 sm:p-8 md:p-10">
+            <div class="flex flex-col gap-8">
+              <div>
+                <p class="text-xs font-black uppercase tracking-[0.24em] text-cta">Contact Us</p>
+                <h2 class="mt-3 font-serif text-3xl font-black text-site-text">Staff Availability</h2>
+              </div>
+
+              <div class="space-y-2">
+                <p class="text-sm font-semibold">Business Open: <span class="font-black">Monday — Friday</span></p>
+                <p class="text-sm font-semibold">Admin hours: <span class="font-black">9 AM — 7 PM</span></p>
+                <p class="mt-3">Call: <a href={`tel:${PHONE_NUMBER}`} class="text-cta underline hover:text-site-text transition-colors font-black">{PHONE_NUMBER_FORMATTED}</a></p>
+                <p>Email address: <a href={`mailto:${EMAIL_ADDRESS}`} class="text-cta underline hover:text-site-text transition-colors font-black">{EMAIL_ADDRESS}</a></p>
+                <p class="text-sm text-site-sub">Fax: <span class="font-black">{FAX_NUMBER_FORMATTED}</span></p>
+              </div>
+
+            </div>
           </section>
         </AnimatedSection>
       </div>
