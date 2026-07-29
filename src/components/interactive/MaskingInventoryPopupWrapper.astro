@@ -1,0 +1,22 @@
+---
+/**
+ * Renders the MaskingInventoryPopup only on targeted blog posts.
+ * The check happens at build time — no popup JS is shipped to other pages.
+ */
+import MaskingInventoryPopup from "./MaskingInventoryPopup";
+
+const TARGET_SLUGS = [
+  "clinical/autism-evaluation-lexington-ky",
+  "clinical/neuropsychological-vs-psychoeducational-evaluation",
+  "clinical/adult-autism-testing-kentucky",
+] as const;
+
+interface Props {
+  postSlug: string;
+}
+
+const { postSlug } = Astro.props;
+const isTarget = (TARGET_SLUGS as readonly string[]).includes(postSlug);
+---
+
+{isTarget && <MaskingInventoryPopup client:load />}

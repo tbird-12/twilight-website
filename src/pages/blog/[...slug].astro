@@ -8,6 +8,7 @@ import PostCard from "../../components/blog/PostCard.astro";
 import { getCategoryMeta } from "../../data/blogCategories";
 import { formatBlogDate, hasDistinctUpdatedDate } from "../../utils/blogDates";
 import logoAsset from "../../assets/images/logo.png";
+import MaskingInventoryPopupWrapper from "../../components/interactive/MaskingInventoryPopupWrapper.astro";
 
 function getHeroImageClasses(isPortrait: boolean) {
   if (isPortrait) {
@@ -244,7 +245,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     </nav>
 
     <!-- Post header -->
-    <header class="aurora-panel mb-10 rounded-[2rem] border border-border bg-surface-soft px-5 py-6 sm:px-8 sm:py-8">
+    <header class="aurora-panel mb-10 rounded-4xl border border-border bg-surface-soft px-5 py-6 sm:px-8 sm:py-8">
       <CategoryBadge category={category} size="md" />
 
       <h1 class="blog-gradient-text fluid-display-md font-heading font-bold mt-4 mb-5">
@@ -409,4 +410,6 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
       </div>
     </div>
   </section>
+
+  <MaskingInventoryPopupWrapper postSlug={post.id} />
 </BlogLayout>
