@@ -226,7 +226,11 @@ const qualityCareItems = [
         <div class="bento-grid reveal-children w-full gap-5">
           {
             services.map((service) => (
-              <div class={`group homepage-service-card homepage-card-strong glass-card-premium ${service.cardClass ?? ""} relative flex h-full flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10`}>
+              <a
+                href={service.link}
+                data-astro-prefetch="viewport"
+                class={`group homepage-service-card homepage-card-strong glass-card-premium ${service.cardClass ?? ""} relative flex h-full flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2`}
+              >
                 <div class="relative z-10 flex h-full flex-col">
                   <div class="mb-3 flex items-center gap-2">
                     <Icon
@@ -245,16 +249,14 @@ const qualityCareItems = [
                     {service.desc}
                   </p>
 
-                  <a
-                    href={service.link}
-                    data-astro-prefetch="viewport"
+                  <span
                     class="mt-auto inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors"
                   >
                     Explore Service
-                    <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all" />
-                  </a>
+                    <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all" aria-hidden="true" />
+                  </span>
                 </div>
-              </div>
+              </a>
             ))
           }
         </div>

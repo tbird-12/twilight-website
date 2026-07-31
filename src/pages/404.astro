@@ -22,7 +22,8 @@ import logo from "../assets/images/logo.png";
       <Image
         src={logo}
         class="w-full h-full object-cover"
-        alt="Background"
+        alt=""
+        aria-hidden="true"
         loading="lazy"
         widths={[400, 800]}
         sizes="100vw"
@@ -33,15 +34,13 @@ import logo from "../assets/images/logo.png";
         Page Not Found
       </span>
       
-      <h1 class="font-serif text-8xl md:text-9xl font-black text-site-text mb-6 tracking-tighter leading-[0.9]">
-        <span class="text-cta">
-          404
-        </span>
-      </h1>
-      
-      <h2 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-6 tracking-tight">
+      <p class="font-serif text-8xl md:text-9xl font-black text-cta mb-6 tracking-tighter leading-[0.9]" aria-hidden="true">
+        404
+      </p>
+
+      <h1 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-6 tracking-tight">
         Lost in the Twilight
-      </h2>
+      </h1>
       
       <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed mb-12">
         The page you're looking for doesn't exist or has been moved to another location.

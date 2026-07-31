@@ -34,7 +34,8 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
     type="button"
     data-theme-toggle
     class="lp-theme-toggle"
-    aria-label="Toggle light/dark mode"
+    aria-label="Switch to light mode"
+    aria-pressed="true"
   >
     <svg class="lp-toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="4"></circle>
@@ -275,12 +276,24 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
       return 'dark';
     };
 
+    const syncToggleState = () => {
+      const isDark = getCurrentTheme() === 'dark';
+      document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+        btn.setAttribute('aria-pressed', String(isDark));
+        btn.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      });
+    };
+
     const applyTheme = (theme: string) => {
       root.classList.remove('light', 'dark');
       root.classList.add(theme);
       root.style.colorScheme = theme;
       localStorage.setItem('theme', theme);
+      syncToggleState();
     };
+
+    // Sync on load to reflect the theme already applied by the inline script
+    syncToggleState();
 
     document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
       btn.addEventListener('click', () => {
