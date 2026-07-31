@@ -52,6 +52,15 @@ const GOOGLE_MAP_EMBED_URL = `https://www.google.com/maps?q=${encodeURIComponent
 
 const directChannels: ContactChannel[] = [
   {
+    eyebrow: "Client portal",
+    title: "Existing client login",
+    description:
+      "Current clients can message their provider, review billing and clinical reports, and manage upcoming appointments in one place.",
+    href: SIGN_IN_LINK,
+    action: "Portal sign in",
+    external: true,
+  },
+  {
     eyebrow: "Refer a client",
     title: "Referral line",
     description:
@@ -66,15 +75,6 @@ const directChannels: ContactChannel[] = [
       "Share what kind of support you need and our intake flow will help route you to the right service.",
     href: WIDGET_LINK,
     action: "Open intake form",
-    external: true,
-  },
-  {
-    eyebrow: "Secure messaging",
-    title: "Existing client login",
-    description:
-      "Current clients can message their provider, review documents, and manage upcoming appointments in one place.",
-    href: SIGN_IN_LINK,
-    action: "Portal sign in",
     external: true,
   },
 ];
