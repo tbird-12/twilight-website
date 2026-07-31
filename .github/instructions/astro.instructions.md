@@ -102,3 +102,34 @@ These conventions have been reviewed and applied across all pages. Do not sugges
 - The practice is **neuro-affirming** and serves **neurodivergent** individuals — this should be reflected in page copy.
 - "Personality Evaluations" is the correct term (not "Personality Disorder Evaluations") — applies to titles, descriptions, and hero text.
 - For `src/pages/resources/insurances-accepted.astro`, preserve the current dark-mode UX: insurance logo cards stay on a light neutral surface with high-contrast dark text so carrier logos remain readable. Do not restyle that page to use dark cards or low-contrast muted text in dark mode.
+
+---
+
+## Accessibility Requirements
+
+### Phone and booking CTA links
+All `<a href="tel:...">` links **must** include an `aria-label` that names the action and the context (which service/page it refers to). Never rely on visible text alone for phone links — screen readers announce the raw tel: URI without the label:
+```astro
+<a href={`tel:${PHONE_NUMBER}`}
+   aria-label="Call Twilight Psychology to schedule an ADHD evaluation">
+  Contact Our Office
+</a>
+```
+Booking CTAs (links to the scheduler widget) similarly need descriptive `aria-label` when the visible text is generic (e.g., "Book Evaluation").
+
+### Service schema on every service page
+Every page under `src/pages/services/` must pass a `Service` structured-data block via `<Schema slot="page-schema">`. See `src/pages/services/autism-testing.astro` for the canonical pattern. Missing schema on a service page is a bug to fix, not an optional improvement.
+
+### `prefers-reduced-motion`
+`AnimatedSection` and any custom animation must respect `prefers-reduced-motion`. If you add new animation logic outside `AnimatedSection`, add the media query guard:
+```css
+@media (prefers-reduced-motion: reduce) {
+  /* disable or collapse the animation */
+}
+```
+
+### Image alt text
+- `<Image>` from `astro:assets`: always provide a meaningful `alt` (describe content, not "image of...").
+- Decorative images: `alt=""` with `role="presentation"`.
+- Never omit `alt` — the build will warn, but treat it as a blocker.
+

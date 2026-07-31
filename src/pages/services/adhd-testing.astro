@@ -1,8 +1,41 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Schema from "../../components/Schema.astro";
 import { PHONE_NUMBER } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const adhdSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "ADHD Testing at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "ADHD testing Lexington KY",
+    "ADHD evaluation Lexington KY",
+    "ADHD testing Kentucky",
+    "ADHD testing Medicaid Kentucky",
+    "adult ADHD testing Lexington KY",
+    "ADHD testing for children Kentucky",
+    "ADHD assessment near me",
+    "ADHD evaluation adults Kentucky",
+  ],
+  description:
+    "Neuro-affirming ADHD evaluations in Lexington, KY at Twilight Psychology. Comprehensive testing for children, teens, and adults, including high-masking presentations. Insurance and Kentucky Medicaid accepted.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
+
 
 const adhdInsights = [
   {
@@ -29,9 +62,10 @@ const adhdInsights = [
 ---
 
 <Layout
-  title="ADHD Testing in Lexington, KY"
-  description="ADHD evaluations in Lexington, KY for children, teens, and adults. Neuro-affirming testing with insurance options and self-pay reports in 7 days."
+  title="ADHD Testing KY"
+  description="ADHD evaluations in Lexington, KY for children, teens, and adults. Insurance and Kentucky Medicaid accepted. Neuro-affirming testing with self-pay reports delivered in 7 days."
 >
+  <Schema slot="page-schema" schema={adhdSchema} />
     <div class="max-w-4xl mx-auto px-6">
       <div class="prose prose-lg max-w-none prose-custom
                   prose-p:text-site-text
@@ -212,6 +246,7 @@ const adhdInsights = [
         </p>
         <a
           href={`tel:${PHONE_NUMBER}`}
+          aria-label="Call Twilight Psychology to schedule an ADHD evaluation"
           class="block w-full py-4 bg-cta text-cta-fg text-center font-black rounded-xl hover:bg-cta/80 hover:scale-105 transition-all duration-300 shadow-lg shadow-cta/10"
         >
           Contact Our Office

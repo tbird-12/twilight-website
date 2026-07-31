@@ -201,3 +201,51 @@ Before publishing any page or blog post that references the following, verify th
 | Clinician license states | `src/data/clinicianProfiles.ts` |
 | Insurance panels | `src/data/insurances.ts` |
 | Staff names / credentials | `src/data/staff.ts` |
+
+---
+
+## Analytics-Derived Rules (July 2026)
+
+These rules were derived from two months of Google Analytics and Search Console data and address patterns that directly hurt CTR and ranking.
+
+### Medicaid keyword coverage (critical)
+High-impression, near-zero-click searches at position 1–2 for Medicaid queries indicate that Google shows the pages for these terms but the snippet doesn't signal Medicaid acceptance, causing users to skip:
+- `adhd testing medicaid` — 63 impressions, 0 clicks, avg position **1.54**
+- `adult autism diagnosis near me medicaid` — 56 impressions, 0 clicks, avg position **1.50**
+- `adult autism testing near me medicaid` — 51 impressions, 0 clicks, avg position **2.80**
+- `adhd testing that takes insurance` — 50 impressions, 0 clicks, avg position **24.6**
+
+**Rules:**
+- Every service page meta description **must** include "Insurance and Kentucky Medicaid accepted" or equivalent phrasing when the service is covered by Medicaid.
+- Service page body copy must include a dedicated insurance/Medicaid section visible above the fold or in the sidebar — not buried at the bottom.
+- Do not rely only on the `/resources/insurances-accepted` page to carry Medicaid signals — each service page must contain them independently.
+
+### Title tag accuracy for ADHD page
+The approved title for ADHD testing (from the audited title list) is **`ADHD Testing KY`**, not `"ADHD Testing in Lexington, KY"`. The shorter form matches more search variants and stays within the 60-char limit. Do not revert to the longer form.
+
+### Schema parity between service pages
+Every service page (autism, ADHD, therapy, medication management, evaluations) must have a `Service` schema block passed via `<Schema slot="page-schema">`. The autism page has this; any new or updated service page must also include it. See `src/pages/services/autism-testing.astro` as the canonical reference.
+
+### `aria-label` on phone and booking CTAs
+All `<a href="tel:...">` links must include an `aria-label` that names the action and context:
+```html
+<a href={`tel:${PHONE_NUMBER}`}
+   aria-label="Call Twilight Psychology to schedule an ADHD evaluation">
+  Contact Our Office
+</a>
+```
+Do not leave phone links with generic visible text as the only label — screen readers announce the raw number, not the purpose.
+
+### High-impression opportunities to target with blog content
+These queries appear regularly in impressions but have 0 clicks, signalling a content gap. Each is a strong candidate for a blog post or service-page section update:
+- `aetna neuropsychological testing` — 173 impressions, position ~11 (needs in-body Aetna + testing mention on ADHD/autism pages or a blog post)
+- `adolescent therapist near me` — 108 impressions, position ~37 (child/teen therapy page needs stronger ranking signals)
+- `adhd treatment lexington ky` — 54 impressions, position ~16 (ADHD page or blog post)
+- `adhd assessment for adults near me` — 54 impressions, position ~13.5
+
+### CPT code blog post — untapped traffic
+`/blog/billing/common-cpt-codes-used-in-psychological-testing/` drives 40 organic clicks and 7,524 impressions but has 0 engaged sessions (users who click through don't engage). This post needs a revised intro and an internal link CTA to the services or contact page to capture that traffic.
+
+### `/welcome` landing page
+This page currently receives organic impressions (`/welcome/` — 28 impressions, 1 click, position 6.46). It is a paid-ad landing page and **must** be `robots="noindex, follow"`. Verify it remains excluded from the sitemap filter in `astro.config.mjs`.
+
