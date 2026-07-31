@@ -110,17 +110,19 @@ For **Medicaid clients under age 18**, additional codes such as **H0032** and **
 
 These are not the primary psychological testing codes, but they can be part of the broader care process for children and adolescents depending on payer rules and the services provided.
 
-## What we will cover next
+## Other billing guides in this series
 
-This page focuses only on **psychological testing**. We plan to add dedicated billing pages for:
+This page focuses only on **psychological testing**. See our companion pages for the other service lines:
 
-- **Therapy codes** used for ongoing counseling visits
-- **Medication management E/M codes** used for psychiatric prescribing visits
+Those dedicated guides are now available:
 
-Until those guides are published, you can review our [therapy services](/services/therapy) and [medication management services](/services/medication-management) pages for a general overview of those service lines.
+- [Therapy CPT Codes Explained](/blog/billing/cpt-codes-therapy-services) — 90837, 90834, 90832, 90791, 90846, 90785, 96127, and H0032 explained
+- [Medication Management CPT Codes Explained](/blog/billing/cpt-codes-medication-management) — E/M codes and the 90833 add-on used in psychiatric prescribing visits
 
 ## Related resources
 
+- [Therapy CPT Codes Explained](/blog/billing/cpt-codes-therapy-services) — Individual and family therapy billing codes explained
+- [Medication Management CPT Codes Explained](/blog/billing/cpt-codes-medication-management) — E/M codes and the 90833 add-on used in psychiatric prescribing visits
 - [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — How to read the claim summary your insurance sends after processing
 - [Understanding Health Insurance: Deductibles, copays, eligibility, and Benefits](/blog/insurance/understanding-health-insurance) — A broader look at coverage types and plan rules
 - [Psychological Evaluations](/services/psychological-evaluations) — Overview of evaluation services at Twilight Psychology
