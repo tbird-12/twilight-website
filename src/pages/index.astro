@@ -66,48 +66,52 @@ const services = [
 ];
 
 const problemPoints = [
-  {
-    title: "Psychoeducational evaluations are harder to access",
-    desc: "Most practices refer out IQ and achievement testing to specialists and limit the battery to what insurance allows at clinician licensure — leaving families without the documentation depth that IEP, 504, and accommodation decisions actually require. Twilight Psychology fills that gap.",
+{
+    title: "You received a report but it didn't help your school team",
+    desc: "Many families leave an evaluation with a label but no clear next steps. IEP and 504 teams need documentation with specific testing scores and recommendations, not a summary letter.",
+  },  
+{
+    title: "You waited months for answers but the evaluation was limited",
+    desc: "Many agencies limit assessments to brief screenings or single-domain evaluations, leaving families to seek additional evaluations elsewhere.",
   },
   {
-    title: "PDA is routinely missed or misdiagnosed",
-    desc: "Demand-avoidant autism presentations are often labelled oppositional or non-compliant. Finding a clinician who evaluates specifically for PDA traits within a neuro-affirming framework remains genuinely rare.",
+    title: "Your child was called \"oppositional\" or \"lazy\"",
+    desc: "Demand-avoidant and high-masking autism profiles are frequently missed or mislabeled in standard evaluations. The right framework changes everything about how a child is supported.",
   },
   {
-    title: "Medication access can take months",
-    desc: "Wait times for psychiatric prescribers — especially those who can prescribe controlled substances for ADHD — are long. A short access window to a qualified NP makes a real clinical difference.",
+    title: "You found a prescriber but then waited four months",
+    desc: "Access to a psychiatric prescriber for ADHD — especially one who can prescribe stimulants — is genuinely hard to get in Kentucky. Months-long waits are the norm, not the exception.",
   },
   {
-    title: "A diagnosis without follow-through isn't enough",
-    desc: "An evaluation is only valuable if the next steps are clear. Having therapy and medication management along with assessment available in one practice changes the outcome for families seeking answers to their child's developmental needs.",
+    title: "After the diagnosis, the system left you on your own",
+    desc: "An evaluation is only the beginning. Without therapy and medication management in the same practice, families end up navigating referrals, waitlists, and disconnected care all over again.",
   },
 ];
 
 const qualityCareItems = [
   {
-    title: "IEP-ready documentation most practices refer out",
-    desc: "Private psychoeducational evaluations for learning differences, giftedness, 2e, and IEP or 504 documentation — written for school teams and families.",
+    title: "IEP-ready reports with IQ and achievement testing",
+    desc: "We include the full psychoeducational battery — IQ, achievement, and processing scores — that school teams need for IEP, 504, and accommodation decisions. Most practices refer this out.",
     link: "/specialties/psychoeducational-evaluations",
   },
   {
-    title: "Self-pay reports in 7 days — no rush fee",
-    desc: "Self-pay evaluations typically completed and reported within seven days of intake, without an expedited charge.",
+    title: "Self-pay evaluations reported in 7 days",
+    desc: "Most self-pay clients receive their completed report within seven days of intake. No expedited fee — that's just our standard turnaround.",
     link: "/resources/waitlist-times",
   },
   {
-    title: "PDA evaluation — a rare in-house specialty",
-    desc: "Demand-avoidant and high-masking autism profiles assessed by clinicians who understand PDA as a distinct presentation.",
+    title: "PDA-informed autism evaluations",
+    desc: "Our clinicians evaluate specifically for demand-avoidant and high-masking autism profiles — a specialty most practices in Kentucky do not offer.",
     link: "/specialties/pda-profile",
   },
   {
-    title: "Short wait to prescribe — including stimulants",
-    desc: "Our psychiatric NP prescribes controlled substances when clinically appropriate, with a short current access window.",
+    title: "Psychiatric NP with a short current wait",
+    desc: "Medication management is available in-house through our dedicated NP, including stimulant prescriptions for ADHD when clinically appropriate.",
     link: "/services/medication-management",
   },
   {
-    title: "Evaluation, therapy, and medication in one practice",
-    desc: "Continuity from report to ongoing care -- therapy and medication management available in-house for follow-through.",
+    title: "Evaluation → therapy → medication in one practice",
+    desc: "Your report doesn't end your relationship with us. Therapy and medication management are available in-house so follow-through care doesn't require starting over somewhere new.",
     link: "/services/therapy/after-evaluation",
   },
 ];
@@ -155,35 +159,39 @@ const qualityCareItems = [
         <div class="problem-grid">
           <!-- Left: bold statement -->
           <div class="problem-statement">
-            <p class="homepage-section-label">The Reality</p>
+            <p class="homepage-section-label">Sound familiar?</p>
             <h2
               class="fluid-display-sm font-serif font-black text-site-text mb-6"
             >
-              Getting Answers
-              <span class="text-cta block sm:inline"> Should Not Be This Hard</span>
+              The System
+              <span class="text-cta block sm:inline"> Wasn't Built for This</span>
             </h2>
             <p class="max-w-lg text-left text-base font-medium leading-relaxed text-site-sub sm:text-lg">
-              Twilight Psychology is built around the psychoeducational and psychological evaluations that 
-              are genuinely hard to access in one practice — comprehensive assessments for 
-              <abbr title="Individualized Education Program">IEP</abbr> and 504 decisions, twice-exceptional and gifted documentation, and 
-              specialty testing for <abbr title="Attention-Deficit/Hyperactivity Disorder">ADHD</abbr>, autism, dyslexia, and learning differences. 
-              We provide the clinical depth families need when school-systems or agencies without a Licensed Psychologist fall short. 
-              Therapy and medication management are available in-house for integrated follow-through care.
-              <a href="/specialties" class="text-cta font-semibold hover:underline">
-                Learn about our Specialties
+              Most families seeking answers for <abbr title="Attention-Deficit/Hyperactivity Disorder">ADHD</abbr>, autism, learning differences, 
+              or giftedness run into the same walls: long waits, shallow evaluations, reports that schools can't act on, 
+              and no clear path forward after the diagnosis.
+            </p>
+            <p class="max-w-lg text-left text-base font-medium leading-relaxed text-site-sub sm:text-lg mt-4">
+              Twilight Psychology was built specifically for those gaps — with the clinical depth, 
+              specialty breadth, and in-house follow-through care that most practices don't offer in one place.
+              <a href="/specialties" class="text-cta font-semibold hover:underline ml-1">
+                See our specialties →
               </a>
             </p>
           </div>
 
           <!-- Right: staggered pain points -->
           <div class="problem-points glass-card-premium rounded-4xl px-6 py-4 sm:px-8 sm:py-5" role="list">
-            {problemPoints.map((point) => (
+            {problemPoints.map((point, i) => (
               <div class="problem-point" role="listitem">
                 <span class="problem-point-marker" aria-hidden="true"></span>
                 <div>
-                  <h3 class="font-sans text-base sm:text-lg font-bold text-site-text mb-1">
-                    {point.title}
-                  </h3>
+                  <div class="flex items-center gap-2 mb-1">
+                    <!--span class="text-[10px] font-black uppercase tracking-widest text-cta/60" aria-hidden="true"></span-->
+                    <h3 class="font-sans text-base sm:text-lg font-bold text-site-text">
+                      {point.title}
+                    </h3>
+                  </div>
                   <p class="text-sm text-site-sub leading-relaxed">
                     {point.desc}
                   </p>
@@ -274,28 +282,28 @@ const qualityCareItems = [
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="mx-auto mb-10 max-w-3xl text-center">
-          <p class="homepage-section-label">Why families choose us</p>
+          <p class="homepage-section-label">How we're different</p>
           <h2
             class="mb-5 text-3xl font-serif font-black tracking-[-0.025em] text-site-text sm:text-4xl lg:text-[2.7rem]"
           >
-            <span class="text-cta">Specialized Care,</span> Five Distinct Advantages
+            <span class="text-cta">Answers You Deserve,</span> Care You Can Trust
           </h2>
           <p
             class="mx-auto max-w-2xl text-center text-base leading-relaxed text-site-sub sm:text-lg"
           >
-            Twilight Psychology offers the clinical depth, speed, 
-            and follow-through that distinguishes our evaluations from others.
+            Here's what's concretely different about Twilight Psychology — each one a direct response to the gaps families hit everywhere else.
           </p>
         </header>
 
         <div class="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-3 ">
           {
-            qualityCareItems.map((item) => (
+            qualityCareItems.map((item, i) => (
               <a
                 href={item.link}
                 data-astro-prefetch="viewport"
                 class="group homepage-card-strong glass-card-premium rounded-3xl p-6 sm:p-7 flex flex-col transition-all duration-300 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
               >
+                <span class="text-[10px] font-black uppercase tracking-widest text-cta/50 mb-3 block" aria-hidden="true">0{i + 1}</span>
                 <h3 class="font-serif text-base sm:text-lg font-black text-site-text mb-3 leading-tight group-hover:text-cta transition-colors">
                   {item.title}
                 </h3>
