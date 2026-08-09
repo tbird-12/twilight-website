@@ -67,9 +67,9 @@ These conventions have been reviewed and applied across all pages. Do not sugges
   - Autism Testing: `Autism Testing KY | Twilight Psychology`
   - Personality Evaluations: `Personality Evaluations KY | Twilight Psychology` (not "Personality Disorder Evaluations")
   - Medication Management: `Medication Management in KY | Twilight Psychology`
-  - Therapy hub: `Therapy in Kentucky | Neurodivergent, ADHD & Couples Counseling`
+  - Therapy hub: `Therapy in Kentucky | Neurodivergent, ADHD & Group Therapy`
   - Therapy clinicians: `Kentucky Therapists for Neurodivergence | Twilight Psychology`
-  - Couples Therapy: `Couples Therapy in Lexington, KY | Twilight Psychology`
+  - Group Therapy: `Group Therapy in Lexington, KY | Twilight Psychology`
   - Psychological Evaluations: `Psychological Evaluations Lexington KY | Twilight Psychology`
   - Psychoeducational: `Psychoeducational & 2E Evaluations KY | Twilight Psychology`
   - ESA Evaluations: `Emotional Support Animal Evaluations KY | Twilight Psychology` (full name, not abbreviation only)

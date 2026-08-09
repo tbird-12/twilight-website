@@ -58,7 +58,7 @@ export const specialties: Specialties[] = [
     { name: "Learning Disabilities" },
     { name: "Life Coaching" },
     { name: "Life Transitions" },
-    { name: "Marriage, Premarital, and Couples Counseling" },
+    { name: "Group Therapy" },
     { name: "Medication Management" },
     { name: "Men's Issues" },
     { name: "Mood Disorders" },

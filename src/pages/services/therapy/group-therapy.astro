@@ -1,0 +1,358 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Schema from "../../../components/Schema.astro";
+import { WIDGET_LINK } from "../../../data/resource";
+import PageHeroWrapper from "../../../components/PageHeroWrapper.astro";
+import AnimatedSection from "../../../components/react/primitives/AnimatedSection";
+import SidebarCta from "../../../components/react/composites/SidebarCta";
+
+const groups = [
+  {
+    id: "adult-parasocial",
+    title: "Parasocial Relationships & Connection — Adult DBT Skills Group",
+    badge: "Adults · Ages 18+",
+    leader: "Dr. Jonica Davis, Psy.D.",
+    leaderSlug: "jonica-davis",
+    support: "Ethan Puckett, Psy.D. (part-time support)",
+    format: "In-person · 8 sessions · 6–8 participants",
+    modality: "Dialectical Behavior Therapy (DBT)",
+    description:
+      "This group is designed for neurodivergent adults who have developed intense or all-consuming parasocial relationships — one-sided connections with individuals, ex-partners, media figures, streamers, or online personalities — and want to build real-world connection skills and reduce the harm those patterns can cause.",
+    details: [
+      "Parasocial bonds are common among neurodivergent individuals who find reciprocal social relationships harder to navigate. For some, these connections provide a sense of belonging; for others, they become a barrier to genuine connection, regulate emotions in ways that become hard to step back from, or substitute for needs that go unmet elsewhere.",
+      "Using a structured DBT skills framework, this group builds practical tools for emotional regulation, distress tolerance, interpersonal effectiveness, and mindfulness — all applied directly to real-life social situations. The group focuses on skill-building, not just processing, and is limited to 6–8 participants to protect a close, vetted environment.",
+      "Insurance is accepted for this group. Group members are screened individually before joining to ensure clinical fit and group safety.",
+    ],
+    skills: [
+      "Distress tolerance for intense emotional attachments",
+      "Mindfulness and reality-testing for parasocial investment",
+      "Interpersonal effectiveness for real-world relationships",
+      "Emotion regulation strategies adapted for neurodivergent adults",
+      "Building reciprocal connection skills",
+    ],
+    structure: [
+      { label: "Sessions", value: "8 sessions total" },
+      { label: "Group size", value: "6–8 participants (vetted)" },
+      { label: "Format", value: "In-person, Lexington KY" },
+      { label: "Modality", value: "DBT skills-based" },
+      { label: "Led by", value: "Dr. Jonica Davis, Psy.D." },
+      { label: "Insurance", value: "Accepted for covered diagnoses" },
+    ],
+  },
+  {
+    id: "teen-dnd",
+    title: "Dungeons & Dragons Social Skills Group — Teens",
+    badge: "Teens · Ages 10–14",
+    leader: "Dr. Ethan Puckett, Psy.D.",
+    leaderSlug: "ethan-puckett",
+    support: null,
+    format: "In-person · 8 sessions · 6–8 participants",
+    modality: "Skills-based / Therapeutic D&D",
+    description:
+      "A structured, therapist-led group for tweens and younger teens ages 10 to 14 that uses Dungeons & Dragons as the vehicle for building real social and emotional skills — collaboration, perspective-taking, problem-solving, turn-taking, and flexible thinking.",
+    details: [
+      "Dungeons & Dragons is more than a game here — it is a structured social laboratory. Every session involves navigating collaborative storytelling, negotiating with other players, reading emotional cues, tolerating uncertainty, and advocating for your character's needs. These are exactly the skills neurodivergent young people are often building.",
+      "Dr. Ethan Puckett leads the group with clinical intentionality, weaving skills-based content into sessions without disrupting the imaginative, engaging experience that makes D&D compelling. No prior D&D experience is needed — all materials are provided.",
+      "Group membership is limited to 6–8 teens and is vetted individually before joining. Insurance is accepted. Parents receive brief updates on group themes and skills covered after each session.",
+    ],
+    skills: [
+      "Collaborative storytelling and shared decision-making",
+      "Perspective-taking through character play",
+      "Flexible thinking and problem-solving under uncertainty",
+      "Managing frustration and practicing turn-taking",
+      "Building friendships with neurodivergent peers",
+    ],
+    structure: [
+      { label: "Ages", value: "10–14 years old" },
+      { label: "Sessions", value: "8 sessions total" },
+      { label: "Group size", value: "6–8 participants (vetted)" },
+      { label: "Format", value: "In-person, Lexington KY" },
+      { label: "Led by", value: "Dr. Ethan Puckett, Psy.D." },
+      { label: "Insurance", value: "Accepted for covered diagnoses" },
+    ],
+  },
+];
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const groupTherapySchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Group Therapy at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "group therapy Kentucky",
+    "DBT group therapy Lexington KY",
+    "neurodivergent group therapy Kentucky",
+    "teen group therapy Lexington KY",
+    "social skills group for teens Kentucky",
+    "parasocial relationship therapy",
+    "Dungeons and Dragons therapy group",
+    "group therapy insurance Kentucky",
+  ],
+  description:
+    "Neuro-affirming group therapy in Lexington, KY at Twilight Psychology. Adult DBT skills group focused on parasocial relationships, and a teen social skills group using Dungeons & Dragons. Both groups are in-person, insurance-accepted, and limited to 6–8 vetted participants.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: {
+    "@type": "State",
+    name: "Kentucky",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Group therapy programs",
+    itemListElement: groups.map((g) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "PsychologicalTreatment",
+        name: g.title,
+        description: g.description,
+      },
+    })),
+  },
+};
+---
+
+<Layout
+  title="Group Therapy in Lexington, KY"
+  description="Neuro-affirming group therapy in Lexington, KY. Adult DBT skills group for parasocial relationships and a teen D&D social skills group. Insurance accepted. Limited spots."
+>
+  <Schema slot="page-schema" schema={groupTherapySchema} />
+
+  <div class="max-w-4xl mx-auto px-6">
+    <div
+      class="prose prose-lg max-w-none prose-custom
+                prose-p:text-site-text
+                prose-headings:text-site-text
+                prose-strong:text-site-text
+                prose-li:text-site-text
+                mb-12"
+    >
+      <PageHeroWrapper
+        title="Group Therapy"
+        accentWord="Group"
+        badge="Neuro-Affirming Group Therapy"
+        subtitle="Two structured, therapist-led groups in Lexington, KY — one for neurodivergent adults, one for tweens and younger teens. Both in-person, insurance-accepted, and limited to 6–8 vetted participants."
+        size="lg"
+      />
+
+      <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2 space-y-10">
+          <AnimatedSection client:visible animation="fadeInUp" delay={100}>
+            <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+              <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+                Why group therapy?
+              </h2>
+              <div class="space-y-5 text-site-text leading-relaxed text-lg">
+                <p>
+                  Group therapy offers something individual therapy cannot: a structured, safe space to
+                  practice real social and emotional skills alongside peers who share similar experiences.
+                  For neurodivergent individuals — children, teens, and adults alike — that shared
+                  context makes a meaningful difference.
+                </p>
+                <p>
+                  Both of our current groups are skills-focused rather than process-only, meaning
+                  participants leave each session with specific tools they can use. Groups are kept small
+                  (6–8 participants), carefully vetted for fit, and led by experienced clinicians. Insurance
+                  is accepted for covered diagnoses.
+                </p>
+              </div>
+            </section>
+          </AnimatedSection>
+        </div>
+
+        <aside class="space-y-8">
+          <AnimatedSection client:visible animation="slideInRight" delay={150}>
+            <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
+              <h3 class="font-serif text-xl font-black text-site-text mb-6">Group therapy navigation</h3>
+              <nav class="space-y-4">
+                <a
+                  href="#adult-parasocial"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Adult DBT skills group
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="#teen-dnd"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Teen D&D social skills group
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/therapy"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Therapy home
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/services/therapy/clinicians"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Therapy clinicians
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a
+                  href="/resources/fees"
+                  class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
+                >
+                  Fees and insurance
+                  <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </nav>
+            </div>
+          </AnimatedSection>
+
+          <SidebarCta
+            client:visible
+            title="Inquire about group therapy"
+            description="Our intake team can help determine if a group is a good clinical fit for you or your teen before the group begins."
+            buttonLabel="Schedule Intake"
+            buttonHref={WIDGET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+
+          <div class="p-6 bg-cta/10 rounded-3xl border border-cta/20">
+            <p class="text-xs font-black uppercase tracking-[0.24em] text-cta mb-2">Insurance</p>
+            <p class="text-sm text-site-text leading-relaxed mb-3">
+              Both groups accept insurance for covered mental health diagnoses. Contact our office
+              to verify your specific plan before joining.
+            </p>
+            <a
+              href="/resources/insurances-accepted"
+              class="inline-flex items-center gap-2 text-sm font-black text-cta hover:text-site-text transition-colors"
+            >
+              Review accepted plans
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Group detail sections -->
+      {
+        groups.map((group, idx) => (
+          <section
+            id={group.id}
+            class="max-w-7xl mx-auto px-4 mt-24 scroll-mt-20"
+          >
+            <AnimatedSection client:visible animation="fadeInUp" delay={100 + idx * 50}>
+              <div class="bg-surface-soft border border-border rounded-[2.5rem] overflow-hidden">
+                <div class="p-8 md:p-10 border-b border-border">
+                  <span class="inline-block rounded-full bg-cta/10 border border-cta/20 px-4 py-1.5 text-xs font-black uppercase tracking-[0.22em] text-cta mb-4">
+                    {group.badge}
+                  </span>
+                  <h2 class="font-serif text-3xl font-black text-site-text mb-4 tracking-tight">
+                    {group.title}
+                  </h2>
+                  <p class="text-site-sub leading-relaxed text-lg">{group.description}</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-border">
+                  <!-- Details -->
+                  <div class="p-8 md:p-10 space-y-8">
+                    <div>
+                      <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub mb-4">About this group</p>
+                      <div class="space-y-4 text-site-sub leading-relaxed text-sm">
+                        {group.details.map((para) => (
+                          <p>{para}</p>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub mb-4">Skills covered</p>
+                      <ul class="space-y-2">
+                        {group.skills.map((skill) => (
+                          <li class="flex items-start gap-3 text-sm text-site-text">
+                            <span class="mt-0.5 h-5 w-5 rounded-full bg-cta/10 border border-cta/20 flex items-center justify-center shrink-0">
+                              <span class="text-cta text-xs">✓</span>
+                            </span>
+                            {skill}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Structure -->
+                  <div class="p-8 md:p-10 space-y-8">
+                    <div>
+                      <p class="text-xs font-black uppercase tracking-[0.24em] text-site-sub mb-4">Group structure</p>
+                      <dl class="space-y-3">
+                        {group.structure.map((item) => (
+                          <div class="flex items-start justify-between gap-4 py-2 border-b border-border last:border-0">
+                            <dt class="text-xs font-black uppercase tracking-[0.18em] text-site-sub shrink-0">{item.label}</dt>
+                            <dd class="text-sm font-semibold text-site-text text-right">{item.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </div>
+
+                    <div class="rounded-2xl bg-surface border border-border p-5">
+                      <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub mb-3">Group leader</p>
+                      <a
+                        href={`/about/clinicians/${group.leaderSlug}`}
+                        class="text-sm font-black text-cta hover:text-cta/80 transition-colors"
+                      >
+                        {group.leader}
+                      </a>
+                      {group.support && (
+                        <p class="text-xs text-site-sub mt-1">{group.support}</p>
+                      )}
+                    </div>
+
+                    <a
+                      href={WIDGET_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Schedule an intake to inquire about the ${group.title}`}
+                      class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-cta px-6 py-3 text-sm font-black text-cta-fg hover:bg-cta/80 transition-all"
+                    >
+                      Inquire About This Group
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+          </section>
+        ))
+      }
+
+      <section class="max-w-7xl mx-auto px-4 mt-24 mb-12">
+        <AnimatedSection client:visible animation="fadeInUp" delay={300}>
+          <div class="p-10 bg-linear-to-r from-cta/10 to-cta/10 border border-cta/20 rounded-[3rem] text-center">
+            <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+              Questions about group therapy?
+            </h2>
+            <p class="text-site-sub mb-8 max-w-2xl mx-auto">
+              Each group is carefully vetted to ensure a safe, productive experience for all members.
+              Contact our intake team to ask about fit, timing, and availability before you commit.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="/resources/new-client"
+                class="inline-flex items-center justify-center px-8 py-3 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all"
+              >
+                New Client Guide
+              </a>
+              <a
+                href="/resources/insurances-accepted"
+                class="inline-flex items-center justify-center px-8 py-3 border border-border-strong text-site-text font-bold rounded-full hover:bg-surface transition-colors"
+              >
+                Insurance Accepted
+              </a>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+    </div>
+  </div>
+</Layout>

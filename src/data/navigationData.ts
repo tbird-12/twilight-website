@@ -125,9 +125,9 @@ const therapyMenuChildren: NavigationLinkItem[] = [
     desc: "Compare fit and availability",
   },
   {
-    name: "Couples Counseling",
-    slug: "/services/therapy/couples-counseling",
-    desc: "Relationship therapy details",
+    name: "Group Therapy",
+    slug: "/services/therapy/group-therapy",
+    desc: "Adult DBT skills group and teen D&D social skills group",
   },
   {
     name: "Therapy After Evaluation",
@@ -137,17 +137,21 @@ const therapyMenuChildren: NavigationLinkItem[] = [
 ];
 
 function buildServicesMenuItems(items: NavigationLinkItem[]): NavigationMenuItem[] {
-  return items.map((item) =>
-    item.slug === "therapy"
-      ? {
-          ...item,
-          hasNested: true,
-          children: therapyMenuChildren,
-          childLabel: "Therapy Pages",
-          childHrefBase: "/services/therapy",
-        }
-      : item,
-  );
+  return items.map((item) => {
+    if (item.slug === "therapy") {
+      return {
+        ...item,
+        hasNested: true,
+        children: therapyMenuChildren,
+        childLabel: "Therapy Pages",
+        childHrefBase: "/services/therapy",
+      };
+    }
+    if (item.slug === "group-therapy") {
+      return { ...item, slug: "/services/therapy/group-therapy" };
+    }
+    return item;
+  });
 }
 
 export const servicesMenuItems: NavigationMenuItem[] = buildServicesMenuItems(services.slice(0, 4));

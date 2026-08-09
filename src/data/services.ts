@@ -23,4 +23,5 @@ export const services: ServiceLink[] = [
   { name: 'ADHD Testing', slug: 'adhd-testing', desc: 'ADHD evaluations for complex and high-masking presentations, with school documentation available' },
   { name: 'Personality Evaluations', slug: 'personality-profiles', desc: 'Assessments for personality, trauma, and differential diagnosis' },
   { name: 'Telehealth Services', slug: 'telehealth', desc: 'Telehealth psychology, therapy, and evaluations across Kentucky and select additional states' },
+  { name: 'Group Therapy', slug: 'group-therapy', desc: 'Neuro-affirming group therapy in Lexington, KY — adult DBT skills group and teen social skills group using D&D. Insurance accepted.' },
 ];
