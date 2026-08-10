@@ -417,13 +417,13 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "ethan-puckett",
-    pageTitle: "Ethan Puckett, Psy.D., T-LPA | Child Therapy & Testing",
+    pageTitle: "Ethan Puckett, Psy.D., LPA | Child Therapy & Testing",
     pageDescription:
-      "Ethan Puckett, Psy.D., T-LPA — Twilight Psychology clinician providing neuro-affirming therapy for ages 3-18, with strongest fit for ages 7-16, plus psychological and psychoeducational testing in Kentucky under the supervision of Dr. Heather Cornett.",
+      "Ethan Puckett, Psy.D., LPA — Twilight Psychology clinician providing neuro-affirming therapy for ages 3-18, with strongest fit for ages 7-16, plus psychological and psychoeducational testing in Kentucky under the supervision of Dr. Heather Cornett.",
     jobTitle: "Temporary Licensed Psychological Associate",
     badge: "Temporary Licensed Psychological Associate",
     headingPrimary: "Ethan",
-    headingAccent: "Puckett, Psy.D., T-LPA.",
+    headingAccent: "Puckett, Psy.D., LPA.",
     intro:
       "Providing neuro-affirming outpatient therapy for children and adolescents ages 3 to 18, with ideal clinical fit for ages 7 to 16, plus psychological and psychoeducational testing in Kentucky.",
     specialties: [
@@ -440,7 +440,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         type: "paragraphs",
         title: "Neuro-affirming therapy and testing for children and adolescents.",
         paragraphs: [
-          "My name is Ethan Puckett. I graduated with my Masters in Applied Psychology from Western Kentucky University and earned my Psy.D. in Clinical Psychology from Western Kentucky University. I am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
+          "My name is Ethan Puckett. I graduated with my Masters in Applied Psychology from Western Kentucky University and earned my Psy.D. in Clinical Psychology from Western Kentucky University. I am a licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
           "I have previously worked as an outpatient therapist with individuals and families in a community mental health center, where I completed weekly therapy sessions as well as autism evaluations. I have most recently worked as a school psychologist intern completing many school-based evaluations for learning disabilities, autism, ADHD, and other cognitive, emotional, and behavioral concerns.",
         ],
       },
@@ -494,7 +494,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         "Ethan offers neuro-affirming therapy for ages 3 to 18, with ideal fit for ages 7 to 16, plus in-person and virtual therapy sessions for older teens and testing services in Kentucky.",
       items: [
         { label: "Therapy", value: "Immediate" },
-        { label: "Self-Pay Evaluations", value: "Immediate" },
+        { label: "Self-Pay Evaluations", value: "3 weeks" },
         { label: "Older Teen Therapy", value: "In person and virtual" },
       ],
       note:
@@ -682,13 +682,13 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "elise-vanmeter",
-    pageTitle: "Jennifer Elise Van Meter, MA, T-LPA | Therapy & Adult Neurodivergent Assessments — KY",
+    pageTitle: "Jennifer Elise Van Meter, MA, LPA | Therapy & Adult Neurodivergent Assessments — KY",
     pageDescription:
-      "Elise Van Meter, MA, T-LPA — providing neuro-affirming therapy for adolescents and adults plus psychological assessments for neurodivergent adults in Kentucky.",
-    jobTitle: "Temporary Licensed Psychological Associate",
-    badge: "Temporary Licensed Psychological Associate",
+      "Elise Van Meter, MA, LPA — providing neuro-affirming therapy for adolescents and adults plus psychological assessments for neurodivergent adults in Kentucky.",
+    jobTitle: "Licensed Psychological Associate",
+    badge: "Licensed Psychological Associate",
     headingPrimary: "Jennifer Elise",
-    headingAccent: "Van Meter, MA, T-LPA",
+    headingAccent: "Van Meter, MA, LPA",
     intro:
       "Providing evidence-based therapy for adolescents and adults and comprehensive psychological assessments for neurodivergent adults in Kentucky.",
     specialties: [
@@ -704,7 +704,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         type: "paragraphs",
         title: "Evidence-based therapy and comprehensive assessment.",
         paragraphs: [
-          "My name is Jennifer Elise Van Meter and I go by Elise. I hold a master's degree in clinical psychology from Western Kentucky University and am currently pursuing my doctorate in applied psychology. I am a temporarily licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
+          "My name is Jennifer Elise Van Meter and I go by Elise. I hold a master's degree in clinical psychology from Western Kentucky University and am currently pursuing my doctorate in applied psychology. I am a licensed psychological associate practicing under the supervision of Dr. Heather Cornett.",
           "Over the past four years, I have provided therapy and assessment services across a range of settings, including private practice and community mental health. My clinical work focuses on supporting neurodivergent adolescents and adults as they navigate identity, relationships, trauma, and daily functioning.",
           "I specialize in comprehensive psychological assessments for adults seeking clarity around autism, ADHD, mood disorders, and personality functioning. My assessments integrate clinical interview, cognitive testing, adaptive measures, and personality inventories to provide diagnostic clarity and actionable recommendations.",
         ],
@@ -767,7 +767,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       items: [
         { label: "Therapy", value: "Immediate" },
         { label: "Self-Pay Testing", value: "3 weeks" },
-        { label: "Insurance Testing", value: "2 months" },
+        { label: "Insurance Testing", value: "4 months" },
       ],
       note:
         "New therapy clients can begin immediately. Testing availability varies by insurance status.",

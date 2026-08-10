@@ -47,7 +47,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', esa_evaluation: '$300', guardianship_evaluation: '$500', disability_evaluation: '$1,000+', adoption_evaluation: '$1,500' },
     states_served: ['Ohio', 'Kentucky', 'New Mexico', 'Indiana', 'Tennessee', 'PSYPACT states'],
     ins: ['Tricare', 'Medicare', 'Ambetter', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport', 'Anthem'],
-    wait_times: { testing_insurance: '4 months', testing_out_of_pocket: '3 weeks' }
+    wait_times: { testing_insurance: '5 months', testing_out_of_pocket: '3 weeks' }
   },
   {
     name: 'Nicola Allen',
@@ -60,7 +60,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { medication_intake: '$250', medication_followup: '$100' },
     states_served: ['Kentucky'],
     ins: ['Tricare', 'Medicare', 'Ambetter', 'CHAMPVA', 'UHC', 'Medicaid', 'Aetna', 'Cigna', 'UMR', 'Humana', 'Passport', 'Anthem', 'Wellcare'],
-    wait_times: { medication_management: '1 week' }
+    wait_times: { medication_management: '4 weeks' }
   },
   {
     name: 'Emeli Evans',
@@ -73,7 +73,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$100' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
-    wait_times: { testing_insurance: '2 months', testing_out_of_pocket: '3 weeks', therapy: 'Contact for availability' }
+    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks', therapy: 'Contact for availability' }
   },
   {
     name: 'Michael Burns',
@@ -86,7 +86,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { therapy: '$100' },
     states_served: ['Kentucky', 'Tennessee'],
     ins: ['Medicaid', 'Medicare','Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
-    wait_times: { testing_insurance: '1 month', testing_out_of_pocket: '3 weeks', therapy: 'Immediate' }
+    wait_times: { testing_insurance: '5 months', testing_out_of_pocket: '3 weeks', therapy: 'Immediate' }
   },
   {
     name: 'Jonica Davis',
@@ -96,10 +96,10 @@ export const providers: Provider[] = [
     name_with_education: 'Jonica Davis, Psy.D.',
     credential: 'T-LPA',
     services_offered: ['Therapy', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'IQ testing'],
-    out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$80' },
+    out_of_pocket_rates: { testing_standard: '$1,300', testing_dyslexia: '$1,500', therapy: '$100' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
-    wait_times: { testing_insurance: '3 months', testing_out_of_pocket: '3 weeks', therapy: '1 month' }
+    wait_times: { testing_insurance: '4 months', testing_out_of_pocket: '3 weeks', therapy: '6 weeks' }
   },
   {
     name: 'Ethan Puckett',
@@ -107,12 +107,12 @@ export const providers: Provider[] = [
     spec: 'Child Therapy & Psychoeducational Assessments',
     image: ethanPuckettImg,
     name_with_education: 'Ethan Puckett, Psy.D.',
-    credential: 'T-LPA',
+    credential: 'LPA',
     services_offered: ['Therapy', 'Autism Testing', 'ADHD Testing', 'Dyslexia testing *', 'Personality Evaluations', 'IQ testing', 'Psychological evaluations'],
     out_of_pocket_rates: {therapy: '$100', testing_standard: '$1,300', testing_dyslexia: '$1,500' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
-    wait_times: { therapy: 'Immediate', testing_insurance: '2 months', testing_out_of_pocket: 'Immediate' }
+    wait_times: { therapy: 'Immediate', testing_insurance: '3 months', testing_out_of_pocket: '3 weeks' }
   },
   {
     name: 'Tiffany Roundtree',
@@ -138,7 +138,7 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { testing_standard: '$1,300', therapy: '$100' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem' , 'Wellcare'],
-    wait_times: { testing_out_of_pocket: 'Contact for availability', therapy: 'Contact for availability' }
+    wait_times: { testing_insurance: '3 months',testing_out_of_pocket: '3 weeks', therapy: 'Contact for availability' }
   },
   {
     name: 'Elise Van Meter',
@@ -146,12 +146,12 @@ export const providers: Provider[] = [
     spec: 'Therapy & Adult Psychological Assessments',
     image: eliseVanMeterImg,
     name_with_education: 'Elise Van Meter, MA',
-    credential: 'T-LPA',
+    credential: 'LPA',
     services_offered: ['Therapy (Adolescents & Adults)', 'Autism Testing (Adults)', 'ADHD Testing (Adults)', 'Personality Evaluations'],
     out_of_pocket_rates: { therapy: '$125', testing_standard: '$1,300' },
     states_served: ['Kentucky'],
     ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem', 'Wellcare'],
-    wait_times: { therapy: 'Immediate', testing_insurance: '2 months', testing_out_of_pocket: '3 weeks' }
+    wait_times: { therapy: 'Immediate', testing_insurance: '3 months', testing_out_of_pocket: '3 weeks' }
   },
 ];
 
