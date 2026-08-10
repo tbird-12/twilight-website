@@ -9,18 +9,17 @@ import SidebarCta from "../../../components/react/composites/SidebarCta";
 const groups = [
   {
     id: "adult-parasocial",
-    title: "Parasocial Relationships & Connection — Adult DBT Skills Group",
+    title: "Parasocial Relationships & Connection — Adult Skills Group",
     badge: "Adults · Ages 18+",
     leader: "Dr. Jonica Davis, Psy.D.",
     leaderSlug: "jonica-davis",
     support: "Ethan Puckett, Psy.D. (part-time support)",
     format: "In-person · 8 sessions · 6–8 participants",
-    modality: "Dialectical Behavior Therapy (DBT)",
     description:
       "This group is designed for neurodivergent adults who have developed intense or all-consuming parasocial relationships — one-sided connections with individuals, ex-partners, media figures, streamers, or online personalities — and want to build real-world connection skills and reduce the harm those patterns can cause.",
     details: [
       "Parasocial bonds are common among neurodivergent individuals who find reciprocal social relationships harder to navigate. For some, these connections provide a sense of belonging; for others, they become a barrier to genuine connection, regulate emotions in ways that become hard to step back from, or substitute for needs that go unmet elsewhere.",
-      "Using a structured DBT skills framework, this group builds practical tools for emotional regulation, distress tolerance, interpersonal effectiveness, and mindfulness — all applied directly to real-life social situations. The group focuses on skill-building, not just processing, and is limited to 6–8 participants to protect a close, vetted environment.",
+      "Using a structured skills framework, this group builds practical tools for emotional regulation, distress tolerance, interpersonal effectiveness, and mindfulness — all applied directly to real-life social situations. The group focuses on skill-building, not just processing, and is limited to 6–8 participants to protect a close, vetted environment.",
       "Insurance is accepted for this group. Group members are screened individually before joining to ensure clinical fit and group safety.",
     ],
     skills: [
@@ -34,7 +33,6 @@ const groups = [
       { label: "Sessions", value: "8 sessions total" },
       { label: "Group size", value: "6–8 participants (vetted)" },
       { label: "Format", value: "In-person, Lexington KY" },
-      { label: "Modality", value: "DBT skills-based" },
       { label: "Led by", value: "Dr. Jonica Davis, Psy.D." },
       { label: "Insurance", value: "Accepted for covered diagnoses" },
     ],
@@ -83,7 +81,7 @@ const groupTherapySchema = {
   url: pageUrl,
   keywords: [
     "group therapy Kentucky",
-    "DBT group therapy Lexington KY",
+    "ACT group therapy Lexington KY",
     "neurodivergent group therapy Kentucky",
     "teen group therapy Lexington KY",
     "social skills group for teens Kentucky",
@@ -92,7 +90,7 @@ const groupTherapySchema = {
     "group therapy insurance Kentucky",
   ],
   description:
-    "Neuro-affirming group therapy in Lexington, KY at Twilight Psychology. Adult DBT skills group focused on parasocial relationships, and a teen social skills group using Dungeons & Dragons. Both groups are in-person, insurance-accepted, and limited to 6–8 vetted participants.",
+    "Neuro-affirming group therapy in Lexington, KY at Twilight Psychology. Adult skills group focused on parasocial relationships, and a teen social skills group using Dungeons & Dragons. Both groups are in-person, insurance-accepted, and limited to 6–8 vetted participants.",
   provider: {
     "@type": "MedicalOrganization",
     name: "Twilight Psychology",
@@ -119,7 +117,7 @@ const groupTherapySchema = {
 
 <Layout
   title="Group Therapy in Lexington, KY"
-  description="Neuro-affirming group therapy in Lexington, KY. Adult DBT skills group for parasocial relationships and a teen D&D social skills group. Insurance accepted. Limited spots."
+  description="Neuro-affirming group therapy in Lexington, KY. Adult skills group for parasocial relationships and a teen D&D social skills group. Insurance accepted. Limited spots."
 >
   <Schema slot="page-schema" schema={groupTherapySchema} />
 
@@ -135,8 +133,8 @@ const groupTherapySchema = {
       <PageHeroWrapper
         title="Group Therapy"
         accentWord="Group"
-        badge="Neuro-Affirming Group Therapy"
-        subtitle="Two structured, therapist-led groups in Lexington, KY — one for neurodivergent adults, one for tweens and younger teens. Both in-person, insurance-accepted, and limited to 6–8 vetted participants."
+        badge="Group Therapy, Coming Soon"
+        subtitle="Two structured, therapist-led groups in Lexington, KY — one for neurodivergent adults, one for tweens and younger teens, starting early 2027. Both in-person, insurance-accepted, and limited to 6–8 vetted participants."
         size="lg"
       />
 
@@ -174,7 +172,7 @@ const groupTherapySchema = {
                   href="#adult-parasocial"
                   class="flex items-center justify-between p-4 bg-surface-soft rounded-2xl hover:bg-surface-2/30 transition-all text-site-text text-sm font-bold group"
                 >
-                  Adult DBT skills group
+                  Adult skills group
                   <span class="text-cta group-hover:translate-x-1 transition-transform">→</span>
                 </a>
                 <a
@@ -297,7 +295,7 @@ const groupTherapySchema = {
                     </div>
 
                     <div class="rounded-2xl bg-surface border border-border p-5">
-                      <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub mb-3">Group leader</p>
+                      <p class="text-xs font-black uppercase tracking-[0.22em] text-site-sub mb-3">Primary Clinician</p>
                       <a
                         href={`/about/clinicians/${group.leaderSlug}`}
                         class="text-sm font-black text-cta hover:text-cta/80 transition-colors"
