@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, WIDGET_LINK } from '../../data/resource';
+import { SELF_PAY_RATES } from '../../data/selfPayRates';
 import { categoryColorMap } from '../../data/blogCategories';
 import PageHeroWrapper from '../../components/PageHeroWrapper.astro';
 import FeeTabsWrapper from '../../components/FeeTabsWrapper.astro';
@@ -12,15 +13,15 @@ const feeCategories = [
     id: "psychological",
     title: "Psychological Evaluations",
     services: [
-      { name: "ADHD Assessments", price: "$1,300" },
-      { name: "Autism Assessments", price: "$1,300" },
-      { name: "Personality Evaluations", price: "$1,300" },
-      { name: "Full Psychological Evaluation", price: "$1,300", note: "Covers Autism, ADHD, and Personality" },
+      { name: "ADHD Assessments", price: SELF_PAY_RATES.psychologicalEvaluation },
+      { name: "Autism Assessments", price: SELF_PAY_RATES.psychologicalEvaluation },
+      { name: "Personality Evaluations", price: SELF_PAY_RATES.psychologicalEvaluation },
+      { name: "Full Psychological Evaluation", price: SELF_PAY_RATES.psychologicalEvaluation, note: "Covers Autism, ADHD, and Personality" },
       { name: "Child Psychological Evaluations", price: "$1,000", note: "Ages 2-6; personality evaluation add-on not included" },
-      { name: "Learning Disability Assessments", price: "$1,500", note: "Dyslexia, Dysgraphia, Dyscalculia, 2(e), Giftedness" },
+      { name: "Learning Disability Assessments", price: SELF_PAY_RATES.psychoeducationalEvaluation, note: "Dyslexia, Dysgraphia, Dyscalculia, 2(e), Giftedness" },
       { name: "Guardianship Evaluation", price: "$500", note: "Additional cost for court/extra testing" },
       { name: "Emotional Support Animal (ESA) Evaluation", price: "$300" },
-      { name: "Diagnostic Clarification", price: "$250" },
+      { name: "Diagnostic Clarification", price: SELF_PAY_RATES.intake },
     ],
   },
   {
@@ -30,7 +31,7 @@ const feeCategories = [
       { name: "60-Minute Session", price: "$200", note: "Dr. Cornett" },
       { name: "45-Minute Session", price: "$150", note: "Dr. Cornett" },
       { name: "Clinical Supervision", price: "$150", note: "Per hour" },
-      { name: "60-Minute Session", price: "$100", note: "Pre-licensed clinicians" },
+      { name: "60-Minute Session", price: SELF_PAY_RATES.therapy, note: "Pre-licensed clinicians" },
       { name: "45-Minute Session", price: "$80", note: "Pre-licensed clinicians" },
     ],
   },
@@ -38,8 +39,8 @@ const feeCategories = [
     id: "medication",
     title: "Medication Management",
     services: [
-      { name: "Intake Session", price: "$250" },
-      { name: "Follow-up Sessions", price: "$100" },
+      { name: "Intake Session", price: SELF_PAY_RATES.intake },
+      { name: "Follow-up Sessions", price: SELF_PAY_RATES.therapy },
       { name: "Paperwork (e.g., FMLA)", price: "$75", note: "Per hour" },
     ],
   },
@@ -129,7 +130,7 @@ const relatedResourceLinks = [
             <div>
               <h3 class="font-serif text-site-text font-black text-lg mb-3">ADHD Testing Cost</h3>
               <p class="text-site-sub leading-relaxed mb-4">
-                ADHD evaluations are <strong class="text-site-text">$1,300</strong> on a self-pay basis and can be split into 2–3 payments across your appointments. Payment plans are available with no added fees.
+                ADHD evaluations are <strong class="text-site-text">{SELF_PAY_RATES.psychologicalEvaluation}</strong> on a self-pay basis and can be split into 2–3 payments across your appointments. Payment plans are available with no added fees.
               </p>
               <a href={WIDGET_LINK} class="text-cta text-sm font-black uppercase tracking-widest hover:underline">Schedule an intake →</a>
             </div>
