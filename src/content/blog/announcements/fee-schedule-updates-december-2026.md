@@ -20,42 +20,45 @@ Moreover, the announcement (and subsequent rollback) of 4% KY Medicaid cuts on A
 
 For a practice to attract and retain skilled clinicians, therapy rates need to reflect the true value of the work being done, commensurate with the effort and expertise required. Current reimbursement structures, particularly under commercial insurance and Medicaid, often fall short of this, creating financial strain for both the practice and its clinicians. There is no adjustment to rates by insurance companies in line with the increasing costs in today's economy.
 
-Testing has been an even deeper challenge. Comprehensive psychological evaluations are time-intensive and resource-heavy — assessments from publishers like Pearson and WPS aren't cheap, and the CPT codes for testing haven't seen a meaningful rate increase in years. In raw numbers, pre-licensed clinicians make $36 per hour for testing under Medicaid, which is far below the actual cost of providing these services. The result is that testing, particularly under Medicaid, has become a significant financial strain. We've been absorbing that for a long time, since Dr. Cornett started the private practice. We can't continue to do so and remain a healthy practice as we scale our services and team. 
+Testing has always been a uniquely complex challenge, requiring expensive assessments from Pearson & WPS as well as considerable time invested per client. 
+Under Medicaid, our pre-licensed and licensed clinicians earn just $36 and $60 per hour for testing (excluding the cost of materials and even lower once they are factored in), far below actual costs and a stark contrast to standard therapy rates that often exceed $100 per hour. While we have absorbed the financial burden since Dr. Cornett founded the practice, we can no longer sustain this model as we scale. To ensure we can continue providing specialized, high-quality care, we are forced to become more selective about the insurance plans and self-pay options we accept for testing moving forward.
 
 We want to be clear: **none of these changes are about wanting to do less for our clients.** They are about making sure we can keep showing up for them — and for each other — for years to come.
 
 ## What's changing on December 1, 2026
 
-### Self-pay therapy rates
+### I. Self-pay therapy rates
 Our self-pay therapy rate will be **$100 per session**. We no longer offer the $80 rate for 45 minute sessions. All current clients at the $80 rate will receive **90 days' notice** before this change takes effect for them. 
 
-### Self-pay testing rates
+### II. Self-pay testing rates
 Self-pay rates for evaluations will update to:
 - **$1,500** for psychological evaluations
 - **$1,900** for psychoeducational assessments
 
 Payment plans (up to three installments) remain available. Age-based tiered pricing will no longer apply after December 1.
 
-### Cigna — therapy only
+### III. Cigna — therapy only
 We will no longer accept **Cigna for new therapy clients** after December 1. Current Cigna therapy clients will continue to be seen as usual.
 
 Testing and medication management with Cigna are **not affected** by this change.
 
-### Aetna Better Health — testing only
+### IV. Aetna Better Health — testing only
 We will no longer accept **Aetna Better Health for new psychological testing** after December 1. This includes evaluations for children, adults, and developmental concerns. We know this is a hard one — particularly for families who access care through DCBS or foster care pathways. It was not a decision we made without a lot of deliberation.
 
 Clients or families who wish to proceed can explore **self-pay options** or ask us for a referral to another practice. Therapy and medication management with Aetna Better Health are **not affected**.
 
-### Medicare — testing and therapy
+### V. Medicare — testing and therapy
 Medicare testing and therapy will be handled on a **case-by-case basis** going forward. 
 
-### Enforce strict no-show policy
+### VI. Enforce strict no-show policy
 
-Starting December 1, 2026, Twilight Psychology will implement a strict no-show policy for all appointments. Clients who miss an appointment without providing at least 24 hours' notice may be charged a fee. Medicaid clients cannot be charged this fee, as a result, the policy will only apply to self-pay and commercial insurance clients. However, Medicaid clients are still bound under a two no-show allowance policy for intake and therapy. A no-show for testing appointment counts as a violation of this policy. Any client who exceeds this allowance will be terminated from care with Twilight Psychology.
+Twilight Psychology will implement a clear attendance and no-show policy for all appointments to ensure our clinicians' time is respected and availability remains open for those who need care. For self-pay and commercial insurance clients, missing an appointment without providing at least 24 hours' notice may result in a fee. 
 
-### Adjusting clientele mix
+While state regulations prevent us from charging a no-show fee to Medicaid clients, our two-strike attendance policy applies to everyone for intakes, testing, and therapy. Specifically, missing a testing appointment counts as violation of this poilicy. Clients who exceed this two-strike allowance may be subject to termination from care with Twilight Psychology.
 
-To protect practice sustainability and mitigate risks from proposed Medicaid rate cuts, we are implementing caps on certain insurance plans, including Medicaid, to diversify and balance our client load. Self-pay clients will continue to be accepted without limitation.
+### VII. Adjusting clientele mix
+
+To protect practice sustainability and mitigate risks from proposed Medicaid rate cuts in Kentucky, we are implementing caps on certain insurance plans, including Medicaid, to diversify and balance our new client load. Self-pay clients will continue to be accepted without limitation. This does not change anything for our **existing clients**.
 
 ## What this means for who we are
 
