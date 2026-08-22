@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import WaitlistDirectoryWrapper from '../../components/interactive/WaitlistDirectoryWrapper.astro';
+import ClinicalMatcherWrapper from '../../components/interactive/ClinicalMatcherWrapper.astro';
 import PageLinksSection from '../../components/PageLinksSection.astro';
 
 const planningLinks = [
@@ -26,21 +26,22 @@ const planningLinks = [
 ---
 
 <Layout
-  title="Waitlist Times"
-  description="Current waitlist times at Twilight Psychology in Lexington, KY for evaluations, therapy ages 3-99, and medication management."
+  title="Find a Clinician in Kentucky | Availability & Rates"
+  description="Filter Twilight Psychology clinicians by service, age group, and insurance. See current availability and self-pay rates. Insurance and Kentucky Medicaid accepted."
 >
   <section class="bg-site-bg min-h-screen py-24 px-4">
     <div class="max-w-7xl mx-auto">
       <header class="text-center mb-12">
         <h1 class="font-serif text-4xl md:text-5xl font-black text-site-text mb-4">
-          Waitlist <span class="text-cta">Times</span>
+          Find Your <span class="text-cta">Clinician</span>
         </h1>
         <p class="text-sand text-lg max-w-2xl mx-auto">
-          Filter by service or state to view current wait times for our providers, including therapy options for ages 3-99.
+          Filter by service, age group, insurance, or state — then see exactly how much it costs
+          and when you can be seen. Insurance and Kentucky Medicaid accepted.
         </p>
       </header>
 
-      <WaitlistDirectoryWrapper />
+      <ClinicalMatcherWrapper />
 
       <PageLinksSection
         title="Plan your next step"
@@ -48,12 +49,15 @@ const planningLinks = [
         links={planningLinks}
       />
     </div>
-    <div class="text-center mt-12 text-sm text-sand">
+    <div class="text-center mt-12 text-sm text-sand space-y-1">
       <p>
         * Insurance-based psychological testing depends on medical-necessity review, prior authorization, and the
-        number of testing hours a plan approves. 
+        number of testing hours a plan approves.
       </p>
-      <p>Kentucky clients can be seen statewide, with additional telehealth availability in Ohio, Tennessee, and 40+ states through PSYPACT depending on provider. For a full list, visit <a href="https://psypact.gov/page/psypactmap" class="text-cta underline">PSYPACT Map</a>.
+      <p>
+        Kentucky clients can be seen statewide, with additional telehealth availability in Ohio, Tennessee, and 40+ states
+        through PSYPACT depending on provider. For a full list, visit
+        <a href="https://psypact.gov/page/psypactmap" class="text-cta underline">PSYPACT Map</a>.
       </p>
     </div>
   </section>

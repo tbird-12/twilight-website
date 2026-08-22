@@ -1,0 +1,31 @@
+---
+import ClinicalMatcher from "./ClinicalMatcher";
+import { providers } from "../../data/staff";
+import { getImage } from "astro:assets";
+
+const serialisedProviders = await Promise.all(
+  providers.map(async (p) => {
+    const optimised = await getImage({ src: p.image, width: 112, height: 112, format: "webp" });
+    return {
+      id: p.slug,
+      name: p.name,
+      name_with_education: p.name_with_education,
+      credential: p.credential,
+      spec: p.spec,
+      image_src: optimised.src,
+      service_categories: p.service_categories,
+      services_offered: p.services_offered,
+      out_of_pocket_rates: p.out_of_pocket_rates,
+      states_served: p.states_served,
+      ins: p.ins,
+      wait_times: p.wait_times,
+      age_groups: p.age_groups,
+      availability_note: p.availability_note,
+      availability_status: p.availability_status,
+      contact_url: p.contact_url,
+    };
+  })
+);
+---
+
+<ClinicalMatcher client:visible providers={serialisedProviders} />

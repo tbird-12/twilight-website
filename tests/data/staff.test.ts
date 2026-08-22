@@ -18,6 +18,16 @@ describe("staff provider data", () => {
     }
   });
 
+  it("every provider has the new matcher fields", () => {
+    for (const p of providers) {
+      expect(p.service_categories.length).toBeGreaterThan(0);
+      expect(p.age_groups.length).toBeGreaterThan(0);
+      expect(p.availability_note).toBeTruthy();
+      expect(["open", "waitlist", "closed"]).toContain(p.availability_status);
+      expect(p.contact_url).toMatch(/^https?:\/\//);
+    }
+  });
+
   it("provider slugs are unique", () => {
     const slugs = providers.map((p) => p.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
@@ -46,5 +56,23 @@ describe("staff provider data", () => {
     const burns = providers.find((p) => p.slug === "michael-burns");
     expect(burns).toBeDefined();
     expect(burns!.states_served).toContain("Tennessee");
+  });
+
+  it("service_categories contain only valid values", () => {
+    const valid = new Set(["Therapy", "Psychological Testing", "Medication Management"]);
+    for (const p of providers) {
+      for (const cat of p.service_categories) {
+        expect(valid.has(cat)).toBe(true);
+      }
+    }
+  });
+
+  it("age_groups contain only valid values", () => {
+    const valid = new Set(["Child (3–11)", "Teen (12–17)", "Adult (18–64)", "Older Adult (65+)"]);
+    for (const p of providers) {
+      for (const ag of p.age_groups) {
+        expect(valid.has(ag)).toBe(true);
+      }
+    }
   });
 });
