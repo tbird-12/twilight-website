@@ -21,14 +21,16 @@ Moreover, the announcement (and subsequent rollback) of 4% KY Medicaid cuts on A
 For a practice to attract and retain skilled clinicians, therapy rates need to reflect the true value of the work being done, commensurate with the effort and expertise required. Current reimbursement structures, particularly under commercial insurance and Medicaid, often fall short of this, creating financial strain for both the practice and its clinicians. There is no adjustment to rates by insurance companies in line with the increasing costs in today's economy.
 
 Testing has always been a uniquely complex challenge, requiring expensive assessments from Pearson & WPS as well as considerable time invested per client. 
-Under Medicaid, our pre-licensed and licensed clinicians earn just $36 and $60 per hour for testing (excluding the cost of materials and even lower once they are factored in), far below actual costs and a stark contrast to standard therapy rates that often exceed $100 per hour. While we have absorbed the financial burden since Dr. Cornett founded the practice, we can no longer sustain this model as we scale. To ensure we can continue providing specialized, high-quality care, we are forced to become more selective about the insurance plans and self-pay options we accept for testing moving forward.
+While we have absorbed the financial burden since Dr. Cornett founded the practice, we can no longer sustain this model as we scale. To ensure we can continue providing specialized, high-quality care, we are forced to become more selective about the insurance plans and self-pay options we accept for testing moving forward.
+
+Under Medicaid, our pre-licensed and licensed clinicians earn just $36 and $60 per hour for testing (excluding the cost of materials and even lower once they are factored in), far below actual costs and a stark contrast to standard therapy rates that often exceed $100 per hour. To make up the difference, a clinician often works additional hours, amounting to significant burden on their well-being and overall job satisfaction.
 
 We want to be clear: **none of these changes are about wanting to do less for our clients.** They are about making sure we can keep showing up for them — and for each other — for years to come.
 
 ## What's changing on December 1, 2026
 
 ### I. Self-pay therapy rates
-Our self-pay therapy rate will be **$100 per session**. We no longer offer the $80 rate for 45 minute sessions. All current clients at the $80 rate will receive **90 days' notice** before this change takes effect for them. 
+Our self-pay therapy rate will be **$120 per session**. We no longer offer the $100 or $80 rate for a therapy session. All current clients at the older rates will receive **90 days' notice** before this change takes effect for them. 
 
 ### II. Self-pay testing rates
 Self-pay rates for evaluations will update to:
@@ -64,7 +66,7 @@ To protect practice sustainability and mitigate risks from proposed Medicaid rat
 
 We started Twilight Psychology with a clear vision: to be known for quality, attentiveness, and our specialty in neuroaffirming care. That vision hasn't changed. What we're adjusting is the financial structure that supports it.
 
-We want to keep being the practice that has the expertise to recognize and support neurodivergent clients effectively. The one that listens more carefully. The one that identifies neurodivergence in clients who've gone unrecognized for years. That work takes skilled, supported clinicians — and skilled, supported clinicians deserve to work in a practice that's financially sound.
+We want to keep being the practice that has the expertise to recognize and support neurodivergent clients effectively. The one that listens more carefully. The one that identifies neurodivergence in clients who've gone unrecognized for years. That work takes skilled, supported clinicians — and skilled, supported clinicians deserve to work in a practice that's financially sound. Moreover, these changes ensure that the clinicians are able to have a healthy work-life balance, which ultimately benefits the quality of care our clients receive.
 
 These changes bring us closer to that.
 
