@@ -84,8 +84,6 @@ Couples counseling services are **temporarily unavailable** at Twilight Psycholo
 
 Individual therapy is billable to accepted insurance plans for covered mental health diagnoses. Most of our therapy clinicians participate with major commercial plans and Kentucky Medicaid plans.
 
-Couples counseling is **temporarily unavailable** at Twilight Psychology. We are evaluating future capacity. Please see our [couples counseling page](/services/therapy/couples-counseling) for current status.
-
 Current availability varies meaningfully by clinician. Some therapists have immediate openings; others have 1-month waits. The [waitlist times page](/resources/waitlist-times) has current information, and our intake team can tell you specifically which clinicians have openings for your needs.
 
 Twilight Psychology offers **weekday appointments** in Lexington plus **weekend appointments by request** — contact our intake team to ask about specific availability.

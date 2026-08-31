@@ -12,7 +12,9 @@ draft: false
 
 > **Disclaimer:** CPT and HCPCS coding depends on medical necessity, documentation, payer rules, and the services actually provided. This page is for general education and is not a guarantee of coverage or payment.
 
-When families review a superbill, statement, or Explanation of Benefits, one of the most common questions is: **what do all of these codes mean?** This page focuses on the main codes commonly used for **psychological testing**, **developmental testing**, and the **feedback sessions** that often follow testing. These services are billed by licensed clinicians such as LPs, T-LPs, LPAs, T-LPAs, and LPPs in Kentucky. We also plan to publish separate billing guides for **therapy codes** and **medication management E/M codes** so each service type has its own easier-to-read reference.
+When families review a superbill, statement, or Explanation of Benefits, one of the most common questions is: **what do all of these codes mean?** This page explains the main codes commonly used for **psychological testing**, **developmental testing**, and the **feedback sessions** that often follow testing at Twilight Psychology. These services are billed by licensed clinicians such as LPs, T-LPs, LPAs, T-LPAs, and LPPs in Kentucky.
+
+If you are ready to schedule or have questions about billing for a specific evaluation, [contact our office](/contact) or visit our [psychological evaluations page](/services/psychological-evaluations) to learn more about our testing services. If you'd prefer to understand your insurance coverage first, see our [accepted insurances page](/resources/insurances-accepted).
 
 ## Psychological testing codes
 
