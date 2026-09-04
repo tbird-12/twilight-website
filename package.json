@@ -1,7 +1,7 @@
 {
   "name": "twilight_website",
   "type": "module",
-  "version": "0.10.2",
+  "version": "0.10.5",
   "packageManager": "npm@12.0.2",
   "engines": {
     "node": ">=24.19.0",
@@ -26,14 +26,14 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@astrojs/react": "6.0.4",
-    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/react": "6.0.5",
+    "@astrojs/sitemap": "3.7.4",
     "@iconify-json/mdi": "1.2.3",
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "4.3.3",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "astro": "7.2.4",
+    "astro": "7.3.1",
     "astro-icon": "1.2.0",
     "astro-pagefind": "2.0.1",
     "autoprefixer": "10.4.24",

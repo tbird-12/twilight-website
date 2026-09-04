@@ -316,7 +316,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     headingPrimary: "Jonica",
     headingAccent: "Davis, Psy.D., T-LPA",
     intro:
-      "Specializing in supportive, neuro-affirming therapy for individuals and families navigating neurodivergent identities.",
+      "Providing neuro-affirming therapy for adults navigating neurodivergent identities, modern relationship challenges, and the quieter struggles that don't always have an easy name.",
     specialties: [
       "Neuro-Affirming Therapy",
       "Autism & ADHD Support",
@@ -327,18 +327,26 @@ export const clinicianProfiles: ClinicianProfile[] = [
     contentBlocks: [
       {
         type: "paragraphs",
-        title: "Authentic Connection in Clinical Care.",
+        title: "A space to figure things out.",
         paragraphs: [
           "Jonica is currently completing her postdoctoral fellowship under the supervision of Dr. Heather Cornett, PhD. She earned her Psy.D. in Counseling Psychology from Radford University and completed her Master of Science in Counseling Psychology at the University of Kentucky.",
-
-          "Jonica is passionate about providing therapy that meets people where they currently are in their lives. She works to offer clients a safe and affirming place to process anything that may be going on in their lives.",
+          "She is passionate about working with adults who identify as neurodiverse — particularly those navigating the unique challenges that come with living in a world that wasn't quite designed with them in mind. That includes everything from masking and identity confusion to more contemporary struggles like dependency on AI, parasocial relationships, and the quiet exhaustion of performing connection without ever feeling truly seen.",
         ],
       },
       {
         type: "quote",
         quote:
-          "I enjoy seeing clients who want to explore their relationship with their bodies or how anti-fat bias has impacted their life.",
+          "A lot of my clients come in carrying things that are hard to explain to other people — patterns that make complete sense once we look at them together.",
         variant: "soft",
+      },
+      {
+        type: "paragraphs",
+        title: "Working through the patterns beneath the surface.",
+        paragraphs: [
+          "Jonica enjoys working with adults who are ready to explore the behaviors and relationships that underlie their current challenges.",
+          "She also enjoys working with clients who want to examine how anti-fat bias or body image has shaped their sense of self.",
+          "Her goal is simply to offer a safe, affirming, and genuinely curious place to process whatever is going on — without judgment and without having to explain yourself from scratch.",
+        ],
       },
     ],
     sidebarCards: [
@@ -493,7 +501,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       description:
         "Ethan offers neuro-affirming therapy for ages 3 to 18, with ideal fit for ages 7 to 16, plus in-person and virtual therapy sessions for older teens and testing services in Kentucky.",
       items: [
-        { label: "Therapy", value: "Immediate" },
+        { label: "Therapy", value: "2 months" },
         { label: "Self-Pay Evaluations", value: "3 weeks" },
         { label: "Older Teen Therapy", value: "In person and virtual" },
       ],
@@ -523,7 +531,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     headingPrimary: "Michael Burns,",
     headingAccent: "PhD, T-LP, LPCC, LCADC, BIP.",
     intro:
-      "With 24 years of experience across drug rehabilitation, inpatient settings, and domestic abuse shelters, Michael brings a rare breadth of clinical perspective to substance use disorders, domestic violence recovery, and faith-integrated therapy.",
+      "Bringing over two decades of real-world clinical experience to substance use, trauma, domestic violence recovery, and faith-integrated counseling for adolescents and adults in Kentucky and Tennessee.",
     specialties: [
       "Substance Use & Addiction",
       "Domestic Violence Recovery",
@@ -534,24 +542,24 @@ export const clinicianProfiles: ClinicianProfile[] = [
     contentBlocks: [
       {
         type: "paragraphs",
-        title: "A Rare Breadth of Clinical Experience.",
+        title: "Meeting you wherever you are.",
         paragraphs: [
-          "Hi, I'm Dr. Michael G. Burns. With 24 years of clinical experience, I have worked across some of the most challenging settings in mental health — drug rehabilitation centers, domestic abuse shelters, inpatient psychiatric hospitalization, adolescent group homes, and outpatient treatment. That depth of exposure means I understand the full continuum of care and can meet clients at any stage of their journey.",
-          "I specialize in substance use disorders, domestic violence, relationships, PTSD, and therapy for adolescents and children. My LCADC credential reflects rigorous specialized training in alcohol and drug counseling, while my BIP certification equips me to work with clients in batterers intervention programs — supporting both survivors and those seeking accountability and lasting change.",
+          "Hi, I'm Michael. I've spent 24 years working alongside people in some of the most difficult chapters of their lives — in drug rehabilitation centers, domestic abuse shelters, inpatient psychiatric settings, adolescent group homes, and outpatient therapy. That experience has taught me that healing rarely looks the same twice, and that meeting someone with genuine warmth and honesty matters as much as any clinical technique.",
+          "I specialize in substance use disorders, domestic violence recovery, relationships, PTSD, and therapy for adolescents and adults. My LCADC credential reflects specialized training in alcohol and drug counseling, and my BIP certification means I can work thoughtfully with both survivors of domestic violence and those seeking accountability and lasting personal change.",
         ],
       },
       {
         type: "quote",
         quote:
-          "Clients often tell me I am approachable and knowledgeable. I take that as a call to meet people exactly where they are — with honesty, warmth, and evidence-based care.",
+          "People often tell me I'm easy to talk to. I take that seriously — good therapy starts with feeling safe enough to be honest.",
         variant: "accent",
       },
       {
         type: "paragraphs",
-        title: "Faith-Integrated, Evidence-Based Therapy.",
+        title: "A grounded, humanistic approach.",
         paragraphs: [
-          "My therapeutic toolkit includes psychoanalysis, Cognitive Behavioral Therapy (CBT), Rational Emotive Behavior Therapy (REBT), and motivational interviewing — always through a deeply humanistic lens. For clients who want to incorporate their Christian faith into the healing process, I offer a safe, informed, and nonjudgmental space to do exactly that.",
-          "I am originally from Ohio, married to an amazing lady from Indonesia, and together we are raising an intelligent and humble teenage son. Outside the office I enjoy exercising, music, the outdoors, baseball, reading, and coffee. I am active at my church and love spending time with friends and family.",
+          "I draw on CBT, Rational Emotive Behavior Therapy, motivational interviewing, and psychoanalytic thinking — always through a humanistic lens that keeps the whole person in focus. For clients who want to weave their Christian faith into the work, I offer a nonjudgmental and informed space to do exactly that.",
+          "Outside the office, I'm originally from Ohio, married to a wonderful person from Indonesia, and we're raising a curious teenage son together. I enjoy music, the outdoors, baseball, reading, and good coffee — and I'm active in my church community.",
         ],
       },
     ],
@@ -581,16 +589,16 @@ export const clinicianProfiles: ClinicianProfile[] = [
         eyebrow: "24 Years of Practice",
         variant: "surface-2",
         body: [
-          "Drug rehabilitation centers, domestic abuse shelters, inpatient psychiatric hospitalization, adolescent group homes, and outpatient treatment — Michael has served clients across the full spectrum of care environments.",
+          "Michael has worked across drug rehabilitation, domestic abuse shelters, inpatient psychiatric care, adolescent group homes, and outpatient therapy — experience that spans the full continuum of mental health care.",
         ],
       },
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Immediate Openings for Therapy",
+      title: "Now Accepting New Clients",
       description:
-        "Michael offers individual therapy in Kentucky and Tennessee with immediate availability for new clients. He holds dual licensure in both states and accepts telehealth clients across KY and TN.",
-      items: [{ label: "Individual Therapy", value: "Immediate" }],
+        "Michael offers individual therapy in Kentucky and Tennessee, including telehealth across both states, with availability for new clients.",
+      items: [{ label: "Individual Therapy", value: "Available" }],
       ctaLabel: "Request Appointment",
       ctaHref: requestAppointmentPhoneHref,
       variant: "surface",
@@ -657,7 +665,6 @@ export const clinicianProfiles: ClinicianProfile[] = [
         eyebrow: "Scheduling",
         variant: "soft",
         body: [
-          "Start date: August 10, 2026",
           "Monday: 9:00–4:00 (virtual)",
           "Tuesday: 9:00–4:00 (virtual)",
           "Wednesday: 8:00–5:00 (in person)",
@@ -672,8 +679,8 @@ export const clinicianProfiles: ClinicianProfile[] = [
       description:
         "Psychological and psychoeducational testing, feedback with family- and school-facing recommendations, and relational-cultural therapy for neurodivergent youth.",
       items: [
-        { label: "Assessments", value: "2 months" },
-        { label: "Therapy", value: "Contact for availability" },
+        { label: "Insurance Assessments", value: "3 months" },
+        { label: "Self-Pay Assessments", value: "3 weeks" },
       ],
       ctaLabel: "Request Appointment",
       ctaHref: WIDGET_LINK,
@@ -765,7 +772,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       description:
         "Elise offers therapy for adolescents and adults and psychological assessments for neurodivergent adults in Kentucky.",
       items: [
-        { label: "Therapy", value: "Immediate" },
+        { label: "Therapy", value: "6 weeks" },
         { label: "Self-Pay Testing", value: "3 weeks" },
         { label: "Insurance Testing", value: "4 months" },
       ],

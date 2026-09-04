@@ -9,7 +9,7 @@ tags: ["team", "clinician", "assessments", "autism", "adhd", "neurodivergent", "
 draft: false
 ---
 
-We are pleased to welcome **Taylor Pennington** to Twilight Psychology. Taylor joins the practice on **August 10, 2026** and will provide **psychological evaluations for children and adolescents ages 3 to 18**, with their strongest clinical fit typically in the **5 to 16** age range.
+We are pleased to have **Taylor Pennington** on the team at Twilight Psychology. Taylor provides **psychological evaluations for children and adolescents ages 3 to 18**, with their strongest clinical fit typically in the **5 to 16** age range.
 
 Taylor holds a master's degree in counseling psychology from the University of Louisville and brings experience in school-based therapy and specialized outpatient services for youth with autism, ADHD, and cognitive delays.
 
@@ -23,7 +23,7 @@ Taylor's availability will be:
 - Thursday: 8:00–16:00 (in person)
 - Friday: 9:00–15:00 (virtual)
 
-To learn more about Taylor's services or to request an appointment starting August 10, 2026, visit Taylor's clinician profile: [/about/clinicians/taylor-pennington](/about/clinicians/taylor-pennington).
+To learn more about Taylor's services or to request an appointment, visit Taylor's clinician profile: [/about/clinicians/taylor-pennington](/about/clinicians/taylor-pennington).
 
 ## Related resources
 
@@ -33,4 +33,4 @@ To learn more about Taylor's services or to request an appointment starting Augu
 - [Psychological Evaluations](/services/psychological-evaluations) — Full evaluation services overview at Twilight
 - [New Client Guide](/resources/new-client) — What to expect during intake and the evaluation process
 
-We welcome Taylor to the team and look forward to the thoughtful, family-centered care they bring to our clinic.
+We are grateful to have Taylor on the team and are excited by the thoughtful, family-centered care they bring to our clinic.
