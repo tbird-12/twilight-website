@@ -9,16 +9,7 @@ import emeliPhoto from '../../assets/images/staff/emeli-evans.png';
   title="PDA Profile Evaluations in Kentucky"
   description="PDA profile evaluations in Kentucky — in-house specialty for demand-avoidant, high-masking autism presentations most practices cannot assess. Self-pay only."
 >
-  <div class="max-w-4xl mx-auto px-6">
-    <div
-      class="prose prose-lg max-w-none prose-custom
-        prose-p:text-site-text
-        prose-headings:text-site-text
-        prose-strong:text-site-text
-        prose-li:text-site-text
-        mb-12"
-    >
-      <section class="max-w-4xl mx-auto px-4 py-24 space-y-24">
+  <section class="max-w-4xl mx-auto px-4 py-24 space-y-24">
         <div class="space-y-8 text-center md:text-left">
           <span class="text-cta font-black tracking-[0.3em] uppercase text-xs block">Self-Pay Specialty</span>
           <h1 class="font-serif text-5xl md:text-7xl font-black text-site-text tracking-tight">
@@ -95,7 +86,7 @@ import emeliPhoto from '../../assets/images/staff/emeli-evans.png';
             <a href={`mailto:${EMAIL_ADDRESS}`} class="px-10 py-5 bg-cta text-cta-fg font-black rounded-full hover:bg-cta/80 transition-all uppercase tracking-widest text-xs">
               Email Our Office
             </a>
-            <a href={`tel:${PHONE_NUMBER}`} class="px-10 py-5 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all uppercase tracking-widest text-xs">
+            <a href={`tel:${PHONE_NUMBER}`} aria-label="Call Twilight Psychology to discuss a PDA profile evaluation" class="px-10 py-5 theme-surface-soft border theme-border text-site-text font-black rounded-full theme-hover-surface transition-all uppercase tracking-widest text-xs">
               Call {PHONE_NUMBER_FORMATTED}
             </a>
           </div>
@@ -117,6 +108,4 @@ import emeliPhoto from '../../assets/images/staff/emeli-evans.png';
           View All Specialties
         </a>
       </nav>
-    </div>
-  </div>
 </Layout>

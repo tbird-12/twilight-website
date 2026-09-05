@@ -1,8 +1,40 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Schema from "../../components/Schema.astro";
 import { WIDGET_LINK } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const personalitySchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Personality Evaluations at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "personality evaluations Kentucky",
+    "personality testing Lexington KY",
+    "bipolar evaluation Kentucky",
+    "borderline personality evaluation Lexington",
+    "schizophrenia spectrum evaluation KY",
+    "personality disorder testing near me",
+    "C-PTSD evaluation Kentucky",
+    "differential diagnosis personality Kentucky",
+  ],
+  description:
+    "Advanced personality evaluations in Kentucky for bipolar, borderline, and schizophrenia-spectrum concerns, trauma overlap, and differential diagnosis at Twilight Psychology.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
 
 const diagnosticAreas = [
   {
@@ -54,6 +86,7 @@ const processSteps = [
   title="Personality Evaluations KY"
   description="Advanced personality evaluations in Kentucky for bipolar, borderline, and schizophrenia-spectrum concerns, trauma overlap, and differential diagnosis."
 >
+  <Schema slot="page-schema" schema={personalitySchema} />
   <PageHeroWrapper
     title="Personality Evaluations"
     accentWord="Evaluations"

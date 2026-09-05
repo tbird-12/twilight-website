@@ -6,18 +6,17 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, WIDGET_LINK } from "../data/resou
 import { Image } from "astro:assets";
 
 const services = [
-  { icon: "mdi:head-cog-outline", label: "Psychological Evaluations", href: "/services/psychological-evaluations" },
-  { icon: "mdi:account-heart-outline", label: "Therapy · Ages 3–99", href: "/services/therapy" },
-  { icon: "mdi:medication-outline", label: "Medication Management", href: "/services/medication-management" },
+  { icon: "lucide:brain-circuit", label: "Psychological Evaluations", href: "/services/psychological-evaluations" },
+  { icon: "lucide:heart-handshake", label: "Therapy · Ages 3–99", href: "/services/therapy" },
+  { icon: "lucide:pill", label: "Medication Management", href: "/services/medication-management" },
 ];
 
 const differentiators = [
-  { icon: "mdi:stethoscope", stat: "8+", label: "Years Expertise" },
-  { icon: "mdi:earth", stat: "40+", label: "States via PSYPACT" },
-  { icon: "mdi:clock-fast", stat: "7 days", label: "Optional self-pay turnaround" },
-  { icon: "mdi:calendar-check-outline", stat: "2,200+", label: "Evaluations completed" },
-  { icon: "mdi:shield-check-outline", stat: "20+", label: "Insurance panels" },
-  
+  { icon: "lucide:stethoscope", stat: "8+", label: "Years Expertise" },
+  { icon: "lucide:globe", stat: "40+", label: "States via PSYPACT" },
+  { icon: "lucide:timer", stat: "7 days", label: "Optional self-pay turnaround" },
+  { icon: "lucide:calendar-check", stat: "2,300+", label: "Evaluations completed" },
+  { icon: "lucide:shield-check", stat: "20+", label: "Insurance panels" },
 ];
 
 const staggerStyle = (index: number) => `--stagger-i:${index}`;
@@ -101,6 +100,7 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
           </a>
           <a
             href={`tel:${PHONE_NUMBER}`}
+            aria-label="Call Twilight Psychology to request an appointment"
             class="text-sm font-bold text-site-sub hover:text-cta transition-colors"
           >
             or call {PHONE_NUMBER_FORMATTED}

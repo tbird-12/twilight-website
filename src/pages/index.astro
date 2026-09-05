@@ -15,7 +15,7 @@ const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
   .slice(0, 3);
 
 const stats = [
-  { label: "Evaluations", value: "2200+" },
+  { label: "Evaluations", value: "2300+" },
   { label: "Years Experience", value: "8+" },
   { label: "Weeks Self-Pay Waitlist", value: "3" },
   { label: "Days to Self-Pay Report", value: "7" },
@@ -26,7 +26,7 @@ const services = [
     title: "Psychoeducational Evaluations",
     kicker: "IEP, 504 & school advocacy",
     desc: "Private specialty assessments for IEP and 504 documentation, dyslexia, learning differences, giftedness, and twice-exceptional profiles — with IQ and achievement testing.",
-    icon: "mdi:school-outline",
+    icon: "lucide:graduation-cap",
     link: "/specialties/psychoeducational-evaluations",
     cardClass: "homepage-service-card--feature",
   },
@@ -35,7 +35,7 @@ const services = [
     title: "Psychological Evaluations",
     kicker: "ADHD, autism, Personality, and more",
     desc: "ADHD, autism, and broader diagnostic evaluations for children, teens, and adults who need specialty depth, careful interpretation, and recommendations they can act on.",
-    icon: "mdi:brain",
+    icon: "lucide:brain",
     link: "/services/psychological-evaluations",
   },
   
@@ -43,7 +43,7 @@ const services = [
     title: "Medication Management",
     kicker: "Follow-through care",
     desc: "Individualized medication management with broad insurance participation through our dedicated Psychiatric Nurse Practitioner — available as a continuation of evaluation care.",
-    icon: "mdi:stethoscope",
+    icon: "lucide:stethoscope",
     link: "/services/medication-management",
     cardClass: "homepage-service-card--tall",
   },
@@ -52,14 +52,14 @@ const services = [
     title: "Therapy",
     kicker: "Ages 3–99",
     desc: "Evidence-based, neuro-affirming therapy for ages 3–99 with broad insurance participation — often the natural next step after an evaluation.",
-    icon: "mdi:account-heart-outline",
+    icon: "lucide:heart-handshake",
     link: "/services/therapy",
   },  
     {
     title: "Group Therapy",
     kicker: "Adult & Teen Groups · In-Person",
     desc: "Neuro-affirming group therapy in Lexington — adult skills group focused on parasocial relationships, and a teen social skills group built around D&D. Insurance accepted.",
-    icon: "mdi:account-group-outline",
+    icon: "lucide:users",
     link: "/services/therapy/group-therapy",
     cardClass: "homepage-service-card--wide",
   },

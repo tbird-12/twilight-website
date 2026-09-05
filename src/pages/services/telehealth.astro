@@ -123,14 +123,6 @@ const faqItems = [
 >
   <Schema slot="page-schema" schema={telehealthSchema} />
 
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="prose prose-lg max-w-none prose-custom
-                prose-p:text-site-text
-                prose-headings:text-site-text
-                prose-strong:text-site-text
-                prose-li:text-site-text
-                mb-12">
-
   <PageHeroWrapper
     title="Telehealth Psychology Services"
     accentWord="Telehealth"
@@ -243,6 +235,7 @@ const faqItems = [
         </a>
         <a
           href={`tel:${PHONE_NUMBER}`}
+          aria-label="Call Twilight Psychology to schedule a telehealth appointment"
           class="text-sm font-bold text-site-sub hover:text-cta transition-colors underline underline-offset-4"
         >
           Call {PHONE_NUMBER_FORMATTED}
@@ -251,7 +244,4 @@ const faqItems = [
     </div>
   </section>
   </AnimatedSection>
-
-    </div>
-  </div>
 </Layout>

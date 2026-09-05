@@ -8,13 +8,6 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
   title="Specialty Evaluations in Kentucky"
   description="Explore school, legal, and specialty evaluations at Twilight Psychology, including psychoeducational, adoption, guardianship, ESA, and IEE services in Kentucky."
 >
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none prose-custom
-                  prose-p:text-site-text
-                  prose-headings:text-site-text
-                  prose-strong:text-site-text
-                  prose-li:text-site-text
-                  mb-12">
   <section class="relative py-24 px-4 text-center border-b theme-border overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10">
       <span class="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-[0.4em] text-cta uppercase bg-cta/10 border border-cta/20 rounded-full">
@@ -79,6 +72,7 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
         </a>
         <a
           href={`tel:${PHONE_NUMBER}`}
+          aria-label="Call Twilight Psychology to discuss specialty evaluations"
           class="inline-block text-cta font-black text-sm hover:text-site-text transition-colors"
         >
           &#128222; {PHONE_NUMBER_FORMATTED}
@@ -92,6 +86,4 @@ import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
       background: radial-gradient(circle at center, rgba(var(--rgb-surface-2), 0.4), transparent 65%);
     }
   </style>
-      </div>
-    </div>
 </Layout>

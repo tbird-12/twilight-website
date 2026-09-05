@@ -155,7 +155,7 @@ const totalConcerns = categories.reduce((sum, category) => sum + category.concer
             <p class="text-sm text-site-sub leading-relaxed mb-4">
               Contact our administrative team if you want help deciding which service path fits your concern.
             </p>
-            <a href={`tel:${PHONE_NUMBER}`} class="text-sm font-bold text-cta no-underline hover:text-cta/80">
+            <a href={`tel:${PHONE_NUMBER}`} aria-label="Call Twilight Psychology to discuss which service is right for you" class="text-sm font-bold text-cta no-underline hover:text-cta/80">
               {PHONE_NUMBER_FORMATTED}
             </a>
           </div>
@@ -275,6 +275,7 @@ const totalConcerns = categories.reduce((sum, category) => sum + category.concer
           </a>
           <a
             href={`tel:${PHONE_NUMBER}`}
+            aria-label="Call Twilight Psychology"
             class="inline-flex items-center justify-center rounded-full border border-border bg-surface px-5 py-3 text-sm font-bold text-site-text no-underline transition-colors duration-200 hover:border-cta/40 hover:text-cta"
           >
             Call {PHONE_NUMBER_FORMATTED}

@@ -1,8 +1,39 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Schema from "../../components/Schema.astro";
 import { WIDGET_LINK } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
+
+const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
+const pageUrl = new URL(Astro.url.pathname, siteUrl).href;
+
+const medicationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Psychiatric Medication Management at Twilight Psychology",
+  url: pageUrl,
+  keywords: [
+    "medication management Lexington KY",
+    "psychiatric medication management Kentucky",
+    "ADHD medication management Lexington",
+    "stimulant prescribing Kentucky",
+    "psychiatric NP Lexington KY",
+    "ADHD medication Medicaid Kentucky",
+    "mental health medication management near me",
+  ],
+  description:
+    "Psychiatric medication management in Lexington, KY led by our dedicated Nurse Practitioner. Short wait, controlled substance prescribing, and broad insurance and Medicaid coverage.",
+  provider: {
+    "@type": "MedicalOrganization",
+    name: "Twilight Psychology",
+    url: "https://www.twilightpsychology.com",
+  },
+  areaServed: [
+    { "@type": "City", name: "Lexington", containedIn: { "@type": "State", name: "Kentucky" } },
+    { "@type": "State", name: "Kentucky" },
+  ],
+};
 
 const medicationApproach = [
   {
@@ -30,13 +61,7 @@ const medicationApproach = [
   title="Medication Management in Lexington, KY"
   description="Psychiatric medication management in Lexington, KY. Short wait, controlled substance prescribing, ADHD stimulant access. Major insurance and Medicaid accepted."
 >
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="prose prose-lg max-w-none prose-custom
-                  prose-p:text-site-text
-                  prose-headings:text-site-text
-                  prose-strong:text-site-text
-                  prose-li:text-site-text
-                  mb-12">
+  <Schema slot="page-schema" schema={medicationSchema} />
   <PageHeroWrapper
     title="Medication Management"
     accentWord="Management"
@@ -220,6 +245,4 @@ const medicationApproach = [
       View All Services
     </a>
   </nav>
-      </div>
-    </div>
 </Layout>
