@@ -10,6 +10,10 @@ tags: ["cpt-codes", "psychological-testing", "billing", "medicaid"]
 draft: false
 ---
 
+**Looking to schedule or asking about a recent bill?** Our intake and billing team can help directly — [contact our office](/contact), [view our evaluation services](/services/psychological-evaluations), or [check accepted insurances](/resources/insurances-accepted) before reading on.
+
+---
+
 > **Disclaimer:** CPT and HCPCS coding depends on medical necessity, documentation, payer rules, and the services actually provided. This page is for general education and is not a guarantee of coverage or payment.
 
 When families review a superbill, statement, or Explanation of Benefits, one of the most common questions is: **what do all of these codes mean?** This page explains the main codes commonly used for **psychological testing**, **developmental testing**, and the **feedback sessions** that often follow testing at Twilight Psychology. These services are billed by licensed clinicians such as LPs, T-LPs, LPAs, T-LPAs, and LPPs in Kentucky.

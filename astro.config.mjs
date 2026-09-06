@@ -15,7 +15,17 @@ const sitemapExcludedPaths = [
   "/welcome/",
   "/404/",
   "/client-resources/",
+  // Legacy /specialities/ alias pages (noindex redirects to /specialties/)
   "/specialities/",
+  "/specialities/adoption-evaluations/",
+  "/specialities/benefits-evaluations/",
+  "/specialities/dyslexia-testing/",
+  "/specialities/esa-evaluations/",
+  "/specialities/guardianship-evaluations/",
+  "/specialities/iee/",
+  "/specialities/pda-profile/",
+  "/specialities/psychoeducational-evaluations/",
+  // Legacy /about/ alias pages (noindex redirects to current clinician or therapy pages)
   "/about/heather-cornett/",
   "/about/nicola-allen/",
   "/about/emeli-evans/",
@@ -26,6 +36,7 @@ const sitemapExcludedPaths = [
   "/about/tiffany-roundtree/",
   "/about/samantha-rodarte/",
   "/about/mission-vision-values/",
+  // Legacy /services/ alias pages (noindex redirects to current service pages)
   "/services/adhd-testing-ky/",
   "/services/autism-testing-ky/",
   "/services/autism-therapy-ky/",

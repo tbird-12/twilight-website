@@ -1,14 +1,20 @@
 ---
 title: "Aetna Better Health — Prior Authorization, Medical Necessity, and Appeals"
-seoTitle: "Aetna Better Health Prior Authorization for Testing"
+seoTitle: "Aetna Better Health of Kentucky — In-Network for Therapy & Testing"
 description: "Information about prior authorization, documentation, medical necessity, and appeals for psychological testing under Aetna Better Health of Kentucky"
-seoDescription: "Learn how Aetna Better Health of Kentucky handles prior authorization, medical necessity, and appeals for psychological testing."
+seoDescription: "Twilight Psychology accepts Aetna Better Health of Kentucky for therapy and testing. Learn how prior authorization and medical necessity work for evaluations."
 pubDate: 2026-02-20
 updatedDate: 2026-05-12
 category: insurance
 author: "Twilight Psychology Team"
 tags: ["aetna", "medicaid", "insurance", "network"]
 draft: false
+---
+
+**Twilight Psychology is in-network with Aetna Better Health of Kentucky** for therapy and medication management, and accepts Aetna for psychological testing when the evaluation meets medical necessity criteria. If you want to verify your specific coverage or schedule, [contact our intake team](/contact) or [view our accepted insurance plans](/resources/insurances-accepted).
+
+The information below covers **prior authorization, medical necessity standards, and appeals** for psychological testing under Aetna Better Health — useful background if your evaluation requires authorization or a prior authorization was denied.
+
 ---
 
 Twilight Psychology is credentialed with **Aetna Better Health of Kentucky**, but that does **not** mean every psychological evaluation is a covered Kentucky Medicaid service. Aetna's provider guidance makes clear that psychological and neuropsychological testing must be **treatment-focused** and **medically necessary**. If the main purpose of the testing is for a school, court, attorney, disability program, waiver program, employer, or another third party, Kentucky Medicaid generally does not cover it.
