@@ -483,6 +483,12 @@ const qualityCareItems = [
     </section>
   </div>
 <script is:inline>
+  // Focus on hero section on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    // Scroll to top (hero section) on initial load
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  });
+
   const swimlane = document.getElementById('problem-swimlane');
   if (swimlane) {
     const cards = [...swimlane.querySelectorAll('.problem-swimlane-card')];
@@ -491,6 +497,7 @@ const qualityCareItems = [
 
     let currentIndex = 0;
     let autoTimer = null;
+    let isInViewport = false;
 
     const setActiveState = (index) => {
       const nextIndex = (index + cards.length) % cards.length;
@@ -518,15 +525,18 @@ const qualityCareItems = [
       setActiveState(currentIndex + 1);
     };
 
+    // Only start autoplay if carousel is currently in viewport
     const startAutoplay = () => {
+      if (!isInViewport) return;
       if (autoTimer) clearInterval(autoTimer);
       autoTimer = setInterval(() => {
-        if (!prefersReducedMotion) {
+        if (isInViewport && !prefersReducedMotion) {
           advance();
         }
       }, 3000);
     };
 
+    // Stop autoplay and clear timer
     const stopAutoplay = () => {
       if (autoTimer) {
         clearInterval(autoTimer);
@@ -536,38 +546,43 @@ const qualityCareItems = [
 
     setActiveState(0);
 
-    // Use Intersection Observer to only autoplay when section is visible
+    // Intersection Observer: start autoplay when carousel enters viewport, stop when it leaves
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          isInViewport = entry.isIntersecting;
+          if (isInViewport) {
+            // Carousel is now visible in viewport - start autoplay
             startAutoplay();
           } else {
+            // Carousel is no longer visible - stop autoplay
             stopAutoplay();
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 } // Trigger when at least 10% of carousel is visible
     );
 
     observer.observe(swimlane);
 
+    // Stop autoplay on user interaction, but allow resume when carousel comes back into view
     cards.forEach((card, index) => {
-      card.addEventListener('focus', () => setActiveState(index));
+      card.addEventListener('focus', () => {
+        setActiveState(index);
+        stopAutoplay();
+      });
       card.addEventListener('click', () => {
         setActiveState(index);
-        startAutoplay();
+        stopAutoplay();
       });
     });
 
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         setActiveState(index);
-        startAutoplay();
+        stopAutoplay();
       });
     });
-
-    startAutoplay();
   }
 </script>
 
