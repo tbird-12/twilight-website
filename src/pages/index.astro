@@ -498,8 +498,9 @@ const qualityCareItems = [
     let currentIndex = 0;
     let autoTimer = null;
     let isInViewport = false;
+    let isInitializing = true;
 
-    const setActiveState = (index) => {
+    const setActiveState = (index, skipScroll = false) => {
       const nextIndex = (index + cards.length) % cards.length;
       currentIndex = nextIndex;
 
@@ -513,11 +514,13 @@ const qualityCareItems = [
         dot.setAttribute('aria-pressed', String(isActive));
       });
 
-      cards[nextIndex]?.scrollIntoView({
-        behavior: prefersReducedMotion ? 'auto' : 'smooth',
-        inline: 'start',
-        block: 'nearest',
-      });
+      if (!skipScroll) {
+        cards[nextIndex]?.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          inline: 'start',
+          block: 'nearest',
+        });
+      }
     };
 
     const advance = () => {
@@ -544,7 +547,7 @@ const qualityCareItems = [
       }
     };
 
-    setActiveState(0);
+    setActiveState(0, true); // Skip scroll on initial page load to keep focus on hero
 
     // Intersection Observer: start autoplay when carousel enters viewport, stop when it leaves
     const observer = new IntersectionObserver(
