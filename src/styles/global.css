@@ -366,17 +366,26 @@
   .site-footer {
     background-color: var(--theme-site-footer);
     border-top: 1px solid var(--theme-border);
-    @apply py-16 px-6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    @apply py-20 px-6 md:py-24 lg:py-28;
+  }
+
+  @media (max-width: 767px) {
+    .site-footer {
+      min-height: auto;
+    }
   }
 
   /* Premium footer links: Muted by default, white/black on hover */
   .footer-link {
     color: var(--theme-site-sub);
-    @apply transition-colors duration-300 hover:text-site-text text-sm font-medium;
+    @apply transition-colors duration-300 hover:text-site-text text-sm md:text-base font-medium;
   }
 
   .footer-heading {
-    @apply font-heading text-lg mb-6;
+    @apply font-heading text-lg md:text-xl mb-6;
     color: var(--theme-site-text);
   }
 
