@@ -128,7 +128,7 @@ const qualityCareItems = [
 
 <Layout
   title="Psychoeducational Evaluations & Psychological Testing in KY"
-  description="Private psychoeducational evaluations for IEP, 504, and school planning in Lexington, KY. Psychological testing, therapy, and medication management across Kentucky."
+  description="Private psychological evaluations for ADHD, autism, and IEP planning in Lexington, KY. Therapy, medication management, and specialties across Kentucky."
 >
   <div class="homepage-shell bg-site-bg">
     <section
@@ -466,14 +466,14 @@ const qualityCareItems = [
             <a
               href="/resources/new-client"
               data-astro-prefetch="viewport"
-              class="px-10 py-4 theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-lg"
+              class="px-10 py-4 theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
             >
               Steps for New Clients
             </a>
             <a
               href="/about/clinicians/clinicians-lex-ky"
               data-astro-prefetch="viewport"
-              class="px-10 py-4 bg-cta text-cta-fg border border-button-border font-black rounded-full theme-hover-surface transition-all"
+              class="px-10 py-4 bg-cta text-cta-fg border border-button-border font-black rounded-full theme-hover-surface transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cta/50"
             >
               Meet Our Clinicians
             </a>
@@ -527,7 +527,30 @@ const qualityCareItems = [
       }, 3000);
     };
 
+    const stopAutoplay = () => {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    };
+
     setActiveState(0);
+
+    // Use Intersection Observer to only autoplay when section is visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startAutoplay();
+          } else {
+            stopAutoplay();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(swimlane);
 
     cards.forEach((card, index) => {
       card.addEventListener('focus', () => setActiveState(index));
@@ -547,7 +570,6 @@ const qualityCareItems = [
     startAutoplay();
   }
 </script>
-</Layout>
 
 <style>
   @keyframes panelGlowBreath {
@@ -1239,4 +1261,5 @@ const qualityCareItems = [
     }
   }
 </style>
+</Layout>
 

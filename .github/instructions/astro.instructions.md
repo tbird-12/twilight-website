@@ -61,7 +61,7 @@ These conventions have been reviewed and applied across all pages. Do not sugges
 - Always include a geographic qualifier (`KY` or `in Kentucky`) for service and specialty pages.
 - Brand suffix is always `| Twilight Psychology` (never `| Twilight Psychology PLLC`).
 - Confirmed titles (do not rewrite):
-  - Home: `Psychological Evaluations & Therapy in KY | Twilight Psychology`
+  - Home: `Psychoeducational Evaluations & Psychological Testing in KY | Twilight Psychology`
   - Services hub: `Psychological Services | Twilight Psychology`
   - ADHD Testing: `ADHD Testing KY | Twilight Psychology`
   - Autism Testing: `Autism Testing KY | Twilight Psychology`
