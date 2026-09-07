@@ -183,11 +183,18 @@ const qualityCareItems = [
         <div class="problem-swimlane-wrap">
           <div
             class="problem-swimlane"
+            id="problem-swimlane"
             role="list"
             aria-label="Common barriers families face and how Twilight Psychology responds"
           >
             {problemPoints.map((point, i) => (
-              <article class="problem-swimlane-card" role="listitem">
+              <a
+                href="#quality-care"
+                class="problem-swimlane-card"
+                role="listitem"
+                data-card-index={i}
+                aria-label={`Go to quality care section: ${point.title}`}
+              >
                 <span class="problem-card-num" aria-hidden="true">0{i + 1}</span>
 
                 <!-- The gap -->
@@ -214,14 +221,26 @@ const qualityCareItems = [
                   </div>
                   <p class="problem-card-body">{qualityCareItems[i].title}</p>
                 </div>
-              </article>
+              </a>
+            ))}
+          </div>
+
+          <div class="problem-swimlane-dots" aria-label="Problem carousel navigation">
+            {problemPoints.map((_, i) => (
+              <button
+                type="button"
+                class="problem-swimlane-dot"
+                data-dot-index={i}
+                aria-label={`Go to problem point ${i + 1}`}
+                aria-pressed="false"
+              />
             ))}
           </div>
         </div>
 
         <!-- Bridge copy leading into services -->
         <p class="problem-footer-note">
-          Twilight Psychology was conceived specifically for these gaps — with the clinical depth,
+          Twilight Psychology was conceived specifically for addressing these gaps — with the clinical depth,
           specialty breadth, and in-house follow-through care that most practices don't offer in one place.
           <a href="/specialties" class="text-cta font-semibold hover:underline ml-1">See our specialties →</a>
         </p>
@@ -463,6 +482,71 @@ const qualityCareItems = [
       </div>
     </section>
   </div>
+<script is:inline>
+  const swimlane = document.getElementById('problem-swimlane');
+  if (swimlane) {
+    const cards = [...swimlane.querySelectorAll('.problem-swimlane-card')];
+    const dots = [...document.querySelectorAll('.problem-swimlane-dot')];
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let currentIndex = 0;
+    let autoTimer = null;
+
+    const setActiveState = (index) => {
+      const nextIndex = (index + cards.length) % cards.length;
+      currentIndex = nextIndex;
+
+      cards.forEach((card, i) => {
+        card.classList.toggle('is-active', i === nextIndex);
+      });
+
+      dots.forEach((dot, i) => {
+        const isActive = i === nextIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-pressed', String(isActive));
+      });
+
+      cards[nextIndex]?.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        inline: 'start',
+        block: 'nearest',
+      });
+    };
+
+    const advance = () => {
+      if (!cards.length) return;
+      setActiveState(currentIndex + 1);
+    };
+
+    const startAutoplay = () => {
+      if (autoTimer) clearInterval(autoTimer);
+      autoTimer = setInterval(() => {
+        if (!prefersReducedMotion) {
+          advance();
+        }
+      }, 3000);
+    };
+
+    setActiveState(0);
+
+    cards.forEach((card, index) => {
+      card.addEventListener('focus', () => setActiveState(index));
+      card.addEventListener('click', () => {
+        setActiveState(index);
+        startAutoplay();
+      });
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        setActiveState(index);
+        startAutoplay();
+      });
+    });
+
+    startAutoplay();
+  }
+</script>
 </Layout>
 
 <style>
@@ -694,6 +778,33 @@ const qualityCareItems = [
     );
   }
 
+  .problem-swimlane-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .problem-swimlane-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(var(--rgb-accent), 0.25);
+    background: rgba(var(--rgb-accent), 0.12);
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .problem-swimlane-dot.is-active {
+    background: var(--color-cta);
+    border-color: var(--color-cta);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(var(--rgb-accent), 0.08);
+  }
+
   /* Horizontal scroll track */
   .problem-swimlane {
     display: flex;
@@ -736,14 +847,20 @@ const qualityCareItems = [
     box-shadow:
       inset 0 1px 0 rgba(var(--rgb-accent), 0.11),
       0 8px 28px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
-  .problem-swimlane-card:hover {
+  .problem-swimlane-card:hover,
+  .problem-swimlane-card:focus-visible,
+  .problem-swimlane-card.is-active {
     border-color: rgba(var(--rgb-accent), 0.2);
     box-shadow:
       inset 0 1px 0 rgba(var(--rgb-accent), 0.14),
       0 16px 44px rgba(0, 0, 0, 0.14);
+    transform: translateY(-2px);
   }
 
   /* Index badge */
@@ -763,6 +880,9 @@ const qualityCareItems = [
   .problem-card-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 0.55rem;
     padding: 1.25rem 1.15rem 1rem;
   }
@@ -862,6 +982,16 @@ const qualityCareItems = [
     font-weight: 500;
     line-height: 1.75;
     color: var(--theme-site-sub);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .problem-swimlane {
+      scroll-behavior: auto;
+    }
+
+    .problem-swimlane-card {
+      transition: none;
+    }
   }
 
   .homepage-panel-services {
