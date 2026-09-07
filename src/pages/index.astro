@@ -165,50 +165,66 @@ const qualityCareItems = [
       >
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <div class="problem-grid">
-          <!-- Left: bold statement -->
-          <div class="problem-statement">
-            <p class="homepage-section-label">Sound familiar?</p>
-            <h2
-              class="fluid-display-sm font-serif font-black text-site-text mb-6"
-            >
-              The System
-              <span class="text-cta block sm:inline"> Wasn't Built for This</span>
-            </h2>
-            <p class="max-w-lg text-left text-base font-medium leading-relaxed text-site-sub sm:text-lg">
-              Most families seeking answers for <abbr title="Attention-Deficit/Hyperactivity Disorder">ADHD</abbr>, autism, learning differences, 
-              or giftedness run into the same walls: long waits, shallow evaluations, reports that schools can't act on, 
-              and no clear path forward after the diagnosis.
-            </p>
-            <p class="max-w-lg text-left text-base font-medium leading-relaxed text-site-sub sm:text-lg mt-4">
-              Twilight Psychology was conceived specifically for those gaps — with the clinical depth, 
-              specialty breadth, and in-house follow-through care that most practices don't offer in one place.
-              <a href="/specialties" class="text-cta font-semibold hover:underline ml-1">
-                See our specialties →
-              </a>
-            </p>
-          </div>
+        <!-- Section header -->
+        <header class="problem-header">
+          <p class="homepage-section-label">Sound familiar?</p>
+          <h2 class="fluid-display-sm font-serif font-black text-site-text mb-5">
+            The System
+            <span class="text-cta block sm:inline"> Wasn't Built for This</span>
+          </h2>
+          <p class="problem-header-sub">
+            Most families seeking answers for <abbr title="Attention-Deficit/Hyperactivity Disorder">ADHD</abbr>, autism, learning differences,
+            or giftedness run into the same walls: long waits, shallow evaluations, reports that schools can't act on,
+            and no clear path forward after the diagnosis.
+          </p>
+        </header>
 
-          <!-- Right: staggered pain points -->
-          <div class="problem-points glass-card-premium rounded-4xl px-6 py-4 sm:px-8 sm:py-5" role="list">
-            {problemPoints.map((point) => (
-              <div class="problem-point" role="listitem">
-                <span class="problem-point-marker" aria-hidden="true"></span>
-                <div>
-                  <div class="flex items-center gap-2 mb-1">
-                    <!--span class="text-[10px] font-black uppercase tracking-widest text-cta/60" aria-hidden="true"></span-->
-                    <h3 class="font-sans text-base sm:text-lg font-bold text-site-text">
-                      {point.title}
-                    </h3>
+        <!-- Problem → Answer swimlane -->
+        <div class="problem-swimlane-wrap">
+          <div
+            class="problem-swimlane"
+            role="list"
+            aria-label="Common barriers families face and how Twilight Psychology responds"
+          >
+            {problemPoints.map((point, i) => (
+              <article class="problem-swimlane-card" role="listitem">
+                <span class="problem-card-num" aria-hidden="true">0{i + 1}</span>
+
+                <!-- The gap -->
+                <div class="problem-card-section problem-card-section--gap">
+                  <div class="problem-card-tag">
+                    <span class="problem-card-dot" aria-hidden="true"></span>
+                    <span>Challenge</span>
                   </div>
-                  <p class="text-sm text-site-sub leading-relaxed">
-                    {point.desc}
-                  </p>
+                  <h3 class="problem-card-title">{point.title}</h3>
+                  <p class="problem-card-body">{point.desc}</p>
                 </div>
-              </div>
+
+                <!-- Visual transition arrow -->
+                <div class="problem-card-divider" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M7 2v10M3.5 8.5L7 12l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+
+                <!-- Twilight's answer -->
+                <div class="problem-card-section problem-card-section--answer">
+                  <div class="problem-card-tag problem-card-tag--answer">
+                    <span>Our Expertise</span>
+                  </div>
+                  <p class="problem-card-body">{qualityCareItems[i].title}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
+
+        <!-- Bridge copy leading into services -->
+        <p class="problem-footer-note">
+          Twilight Psychology was conceived specifically for these gaps — with the clinical depth,
+          specialty breadth, and in-house follow-through care that most practices don't offer in one place.
+          <a href="/specialties" class="text-cta font-semibold hover:underline ml-1">See our specialties →</a>
+        </p>
       </div>
     </section>
 
@@ -293,7 +309,7 @@ const qualityCareItems = [
         <header class="mx-auto mb-10 max-w-3xl text-center">
           <p class="homepage-section-label">How we're different</p>
           <h2
-            class="mb-5 text-3xl font-serif font-black tracking-[-0.025em] text-site-text sm:text-4xl lg:text-[2.7rem]"
+            class="mb-5 text-3xl font-serif font-black tracking-tight text-site-text sm:text-4xl lg:text-[2.7rem]"
           >
             <span class="text-cta">Answers You Deserve, Now</span> Available at Twilight Psychology
           </h2>
@@ -647,73 +663,205 @@ const qualityCareItems = [
       rgba(var(--rgb-bg), 0.94);
   }
 
-  .problem-grid {
-    display: grid;
-    gap: 3rem;
-    align-items: start;
+  /* ── Problem section: swimlane layout ── */
+
+  .problem-header {
+    text-align: center;
+    max-width: 40rem;
+    margin-inline: auto;
+    margin-bottom: 2.75rem;
   }
 
-  @media (min-width: 1024px) {
-    .problem-grid {
-      grid-template-columns: 5fr 6fr;
-      gap: 4rem;
-      align-items: center;
-    }
+  .problem-header-sub {
+    max-width: 34rem;
+    margin-inline: auto;
+    font-size: clamp(0.9rem, 2vw, 1.0625rem);
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--theme-site-sub);
   }
 
-  .problem-statement {
-    position: sticky;
-    top: 6rem;
+  /* Edge-fade wrapper — bleeds past panel padding to let the mask reach viewport edges */
+  .problem-swimlane-wrap {
+    position: relative;
+    margin-inline: -1.5rem;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 3.5rem,
+      black calc(100% - 3.5rem),
+      transparent
+    );
   }
 
-  @media (max-width: 1023px) {
-    .problem-statement {
-      position: static;
-      text-align: center;
-    }
-
-    .problem-statement p:last-child {
-      margin-left: auto;
-      margin-right: auto;
-    }
+  /* Horizontal scroll track */
+  .problem-swimlane {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x mandatory;
+    padding-block: 1.5rem;
+    padding-inline: 2.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--rgb-accent), 0.18) transparent;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .problem-points {
+  .problem-swimlane::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .problem-swimlane::-webkit-scrollbar-thumb {
+    background: rgba(var(--rgb-accent), 0.18);
+    border-radius: 9999px;
+  }
+
+  /* Individual card */
+  .problem-swimlane-card {
+    position: relative;
+    flex: 0 0 clamp(16rem, 72vw, 20.5rem);
     display: flex;
     flex-direction: column;
-    gap: 0;
+    scroll-snap-align: start;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(var(--rgb-accent), 0.09);
+    background-color: var(--color-surface);
+    background-image: linear-gradient(
+      175deg,
+      color-mix(in oklab, var(--theme-surface) 92%, transparent) 0%,
+      color-mix(in oklab, var(--theme-glass-bg) 97%, transparent) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(var(--rgb-accent), 0.11),
+      0 8px 28px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
 
-  .problem-point {
-    display: flex;
-    gap: 1.25rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(var(--rgb-accent), 0.1);
-    position: relative;
+  .problem-swimlane-card:hover {
+    border-color: rgba(var(--rgb-accent), 0.2);
+    box-shadow:
+      inset 0 1px 0 rgba(var(--rgb-accent), 0.14),
+      0 16px 44px rgba(0, 0, 0, 0.14);
   }
 
-  .problem-point:first-child {
-    border-top: 1px solid rgba(var(--rgb-accent), 0.1);
-  }
-
-  .problem-point-marker {
-    position: relative;
-    flex-shrink: 0;
-    width: 0.625rem;
-    height: 0.625rem;
-    margin-top: 0.45rem;
-    border-radius: 9999px;
-    background: var(--color-cta);
-    opacity: 0.6;
-  }
-
-  .problem-point-marker::after {
-    content: "";
+  /* Index badge */
+  .problem-card-num {
     position: absolute;
-    inset: -4px;
+    top: 0.875rem;
+    right: 1.1rem;
+    font-size: 0.6rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    color: var(--theme-site-sub);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* Section halves */
+  .problem-card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1.25rem 1.15rem 1rem;
+  }
+
+  .problem-card-section--answer {
+    flex: 1;
+    background: rgba(var(--rgb-accent), 0.024);
+  }
+
+  /* Tag row */
+  .problem-card-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.575rem;
+    font-weight: 900;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--theme-site-sub);
+  }
+
+  .problem-card-tag--answer {
+    color: var(--theme-cta);
+  }
+
+  .problem-card-dot {
+    width: 0.38rem;
+    height: 0.38rem;
     border-radius: 9999px;
-    border: 1.5px solid var(--color-cta);
-    opacity: 0.25;
+    background: currentColor;
+    flex-shrink: 0;
+    opacity: 0.55;
+  }
+
+  /* Divider arrow between halves */
+  .problem-card-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 0;
+    color: var(--theme-site-sub);
+    opacity: 0.28;
+    border-block: 1px solid rgba(var(--rgb-accent), 0.06);
+  }
+
+  /* Card text */
+  .problem-card-title {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.42;
+    color: var(--theme-site-text);
+    margin: 0;
+  }
+
+  .problem-card-title--answer {
+    font-family: var(--font-heading);
+    font-weight: 900;
+  }
+
+  .problem-card-body {
+    font-size: 0.8125rem;
+    line-height: 1.72;
+    color: var(--theme-site-sub);
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Learn more CTA inside card */
+  .problem-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.6rem;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--theme-cta);
+    opacity: 0.72;
+    text-decoration: none;
+    transition: opacity 0.2s ease, gap 0.2s ease;
+  }
+
+  .problem-card-cta:hover {
+    opacity: 1;
+    gap: 0.6rem;
+  }
+
+  /* Bridge note below the lane */
+  .problem-footer-note {
+    margin-top: 2.25rem;
+    text-align: center;
+    max-width: 40rem;
+    margin-inline: auto;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.75;
+    color: var(--theme-site-sub);
   }
 
   .homepage-panel-services {
