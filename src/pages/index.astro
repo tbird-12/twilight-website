@@ -67,28 +67,28 @@ const services = [
 
 const problemPoints = [
   {
-    title: "Your evaluation experience felt inadequate and the results did not capture the full picture",
-    desc: "You or your child do not exhibit classical neurodivergent traits, leading to feelings of being dismissed or misunderstood by professionals.",
-  },
-{
-    title: "You received a report but it didn't help your school team",
-    desc: "Many families leave an evaluation with a label but no clear next steps.  IEP and 504 teams need documentation with specific testing scores and recommendations, not a summary letter.",
-  },  
-{
-    title: "You waited months for answers but the evaluation was limited",
-    desc: "Many agencies limit assessments to brief screenings or single-domain evaluations, leaving families to seek additional evaluations elsewhere.",
+    title: "Your evaluation felt dismissive or incomplete",
+    desc: "Non-classical neurodivergent traits are routinely missed. High-masking profiles, twice-exceptional kids, and adults who 'seem fine' are left without answers.",
   },
   {
-    title: "Your child was called \"oppositional\" or \"lazy\"",
-    desc: "Demand-avoidant and high-masking autism profiles are frequently missed or mislabeled in standard evaluations. The right framework changes everything about how a child is supported.",
+    title: "Your report didn't translate to school action",
+    desc: "IEP and 504 teams need specific testing scores and recommendations — not a summary letter. Most evaluation reports don't include what schools actually require.",
   },
   {
-    title: "You found a prescriber but then waited four months",
-    desc: "Access to a psychiatric prescriber for ADHD — especially one who can prescribe stimulants — is genuinely hard to get in Kentucky. Months-long waits are the norm, not the exception.",
+    title: "Months of waiting, then a limited assessment",
+    desc: "Many agencies cap assessments at brief screenings or single domains, leaving families to restart the search — and the wait — all over again.",
   },
   {
-    title: "After the diagnosis, the system left you on your own",
-    desc: "An evaluation is only the beginning. Without therapy and medication management in the same practice, families end up navigating referrals, waitlists, and disconnected care all over again.",
+    title: "Your child was labeled 'oppositional' or 'lazy'",
+    desc: "Demand-avoidant and high-masking autism profiles are frequently mislabeled in standard evaluations. The right framework changes how a child is understood and supported.",
+  },
+  {
+    title: "Access to a prescriber took months",
+    desc: "Psychiatric prescribers for ADHD — especially those who can prescribe stimulants — are genuinely hard to access in Kentucky. Months-long waits are the norm everywhere else.",
+  },
+  {
+    title: "After the diagnosis, support disappeared",
+    desc: "An evaluation is only the beginning. Without therapy and medication in the same practice, families navigate referrals, waitlists, and disconnected care all over again.",
   },
 ];
 
@@ -165,89 +165,92 @@ const qualityCareItems = [
       >
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <!-- Section header -->
-        <header class="problem-header">
+        <!-- Problem → Response rows (pairs 01–03) -->
+        <header class="gap-panel-header">
           <p class="homepage-section-label">Sound familiar?</p>
-          <h2 class="fluid-display-sm font-serif font-black text-site-text mb-5">
-            The System
-            <span class="text-cta block sm:inline"> Wasn't Built for This</span>
+          <h2 class="fluid-display-sm font-serif font-black text-site-text">
+            The walls families hit<span class="text-cta block sm:inline"> and how we can help you</span>
           </h2>
-          <p class="problem-header-sub">
-            Most families seeking answers for <abbr title="Attention-Deficit/Hyperactivity Disorder">ADHD</abbr>, autism, learning differences,
-            or giftedness run into the same walls: long waits, shallow evaluations, reports that schools can't act on,
-            and no clear path forward after the diagnosis.
-          </p>
         </header>
 
-        <!-- Problem → Answer swimlane -->
-        <div class="problem-swimlane-wrap">
-          <div
-            class="problem-swimlane"
-            id="problem-swimlane"
-            role="list"
-            aria-label="Common barriers families face and how Twilight Psychology responds"
-          >
-            {problemPoints.map((point, i) => (
+        <div class="gap-rows" role="list" aria-label="Common barriers and how Twilight Psychology can help">
+          {problemPoints.slice(0, 3).map((point, i) => (
+            <a
+              href={qualityCareItems[i].link}
+              data-astro-prefetch="viewport"
+              class="gap-row group"
+              role="listitem"
+            >
+              <span class="gap-row-num" aria-hidden="true">0{i + 1}</span>
+              <div class="gap-row-challenge">
+                <span class="gap-row-label">The challenge</span>
+                <p class="gap-row-challenge-text">{point.title}</p>
+              </div>
+              <div class="gap-row-response">
+                <span class="gap-row-label gap-row-label--response">Our Approach</span>
+                <h3 class="gap-row-response-title">{qualityCareItems[i].title}</h3>
+                <p class="gap-row-response-desc">{qualityCareItems[i].desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  
+
+    <section
+      id="quality-care"
+      class="homepage-panel homepage-panel-care relative isolate overflow-hidden px-4"
+    >
+      <div
+        class="homepage-panel-glow homepage-panel-glow-left"
+        aria-hidden="true"
+      >
+      </div>
+      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <!-- Problem → Response rows (pairs 04–06) -->
+        <header class="gap-panel-header">
+          <p class="homepage-section-label">How Twilight Psychology is different</p>
+          <h2 class="fluid-display-sm font-serif font-black text-site-text">
+            Built for the gaps<span class="text-cta block sm:inline"> others leave behind</span>
+          </h2>
+        </header>
+
+        <div class="gap-rows" role="list" aria-label="More ways Twilight Psychology addresses the gaps">
+          {problemPoints.slice(3).map((point, i) => {
+            const idx = i + 3;
+            return (
               <a
-                href="#quality-care"
-                class="problem-swimlane-card"
+                href={qualityCareItems[idx].link}
+                data-astro-prefetch="viewport"
+                class="gap-row group"
                 role="listitem"
-                data-card-index={i}
-                aria-label={`Go to quality care section: ${point.title}`}
               >
-                <span class="problem-card-num" aria-hidden="true">0{i + 1}</span>
-
-                <!-- The gap -->
-                <div class="problem-card-section problem-card-section--gap">
-                  <div class="problem-card-tag">
-                    <span class="problem-card-dot" aria-hidden="true"></span>
-                    <span>Challenge</span>
-                  </div>
-                  <h3 class="problem-card-title">{point.title}</h3>
-                  <p class="problem-card-body">{point.desc}</p>
+                <span class="gap-row-num" aria-hidden="true">0{idx + 1}</span>
+                <div class="gap-row-challenge">
+                  <span class="gap-row-label">The challenge</span>
+                  <p class="gap-row-challenge-text">{point.title}</p>
                 </div>
-
-                <!-- Visual transition arrow -->
-                <div class="problem-card-divider" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M7 2v10M3.5 8.5L7 12l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-
-                <!-- Twilight's answer -->
-                <div class="problem-card-section problem-card-section--answer">
-                  <div class="problem-card-tag problem-card-tag--answer">
-                    <span>Our Expertise</span>
-                  </div>
-                  <p class="problem-card-body">{qualityCareItems[i].title}</p>
+                <div class="gap-row-response">
+                  <span class="gap-row-label gap-row-label--response">Our Expertise</span>
+                  <h3 class="gap-row-response-title">{qualityCareItems[idx].title}</h3>
+                  <p class="gap-row-response-desc">{qualityCareItems[idx].desc}</p>
                 </div>
               </a>
-            ))}
-          </div>
-
-          <div class="problem-swimlane-dots" aria-label="Problem carousel navigation">
-            {problemPoints.map((_, i) => (
-              <button
-                type="button"
-                class="problem-swimlane-dot"
-                data-dot-index={i}
-                aria-label={`Go to problem point ${i + 1}`}
-                aria-pressed="false"
-              />
-            ))}
-          </div>
+            );
+          })}
         </div>
 
-        <!-- Bridge copy leading into services -->
-        <p class="problem-footer-note">
-          Twilight Psychology was conceived specifically for addressing these gaps — with the clinical depth,
-          specialty breadth, and in-house follow-through care that most practices don't offer in one place.
-          <a href="/specialties" class="text-cta font-semibold hover:underline ml-1">See our specialties →</a>
+        <p class="gap-footer-note">
+          Twilight Psychology was built specifically to address these gaps — with the clinical depth,
+          specialty breadth, and in-house follow-through that most practices can't offer in one place.
+          <a href="/specialties" class="text-cta font-semibold hover:underline ml-1">Explore our specialties →</a>
         </p>
       </div>
     </section>
 
-    <section
+      <section
       class="homepage-panel homepage-panel-services relative isolate overflow-hidden px-4"
     >
       <div
@@ -307,58 +310,6 @@ const qualityCareItems = [
                     Explore Service
                     <span class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all" aria-hidden="true" />
                   </span>
-                </div>
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="quality-care"
-      class="homepage-panel homepage-panel-care relative isolate overflow-hidden px-4"
-    >
-      <div
-        class="homepage-panel-glow homepage-panel-glow-left"
-        aria-hidden="true"
-      >
-      </div>
-      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <header class="mx-auto mb-10 max-w-3xl text-center">
-          <p class="homepage-section-label">How we're different</p>
-          <h2
-            class="mb-5 text-3xl font-serif font-black tracking-tight text-site-text sm:text-4xl lg:text-[2.7rem]"
-          >
-            <span class="text-cta">Answers You Deserve, Now</span> Available at Twilight Psychology
-          </h2>
-          <p
-            class="mx-auto max-w-2xl text-center text-base leading-relaxed text-site-sub sm:text-lg"
-          >
-            Here's what's concretely different about Twilight Psychology — each one a direct response to the gaps families hit everywhere else.
-          </p>
-        </header>
-
-        <div class="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-3 ">
-          {
-            qualityCareItems.map((item, i) => (
-              <a
-                href={item.link}
-                data-astro-prefetch="viewport"
-                class="group homepage-card-strong glass-card-premium rounded-3xl p-6 sm:p-7 flex flex-col transition-all duration-300 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
-              >
-                <span class="text-[10px] font-black uppercase tracking-widest text-cta/50 mb-3 block" aria-hidden="true">0{i + 1}</span>
-                <h3 class="font-serif text-base sm:text-lg font-black text-site-text mb-3 leading-tight group-hover:text-cta transition-colors">
-                  {item.title}
-                </h3>
-                <p class="text-xs sm:text-sm leading-relaxed text-site-sub flex-1">
-                  {item.desc}
-                </p>
-                <div class="mt-4 flex items-center gap-2 text-xs font-semibold text-cta/70 group-hover:text-cta transition-colors">
-                  Learn more
-                  <svg class="h-3 w-3 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M9 5l7 7-7 7" />
-                  </svg>
                 </div>
               </a>
             ))
@@ -482,112 +433,6 @@ const qualityCareItems = [
       </div>
     </section>
   </div>
-<script is:inline>
-  // Focus on hero section on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    // Scroll to top (hero section) on initial load
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  });
-
-  const swimlane = document.getElementById('problem-swimlane');
-  if (swimlane) {
-    const cards = [...swimlane.querySelectorAll('.problem-swimlane-card')];
-    const dots = [...document.querySelectorAll('.problem-swimlane-dot')];
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    let currentIndex = 0;
-    let autoTimer = null;
-    let isInViewport = false;
-    let isInitializing = true;
-
-    const setActiveState = (index, skipScroll = false) => {
-      const nextIndex = (index + cards.length) % cards.length;
-      currentIndex = nextIndex;
-
-      cards.forEach((card, i) => {
-        card.classList.toggle('is-active', i === nextIndex);
-      });
-
-      dots.forEach((dot, i) => {
-        const isActive = i === nextIndex;
-        dot.classList.toggle('is-active', isActive);
-        dot.setAttribute('aria-pressed', String(isActive));
-      });
-
-      if (!skipScroll) {
-        cards[nextIndex]?.scrollIntoView({
-          behavior: prefersReducedMotion ? 'auto' : 'smooth',
-          inline: 'start',
-          block: 'nearest',
-        });
-      }
-    };
-
-    const advance = () => {
-      if (!cards.length) return;
-      setActiveState(currentIndex + 1);
-    };
-
-    // Only start autoplay if carousel is currently in viewport
-    const startAutoplay = () => {
-      if (!isInViewport) return;
-      if (autoTimer) clearInterval(autoTimer);
-      autoTimer = setInterval(() => {
-        if (isInViewport && !prefersReducedMotion) {
-          advance();
-        }
-      }, 3000);
-    };
-
-    // Stop autoplay and clear timer
-    const stopAutoplay = () => {
-      if (autoTimer) {
-        clearInterval(autoTimer);
-        autoTimer = null;
-      }
-    };
-
-    setActiveState(0, true); // Skip scroll on initial page load to keep focus on hero
-
-    // Intersection Observer: start autoplay when carousel enters viewport, stop when it leaves
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          isInViewport = entry.isIntersecting;
-          if (isInViewport) {
-            // Carousel is now visible in viewport - start autoplay
-            startAutoplay();
-          } else {
-            // Carousel is no longer visible - stop autoplay
-            stopAutoplay();
-          }
-        });
-      },
-      { threshold: 0.1 } // Trigger when at least 10% of carousel is visible
-    );
-
-    observer.observe(swimlane);
-
-    // Stop autoplay on user interaction, but allow resume when carousel comes back into view
-    cards.forEach((card, index) => {
-      card.addEventListener('focus', () => {
-        setActiveState(index);
-        stopAutoplay();
-      });
-      card.addEventListener('click', () => {
-        setActiveState(index);
-        stopAutoplay();
-      });
-    });
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        setActiveState(index);
-        stopAutoplay();
-      });
-    });
-  }
-</script>
 
 <style>
   @keyframes panelGlowBreath {
@@ -787,234 +632,114 @@ const qualityCareItems = [
       rgba(var(--rgb-bg), 0.94);
   }
 
-  /* ── Problem section: swimlane layout ── */
+  /* ── Challenge / Response rows ── */
 
-  .problem-header {
-    text-align: center;
-    max-width: 40rem;
-    margin-inline: auto;
+  .gap-panel-header {
     margin-bottom: 2.75rem;
   }
 
-  .problem-header-sub {
-    max-width: 34rem;
-    margin-inline: auto;
-    font-size: clamp(0.9rem, 2vw, 1.0625rem);
-    font-weight: 500;
-    line-height: 1.8;
-    color: var(--theme-site-sub);
-  }
-
-  /* Edge-fade wrapper — bleeds past panel padding to let the mask reach viewport edges */
-  .problem-swimlane-wrap {
-    position: relative;
-    margin-inline: -1.5rem;
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 3.5rem,
-      black calc(100% - 3.5rem),
-      transparent
-    );
-  }
-
-  .problem-swimlane-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.55rem;
-    margin-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
-  .problem-swimlane-dot {
-    width: 0.625rem;
-    height: 0.625rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(var(--rgb-accent), 0.25);
-    background: rgba(var(--rgb-accent), 0.12);
-    padding: 0;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-  }
-
-  .problem-swimlane-dot.is-active {
-    background: var(--color-cta);
-    border-color: var(--color-cta);
-    transform: scale(1.2);
-    box-shadow: 0 0 0 4px rgba(var(--rgb-accent), 0.08);
-  }
-
-  /* Horizontal scroll track */
-  .problem-swimlane {
-    display: flex;
-    gap: 1rem;
-    overflow-x: auto;
-    overflow-y: visible;
-    scroll-snap-type: x mandatory;
-    padding-block: 1.5rem;
-    padding-inline: 2.5rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(var(--rgb-accent), 0.18) transparent;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .problem-swimlane::-webkit-scrollbar {
-    height: 3px;
-  }
-
-  .problem-swimlane::-webkit-scrollbar-thumb {
-    background: rgba(var(--rgb-accent), 0.18);
-    border-radius: 9999px;
-  }
-
-  /* Individual card */
-  .problem-swimlane-card {
-    position: relative;
-    flex: 0 0 clamp(16rem, 72vw, 20.5rem);
+  .gap-rows {
     display: flex;
     flex-direction: column;
-    scroll-snap-align: start;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    border: 1px solid rgba(var(--rgb-accent), 0.09);
-    background-color: var(--color-surface);
-    background-image: linear-gradient(
-      175deg,
-      color-mix(in oklab, var(--theme-surface) 92%, transparent) 0%,
-      color-mix(in oklab, var(--theme-glass-bg) 97%, transparent) 100%
-    );
-    box-shadow:
-      inset 0 1px 0 rgba(var(--rgb-accent), 0.11),
-      0 8px 28px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .gap-row {
+    display: grid;
+    grid-template-columns: 2.25rem 1fr 1.7fr;
+    align-items: start;
+    gap: 0 2rem;
+    padding: 1.875rem 1rem;
+    border-bottom: 1px solid rgba(var(--rgb-accent), 0.07);
     text-decoration: none;
     color: inherit;
-    cursor: pointer;
+    border-radius: 0.625rem;
+    transition: background 0.2s ease;
   }
 
-  .problem-swimlane-card:hover,
-  .problem-swimlane-card:focus-visible,
-  .problem-swimlane-card.is-active {
-    border-color: rgba(var(--rgb-accent), 0.2);
-    box-shadow:
-      inset 0 1px 0 rgba(var(--rgb-accent), 0.14),
-      0 16px 44px rgba(0, 0, 0, 0.14);
-    transform: translateY(-2px);
+  .gap-rows .gap-row:first-child {
+    border-top: 1px solid rgba(var(--rgb-accent), 0.07);
   }
 
-  /* Index badge */
-  .problem-card-num {
-    position: absolute;
-    top: 0.875rem;
-    right: 1.1rem;
-    font-size: 0.6rem;
+  .gap-row:hover {
+    background: rgba(var(--rgb-accent), 0.028);
+  }
+
+  .gap-row:focus-visible {
+    outline: 2px solid var(--color-cta);
+    outline-offset: -2px;
+    border-radius: 0.625rem;
+  }
+
+  .gap-row-num {
+    font-size: 0.5625rem;
     font-weight: 900;
-    letter-spacing: 0.2em;
-    color: var(--theme-site-sub);
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  /* Section halves */
-  .problem-card-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.55rem;
-    padding: 1.25rem 1.15rem 1rem;
-  }
-
-  .problem-card-section--answer {
-    flex: 1;
-    background: rgba(var(--rgb-accent), 0.024);
-  }
-
-  /* Tag row */
-  .problem-card-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.575rem;
-    font-weight: 900;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--theme-site-sub);
-  }
-
-  .problem-card-tag--answer {
-    color: var(--theme-cta);
-  }
-
-  .problem-card-dot {
-    width: 0.38rem;
-    height: 0.38rem;
-    border-radius: 9999px;
-    background: currentColor;
-    flex-shrink: 0;
-    opacity: 0.55;
-  }
-
-  /* Divider arrow between halves */
-  .problem-card-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.2rem 0;
+    letter-spacing: 0.22em;
     color: var(--theme-site-sub);
     opacity: 0.28;
-    border-block: 1px solid rgba(var(--rgb-accent), 0.06);
+    padding-top: 0.3rem;
   }
 
-  /* Card text */
-  .problem-card-title {
-    font-family: var(--font-body);
-    font-size: 0.9375rem;
-    font-weight: 700;
-    line-height: 1.42;
-    color: var(--theme-site-text);
-    margin: 0;
-  }
-
-  .problem-card-title--answer {
-    font-family: var(--font-heading);
+  .gap-row-label {
+    display: block;
+    font-size: 0.5625rem;
     font-weight: 900;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--theme-site-sub);
+    opacity: 0.55;
+    margin-bottom: 0.5rem;
   }
 
-  .problem-card-body {
-    font-size: 0.8125rem;
-    line-height: 1.72;
+  .gap-row-label--response {
+    color: var(--theme-cta);
+    opacity: 0.7;
+  }
+
+  .gap-row-challenge-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.6;
     color: var(--theme-site-sub);
     margin: 0;
-    flex: 1;
   }
 
-  /* Learn more CTA inside card */
-  .problem-card-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    margin-top: 0.6rem;
-    font-size: 0.6875rem;
+  .gap-row-response {
+    border-left: 1px solid rgba(var(--rgb-accent), 0.09);
+    padding-left: 2rem;
+    transition: border-color 0.2s ease;
+  }
+
+  .gap-row:hover .gap-row-response {
+    border-left-color: rgba(var(--rgb-accent), 0.18);
+  }
+
+  .gap-row-response-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+    line-height: 1.3;
+    color: var(--theme-site-text);
+    margin: 0 0 0.45rem;
+    transition: color 0.2s ease;
+  }
+
+  .gap-row:hover .gap-row-response-title {
     color: var(--theme-cta);
-    opacity: 0.72;
-    text-decoration: none;
-    transition: opacity 0.2s ease, gap 0.2s ease;
   }
 
-  .problem-card-cta:hover {
-    opacity: 1;
-    gap: 0.6rem;
+  .gap-row-response-desc {
+    font-size: 0.78125rem;
+    line-height: 1.7;
+    color: var(--theme-site-sub);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  /* Bridge note below the lane */
-  .problem-footer-note {
-    margin-top: 2.25rem;
+  .gap-footer-note {
+    margin-top: 2.5rem;
     text-align: center;
     max-width: 40rem;
     margin-inline: auto;
@@ -1024,12 +749,34 @@ const qualityCareItems = [
     color: var(--theme-site-sub);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .problem-swimlane {
-      scroll-behavior: auto;
+  @media (max-width: 640px) {
+    .gap-row {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      padding: 1.5rem 0.5rem;
     }
 
-    .problem-swimlane-card {
+    .gap-row-num {
+      display: none;
+    }
+
+    .gap-row-response {
+      border-left: none;
+      border-top: 1px solid rgba(var(--rgb-accent), 0.08);
+      padding-left: 0;
+      padding-top: 1rem;
+    }
+
+    .gap-row:hover .gap-row-response {
+      border-top-color: rgba(var(--rgb-accent), 0.18);
+      border-left-color: transparent;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gap-row,
+    .gap-row-response,
+    .gap-row-response-title {
       transition: none;
     }
   }
