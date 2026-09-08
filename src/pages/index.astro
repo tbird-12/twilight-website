@@ -165,31 +165,34 @@ const qualityCareItems = [
       >
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <!-- Problem → Response rows (pairs 01–03) -->
-        <header class="gap-panel-header">
+        <header class="diff-header">
           <p class="homepage-section-label">Sound familiar?</p>
           <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            The walls families hit<span class="text-cta block sm:inline"> and how we can help you</span>
+            The walls families hit<span class="text-cta"> — and how we help</span>
           </h2>
         </header>
 
-        <div class="gap-rows" role="list" aria-label="Common barriers and how Twilight Psychology can help">
+        <div class="diff-grid" role="list" aria-label="Common barriers and how Twilight Psychology responds">
           {problemPoints.slice(0, 3).map((point, i) => (
             <a
               href={qualityCareItems[i].link}
               data-astro-prefetch="viewport"
-              class="gap-row group"
+              class="diff-card group"
               role="listitem"
             >
-              <span class="gap-row-num" aria-hidden="true">0{i + 1}</span>
-              <div class="gap-row-challenge">
-                <span class="gap-row-label">The challenge</span>
-                <p class="gap-row-challenge-text">{point.title}</p>
+              <div class="diff-card-top">
+                <span class="diff-card-num" aria-hidden="true">0{i + 1}</span>
+                <p class="diff-card-challenge">{point.title}</p>
               </div>
-              <div class="gap-row-response">
-                <span class="gap-row-label gap-row-label--response">Our Approach</span>
-                <h3 class="gap-row-response-title">{qualityCareItems[i].title}</h3>
-                <p class="gap-row-response-desc">{qualityCareItems[i].desc}</p>
+              <div class="diff-card-body">
+                <h3 class="diff-card-title">{qualityCareItems[i].title}</h3>
+                <p class="diff-card-desc">{qualityCareItems[i].desc}</p>
+              </div>
+              <div class="diff-card-foot" aria-hidden="true">
+                <span class="diff-card-cta-label">Learn more</span>
+                <svg class="diff-card-arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
             </a>
           ))}
@@ -209,42 +212,46 @@ const qualityCareItems = [
       >
       </div>
       <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <!-- Problem → Response rows (pairs 04–06) -->
-        <header class="gap-panel-header">
-          <p class="homepage-section-label">How Twilight Psychology is different</p>
+        <!-- Pairs 04–06 -->
+        <header class="diff-header">
+          <p class="homepage-section-label">What makes us different</p>
           <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            Built for the gaps<span class="text-cta block sm:inline"> others leave behind</span>
+            Built for gaps<span class="text-cta"> others leave behind</span>
           </h2>
         </header>
 
-        <div class="gap-rows" role="list" aria-label="More ways Twilight Psychology addresses the gaps">
+        <div class="diff-grid" role="list" aria-label="More ways Twilight Psychology addresses the gaps">
           {problemPoints.slice(3).map((point, i) => {
             const idx = i + 3;
             return (
               <a
                 href={qualityCareItems[idx].link}
                 data-astro-prefetch="viewport"
-                class="gap-row group"
+                class="diff-card group"
                 role="listitem"
               >
-                <span class="gap-row-num" aria-hidden="true">0{idx + 1}</span>
-                <div class="gap-row-challenge">
-                  <span class="gap-row-label">The challenge</span>
-                  <p class="gap-row-challenge-text">{point.title}</p>
+                <div class="diff-card-top">
+                  <span class="diff-card-num" aria-hidden="true">0{idx + 1}</span>
+                  <p class="diff-card-challenge">{point.title}</p>
                 </div>
-                <div class="gap-row-response">
-                  <span class="gap-row-label gap-row-label--response">Our Expertise</span>
-                  <h3 class="gap-row-response-title">{qualityCareItems[idx].title}</h3>
-                  <p class="gap-row-response-desc">{qualityCareItems[idx].desc}</p>
+                <div class="diff-card-body">
+                  <h3 class="diff-card-title">{qualityCareItems[idx].title}</h3>
+                  <p class="diff-card-desc">{qualityCareItems[idx].desc}</p>
+                </div>
+                <div class="diff-card-foot" aria-hidden="true">
+                  <span class="diff-card-cta-label">Learn more</span>
+                  <svg class="diff-card-arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </div>
               </a>
             );
           })}
         </div>
 
-        <p class="gap-footer-note">
-          Twilight Psychology was built specifically to address these gaps — with the clinical depth,
-          specialty breadth, and in-house follow-through that most practices can't offer in one place.
+        <p class="diff-footer-note">
+          Twilight Psychology was built specifically to address these gaps — with clinical depth,
+          specialty breadth, and in-house follow-through that most practices can't offer together.
           <a href="/specialties" class="text-cta font-semibold hover:underline ml-1">Explore our specialties →</a>
         </p>
       </div>
@@ -632,113 +639,165 @@ const qualityCareItems = [
       rgba(var(--rgb-bg), 0.94);
   }
 
-  /* ── Challenge / Response rows ── */
+  /* ── Diff cards: challenge / response feature grid ── */
 
-  .gap-panel-header {
-    margin-bottom: 2.75rem;
+  .diff-header {
+    margin-bottom: 2.5rem;
   }
 
-  .gap-rows {
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.125rem;
+  }
+
+  /* Each card */
+  .diff-card {
+    position: relative;
     display: flex;
     flex-direction: column;
-  }
-
-  .gap-row {
-    display: grid;
-    grid-template-columns: 2.25rem 1fr 1.7fr;
-    align-items: start;
-    gap: 0 2rem;
-    padding: 1.875rem 1rem;
-    border-bottom: 1px solid rgba(var(--rgb-accent), 0.07);
+    gap: 1rem;
+    padding: 1.375rem 1.25rem 1.25rem;
+    border-radius: 1.625rem;
+    border: 1px solid rgba(var(--rgb-accent), 0.09);
+    background-color: var(--color-surface);
+    background-image: linear-gradient(
+      160deg,
+      color-mix(in oklab, var(--theme-surface) 94%, transparent) 0%,
+      color-mix(in oklab, var(--theme-glass-bg) 96%, transparent) 100%
+    );
+    box-shadow:
+      inset 0 1px 0 rgba(var(--rgb-accent), 0.1),
+      0 4px 20px rgba(0, 0, 0, 0.07);
     text-decoration: none;
     color: inherit;
-    border-radius: 0.625rem;
-    transition: background 0.2s ease;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
   }
 
-  .gap-rows .gap-row:first-child {
-    border-top: 1px solid rgba(var(--rgb-accent), 0.07);
+  .diff-card:hover {
+    border-color: rgba(var(--rgb-accent), 0.22);
+    box-shadow:
+      inset 0 1px 0 rgba(var(--rgb-accent), 0.14),
+      0 14px 40px rgba(0, 0, 0, 0.13);
+    transform: translateY(-3px);
   }
 
-  .gap-row:hover {
-    background: rgba(var(--rgb-accent), 0.028);
-  }
-
-  .gap-row:focus-visible {
+  .diff-card:focus-visible {
     outline: 2px solid var(--color-cta);
-    outline-offset: -2px;
-    border-radius: 0.625rem;
+    outline-offset: 2px;
+    border-radius: 1.625rem;
   }
 
-  .gap-row-num {
-    font-size: 0.5625rem;
-    font-weight: 900;
-    letter-spacing: 0.22em;
-    color: var(--theme-site-sub);
-    opacity: 0.28;
-    padding-top: 0.3rem;
+  /* Top row: index + challenge */
+  .diff-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.625rem;
   }
 
-  .gap-row-label {
-    display: block;
-    font-size: 0.5625rem;
+  .diff-card-num {
+    flex-shrink: 0;
+    font-size: 0.5rem;
     font-weight: 900;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--theme-site-sub);
-    opacity: 0.55;
-    margin-bottom: 0.5rem;
+    color: var(--color-cta);
+    opacity: 0.45;
+    padding-top: 0.15rem;
+    line-height: 1;
   }
 
-  .gap-row-label--response {
-    color: var(--theme-cta);
-    opacity: 0.7;
-  }
-
-  .gap-row-challenge-text {
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.6;
+  /* The challenge — muted italic, right-aligned, truncated */
+  .diff-card-challenge {
+    font-size: 0.6875rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.45;
     color: var(--theme-site-sub);
+    opacity: 0.65;
     margin: 0;
-  }
-
-  .gap-row-response {
-    border-left: 1px solid rgba(var(--rgb-accent), 0.09);
-    padding-left: 2rem;
-    transition: border-color 0.2s ease;
-  }
-
-  .gap-row:hover .gap-row-response {
-    border-left-color: rgba(var(--rgb-accent), 0.18);
-  }
-
-  .gap-row-response-title {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 800;
-    line-height: 1.3;
-    color: var(--theme-site-text);
-    margin: 0 0 0.45rem;
-    transition: color 0.2s ease;
-  }
-
-  .gap-row:hover .gap-row-response-title {
-    color: var(--theme-cta);
-  }
-
-  .gap-row-response-desc {
-    font-size: 0.78125rem;
-    line-height: 1.7;
-    color: var(--theme-site-sub);
-    margin: 0;
+    text-align: right;
+    overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
-  .gap-footer-note {
+  /* Solution body */
+  .diff-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .diff-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1.26;
+    color: var(--theme-site-text);
+    margin: 0;
+    transition: color 0.2s ease;
+  }
+
+  .diff-card:hover .diff-card-title {
+    color: var(--theme-cta);
+  }
+
+  .diff-card-desc {
+    font-size: 0.75rem;
+    line-height: 1.65;
+    color: var(--theme-site-sub);
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  /* Card footer: CTA */
+  .diff-card-foot {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 0.875rem;
+    border-top: 1px solid rgba(var(--rgb-accent), 0.07);
+  }
+
+  .diff-card-cta-label {
+    font-size: 0.5625rem;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--theme-cta);
+    opacity: 0.65;
+    transition: opacity 0.2s ease;
+  }
+
+  .diff-card:hover .diff-card-cta-label {
+    opacity: 1;
+  }
+
+  .diff-card-arrow {
+    width: 0.9375rem;
+    height: 0.9375rem;
+    color: var(--theme-cta);
+    opacity: 0.55;
+    margin-left: auto;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .diff-card:hover .diff-card-arrow {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+
+  .diff-footer-note {
     margin-top: 2.5rem;
     text-align: center;
     max-width: 40rem;
@@ -749,34 +808,44 @@ const qualityCareItems = [
     color: var(--theme-site-sub);
   }
 
-  @media (max-width: 640px) {
-    .gap-row {
+  /* ── Responsive: tablet ── */
+  @media (max-width: 1023px) {
+    .diff-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* ── Responsive: mobile ── */
+  @media (max-width: 599px) {
+    .diff-grid {
       grid-template-columns: 1fr;
-      gap: 0.75rem;
-      padding: 1.5rem 0.5rem;
+      gap: 0.875rem;
     }
 
-    .gap-row-num {
+    /* Hide challenge text on mobile — title alone is clear enough */
+    .diff-card-challenge {
       display: none;
     }
 
-    .gap-row-response {
-      border-left: none;
-      border-top: 1px solid rgba(var(--rgb-accent), 0.08);
-      padding-left: 0;
-      padding-top: 1rem;
+    .diff-card-top {
+      justify-content: flex-start;
     }
 
-    .gap-row:hover .gap-row-response {
-      border-top-color: rgba(var(--rgb-accent), 0.18);
-      border-left-color: transparent;
+    /* Show full desc on mobile since there's only 1 col */
+    .diff-card-desc {
+      -webkit-line-clamp: 4;
+    }
+
+    .diff-card {
+      padding: 1.25rem 1.125rem 1.125rem;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .gap-row,
-    .gap-row-response,
-    .gap-row-response-title {
+    .diff-card,
+    .diff-card-title,
+    .diff-card-cta-label,
+    .diff-card-arrow {
       transition: none;
     }
   }
