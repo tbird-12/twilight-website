@@ -195,6 +195,28 @@
     text-underline-offset: 2px;
   }
 
+  /* Ensure emphasized text remains legible in dark mode and in prose-generated content */
+  strong,
+  b,
+  .prose :where(strong, b) {
+    color: var(--theme-site-text);
+    font-weight: 700;
+  }
+
+  .prose :where(table, th, td) {
+    color: var(--theme-site-text);
+    border-color: var(--theme-border);
+  }
+
+  .prose :where(thead th) {
+    background-color: color-mix(in oklab, var(--theme-surface-2) 84%, var(--theme-site-text) 16%);
+    color: var(--theme-site-text);
+  }
+
+  .prose :where(tbody td, tfoot td) {
+    background-color: transparent;
+  }
+
   /* Absolutely-positioned images (e.g. inside overflow-hidden containers) must not
      have prose-induced margins, which would push them away from top: 0 */
   img.absolute {
