@@ -174,26 +174,28 @@ const qualityCareItems = [
 
         <div class="diff-grid" role="list" aria-label="Common barriers and how Twilight Psychology responds">
           {problemPoints.slice(0, 3).map((point, i) => (
-            <a
-              href={qualityCareItems[i].link}
-              data-astro-prefetch="viewport"
-              class="diff-card group"
-            >
-              <div class="diff-card-top">
-                <span class="diff-card-num" aria-hidden="true">0{i + 1}</span>
-                <p class="diff-card-challenge">{point.title}</p>
-              </div>
-              <div class="diff-card-body">
-                <h3 class="diff-card-title">{qualityCareItems[i].title}</h3>
-                <p class="diff-card-desc">{qualityCareItems[i].desc}</p>
-              </div>
-              <div class="diff-card-foot" aria-hidden="true">
-                <span class="diff-card-cta-label">Learn more</span>
-                <svg class="diff-card-arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-            </a>
+            <div role="listitem">
+              <a
+                href={qualityCareItems[i].link}
+                data-astro-prefetch="viewport"
+                class="diff-card group"
+              >
+                <div class="diff-card-top">
+                  <span class="diff-card-num" aria-hidden="true">0{i + 1}</span>
+                  <p class="diff-card-challenge">{point.title}</p>
+                </div>
+                <div class="diff-card-body">
+                  <h3 class="diff-card-title">{qualityCareItems[i].title}</h3>
+                  <p class="diff-card-desc">{qualityCareItems[i].desc}</p>
+                </div>
+                <div class="diff-card-foot" aria-hidden="true">
+                  <span class="diff-card-cta-label">Learn more</span>
+                  <svg class="diff-card-arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </a>
+            </div>
           ))}
         </div>
       </div>
@@ -223,26 +225,28 @@ const qualityCareItems = [
           {problemPoints.slice(3).map((point, i) => {
             const idx = i + 3;
             return (
-              <a
-                href={qualityCareItems[idx].link}
-                data-astro-prefetch="viewport"
-                class="diff-card group"
-              >
-                <div class="diff-card-top">
-                  <span class="diff-card-num" aria-hidden="true">0{idx + 1}</span>
-                  <p class="diff-card-challenge">{point.title}</p>
-                </div>
-                <div class="diff-card-body">
-                  <h3 class="diff-card-title">{qualityCareItems[idx].title}</h3>
-                  <p class="diff-card-desc">{qualityCareItems[idx].desc}</p>
-                </div>
-                <div class="diff-card-foot" aria-hidden="true">
-                  <span class="diff-card-cta-label">Learn more</span>
-                  <svg class="diff-card-arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </div>
-              </a>
+              <div role="listitem">
+                <a
+                  href={qualityCareItems[idx].link}
+                  data-astro-prefetch="viewport"
+                  class="diff-card group"
+                >
+                  <div class="diff-card-top">
+                    <span class="diff-card-num" aria-hidden="true">0{idx + 1}</span>
+                    <p class="diff-card-challenge">{point.title}</p>
+                  </div>
+                  <div class="diff-card-body">
+                    <h3 class="diff-card-title">{qualityCareItems[idx].title}</h3>
+                    <p class="diff-card-desc">{qualityCareItems[idx].desc}</p>
+                  </div>
+                  <div class="diff-card-foot" aria-hidden="true">
+                    <span class="diff-card-cta-label">Learn more</span>
+                    <svg class="diff-card-arrow" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
             );
           })}
         </div>
