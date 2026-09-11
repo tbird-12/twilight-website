@@ -51,62 +51,62 @@ const links = [
 ---
 
 <footer class="relative site-footer min-h-screen">
-  <div class="mx-auto w-full max-w-7xl">
-    <div class="grid grid-cols-12 gap-x-8 gap-y-12 md:gap-x-10 lg:gap-x-12 lg:gap-y-16">
+  <div class="mx-auto w-full max-w-6xl">
+    <!-- Brand section - centered at top -->
+    <div class="text-center mb-12 lg:mb-16">
+      <a href="/" class="inline-flex items-center gap-2 mb-5 group">
+        <Image
+          src={logoImage}
+          alt="Twilight Psychology Logo"
+          width={80}
+          height={80}
+          format="webp"
+          loading="lazy"
+          decoding="async"
+          class="h-20 w-auto"
+        />
+        <span class="font-serif font-black text-site-text group-hover:text-cta transition-colors text-lg sm:text-xl">
+          Twilight Psychology
+        </span>
+      </a>
 
-      <!-- Brand -->
-      <div class="col-span-12 lg:col-span-3 lg:pr-6">
-        <a href="/" class="inline-flex items-center gap-2 mb-5 group">
-          <Image
-            src={logoImage}
-            alt="Twilight Psychology Logo"
-            width={80}
-            height={80}
-            format="webp"
-            loading="lazy"
-            decoding="async"
-            class="h-10 w-auto"
-          />
-          <span class="font-serif font-black text-site-text group-hover:text-cta transition-colors text-lg sm:text-xl">
-            Twilight Psychology
-          </span>
-        </a>
+      <p class="text-sm md:text-base text-site-sub mb-5 leading-relaxed max-w-md mx-auto">
+        Specialized psychological evaluations, psychiatric medication
+        management, and evidence-based therapy.
+      </p>
 
-        <p class="text-sm md:text-base text-site-sub mb-5 leading-relaxed max-w-md">
-          Specialized psychological evaluations, psychiatric medication
-          management, and evidence-based therapy.
-        </p>
+      <a
+        href={MAIN_OFFICE_MAP_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-link block mb-6 text-base"
+      >
+        {MAIN_OFFICE_ADDRESS_SINGLE_LINE}
+      </a>
 
-        <a
-          href={MAIN_OFFICE_MAP_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-link block mb-6 text-base"
-        >
-          {MAIN_OFFICE_ADDRESS_SINGLE_LINE}
-        </a>
-
-        <div class="flex gap-3">
-          {
-            siteConfig.socialProfiles.map((social) => (
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-site-sub theme-hover-surface-2 focus:outline-none focus:ring-4 focus:ring-cta/30 rounded-lg text-sm p-2.5 inline-flex items-center"
-                aria-label={social.label}
-              >
-                <Icon name={social.icon} class="w-5 h-5" style="color: var(--color-icon);" />
-              </a>
-            ))
-          }
-        </div>
+      <div class="flex gap-3 justify-center">
+        {
+          siteConfig.socialProfiles.map((social) => (
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-site-sub theme-hover-surface-2 focus:outline-none focus:ring-4 focus:ring-cta/30 rounded-lg text-sm p-2.5 inline-flex items-center"
+              aria-label={social.label}
+            >
+              <Icon name={social.icon} class="w-5 h-5" style="color: var(--color-icon);" />
+            </a>
+          ))
+        }
       </div>
+    </div>
 
+    <!-- Link columns and contact -->
+    <div class="grid grid-cols-12 gap-x-8 gap-y-12 md:gap-x-10 lg:gap-x-12 lg:gap-y-16">
       <!-- Link columns -->
       {
         links.map(({ title, items }) => (
-          <div class="col-span-6 md:col-span-4 lg:col-span-2">
+          <div class="col-span-6 md:col-span-4 lg:col-span-3">
             <div class="footer-heading">{title}</div>
             <ul class="space-y-3">
               {items.map(({ name, href }) => (
@@ -120,7 +120,7 @@ const links = [
       }
 
       <!-- Contact -->
-      <div class="col-span-12 md:col-span-4 lg:col-span-3 lg:pl-2">
+      <div class="col-span-12 md:col-span-4 lg:col-span-3">
         <div class="footer-heading">Contact</div>
         <div class="text-sm md:text-base text-site-sub space-y-4">
           <div class="space-y-2">
