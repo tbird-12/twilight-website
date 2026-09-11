@@ -3,7 +3,11 @@
  * Visible only on desktop (md and up), hidden on mobile
  */
 
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED } from "../../data/resource";
+import {
+  PHONE_NUMBER,
+  PHONE_NUMBER_FORMATTED,
+  WIDGET_LINK,
+} from "../../data/resource";
 import SearchButton from "./primitives/SearchButton";
 
 interface TopBarProps {
@@ -19,6 +23,29 @@ export default function TopBar({ className = "" }: TopBarProps) {
       <div className="max-w-6xl mx-auto flex w-full items-center justify-between gap-4 px-4 sm:px-6 py-3">
         {/* Left: Phone Number */}
         <div className="flex items-center gap-3">
+          <a
+            href={WIDGET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm font-medium text-site-text transition-colors hover:text-cta"
+            aria-label="Request Appointment"
+          >
+            <svg
+              className="h-4 w-4 shrink-0 text-icon"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <path d="M16 2v4M8 2v4M3 10h18" />
+            </svg>
+            <span>Request appointment</span>
+          </a>
+
           <a
             href={`tel:${PHONE_NUMBER}`}
             className="flex items-center gap-2 text-sm font-medium text-site-text transition-colors hover:text-cta"
@@ -40,7 +67,7 @@ export default function TopBar({ className = "" }: TopBarProps) {
           </a>
         </div>
 
-        {/* Right: Search and Blog */}
+        {/* Right: Search, Blog, and Book an Appointment */}
         <div className="flex items-center gap-4 lg:gap-6">
           <SearchButton
             compact={false}
