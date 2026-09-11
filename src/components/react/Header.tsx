@@ -9,6 +9,7 @@ import MobileNav from "./MobileNav";
 import { useScrollLock } from "./hooks";
 import { useReducedMotion } from "./hooks/useReducedMotion";
 import SearchButton from "./primitives/SearchButton";
+import ThemeToggle from "./ThemeToggle";
 
 interface HeaderProps {
   logoHref?: string;
@@ -161,12 +162,9 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
           <div className="hidden md:flex items-center gap-4 lg:gap-5">
             <DesktopNav headerHeight={headerHeight} />
 
-            <div className="flex items-center gap-3">
-              <SearchButton
-                compact
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-site-bg text-site-text shadow-sm transition-all duration-200 hover:border-border-strong hover:bg-surface"
-              />
+            <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
 
+            <div className="flex items-center gap-3">
               <a
                 href="/contact"
                 className="inline-flex items-center rounded-full bg-cta px-4 lg:px-8 py-2 lg:py-3 text-center text-xs font-black text-cta-fg shadow-lg shadow-cta/20 transition-all duration-200 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95"

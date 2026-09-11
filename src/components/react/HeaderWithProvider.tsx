@@ -1,7 +1,9 @@
 /**
- * HeaderWithProvider - wraps Header with its required context
+ * HeaderWithProvider - wraps Header with ThemeProvider context
+ * Ensures ThemeToggle has access to theme context when hydrated
  */
 
+import { ThemeProvider } from "./ThemeContext";
 import Header from "./Header";
 
 interface HeaderWithProviderProps {
@@ -11,6 +13,8 @@ interface HeaderWithProviderProps {
 
 export default function HeaderWithProvider({ logoSrc, currentPath }: HeaderWithProviderProps) {
   return (
-    <Header logoSrc={logoSrc} currentPath={currentPath} />
+    <ThemeProvider>
+      <Header logoSrc={logoSrc} currentPath={currentPath} />
+    </ThemeProvider>
   );
 }

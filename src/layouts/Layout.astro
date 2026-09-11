@@ -1,6 +1,7 @@
 ---
 import { getImage } from "astro:assets";
-import Header from "../components/react/Header";
+import HeaderWithProvider from "../components/react/HeaderWithProvider";
+import TopBar from "../components/react/TopBar";
 import ThemeToggleWrapper from "../components/interactive/ThemeToggleWrapper.astro";
 import Footer from "../components/Footer.astro";
 import GoogleAnalytics from "../components/GoogleAnalytics.astro";
@@ -146,7 +147,8 @@ const webpageSchema = {
   <body class="flex min-h-screen flex-col bg-site-bg text-site-text antialiased">
     {/* Skip link — WCAG 2.4.1 Bypass Blocks (Level A) */}
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <Header client:idle logoSrc={headerLogoSrc} currentPath={Astro.url.pathname} />
+    <TopBar client:idle />
+    <HeaderWithProvider client:idle logoSrc={headerLogoSrc} currentPath={Astro.url.pathname} />
     <ThemeToggleWrapper />
 
     <main id="main-content" class="grow pb-12 sm:pb-16 md:pb-24" data-pagefind-body>
