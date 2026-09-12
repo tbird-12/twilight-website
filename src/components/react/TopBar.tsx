@@ -18,20 +18,20 @@ interface TopBarProps {
 export default function TopBar({ className = "" }: TopBarProps) {
   return (
     <div
-      className={`hidden md:flex sticky top-0 z-50 w-full border-b theme-border bg-site-bg/95 font-sans backdrop-blur-lg ${className}`.trim()}
+      className={`hidden md:flex sticky top-0 z-50 w-full border-b border-cta/20 bg-site-bg/95 font-sans backdrop-blur-lg ${className}`.trim()}
     >
       <div className="max-w-6xl mx-auto flex w-full items-center justify-between gap-4 px-4 sm:px-6 py-3">
-        {/* Left: Phone Number */}
+        {/* Left: Appointment + Phone */}
         <div className="flex items-center gap-3">
           <a
             href={WIDGET_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm font-medium text-site-text transition-colors hover:text-cta"
+            className="flex items-center gap-1.5 rounded-full bg-cta/10 border border-cta/25 px-3.5 py-1 text-sm font-semibold text-cta transition-all hover:bg-cta/15 hover:border-cta/40"
             aria-label="Request Appointment"
           >
             <svg
-              className="h-4 w-4 shrink-0 text-icon"
+              className="h-3.5 w-3.5 shrink-0"
               fill="none"
               stroke="currentColor"
               strokeLinecap="round"
@@ -43,8 +43,10 @@ export default function TopBar({ className = "" }: TopBarProps) {
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <path d="M16 2v4M8 2v4M3 10h18" />
             </svg>
-            <span>Request appointment</span>
+            <span>Request Appointment</span>
           </a>
+
+          <span className="h-4 w-px bg-site-text/15" aria-hidden="true" />
 
           <a
             href={`tel:${PHONE_NUMBER}`}
