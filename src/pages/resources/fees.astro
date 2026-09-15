@@ -32,7 +32,7 @@ const feeCategories = [
       { name: "45-Minute Session", price: "$150", note: "Dr. Cornett" },
       { name: "Clinical Supervision", price: "$150", note: "Per hour" },
       { name: "60-Minute Session", price: SELF_PAY_RATES.therapy, note: "Pre-licensed clinicians" },
-      { name: "45-Minute Session", price: "$80", note: "Pre-licensed clinicians" },
+      { name: "45-Minute Session", price: SELF_PAY_RATES.therapy_45, note: "Pre-licensed clinicians" },
     ],
   },
   {
@@ -40,7 +40,7 @@ const feeCategories = [
     title: "Medication Management",
     services: [
       { name: "Intake Session", price: SELF_PAY_RATES.intake },
-      { name: "Follow-up Sessions", price: SELF_PAY_RATES.therapy },
+      { name: "Follow-up Sessions", price: SELF_PAY_RATES.mm_followup },
       { name: "Paperwork (e.g., FMLA)", price: "$75", note: "Per hour" },
     ],
   },
@@ -139,8 +139,7 @@ const relatedResourceLinks = [
                 <li>FSA/HSA Card</li>
                 <li>Credit card</li>
                 <li>Debit card</li>
-                <li>Cash</li>
-                <li>Zelle, Venmo</li>
+                <li>Money order</li>
               </ul>
             </div>
             <div>
