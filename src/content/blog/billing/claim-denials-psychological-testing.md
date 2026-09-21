@@ -1,24 +1,25 @@
 ---
-title: "Claim Denials and Appeals for Mental Health Services"
-seoTitle: "Mental Health Claim Denials & Appeals KY"
-description: "Common denial reasons for mental health claims in Kentucky — psychological testing, therapy, and medication management — and how to navigate the appeals process."
-seoDescription: "How to appeal denied mental health claims in Kentucky. Covers denial reasons for testing, therapy, and medication management, plus appeal steps, documentation, and timelines. Insurance and Medicaid accepted."
-pubDate: 2026-11-18
+title: "Claim Denials for Mental Health Services"
+seoTitle: "Mental Health Claim Denials KY | Why Claims Get Denied"
+description: "Why mental health claims are denied in Kentucky — common denial reasons for psychological testing, therapy, and medication management, and how to identify them."
+seoDescription: "Common reasons mental health claims are denied in Kentucky. Covers denial codes for testing, therapy, medication management, missing authorization, coding errors, and medical necessity denials. Insurance and Medicaid accepted."
+pubDate: 2026-09-20
 category: billing
 author: "Twilight Psychology Team"
-tags: ["billing", "claim-denials", "appeals", "psychological-testing", "therapy", "medication-management", "medical-necessity", "kentucky", "medicaid", "coding-errors", "mental-health"]
-draft: true
+tags: ["billing", "claim-denials", "psychological-testing", "therapy", "medication-management", "medical-necessity", "kentucky", "medicaid", "coding-errors", "mental-health"]
+draft: false
 ---
 
-> **Disclaimer:** Appeal procedures, timelines, and documentation requirements vary significantly by payer. Always refer to your provider agreement, payer website, or provider relations team for current appeal instructions.
+> **Disclaimer:** Claim denials, denial codes, and payer-specific criteria vary significantly by insurance plan. Always refer to your provider agreement, payer website, or provider relations team for current information about denials and appeals.
 
-Claims for [psychological testing](/services/psychological-evaluations/), [therapy](/services/therapy/), and [medication management](/services/medication-management/) are all subject to denial. Testing claims are denied at higher rates than simple outpatient services for reasons specific to how they are coded and authorized. Therapy and medication management denials often stem from documentation or medical necessity issues. Understanding the denial landscape helps providers respond effectively regardless of service type.
 
-This is the final post in our series on billing for mental health services in Kentucky. It covers the most common denial reasons across service types, the steps to file an appeal, and what documentation to include.
+Claims for [psychological testing](/services/psychological-evaluations/), [therapy](/services/therapy/), and [medication management](/services/medication-management/) are all subject to denial. Testing claims are denied at higher rates than simple outpatient services for reasons specific to how they are coded and authorized. Therapy and medication management denials often stem from documentation or medical necessity issues. Understanding the denial landscape helps providers and patients respond effectively regardless of service type.
+
+This is part 7 of our series on billing for mental health services in Kentucky.
 
 ## Why Mental Health Claims Are Denied at Higher Rates
 
-Before diving into the appeals process, it helps to understand the specific features of mental health billing — especially psychological testing — that increase denial risk.
+Before diving into specific denial codes, it helps to understand the structural features of mental health billing — especially psychological testing — that increase denial risk.
 
 - **Timed codes require precise documentation.** [96136, 96137, 96130, and 96131](/blog/billing/common-cpt-codes-used-in-psychological-testing) are all time-based. The number of units billed must match the documented time. Payers that request records will count the hours in the note. Similarly, [therapy codes](/blog/billing/cpt-codes-therapy-services) such as 90837 require session-time documentation.
 - **Authorization requirements create failure points.** If testing proceeded without required PA (or the wrong codes were authorized), the entire evaluation claim may be denied. Therapy and [medication management](/blog/billing/cpt-codes-medication-management) visits can be similarly denied when required PA was not obtained.
@@ -34,7 +35,7 @@ Before diving into the appeals process, it helps to understand the specific feat
 
 This is the most financially significant denial for psychological testing. It also applies to any service — therapy modality, psychiatric evaluation, or medication management visit — where the specific plan required PA. If the payer required prior authorization and it was not obtained, the services are typically non-covered and the provider cannot bill the patient.
 
-**Response:**
+**Common Pitfall Workarounds:**
 - Confirm whether authorization was required by reviewing the payer's current PA requirements
 - If authorization was required and not obtained, a retroactive authorization request may be possible for some payers (this is not guaranteed)
 - If authorization was requested but not yet approved when services were rendered, document the pending request
@@ -124,96 +125,14 @@ Submitting the same claim more than once — or submitting dates and codes that 
 - If the original was paid, no action needed
 - If the original was denied, correct the denial and resubmit (not as a second new claim, but as a corrected or re-billed claim)
 
-## The Appeals Process: Step by Step
+## Next: Understanding the Appeals Process
 
-### Step 1: Identify the denial reason
+Now that you understand common denial reasons, see **part 7b** for how to file an appeal, what documentation to include, and step-by-step timelines for fighting denials across different payers.
 
-Read the Explanation of Benefits (EOB) or Electronic Remittance Advice (ERA) carefully. The denial reason code and description tell you what type of appeal is needed. Not all denials have the same solution.
+## Related resources
 
-### Step 2: Determine the correct appeal type
-
-Most payers have two levels of appeal:
-
-- **First-level appeal (reconsideration):** Submitted to the payer's appeals department. Often resolved within 30–60 days. This is the standard first step.
-- **Second-level appeal (formal appeal or grievance):** If the first-level appeal is denied, the provider can escalate to a second review, sometimes by a different clinical reviewer or an independent reviewer.
-- **External review:** For certain denials involving medical necessity, providers and patients may have the right to request an **independent external review** through the state insurance commissioner. In Kentucky, this right is available for most commercial insurance denials.
-
-### Step 3: Gather documentation
-
-The documentation needed depends on the denial type:
-
-| Denial type | Documentation to include |
-|---|---|
-| Not medically necessary | Intake note (90791), clinical narrative, referral documentation, prior records |
-| Missing authorization | PA request confirmation, authorization number, any payer correspondence |
-| Coding error | Corrected claim, explanation of code change |
-| Eligibility denial | Eligibility verification documentation from before date of service |
-| Timely filing | Original submission receipt, clearinghouse acknowledgment, enrollment/system error records |
-
-### Step 4: Write the appeal letter
-
-For clinical denials (medical necessity), the appeal letter should:
-- Reference the specific denial reason code and date of denial
-- State the specific service(s) and date(s) being appealed
-- Quote the payer's criteria and provide specific clinical evidence that the service met those criteria
-- Be written or co-signed by the rendering psychologist (not only billing staff)
-- Include all supporting documentation as attachments
-
-For administrative denials (wrong code, missing authorization number), a short corrected claim or cover letter is usually sufficient.
-
-### Step 5: Submit within the appeal deadline
-
-Every payer has an appeal filing deadline. Missing it forfeits the appeal right.
-
-| Payer type | Typical appeal deadline |
-|---|---|
-| Medicare | 120 days from the claim denial date |
-| Kentucky Medicaid FFS | 90 days from date of denial |
-| Medicaid managed care (KY) | 60–90 days; check provider agreement |
-| Commercial insurance | 60–180 days; check EOB and provider agreement |
-| TRICARE | 90 days for most provider appeals |
-
-File within the deadline. If the deadline will be missed, contact provider relations to request an extension before the deadline passes — some payers will grant a brief extension for good cause.
-
-### Step 6: Track and follow up
-
-After submitting an appeal, track it:
-- Note the date of submission and the method (fax, portal, certified mail)
-- Call the appeals department if no acknowledgment is received within 5–7 business days
-- Log each contact: date, time, agent name, reference number, status
-
-Most first-level appeals are resolved within 30–60 days. If the resolution is not received within the expected window, follow up proactively. Payer administrative backlogs are common.
-
-## Documentation Requirements for Appeals
-
-The quality of documentation in appeals often determines the outcome. For psychological testing:
-
-- The **90791 intake note** should clearly document clinical history, presenting concerns, functional impairment, and the specific clinical question that warranted testing
-- The **testing administration documentation** should record the start and end times for each test or test battery to support the units billed under 96136/96137
-- The **evaluation services documentation** (for 96130/96131) should account for time spent on record review, score integration, report writing, and feedback preparation
-- The **final report** demonstrates the clinical scope and complexity of the evaluation
-
-If any of these documents are missing or incomplete, the appeal will likely fail — and the practice should also review its documentation practices going forward.
-
-## Preventing Denials Before They Happen
-
-The most effective denial management strategy is prevention:
-
-- **Verify eligibility and PA requirements** before every service, not just evaluations (covered in [our eligibility verification post](/blog/insurance/verifying-insurance-eligibility-psychological-testing))
-- **Obtain authorization before services begin** for plans that require it (covered in [our prior authorization post](/blog/insurance/prior-authorization-psychological-testing))
-- **Use current CPT codes** — ensure your billing system is updated annually for testing, therapy, and medication management codes
-- **Match taxonomy codes** to payer enrollment records before the first claim
-- **Document time** for all timed codes (testing, 60-minute therapy sessions)
-- **Submit UHC claims together** after the feedback session
-- **Track timely filing** for every service date across all service types
-
-Each of these steps was covered in detail across this series. The goal is to reach the claim submission step with the foundational work already done, so denials are the exception rather than the routine.
-
-## Related Resources
-
+- [Appeals for Mental Health Claims in Kentucky (Part 7b)](/blog/billing/claim-appeals-psychological-testing) — How to file appeals and what documentation to include
 - [How Psychological Testing Is Billed at Twilight Psychology](/blog/billing/how-psychological-testing-is-billed) — The full billing sequence from intake to feedback
-- [Prior Authorization for Mental Health Services in Kentucky](/blog/insurance/prior-authorization-psychological-testing) — Which plans require PA and how to navigate approvals
-- [Verifying Insurance Eligibility for Mental Health Services](/blog/insurance/verifying-insurance-eligibility-psychological-testing) — Eligibility, COB, and pre-service verification
 - [Common CPT Codes Used in Psychological Testing](/blog/billing/common-cpt-codes-used-in-psychological-testing) — The testing and interpretation codes explained
-- [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — How to read the EOB that triggers the appeal process
+- [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — How to read the EOB that identifies denials
 - [Accepted Insurance Plans](/resources/insurances-accepted) — Insurance and Kentucky Medicaid plans accepted at Twilight Psychology

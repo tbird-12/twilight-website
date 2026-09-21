@@ -12,7 +12,8 @@ draft: false
 
 > **Disclaimer:** Billing rules vary by payer, license type, and state. The information below is for general education. Verify all rules directly with your malpractice carrier, your state licensing board, and each payer before submitting claims.
 
-Before a single claim can be submitted — whether for [therapy](/services/therapy/), [psychological testing](/services/psychological-evaluations/), or [medication management](/services/medication-management/) — several foundational requirements must be in place. The claim will be signed by, and adjudicated under, a specific clinician. That clinician must be credentialed with the payer, must hold a valid NPI number, and must have the appropriate licensure and taxonomy code configured correctly. When those pieces do not align, the claim will be denied regardless of how accurately the CPT codes are selected.
+
+Before a single claim can be submitted several foundational requirements must be in place. The claim will be signed by, and adjudicated under, a specific clinician. That clinician must be credentialed with the payer, must hold a valid NPI number, and must have the appropriate licensure and taxonomy code configured correctly. When those pieces do not align, the claim will be denied regardless of how accurately the CPT codes are selected.
 
 This post is the first in a series on billing for mental health services in a Kentucky private practice setting. The credentialing requirements described here apply whether the services involve [evaluations](/services/psychological-evaluations/), [therapy](/services/therapy/), [medication management](/services/medication-management/), or [telehealth](/services/telehealth/). At Twilight Psychology in Lexington, all insurance claims are reviewed, signed, and submitted by **Dr. Heather Cornett**.
 

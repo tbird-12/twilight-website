@@ -3,7 +3,7 @@ title: "Verifying Insurance Eligibility for Mental Health Services"
 seoTitle: "Insurance Eligibility Verification for Mental Health KY"
 description: "How to verify insurance eligibility and coordination of benefits before mental health services in Kentucky — methods, timing, and how to avoid costly write-offs."
 seoDescription: "Verify insurance eligibility before mental health services in Kentucky. Covers portal methods, COB, preauthorization triggers, and avoiding write-offs. Insurance and Kentucky Medicaid accepted."
-pubDate: 2026-09-20
+pubDate: 2026-09-03
 category: insurance
 author: "Twilight Psychology Team"
 tags: ["insurance", "eligibility-verification", "coordination-of-benefits", "psychological-testing", "kentucky", "medicaid", "pre-authorization", "mental-health", "therapy", "medication-management"]
@@ -12,9 +12,10 @@ draft: false
 
 > **Disclaimer:** Eligibility verification is a point-in-time confirmation. Coverage can change after verification. Always re-verify for each date of service and before each new service type. This post is for general education and not a guarantee of coverage or payment.
 
+
 Confirming that a client's insurance is active is not the same as confirming that insurance will **pay for a specific mental health service**. Many practices learn this distinction the hard way — after a [therapy](/services/therapy/) or [evaluation](/services/psychological-evaluations/) has begun, or after a [medication management](/services/medication-management/) visit, when the claim is denied because the plan never covered the service or because pre-authorization was required and not obtained.
 
-This is the fourth post in our series on billing for mental health services in Kentucky. It covers how to verify eligibility effectively, what information to collect, and how coordination of benefits affects the claim before it is ever submitted.
+This is the fourth post in our series on billing for mental health services in Kentucky.
 
 ## Why Eligibility Verification Matters Before Mental Health Services
 

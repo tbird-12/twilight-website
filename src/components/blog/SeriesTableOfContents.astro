@@ -1,0 +1,54 @@
+---
+import type { BlogSeries } from "../../data/blogSeries";
+
+interface Props {
+  series: BlogSeries;
+  currentPartIndex: number;
+}
+
+const { series, currentPartIndex } = Astro.props;
+---
+
+<nav
+  class="mb-8 overflow-hidden rounded-3xl border border-border bg-surface-soft p-6 sm:p-8"
+  aria-label="Series navigation"
+>
+  <div class="mb-5">
+    <h2 class="text-lg font-semibold text-site-text">📚 Series: {series.name}</h2>
+    <p class="text-sm text-site-sub mt-1">
+      {series.parts.length} parts • {series.description}
+    </p>
+  </div>
+
+  <!-- Mobile/Tablet stacked list -->
+  <ul class="space-y-2 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-3 lg:gap-4">
+    {
+      series.parts.map((part: typeof series.parts[number], index: number) => {
+        const isCurrent = index === currentPartIndex;
+        // Extract category from id (e.g., "billing/who-can..." -> "billing")
+        const category = part.id.split("/")[0];
+        const url = `/blog/${category}/${part.slug}/`;
+        return (
+          <li>
+            <a
+              href={url}
+              class:list={[
+                "block px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium",
+                isCurrent
+                  ? "bg-cta text-cta-fg shadow-sm ring-2 ring-cta/40"
+                  : "bg-surface hover:bg-surface-2 text-site-text hover:text-cta border border-border/50 hover:border-cta/50",
+              ]}
+              aria-current={isCurrent ? "page" : undefined}
+            >
+              <span class="font-semibold text-xs opacity-70 block mb-1">
+                Part {index + 1}
+              </span>
+              <span class="block truncate text-xs sm:text-sm">{part.title}</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>
+

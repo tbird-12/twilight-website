@@ -3,18 +3,19 @@ title: "How Psychological Testing Is Billed at Twilight Psychology"
 seoTitle: "Billing Psychological Testing in KY"
 description: "A detailed walkthrough of how psychological testing is billed at Twilight Psychology in Lexington, KY — from intake through feedback, including codes, copays, and payer-specific rules."
 seoDescription: "How psychological testing billing works in Kentucky — 90791, 96130, 96131, 96136, 96137, feedback codes, taxonomy, and UHC same-day billing rules. Insurance and Kentucky Medicaid accepted."
-pubDate: 2026-11-11
+pubDate: 2026-09-17
 category: billing
 author: "Twilight Psychology Team"
 tags: ["billing", "psychological-testing", "cpt-codes", "kentucky", "medicaid", "uhc", "taxonomy", "copay", "90791", "96130", "96131", "mental-health"]
-draft: true
+draft: false
 ---
 
 > **Disclaimer:** Billing codes, payer rules, and reimbursement policies change. This post reflects current practice at Twilight Psychology and is for general education. Verify all rules with your specific payer and billing team before applying them to your practice.
 
+
 The previous posts in this series have covered credentialing, claim forms, submission channels, eligibility verification, and prior authorization. This post brings those components together and walks through **how a psychological testing evaluation is actually billed** — from the initial intake appointment to the final claim submission after the feedback session.
 
-This is the sixth post in the series. It is practice-specific to Twilight Psychology in Lexington, Kentucky, and reflects how we handle billing for psychological and psychoeducational evaluations under Dr. Heather Cornett's oversight. For therapy billing codes, see our [therapy CPT codes post](/blog/billing/cpt-codes-therapy-services). For medication management billing, see [our medication management codes post](/blog/billing/cpt-codes-medication-management).
+This is the sixth post in the series.
 
 ## The Billing Sequence for a Psychological Evaluation
 
@@ -54,17 +55,17 @@ The face-to-face testing session — where the psychologist or qualified health 
 
 These codes are **time-based**. The billable time includes the time spent directly with the patient (test administration), instructions and transitions between measures, and clinician scoring of completed tests.
 
-**Multiple units of 96137 are expected on most full evaluations.** A 4-hour testing battery administered in a single day would yield:
+**Multiple units of 96137 are expected on most full evaluations.** A 3-hour testing battery administered in a single day would yield:
 - 1 unit of 96136 (first 30 minutes)
-- 7 units of 96137 (7 additional 30-minute periods)
+- 5 units of 96137 (5 additional 30-minute periods)
 
-The number of units must be supported by documentation showing the actual time spent in direct testing.
+The number of units must be supported by documentation showing the actual time spent in direct testing. Most insurances restrict the total number of billable units per day or per evaluation, so it is important to check the payer's policy in advance. 4 hours of testing in a single day would typically be the maximum allowed for most medicaid clients. This also includes any time spent on test administration and scoring within that day.
 
 ### Important Note on Who Performs Testing
 
 96136 and 96137 are billed when the service is performed by the **psychologist or another qualified health professional (QHP)** — a licensed psychologist, LPA, T-LPA under supervision, or other QHP depending on the payer's rules.
 
-Some payers distinguish between psychologist-administered testing (96136/96137) and technician-administered testing (96138/96139). At Twilight Psychology, testing is performed by qualified professionals and billed accordingly.
+Some payers distinguish between psychologist-administered testing (96136/96137) and technician-administered testing (96138/96139). Psychometrists can bill 96138 and 96139 for technician-administered testing when allowed by the payer and are reimbursed at a lower rate. At Twilight Psychology, testing is performed by qualified professionals and billed accordingly.
 
 ## Phase 3: Interpretation, Report Writing, and Evaluation Services
 
@@ -77,15 +78,15 @@ The professional work that happens **outside the direct testing administration**
 
 This phase covers the intellectual and clinical work of the evaluation: synthesizing behavioral observations with test data, integrating referral questions with findings, writing the written report, and preparing recommendations. For a complex evaluation, this phase commonly involves **3–6 hours** of professional time.
 
-**Multiple units of 96131 are expected for thorough evaluations.** A practitioner who spends 4 total hours on interpretation and reporting would bill 96130 × 1 and 96131 × 3.
+**Multiple units of 96131 are expected for thorough evaluations.** A practitioner who spends 4 total hours on interpretation and reporting would bill 96130 × 1 and 96131 × 3. Most Medicaid and commercial insurance will limit them to 4 units for the whole evaluation. This means that even if the professional time exceeds 4 hours, reimbursement may be capped at 4 units.
 
 ### Pre-Authorization Reminder for 96130 and 96131
 
-As covered in the [prior authorization post](/blog/insurance/prior-authorization-psychological-testing), Aetna Better Health, UHC, WellCare, and Ambetter require PA for 96130 and 96131. The authorization must be approved before these services can be billed. The authorization number goes in Box 23 of the CMS-1500.
+As covered in the [prior authorization post](/blog/insurance/prior-authorization-psychological-testing), Aetna Better Health, UHC, WellCare, and Ambetter require PA for 96136, 96137, 96130 and 96131. The authorization must be approved before these services can be billed. The authorization number goes in Box 23 of the CMS-1500.
 
 ## Phase 4: Feedback Session
 
-### CPT Codes 90834 and 90846
+### CPT Codes 90834 and 90846 (Medicaid developmental testing only)
 
 The evaluation concludes with a feedback session where the psychologist reviews findings, recommendations, and the written report with the client and/or family.
 
@@ -94,7 +95,7 @@ The evaluation concludes with a feedback session where the psychologist reviews 
 
 The choice between 90834 and 90846 depends on who is present and the clinical purpose of the session. For adult clients, feedback typically uses 90834. For pediatric evaluations, 90846 is common when parents receive the feedback without the child present.
 
-Some evaluations may include both: an initial parent-only feedback (90846) followed by a child-inclusive feedback (90834). These would be separate service dates with separate billing.
+> Note: According to the American Psychological Association (APA) guidelines, the feedback session for a psychological evaluation is an essential component where the psychologist communicates the results, interpretations, and recommendations to the client and/or family, ensuring understanding and facilitating informed decision-making. As a result, they are mandated to be billed under the final hour of 96130/96131 set of evaluation. No separate billing for 90834 or 90846 should be done for the feedback session when it is part of the psychological testing evaluation.
 
 ## Getting Copay and Coinsurance Right at Each Appointment
 
@@ -115,7 +116,7 @@ As discussed in the [prior authorization post](/blog/insurance/prior-authorizati
 
 This means:
 - All service dates (intake, testing, feedback) are on one claim submission
-- All CPT codes (90791, 96136/96137, 96130/96131, 90834 or 90846) are submitted together
+- All CPT codes (90791, 96136/96137, 96130/96131) are submitted together
 - The claim is held until the evaluation is complete and the feedback session has occurred
 
 ### Practical Implications for UHC Billing
@@ -142,14 +143,14 @@ For LPAs (Licensed Psychological Associates), the taxonomy code is different fro
 |---|---|---|
 | Intake and diagnostic interview | 90791 (+ H0032 for Medicaid clients <18) | Date of intake appointment |
 | Testing administration | 96136 × 1, 96137 × multiple units | Date(s) of testing |
-| Evaluation services (interpretation/report) | 96130 × 1, 96131 × multiple units | Typically billed at time of feedback session |
-| Feedback session | 90834 or 90846 | Date of feedback appointment |
+| Evaluation services (interpretation/report/feedback) | 96130 × 1, 96131 × multiple units | Typically billed at time of feedback session |
+| Medicaid Feedback session | 90834 or 90846 | Developmental testing feedback session |
 
 **For UHC:** all phases are submitted together in one claim after the feedback session.
 
 **For all other payers:** each service date is typically submitted as a separate claim, or a single claim with multiple service date lines.
 
-## All Claims Reviewed by Dr. Heather Cornett
+## All Claims Reviewed by Billing Supervisor
 
 At Twilight Psychology, all insurance claims for psychological testing are reviewed and signed by **Dr. Heather Cornett** before submission. This review includes verifying that:
 - The CPT codes match the documented service times

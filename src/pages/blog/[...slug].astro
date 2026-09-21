@@ -5,8 +5,10 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import Schema from "../../components/Schema.astro";
 import CategoryBadge from "../../components/blog/CategoryBadge.astro";
 import PostCard from "../../components/blog/PostCard.astro";
+import SeriesTableOfContents from "../../components/blog/SeriesTableOfContents.astro";
 import { getCategoryMeta } from "../../data/blogCategories";
 import { formatBlogDate, hasDistinctUpdatedDate } from "../../utils/blogDates";
+import { getSeriesByPostId } from "../../data/blogSeries";
 import logoAsset from "../../assets/images/logo.png";
 import MaskingInventoryPopupWrapper from "../../components/interactive/MaskingInventoryPopupWrapper.astro";
 
@@ -304,6 +306,12 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
         />
       </div>
     )}
+
+    {
+      getSeriesByPostId(post.id) && (
+        <SeriesTableOfContents series={getSeriesByPostId(post.id)!.series} currentPartIndex={getSeriesByPostId(post.id)!.partIndex} />
+      )
+    }
 
     <!-- Post body -->
     <div class="prose prose-lg max-w-none

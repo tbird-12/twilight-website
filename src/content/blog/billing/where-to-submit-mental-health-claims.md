@@ -3,7 +3,7 @@ title: "Where to Submit Mental Health Insurance Claims"
 seoTitle: "Submitting Mental Health Claims in KY"
 description: "A guide to payer portals, clearinghouses, and submission channels for mental health insurance claims in Kentucky — including free portal options and timely filing tips."
 seoDescription: "Free payer portals, Availity clearinghouse, and submission options for mental health insurance claims in Kentucky — therapy, testing, and medication management. Insurance and Kentucky Medicaid accepted."
-pubDate: 2026-09-10
+pubDate: 2026-09-02
 category: billing
 author: "Twilight Psychology Team"
 tags: ["billing", "claims-submission", "availity", "medicaid", "kentucky", "payer-portals", "psychological-testing", "mental-health", "therapy", "medication-management"]
@@ -12,11 +12,12 @@ draft: false
 
 > **Disclaimer:** Portal addresses, fee structures, and submission requirements can change. Verify current details with each payer's provider relations team before selecting a submission channel.
 
+
 After a claim is prepared — provider NPI and taxonomy confirmed, CMS-1500 fields populated, diagnosis and CPT codes selected — the next decision is **where and how to submit it**. In Kentucky behavioral health practice, there are three main channels: direct payer portals, a clearinghouse, and paper or fax submission. Each has trade-offs in cost, speed, and administrative overhead.
 
 This applies whether you are submitting claims for [therapy](/services/therapy/), [psychological testing](/services/psychological-evaluations/), [medication management](/services/medication-management/), or [telehealth](/services/telehealth/) services. The submission mechanics are the same; what varies is the payer-specific enrollment, the timely filing windows, and whether a particular payer requires direct portal submission for certain service types.
 
-This is the third post in our series on billing for mental health services. The [previous post covered the CMS-1500 form and EHR billing tools](/blog/billing/cms-1500-claims-private-practice-psychology); this one focuses on submission channels and timely filing considerations.
+This is the third post in our series on billing for mental health services.
 
 ## Direct Payer Portals (Usually Free)
 

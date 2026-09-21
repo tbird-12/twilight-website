@@ -3,20 +3,21 @@ title: "Prior Authorization for Mental Health Services in Kentucky"
 seoTitle: "Prior Auth for Mental Health Services KY"
 description: "Which Kentucky insurance plans require prior authorization for mental health services — including psychological testing, therapy, and medication management — and how to navigate the PA process."
 seoDescription: "Which KY plans require prior auth for mental health services? Covers Aetna Better Health, UHC, WellCare, and Ambetter PA requirements for testing, therapy, and evaluation codes. Insurance and Kentucky Medicaid accepted."
-pubDate: 2026-11-04
+pubDate: 2026-09-09
 category: insurance
 author: "Twilight Psychology Team"
 tags: ["insurance", "prior-authorization", "psychological-testing", "aetna-better-health", "uhc", "wellcare", "ambetter", "kentucky", "medicaid", "96130", "96131", "mental-health", "therapy", "medication-management"]
-draft: true
+draft: false
 ---
 
 > **Disclaimer:** Prior authorization requirements change frequently. Always verify current requirements directly with each payer before scheduling psychological testing services. Coverage rules described here reflect general experience and may not reflect current payer policies.
+
 
 Not every insurance plan requires prior authorization before mental health services. But several plans that are common in Kentucky do — and for those plans, providing services without first obtaining approval can result in claim denial and a write-off that cannot be billed to the patient.
 
 This applies to [psychological evaluations](/services/psychological-evaluations/), but also extends to [therapy](/services/therapy/) and [medication management](/services/medication-management/) in some plans. The stakes are highest for evaluations because of the total cost involved; however, the PA principles described here apply broadly across mental health services.
 
-This is the fifth post in our series on billing for mental health services in Kentucky. The [previous post covered eligibility verification and coordination of benefits](/blog/insurance/verifying-insurance-eligibility-psychological-testing); this post focuses on which plans require PA, what the PA process involves, and what to do when authorization is delayed or denied.
+This is the fifth post in our series on billing for mental health services in Kentucky.
 
 ## Why Pre-Authorization Exists for Mental Health Services
 
@@ -32,7 +33,7 @@ PA requirements also exist for some therapy and medication management services �
 
 ## Plans That Require Prior Authorization in Kentucky
 
-The following plans commonly require pre-authorization for **psychological testing services**, particularly for CPT codes **96130** (psychological testing evaluation services, first hour) and **96131** (each additional hour). PA requirements for therapy and medication management are noted where applicable.
+The following plans commonly require pre-authorization for **psychological testing services**, particularly for CPT codes **96130** (psychological testing evaluation services, first hour) and **96131** (each additional hour), **96136/96137** (psychological testing administration and scoring). PA requirements for therapy and medication management are noted where applicable. PA is often required for medication at the pharmacy benefit level as well but that is outside the scope of this post.
 
 ### Aetna Better Health of Kentucky (Medicaid Managed Care)
 
@@ -64,7 +65,7 @@ The clinical rationale for this UHC policy is that the evaluation is considered 
 - **Kentucky Medicaid FFS (fee-for-service):** Generally does not require PA for standard psychological testing codes, though medical necessity documentation standards still apply.
 - **Medicare:** Medicare does not require prior authorization for most outpatient psychological testing or therapy services. Medical necessity must be documented in the record, but a formal PA is not required.
 - **Humana commercial:** Many Humana commercial plans do not require PA for psychological testing or standard outpatient therapy, but benefit limitations and deductible tracking still apply. Verify at the time of eligibility check.
-- **TRICARE:** PA requirements vary by TRICARE plan type. TRICARE Prime typically requires a referral; TRICARE Select may not. Confirm with the TRICARE regional contractor.
+- **TRICARE:** PA requirements vary by TRICARE plan type. TRICARE Prime typically requires a referral; TRICARE Select does not, at the time of this post.
 
 > Plans change their PA requirements, and managed care plans within the same parent company may have different rules. Always verify at the time of eligibility verification, not based on past experience alone.
 

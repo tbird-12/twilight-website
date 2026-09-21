@@ -3,7 +3,7 @@ title: "CMS-1500 Forms and EHR Billing for Private Practice"
 seoTitle: "CMS-1500 Claims for Mental Health Billing KY"
 description: "How private practice clinicians in Kentucky use the CMS-1500 form, EHR billing tools, and electronic submission to process insurance claims for mental health services."
 seoDescription: "CMS-1500 for mental health billing in Kentucky — SimplePractice, electronic vs paper claims, Anthem paper claim surcharges, and timely filing rules. Insurance and Kentucky Medicaid accepted."
-pubDate: 2026-09-04
+pubDate: 2026-08-31
 category: billing
 author: "Twilight Psychology Team"
 tags: ["billing", "cms-1500", "ehr", "simplepractice", "psychological-testing", "kentucky", "electronic-claims", "mental-health", "therapy", "medication-management"]
@@ -11,6 +11,7 @@ draft: false
 ---
 
 > **Disclaimer:** Billing rules, form requirements, and payer policies change. Verify all details with your billing software vendor, payer, and clearinghouse before submitting claims.
+
 
 Once a clinician is credentialed and their NPI and taxonomy codes are correctly configured (covered in [the previous post in this series](/blog/billing/who-can-bill-psychological-testing-claims)), the next step is understanding the claim form itself and the tools used to submit it.
 
