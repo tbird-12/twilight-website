@@ -65,60 +65,47 @@ const services = [
   },
 ];
 
-const problemPoints = [
-  {
-    title: "Your evaluation felt dismissive or incomplete",
-    desc: "Non-classical neurodivergent traits are routinely missed. High-masking profiles, twice-exceptional kids, and adults who 'seem fine' are left without answers.",
-  },
-  {
-    title: "Your report didn't translate to school action",
-    desc: "IEP and 504 teams need specific testing scores and recommendations — not a summary letter. Most evaluation reports don't include what schools actually require.",
-  },
-  {
-    title: "Months of waiting, then a limited assessment",
-    desc: "Many agencies cap assessments at brief screenings or single domains, leaving families to restart the search — and the wait — all over again.",
-  },
-  {
-    title: "Your child was labeled 'oppositional' or 'lazy'",
-    desc: "Demand-avoidant and high-masking autism profiles are frequently mislabeled in standard evaluations. The right framework changes how a child is understood and supported.",
-  },
-  {
-    title: "Access to a prescriber took months",
-    desc: "Psychiatric prescribers for ADHD — especially those who can prescribe stimulants — are genuinely hard to access in Kentucky. Months-long waits are the norm everywhere else.",
-  },
-  {
-    title: "After the diagnosis, support disappeared",
-    desc: "An evaluation is only the beginning. Without therapy and medication in the same practice, families navigate referrals, waitlists, and disconnected care all over again.",
-  },
-];
 
 const qualityCareItems = [
   {
+    issue: "Your evaluation felt dismissive or incomplete",
     title: "Our clinicians are neurodivergent too",
-    desc: "Most of our clinical team identify as neurodivergent. That lived experience shapes every evaluation, every report, and every session. We're not interpreting neurodivergence from a distance — many of us have been in the other chair.",
+    desc: "Most of our clinical team identify as neurodivergent. That lived experience shapes every evaluation, report, and session. We're not interpreting neurodivergence from a distance — many of us have been in the other chair.",
     link: "/about/clinicians/clinicians-lex-ky",
   },
   {
+    issue: "Your report didn't translate to school action",
     title: "IEP-ready reports with IQ and achievement testing",
-    desc: "We include the full psychoeducational battery — IQ, achievement, and processing scores — that school teams need for IEP, 504, and accommodation decisions. Most practices refer this out.",
+    desc: "We include the full psychoeducational battery — IQ, achievement, and processing scores — that school teams need for IEP, 504, and accommodation decisions.",
     link: "/specialties/psychoeducational-evaluations",
   },
   {
-    title: "Self-pay evaluations reported in 7 days",
-    desc: "Most self-pay clients receive their completed report within seven days of intake. No expedited fee — that's just our standard turnaround.",
-    link: "/resources/waitlist-times",
+    issue: "You or your child could not miss school",
+    title: "Evening & Weekend Appointments",
+    desc: "We offer flexible telehealth appointments, including evening and weekend availability.",
+    link: "/about/twilight-psychology",
   },
   {
+    issue: "Months of waiting, then a limited assessment",
+    title: "Self-pay evaluations reported in 7 days",
+    desc: "Most self-pay clients receive their completed report within seven days of intake. No expedited fee for our standard turnaround!",
+    link: "/resources/waitlist-times",
+  },
+
+  {
+    issue: "Your child was labeled 'oppositional' or 'lazy'",
     title: "PDA-informed autism evaluations",
     desc: "Our clinicians evaluate specifically for demand-avoidant and high-masking autism profiles — a specialty most practices in Kentucky do not offer, and one that matters personally to many of our own team.",
     link: "/specialties/pda-profile",
   },
   {
+    issue: "Access to a prescriber took months",
     title: "Psychiatric NP with a short current wait",
     desc: "Medication management is available in-house through our dedicated NP, including stimulant prescriptions for ADHD when clinically appropriate.",
     link: "/services/medication-management",
   },
   {
+    issue: "After the diagnosis, support disappeared",
     title: "Evaluation → therapy → medication in one practice",
     desc: "Your report doesn't end your relationship with us. Therapy and medication management are available in-house so follow-through care doesn't require starting over somewhere new.",
     link: "/services/therapy/after-evaluation",
@@ -168,12 +155,12 @@ const qualityCareItems = [
         <header class="diff-header">
           <p class="homepage-section-label">Sound Familiar?</p>
           <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            The Walls Families Hit<span class="text-cta"> and How We Can Help</span>
+            The Gaps Families Hit<span class="text-cta"> and How We Close Them</span>
           </h2>
         </header>
 
         <div class="diff-grid" role="list" aria-label="Common barriers and how Twilight Psychology responds">
-          {problemPoints.slice(0, 3).map((point, i) => (
+          {qualityCareItems.slice(0, 4).map((point, i) => (
             <div role="listitem">
               <a
                 href={qualityCareItems[i].link}
@@ -185,7 +172,7 @@ const qualityCareItems = [
                     <span class="diff-zone-tag diff-zone-tag--problem">The Challenge</span>
                     <span class="diff-card-num" aria-hidden="true">0{i + 1}</span>
                   </div>
-                  <p class="diff-card-challenge">{point.title}</p>
+                  <p class="diff-card-challenge">{point.issue}</p>
                 </div>
                 <div class="diff-card-body">
                   <span class="diff-zone-tag diff-zone-tag--solution">Our Approach</span>
@@ -221,13 +208,13 @@ const qualityCareItems = [
         <header class="diff-header">
           <p class="homepage-section-label">Why Twilight Psychology</p>
           <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            Built for Gaps<span class="text-cta"> Others Leave Behind</span>
+            Precision Care for<span class="text-cta"> Complex Presentations</span>
           </h2>
         </header>
 
-        <div class="diff-grid" role="list" aria-label="More ways Twilight Psychology addresses the gaps">
-          {problemPoints.slice(3).map((point, i) => {
-            const idx = i + 3;
+        <div class="diff-grid-tri" role="list" aria-label="More ways Twilight Psychology addresses the gaps">
+          {qualityCareItems.slice(4).map((point, i) => {
+            const idx = i + 4;
             return (
               <div role="listitem">
                 <a
@@ -240,7 +227,7 @@ const qualityCareItems = [
                       <span class="diff-zone-tag diff-zone-tag--problem">The Challenge</span>
                       <span class="diff-card-num" aria-hidden="true">0{idx + 1}</span>
                     </div>
-                    <p class="diff-card-challenge">{point.title}</p>
+                    <p class="diff-card-challenge">{point.issue}</p>
                   </div>
                   <div class="diff-card-body">
                     <span class="diff-zone-tag diff-zone-tag--solution">Our Approach</span>
@@ -656,6 +643,12 @@ const qualityCareItems = [
   }
 
   .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.125rem;
+  }
+
+  .diff-grid-tri {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.125rem;

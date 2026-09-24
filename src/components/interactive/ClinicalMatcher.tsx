@@ -56,7 +56,7 @@ function availabilityStyles(status: MatcherProvider["availability_status"]) {
     return "bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-700";
   if (status === "waitlist")
     return "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-700";
-  return "bg-red-100 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-300 dark:border-red-700";
+  return "bg-red-200 text-red-900 border-red-300 dark:bg-red-950/40 dark:text-red-400 dark:border-red-700";
 }
 
 function availabilityDot(status: MatcherProvider["availability_status"]) {
@@ -166,7 +166,7 @@ function ClinicianCard({ provider, index, reduced }: CardProps) {
 
         {/* ── Q1: What will it cost? ── */}
         <div className="rounded-xl bg-surface-soft border border-border p-3">
-          <p className="text-xs font-semibold text-site-text mb-2">💰 What will it cost?</p>
+          <p className="text-xs font-semibold text-site-text mb-2">What will it cost?</p>
           {firstRate && (
             <p className="text-sm font-bold text-cta mb-1">Starting at {firstRate} / session (self-pay)</p>
           )}
@@ -181,7 +181,7 @@ function ClinicianCard({ provider, index, reduced }: CardProps) {
 
         {/* ── Q2: When can I be seen? ── */}
         <div className="rounded-xl bg-surface-soft border border-border p-3">
-          <p className="text-xs font-semibold text-site-text mb-2">📅 When can I be seen?</p>
+          <p className="text-xs font-semibold text-site-text mb-2">When can I be seen?</p>
           <div className="flex flex-col gap-1.5">
             {Object.entries(provider.wait_times).map(([key, val]) => (
               <div key={key} className="flex items-center justify-between gap-2">
@@ -191,8 +191,8 @@ function ClinicianCard({ provider, index, reduced }: CardProps) {
                     /immediate/i.test(val)
                       ? "bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-700"
                       : /week/i.test(val)
-                      ? "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-700"
-                      : "bg-red-100 text-red-800 border-red-200 dark:bg-red-900/30 dark:text-red-300 dark:border-red-700"
+                      ? "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-300/30 dark:text-amber-500 dark:border-amber-700"
+                      : "bg-red-200 text-red-800 border-red-300 dark:bg-red-450/40 dark:text-red-400 dark:border-red-700"
                   }`}
                 >
                   {val}
