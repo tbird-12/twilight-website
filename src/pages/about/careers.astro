@@ -1,15 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { PHONE_NUMBER } from "../../data/resource";
+import { PHONE_NUMBER, RESUME_UPLOAD_SCRIPT_URL } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
 import PageLinksSection from "../../components/PageLinksSection.astro";
+import ApplyButtonWrapper from "../../components/ApplyButtonWrapper.astro";
 
 type OpeningStatus = "open" | "filled";
 type CtaVariant = "solid" | "outline";
 
 interface CareerOpening {
   active: boolean; // ← flip to true to show this posting
+  positionId: string; // unique identifier for this position
   status: OpeningStatus;
   heroLabel: string;
   titleLines: [string, string];
@@ -49,6 +51,7 @@ const clinicianBenefits = [
 const careerOpenings: CareerOpening[] = [
   {
     active: true, // ← flip to false to unpublish this posting
+    positionId: "licensed-clinician",
     status: "open",
     heroLabel: "licensed clinicians",
     titleLines: ["Licensed", "Clinician"],
@@ -79,6 +82,7 @@ const careerOpenings: CareerOpening[] = [
   },
   {
     active: false, // ← flip to true to publish this posting
+    positionId: "licensed-psychologist",
     status: "filled",
     heroLabel: "licensed psychologists",
     titleLines: ["Licensed", "Psychologist"],
@@ -92,6 +96,7 @@ const careerOpenings: CareerOpening[] = [
   },
   {
     active: false, // ← flip to true to publish this posting
+    positionId: "doctoral-practicum",
     status: "filled",
     heroLabel: "doctoral practicum students",
     titleLines: ["Doctoral", "Practicum"],
@@ -235,17 +240,12 @@ const careerPageLinks = [
                 </ul>
               )}
             </div>
-            <a
-              href="mailto:info@twilightpsychology.com"
-              class:list={[
-                "block w-full py-4 text-center font-black rounded-full transition-all text-sm",
-                opening.ctaVariant === "solid"
-                  ? "bg-cta text-cta-fg hover:bg-cta/80 active:scale-95"
-                  : "border border-border-strong text-sand hover:bg-surface-2 italic",
-              ]}
-            >
-              {opening.ctaLabel}
-            </a>
+            <ApplyButtonWrapper
+              position={opening.positionId}
+              ctaLabel={opening.ctaLabel}
+              ctaVariant={opening.ctaVariant}
+              scriptURL={RESUME_UPLOAD_SCRIPT_URL}
+            />
           </div>
         ))
       ) : (

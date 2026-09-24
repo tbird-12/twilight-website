@@ -19,6 +19,9 @@ export const SIGN_IN_LINK = "https://twilightpsychology.clientsecure.me/sign-in"
 export const WIDGET_LINK = "https://twilightpsychology.clientsecure.me/contact-widget";
 export const REFERRAL_LINK = "/documents/Referral_Twilight.pdf";
 
+// Resume upload — Google Apps Script Web App URL for careers page
+export const RESUME_UPLOAD_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyDG_1-_TxJRI2MatmOxjHJz9vrok3vQNsiu7eOjk2EFJaZkoBvuRz5BSfnGWSJ37fk/exec";
+
 // Self-pay scheduling benchmarks — update here when wait times change; consume
 // these constants wherever copy references turnaround or waitlist duration.
 export const SELF_PAY_REPORT_TURNAROUND_DAYS = 7;

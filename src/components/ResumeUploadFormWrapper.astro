@@ -1,0 +1,16 @@
+---
+import ResumeUploadForm from "../components/react/forms/ResumeUploadForm";
+
+interface Props {
+  position: string;
+  scriptURL?: string;
+}
+
+const { position, scriptURL } = Astro.props;
+---
+
+<ResumeUploadForm
+  client:visible
+  position={position}
+  scriptURL={scriptURL}
+/>
