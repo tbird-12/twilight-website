@@ -212,7 +212,7 @@ const qualityCareItems = [
           </h2>
         </header>
 
-        <div class="diff-grid-tri" role="list" aria-label="More ways Twilight Psychology addresses the gaps">
+        <div class="diff-grid" role="list" aria-label="More ways Twilight Psychology addresses the gaps">
           {qualityCareItems.slice(4).map((point, i) => {
             const idx = i + 4;
             return (
@@ -643,12 +643,6 @@ const qualityCareItems = [
   }
 
   .diff-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.125rem;
-  }
-
-  .diff-grid-tri {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.125rem;
