@@ -56,7 +56,7 @@ Medicare testing and therapy will be handled on a **case-by-case basis** going f
 
 Twilight Psychology will implement a clear attendance and no-show policy for all appointments to ensure our clinicians' time is respected and availability remains open for those who need care. For self-pay and commercial insurance clients, missing an appointment without providing at least 24 hours' notice may result in a fee. 
 
-While state regulations prevent us from charging a no-show fee to Medicaid clients, our two-strike attendance policy applies to everyone for intakes, testing, and therapy. Specifically, missing a testing appointment counts as violation of this poilicy. Clients who exceed this two-strike allowance may be subject to termination from care with Twilight Psychology.
+While state regulations prevent us from charging a no-show fee to Medicaid clients, our two-strike attendance policy applies to everyone for intakes, testing, and therapy. Specifically, missing a testing appointment counts as violation of this policy. Clients who exceed this two-strike allowance may be subject to termination from care with Twilight Psychology.
 
 ### VII. Adjusting clientele mix
 

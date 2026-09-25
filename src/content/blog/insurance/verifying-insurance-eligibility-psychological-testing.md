@@ -158,6 +158,5 @@ The [next post covers prior authorization for mental health services](/blog/insu
 - [Where to Submit Mental Health Insurance Claims](/blog/billing/where-to-submit-mental-health-claims) — Payer portals, clearinghouses, and timely filing
 - [Prior Authorization for Mental Health Services in KY](/blog/insurance/prior-authorization-psychological-testing) — Next in this series: PA requirements for testing, therapy, and medication management
 - [Common CPT Codes Used in Psychological Testing](/blog/billing/common-cpt-codes-used-in-psychological-testing) — The testing and interpretation codes explained
-- [CPT Codes Used in Therapy Billing](/blog/billing/cpt-codes-therapy-services) — Therapy codes for reference when verifying benefits
 - [Aetna Better Health — Prior Authorization and Medical Necessity](/blog/insurance/aetna-better-health-in-network) — Aetna Better Health-specific PA and documentation requirements
 - [Accepted Insurance Plans](/resources/insurances-accepted) — Insurance and Kentucky Medicaid plans we are currently credentialed with

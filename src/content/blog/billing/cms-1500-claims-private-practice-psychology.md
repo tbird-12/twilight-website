@@ -126,7 +126,7 @@ Clearinghouse fees are typically per-transaction (per claim submitted). Some EHR
 
 A **rejection** from the clearinghouse means the claim had a formatting error and was never sent to the payer. The claim needs to be corrected and resubmitted.
 
-A **denial** from the payer means the claim was received and adjudicated but payment was refused. Denials require a different response — typically an appeal or corrected claim — and are covered in detail in [the denials and appeals post later in this series](/blog/billing/claim-denials-appeals-psychological-testing).
+A **denial** from the payer means the claim was received and adjudicated but payment was refused. Denials require a different response — typically an appeal or corrected claim — and are covered in detail in [the denials post later in this series](/blog/billing/claim-denials-psychological-testing).
 
 ## Fax Submission
 
@@ -158,5 +158,4 @@ Track claim submission dates in your EHR or billing system. If a claim is submit
 - [Where to Submit Mental Health Insurance Claims](/blog/billing/where-to-submit-mental-health-claims) — Next in this series: payer portals, clearinghouses, and submission options
 - [Common CPT Codes Used in Psychological Testing](/blog/billing/common-cpt-codes-used-in-psychological-testing) — The testing and interpretation codes explained
 - [CPT Codes Used in Therapy Billing](/blog/billing/cpt-codes-therapy-services) — Therapy-specific codes for reference
-- [CPT Codes Used in Medication Management Billing](/blog/billing/cpt-codes-medication-management) — E/M codes and psychiatric add-ons
 - [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — How to read what the insurance company sends back after adjudication

@@ -163,13 +163,12 @@ This billing oversight process is part of how Twilight Psychology maintains comp
 
 ## The Final Post in This Series: Denials and Appeals
 
-Even with careful pre-authorization, eligibility verification, and accurate coding, claims are sometimes denied. The [final post in this series covers claim denials and the appeals process](/blog/billing/claim-denials-appeals-psychological-testing) — the most common denial reasons for psychological testing claims and the specific steps for appealing them. The appeals principles covered there apply to therapy and medication management denials as well.
+Even with careful pre-authorization, eligibility verification, and accurate coding, claims are sometimes denied. The [next post in this series covers claim denials](/blog/billing/claim-denials-psychological-testing) — the most common denial reasons for psychological testing claims and the specific steps for appealing them. The denial and appeals principles covered there apply to therapy and medication management as well.
 
 ## Related Resources
 
 - [Prior Authorization for Mental Health Services in Kentucky](/blog/insurance/prior-authorization-psychological-testing) — Which plans require PA and how to navigate approvals
-- [Claim Denials and Appeals for Mental Health Services](/blog/billing/claim-denials-appeals-psychological-testing) — Next in this series: when claims are denied and how to appeal
+- [Claim Denials for Mental Health Services](/blog/billing/claim-denials-psychological-testing) — Next in this series: why claims are denied and how to appeal
 - [Common CPT Codes Used in Psychological Testing](/blog/billing/common-cpt-codes-used-in-psychological-testing) — Plain-language guide to all testing codes
-- [CPT Codes Used in Therapy Billing](/blog/billing/cpt-codes-therapy-services) — Therapy codes for comparison and reference
 - [Accepted Insurance Plans](/resources/insurances-accepted) — Insurance and Kentucky Medicaid plans accepted at Twilight Psychology
 - [Contact](/contact) — Billing questions and claim inquiries

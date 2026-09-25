@@ -160,5 +160,4 @@ The [next post in this series covers insurance eligibility verification](/blog/i
 - [CMS-1500 Forms and EHR Billing for Private Practice](/blog/billing/cms-1500-claims-private-practice-psychology) — The claim form, SimplePractice, and timely filing
 - [Verifying Insurance Eligibility for Mental Health Services](/blog/insurance/verifying-insurance-eligibility-psychological-testing) — Next in this series: eligibility, COB, and pre-service verification
 - [Common CPT Codes Used in Psychological Testing](/blog/billing/common-cpt-codes-used-in-psychological-testing) — The testing and interpretation codes explained
-- [CPT Codes Used in Therapy Billing](/blog/billing/cpt-codes-therapy-services) — Therapy codes for reference
 - [Accepted Insurance Plans](/resources/insurances-accepted) — Insurance and Kentucky Medicaid plans accepted at Twilight Psychology

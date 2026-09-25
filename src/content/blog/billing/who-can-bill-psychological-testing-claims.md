@@ -132,4 +132,3 @@ The next post in this series covers the **CMS-1500 claim form** — the specific
 - [CPT Codes Used in Therapy Billing](/blog/billing/cpt-codes-therapy-services) — Therapy billing codes for individual, family, and group sessions
 - [CPT Codes Used in Medication Management Billing](/blog/billing/cpt-codes-medication-management) — E/M codes and add-ons for psychiatric medication visits
 - [What Insurance Assignment Means for Providers](/blog/insurance/assignment-and-provider-participation) — Credentialing, paneling, and participation explained
-- [Accepted Insurance Plans](/resources/insurances-accepted) — Current panel list, including Kentucky Medicaid plans

@@ -83,3 +83,11 @@ Twilight Psychology also offers [therapy after evaluation](/services/therapy/aft
 If you are looking for **adult autism testing in Kentucky**, start with our [autism testing page](/services/autism-testing) and [new client guide](/resources/new-client). If your question overlaps with ADHD, the [ADHD testing overview](/blog/clinical/adhd-testing-lexington-ky) is also worth reviewing.
 
 For practical details about wait times, see [current availability](/resources/waitlist-times). For insurance questions, see [accepted insurance plans](/resources/insurances-accepted) and the [FAQ](/resources/faq).
+
+## Related resources
+
+- [Autism Testing](/services/autism-testing) — service overview, insurance details, and scheduling
+- [How to Understand Your CAT-Q Masking Results](/blog/clinical/how-to-understand-your-cat-q-masking-results) — masking patterns and the cost of camouflaging
+- [ADHD Testing in Lexington, KY](/blog/clinical/adhd-testing-lexington-ky) — when autism and ADHD overlap (AuDHD)
+- [Waitlist Times](/resources/waitlist-times) — current scheduling availability by clinician
+- [New Client Guide](/resources/new-client) — steps to start the intake process

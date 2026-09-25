@@ -83,15 +83,16 @@ Twilight Psychology includes:
 
 That means the same practice can often support the whole sequence: evaluation, therapy, and medication follow-up when needed.
 
-If you are comparing options, the most practical pages are:
-
-- [Clinicians in Lexington, KY](/about/clinicians/clinicians-lex-ky)
-- [Psychological evaluations](/services/psychological-evaluations)
-- [Therapy services](/services/therapy)
-- [Medication management](/services/medication-management)
-
 ## How to get started
 
 If you are looking for a **psychologist in Lexington, KY**, start with the [clinician directory](/about/clinicians/clinicians-lex-ky) and then move into the page that matches your actual need.
 
 If you already know you need testing, go straight to [psychological evaluations](/services/psychological-evaluations). If you are looking for ongoing care, review [therapy clinicians](/services/therapy/clinicians). If you are still unsure, the [new client guide](/resources/new-client) and [contact page](/contact) are the best next steps.
+
+## Related resources
+
+- [Clinicians in Lexington, KY](/about/clinicians/clinicians-lex-ky) — full clinician directory with specialties and availability
+- [Psychological Evaluations](/services/psychological-evaluations) — evaluation services for ADHD, autism, and learning differences
+- [Therapy Services](/services/therapy) — individual, teen, and adult therapy options
+- [Medication Management](/services/medication-management) — psychiatric prescribing and medication follow-up
+- [New Client Guide](/resources/new-client) — how the intake process works at Twilight Psychology

@@ -124,7 +124,7 @@ A PA denial for psychological testing is typically one of three types:
 2. **Administrative denial:** Missing information in the request, incorrect codes, or expired authorization. Correct and resubmit.
 3. **Benefit not covered:** The member's plan does not include psychological testing as a covered benefit. This is the hardest to appeal and often results in a self-pay arrangement or a decision not to proceed.
 
-For **not medically necessary** denials, the appeals process typically allows submission of additional clinical documentation. This is covered in detail in [our post on claim denials and appeals](/blog/billing/claim-denials-appeals-psychological-testing).
+For **not medically necessary** denials, the appeals process typically allows submission of additional clinical documentation. This is covered in detail in [our post on claim denials](/blog/billing/claim-denials-psychological-testing).
 
 For **benefit not covered** denials, confirm the denial in writing and clarify whether the denial is a true plan exclusion or an incorrect application of the plan's rules. Mental health parity law (MHPAEA) requires that mental health and substance use disorder benefits not be subject to more restrictive limitations than comparable medical/surgical benefits. If a plan covers comparable medical diagnostic procedures but excludes psychological testing on grounds that appear more restrictive, a parity-based appeal may apply.
 
@@ -148,5 +148,4 @@ The [next post covers how psychological testing is billed specifically at Twilig
 - [How Psychological Testing Is Billed at Twilight Psychology](/blog/billing/how-psychological-testing-is-billed) — Next in this series: the complete billing sequence
 - [Aetna Better Health — Prior Authorization and Medical Necessity](/blog/insurance/aetna-better-health-in-network) — Detailed look at Aetna Better Health PA requirements
 - [Common CPT Codes Used in Psychological Testing](/blog/billing/common-cpt-codes-used-in-psychological-testing) — The testing and interpretation codes explained
-- [Claim Denials and Appeals for Mental Health Services](/blog/billing/claim-denials-appeals-psychological-testing) — What to do when a PA denial leads to a claim denial
-- [Accepted Insurance Plans](/resources/insurances-accepted) — Insurance and Kentucky Medicaid plans currently accepted at Twilight Psychology
+- [Claim Denials for Mental Health Services](/blog/billing/claim-denials-psychological-testing) — What to do when a PA denial leads to a claim denial

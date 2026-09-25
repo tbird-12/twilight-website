@@ -130,6 +130,5 @@ Those dedicated guides are now available:
 - [Therapy CPT Codes Explained](/blog/billing/cpt-codes-therapy-services) — Individual and family therapy billing codes explained
 - [Medication Management CPT Codes Explained](/blog/billing/cpt-codes-medication-management) — E/M codes and the 90833 add-on used in psychiatric prescribing visits
 - [Understanding Your Explanation of Benefits (EOB)](/blog/billing/understanding-your-eob) — How to read the claim summary your insurance sends after processing
-- [Understanding Health Insurance: Deductibles, copays, eligibility, and Benefits](/blog/insurance/understanding-health-insurance) — A broader look at coverage types and plan rules
 - [Psychological Evaluations](/services/psychological-evaluations) — Overview of evaluation services at Twilight Psychology
 - [Contact](/contact) — Reach out if you want help understanding a recent statement or claim
