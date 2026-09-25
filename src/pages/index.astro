@@ -1055,8 +1055,21 @@ const qualityCareItems = [
   }
 
   @media (max-width: 767px) {
+    /* Disable page-snap entirely on mobile — too fatiguing with many sections */
+    :global(body:has(.homepage-shell)) {
+      scroll-snap-type: none;
+    }
+
     .homepage-panel {
-      min-height: 100svh;
+      /* Content-height sections on mobile; hero keeps its own min-height below */
+      min-height: auto;
+      scroll-snap-align: none;
+      scroll-snap-stop: normal;
+    }
+
+    /* Keep the hero impactful but slightly tighter than full-screen */
+    .homepage-panel-hero {
+      min-height: 82svh;
     }
 
     .homepage-panel-glow {

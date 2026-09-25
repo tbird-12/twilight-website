@@ -412,7 +412,7 @@ export default function MobileNav({
       />
 
       {/* Slide-up panel */}
-      <div className="fixed inset-x-0 bottom-0 z-90 px-2 md:hidden" style={panelStyle}>
+      <div className="fixed inset-x-0 bottom-0 z-[110] px-2 md:hidden" style={panelStyle}>
         <div
           ref={panelRef}
           id="mobile-menu"

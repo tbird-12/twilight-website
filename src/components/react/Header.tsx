@@ -78,7 +78,9 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
     <>
       <header
         ref={headerRef}
-        className="sticky top-0 z-100 w-full border-b theme-border bg-site-bg/88 font-sans backdrop-blur-xl"
+        className={`sticky top-0 z-30 w-full border-b theme-border bg-site-bg/88 font-sans backdrop-blur-xl ${
+          isMobileMenuOpen ? "md:z-30" : ""
+        }`}
       >
         <div className="max-w-6xl mx-auto flex h-16 items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:h-24">
           <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3">
@@ -145,8 +147,9 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
             </a>
           </div>
 
-          {/* Mobile shortcut button */}
-          <div className="md:hidden flex shrink-0 items-center gap-3">
+          {/* Mobile shortcut buttons */}
+          <div className="md:hidden flex shrink-0 items-center gap-2">
+            <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
             <SearchButton
               compact
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-site-bg text-site-text shadow-sm transition-all hover:border-border-strong hover:bg-surface"
