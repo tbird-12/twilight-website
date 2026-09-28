@@ -23,8 +23,8 @@ const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
 const stats = [
   { label: "Evaluations", value: "2300+" },
   { label: "Years Experience", value: "8+" },
-  { label: "Weeks Self-Pay Waitlist", value: "3" },
-  { label: "Days to Self-Pay Report", value: "7" },
+  { label: "Weeks Self-Pay Waitlist", value: String(SELF_PAY_WAITLIST_WEEKS) },
+  { label: "Days to Self-Pay Report", value: String(SELF_PAY_REPORT_TURNAROUND_DAYS) },
 ];
 
 const services = [
@@ -137,7 +137,6 @@ const accessServices: Array<{
   wait: string;
   note: string;
   rate: string;
-  icon: string;
   href: string;
   status: AccessStatus;
 }> = [
@@ -146,16 +145,14 @@ const accessServices: Array<{
     wait:   `~${SELF_PAY_WAITLIST_WEEKS} wks`,
     note:   `Self-pay report in ${SELF_PAY_REPORT_TURNAROUND_DAYS} days`,
     rate:   SELF_PAY_RATES.psychologicalEvaluation,
-    icon:   "lucide:brain",
     href:   "/services/psychological-evaluations",
     status: "accepting",
   },
   {
-    label:  "Speciality Evaluations",
+    label:  "Specialty Evaluations",
     wait:   `~${SELF_PAY_WAITLIST_WEEKS} wks`,
     note:   "Adoption, IEE, Learning Disabilities, etc.",
     rate:   SELF_PAY_RATES.psychoeducationalEvaluation,
-    icon:   "lucide:graduation-cap",
     href:   "/specialties/psychoeducational-evaluations",
     status: "accepting",
   },
@@ -164,7 +161,6 @@ const accessServices: Array<{
     wait:   "Varies by clinician",
     note:   "Insurance widely accepted",
     rate:   `${SELF_PAY_RATES.therapy}/session`,
-    icon:   "lucide:heart-handshake",
     href:   "/services/therapy",
     status: "varies",
   },
@@ -173,7 +169,6 @@ const accessServices: Array<{
     wait:   "Short current wait",
     note:   "Insurance & self-pay",
     rate:   `${SELF_PAY_RATES.mm_followup}/follow-up`,
-    icon:   "lucide:stethoscope",
     href:   "/services/medication-management",
     status: "active",
   },
@@ -497,7 +492,7 @@ const accessServices: Array<{
             Access &amp; Availability
           </p>
           <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            Availability at a Glance
+            Next Appointment Availability
           </h2>
           <p class="mt-2 text-sm sm:text-base leading-relaxed text-site-sub">
             Current waitlist windows and payment pathways.
@@ -520,11 +515,6 @@ const accessServices: Array<{
                 class="access-service-row group"
               >
                 <div class="flex items-center gap-3 min-w-0">
-                  <Icon
-                    name={svc.icon}
-                    class="w-4 h-4 shrink-0 text-cta/60 group-hover:text-cta transition-colors duration-200"
-                    aria-hidden="true"
-                  />
                   <div class="min-w-0">
                     <span class="block text-sm font-black text-site-text leading-snug group-hover:text-cta transition-colors duration-200 truncate">
                       {svc.label}
@@ -551,9 +541,6 @@ const accessServices: Array<{
 
             <!-- Insurance -->
             <div class="glass-card-premium rounded-2xl p-5 flex items-start gap-3.5">
-              <span class="access-payment-icon-wrap shrink-0" aria-hidden="true">
-                <Icon name="lucide:shield-check" class="w-4 h-4 text-cta" />
-              </span>
               <div class="min-w-0">
                 <p class="text-sm font-black text-site-text leading-snug mb-1">
                   {insuranceCount} Insurance Carriers
@@ -566,15 +553,12 @@ const accessServices: Array<{
 
             <!-- Self-pay -->
             <div class="glass-card-premium rounded-2xl p-5 flex items-start gap-3.5">
-              <span class="access-payment-icon-wrap shrink-0" aria-hidden="true">
-                <Icon name="lucide:wallet" class="w-4 h-4 text-cta" />
-              </span>
               <div class="min-w-0">
                 <p class="text-sm font-black text-site-text leading-snug mb-1">
                   Self-Pay {selfPayLow}–{selfPayHigh}
                 </p>
                 <p class="text-xs text-site-sub leading-relaxed">
-                  Speciality evaluation reports within {SELF_PAY_REPORT_TURNAROUND_DAYS} days of intake.
+                  Specialty evaluation reports within {SELF_PAY_REPORT_TURNAROUND_DAYS} days of intake.
                 </p>
               </div>
             </div>

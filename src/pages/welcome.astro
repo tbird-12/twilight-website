@@ -2,7 +2,7 @@
 import LandingLayout from "../layouts/LandingLayout.astro";
 import { Icon } from "astro-icon/components";
 import logo from "../assets/images/logo.png";
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, WIDGET_LINK } from "../data/resource";
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, WIDGET_LINK, SELF_PAY_REPORT_TURNAROUND_DAYS } from "../data/resource";
 import { Image } from "astro:assets";
 
 const services = [
@@ -14,7 +14,7 @@ const services = [
 const differentiators = [
   { icon: "lucide:stethoscope", stat: "8+", label: "Years Expertise" },
   { icon: "lucide:globe", stat: "40+", label: "States via PSYPACT" },
-  { icon: "lucide:timer", stat: "7 days", label: "Optional self-pay turnaround" },
+  { icon: "lucide:timer", stat: `${SELF_PAY_REPORT_TURNAROUND_DAYS} days`, label: "Optional self-pay turnaround" },
   { icon: "lucide:calendar-check", stat: "2,300+", label: "Evaluations completed" },
   { icon: "lucide:shield-check", stat: "20+", label: "Insurance panels" },
 ];

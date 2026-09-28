@@ -97,7 +97,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         title: "A Neuro-Affirming Approach to Clarity.",
         paragraphs: [
           "Hello! I am a Licensed Psychologist and the founder of Twilight Psychology. My clinical expertise lies in working with individuals who have often been overlooked or misdiagnosed—particularly those who have learned to mask behaviors to fit into neurotypical environments.",
-          "Whether you are an adult seeking answers about neurodivergence for the first time, or a parent navigating a complex learning disability, I provide a thorough, evidence-based, and compassionate evaluation process. I have extensive experience working with SPMI (Bipolar, Borderline, Schizophrenia)  populations, and I understand how personality disorders can sometimes overshadow or mask neurodivergent traits. "
+          "Whether you are an adult seeking answers about neurodivergence for the first time, or a parent navigating a complex learning disability, I provide a thorough, evidence-based, and compassionate evaluation process. I have extensive experience working with SPMI (Bipolar, Borderline, Schizophrenia) populations, and I understand how personality disorders can sometimes overshadow or mask neurodivergent traits."
         ],
       },
       {
@@ -428,8 +428,8 @@ export const clinicianProfiles: ClinicianProfile[] = [
     pageTitle: "Ethan Puckett, Psy.D., LPA | Child Therapy & Testing",
     pageDescription:
       "Ethan Puckett, Psy.D., LPA — Twilight Psychology clinician providing neuro-affirming therapy for ages 3-18, with strongest fit for ages 7-16, plus psychological and psychoeducational testing in Kentucky under the supervision of Dr. Heather Cornett.",
-    jobTitle: "Temporary Licensed Psychological Associate",
-    badge: "Temporary Licensed Psychological Associate",
+    jobTitle: "Licensed Psychological Associate",
+    badge: "Licensed Psychological Associate",
     headingPrimary: "Ethan",
     headingAccent: "Puckett, Psy.D., LPA.",
     intro:
@@ -497,7 +497,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Immediate Availability for Therapy & Self-Pay Evaluations",
+      title: "Self-Pay Evaluations: 3 Weeks · Therapy: 2 Months",
       description:
         "Ethan offers neuro-affirming therapy for ages 3 to 18, with ideal fit for ages 7 to 16, plus in-person and virtual therapy sessions for older teens and testing services in Kentucky.",
       items: [
@@ -506,7 +506,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         { label: "Older Teen Therapy", value: "In person and virtual" },
       ],
       note:
-        "New child and teen therapy clients can begin with Ethan immediately.",
+        "Self-pay evaluations start within 3 weeks. Contact our intake team to confirm current therapy openings.",
       ctaLabel: "Schedule an Intake",
       ctaHref: WIDGET_LINK,
       variant: "surface",
@@ -768,7 +768,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Immediate Availability for Therapy, 3-Week Wait for Self-Pay Testing",
+      title: "Therapy: ~6 Weeks · Self-Pay Testing: 3 Weeks",
       description:
         "Elise offers therapy for adolescents and adults and psychological assessments for neurodivergent adults in Kentucky.",
       items: [
@@ -777,7 +777,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         { label: "Insurance Testing", value: "4 months" },
       ],
       note:
-        "New therapy clients can begin immediately. Testing availability varies by insurance status.",
+        "Testing availability varies by insurance status. Contact our intake team to confirm therapy openings.",
       ctaLabel: "Schedule an Intake",
       ctaHref: WIDGET_LINK,
       variant: "surface",
