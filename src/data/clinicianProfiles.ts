@@ -307,14 +307,14 @@ export const clinicianProfiles: ClinicianProfile[] = [
 
   {
     slug: "jonica-davis",
-    pageTitle: "Jonica Davis, T-LPA | Neuro-Affirming Therapy",
+    pageTitle: "Dr.Jonica Davis, T-LP | Neuro-Affirming Therapy",
     pageDescription:
-      "Jonica Davis, Psy.D., T-LPA — Twilight Psychology clinician offering neuro-affirming therapy and assessment support for adults and families in Kentucky.",
+      "Jonica Davis, Psy.D., T-LP — Twilight Psychology clinician offering neuro-affirming therapy and assessment support for adults and families in Kentucky.",
 
     jobTitle: "Psychologist",
-    badge: "Temporary Licensed Psychological Associate",
+    badge: "Temporary Licensed Psychologist",
     headingPrimary: "Jonica",
-    headingAccent: "Davis, Psy.D., T-LPA",
+    headingAccent: "Davis, Psy.D., T-LP",
     intro:
       "Providing neuro-affirming therapy for adults navigating neurodivergent identities, modern relationship challenges, and the quieter struggles that don't always have an easy name.",
     specialties: [
@@ -425,7 +425,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "ethan-puckett",
-    pageTitle: "Ethan Puckett, Psy.D., LPA | Child Therapy & Testing",
+    pageTitle: "Dr. Ethan Puckett, Psy.D., LPA | Child Therapy & Testing",
     pageDescription:
       "Ethan Puckett, Psy.D., LPA — Twilight Psychology clinician providing neuro-affirming therapy for ages 3-18, with strongest fit for ages 7-16, plus psychological and psychoeducational testing in Kentucky under the supervision of Dr. Heather Cornett.",
     jobTitle: "Licensed Psychological Associate",
@@ -523,7 +523,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "michael-burns",
-    pageTitle: "Michael Burns, PhD | Substance Use & DV Therapy — KY & TN",
+    pageTitle: "Dr. Michael Burns, PhD | Substance Use & DV Therapy — KY & TN",
     pageDescription:
       "Dr. Michael Burns, T-LP, LPCC, LCADC, BIP — substance use, domestic violence, PTSD, and faith-integrated counseling at Twilight Psychology, serving clients in Kentucky and Tennessee.",
     jobTitle: "Temporary Licensed Psychologist",
@@ -544,7 +544,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
         type: "paragraphs",
         title: "Meeting you wherever you are.",
         paragraphs: [
-          "Hi, I'm Michael. I've spent 24 years working alongside people in some of the most difficult chapters of their lives — in drug rehabilitation centers, domestic abuse shelters, inpatient psychiatric settings, adolescent group homes, and outpatient therapy. That experience has taught me that healing rarely looks the same twice, and that meeting someone with genuine warmth and honesty matters as much as any clinical technique.",
+          "Hi, I'm Michael and also go by Mike. I've spent 24 years working alongside people in some of the most difficult chapters of their lives — in drug rehabilitation centers, domestic abuse shelters, inpatient psychiatric settings, adolescent group homes, and outpatient therapy. That experience has taught me that healing rarely looks the same twice, and that meeting someone with genuine warmth and honesty matters as much as any clinical technique.",
           "I specialize in substance use disorders, domestic violence recovery, relationships, PTSD, and therapy for adolescents and adults. My LCADC credential reflects specialized training in alcohol and drug counseling, and my BIP certification means I can work thoughtfully with both survivors of domestic violence and those seeking accountability and lasting personal change.",
         ],
       },
