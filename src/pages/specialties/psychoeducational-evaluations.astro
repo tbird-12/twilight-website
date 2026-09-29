@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Schema from '../../components/Schema.astro';
-import { WIDGET_LINK } from '../../data/resource';
+import { WIDGET_LINK, SELF_PAY_REPORT_TURNAROUND_DAYS } from '../../data/resource';
 
 const evaluationFocus = [
   {
@@ -120,7 +120,7 @@ const faqSchema = {
 
 <Layout
   title="Psychoeducational & 2E Evaluations KY"
-  description="Private psychoeducational evaluations in Lexington, KY for dyslexia, 2e, giftedness, and accommodation planning. Self-pay reports typically delivered in 7 days."
+  description={`Private psychoeducational evaluations in Lexington, KY for dyslexia, 2e, giftedness, and accommodation planning. Self-pay reports typically delivered in ${SELF_PAY_REPORT_TURNAROUND_DAYS} days.`}
 >
   <Schema slot="page-schema" schemas={[serviceSchema, breadcrumbSchema, faqSchema]} />
     
@@ -133,7 +133,7 @@ const faqSchema = {
           Psychoeducational <span class="text-cta">Evaluations</span>
         </h1>
         <p class="text-xl text-site-sub font-medium max-w-2xl mx-auto leading-relaxed">
-          The private specialty school evaluation most general practices refer out. Built for IEP and 504 planning, twice-exceptional identification, college accommodations, and documentation-heavy referrals that need depth — with self-pay reports typically delivered in 7 days.
+          The private specialty school evaluation most general practices refer out. Built for IEP and 504 planning, twice-exceptional identification, college accommodations, and documentation-heavy referrals that need depth — with self-pay reports typically delivered in {SELF_PAY_REPORT_TURNAROUND_DAYS} days.
         </p>
       </div>
     </section>

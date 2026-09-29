@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Schema from "../../components/Schema.astro";
 import PageLinksSection from "../../components/PageLinksSection.astro";
-import { WIDGET_LINK } from "../../data/resource";
+import { WIDGET_LINK, SELF_PAY_REPORT_TURNAROUND_DAYS } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
 
@@ -85,14 +85,14 @@ const specialtyEvaluationLinks = [
 
 <Layout
   title="Psychological Evaluations Lexington KY"
-  description="Psychological evaluations in Lexington, KY for ADHD, autism, and complex referrals. Insurance and Medicaid accepted. Self-pay reports in 7 days."
+  description={`Psychological evaluations in Lexington, KY for ADHD, autism, and complex referrals. Insurance and Medicaid accepted. Self-pay reports in ${SELF_PAY_REPORT_TURNAROUND_DAYS} days.`}
 >
   <Schema slot="page-schema" schema={evalSchema} />
   <PageHeroWrapper
     title="Psychological Evaluations"
     accentWord="Evaluations"
     badge="Comprehensive Evaluations"
-    subtitle="Specialty-depth evaluations in Kentucky for ADHD, autism, psychoeducational, and complex referrals — with self-pay reports often delivered in 7 days and insurance accepted for covered services."
+    subtitle={`Specialty-depth evaluations in Kentucky for ADHD, autism, psychoeducational, and complex referrals — with self-pay reports often delivered in ${SELF_PAY_REPORT_TURNAROUND_DAYS} days and insurance accepted for covered services.`}
     size="lg"
   />
 

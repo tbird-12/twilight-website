@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Schema from '../../components/Schema.astro';
 import FaqAccordionWrapper from '../../components/interactive/FaqAccordionWrapper.astro';
-import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS } from '../../data/resource';
+import { PHONE_NUMBER, PHONE_NUMBER_FORMATTED, EMAIL_ADDRESS, SELF_PAY_WAITLIST_WEEKS } from '../../data/resource';
 import { categoryColorMap } from '../../data/blogCategories';
 import PageLinksSection from '../../components/PageLinksSection.astro';
 
@@ -45,11 +45,11 @@ const generalFaqs = [
 const waitTimeFaqs = [
   {
     question: "How long is the current waitlist?",
-    answer: "Wait times vary by provider and service. Self-pay evaluations can often be scheduled within 3 weeks, therapy wait times vary by clinician and panel, and medication management may have faster in-network availability. Insurance-based evaluation openings are also available, but timing depends on authorization and the number of testing hours approved. For the most current wait times, please visit our Waitlist Times page."
+    answer: `Wait times vary by provider and service. Self-pay evaluations can often be scheduled within ${SELF_PAY_WAITLIST_WEEKS} weeks, therapy wait times vary by clinician and panel, and medication management may have faster in-network availability. Insurance-based evaluation openings are also available, but timing depends on authorization and the number of testing hours approved. For the most current wait times, please visit our Waitlist Times page.`
   },
   {
     question: "How long is the current waitlist for an evaluation?",
-    answer: "Self-pay evaluations can often be scheduled within 3 weeks, depending on the provider and service. Insurance-based evaluation slots are more limited and may run around 4 months because demand, authorization review, clinician availability, and approved testing hours all affect scheduling."
+    answer: `Self-pay evaluations can often be scheduled within ${SELF_PAY_WAITLIST_WEEKS} weeks, depending on the provider and service. Insurance-based evaluation slots are more limited and may run around 4 months because demand, authorization review, clinician availability, and approved testing hours all affect scheduling.`
   },
   {
     question: "Why is there a difference in wait times?",

@@ -52,17 +52,15 @@ const WAIT_LABELS: Record<string, string> = {
 };
 
 function availabilityStyles(status: MatcherProvider["availability_status"]) {
-  if (status === "open")
-    return "bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-700";
-  if (status === "waitlist")
-    return "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-700";
-  return "bg-red-200 text-red-900 border-red-300 dark:bg-red-950/40 dark:text-red-400 dark:border-red-700";
+  if (status === "open") return "chip-open";
+  if (status === "waitlist") return "chip-waitlist";
+  return "chip-closed";
 }
 
 function availabilityDot(status: MatcherProvider["availability_status"]) {
-  if (status === "open") return "bg-emerald-500";
-  if (status === "waitlist") return "bg-amber-500";
-  return "bg-red-500";
+  if (status === "open") return "dot-open";
+  if (status === "waitlist") return "dot-waitlist";
+  return "dot-closed";
 }
 
 function availabilityLabel(status: MatcherProvider["availability_status"]) {
@@ -189,10 +187,10 @@ function ClinicianCard({ provider, index, reduced }: CardProps) {
                 <span
                   className={`text-xs font-semibold px-2 py-0.5 rounded-full border ${
                     /immediate/i.test(val)
-                      ? "bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-700"
+                      ? "chip-time-immediate"
                       : /week/i.test(val)
-                      ? "bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-300/30 dark:text-amber-500 dark:border-amber-700"
-                      : "bg-red-200 text-red-800 border-red-300 dark:bg-red-450/40 dark:text-red-400 dark:border-red-700"
+                      ? "chip-time-weeks"
+                      : "chip-time-months"
                   }`}
                 >
                   {val}

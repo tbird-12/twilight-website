@@ -380,6 +380,27 @@
     background-color: var(--theme-alert-fill);
   }
 
+  /* ── Availability / status chip classes (bg + text + border-color only; border-width set by consumer) ──
+     Used by ClinicalMatcher and any component that needs theme-aware status colours without
+     resetting the border shorthand (which .theme-badge-* does). */
+  .chip-open     { background-color: var(--theme-positive-bg); color: var(--theme-positive-text); border-color: var(--theme-positive-border); }
+  .chip-waitlist { background-color: var(--theme-warning-bg);  color: var(--theme-warning-text);  border-color: var(--theme-warning-border);  }
+  .chip-closed   { background-color: var(--theme-alert-bg);    color: var(--theme-alert-text);    border-color: var(--theme-alert-border);    }
+
+  .dot-open     { background-color: var(--theme-positive-fill); }
+  .dot-waitlist { background-color: var(--theme-warning-fill);  }
+  .dot-closed   { background-color: var(--theme-alert-fill);    }
+
+  /* Wait-time label chips (immediate / weeks / months) */
+  .chip-time-immediate { background-color: var(--theme-positive-bg); color: var(--theme-positive-text); border-color: var(--theme-positive-border); }
+  .chip-time-weeks     { background-color: var(--theme-warning-bg);  color: var(--theme-warning-text);  border-color: var(--theme-warning-border);  }
+  .chip-time-months    { background-color: var(--theme-alert-bg);    color: var(--theme-alert-text);    border-color: var(--theme-alert-border);    }
+
+  /* Form feedback banners (border-width set by consumer) */
+  .feedback-success { background-color: var(--theme-positive-bg); color: var(--theme-positive-text); border-color: var(--theme-positive-border); }
+  .feedback-error   { background-color: var(--theme-alert-bg);    color: var(--theme-alert-text);    border-color: var(--theme-alert-border);    }
+  .feedback-info    { background-color: var(--theme-surface-2);   color: var(--theme-site-text);     border-color: var(--theme-border);          }
+
 /* ── Navigation mega menu animations ── */
   .nav-mega-enter    { animation: navMegaEnter    250ms cubic-bezier(.4,0,.2,1) forwards; }
   .nav-backdrop-enter { animation: navBackdropEnter 200ms ease forwards; }

@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Schema from "../../components/Schema.astro";
-import { PHONE_NUMBER } from "../../data/resource";
+import { PHONE_NUMBER, SELF_PAY_REPORT_TURNAROUND_DAYS, SELF_PAY_WAITLIST_WEEKS } from "../../data/resource";
 import PageHeroWrapper from "../../components/PageHeroWrapper.astro";
 import AnimatedSection from "../../components/react/primitives/AnimatedSection";
 
@@ -63,7 +63,7 @@ const adhdInsights = [
 
 <Layout
   title="ADHD Testing KY"
-  description="ADHD evaluations in Lexington, KY for children, teens, and adults. Insurance and Kentucky Medicaid accepted. Self-pay reports often in 7 days."
+  description={`ADHD evaluations in Lexington, KY for children, teens, and adults. Insurance and Kentucky Medicaid accepted. Self-pay reports often in ${SELF_PAY_REPORT_TURNAROUND_DAYS} days.`}
 >
   <Schema slot="page-schema" schema={adhdSchema} />
   <PageHeroWrapper
@@ -213,7 +213,7 @@ const adhdInsights = [
             >
               Timeline
             </p>
-            <p class="text-sand font-bold">Self-pay reports often in 7 days</p>
+            <p class="text-sand font-bold">Self-pay reports often in {SELF_PAY_REPORT_TURNAROUND_DAYS} days</p>
           </div>
           <div>
             <p
@@ -247,7 +247,7 @@ const adhdInsights = [
         <p
           class="mt-6 text-xs font-black text-site-sub uppercase tracking-widest"
         >
-          Self-pay evaluation availability: Currently 3 Weeks
+          Self-pay evaluation availability: Currently {SELF_PAY_WAITLIST_WEEKS} Weeks
         </p>
       </div>
 
