@@ -277,7 +277,7 @@ const qualityCareItems = [
     </section>
 
     <!-- ════════════════ SPECIALTY EVALUATIONS ════════════════ -->
-    <section class="hp-section homepage-panel-care relative isolate overflow-hidden px-4">
+    <section class="hp-section homepage-panel-care hp-section-specialty-cards relative isolate overflow-hidden px-4">
       <div
         class="homepage-panel-glow homepage-panel-glow-right"
         aria-hidden="true"
@@ -931,6 +931,39 @@ const qualityCareItems = [
       background: rgba(var(--rgb-surface), 0.55);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ── Gradient styling for specialty evaluations section ────────────── */
+    .hp-section-specialty-cards .hp-specialty-card {
+      background: linear-gradient(
+        135deg,
+        oklch(0.195 0.005 257) 0%,
+        oklch(0.18 0.004 220) 100%
+      );
+    }
+
+    .hp-section-specialty-cards .hp-specialty-card:hover {
+      background: linear-gradient(
+        135deg,
+        color-mix(in oklab, oklch(0.195 0.005 257) 85%, white) 0%,
+        color-mix(in oklab, oklch(0.18 0.004 220) 85%, white) 100%
+      );
+    }
+
+    :root.light .hp-section-specialty-cards .hp-specialty-card {
+      background: linear-gradient(
+        135deg,
+        oklch(0.988 0.005 110) 0%,
+        oklch(0.975 0.004 100) 100%
+      );
+    }
+
+    :root.light .hp-section-specialty-cards .hp-specialty-card:hover {
+      background: linear-gradient(
+        135deg,
+        color-mix(in oklab, oklch(0.988 0.005 110) 85%, white) 0%,
+        color-mix(in oklab, oklch(0.975 0.004 100) 85%, white) 100%
+      );
     }
 
     .hp-specialty-card:focus-visible {
