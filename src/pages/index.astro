@@ -1,12 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroSectionWrapper from "../components/HeroSectionWrapper.astro";
+import QualityCareCardsWrapper from "../components/QualityCareCardsWrapper.astro";
 import { Icon } from "astro-icon/components";
 import heroBgDawn from "../assets/hero-dawn.svg";
 import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg";
 import heroBg from "../assets/hero-background.svg";
 import heroBgMobile from "../assets/hero-mobile.svg";
 
+import { specialties } from "../data/services";
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
 import {
@@ -29,42 +31,39 @@ const stats = [
 
 const services = [
   {
-    title: "Psychoeducational Evaluations",
-    kicker: "IEP, 504 & school advocacy",
-    desc: "Private specialty assessments for IEP and 504 documentation, dyslexia, learning differences, giftedness, and twice-exceptional profiles — with IQ and achievement testing.",
-    icon: "lucide:graduation-cap",
-    link: "/specialties/psychoeducational-evaluations",
-    cardClass: "homepage-service-card--feature",
-  },
-
-  {
     title: "Psychological Evaluations",
-    kicker: "ADHD, autism, Personality, and more",
-    desc: "ADHD, autism, and broader diagnostic evaluations for children, teens, and adults who need specialty depth, careful interpretation, and recommendations they can act on.",
+    kicker: "ADHD · Autism · Personality ",
+    desc: "Specialty-depth evaluations for ADHD, autism, personality, and complex diagnostic questions — for children, teens, and adults. Self-pay reports typically delivered within a week.",
     icon: "lucide:brain",
     link: "/services/psychological-evaluations",
+    cardClass: "homepage-service-card--feature",
   },
-
   {
-    title: "Medication Management",
-    kicker: "Follow-through care",
-    desc: "Individualized medication management with broad insurance participation through our dedicated Psychiatric Nurse Practitioner — available as a continuation of evaluation care.",
-    icon: "lucide:stethoscope",
-    link: "/services/medication-management",
+    title: "Psychoeducational Evaluations",
+    kicker: "IEP, 504 & school advocacy",
+    desc: "The comprehensive private evaluation most practices refer out, including IQ, achievement, and processing testing for learning differences, giftedness, and twice-exceptional profiles.",
+    icon: "lucide:graduation-cap",
+    link: "/specialties/psychoeducational-evaluations",
     cardClass: "homepage-service-card--tall",
   },
-
   {
     title: "Therapy",
-    kicker: "Ages 3–99",
+    kicker: "Ages 3–99 · Insurance accepted",
     desc: "Evidence-based, neuro-affirming therapy for ages 3–99 with broad insurance participation — often the natural next step after an evaluation.",
     icon: "lucide:heart-handshake",
     link: "/services/therapy",
   },
   {
+    title: "Medication Management",
+    kicker: "Short wait · Insurance accepted",
+    desc: "Individualized psychiatric care through our dedicated Nurse Practitioner — including stimulant prescriptions for ADHD when clinically appropriate. Insurance widely accepted.",
+    icon: "lucide:stethoscope",
+    link: "/services/medication-management",
+  },
+  {
     title: "Group Therapy",
     kicker: "Adult & Teen Groups · In-Person",
-    desc: "Neuro-affirming group therapy in Lexington — adult skills group focused on parasocial relationships, and a teen social skills group built around D&D. Insurance accepted.",
+    desc: "Neuro-affirming group therapy in Lexington, adult skills group focused on parasocial relationships, and a teen social skills group built around D&D. Insurance accepted.",
     icon: "lucide:users",
     link: "/services/therapy/group-therapy",
     cardClass: "homepage-service-card--wide",
@@ -111,7 +110,7 @@ const qualityCareItems = [
   {
     issue: "After the diagnosis, support disappeared",
     title: "Evaluation → therapy → medication in one practice",
-    desc: "Your report doesn't end your relationship with us. Therapy and medication management are available in-house so follow-through care doesn't require starting over somewhere new.",
+    desc: "Your report doesn't end your relationship with us. Therapy and medication management are available so follow-through care doesn't require starting over somewhere new.",
     link: "/services/therapy/after-evaluation",
   },
 ];
@@ -246,7 +245,7 @@ const accessServices: Array<{
       </div>
     </section>
 
-    <!-- ════════════════ THE PROBLEM ════════════════ -->
+    <!-- ════════════════ THE GAPS WE CLOSE ════════════════ -->
     <section
       class="hp-section hp-section--alt homepage-panel-problem relative isolate overflow-hidden px-4"
     >
@@ -254,102 +253,19 @@ const accessServices: Array<{
         class="homepage-panel-glow homepage-panel-glow-left"
         aria-hidden="true"
       ></div>
+      <!-- Decorative dot-grid background -->
+      <div class="qc-dot-grid" aria-hidden="true"></div>
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header">
           <p class="hp-eyebrow">Sound Familiar?</p>
           <h2 class="hp-heading font-serif font-black">
             The Gaps Families Hit<span class="text-cta"> and How We Close Them</span>
           </h2>
+          <p class="mt-3 text-sm sm:text-base leading-relaxed text-site-sub max-w-xl">
+            Finding the right care for your loved one's unique needs can be overwhelming, and the challenges are not limited to just these.
+          </p>
         </header>
-        <div
-          class="hp-list"
-          role="list"
-          aria-label="Common barriers and how Twilight Psychology responds"
-        >
-          {
-            qualityCareItems.slice(0, 4).map((point, i) => (
-              <a
-                href={qualityCareItems[i].link}
-                data-astro-prefetch="viewport"
-                class="hp-list-item group"
-                role="listitem"
-              >
-                <span class="hp-list-num" aria-hidden="true">0{i + 1}</span>
-                <div class="hp-list-body">
-                  <p class="hp-list-challenge">{point.issue}</p>
-                  <h3 class="hp-list-title font-serif">{qualityCareItems[i].title}</h3>
-                  <p class="hp-list-desc">{qualityCareItems[i].desc}</p>
-                </div>
-                <span class="hp-list-arrow" aria-hidden="true">
-                  <svg fill="none" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-                    <path
-                      d="M3 8h10M9 4l4 4-4 4"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <section
-      id="quality-care"
-      class="hp-section homepage-panel-care relative isolate overflow-hidden px-4"
-    >
-      <div
-        class="homepage-panel-glow homepage-panel-glow-left"
-        aria-hidden="true"
-      ></div>
-      <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <header class="hp-section-header">
-          <p class="hp-eyebrow">Why Twilight Psychology</p>
-          <h2 class="hp-heading font-serif font-black">
-            Precision Care for<span class="text-cta"> Complex Presentations</span>
-          </h2>
-        </header>
-        <div
-          class="hp-list"
-          role="list"
-          aria-label="More ways Twilight Psychology addresses the gaps"
-        >
-          {
-            qualityCareItems.slice(4).map((point, i) => {
-              const idx = i + 4;
-              return (
-                <a
-                  href={qualityCareItems[idx].link}
-                  data-astro-prefetch="viewport"
-                  class="hp-list-item group"
-                  role="listitem"
-                >
-                  <span class="hp-list-num" aria-hidden="true">0{idx + 1}</span>
-                  <div class="hp-list-body">
-                    <p class="hp-list-challenge">{point.issue}</p>
-                    <h3 class="hp-list-title font-serif">{qualityCareItems[idx].title}</h3>
-                    <p class="hp-list-desc">{qualityCareItems[idx].desc}</p>
-                  </div>
-                  <span class="hp-list-arrow" aria-hidden="true">
-                    <svg fill="none" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
-                      <path
-                        d="M3 8h10M9 4l4 4-4 4"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              );
-            })
-          }
-        </div>
+        <QualityCareCardsWrapper items={qualityCareItems} />
         <p class="hp-footer-note">
           Twilight Psychology was built specifically to address these gaps with
           clinical depth, specialty breadth, and in-house follow-through that
@@ -375,8 +291,7 @@ const accessServices: Array<{
             <h2 class="hp-heading font-serif font-black">How We Can Help</h2>
           </div>
           <p class="hp-section-lead">
-            Clinical work grounded in careful testing, clear school-ready
-            documentation, and next steps you can act on.
+            Diagnostic clarity, evidence-based treatment, and in-house follow-through.
           </p>
         </header>
         <div class="bento-grid reveal-children w-full gap-5">
@@ -420,85 +335,82 @@ const accessServices: Array<{
       </div>
     </section>
 
-    <!-- ════════════════ ACCESS WINDOW ════════════════ -->
-    <section class="hp-section homepage-panel-access relative isolate overflow-hidden px-4">
+    <!-- ════════════════ SPECIALTY EVALUATIONS ════════════════ -->
+    <section class="hp-section homepage-panel-care relative isolate overflow-hidden px-4">
+      <div
+        class="homepage-panel-glow homepage-panel-glow-right"
+        aria-hidden="true"
+      ></div>
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <div class="mb-8 max-w-lg">
-          <p class="hp-eyebrow">
-            <span class="access-pulse-dot" aria-hidden="true"></span>
-            Access &amp; Availability
-          </p>
-          <h2 class="hp-heading font-serif font-black">Next Appointment Availability</h2>
-          <p class="mt-3 text-sm sm:text-base leading-relaxed text-site-sub">
-            Current waitlist windows and payment pathways.
-          </p>
-        </div>
-        <div class="access-main-grid">
-          <div class="hp-access-table">
-            <div class="hp-access-head">
-              <span>Service</span>
-              <span>Wait · Self-Pay Rate</span>
-            </div>
-            {accessServices.map((svc) => (
-              <a
-                href={svc.href}
-                data-astro-prefetch="viewport"
-                class="hp-access-row group"
-              >
-                <div class="min-w-0">
-                  <span class="block text-sm font-black text-site-text leading-snug group-hover:text-cta transition-colors duration-200 truncate">
-                    {svc.label}
-                  </span>
-                  <span class="block text-[11px] text-site-sub/70 leading-snug mt-0.5 truncate">
-                    {svc.note}
-                  </span>
-                </div>
-                <div class="flex items-center gap-2.5 shrink-0 ml-4">
-                  <span class={`access-wait-chip ${statusChipClass[svc.status]}`}>
-                    {svc.wait}
-                  </span>
-                  <span class="text-[11px] font-medium text-site-sub/50 hidden sm:inline tabular-nums">
-                    {svc.rate}
-                  </span>
-                </div>
-              </a>
-            ))}
+        <header class="hp-section-header">
+          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-3">
+            <p class="hp-eyebrow mb-0">Specialty Evaluations</p>
+            <span class="hp-self-pay-badge">
+              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
+                <circle cx="4" cy="4" r="3" fill="currentColor" opacity="0.8"/>
+              </svg>
+              Private pay · ~{SELF_PAY_WAITLIST_WEEKS} wk wait · {SELF_PAY_REPORT_TURNAROUND_DAYS}-day report
+            </span>
           </div>
-          <div class="hp-access-sidebar">
-            <div class="hp-access-card">
-              <p class="text-sm font-black text-site-text leading-snug mb-1">
-                {insuranceCount} Insurance Carriers
-              </p>
-              <p class="text-xs text-site-sub leading-relaxed">
-                Commercial, Medicare{hasMedicaid ? ", and Kentucky Medicaid" : ""}.
-              </p>
-            </div>
-            <div class="hp-access-card">
-              <p class="text-sm font-black text-site-text leading-snug mb-1">
-                Self-Pay {selfPayLow}–{selfPayHigh}
-              </p>
-              <p class="text-xs text-site-sub leading-relaxed">
-                Specialty evaluation reports within {SELF_PAY_REPORT_TURNAROUND_DAYS} days of intake.
-              </p>
-            </div>
+          <h2 class="hp-heading font-serif font-black">
+            Looking for Evaluations <span class="text-cta">Beyond Neurodiversity</span>
+          </h2>
+          <p class="mt-3 text-sm sm:text-base leading-relaxed text-site-sub max-w-2xl">
+            Evaluations that fall outside standard insurance definitions: no prior authorization, no managed-care restrictions or justification of medical necessity. Transparent self-pay rates apply, and most clients are seen within {SELF_PAY_WAITLIST_WEEKS} weeks.
+          </p>
+        </header>
+        <div class="hp-specialties-grid" role="list" aria-label="Specialty evaluation services">
+          {
+            specialties.map((spec) => (
+              <a
+                href={`/specialties/${spec.slug}`}
+                data-astro-prefetch="viewport"
+                class="hp-specialty-card group"
+                role="listitem"
+              >
+                <h3 class="hp-specialty-name font-serif group-hover:text-cta transition-colors duration-200">
+                  {spec.name}
+                </h3>
+                
+                <span class="hp-specialty-arrow mt-auto" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M3 8h10M9 4l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+            ))
+          }
+        </div>
+        <div class="mt-10 flex flex-wrap gap-4 items-center justify-between">
+          <p class="text-xs text-site-sub leading-relaxed max-w-sm">
+            Not sure which evaluation fits? Our intake team can help you find the right assessment.
+          </p>
+          <div class="flex flex-wrap gap-3">
             <a
-              href="/resources/waitlist-times"
+              href="/resources/fees"
               data-astro-prefetch="viewport"
-              class="hp-access-card hp-access-card--cta group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
+              class="text-xs font-black uppercase tracking-widest text-cta/80 hover:text-cta transition-colors"
             >
-              <span class="text-sm font-black text-site-text group-hover:text-cta transition-colors duration-200 leading-snug">
-                Full availability &amp; clinician match
-              </span>
-              <Icon
-                name="lucide:arrow-right"
-                class="w-4 h-4 text-cta shrink-0 group-hover:translate-x-1 transition-transform duration-200"
-                aria-hidden="true"
-              />
+              View rates →
+            </a>
+            <a
+              href="/specialties"
+              data-astro-prefetch="viewport"
+              class="text-xs font-black uppercase tracking-widest text-site-sub/70 hover:text-cta transition-colors"
+            >
+              All specialties →
             </a>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- ════════════════ FROM OUR BLOG ════════════════ -->
     <section class="hp-section hp-section--alt relative isolate overflow-hidden px-4">
@@ -670,6 +582,21 @@ const accessServices: Array<{
 
     .homepage-panel-problem {
       background: radial-gradient(ellipse 55% 60% at 10% 55%, rgba(var(--rgb-accent), 0.07), transparent);
+    }
+
+    /* ── Decorative dot-grid for the gaps section ──────────────────── */
+    .qc-dot-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(var(--rgb-accent), 0.1) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%);
+      opacity: 0.35;
+    }
+
+    :root.light .qc-dot-grid {
+      opacity: 0.18;
     }
 
     .homepage-panel-care {
@@ -1038,6 +965,111 @@ const accessServices: Array<{
 
     :root.light .homepage-service-card {
       box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.15);
+    }
+
+    /* ── Access table ────────────────────────────────────────────────── */
+
+    /* ── Specialty evaluations grid ─────────────────────────────────── */
+
+    .hp-specialties-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .hp-specialty-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1.25rem 1.375rem;
+      border: 1px solid rgba(var(--rgb-accent), 0.08);
+      border-radius: 1rem;
+      background: rgba(var(--rgb-surface), 0.28);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      min-height: 7rem;
+    }
+
+    .hp-specialty-card:hover {
+      border-color: rgba(var(--rgb-accent), 0.18);
+      background: rgba(var(--rgb-surface), 0.55);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .hp-specialty-card:focus-visible {
+      outline: 2px solid var(--color-cta);
+      outline-offset: 2px;
+      border-radius: 1rem;
+    }
+
+    .hp-specialty-name {
+      font-size: 0.9375rem;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.012em;
+      color: var(--theme-site-text);
+      font-family: var(--font-heading);
+    }
+
+    .hp-specialty-desc {
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: var(--theme-site-sub);
+      flex: 1;
+    }
+
+    .hp-specialty-arrow {
+      color: var(--theme-cta);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .hp-specialty-card:hover .hp-specialty-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .hp-self-pay-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.5625rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.25em 0.75em;
+      border-radius: 999px;
+      background: rgba(var(--rgb-accent-alt), 0.08);
+      color: var(--color-icon);
+      border: 1px solid rgba(var(--rgb-accent-alt), 0.15);
+      white-space: nowrap;
+    }
+
+    @media (min-width: 480px) {
+      .hp-specialties-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hp-specialties-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.875rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hp-specialty-card {
+        transition: none;
+      }
+      .hp-specialty-arrow {
+        transition: none;
+        opacity: 1;
+        transform: none;
+      }
     }
 
     /* ── Access table ────────────────────────────────────────────────── */

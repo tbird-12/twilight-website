@@ -698,6 +698,237 @@
     }
   }
 
+  /* ── Quality Care Expandable Cards ───────────────────────────────── */
+
+  .qc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 560px) {
+    .qc-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  .qc-card {
+    border: 1px solid var(--theme-border);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: var(--theme-surface);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+    position: relative;
+  }
+
+  .qc-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(145deg, rgba(var(--rgb-accent), 0.06), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  .qc-card:hover::before {
+    opacity: 1;
+  }
+
+  .qc-card:hover {
+    border-color: var(--theme-border-strong);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
+  }
+
+  .qc-card--open {
+    border-color: rgba(var(--rgb-accent-alt), 0.22);
+    box-shadow: 0 8px 36px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(var(--rgb-accent-alt), 0.08);
+    background: color-mix(in oklab, var(--theme-surface) 96%, var(--theme-surface-2));
+  }
+
+  .qc-card--open::before {
+    background: linear-gradient(145deg, rgba(var(--rgb-accent-alt), 0.06), transparent 55%);
+    opacity: 1;
+  }
+
+  .qc-card-trigger {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: left;
+    padding: 1.375rem 1.5rem 1.125rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .qc-card-trigger:focus-visible {
+    outline: 2px solid var(--theme-cta);
+    outline-offset: -2px;
+    border-radius: 1.25rem;
+  }
+
+  .qc-card-header {
+    display: flex;
+    gap: 0.875rem;
+    align-items: flex-start;
+  }
+
+  .qc-card-num {
+    font-size: 0.5rem;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    color: var(--theme-site-sub);
+    opacity: 0.3;
+    padding-top: 0.3rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .qc-card-header-body {
+    min-width: 0;
+    flex: 1;
+  }
+
+  /* Cool steel-blue for the issue/challenge label — replaces the warm amber */
+  .qc-card-issue {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--theme-icon);
+    opacity: 0.75;
+    margin-bottom: 0.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  :root.light .qc-card-issue {
+    opacity: 0.65;
+  }
+
+  .qc-card-title {
+    font-size: 0.9375rem;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.012em;
+    color: var(--theme-site-text);
+    font-family: var(--font-heading);
+    transition: color 0.18s ease;
+  }
+
+  .qc-card:hover .qc-card-title,
+  .qc-card--open .qc-card-title {
+    color: var(--theme-cta);
+  }
+
+  .qc-card-explore-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .qc-card-explore {
+    font-size: 0.5625rem;
+    font-weight: 900;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--theme-site-sub);
+    opacity: 0.45;
+    transition: color 0.18s ease, opacity 0.18s ease;
+  }
+
+  .qc-card:hover .qc-card-explore,
+  .qc-card--open .qc-card-explore {
+    color: var(--theme-cta);
+    opacity: 1;
+  }
+
+  .qc-card-chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.625rem;
+    height: 1.625rem;
+    border-radius: 50%;
+    background: var(--theme-surface-2);
+    color: var(--theme-site-sub);
+    flex-shrink: 0;
+    transition:
+      transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.22s ease,
+      color 0.22s ease;
+  }
+
+  .qc-card-chevron--open {
+    transform: rotate(180deg);
+    background: rgba(var(--rgb-accent-alt), 0.12);
+    color: var(--theme-cta);
+  }
+
+  .qc-card-panel {
+    display: grid;
+    transition: grid-template-rows 0.36s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+  }
+
+  .qc-card-panel-inner {
+    overflow: hidden;
+    border-top: 1px solid var(--theme-border);
+    padding: 0 1.5rem 1.375rem;
+  }
+
+  .qc-card-desc {
+    font-size: 0.8125rem;
+    line-height: 1.72;
+    color: var(--theme-site-sub);
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .qc-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.5875rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--theme-cta);
+    text-decoration: none;
+    transition: gap 0.22s ease;
+  }
+
+  .qc-card-link:hover {
+    gap: 0.625rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .qc-card,
+    .qc-card::before,
+    .qc-card-trigger,
+    .qc-card-explore,
+    .qc-card-chevron,
+    .qc-card-title,
+    .qc-card-link {
+      transition: none;
+    }
+    .qc-card-panel {
+      transition: none;
+    }
+  }
+
   /* Premium prose spacing for service/content pages */
   .prose-custom :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     margin-bottom: 1.45em;

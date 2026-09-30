@@ -1,0 +1,18 @@
+---
+import QualityCareCards from "./react/composites/QualityCareCards";
+
+interface QualityCareItem {
+  issue: string;
+  title: string;
+  desc: string;
+  link: string;
+}
+
+interface Props {
+  items: QualityCareItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<QualityCareCards items={items} client:visible />
