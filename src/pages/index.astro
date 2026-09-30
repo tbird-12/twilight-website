@@ -726,15 +726,15 @@ const accessServices: Array<{
     @keyframes panelGlowBreath {
       0%,
       100% {
-        opacity: 0.6;
+        opacity: 0.18;
       }
       50% {
-        opacity: 0.85;
+        opacity: 0.3;
       }
     }
 
     :global(body:has(.homepage-shell)) {
-      scroll-snap-type: y proximity;
+      scroll-behavior: smooth;
     }
 
     .homepage-shell {
@@ -746,36 +746,29 @@ const accessServices: Array<{
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.75'/%3E%3C/svg%3E");
-      opacity: 0.022;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+      opacity: 0.012;
       mix-blend-mode: soft-light;
       z-index: 0;
     }
 
     .homepage-panel {
       position: relative;
-      min-height: calc(100svh - var(--homepage-chrome-offset));
       display: flex;
       align-items: center;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-      border-top: 1px solid rgba(var(--rgb-accent), 0.08);
-    }
-
-    .homepage-panel:first-child {
-      border-top: 0;
     }
 
     .homepage-panel-inner {
       position: relative;
       z-index: 1;
       width: 100%;
-      padding-top: 3.5rem;
-      padding-bottom: 3.5rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
     }
 
     .homepage-panel-hero {
       --homepage-chrome-offset: 4rem;
+      min-height: calc(100svh - var(--homepage-chrome-offset));
       background: rgba(var(--rgb-bg), 0.85);
     }
 
@@ -812,10 +805,6 @@ const accessServices: Array<{
       .homepage-panel-hero {
         --homepage-chrome-offset: 5rem;
       }
-      .homepage-panel-inner {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-      }
     }
 
     @media (min-width: 768px) {
@@ -834,8 +823,8 @@ const accessServices: Array<{
         --homepage-chrome-offset: 6.5rem;
       }
       .homepage-panel-inner {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-top: 7rem;
+        padding-bottom: 7rem;
       }
     }
 
@@ -901,25 +890,11 @@ const accessServices: Array<{
     }
 
     .homepage-panel-care {
-      --homepage-chrome-offset: 6.5rem;
-      background:
-        radial-gradient(
-          ellipse 50% 60% at 12% 50%,
-          rgba(var(--rgb-accent), 0.05),
-          transparent
-        ),
-        rgba(var(--rgb-bg), 0.95);
+      background: radial-gradient(ellipse 55% 60% at 90% 45%, rgba(var(--rgb-accent-alt), 0.06), transparent);
     }
 
     .homepage-panel-problem {
-      --homepage-chrome-offset: 6.5rem;
-      background:
-        radial-gradient(
-          ellipse 50% 60% at 12% 50%,
-          rgba(var(--rgb-accent), 0.05),
-          transparent
-        ),
-        rgba(var(--rgb-bg), 0.94);
+      background: radial-gradient(ellipse 55% 60% at 10% 55%, rgba(var(--rgb-accent), 0.07), transparent);
     }
 
     /* ── Diff cards: challenge / response feature grid ── */
@@ -1173,69 +1148,37 @@ const accessServices: Array<{
     }
 
     .homepage-panel-services {
-      --homepage-chrome-offset: 6.5rem;
-      background:
-        radial-gradient(
-          ellipse 50% 60% at 88% 50%,
-          rgba(var(--rgb-accent), 0.05),
-          transparent
-        ),
-        rgba(var(--rgb-bg), 0.97);
+      background: radial-gradient(ellipse 55% 60% at 88% 50%, rgba(var(--rgb-accent), 0.06), transparent);
     }
 
     .homepage-panel-cta {
-      --homepage-chrome-offset: 6.5rem;
-      background:
-        radial-gradient(
-          ellipse 40% 50% at 50% 40%,
-          rgba(var(--rgb-accent), 0.04),
-          transparent
-        ),
-        rgba(var(--rgb-bg), 0.99);
+      background: radial-gradient(ellipse 60% 65% at 50% 30%, rgba(var(--rgb-accent), 0.05), transparent);
     }
 
     .homepage-panel-glow {
       position: absolute;
       border-radius: 9999px;
-      filter: blur(80px);
-      opacity: 0.45;
+      filter: blur(130px);
+      opacity: 0;
       pointer-events: none;
-      animation: panelGlowBreath 8s ease-in-out infinite;
-    }
-
-    .homepage-panel-glow-top {
-      top: 8%;
-      right: 10%;
-      width: 18rem;
-      height: 18rem;
-      background: rgba(var(--rgb-accent), 0.2);
-    }
-
-    .homepage-panel-glow-bottom {
-      bottom: 10%;
-      left: 8%;
-      width: 14rem;
-      height: 14rem;
-      background: rgba(var(--rgb-accent), 0.1);
-      animation-delay: 1.8s;
+      animation: panelGlowBreath 20s ease-in-out infinite;
     }
 
     .homepage-panel-glow-left {
-      top: 40%;
-      left: 2%;
-      width: 18rem;
-      height: 18rem;
-      background: rgba(var(--rgb-accent), 0.05);
-      animation-delay: 2.6s;
+      top: 20%;
+      left: -8%;
+      width: 30rem;
+      height: 30rem;
+      background: rgba(var(--rgb-accent), 0.18);
     }
 
     .homepage-panel-glow-right {
-      right: 2%;
-      top: 40%;
-      width: 18rem;
-      height: 18rem;
-      background: rgba(var(--rgb-accent), 0.05);
-      animation-delay: 3.4s;
+      right: -8%;
+      top: 20%;
+      width: 30rem;
+      height: 30rem;
+      background: rgba(var(--rgb-accent-alt), 0.14);
+      animation-delay: 8s;
     }
 
     .homepage-service-card {
@@ -1310,6 +1253,44 @@ const accessServices: Array<{
       opacity: 1;
     }
 
+    @media (min-width: 768px) {
+      .homepage-panel-glow {
+        animation-duration: 20s;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .homepage-panel-hero {
+        min-height: 82svh;
+      }
+
+      .homepage-panel-inner {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+      }
+
+      .homepage-panel-hero .homepage-panel-inner {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .homepage-panel-glow {
+        opacity: 0;
+        filter: blur(100px);
+      }
+
+      .homepage-section-label::before,
+      .homepage-section-label::after {
+        width: 1.5rem;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .homepage-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (min-width: 64rem) {
       .bento-grid > .homepage-service-card--feature {
         grid-column: span 6;
@@ -1326,83 +1307,26 @@ const accessServices: Array<{
       }
     }
 
-    @media (min-width: 768px) {
-      :global(body:has(.homepage-shell)) {
-        scroll-snap-type: y mandatory;
-      }
-
-      .homepage-panel-glow {
-        animation-duration: 7s;
-      }
-
-      .homepage-panel,
-      .homepage-panel-hero,
-      .homepage-panel-care,
-      .homepage-panel-services,
-      .homepage-panel-cta {
-        --homepage-chrome-offset: 7.25rem;
-      }
-    }
-
-    @media (max-width: 767px) {
-      /* Disable page-snap entirely on mobile — too fatiguing with many sections */
-      :global(body:has(.homepage-shell)) {
-        scroll-snap-type: none;
-      }
-
-      .homepage-panel {
-        /* Content-height sections on mobile; hero keeps its own min-height below */
-        min-height: auto;
-        scroll-snap-align: none;
-        scroll-snap-stop: normal;
-      }
-
-      /* Keep the hero impactful but slightly tighter than full-screen */
-      .homepage-panel-hero {
-        min-height: 82svh;
-      }
-
-      .homepage-panel-glow {
-        animation-duration: 12s;
-        opacity: 0.35;
-        filter: blur(66px);
-      }
-
-      .homepage-panel-inner {
-        padding-top: 2.75rem;
-        padding-bottom: 2.75rem;
-      }
-
-      .homepage-panel-hero .homepage-panel-inner {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-      }
-
-      .homepage-section-label::before,
-      .homepage-section-label::after {
-        width: 1.5rem;
-      }
-    }
-
-    @media (min-width: 640px) {
-      .homepage-stat-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (min-width: 1280px) {
       .homepage-panel-glow {
-        opacity: 0.8;
-        filter: blur(88px);
+        filter: blur(150px);
       }
     }
 
     :root.light .homepage-shell::before {
-      opacity: 0.015;
+      opacity: 0.01;
     }
 
-    :root.light .homepage-panel {
-      border-top-color: rgba(var(--rgb-accent), 0.15);
+    :root.light .homepage-panel-problem {
+      background: radial-gradient(ellipse 55% 60% at 10% 55%, rgba(var(--rgb-accent), 0.05), transparent);
+    }
+
+    :root.light .homepage-panel-care {
+      background: radial-gradient(ellipse 55% 60% at 90% 45%, rgba(var(--rgb-accent-alt), 0.04), transparent);
+    }
+
+    :root.light .homepage-panel-services {
+      background: radial-gradient(ellipse 55% 60% at 88% 50%, rgba(var(--rgb-accent), 0.05), transparent);
     }
 
     :root.light .homepage-service-card::before {
@@ -1429,21 +1353,10 @@ const accessServices: Array<{
       }
     }
 
-    /* ── Access / availability panel ────────────────────────────────────────── */
-
     .homepage-panel-access {
       background:
-        radial-gradient(
-          ellipse 55% 55% at 88% 20%,
-          rgba(var(--rgb-accent-alt), 0.055),
-          transparent
-        ),
-        radial-gradient(
-          ellipse 40% 50% at 8% 75%,
-          rgba(var(--rgb-accent), 0.04),
-          transparent
-        ),
-        rgba(var(--rgb-bg), 0.96);
+        radial-gradient(ellipse 55% 55% at 88% 20%, rgba(var(--rgb-accent-alt), 0.06), transparent),
+        radial-gradient(ellipse 40% 50% at 8% 75%, rgba(var(--rgb-accent), 0.05), transparent);
     }
 
     /* Pulsing live-status dot */

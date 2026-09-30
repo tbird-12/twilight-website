@@ -10,7 +10,7 @@ describe("SELF_PAY_RATES", () => {
   });
 
   it("has all rates formatted as dollar strings", () => {
-    for (const [key, value] of Object.entries(SELF_PAY_RATES)) {
+    for (const value of Object.values(SELF_PAY_RATES)) {
       expect(value).toMatch(/^\$[\d,]+$/);
     }
   });
