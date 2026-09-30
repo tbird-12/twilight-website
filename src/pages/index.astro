@@ -15,8 +15,6 @@ import {
   SELF_PAY_WAITLIST_WEEKS,
   SELF_PAY_REPORT_TURNAROUND_DAYS,
 } from "../data/resource";
-import { SELF_PAY_RATES } from "../data/selfPayRates";
-import { insuranceProviders } from "../data/insurances";
 
 const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -115,63 +113,6 @@ const qualityCareItems = [
   },
 ];
 
-// ── Access / availability section data ──────────────────────────────────────
-const insuranceCount = insuranceProviders.length;
-const hasMedicaid = insuranceProviders.some((p) =>
-  p.name.toLowerCase().includes("medicaid")
-);
-const selfPayLow  = SELF_PAY_RATES.therapy;
-const selfPayHigh = SELF_PAY_RATES.psychoeducationalEvaluation;
-
-type AccessStatus = "accepting" | "varies" | "active";
-
-const statusChipClass: Record<AccessStatus, string> = {
-  accepting: "access-wait-chip--accepting",
-  varies:    "access-wait-chip--varies",
-  active:    "access-wait-chip--active",
-};
-
-const accessServices: Array<{
-  label: string;
-  wait: string;
-  note: string;
-  rate: string;
-  href: string;
-  status: AccessStatus;
-}> = [
-  {
-    label:  "Psychological Evaluations",
-    wait:   `~${SELF_PAY_WAITLIST_WEEKS} wks`,
-    note:   `Self-pay report in ${SELF_PAY_REPORT_TURNAROUND_DAYS} days`,
-    rate:   SELF_PAY_RATES.psychologicalEvaluation,
-    href:   "/services/psychological-evaluations",
-    status: "accepting",
-  },
-  {
-    label:  "Specialty Evaluations",
-    wait:   `~${SELF_PAY_WAITLIST_WEEKS} wks`,
-    note:   "Adoption, IEE, Learning Disabilities, etc.",
-    rate:   SELF_PAY_RATES.psychoeducationalEvaluation,
-    href:   "/specialties/psychoeducational-evaluations",
-    status: "accepting",
-  },
-  {
-    label:  "Therapy",
-    wait:   "Varies by clinician",
-    note:   "Insurance widely accepted",
-    rate:   `${SELF_PAY_RATES.therapy}/session`,
-    href:   "/services/therapy",
-    status: "varies",
-  },
-  {
-    label:  "Medication Management",
-    wait:   "Short current wait",
-    note:   "Insurance & self-pay",
-    rate:   `${SELF_PAY_RATES.mm_followup}/follow-up`,
-    href:   "/services/medication-management",
-    status: "active",
-  },
-];
 ---
 
 <Layout
@@ -605,12 +546,6 @@ const accessServices: Array<{
 
     .homepage-panel-services {
       background: radial-gradient(ellipse 55% 60% at 88% 50%, rgba(var(--rgb-accent), 0.06), transparent);
-    }
-
-    .homepage-panel-access {
-      background:
-        radial-gradient(ellipse 55% 55% at 88% 20%, rgba(var(--rgb-accent-alt), 0.06), transparent),
-        radial-gradient(ellipse 40% 50% at 8% 75%, rgba(var(--rgb-accent), 0.05), transparent);
     }
 
     .homepage-panel-cta {
@@ -1072,135 +1007,6 @@ const accessServices: Array<{
       }
     }
 
-    /* ── Access table ────────────────────────────────────────────────── */
-
-    .access-main-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.875rem;
-    }
-
-    .hp-access-table {
-      border: 1px solid rgba(var(--rgb-accent), 0.09);
-      border-radius: 1.25rem;
-      overflow: hidden;
-    }
-
-    .hp-access-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1.25rem;
-      border-bottom: 1px solid rgba(var(--rgb-accent), 0.07);
-      font-size: 0.5625rem;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--color-site-sub);
-      opacity: 0.62;
-    }
-
-    .hp-access-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.875rem 1.25rem;
-      border-bottom: 1px solid rgba(var(--rgb-accent), 0.05);
-      text-decoration: none;
-      color: inherit;
-      transition: background-color 0.18s ease;
-    }
-
-    .hp-access-row:last-child { border-bottom: none; }
-    .hp-access-row:hover { background: rgba(var(--rgb-accent), 0.025); }
-
-    .hp-access-row:focus-visible {
-      outline: 2px solid var(--color-cta);
-      outline-offset: -2px;
-    }
-
-    .hp-access-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .hp-access-card {
-      padding: 1.25rem;
-      border: 1px solid rgba(var(--rgb-accent), 0.09);
-      border-radius: 1rem;
-      background: rgba(var(--rgb-surface), 0.3);
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: border-color 0.18s ease, background-color 0.18s ease;
-    }
-
-    .hp-access-card--cta:hover {
-      border-color: rgba(var(--rgb-accent), 0.18);
-      background: rgba(var(--rgb-surface), 0.5);
-    }
-
-    /* ── Access chips / dot ──────────────────────────────────────────── */
-
-    .access-pulse-dot {
-      display: inline-block;
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background-color: var(--color-cta);
-      flex-shrink: 0;
-      animation: accessDotPulse 2.4s ease-in-out infinite;
-    }
-
-    @keyframes accessDotPulse {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(var(--rgb-accent-alt), 0.38); }
-      50%       { opacity: 0.82; box-shadow: 0 0 0 5px rgba(var(--rgb-accent-alt), 0); }
-    }
-
-    .access-wait-chip {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.625rem;
-      font-weight: 900;
-      letter-spacing: 0.04em;
-      padding: 0.25em 0.7em;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      white-space: nowrap;
-      line-height: 1.6;
-    }
-
-    .access-wait-chip--accepting {
-      background: rgba(var(--rgb-accent-alt), 0.1);
-      color: var(--color-cta);
-      border-color: rgba(var(--rgb-accent-alt), 0.18);
-    }
-
-    .access-wait-chip--varies {
-      background: rgba(245, 158, 11, 0.08);
-      color: #b45309;
-      border-color: rgba(245, 158, 11, 0.14);
-    }
-
-    :root.dark .access-wait-chip--varies {
-      color: #fbbf24;
-      background: rgba(245, 158, 11, 0.07);
-      border-color: rgba(245, 158, 11, 0.12);
-    }
-
-    .access-wait-chip--active {
-      background: rgba(34, 197, 94, 0.08);
-      color: #15803d;
-      border-color: rgba(34, 197, 94, 0.14);
-    }
-
-    :root.dark .access-wait-chip--active {
-      color: #4ade80;
-      background: rgba(34, 197, 94, 0.07);
-      border-color: rgba(34, 197, 94, 0.12);
-    }
-
     /* ── Blog grid ───────────────────────────────────────────────────── */
 
     .hp-blog-grid {
@@ -1322,11 +1128,6 @@ const accessServices: Array<{
         display: block;
       }
 
-      .access-main-grid {
-        grid-template-columns: 1fr 18.5rem;
-        gap: 1.125rem;
-      }
-
       .hp-blog-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 0 2rem;
@@ -1429,8 +1230,7 @@ const accessServices: Array<{
 
     @media (prefers-reduced-motion: reduce) {
       .homepage-shell::before,
-      .homepage-panel-glow,
-      .access-pulse-dot {
+      .homepage-panel-glow {
         animation: none;
       }
 
@@ -1438,9 +1238,7 @@ const accessServices: Array<{
       .hp-service,
       .hp-blog-card,
       .hp-list-arrow,
-      .hp-service-arrow,
-      .hp-access-row,
-      .hp-access-card {
+      .hp-service-arrow {
         transition: none;
       }
     }
