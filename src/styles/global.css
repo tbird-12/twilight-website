@@ -785,8 +785,8 @@
     font-size: 0.5rem;
     font-weight: 900;
     letter-spacing: 0.22em;
-    color: var(--theme-site-sub);
-    opacity: 0.3;
+    color: var(--theme-icon);
+    opacity: 0.73;
     padding-top: 0.3rem;
     flex-shrink: 0;
     line-height: 1;
@@ -803,7 +803,7 @@
     font-weight: 600;
     line-height: 1.5;
     font-style: italic;
-    color: var(--theme-icon);
+    color: var(--theme-site-sub);
     opacity: 0.75;
     margin-bottom: 0.4rem;
     display: -webkit-box;
@@ -843,7 +843,7 @@
     font-weight: 900;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--theme-site-sub);
+    color: var(--theme-site-text);
     opacity: 0.45;
     transition: color 0.18s ease, opacity 0.18s ease;
   }
