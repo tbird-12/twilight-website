@@ -445,18 +445,18 @@ const qualityCareItems = [
             }
           </div>
         </div>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
           <a
             href="/resources/new-client"
             data-astro-prefetch="viewport"
-            class="px-10 py-4 theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
+            class="px-4 sm:px-10 py-2.5 sm:py-4 text-xs sm:text-base theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
           >
             Steps for New Clients
           </a>
           <a
             href="/about/clinicians/clinicians-lex-ky"
             data-astro-prefetch="viewport"
-            class="px-10 py-4 bg-cta text-cta-fg border border-button-border font-black rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cta/50"
+            class="px-4 sm:px-10 py-2.5 sm:py-4 text-xs sm:text-base bg-cta text-cta-fg border border-button-border font-black rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cta/50 shadow-lg hover:shadow-2xl hover:shadow-cta/30 hover:-translate-y-1 hover:scale-105"
           >
             Meet Our Clinicians
           </a>
@@ -909,7 +909,7 @@ const qualityCareItems = [
     .hp-specialties-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0.75rem;
+      gap: 0.375rem;
     }
 
     .hp-specialty-card {
@@ -946,6 +946,9 @@ const qualityCareItems = [
       letter-spacing: -0.012em;
       color: var(--theme-site-text);
       font-family: var(--font-heading);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .hp-specialty-desc {
@@ -956,10 +959,12 @@ const qualityCareItems = [
     }
 
     .hp-specialty-arrow {
+      display: inline;
       color: var(--theme-cta);
       opacity: 0;
       transform: translateX(-4px);
       transition: opacity 0.2s ease, transform 0.2s ease;
+      flex-shrink: 0;
     }
 
     .hp-specialty-card:hover .hp-specialty-arrow {
@@ -1031,15 +1036,15 @@ const qualityCareItems = [
     .hp-stats-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      border: 1px solid rgba(var(--rgb-accent), 0.08);
+      border: 1px solid rgba(var(--rgb-accent), 0.18);
       border-radius: 1rem;
       overflow: hidden;
     }
 
     .hp-stat-item {
       padding: 1.75rem 1.5rem;
-      border-right: 1px solid rgba(var(--rgb-accent), 0.08);
-      border-bottom: 1px solid rgba(var(--rgb-accent), 0.08);
+      border-right: 1px solid rgba(var(--rgb-accent), 0.18);
+      border-bottom: 1px solid rgba(var(--rgb-accent), 0.18);
       text-align: left;
     }
 
