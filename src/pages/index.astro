@@ -248,73 +248,50 @@ const accessServices: Array<{
 
     <!-- ════════════════ THE PROBLEM ════════════════ -->
     <section
-      class="homepage-panel homepage-panel-problem relative isolate overflow-hidden px-4"
+      class="hp-section hp-section--alt homepage-panel-problem relative isolate overflow-hidden px-4"
     >
       <div
         class="homepage-panel-glow homepage-panel-glow-left"
         aria-hidden="true"
-      >
-      </div>
-      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <header class="diff-header">
-          <p class="homepage-section-label">Sound Familiar?</p>
-          <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            The Gaps Families Hit<span class="text-cta">
-              and How We Close Them</span
-            >
+      ></div>
+      <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <header class="hp-section-header">
+          <p class="hp-eyebrow">Sound Familiar?</p>
+          <h2 class="hp-heading font-serif font-black">
+            The Gaps Families Hit<span class="text-cta"> and How We Close Them</span>
           </h2>
         </header>
-
         <div
-          class="diff-grid"
+          class="hp-list"
           role="list"
           aria-label="Common barriers and how Twilight Psychology responds"
         >
           {
             qualityCareItems.slice(0, 4).map((point, i) => (
-              <div role="listitem">
-                <a
-                  href={qualityCareItems[i].link}
-                  data-astro-prefetch="viewport"
-                  class="diff-card group"
-                >
-                  <div class="diff-card-problem">
-                    <div class="diff-card-problem-header">
-                      <span class="diff-zone-tag diff-zone-tag--problem">
-                        The Challenge
-                      </span>
-                      <span class="diff-card-num" aria-hidden="true">
-                        0{i + 1}
-                      </span>
-                    </div>
-                    <p class="diff-card-challenge">{point.issue}</p>
-                  </div>
-                  <div class="diff-card-body">
-                    <span class="diff-zone-tag diff-zone-tag--solution">
-                      Our Approach
-                    </span>
-                    <h3 class="diff-card-title">{qualityCareItems[i].title}</h3>
-                    <p class="diff-card-desc">{qualityCareItems[i].desc}</p>
-                  </div>
-                  <div class="diff-card-foot" aria-hidden="true">
-                    <span class="diff-card-cta-label">Learn more</span>
-                    <svg
-                      class="diff-card-arrow"
-                      fill="none"
-                      viewBox="0 0 16 16"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M3 8h10M9 4l4 4-4 4"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </a>
-              </div>
+              <a
+                href={qualityCareItems[i].link}
+                data-astro-prefetch="viewport"
+                class="hp-list-item group"
+                role="listitem"
+              >
+                <span class="hp-list-num" aria-hidden="true">0{i + 1}</span>
+                <div class="hp-list-body">
+                  <p class="hp-list-challenge">{point.issue}</p>
+                  <h3 class="hp-list-title font-serif">{qualityCareItems[i].title}</h3>
+                  <p class="hp-list-desc">{qualityCareItems[i].desc}</p>
+                </div>
+                <span class="hp-list-arrow" aria-hidden="true">
+                  <svg fill="none" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                    <path
+                      d="M3 8h10M9 4l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
             ))
           }
         </div>
@@ -323,26 +300,21 @@ const accessServices: Array<{
 
     <section
       id="quality-care"
-      class="homepage-panel homepage-panel-care relative isolate overflow-hidden px-4"
+      class="hp-section homepage-panel-care relative isolate overflow-hidden px-4"
     >
       <div
         class="homepage-panel-glow homepage-panel-glow-left"
         aria-hidden="true"
-      >
-      </div>
-      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <!-- Pairs 04–06 -->
-        <header class="diff-header">
-          <p class="homepage-section-label">Why Twilight Psychology</p>
-          <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            Precision Care for<span class="text-cta">
-              Complex Presentations</span
-            >
+      ></div>
+      <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <header class="hp-section-header">
+          <p class="hp-eyebrow">Why Twilight Psychology</p>
+          <h2 class="hp-heading font-serif font-black">
+            Precision Care for<span class="text-cta"> Complex Presentations</span>
           </h2>
         </header>
-
         <div
-          class="diff-grid"
+          class="hp-list"
           role="list"
           aria-label="More ways Twilight Psychology addresses the gaps"
         >
@@ -350,63 +322,39 @@ const accessServices: Array<{
             qualityCareItems.slice(4).map((point, i) => {
               const idx = i + 4;
               return (
-                <div role="listitem">
-                  <a
-                    href={qualityCareItems[idx].link}
-                    data-astro-prefetch="viewport"
-                    class="diff-card group"
-                  >
-                    <div class="diff-card-problem">
-                      <div class="diff-card-problem-header">
-                        <span class="diff-zone-tag diff-zone-tag--problem">
-                          The Challenge
-                        </span>
-                        <span class="diff-card-num" aria-hidden="true">
-                          0{idx + 1}
-                        </span>
-                      </div>
-                      <p class="diff-card-challenge">{point.issue}</p>
-                    </div>
-                    <div class="diff-card-body">
-                      <span class="diff-zone-tag diff-zone-tag--solution">
-                        Our Approach
-                      </span>
-                      <h3 class="diff-card-title">
-                        {qualityCareItems[idx].title}
-                      </h3>
-                      <p class="diff-card-desc">{qualityCareItems[idx].desc}</p>
-                    </div>
-                    <div class="diff-card-foot" aria-hidden="true">
-                      <span class="diff-card-cta-label">Learn more</span>
-                      <svg
-                        class="diff-card-arrow"
-                        fill="none"
-                        viewBox="0 0 16 16"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M3 8h10M9 4l4 4-4 4"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </div>
+                <a
+                  href={qualityCareItems[idx].link}
+                  data-astro-prefetch="viewport"
+                  class="hp-list-item group"
+                  role="listitem"
+                >
+                  <span class="hp-list-num" aria-hidden="true">0{idx + 1}</span>
+                  <div class="hp-list-body">
+                    <p class="hp-list-challenge">{point.issue}</p>
+                    <h3 class="hp-list-title font-serif">{qualityCareItems[idx].title}</h3>
+                    <p class="hp-list-desc">{qualityCareItems[idx].desc}</p>
+                  </div>
+                  <span class="hp-list-arrow" aria-hidden="true">
+                    <svg fill="none" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+                      <path
+                        d="M3 8h10M9 4l4 4-4 4"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </a>
               );
             })
           }
         </div>
-
-        <p class="diff-footer-note">
+        <p class="hp-footer-note">
           Twilight Psychology was built specifically to address these gaps with
           clinical depth, specialty breadth, and in-house follow-through that
           most practices can't offer together.
-          <a
-            href="/specialties"
-            class="text-cta font-semibold hover:underline ml-1"
+          <a href="/specialties" class="text-cta font-semibold hover:underline ml-1"
             >Explore our specialties →</a
           >
         </p>
@@ -414,31 +362,23 @@ const accessServices: Array<{
     </section>
 
     <section
-      class="homepage-panel homepage-panel-services relative isolate overflow-hidden px-4"
+      class="hp-section hp-section--alt homepage-panel-services relative isolate overflow-hidden px-4"
     >
       <div
         class="homepage-panel-glow homepage-panel-glow-right"
         aria-hidden="true"
-      >
-      </div>
-      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-        <div
-          class="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
-        >
+      ></div>
+      <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <header class="hp-section-header hp-section-header--row">
           <div>
-            <p class="homepage-section-label">Core Services</p>
-            <h2 class="fluid-display-sm font-serif font-black text-site-text">
-              How We Can Help
-            </h2>
+            <p class="hp-eyebrow">Core Services</p>
+            <h2 class="hp-heading font-serif font-black">How We Can Help</h2>
           </div>
-          <p
-            class="max-w-md text-sm md:text-base leading-relaxed text-site-sub"
-          >
-            Evaluation work grounded in careful testing, clear school-ready
+          <p class="hp-section-lead">
+            Clinical work grounded in careful testing, clear school-ready
             documentation, and next steps you can act on.
           </p>
-        </div>
-
+        </header>
         <div class="bento-grid reveal-children w-full gap-5">
           {
             services.map((service) => (
@@ -480,31 +420,22 @@ const accessServices: Array<{
       </div>
     </section>
 
-    
     <!-- ════════════════ ACCESS WINDOW ════════════════ -->
-    <section class="homepage-panel homepage-panel-access relative isolate overflow-hidden px-4">
-      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6">
-
-        <!-- Header -->
-        <div class="mb-7 max-w-lg">
-          <p class="homepage-section-label">
-            <span class="access-pulse-dot" aria-hidden="true" />
+    <section class="hp-section homepage-panel-access relative isolate overflow-hidden px-4">
+      <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <div class="mb-8 max-w-lg">
+          <p class="hp-eyebrow">
+            <span class="access-pulse-dot" aria-hidden="true"></span>
             Access &amp; Availability
           </p>
-          <h2 class="fluid-display-sm font-serif font-black text-site-text">
-            Next Appointment Availability
-          </h2>
-          <p class="mt-2 text-sm sm:text-base leading-relaxed text-site-sub">
+          <h2 class="hp-heading font-serif font-black">Next Appointment Availability</h2>
+          <p class="mt-3 text-sm sm:text-base leading-relaxed text-site-sub">
             Current waitlist windows and payment pathways.
           </p>
         </div>
-
-        <!-- Main grid: service table + payment access -->
         <div class="access-main-grid">
-
-          <!-- Left: service waitlist table -->
-          <div class="glass-card-premium rounded-3xl overflow-hidden">
-            <div class="access-table-head">
+          <div class="hp-access-table">
+            <div class="hp-access-head">
               <span>Service</span>
               <span>Wait · Self-Pay Rate</span>
             </div>
@@ -512,17 +443,15 @@ const accessServices: Array<{
               <a
                 href={svc.href}
                 data-astro-prefetch="viewport"
-                class="access-service-row group"
+                class="hp-access-row group"
               >
-                <div class="flex items-center gap-3 min-w-0">
-                  <div class="min-w-0">
-                    <span class="block text-sm font-black text-site-text leading-snug group-hover:text-cta transition-colors duration-200 truncate">
-                      {svc.label}
-                    </span>
-                    <span class="block text-[11px] text-site-sub/70 leading-snug mt-0.5 truncate">
-                      {svc.note}
-                    </span>
-                  </div>
+                <div class="min-w-0">
+                  <span class="block text-sm font-black text-site-text leading-snug group-hover:text-cta transition-colors duration-200 truncate">
+                    {svc.label}
+                  </span>
+                  <span class="block text-[11px] text-site-sub/70 leading-snug mt-0.5 truncate">
+                    {svc.note}
+                  </span>
                 </div>
                 <div class="flex items-center gap-2.5 shrink-0 ml-4">
                   <span class={`access-wait-chip ${statusChipClass[svc.status]}`}>
@@ -535,39 +464,27 @@ const accessServices: Array<{
               </a>
             ))}
           </div>
-
-          <!-- Right: payment access stack -->
-          <div class="access-payment-stack">
-
-            <!-- Insurance -->
-            <div class="glass-card-premium rounded-2xl p-5 flex items-start gap-3.5">
-              <div class="min-w-0">
-                <p class="text-sm font-black text-site-text leading-snug mb-1">
-                  {insuranceCount} Insurance Carriers
-                </p>
-                <p class="text-xs text-site-sub leading-relaxed">
-                  Commercial, Medicare{hasMedicaid ? ", and Kentucky Medicaid" : ""}.
-                </p>
-              </div>
+          <div class="hp-access-sidebar">
+            <div class="hp-access-card">
+              <p class="text-sm font-black text-site-text leading-snug mb-1">
+                {insuranceCount} Insurance Carriers
+              </p>
+              <p class="text-xs text-site-sub leading-relaxed">
+                Commercial, Medicare{hasMedicaid ? ", and Kentucky Medicaid" : ""}.
+              </p>
             </div>
-
-            <!-- Self-pay -->
-            <div class="glass-card-premium rounded-2xl p-5 flex items-start gap-3.5">
-              <div class="min-w-0">
-                <p class="text-sm font-black text-site-text leading-snug mb-1">
-                  Self-Pay {selfPayLow}–{selfPayHigh}
-                </p>
-                <p class="text-xs text-site-sub leading-relaxed">
-                  Specialty evaluation reports within {SELF_PAY_REPORT_TURNAROUND_DAYS} days of intake.
-                </p>
-              </div>
+            <div class="hp-access-card">
+              <p class="text-sm font-black text-site-text leading-snug mb-1">
+                Self-Pay {selfPayLow}–{selfPayHigh}
+              </p>
+              <p class="text-xs text-site-sub leading-relaxed">
+                Specialty evaluation reports within {SELF_PAY_REPORT_TURNAROUND_DAYS} days of intake.
+              </p>
             </div>
-
-            <!-- CTA link card -->
             <a
               href="/resources/waitlist-times"
               data-astro-prefetch="viewport"
-              class="access-cta-row group glass-card-premium rounded-2xl p-5 flex items-center justify-between hover:border-cta/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 transition-colors duration-200"
+              class="hp-access-card hp-access-card--cta group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
             >
               <span class="text-sm font-black text-site-text group-hover:text-cta transition-colors duration-200 leading-snug">
                 Full availability &amp; clinician match
@@ -578,37 +495,28 @@ const accessServices: Array<{
                 aria-hidden="true"
               />
             </a>
-
           </div>
         </div>
       </div>
     </section>
 
     <!-- ════════════════ FROM OUR BLOG ════════════════ -->
-    <section
-      class="homepage-panel relative isolate overflow-hidden px-4"
-      style="min-height: auto;"
-    >
-      <div class="homepage-panel-inner mx-auto max-w-5xl px-4 sm:px-6 py-20">
-        <div
-          class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
-        >
+    <section class="hp-section hp-section--alt relative isolate overflow-hidden px-4">
+      <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
+        <header class="hp-section-header hp-section-header--row">
           <div>
-            <p class="homepage-section-label">From Our Blog</p>
-            <h2 class="fluid-display-sm font-serif font-black text-site-text">
-              Insights & Updates
-            </h2>
+            <p class="hp-eyebrow">From Our Blog</p>
+            <h2 class="hp-heading font-serif font-black">Insights &amp; Updates</h2>
           </div>
           <a
             href="/blog"
             data-astro-prefetch="viewport"
-            class="text-cta font-black text-sm hover:underline"
+            class="text-cta font-black text-sm hover:underline self-end"
           >
             View all posts →
           </a>
-        </div>
-
-        <div class="bento-grid reveal-children w-full gap-5">
+        </header>
+        <div class="hp-blog-grid">
           {
             recentPosts.map((post) => {
               const meta = getCategoryMeta(post.data.category);
@@ -620,7 +528,7 @@ const accessServices: Array<{
                 <a
                   href={`/blog/${post.id}`}
                   data-astro-prefetch="viewport"
-                  class="group homepage-card-strong glass-card-premium flex flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 hover:border-cta/20 hover:shadow-lg hover:shadow-cta/10"
+                  class="hp-blog-card group"
                 >
                   <div class="flex items-center gap-2 mb-3">
                     <span
@@ -653,70 +561,52 @@ const accessServices: Array<{
       </div>
     </section>
 
-
+    <!-- ════════════════ CTA ════════════════ -->
     <section
-      class="homepage-panel homepage-panel-cta relative isolate overflow-hidden px-4"
+      class="hp-section homepage-panel-cta relative isolate overflow-hidden px-4"
     >
-      <div class="homepage-panel-inner mx-auto max-w-5xl">
-        <div
-          class="homepage-cta-shell glass-card-premium rounded-[2.5rem] px-6 py-10 sm:px-10 sm:py-14 text-center"
+      <div class="hp-section-inner mx-auto max-w-5xl text-center">
+        <p class="hp-eyebrow justify-center">Next Step</p>
+        <h2
+          class="display-gradient-text font-serif text-4xl md:text-5xl lg:text-6xl font-black mb-6"
         >
-          <p class="homepage-section-label justify-center">Next Step</p>
-          <h2
-            class="display-gradient-text font-serif text-4xl md:text-5xl lg:text-6xl font-black mb-6"
-          >
-            Ready to Get Started
-          </h2>
-          <p
-            class="mx-auto mb-12 max-w-2xl text-left text-base leading-relaxed text-site-sub sm:text-center sm:text-lg"
-          >
-            Whether you are pursuing diagnostic clarity, individualized therapy,
-            or psychiatric medication management, our team is prepared to guide
-            you through a structured, seamless process.
-          </p>
-
-          <div class="mb-12">
-            <p class="homepage-section-label justify-center">By the Numbers</p>
-            <div
-              class="homepage-stat-grid reveal-children mx-auto mt-6 max-w-4xl"
-              role="list"
-            >
-              {
-                stats.map((stat) => (
-                  <div
-                    class="homepage-stat-card glass-card-premium rounded-[1.75rem] px-5 py-5 text-left sm:px-6"
-                    role="listitem"
-                  >
-                    <p class="mb-2 font-serif text-3xl font-black tracking-[-0.04em] text-site-text sm:text-4xl">
-                      {stat.value}
-                    </p>
-                    <p class="text-xs font-black uppercase tracking-[0.2em] text-site-sub">
-                      {stat.label}
-                    </p>
-                  </div>
-                ))
-              }
-            </div>
+          Ready to Get Started
+        </h2>
+        <p
+          class="mx-auto mb-16 max-w-2xl text-base leading-relaxed text-site-sub sm:text-lg"
+        >
+          Whether you are pursuing diagnostic clarity, individualized therapy,
+          or psychiatric medication management, our team is prepared to guide
+          you through a structured, seamless process.
+        </p>
+        <div class="mb-16">
+          <p class="hp-eyebrow justify-center mb-8">By the Numbers</p>
+          <div class="hp-stats-grid" role="list">
+            {
+              stats.map((stat) => (
+                <div class="hp-stat-item" role="listitem">
+                  <p class="hp-stat-value font-serif">{stat.value}</p>
+                  <p class="hp-stat-label">{stat.label}</p>
+                </div>
+              ))
+            }
           </div>
-
-          <div
-            class="flex flex-col sm:flex-row gap-6 justify-center relative z-10"
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/resources/new-client"
+            data-astro-prefetch="viewport"
+            class="px-10 py-4 theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
           >
-            <a
-              href="/resources/new-client"
-              data-astro-prefetch="viewport"
-              class="px-10 py-4 theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
-            >
-              Steps for New Clients
-            </a>
-            <a
-              href="/about/clinicians/clinicians-lex-ky"
-              data-astro-prefetch="viewport"
-              class="px-10 py-4 bg-cta text-cta-fg border border-button-border font-black rounded-full theme-hover-surface transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cta/50"
-            >
-              Meet Our Clinicians
-            </a>
-          </div>
+            Steps for New Clients
+          </a>
+          <a
+            href="/about/clinicians/clinicians-lex-ky"
+            data-astro-prefetch="viewport"
+            class="px-10 py-4 bg-cta text-cta-fg border border-button-border font-black rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cta/50"
+          >
+            Meet Our Clinicians
+          </a>
         </div>
       </div>
     </section>
@@ -725,17 +615,15 @@ const accessServices: Array<{
   <style>
     @keyframes panelGlowBreath {
       0%,
-      100% {
-        opacity: 0.18;
-      }
-      50% {
-        opacity: 0.3;
-      }
+      100% { opacity: 0.18; }
+      50%   { opacity: 0.3; }
     }
 
     :global(body:has(.homepage-shell)) {
       scroll-behavior: smooth;
     }
+
+    /* ── Shell ──────────────────────────────────────────────────────── */
 
     .homepage-shell {
       position: relative;
@@ -752,18 +640,62 @@ const accessServices: Array<{
       z-index: 0;
     }
 
-    .homepage-panel {
+    :root.light .homepage-shell::before { opacity: 0.01; }
+
+    /* ── Section base ────────────────────────────────────────────────── */
+
+    .hp-section {
       position: relative;
       display: flex;
       align-items: center;
     }
 
-    .homepage-panel-inner {
+    .hp-section--alt {
+      background: rgba(var(--rgb-surface), 0.22);
+    }
+
+    :root.light .hp-section--alt {
+      background: rgba(var(--rgb-surface), 0.55);
+    }
+
+    .hp-section-inner {
       position: relative;
       z-index: 1;
       width: 100%;
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    /* ── Panel backgrounds ───────────────────────────────────────────── */
+
+    .homepage-panel-problem {
+      background: radial-gradient(ellipse 55% 60% at 10% 55%, rgba(var(--rgb-accent), 0.07), transparent);
+    }
+
+    .homepage-panel-care {
+      background: radial-gradient(ellipse 55% 60% at 90% 45%, rgba(var(--rgb-accent-alt), 0.06), transparent);
+    }
+
+    .homepage-panel-services {
+      background: radial-gradient(ellipse 55% 60% at 88% 50%, rgba(var(--rgb-accent), 0.06), transparent);
+    }
+
+    .homepage-panel-access {
+      background:
+        radial-gradient(ellipse 55% 55% at 88% 20%, rgba(var(--rgb-accent-alt), 0.06), transparent),
+        radial-gradient(ellipse 40% 50% at 8% 75%, rgba(var(--rgb-accent), 0.05), transparent);
+    }
+
+    .homepage-panel-cta {
+      background: radial-gradient(ellipse 60% 65% at 50% 30%, rgba(var(--rgb-accent), 0.05), transparent);
+    }
+
+    /* ── Hero section ────────────────────────────────────────────────── */
+
+    .homepage-panel {
+      position: relative;
+      display: flex;
+      align-items: center;
     }
 
     .homepage-panel-hero {
@@ -801,31 +733,12 @@ const accessServices: Array<{
       background: rgba(var(--rgb-bg), 0.78);
     }
 
-    @media (min-width: 640px) {
-      .homepage-panel-hero {
-        --homepage-chrome-offset: 5rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      :global(html.light) .homepage-hero-art--light.homepage-hero-art--mobile,
-      :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--mobile {
-        display: none;
-      }
-
-      :global(html.light) .homepage-hero-art--light.homepage-hero-art--desktop,
-      :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--desktop {
-        display: block;
-        opacity: 0.9;
-      }
-
-      .homepage-panel-hero {
-        --homepage-chrome-offset: 6.5rem;
-      }
-      .homepage-panel-inner {
-        padding-top: 7rem;
-        padding-bottom: 7rem;
-      }
+    .homepage-panel-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
     }
 
     .homepage-hero-inner {
@@ -838,7 +751,6 @@ const accessServices: Array<{
       padding-bottom: 2rem;
     }
 
-    /* ── Hero glass frame — lighter than glass-card-premium, lets SVG breathe ── */
     .homepage-hero-frame {
       width: 100%;
       position: relative;
@@ -852,7 +764,6 @@ const accessServices: Array<{
       backdrop-filter: blur(14px) saturate(115%);
     }
 
-    /* Subtle corner highlight overlay */
     .homepage-hero-frame::before {
       content: "";
       position: absolute;
@@ -860,11 +771,7 @@ const accessServices: Array<{
       pointer-events: none;
       background:
         linear-gradient(145deg, rgba(var(--rgb-accent), 0.06), transparent 44%),
-        radial-gradient(
-          circle at top right,
-          rgba(var(--rgb-accent-alt), 0.07),
-          transparent 36%
-        );
+        radial-gradient(circle at top right, rgba(var(--rgb-accent-alt), 0.07), transparent 36%);
       z-index: 0;
     }
 
@@ -881,279 +788,7 @@ const accessServices: Array<{
         0 10px 36px rgba(0, 0, 0, 0.05);
     }
 
-    @media (min-width: 640px) {
-      .homepage-hero-inner {
-        min-height: auto;
-        padding-top: 4.5rem;
-        padding-bottom: 4.5rem;
-      }
-    }
-
-    .homepage-panel-care {
-      background: radial-gradient(ellipse 55% 60% at 90% 45%, rgba(var(--rgb-accent-alt), 0.06), transparent);
-    }
-
-    .homepage-panel-problem {
-      background: radial-gradient(ellipse 55% 60% at 10% 55%, rgba(var(--rgb-accent), 0.07), transparent);
-    }
-
-    /* ── Diff cards: challenge / response feature grid ── */
-
-    .diff-header {
-      margin-bottom: 2.5rem;
-    }
-
-    .diff-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.125rem;
-    }
-
-    /* Each card */
-    .diff-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding: 1.375rem 1.25rem 1.25rem;
-      border-radius: 1.625rem;
-      border: 1px solid rgba(var(--rgb-accent), 0.09);
-      background-color: var(--color-surface);
-      background-image: linear-gradient(
-        160deg,
-        color-mix(in oklab, var(--theme-surface) 94%, transparent) 0%,
-        color-mix(in oklab, var(--theme-glass-bg) 96%, transparent) 100%
-      );
-      box-shadow:
-        inset 0 1px 0 rgba(var(--rgb-accent), 0.1),
-        0 4px 20px rgba(0, 0, 0, 0.07);
-      text-decoration: none;
-      color: inherit;
-      transition:
-        border-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-      cursor: pointer;
-    }
-
-    .diff-card:hover {
-      border-color: rgba(var(--rgb-accent), 0.22);
-      box-shadow:
-        inset 0 1px 0 rgba(var(--rgb-accent), 0.14),
-        0 14px 40px rgba(0, 0, 0, 0.13);
-      transform: translateY(-3px);
-    }
-
-    .diff-card:focus-visible {
-      outline: 2px solid var(--color-cta);
-      outline-offset: 2px;
-      border-radius: 1.625rem;
-    }
-
-    /* Problem zone: warm amber-tinted area — visually distinct from the solution below */
-    .diff-card-problem {
-      margin: -1.375rem -1.25rem 0;
-      padding: 1.125rem 1.25rem 1rem;
-      border-radius: 1.625rem 1.625rem 0 0;
-      background: rgba(245, 158, 11, 0.042);
-      border-bottom: 1px solid rgba(245, 158, 11, 0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .diff-card-problem-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    /* Zone label chips */
-    .diff-zone-tag {
-      display: inline-flex;
-      align-items: center;
-      font-size: 0.5625rem;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0.2em 0.4em 0.2em 0.7em;
-      border-radius: 999px;
-      line-height: 1.6;
-      align-self: flex-start;
-    }
-
-    .diff-zone-tag--problem {
-      background: rgba(245, 158, 11, 0.1);
-      color: #b45309;
-      border: 1px solid rgba(245, 158, 11, 0.2);
-    }
-
-    :root.dark .diff-zone-tag--problem {
-      color: #fbbf24;
-      background: rgba(245, 158, 11, 0.09);
-      border-color: rgba(245, 158, 11, 0.16);
-    }
-
-    .diff-zone-tag--solution {
-      background: rgba(var(--rgb-accent), 0.08);
-      color: var(--color-cta);
-      border: 1px solid rgba(var(--rgb-accent), 0.15);
-    }
-
-    .diff-card-num {
-      flex-shrink: 0;
-      font-size: 0.5rem;
-      font-weight: 900;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: rgba(245, 158, 11, 0.5);
-      line-height: 1;
-    }
-
-    /* Challenge text — full-width, readable weight, warm tone */
-    .diff-card-challenge {
-      font-size: 0.8125rem;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 1.5;
-      color: var(--theme-site-text);
-      opacity: 0.82;
-      margin: 0;
-      text-align: left;
-    }
-
-    /* Solution body */
-    .diff-card-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      padding-top: 1rem;
-    }
-
-    .diff-card-title {
-      font-family: var(--font-heading);
-      font-size: 1.0625rem;
-      font-weight: 800;
-      line-height: 1.26;
-      color: var(--theme-site-text);
-      margin: 0;
-      transition: color 0.2s ease;
-    }
-
-    .diff-card:hover .diff-card-title {
-      color: var(--theme-cta);
-    }
-
-    .diff-card-desc {
-      font-size: 0.75rem;
-      line-height: 1.65;
-      color: var(--theme-site-sub);
-      margin: 0;
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-    }
-
-    /* Card footer: CTA */
-    .diff-card-foot {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: auto;
-      padding-top: 0.875rem;
-      border-top: 1px solid rgba(var(--rgb-accent), 0.07);
-    }
-
-    .diff-card-cta-label {
-      font-size: 0.5625rem;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--theme-cta);
-      opacity: 0.65;
-      transition: opacity 0.2s ease;
-    }
-
-    .diff-card:hover .diff-card-cta-label {
-      opacity: 1;
-    }
-
-    .diff-card-arrow {
-      width: 0.9375rem;
-      height: 0.9375rem;
-      color: var(--theme-cta);
-      opacity: 0.55;
-      margin-left: auto;
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .diff-card:hover .diff-card-arrow {
-      transform: translateX(4px);
-      opacity: 1;
-    }
-
-    .diff-footer-note {
-      margin-top: 2.5rem;
-      text-align: center;
-      max-width: 40rem;
-      margin-inline: auto;
-      font-size: 0.875rem;
-      font-weight: 500;
-      line-height: 1.75;
-      color: var(--theme-site-sub);
-    }
-
-    /* ── Responsive: tablet ── */
-    @media (max-width: 1023px) {
-      .diff-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    /* ── Responsive: mobile ── */
-    @media (max-width: 599px) {
-      .diff-grid {
-        grid-template-columns: 1fr;
-        gap: 0.875rem;
-      }
-
-      /* Adjust problem zone bleed for narrower mobile card padding */
-      .diff-card-problem {
-        margin: -1.25rem -1.125rem 0;
-        padding: 1rem 1.125rem 0.875rem;
-      }
-
-      /* Show full desc on mobile since there's only 1 col */
-      .diff-card-desc {
-        -webkit-line-clamp: 4;
-      }
-
-      .diff-card {
-        padding: 1.25rem 1.125rem 1.125rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .diff-card,
-      .diff-card-title,
-      .diff-card-cta-label,
-      .diff-card-arrow {
-        transition: none;
-      }
-    }
-
-    .homepage-panel-services {
-      background: radial-gradient(ellipse 55% 60% at 88% 50%, rgba(var(--rgb-accent), 0.06), transparent);
-    }
-
-    .homepage-panel-cta {
-      background: radial-gradient(ellipse 60% 65% at 50% 30%, rgba(var(--rgb-accent), 0.05), transparent);
-    }
+    /* ── Ambient glow ────────────────────────────────────────────────── */
 
     .homepage-panel-glow {
       position: absolute;
@@ -1181,42 +816,165 @@ const accessServices: Array<{
       animation-delay: 8s;
     }
 
-    .homepage-service-card {
-      min-height: 100%;
-    }
+    /* ── Eyebrow / section label ─────────────────────────────────────── */
 
-    .homepage-cta-shell {
-      background: rgba(var(--rgb-surface), 0.5);
-    }
-
-    .homepage-stat-card {
-      min-width: 0;
-    }
-
-    .homepage-stat-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .homepage-section-label {
+    .hp-eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      font-size: 0.75rem;
+      gap: 0.625rem;
+      margin-bottom: 0.875rem;
+      font-size: 0.6875rem;
       font-weight: 800;
       letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--theme-section-label);
     }
 
-    .homepage-section-label::before,
-    .homepage-section-label::after {
+    .hp-eyebrow::before {
       content: "";
-      width: 2.5rem;
+      width: 1.5rem;
       height: 1px;
       background: var(--theme-section-label-line);
+      flex-shrink: 0;
+    }
+
+    /* ── Section heading ─────────────────────────────────────────────── */
+
+    .hp-heading {
+      font-size: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--theme-site-text);
+    }
+
+    /* ── Section header ──────────────────────────────────────────────── */
+
+    .hp-section-header {
+      margin-bottom: 3rem;
+    }
+
+    .hp-section-header--row {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .hp-section-lead {
+      max-width: 26rem;
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--theme-site-sub);
+    }
+
+    /* ── Editorial list ─────────────────────────────────────────────── */
+
+    .hp-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hp-list-item {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr 1.25rem;
+      align-items: start;
+      gap: 1rem 1.25rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(var(--rgb-accent), 0.06);
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.18s ease;
+    }
+
+    .hp-list-item:first-child {
+      border-top: 1px solid rgba(var(--rgb-accent), 0.06);
+    }
+
+    .hp-list-item:focus-visible {
+      outline: 2px solid var(--color-cta);
+      outline-offset: 2px;
+      border-radius: 0.25rem;
+    }
+
+    .hp-list-num {
+      font-size: 0.5625rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      color: var(--theme-site-sub);
+      opacity: 0.38;
+      padding-top: 0.3rem;
+      line-height: 1;
+    }
+
+    .hp-list-body {
+      min-width: 0;
+    }
+
+    .hp-list-challenge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: rgba(245, 158, 11, 0.82);
+      margin-bottom: 0.4rem;
+      line-height: 1.45;
+    }
+
+    :root.light .hp-list-challenge {
+      color: rgba(180, 83, 9, 0.85);
+    }
+
+    .hp-list-title {
+      font-size: 1.0625rem;
+      font-weight: 800;
+      line-height: 1.3;
+      color: var(--theme-site-text);
+      margin-bottom: 0.4rem;
+      transition: color 0.18s ease;
+    }
+
+    .hp-list-item:hover .hp-list-title {
+      color: var(--theme-cta);
+    }
+
+    .hp-list-desc {
+      font-size: 0.8125rem;
+      line-height: 1.65;
+      color: var(--theme-site-sub);
+    }
+
+    .hp-list-arrow {
+      color: var(--theme-site-sub);
+      opacity: 0.32;
+      padding-top: 0.3rem;
+      flex-shrink: 0;
+      transition: transform 0.18s ease, opacity 0.18s ease, color 0.18s ease;
+    }
+
+    .hp-list-item:hover .hp-list-arrow {
+      transform: translateX(3px);
+      opacity: 1;
+      color: var(--theme-cta);
+    }
+
+    /* ── Footer note ─────────────────────────────────────────────────── */
+
+    .hp-footer-note {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      text-align: center;
+      max-width: 40rem;
+      margin-inline: auto;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 1.75;
+      color: var(--theme-site-sub);
+    }
+
+    /* ── Services list ───────────────────────────────────────────────── */
+
+    .homepage-service-card {
+      min-height: 100%;
+      position: relative;
+      isolation: isolate;
     }
 
     .homepage-service-card::before {
@@ -1253,44 +1011,6 @@ const accessServices: Array<{
       opacity: 1;
     }
 
-    @media (min-width: 768px) {
-      .homepage-panel-glow {
-        animation-duration: 20s;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .homepage-panel-hero {
-        min-height: 82svh;
-      }
-
-      .homepage-panel-inner {
-        padding-top: 3.5rem;
-        padding-bottom: 3.5rem;
-      }
-
-      .homepage-panel-hero .homepage-panel-inner {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-
-      .homepage-panel-glow {
-        opacity: 0;
-        filter: blur(100px);
-      }
-
-      .homepage-section-label::before,
-      .homepage-section-label::after {
-        width: 1.5rem;
-      }
-    }
-
-    @media (min-width: 640px) {
-      .homepage-stat-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
     @media (min-width: 64rem) {
       .bento-grid > .homepage-service-card--feature {
         grid-column: span 6;
@@ -1307,28 +1027,6 @@ const accessServices: Array<{
       }
     }
 
-    @media (min-width: 1280px) {
-      .homepage-panel-glow {
-        filter: blur(150px);
-      }
-    }
-
-    :root.light .homepage-shell::before {
-      opacity: 0.01;
-    }
-
-    :root.light .homepage-panel-problem {
-      background: radial-gradient(ellipse 55% 60% at 10% 55%, rgba(var(--rgb-accent), 0.05), transparent);
-    }
-
-    :root.light .homepage-panel-care {
-      background: radial-gradient(ellipse 55% 60% at 90% 45%, rgba(var(--rgb-accent-alt), 0.04), transparent);
-    }
-
-    :root.light .homepage-panel-services {
-      background: radial-gradient(ellipse 55% 60% at 88% 50%, rgba(var(--rgb-accent), 0.05), transparent);
-    }
-
     :root.light .homepage-service-card::before {
       background: linear-gradient(
         160deg,
@@ -1342,24 +1040,77 @@ const accessServices: Array<{
       box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.15);
     }
 
-    :root.light .homepage-cta-shell {
-      background: rgba(var(--rgb-surface), 0.82);
+    /* ── Access table ────────────────────────────────────────────────── */
+
+    .access-main-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.875rem;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .homepage-shell::before,
-      .homepage-panel-glow {
-        animation: none;
-      }
+    .hp-access-table {
+      border: 1px solid rgba(var(--rgb-accent), 0.09);
+      border-radius: 1.25rem;
+      overflow: hidden;
     }
 
-    .homepage-panel-access {
-      background:
-        radial-gradient(ellipse 55% 55% at 88% 20%, rgba(var(--rgb-accent-alt), 0.06), transparent),
-        radial-gradient(ellipse 40% 50% at 8% 75%, rgba(var(--rgb-accent), 0.05), transparent);
+    .hp-access-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid rgba(var(--rgb-accent), 0.07);
+      font-size: 0.5625rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-site-sub);
+      opacity: 0.62;
     }
 
-    /* Pulsing live-status dot */
+    .hp-access-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid rgba(var(--rgb-accent), 0.05);
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.18s ease;
+    }
+
+    .hp-access-row:last-child { border-bottom: none; }
+    .hp-access-row:hover { background: rgba(var(--rgb-accent), 0.025); }
+
+    .hp-access-row:focus-visible {
+      outline: 2px solid var(--color-cta);
+      outline-offset: -2px;
+    }
+
+    .hp-access-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hp-access-card {
+      padding: 1.25rem;
+      border: 1px solid rgba(var(--rgb-accent), 0.09);
+      border-radius: 1rem;
+      background: rgba(var(--rgb-surface), 0.3);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.18s ease, background-color 0.18s ease;
+    }
+
+    .hp-access-card--cta:hover {
+      border-color: rgba(var(--rgb-accent), 0.18);
+      background: rgba(var(--rgb-surface), 0.5);
+    }
+
+    /* ── Access chips / dot ──────────────────────────────────────────── */
+
     .access-pulse-dot {
       display: inline-block;
       width: 0.5rem;
@@ -1371,78 +1122,10 @@ const accessServices: Array<{
     }
 
     @keyframes accessDotPulse {
-      0%, 100% {
-        opacity: 1;
-        box-shadow: 0 0 0 0 rgba(var(--rgb-accent-alt), 0.38);
-      }
-      50% {
-        opacity: 0.82;
-        box-shadow: 0 0 0 5px rgba(var(--rgb-accent-alt), 0);
-      }
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(var(--rgb-accent-alt), 0.38); }
+      50%       { opacity: 0.82; box-shadow: 0 0 0 5px rgba(var(--rgb-accent-alt), 0); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .access-pulse-dot {
-        animation: none;
-      }
-    }
-
-    /* Main 2-col grid */
-    .access-main-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.875rem;
-    }
-
-    @media (min-width: 768px) {
-      .access-main-grid {
-        grid-template-columns: 1fr 18.5rem;
-        gap: 1.125rem;
-      }
-    }
-
-    /* Table header */
-    .access-table-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.625rem 1.25rem;
-      border-bottom: 1px solid rgba(var(--rgb-accent), 0.07);
-      font-size: 0.625rem;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--color-site-sub);
-      opacity: 0.62;
-    }
-
-    /* Service rows */
-    .access-service-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.875rem 1.25rem;
-      border-bottom: 1px solid rgba(var(--rgb-accent), 0.05);
-      text-decoration: none;
-      color: inherit;
-      transition: background-color 0.2s ease;
-    }
-
-    .access-service-row:last-child {
-      border-bottom: none;
-    }
-
-    .access-service-row:hover {
-      background-color: rgba(var(--rgb-accent), 0.025);
-    }
-
-    .access-service-row:focus-visible {
-      outline: 2px solid var(--color-cta);
-      outline-offset: -2px;
-      background-color: rgba(var(--rgb-accent), 0.025);
-    }
-
-    /* Wait time chip — base */
     .access-wait-chip {
       display: inline-flex;
       align-items: center;
@@ -1456,7 +1139,6 @@ const accessServices: Array<{
       line-height: 1.6;
     }
 
-    /* Chip variants */
     .access-wait-chip--accepting {
       background: rgba(var(--rgb-accent-alt), 0.1);
       color: var(--color-cta);
@@ -1487,34 +1169,246 @@ const accessServices: Array<{
       border-color: rgba(34, 197, 94, 0.12);
     }
 
-    /* Payment column */
-    .access-payment-stack {
+    /* ── Blog grid ───────────────────────────────────────────────────── */
+
+    .hp-blog-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .hp-blog-card {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    /* Icon badge in payment cards */
-    .access-payment-icon-wrap {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.125rem;
-      height: 2.125rem;
-      border-radius: 0.625rem;
-      background: rgba(var(--rgb-accent), 0.07);
-      flex-shrink: 0;
-    }
-
-    /* CTA link card */
-    .access-cta-row {
+      padding: 1.75rem 0;
+      border-top: 1px solid rgba(var(--rgb-accent), 0.07);
       text-decoration: none;
       color: inherit;
+      transition: border-color 0.2s ease;
     }
 
+
+    /* ── Stats grid ──────────────────────────────────────────────────── */
+
+    .hp-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid rgba(var(--rgb-accent), 0.08);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .hp-stat-item {
+      padding: 1.75rem 1.5rem;
+      border-right: 1px solid rgba(var(--rgb-accent), 0.08);
+      border-bottom: 1px solid rgba(var(--rgb-accent), 0.08);
+      text-align: left;
+    }
+
+    .hp-stat-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .hp-stat-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .hp-stat-value {
+      font-size: 2.75rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--theme-site-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .hp-stat-label {
+      font-size: 0.625rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--theme-site-sub);
+      opacity: 0.7;
+    }
+
+    /* ── Responsive: ≥640px ──────────────────────────────────────────── */
+
+    @media (min-width: 640px) {
+      .homepage-panel-hero {
+        --homepage-chrome-offset: 5rem;
+      }
+    }
+
+    /* ── Responsive: ≥768px ──────────────────────────────────────────── */
+
+    @media (min-width: 768px) {
+      :global(html.light) .homepage-hero-art--light.homepage-hero-art--mobile,
+      :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--mobile {
+        display: none;
+      }
+
+      :global(html.light) .homepage-hero-art--light.homepage-hero-art--desktop,
+      :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--desktop {
+        display: block;
+        opacity: 0.9;
+      }
+
+      .homepage-panel-hero {
+        --homepage-chrome-offset: 6.5rem;
+      }
+
+      .homepage-panel-inner {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+      }
+
+      .hp-section-inner {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+      }
+
+      .hp-section-header--row {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .hp-list-item {
+        grid-template-columns: 3.5rem 1fr 1.25rem;
+        gap: 1.25rem 2rem;
+        padding: 2.25rem 0;
+      }
+
+      .hp-service {
+        grid-template-columns: 3.5rem 3rem 1fr 1.25rem;
+        align-items: start;
+        padding: 2rem 0;
+      }
+
+      .hp-service-desc {
+        display: block;
+      }
+
+      .access-main-grid {
+        grid-template-columns: 1fr 18.5rem;
+        gap: 1.125rem;
+      }
+
+      .hp-blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 2rem;
+      }
+
+      .hp-blog-card {
+        padding: 0 0 0 1.5rem;
+        border-top: none;
+        border-left: 2px solid rgba(var(--rgb-accent), 0.08);
+        border-bottom: none;
+      }
+
+      .hp-blog-card:hover {
+        border-left-color: var(--theme-cta);
+      }
+
+      .hp-stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .hp-stat-item:nth-child(2n) {
+        border-right: 1px solid rgba(var(--rgb-accent), 0.08);
+      }
+
+      .hp-stat-item:nth-child(4n) {
+        border-right: none;
+      }
+
+      .hp-stat-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid rgba(var(--rgb-accent), 0.08);
+      }
+
+      .hp-stat-item:nth-last-child(-n+1) {
+        border-bottom: none;
+      }
+
+      .hp-stat-item:last-child,
+      .hp-stat-item:nth-child(4) {
+        border-right: none;
+        border-bottom: none;
+      }
+
+      .homepage-panel-glow {
+        animation-duration: 20s;
+      }
+    }
+
+    /* ── Responsive: <640px ──────────────────────────────────────────── */
+
+    @media (max-width: 639px) {
+      .hp-service {
+        grid-template-columns: 2.25rem 1fr 1.25rem;
+        gap: 0.75rem 1rem;
+      }
+
+      .hp-service-num {
+        display: none;
+      }
+    }
+
+    /* ── Responsive: <768px ──────────────────────────────────────────── */
+
+    @media (max-width: 767px) {
+      .homepage-panel-hero {
+        min-height: 82svh;
+      }
+
+      .hp-section-inner {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .homepage-panel-inner {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      .hp-section-header {
+        margin-bottom: 2rem;
+      }
+
+      .homepage-panel-glow {
+        opacity: 0;
+      }
+
+      .hp-hero-inner {
+        min-height: auto;
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .homepage-panel-glow {
+        filter: blur(150px);
+      }
+    }
+
+    /* ── Reduced motion ──────────────────────────────────────────────── */
+
     @media (prefers-reduced-motion: reduce) {
-      .access-service-row,
-      .access-cta-row {
+      .homepage-shell::before,
+      .homepage-panel-glow,
+      .access-pulse-dot {
+        animation: none;
+      }
+
+      .hp-list-item,
+      .hp-service,
+      .hp-blog-card,
+      .hp-list-arrow,
+      .hp-service-arrow,
+      .hp-access-row,
+      .hp-access-card {
         transition: none;
       }
     }
