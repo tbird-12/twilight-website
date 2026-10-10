@@ -878,6 +878,7 @@
 
   .qc-card-panel {
     display: grid;
+    overflow: hidden;
     transition: grid-template-rows 0.36s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
@@ -885,8 +886,12 @@
 
   .qc-card-panel-inner {
     overflow: hidden;
-    border-top: 1px solid var(--theme-border);
     padding: 0 1.5rem 1.375rem;
+  }
+
+  /* Separator only renders when the panel is actually open */
+  .qc-card--open .qc-card-panel-inner {
+    border-top: 1px solid var(--theme-border);
   }
 
   .qc-card-desc {

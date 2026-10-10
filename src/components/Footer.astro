@@ -50,7 +50,7 @@ const links = [
 
 ---
 
-<footer class="relative site-footer min-h-screen">
+<footer class="relative site-footer">
   <div class="mx-auto w-full max-w-6xl">
     <!-- Brand section - centered at top -->
     <div class="text-center mb-12 lg:mb-16">
@@ -124,7 +124,7 @@ const links = [
         <div class="footer-heading">Contact</div>
         <div class="text-sm md:text-base text-site-sub space-y-4">
           <div class="space-y-2">
-            <p>P: <a href={`tel:${PHONE_NUMBER}`} class="footer-link" aria-label="Call Twilight Psychology">{PHONE_NUMBER_FORMATTED}</a></p>
+            <p>P: <a href={`tel:${PHONE_NUMBER}`} class="footer-link" aria-label={`Call Twilight Psychology at ${PHONE_NUMBER_FORMATTED}`}>{PHONE_NUMBER_FORMATTED}</a></p>
             <p>F: <a href={`fax:${FAX_NUMBER}`} class="footer-link">{FAX_NUMBER_FORMATTED}</a></p>
             <p>E: <a href={`mailto:${EMAIL_ADDRESS}`} class="footer-link">{EMAIL_ADDRESS}</a></p>
           </div>

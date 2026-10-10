@@ -77,7 +77,7 @@ export default function TopBar({ className = "" }: TopBarProps) {
         <a
           href={`tel:${PHONE_NUMBER}`}
           className="flex items-center gap-1.5 text-xs font-medium text-site-text transition-colors hover:text-cta"
-          aria-label="Call Twilight Psychology"
+          aria-label={`Call Twilight Psychology at ${PHONE_NUMBER_FORMATTED}`}
         >
           <svg
             className="h-3.5 w-3.5 shrink-0 text-icon"
@@ -127,7 +127,7 @@ export default function TopBar({ className = "" }: TopBarProps) {
           <a
             href={`tel:${PHONE_NUMBER}`}
             className="flex items-center gap-2 text-sm font-medium text-site-text transition-colors hover:text-cta"
-            aria-label="Call Twilight Psychology"
+            aria-label={`Call Twilight Psychology at ${PHONE_NUMBER_FORMATTED}`}
           >
             <svg
               className="h-4 w-4 shrink-0 text-icon"
