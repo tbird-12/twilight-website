@@ -56,52 +56,32 @@
 }
 
 :root.light {
-  /* Light Theme: "Bone, Stone & Charcoal" — OKLCH-tuned */
-  --theme-site-bg: oklch(0.99 0.004 95);
-  --theme-site-text: oklch(0.182 0 0);
-  --theme-site-sub: oklch(0.44 0.003 95);
-  --theme-site-footer: oklch(0.958 0.003 95);
-  --theme-site-ann: oklch(0.972 0.003 95);
-  --theme-cta: oklch(0.182 0 0);
-  --theme-cta-fg: oklch(1 0 0);
-  --theme-icon: oklch(0.588 0.158 242);
-  --theme-button-border: oklch(0.871 0 0);
+  /* Light Theme: "Sage & Warmth" — Welcoming, nature-inspired medical palette */
+  --theme-site-bg: oklch(0.982 0.008 130);
+  --theme-site-text: oklch(0.175 0.025 155);
+  --theme-site-sub: oklch(0.46 0.045 155);
+  --theme-site-footer: oklch(0.955 0.013 125);
+  --theme-site-ann: oklch(0.968 0.010 125);
+  --theme-cta: oklch(0.285 0.090 155);
+  --theme-cta-fg: oklch(0.982 0.008 130);
+  --theme-icon: oklch(0.52 0.13 150);
+  --theme-button-border: oklch(0.830 0.028 140);
 
-  --theme-surface: oklch(1 0 0);
-  --theme-surface-2: oklch(0.969 0.003 95);
-  --theme-surface-soft: oklch(0.182 0 0 / 0.03);
-  --theme-border: oklch(0.182 0 0 / 0.1);
-  --theme-border-strong: oklch(0.182 0 0 / 0.18);
-  --theme-glass-bg: oklch(0.99 0.004 95 / 0.86);
-  --theme-glass-border: oklch(0.182 0 0 / 0.08);
-  --theme-positive-bg: oklch(0.696 0.17 163 / 0.12);
-  --theme-positive-text: oklch(0.508 0.118 166);
-  --theme-positive-border: oklch(0.696 0.17 163 / 0.24);
-  --theme-positive-ring: oklch(0.765 0.177 163 / 0.24);
-  --theme-positive-fill: oklch(0.696 0.17 163);
-  --theme-warning-bg: oklch(0.769 0.188 70 / 0.12);
-  --theme-warning-text: oklch(0.555 0.163 49);
-  --theme-warning-border: oklch(0.769 0.188 70 / 0.24);
-  --theme-warning-ring: oklch(0.828 0.189 84 / 0.24);
-  --theme-warning-fill: oklch(0.769 0.188 70);
-  --theme-caution-bg: oklch(0.705 0.213 48 / 0.12);
-  --theme-caution-text: oklch(0.553 0.195 38);
-  --theme-caution-border: oklch(0.705 0.213 48 / 0.24);
-  --theme-caution-ring: oklch(0.75 0.183 56 / 0.24);
-  --theme-caution-fill: oklch(0.705 0.213 48);
-  --theme-alert-bg: oklch(0.645 0.246 16 / 0.1);
-  --theme-alert-text: oklch(0.514 0.222 17);
-  --theme-alert-border: oklch(0.645 0.246 16 / 0.22);
-  --theme-alert-ring: oklch(0.712 0.194 13 / 0.22);
-  --theme-alert-fill: oklch(0.645 0.246 16);
+  --theme-surface: oklch(0.998 0.004 100);
+  --theme-surface-2: oklch(0.958 0.018 130);
+  --theme-surface-soft: oklch(0.175 0.025 155 / 0.03);
+  --theme-border: oklch(0.175 0.025 155 / 0.08);
+  --theme-border-strong: oklch(0.175 0.025 155 / 0.16);
+  --theme-glass-bg: oklch(0.982 0.008 130 / 0.86);
+  --theme-glass-border: oklch(0.175 0.025 155 / 0.06);
 
-  --rgb-bg: 252, 252, 249;
-  --rgb-surface: 255, 255, 255;
-  --rgb-surface-2: 244, 244, 242;
-  --rgb-accent: 18, 18, 18;
-  --rgb-accent-alt: 2, 132, 199;
-  --theme-section-label: rgba(87, 87, 87, 0.85);
-  --theme-section-label-line: rgba(0, 0, 0, 0.12);
+  --rgb-bg: 248, 250, 245;
+  --rgb-surface: 255, 255, 254;
+  --rgb-surface-2: 239, 243, 238;
+  --rgb-accent: 25, 60, 35;
+  --rgb-accent-alt: 88, 150, 100;
+  --theme-section-label: rgba(55, 85, 65, 0.80);
+  --theme-section-label-line: rgba(25, 60, 35, 0.10);
 }
 
 @theme {
