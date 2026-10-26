@@ -30,14 +30,14 @@
     "@tailwindcss/vite": "4.3.3",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "astro": "7.3.1",
+    "astro": "7.4.2",
     "astro-icon": "1.2.0",
     "astro-pagefind": "2.0.1",
     "autoprefixer": "10.4.24",
     "postcss": "8.5.26",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3",
-    "vitest": "4.1.11"
+    "vitest": "4.1.12"
   },
   "allowScripts": {
     "esbuild@0.28.2": true,

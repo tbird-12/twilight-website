@@ -80,12 +80,12 @@ export default function QualityCareCards({ items }: QualityCareCardsProps) {
               id={`qc-panel-${i}`}
               role="region"
               aria-labelledby={`qc-trigger-${i}`}
-              className="qc-card-panel"
-              style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
+              aria-hidden={!isOpen}
+              className={`qc-card-panel${isOpen ? ' qc-card-panel--open' : ''}`}
             >
               <div className="qc-card-panel-inner">
                 <p className="qc-card-desc">{item.desc}</p>
-                <a href={item.link} className="qc-card-link">
+                <a href={item.link} className="qc-card-link" tabIndex={isOpen ? 0 : -1}>
                   Learn more
                   <svg
                     width="13"
