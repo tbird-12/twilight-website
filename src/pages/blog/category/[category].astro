@@ -62,7 +62,7 @@ const breadcrumbSchema = {
 >
   <Schema slot="page-schema" schemas={[collectionSchema, breadcrumbSchema]} />
   <!-- Page header -->
-  <section class="border-b border-border py-12 px-4">
+  <section class="border-b border-border py-8 md:py-12 px-4">
     <div class="aurora-panel max-w-5xl mx-auto rounded-[2rem] border border-border bg-surface-soft px-6 py-8 sm:px-8">
       <a
         href="/blog"
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
   </section>
 
   <!-- Posts grid -->
-  <section class="py-12 px-4">
+  <section class="py-8 md:py-12 px-4">
     <div class="max-w-5xl mx-auto">
       {posts.length === 0 ? (
         <div class="text-center py-16">
