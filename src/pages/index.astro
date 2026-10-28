@@ -354,7 +354,7 @@ const qualityCareItems = [
 
 
     <!-- ════════════════ FROM OUR BLOG ════════════════ -->
-    <section class="hp-section hp-section--alt relative isolate overflow-hidden px-4">
+    <section class="hp-section hp-section--alt homepage-panel-blog relative isolate overflow-hidden px-4">
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
@@ -468,8 +468,8 @@ const qualityCareItems = [
   <style>
     @keyframes panelGlowBreath {
       0%,
-      100% { opacity: 0.18; }
-      50%   { opacity: 0.3; }
+      100% { opacity: 0.28; }
+      50%   { opacity: 0.50; }
     }
 
     :global(body:has(.homepage-shell)) {
@@ -504,11 +504,44 @@ const qualityCareItems = [
     }
 
     .hp-section--alt {
-      background: rgba(var(--rgb-surface), 0.22);
+      background-color: var(--theme-surface);
     }
 
     :root.light .hp-section--alt {
-      background: rgba(var(--rgb-surface), 0.55);
+      background-color: rgba(var(--rgb-surface), 0.80);
+    }
+
+    /* ── Section top separator ───────────────────────────────────────── */
+    /* 1px gradient line at the start of every content section.
+       Gives clear visual boundary cues, especially on mobile dark mode
+       where background color shifts alone are very subtle. */
+    .hp-section::before {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      top: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(var(--rgb-accent-alt), 0.40) 20%,
+        rgba(var(--rgb-accent-alt), 0.70) 50%,
+        rgba(var(--rgb-accent-alt), 0.40) 80%,
+        transparent 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    :root.light .hp-section::before {
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(var(--rgb-accent), 0.08) 20%,
+        rgba(var(--rgb-accent), 0.16) 50%,
+        rgba(var(--rgb-accent), 0.08) 80%,
+        transparent 100%
+      );
     }
 
     .hp-section-inner {
@@ -522,7 +555,8 @@ const qualityCareItems = [
     /* ── Panel backgrounds ───────────────────────────────────────────── */
 
     .homepage-panel-problem {
-      background: radial-gradient(ellipse 55% 60% at 10% 55%, rgba(var(--rgb-accent), 0.07), transparent);
+      background-color: oklch(0.175 0.010 285);
+      background-image: radial-gradient(ellipse 80% 60% at 15% 60%, rgba(var(--rgb-accent-alt), 0.09), transparent);
     }
 
     /* ── Decorative dot-grid for the gaps section ──────────────────── */
@@ -541,15 +575,26 @@ const qualityCareItems = [
     }
 
     .homepage-panel-care {
-      background: radial-gradient(ellipse 55% 60% at 90% 45%, rgba(var(--rgb-accent-alt), 0.06), transparent);
+      background-color: oklch(0.163 0.013 240);
+      background-image: radial-gradient(ellipse 70% 60% at 88% 50%, rgba(var(--rgb-accent-alt), 0.12), transparent);
     }
 
     .homepage-panel-services {
-      background: radial-gradient(ellipse 55% 60% at 88% 50%, rgba(var(--rgb-accent), 0.06), transparent);
+      background-color: oklch(0.150 0.007 265);
+      background-image: radial-gradient(ellipse 60% 60% at 88% 50%, rgba(var(--rgb-accent-alt), 0.08), transparent);
     }
 
     .homepage-panel-cta {
-      background: radial-gradient(ellipse 60% 65% at 50% 30%, rgba(var(--rgb-accent), 0.05), transparent);
+      background-color: oklch(0.155 0.015 278);
+      background-image:
+        radial-gradient(ellipse 80% 65% at 50% 25%, rgba(var(--rgb-accent-alt), 0.10), transparent),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(var(--rgb-accent-alt), 0.05), transparent);
+    }
+
+    /* Blog section — no panel class in HTML; own class added below */
+    .homepage-panel-blog {
+      background-color: oklch(0.172 0.008 292);
+      background-image: radial-gradient(ellipse 60% 50% at 85% 40%, rgba(var(--rgb-accent-alt), 0.06), transparent);
     }
 
     /* ── Hero section ────────────────────────────────────────────────── */
@@ -664,17 +709,17 @@ const qualityCareItems = [
     .homepage-panel-glow-left {
       top: 20%;
       left: -8%;
-      width: 30rem;
-      height: 30rem;
-      background: rgba(var(--rgb-accent), 0.18);
+      width: 32rem;
+      height: 32rem;
+      background: rgba(var(--rgb-accent-alt), 0.32);
     }
 
     .homepage-panel-glow-right {
       right: -8%;
       top: 20%;
-      width: 30rem;
-      height: 30rem;
-      background: rgba(var(--rgb-accent-alt), 0.14);
+      width: 32rem;
+      height: 32rem;
+      background: rgba(var(--rgb-accent-alt), 0.24);
       animation-delay: 8s;
     }
 
@@ -1252,7 +1297,9 @@ const qualityCareItems = [
       }
 
       .homepage-panel-glow {
-        opacity: 0;
+        width: 16rem;
+        height: 16rem;
+        filter: blur(80px);
       }
 
       .hp-hero-inner {
@@ -1266,6 +1313,25 @@ const qualityCareItems = [
       .homepage-panel-glow {
         filter: blur(150px);
       }
+    }
+
+    /* ── Light-mode resets for dark-specific panel backgrounds ─────── */
+    /* The oklch background-color values above are dark-mode only.
+       In light mode, transparent restores the normal light surface colors. */
+    :root.light .homepage-panel-problem,
+    :root.light .homepage-panel-services,
+    :root.light .homepage-panel-care,
+    :root.light .homepage-panel-blog,
+    :root.light .homepage-panel-cta {
+      background-color: transparent;
+    }
+
+    :root.light .homepage-panel-glow-left {
+      background: rgba(var(--rgb-accent), 0.12);
+    }
+
+    :root.light .homepage-panel-glow-right {
+      background: rgba(var(--rgb-accent-alt), 0.10);
     }
 
     /* ── Reduced motion ──────────────────────────────────────────────── */
@@ -1284,5 +1350,167 @@ const qualityCareItems = [
         transition: none;
       }
     }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       SCROLL-DRIVEN REVEAL ENHANCEMENTS
+       All gated with @supports — browsers without animation-timeline
+       get the plain static layout; no opacity:0 flash, no broken states.
+    ═══════════════════════════════════════════════════════════════════ */
+
+    @supports (animation-timeline: view()) {
+
+      /* ── Section headers: stagger eyebrow → h2 → subtitle on entry ── */
+      .hp-section-header > * {
+        opacity: 0;
+        transform: translateY(1rem) scale(0.985);
+        animation-name: viewReveal;
+        animation-duration: 1ms;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-timeline: view();
+      }
+      .hp-section-header > *:nth-child(1) { animation-range: entry  5% cover 28%; }
+      .hp-section-header > *:nth-child(2) { animation-range: entry 11% cover 34%; }
+      .hp-section-header > *:nth-child(3) { animation-range: entry 17% cover 40%; }
+      .hp-section-header > *:nth-child(4) { animation-range: entry 23% cover 46%; }
+
+      /* Row-variant: children sit side-by-side on desktop → reveal together */
+      @media (min-width: 768px) {
+        .hp-section-header--row > * { animation-range: entry 8% cover 32%; }
+      }
+
+      /* ── Services bento: cascade each card over a wider scroll window ── */
+      .bento-grid.reveal-children > *:nth-child(1) { animation-range: entry  6% cover 28%; }
+      .bento-grid.reveal-children > *:nth-child(2) { animation-range: entry 10% cover 32%; }
+      .bento-grid.reveal-children > *:nth-child(3) { animation-range: entry 14% cover 36%; }
+      .bento-grid.reveal-children > *:nth-child(4) { animation-range: entry 18% cover 40%; }
+      .bento-grid.reveal-children > *:nth-child(5) { animation-range: entry 22% cover 44%; }
+
+      /* ── Specialty cards: stagger as the grid scrolls in ─────────── */
+      .hp-specialties-grid > * {
+        opacity: 0;
+        transform: translateY(1rem) scale(0.985);
+        animation-name: viewReveal;
+        animation-duration: 1ms;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-timeline: view();
+      }
+      .hp-specialties-grid > *:nth-child(1) { animation-range: entry  5% cover 26%; }
+      .hp-specialties-grid > *:nth-child(2) { animation-range: entry  7% cover 28%; }
+      .hp-specialties-grid > *:nth-child(3) { animation-range: entry  9% cover 30%; }
+      .hp-specialties-grid > *:nth-child(4) { animation-range: entry 11% cover 32%; }
+      .hp-specialties-grid > *:nth-child(5) { animation-range: entry 13% cover 34%; }
+      .hp-specialties-grid > *:nth-child(6) { animation-range: entry 15% cover 36%; }
+      .hp-specialties-grid > *:nth-child(7) { animation-range: entry 17% cover 38%; }
+      .hp-specialties-grid > *:nth-child(8) { animation-range: entry 19% cover 40%; }
+
+      /* ── Stats grid: stagger the four stat blocks ──────────────── */
+      .hp-stats-grid > * {
+        opacity: 0;
+        transform: translateY(1rem) scale(0.985);
+        animation-name: viewReveal;
+        animation-duration: 1ms;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-timeline: view();
+      }
+      .hp-stats-grid > *:nth-child(1) { animation-range: entry  8% cover 32%; }
+      .hp-stats-grid > *:nth-child(2) { animation-range: entry 12% cover 36%; }
+      .hp-stats-grid > *:nth-child(3) { animation-range: entry 16% cover 40%; }
+      .hp-stats-grid > *:nth-child(4) { animation-range: entry 20% cover 44%; }
+
+      /* ── Blog grid: three-column stagger ───────────────────────── */
+      .hp-blog-grid > * {
+        opacity: 0;
+        transform: translateY(1rem) scale(0.985);
+        animation-name: viewReveal;
+        animation-duration: 1ms;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-timeline: view();
+      }
+      .hp-blog-grid > *:nth-child(1) { animation-range: entry  8% cover 32%; }
+      .hp-blog-grid > *:nth-child(2) { animation-range: entry 13% cover 37%; }
+      .hp-blog-grid > *:nth-child(3) { animation-range: entry 18% cover 42%; }
+    }
+
+    /* ── Hero background parallax ─────────────────────────────────── */
+    /* Moves the art layer upward at ~60% of the scroll rate, creating
+       depth. scale(1.15) pre-expands the div so translateY(-5%) never
+       reveals bare section background behind the art edges. */
+    @supports (animation-timeline: scroll()) {
+      @keyframes heroParallaxDrift {
+        from { transform: scale(1.15) translateY(0%); }
+        to   { transform: scale(1.15) translateY(-5%); }
+      }
+      .homepage-hero-art--light,
+      .homepage-hero-art--dark {
+        animation: heroParallaxDrift linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0px 120vh;
+        will-change: transform;
+      }
+    }
+
+    /* ── Reduced-motion safety net for the new selectors ──────────── */
+    /* global.css handles animation-duration:0.01ms for everything, but
+       opacity:0 set directly on the selector (not via keyframes) needs
+       an explicit reset here. */
+    @media (prefers-reduced-motion: reduce) {
+      .hp-section-header > *,
+      .hp-specialties-grid > *,
+      .hp-stats-grid > *,
+      .hp-blog-grid > * {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+      .homepage-hero-art--light,
+      .homepage-hero-art--dark {
+        animation: none !important;
+        transform: none !important;
+        will-change: auto !important;
+      }
+    }
   </style>
+
+  <script>
+    // Count-up animation for the "By the Numbers" stats.
+    // Triggers once per stat when it enters the viewport at ≥60% visibility.
+    // Fully skipped when prefers-reduced-motion is set.
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const statValues = document.querySelectorAll<HTMLElement>('.hp-stat-value');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            observer.unobserve(entry.target);
+
+            const el = entry.target as HTMLElement;
+            const match = el.textContent?.trim().match(/^([\d,]+)(\D*)$/);
+            if (!match) continue;
+
+            const target = parseInt(match[1].replace(/,/g, ''), 10);
+            const suffix = match[2] ?? '';
+            // Short duration for small numbers (3, 7) to avoid slow single-digit count
+            const dur = target < 20 ? 700 : 1400;
+            const t0 = performance.now();
+
+            const tick = (now: number) => {
+              const p = Math.min((now - t0) / dur, 1);
+              const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+              el.textContent = Math.round(eased * target).toLocaleString() + suffix;
+              if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+          }
+        },
+        { threshold: 0.6 },
+      );
+
+      statValues.forEach((el) => observer.observe(el));
+    }
+  </script>
 </Layout>

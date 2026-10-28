@@ -1,10 +1,10 @@
 {
   "name": "twilight_website",
   "type": "module",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "packageManager": "npm@12.0.2",
   "engines": {
-    "node": ">=24.19.0",
+    "node": "v24.22.1",
     "npm": ">=12.0.1"
   },
   "scripts": {
