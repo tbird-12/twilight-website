@@ -108,7 +108,6 @@ const webpageSchema = {
           "load",
           () => {
             fontPreloadLink.rel = "stylesheet";
-            fontPreloadLink.onload = null;
           },
           { once: true },
         );
@@ -129,7 +128,7 @@ const webpageSchema = {
 
     <!-- Theme initializer: prevents flash on load -->
     <script is:inline>
-      (function () {
+      (() => {
         const stored = localStorage.getItem("theme");
         const theme = stored === "light" || stored === "dark" ? stored : "dark";
         document.documentElement.classList.remove("light", "dark");

@@ -15,7 +15,7 @@ const differentiators = [
   { icon: "lucide:stethoscope", stat: "8+", label: "Years Expertise" },
   { icon: "lucide:globe", stat: "40+", label: "States via PSYPACT" },
   { icon: "lucide:timer", stat: `${SELF_PAY_REPORT_TURNAROUND_DAYS} days`, label: "Optional self-pay turnaround" },
-  { icon: "lucide:calendar-check", stat: "2,300+", label: "Evaluations completed" },
+  { icon: "lucide:calendar-check", stat: "2,400+", label: "Evaluations completed" },
   { icon: "lucide:shield-check", stat: "20+", label: "Insurance panels" },
 ];
 
@@ -267,48 +267,45 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const root = document.documentElement;
+  const root = document.documentElement;
 
-    // ── Theme toggle ──
-    const getCurrentTheme = (): string => {
-      if (root.classList.contains('light')) return 'light';
-      return 'dark';
-    };
+  // ── Theme toggle ──
+  const getCurrentTheme = (): string => {
+    if (root.classList.contains('light')) return 'light';
+    return 'dark';
+  };
 
-    const syncToggleState = () => {
-      const isDark = getCurrentTheme() === 'dark';
-      document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
-        btn.setAttribute('aria-pressed', String(isDark));
-        btn.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
-      });
-    };
-
-    const applyTheme = (theme: string) => {
-      root.classList.remove('light', 'dark');
-      root.classList.add(theme);
-      root.style.colorScheme = theme;
-      localStorage.setItem('theme', theme);
-      syncToggleState();
-    };
-
-    // Sync on load to reflect the theme already applied by the inline script
-    syncToggleState();
-
+  const syncToggleState = () => {
+    const isDark = getCurrentTheme() === 'dark';
     document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
-        applyTheme(next);
-      });
+      btn.setAttribute('aria-pressed', String(isDark));
+      btn.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
     });
+  };
 
-    // ── Scroll-reveal IntersectionObserver ──
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) {
-      document.querySelectorAll('.lp-reveal').forEach((el) => el.classList.add('is-visible'));
-      return;
-    }
+  const applyTheme = (theme: string) => {
+    root.classList.remove('light', 'dark');
+    root.classList.add(theme);
+    root.style.colorScheme = theme;
+    localStorage.setItem('theme', theme);
+    syncToggleState();
+  };
 
+  // Sync on load to reflect the theme already applied by the inline script
+  syncToggleState();
+
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+    });
+  });
+
+  // ── Scroll-reveal IntersectionObserver ──
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    document.querySelectorAll('.lp-reveal').forEach((el) => el.classList.add('is-visible'));
+  } else {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -322,5 +319,5 @@ const staggerStyle = (index: number) => `--stagger-i:${index}`;
     );
 
     document.querySelectorAll('.lp-reveal').forEach((el) => observer.observe(el));
-  });
+  }
 </script>

@@ -21,7 +21,7 @@ const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
   .slice(0, 3);
 
 const stats = [
-  { label: "Evaluations", value: "2300+" },
+  { label: "Evaluations", value: "2400+" },
   { label: "Years Experience", value: "8+" },
   { label: "Weeks Self-Pay Waitlist", value: String(SELF_PAY_WAITLIST_WEEKS) },
   { label: "Days to Self-Pay Report", value: String(SELF_PAY_REPORT_TURNAROUND_DAYS) },
@@ -121,6 +121,7 @@ const qualityCareItems = [
 >
   <div class="homepage-shell bg-site-bg">
     <section
+      aria-label="Neuro-affirming psychology services in Kentucky"
       class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
     >
       <div
@@ -188,6 +189,7 @@ const qualityCareItems = [
 
     <!-- ════════════════ THE GAPS WE CLOSE ════════════════ -->
     <section
+      aria-labelledby="gaps-heading"
       class="hp-section hp-section--alt homepage-panel-problem relative isolate overflow-hidden px-4"
     >
       <div
@@ -199,7 +201,7 @@ const qualityCareItems = [
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header">
           <p class="hp-eyebrow">Sound Familiar?</p>
-          <h2 class="hp-heading font-serif font-black">
+          <h2 id="gaps-heading" class="hp-heading font-serif font-black">
             The Gaps Families Hit<span class="text-cta"> and How We Close Them</span>
           </h2>
           <p class="mt-3 text-sm sm:text-base leading-relaxed text-site-sub max-w-xl">
@@ -219,6 +221,7 @@ const qualityCareItems = [
     </section>
 
     <section
+      aria-labelledby="services-heading"
       class="hp-section hp-section--alt homepage-panel-services relative isolate overflow-hidden px-4"
     >
       <div
@@ -229,7 +232,7 @@ const qualityCareItems = [
         <header class="hp-section-header hp-section-header--row">
           <div>
             <p class="hp-eyebrow">Core Services</p>
-            <h2 class="hp-heading font-serif font-black">How We Can Help</h2>
+            <h2 id="services-heading" class="hp-heading font-serif font-black">How We Can Help</h2>
           </div>
           <p class="hp-section-lead">
             Diagnostic clarity, evidence-based treatment, and in-house follow-through.
@@ -240,6 +243,7 @@ const qualityCareItems = [
             services.map((service) => (
               <a
                 href={service.link}
+                aria-label={`Learn more about ${service.title}`}
                 data-astro-prefetch="viewport"
                 class={`group homepage-service-card homepage-card-strong glass-card-premium ${service.cardClass ?? ""} relative flex h-full flex-col rounded-4xl p-6 sm:p-8 transition-all duration-500 min-h-44 hover:border-cta/20 active:scale-[0.98] hover:shadow-lg hover:shadow-cta/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2`}
               >
@@ -261,7 +265,7 @@ const qualityCareItems = [
                     {service.desc}
                   </p>
 
-                  <span class="mt-auto inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors">
+                  <span aria-hidden="true" class="mt-auto inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors">
                     Explore Service
                     <span
                       class="w-8 h-px bg-cta/30 group-hover:w-12 group-hover:bg-cta transition-all"
@@ -277,7 +281,7 @@ const qualityCareItems = [
     </section>
 
     <!-- ════════════════ SPECIALTY EVALUATIONS ════════════════ -->
-    <section class="hp-section homepage-panel-care hp-section-specialty-cards relative isolate overflow-hidden px-4">
+    <section aria-labelledby="specialty-heading" class="hp-section homepage-panel-care hp-section-specialty-cards relative isolate overflow-hidden px-4">
       <div
         class="homepage-panel-glow homepage-panel-glow-right"
         aria-hidden="true"
@@ -293,21 +297,21 @@ const qualityCareItems = [
               Private pay · ~{SELF_PAY_WAITLIST_WEEKS} wk wait · {SELF_PAY_REPORT_TURNAROUND_DAYS}-day report
             </span>
           </div>
-          <h2 class="hp-heading font-serif font-black">
+          <h2 id="specialty-heading" class="hp-heading font-serif font-black">
             Looking for Evaluations <span class="text-cta">Beyond Neurodiversity</span>
           </h2>
           <p class="mt-3 text-sm sm:text-base leading-relaxed text-site-sub max-w-2xl">
             Evaluations that fall outside standard insurance definitions: no prior authorization, no managed-care restrictions or justification of medical necessity. Transparent self-pay rates apply, and most clients are seen within {SELF_PAY_WAITLIST_WEEKS} weeks.
           </p>
         </header>
-        <div class="hp-specialties-grid" role="list" aria-label="Specialty evaluation services">
+        <div class="hp-specialties-grid" aria-label="Specialty evaluation services">
           {
             specialties.map((spec) => (
               <a
                 href={`/specialties/${spec.slug}`}
+                aria-label={`Learn about ${spec.name} evaluations`}
                 data-astro-prefetch="viewport"
                 class="hp-specialty-card group"
-                role="listitem"
               >
                 <h3 class="hp-specialty-name font-serif group-hover:text-cta transition-colors duration-200">
                   {spec.name}
@@ -335,6 +339,7 @@ const qualityCareItems = [
           <div class="flex flex-wrap gap-3">
             <a
               href="/resources/fees"
+              aria-label="View self-pay evaluation rates"
               data-astro-prefetch="viewport"
               class="text-xs font-black uppercase tracking-widest text-cta/80 hover:text-cta transition-colors"
             >
@@ -342,6 +347,7 @@ const qualityCareItems = [
             </a>
             <a
               href="/specialties"
+              aria-label="View all specialty evaluations"
               data-astro-prefetch="viewport"
               class="text-xs font-black uppercase tracking-widest text-site-sub/70 hover:text-cta transition-colors"
             >
@@ -354,15 +360,16 @@ const qualityCareItems = [
 
 
     <!-- ════════════════ FROM OUR BLOG ════════════════ -->
-    <section class="hp-section hp-section--alt homepage-panel-blog relative isolate overflow-hidden px-4">
+    <section aria-labelledby="blog-heading" class="hp-section hp-section--alt homepage-panel-blog relative isolate overflow-hidden px-4">
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
             <p class="hp-eyebrow">From Our Blog</p>
-            <h2 class="hp-heading font-serif font-black">Insights &amp; Updates</h2>
+            <h2 id="blog-heading" class="hp-heading font-serif font-black">Insights &amp; Updates</h2>
           </div>
           <a
             href="/blog"
+            aria-label="View all blog posts"
             data-astro-prefetch="viewport"
             class="text-cta font-black text-sm hover:underline self-end"
           >
@@ -380,6 +387,7 @@ const qualityCareItems = [
               return (
                 <a
                   href={`/blog/${post.id}`}
+                  aria-label={`Read article: ${post.data.title}`}
                   data-astro-prefetch="viewport"
                   class="hp-blog-card group"
                 >
@@ -403,7 +411,7 @@ const qualityCareItems = [
                   <p class="text-xs text-site-sub leading-relaxed line-clamp-3 mb-4">
                     {post.data.description}
                   </p>
-                  <span class="mt-auto text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors">
+                  <span aria-hidden="true" class="mt-auto text-xs font-black uppercase tracking-widest text-cta/80 group-hover:text-cta transition-colors">
                     Read article →
                   </span>
                 </a>
@@ -416,6 +424,7 @@ const qualityCareItems = [
 
     <!-- ════════════════ CTA ════════════════ -->
     <section
+      aria-label="Get started with Twilight Psychology"
       class="hp-section homepage-panel-cta relative isolate overflow-hidden px-4"
     >
       <div class="hp-section-inner mx-auto max-w-5xl text-center">

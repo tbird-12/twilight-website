@@ -12,14 +12,10 @@ interface ThemeToggleProps {
 export default function ThemeToggle({ className = "" }: ThemeToggleProps) {
   const { isDark, toggleTheme } = useTheme();
 
-  const handleToggle = () => {
-    toggleTheme();
-  };
-
   return (
     <button
       type="button"
-      onClick={handleToggle}
+      onClick={toggleTheme}
       className={`inline-flex h-9 w-9 items-center justify-center rounded-full bg-surface p-0 text-icon shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-surface-hover hover:shadow-md ${className}`.trim()}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-pressed={isDark}

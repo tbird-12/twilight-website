@@ -2,19 +2,19 @@
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Cache images for 30 days
+# Cache images for 30 days with background revalidation
 /*.png
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 /*.jpg
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 /*.jpeg
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 /*.webp
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 /*.avif
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 /*.svg
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
 # Cache fonts for 1 year
 /*.woff2
@@ -22,8 +22,15 @@
 /*.woff
   Cache-Control: public, max-age=31536000, immutable
 
-# HTML pages: short cache with revalidation
+# Cache PDF documents for 30 days
+/*.pdf
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+  Content-Disposition: inline
+
+# HTML pages: serve from CDN cache for 1 hour, stale-while-revalidate for 1 day
 /*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

@@ -36,6 +36,14 @@ export default function ResumeUploadForm({
     return { valid: true, message: "" };
   };
 
+  const readFileAsDataURL = (file: File): Promise<string> =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result as string);
+      reader.onerror = () => reject(new Error("Failed to read file"));
+      reader.readAsDataURL(file);
+    });
+
   const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -60,62 +68,49 @@ export default function ResumeUploadForm({
     setStatus("Uploading resume...");
     setStatusType("idle");
 
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
+    try {
+      const dataUrl = await readFileAsDataURL(file);
+      const base64Data = dataUrl.split(",")[1];
+      const payload = {
+        fileName: file.name,
+        mimeType: file.type,
+        fileData: base64Data,
+        position: position,
+      };
 
-    reader.onload = async () => {
-      try {
-        const base64Data = (reader.result as string).split(",")[1];
-        const payload = {
-          fileName: file.name,
-          mimeType: file.type,
-          fileData: base64Data,
-          position: position,
-        };
-
-        if (!scriptURL) {
-          setStatus(
-            "Resume upload not yet configured. Please contact us directly at info@twilightpsychology.com"
-          );
-          setStatusType("error");
-          setUploading(false);
-          return;
-        }
-
-        const response = await fetch(scriptURL, {
-          method: "POST",
-          body: JSON.stringify(payload),
-        });
-
-        const data = await response.json();
-
-        if (data.status === "success") {
-          setStatus("Resume uploaded successfully! We will review it shortly.");
-          setStatusType("success");
-          form.reset();
-        } else {
-          setStatus(
-            `Upload failed: ${data.message || "Unknown error"}. Please try again or email us directly.`
-          );
-          setStatusType("error");
-        }
-      } catch (error) {
+      if (!scriptURL) {
         setStatus(
-          "An error occurred while uploading. Please try again or email us directly at info@twilightpsychology.com"
+          "Resume upload not yet configured. Please contact us directly at info@twilightpsychology.com"
         );
         setStatusType("error");
-      } finally {
-        setUploading(false);
+        return;
       }
-    };
 
-    reader.onerror = () => {
+      const response = await fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json() as { status: string; message?: string };
+
+      if (data.status === "success") {
+        setStatus("Resume uploaded successfully! We will review it shortly.");
+        setStatusType("success");
+        form.reset();
+      } else {
+        setStatus(
+          `Upload failed: ${data.message ?? "Unknown error"}. Please try again or email us directly.`
+        );
+        setStatusType("error");
+      }
+    } catch {
       setStatus(
-        "Failed to read the file. Please try again or email us directly."
+        "An error occurred while uploading. Please try again or email us directly at info@twilightpsychology.com"
       );
       setStatusType("error");
+    } finally {
       setUploading(false);
-    };
+    }
   };
 
   return (

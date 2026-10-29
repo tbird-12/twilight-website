@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { useState, useCallback } from 'react';
+import { useReducedMotion } from '../hooks/useReducedMotion';
 
 interface AccordionItem {
   id: string;
@@ -37,6 +38,8 @@ export default function Accordion({
     });
   }, [allowMultiple]);
 
+  const reduced = useReducedMotion();
+
   return (
     <div className={`space-y-2 ${className}`}>
       {items.map((item, idx) => {
@@ -47,7 +50,7 @@ export default function Accordion({
             className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
               isOpen ? 'border-cta/20 shadow-sm' : 'border-border'
             }`}
-            style={{
+            style={reduced ? undefined : {
               animation: `blurIn 400ms ease-out both`,
               animationDelay: `${idx * 40}ms`,
             }}

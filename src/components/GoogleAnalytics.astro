@@ -7,27 +7,25 @@ const { gaId } = Astro.props;
     <script is:inline define:vars={{ gaId }}>
       // Pre-define gtag so calls before the library loads are queued
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
+      // Keep function declaration + arguments: GA4's dataLayer contract requires this exact shape
+      function gtag() { window.dataLayer.push(arguments); }
       window.gtag = gtag;
 
       // Defer loading the GA library until after critical rendering
-      (window.requestIdleCallback || function(cb) { setTimeout(cb, 200); })(function() {
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+      const loadGA = () => {
+        const s = document.createElement('script');
+        s.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
         s.async = true;
         document.head.appendChild(s);
-
         gtag('js', new Date());
         gtag('config', gaId);
-      });
+      };
+
+      (window.requestIdleCallback ?? ((cb) => setTimeout(cb, 200)))(loadGA);
 
       // Handle Astro View Transitions
-      document.addEventListener('astro:after-swap', function() {
-        gtag('config', gaId, {
-          page_path: window.location.pathname,
-        });
+      document.addEventListener('astro:after-swap', () => {
+        gtag('config', gaId, { page_path: window.location.pathname });
       });
     </script>
   </>

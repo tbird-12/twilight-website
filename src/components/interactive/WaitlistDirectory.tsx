@@ -175,8 +175,8 @@ export default function WaitlistDirectory({ providers }: WaitlistDirectoryProps)
               const isExpanded = expandedCard === provider.id;
               const nameParts = provider.name.split(" ");
               const initials =
-                (nameParts[0]?.[0] || "") +
-                (nameParts[nameParts.length - 1]?.[0] || "");
+                (nameParts[0]?.[0] ?? "") +
+                (nameParts[nameParts.length - 1]?.[0] ?? "");
 
               return (
                 <button

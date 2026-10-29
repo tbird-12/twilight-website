@@ -20,6 +20,7 @@ export default function ApplyButton({
     <div className="w-full">
       {!showForm ? (
         <button
+          type="button"
           onClick={() => setShowForm(true)}
           className={`block w-full py-4 text-center font-black rounded-full transition-all text-sm ${
             ctaVariant === "solid"
@@ -33,6 +34,7 @@ export default function ApplyButton({
         <div className="space-y-3">
           <ResumeUploadForm position={position} scriptURL={scriptURL} />
           <button
+            type="button"
             onClick={() => setShowForm(false)}
             className="w-full py-2 px-4 text-sm font-semibold text-site-sub hover:text-site-text transition-colors text-center"
           >
