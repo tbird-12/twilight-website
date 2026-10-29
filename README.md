@@ -60,8 +60,8 @@ npm run preview
 
 ## Runtime and dependency policy
 
-- **Standard runtime:** Node.js `24.15.0`
-- **Standard package manager:** npm `11.12.1`
+- **Standard runtime:** Node.js `24.19.0`
+- **Standard package manager:** npm `12.0.2`
 - **Version pinning:** `.nvmrc`, `.node-version`, `package.json#packageManager`, `package.json#engines`, and `package.json#volta`
 - **Deterministic installs:** commit `package-lock.json` and use `npm ci`
 - **Future dependency additions:** `.npmrc` enables `save-exact=true` and `engine-strict=true`
