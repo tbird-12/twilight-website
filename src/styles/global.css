@@ -45,7 +45,7 @@
   --rgb-surface: 17, 17, 20;
   --rgb-surface-2: 30, 30, 34;
   --rgb-accent: 255, 255, 255;
-  --rgb-accent-alt: 56, 189, 248;
+  --rgb-accent-alt: 167, 139, 250;
   --theme-section-label: rgba(148, 163, 184, 0.9);
   --theme-section-label-line: rgba(255, 255, 255, 0.1);
   --display-fluid-sm: clamp(2rem, 1.55rem + 1.8vw, 2.75rem);
