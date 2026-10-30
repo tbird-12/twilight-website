@@ -11,7 +11,6 @@ import { formatBlogDate, hasDistinctUpdatedDate } from "../../utils/blogDates";
 import { getSeriesByPostId } from "../../data/blogSeries";
 import logoAsset from "../../assets/images/logo.png";
 import MaskingInventoryPopupWrapper from "../../components/interactive/MaskingInventoryPopupWrapper.astro";
-import BlogTableOfContentsWrapper from "../../components/blog/BlogTableOfContentsWrapper.astro";
 
 function getHeroImageClasses(isPortrait: boolean) {
   if (isPortrait) {
@@ -49,8 +48,7 @@ const {
   heroImage,
   heroImageAlt,
 } = post.data;
-const { Content, headings } = await render(post);
-const headingsForToc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const { Content } = await render(post);
 const siteUrl = Astro.site || new URL("https://www.twilightpsychology.com");
 const canonicalURL = new URL(`/blog/${post.id}/`, siteUrl).href;
 const optimizedOgImage = heroImage
@@ -236,14 +234,9 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
   imageAlt={heroImageAlt || `${title} preview image`}
 >
   <Schema slot="page-schema" schemas={[articleSchema, breadcrumbSchema]} />
-
-  {/* Mobile-first reading layout: single col → two-col with sticky TOC sidebar on lg+ */}
-  <div class="px-4 sm:px-6">
-    <div class="mx-auto flex max-w-5xl flex-col py-8 md:py-12 lg:flex-row lg:items-start lg:gap-12">
-
-      <article class="min-w-0 w-full lg:max-w-prose">
-        <!-- Breadcrumb -->
-        <nav class="flex items-center gap-2 text-xs text-site-sub mb-5 md:mb-8" aria-label="Breadcrumb">
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-site-sub mb-8" aria-label="Breadcrumb">
       <a href="/blog" class="hover:text-site-text transition-colors">Blog</a>
       <span>/</span>
       <a href={`/blog/category/${category}`} class="hover:text-site-text transition-colors">
@@ -254,7 +247,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     </nav>
 
     <!-- Post header -->
-      <header class="aurora-panel mb-6 md:mb-10 rounded-4xl border border-border bg-surface-soft px-5 py-6 sm:px-8 sm:py-8">
+    <header class="aurora-panel mb-10 rounded-4xl border border-border bg-surface-soft px-5 py-6 sm:px-8 sm:py-8">
       <CategoryBadge category={category} size="md" />
 
       <h1 class="blog-gradient-text fluid-display-md font-heading font-bold mt-4 mb-5">
@@ -321,7 +314,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     }
 
     <!-- Post body -->
-    <div class="prose prose-base md:prose-lg max-w-none
+    <div class="prose prose-lg max-w-none
       prose-headings:font-heading prose-headings:text-site-text
       prose-p:text-site-text prose-p:leading-relaxed
       prose-a:text-icon prose-a:no-underline hover:prose-a:underline
@@ -334,7 +327,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     </div>
 
     <!-- Post footer -->
-    <footer class="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-border space-y-6">
+    <footer class="mt-12 pt-8 border-t border-border space-y-6">
       <a
         href={`/blog/category/${category}`}
         class="inline-flex items-center gap-1.5 text-sm text-site-sub hover:text-site-text transition-colors"
@@ -390,21 +383,9 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
     </footer>
   </article>
 
-  <!-- Sticky TOC sidebar: hidden on mobile, visible on lg+ -->
-  {headingsForToc.length >= 2 && (
-    <aside class="hidden lg:block lg:w-56 lg:shrink-0 lg:self-start">
-      <div class="sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto pr-1 pt-12">
-        <BlogTableOfContentsWrapper headings={headingsForToc} />
-      </div>
-    </aside>
-  )}
-
-    </div>
-  </div>
-
   <!-- Related posts -->
   {relatedPosts.length > 0 && (
-    <section class="border-t border-border bg-surface-soft py-8 md:py-12 px-4">
+    <section class="border-t border-border bg-surface-soft py-12 px-4">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-6">
           You May Also Be Interested In
@@ -419,7 +400,7 @@ const resourceLinks = categoryResourceLinks[category] || categoryResourceLinks.a
   )}
 
   <!-- Contextual site resource links -->
-  <section class="border-t border-border py-8 md:py-10 px-4">
+  <section class="border-t border-border py-10 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-xs font-semibold uppercase tracking-widest text-site-sub mb-6">
         Resources on Our Main Site
