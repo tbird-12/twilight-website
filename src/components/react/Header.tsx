@@ -1,10 +1,11 @@
 /**
- * Header component - Main navigation header with logo, nav, and mobile menu
- * Sticky at top with smooth animations
+ * Header component - Main navigation header with logo, nav, and mobile menu.
+ * Desktop: centered-brand split layout (2 nav groups flanking the logo).
+ * Mobile: compact bar — hamburger, logo, shortcuts — unchanged.
  */
 
 import { useEffect, useRef, useState } from "react";
-import DesktopNav from "./DesktopNav";
+import DesktopNav, { leftNavMenus, rightNavMenus } from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import { useScrollLock } from "./hooks";
 import { useReducedMotion } from "./hooks/useReducedMotion";
@@ -82,13 +83,59 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
           isMobileMenuOpen ? "md:z-30" : ""
         }`}
       >
-        <div className="max-w-6xl mx-auto flex h-16 items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:h-24">
+        {/* ── Desktop: centered-brand split layout ── */}
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-4 h-20 lg:h-24 max-w-6xl mx-auto px-4 sm:px-6">
+          {/* Left: Services + Specialties */}
+          <DesktopNav headerHeight={headerHeight} menus={leftNavMenus} />
+
+          {/* Center: Logo */}
+          <a
+            href={logoHref}
+            className="flex items-center gap-2.5 font-sans tracking-tighter text-site-text transition-opacity hover:opacity-80"
+            aria-label="Twilight Psychology home"
+          >
+            {logoSrc ? (
+              <img
+                src={logoSrc}
+                alt="Twilight Psychology Logo"
+                width={96}
+                height={96}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="h-10 lg:h-14 w-auto mb-1 shrink-0"
+              />
+            ) : (
+              <div className="h-10 lg:h-14 w-auto flex shrink-0 items-center justify-center bg-surface rounded-lg px-2">
+                <span className="font-bold text-lg">TP</span>
+              </div>
+            )}
+            <span className="font-serif font-black text-base lg:text-lg text-site-text leading-tight">
+              Twilight Psychology
+            </span>
+          </a>
+
+          {/* Right: Clients + About + ThemeToggle + CTA */}
+          <div className="flex items-center justify-end gap-4 lg:gap-5">
+            <DesktopNav headerHeight={headerHeight} menus={rightNavMenus} />
+            <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
+            <a
+              href="/contact"
+              className="inline-flex items-center rounded-full bg-cta px-4 lg:px-8 py-2 lg:py-3 text-center text-xs font-black text-cta-fg shadow-lg shadow-cta/20 transition-all duration-200 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        {/* ── Mobile: compact bar — preserved exactly from original ── */}
+        <div className="md:hidden max-w-6xl mx-auto flex h-16 items-center justify-between gap-3 px-4 sm:h-20 sm:px-6">
           <div className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3">
             {/* Mobile Menu Button */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`group md:hidden inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-site-text shadow-sm ${menuButtonTransitionClass} ${
+              className={`group inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-site-text shadow-sm ${menuButtonTransitionClass} ${
                 isMobileMenuOpen
                   ? "pointer-events-none opacity-0"
                   : "border-border bg-site-bg/90 hover:border-border-strong hover:bg-surface"
@@ -134,21 +181,21 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
-                  className="h-10 lg:h-14 w-auto mb-1 shrink-0"
+                  className="h-10 w-auto mb-1 shrink-0"
                 />
               ) : (
-                <div className="h-10 lg:h-14 w-auto flex shrink-0 items-center justify-center bg-surface rounded-lg px-2">
+                <div className="h-10 w-auto flex shrink-0 items-center justify-center bg-surface rounded-lg px-2">
                   <span className="font-bold text-lg">TP</span>
                 </div>
               )}
-              <span className="font-serif font-black text-sm lg:text-lg text-site-text hover:text-cta transition-colors leading-tight">
-                Twilight{' '}Psychology
+              <span className="font-serif font-black text-sm text-site-text hover:text-cta transition-colors leading-tight">
+                Twilight Psychology
               </span>
             </a>
           </div>
 
           {/* Mobile shortcut buttons */}
-          <div className="md:hidden flex shrink-0 items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
             <SearchButton
               compact
@@ -160,23 +207,6 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
             >
               Contact Us
             </a>
-          </div>
-
-          <div className="hidden md:flex items-center gap-4 lg:gap-5">
-            <DesktopNav headerHeight={headerHeight} />
-
-            <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
-
-            <div className="flex items-center gap-3">
-              <a
-                href="/contact"
-                className="inline-flex items-center rounded-full bg-cta px-4 lg:px-8 py-2 lg:py-3 text-center text-xs font-black text-cta-fg shadow-lg shadow-cta/20 transition-all duration-200 hover:bg-cta/80 hover:ring-4 hover:ring-cta/30 active:scale-95"
-              >
-                <span className="inline-block text-center leading-tight">
-                  Contact Us
-                </span>
-              </a>
-            </div>
           </div>
         </div>
       </header>
