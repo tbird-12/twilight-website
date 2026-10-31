@@ -1,6 +1,6 @@
 ---
 title: "Lexington Office: Updated Hours Beginning May 2026"
-description: "Our Lexington location will have updated office hours starting May 1, 2026. Review the new schedule and learn how it affects appointment scheduling."
+description: "Our Lexington location will have updated office hours starting May 1, 2026. Review the new schedule and learn how it affects appointment scheduling"
 pubDate: 2026-04-01
 category: business
 author: "Twilight Psychology Team"

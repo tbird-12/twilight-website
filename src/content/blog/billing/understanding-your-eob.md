@@ -1,6 +1,6 @@
 ---
-title: "Understanding Your Explanation of Benefits (EOB)"
-description: "A guide to reading your insurance EOB after a psychological evaluation or therapy session at Twilight Psychology."
+title: "Understanding your explanation of benefits (EOB)"
+description: "A guide to reading your insurance EOB after a psychological evaluation or therapy session at Twilight Psychology"
 pubDate: 2026-03-15
 category: billing
 author: "Twilight Psychology Team"

@@ -1,7 +1,7 @@
 ---
-title: "CPT Codes Used in Medication Management Billing"
+title: "CPT codes used in medication management billing"
 seoTitle: "Medication Management CPT Codes KY"
-description: "A plain-language guide to the E/M and add-on CPT codes most commonly used in psychiatric medication management billing at Twilight Psychology in Lexington, KY."
+description: "A plain-language guide to the E/M and add-on CPT codes most commonly used in psychiatric medication management billing at Twilight Psychology in Lexington, KY"
 seoDescription: "Plain-language guide to medication management billing codes — 99205, 99204, 99214, 99213, 99215, 90833, 90785, H0032 explained. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-07-11
 category: billing

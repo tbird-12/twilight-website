@@ -1,5 +1,5 @@
 ---
-title: "Aetna Better Health — Prior Authorization, Medical Necessity, and Appeals"
+title: "Aetna Better Health — prior auth, medical necessity, and appeals"
 seoTitle: "Aetna Better Health of Kentucky — In-Network for Therapy & Testing"
 description: "Information about prior authorization, documentation, medical necessity, and appeals for psychological testing under Aetna Better Health of Kentucky"
 seoDescription: "Twilight Psychology accepts Aetna Better Health of Kentucky for therapy and testing. Learn how prior authorization and medical necessity work for evaluations."

@@ -1,5 +1,5 @@
 ---
-title: "What Is a PDA Profile and How We Assess It"
+title: "What is a PDA profile and how we assess it"
 seoTitle: "What Is a PDA Profile?"
 description: "Learn how Twilight Psychology assesses the PDA profile within autism evaluations, including demand avoidance, masking, and differential diagnosis"
 seoDescription: "Learn what a PDA profile is, why it is often missed in autism evaluations, and how Twilight Psychology assesses demand avoidance."

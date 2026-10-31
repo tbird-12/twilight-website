@@ -24,7 +24,7 @@ const { displayDate, formattedDate, isUpdated } = getDisplayBlogDate(pubDate, up
     </time>
   </div>
 
-  <a href={href} class="block">
+  <a href={href} aria-label={`Read: ${title}`} class="block">
     <h2 class="text-base font-semibold text-site-text group-hover:text-icon transition-colors leading-snug">
       {title}
     </h2>
@@ -36,12 +36,7 @@ const { displayDate, formattedDate, isUpdated } = getDisplayBlogDate(pubDate, up
 
   <div class="flex items-center justify-between mt-auto pt-2">
     <span class="text-xs text-site-sub">{author}</span>
-    <a
-      href={href}
-      class="text-xs font-medium text-icon hover:underline underline-offset-2"
-      aria-label={`Read full article: ${title}`}
-    >
-      Read →
-    </a>
+    {/* Decorative — the title <a> above is the primary link; this avoids a duplicate tab stop */}
+    <span aria-hidden="true" class="text-xs font-medium text-icon">Read →</span>
   </div>
 </article>

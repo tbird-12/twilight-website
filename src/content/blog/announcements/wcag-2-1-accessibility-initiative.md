@@ -1,6 +1,6 @@
 ---
 title: "Accessibility improvements: WCAG 2.1 compliance"
-description: "We've made the Twilight Psychology website WCAG 2.1 Level AAA, Section 508, and ADA compliant. We want to hear about accessibility features that would help you."
+description: "We've made the Twilight Psychology website WCAG 2.1 Level AAA, Section 508, and ADA compliant. We want to hear about accessibility features that would help you"
 pubDate: 2026-07-08
 category: announcements
 author: "Twilight Psychology Team"

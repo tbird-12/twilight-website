@@ -1,6 +1,6 @@
 ---
 title: "Insurance coverage changes for testing and therapy — December 2026"
-description: "Twilight Psychology is making targeted changes to which insurances we accept for testing and therapy, effective December 1, 2026. Here's what's changing and why."
+description: "Twilight Psychology is making targeted changes to which insurances we accept for testing and therapy, effective December 1, 2026. Here's what's changing and why"
 pubDate: 2026-08-16
 category: insurance
 author: "Twilight Psychology Team"

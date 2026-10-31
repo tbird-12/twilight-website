@@ -1,7 +1,7 @@
 ---
-title: "CPT Codes Used in Therapy Billing"
+title: "CPT codes used in therapy billing"
 seoTitle: "Therapy CPT Codes Explained KY"
-description: "A plain-language guide to the CPT and HCPCS codes most commonly used in therapy billing at Twilight Psychology in Lexington, KY."
+description: "A plain-language guide to the CPT and HCPCS codes most commonly used in therapy billing at Twilight Psychology in Lexington, KY"
 seoDescription: "Plain-language guide to therapy billing codes — 90837, 90834, 90832, 90791, 90846, 90785, 96127, and H0032 explained. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-07-31
 category: billing

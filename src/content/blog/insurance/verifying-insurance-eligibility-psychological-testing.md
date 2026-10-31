@@ -1,7 +1,7 @@
 ---
 title: "Verifying Insurance Eligibility for Mental Health Services"
 seoTitle: "Insurance Eligibility Verification for Mental Health KY"
-description: "How to verify insurance eligibility and coordination of benefits before mental health services in Kentucky — methods, timing, and how to avoid costly write-offs."
+description: "How to verify insurance eligibility and coordination of benefits before mental health services in Kentucky — methods, timing, and how to avoid costly write-offs"
 seoDescription: "Verify insurance eligibility before mental health services in Kentucky. Covers portal methods, COB, preauthorization triggers, and avoiding write-offs. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-09-03
 category: insurance

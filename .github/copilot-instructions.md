@@ -98,3 +98,13 @@ Note: The repository's canonical frontend engineering guidance and persona are m
 ---
 
 **Instructions Reference**: See `.github/instructions/` for detailed frontend conventions and checklists.
+
+| Pattern | File | Purpose |
+|---|---|---|
+| `**/*.astro` | `astro.instructions.md` | Astro component rules, layouts, hydration, images |
+| `src/components/react/**, src/components/interactive/**` | `react.instructions.md` | React 19 island rules, hooks, animation |
+| `src/data/**` | `data.instructions.md` | Data layer structure, typing, test requirements |
+| `src/content/**` | `content.instructions.md` | Blog post frontmatter, file naming, content style |
+| `src/data/staff.ts, src/data/clinicianProfiles.ts, ...` | `clinician-onboarding.instructions.md` | Adding a new clinician end-to-end |
+| `src/data/staff.ts, src/data/clinicianProfiles.ts, ...` | `clinician-offboarding.instructions.md` | Removing a departing clinician end-to-end |
+| `**/*.astro, **/*.tsx, src/content/**, astro.config.mjs, public/**` | `quality-checklist.instructions.md` | Pre-commit audit: analytics, SEO, accessibility, security, performance, redirects |

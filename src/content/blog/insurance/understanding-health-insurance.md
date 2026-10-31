@@ -1,5 +1,5 @@
 ---
-title: "Understanding Health Insurance: Deductibles, copays, eligibility, and Benefits"
+title: "Health insurance basics: deductibles, copays, and benefits"
 seoTitle: "Health Insurance Basics: Deductibles, Copays & Benefits"
 description: "Learn how deductibles, copays, eligibility, and benefits affect therapy, medication, and testing coverage at Twilight Psychology"
 seoDescription: "Learn how deductibles, copays, coinsurance, eligibility, and benefits affect therapy and testing coverage at Twilight Psychology."

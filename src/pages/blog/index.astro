@@ -55,7 +55,8 @@ const blogSchema = {
 
       {featuredPost && featuredDateInfo && (
         <a
-          href={`/blog/${featuredPost.id}`}
+          href={`/blog/${featuredPost.id}/`}
+          aria-label={`Read: ${featuredPost.data.title}`}
           class="group block rounded-2xl border border-border bg-surface p-6 sm:p-8 hover:border-border-strong hover:shadow-lg transition-all duration-200"
         >
           <div class="flex flex-wrap items-center gap-3 mb-4">

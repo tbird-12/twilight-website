@@ -1,7 +1,7 @@
 ---
-title: "How Psychological Testing Is Billed at Twilight Psychology"
+title: "How psychological testing is billed at Twilight Psychology"
 seoTitle: "Billing Psychological Testing in KY"
-description: "A detailed walkthrough of how psychological testing is billed at Twilight Psychology in Lexington, KY — from intake through feedback, including codes, copays, and payer-specific rules."
+description: "How psychological testing is billed at Twilight Psychology — from intake through feedback, including CPT codes, copays, and payer-specific rules"
 seoDescription: "How psychological testing billing works in Kentucky — 90791, 96130, 96131, 96136, 96137, feedback codes, taxonomy, and UHC same-day billing rules. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-09-17
 category: billing

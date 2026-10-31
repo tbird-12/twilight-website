@@ -1,7 +1,7 @@
 ---
 title: "CMS-1500 Forms and EHR Billing for Private Practice"
 seoTitle: "CMS-1500 Claims for Mental Health Billing KY"
-description: "How private practice clinicians in Kentucky use the CMS-1500 form, EHR billing tools, and electronic submission to process insurance claims for mental health services."
+description: "How Kentucky clinicians use CMS-1500 forms, EHR billing tools, and electronic submission to process insurance claims for mental health services"
 seoDescription: "CMS-1500 for mental health billing in Kentucky — SimplePractice, electronic vs paper claims, Anthem paper claim surcharges, and timely filing rules. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-08-31
 category: billing

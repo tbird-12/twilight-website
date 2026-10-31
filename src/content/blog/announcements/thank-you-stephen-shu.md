@@ -1,6 +1,6 @@
 ---
 title: "Thank you, Stephen, for your time at Twilight Psychology"
-description: "We celebrate Stephen Shu's completion of his time at Twilight Psychology and wish him well as he begins his APA-accredited internship at the VA Medical Center in Lexington"
+description: "We celebrate Stephen Shu's time at Twilight Psychology and wish him well in his APA-accredited internship at the Lexington VA Medical Center"
 pubDate: 2026-07-03
 category: announcements
 author: "Twilight Psychology Team"

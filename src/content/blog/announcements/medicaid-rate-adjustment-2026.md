@@ -1,6 +1,6 @@
 ---
 title: "Supporting Sustainable Mental Health Care in Kentucky"
-description: "Twilight Psychology adjusts service delivery to maintain fiscal stability and clinical quality amid Medicaid reimbursement changes."
+description: "Twilight Psychology adjusts service delivery to maintain fiscal stability and clinical quality amid Medicaid reimbursement changes"
 pubDate: 2026-06-26
 category: announcements
 author: "Twilight Psychology Team"

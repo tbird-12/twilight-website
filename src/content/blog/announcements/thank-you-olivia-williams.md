@@ -1,6 +1,6 @@
 ---
 title: "Thank you, Olivia, for your time at Twilight Psychology"
-description: "We thank Olivia Williams, PhD, LPA for stepping in to meet growing evaluation demand at Twilight Psychology since September 2025 and wish her well as she focuses on her private practice"
+description: "We thank Olivia Williams, PhD, LPA for her service at Twilight Psychology since 2025 and wish her well as she focuses on her private practice"
 pubDate: 2026-05-28
 category: announcements
 author: "Twilight Psychology Team"

@@ -1,7 +1,7 @@
 ---
 title: "Appeals for Mental Health Claims in Kentucky"
 seoTitle: "How to Appeal Denied Mental Health Claims KY"
-description: "Step-by-step guide to appealing denied mental health claims in Kentucky — documentation, timelines, appeal types, and external review rights."
+description: "Step-by-step guide to appealing denied mental health claims in Kentucky — documentation, timelines, appeal types, and external review rights"
 seoDescription: "How to appeal denied mental health claims in Kentucky. Covers first and second-level appeals, external review, documentation by denial type, appeal deadlines for Medicare, Medicaid, commercial insurance, and TRICARE. Insurance and Medicaid accepted."
 pubDate: 2026-09-20
 category: billing

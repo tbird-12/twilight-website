@@ -1,7 +1,7 @@
 ---
-title: "Who Can Bill Insurance Claims"
+title: "Who can bill insurance claims"
 seoTitle: "Who Can Bill Mental Health Claims in KY"
-description: "A provider-focused guide to NPI numbers, credentialing, taxonomy codes, and supervisory billing rules for mental health practices in Kentucky."
+description: "A provider-focused guide to NPI numbers, credentialing, taxonomy codes, and supervisory billing rules for mental health practices in Kentucky"
 seoDescription: "Who can bill mental health insurance claims in Kentucky? Covers NPI-1 vs NPI-2, credentialing, taxonomy codes, and supervisory billing for private practice. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-08-14
 category: billing

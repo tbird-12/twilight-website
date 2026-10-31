@@ -1,6 +1,6 @@
 ---
 title: "A note on our fee schedule changes this December"
-description: "Starting December 1, 2026, Twilight Psychology is updating its fee schedule. Here's why these changes matter — and what they mean for the people we serve."
+description: "Starting December 1, 2026, Twilight Psychology is updating its fee schedule. Here's why these changes matter — and what they mean for the people we serve"
 pubDate: 2026-08-21
 category: announcements
 author: "Twilight Psychology Team"

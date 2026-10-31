@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import tailwindcss from '@tailwindcss/vite';
+import rehypeExternalLinks from "rehype-external-links";
 
 import icon from "astro-icon";
 import react from "@astrojs/react";
@@ -15,6 +16,9 @@ const sitemapExcludedPaths = [
   "/welcome/",
   "/404/",
   "/client-resources/",
+  "/client-resources/fees-and-insurance/",
+  "/client-resources/location/",
+  "/client-resources/online-testing-and-insurance-faq/",
   // Legacy /specialities/ alias pages (noindex redirects to /specialties/)
   "/specialities/",
   "/specialities/adoption-evaluations/",
@@ -48,8 +52,8 @@ const sitemapExcludedPaths = [
 export default defineConfig({
   compressHTML: true,
   prefetch: {
-    prefetchAll: true,
-    defaultStrategy: "hover",
+    prefetchAll: false,
+    defaultStrategy: "viewport",
   },
   vite: {
     plugins: [tailwindcss()],
@@ -73,5 +77,10 @@ export default defineConfig({
     }),
     pagefind(),
   ],
+  markdown: {
+    rehypePlugins: [
+      [rehypeExternalLinks, { rel: ["noopener", "noreferrer"], target: "_blank" }],
+    ],
+  },
   site: "https://www.twilightpsychology.com",
 });

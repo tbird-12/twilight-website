@@ -1,7 +1,7 @@
 ---
 title: "Prior Authorization for Mental Health Services in Kentucky"
 seoTitle: "Prior Auth for Mental Health Services KY"
-description: "Which Kentucky insurance plans require prior authorization for mental health services — including psychological testing, therapy, and medication management — and how to navigate the PA process."
+description: "Which Kentucky insurance plans require prior authorization for mental health — testing, therapy, and medication — and how to navigate the PA process"
 seoDescription: "Which KY plans require prior auth for mental health services? Covers Aetna Better Health, UHC, WellCare, and Ambetter PA requirements for testing, therapy, and evaluation codes. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-09-09
 category: insurance

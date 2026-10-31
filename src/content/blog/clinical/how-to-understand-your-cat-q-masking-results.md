@@ -1,5 +1,5 @@
 ---
-title: "How to Understand your CAT-Q Masking Results"
+title: "How to understand your CAT-Q masking results"
 description: "A practical guide to Twilight Psychology's CAT-Q-based masking tool, what higher or lower patterns may suggest, and why it supports self-reflection only"
 pubDate: 2026-04-20
 category: clinical

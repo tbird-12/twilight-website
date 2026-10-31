@@ -97,8 +97,8 @@ const resourceLinks = [
                     <h3 class="font-serif text-xl font-black text-site-text mb-2">{step.title}</h3>
                     <p class="text-site-sub leading-relaxed mb-4">{step.desc}</p>
                     {step.link && (
-                      <a href={step.link} target="_blank" class="inline-flex items-center gap-2 text-cta font-bold text-sm hover:translate-x-1 transition-transform">
-                        {step.linkText} <span class="text-lg">→</span>
+                      <a href={step.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cta font-bold text-sm hover:translate-x-1 transition-transform">
+                        {step.linkText} <span class="text-lg" aria-hidden="true">→</span>
                       </a>
                     )}
                   </div>

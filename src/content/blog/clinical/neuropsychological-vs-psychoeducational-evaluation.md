@@ -1,5 +1,5 @@
 ---
-title: "Neuropsychological vs. psychoeducational evaluation — what's the difference?"
+title: "Neuropsychological vs. psychoeducational evaluation"
 seoTitle: "Neuropsych vs. Psychoeducational Evaluation in Kentucky"
 description: "How neuropsychological and psychoeducational evaluations differ, when each is appropriate, and what psychological testing near you actually involves"
 seoDescription: "Not sure which evaluation you need? Compare neuropsychological and psychoeducational testing at Twilight Psychology in Lexington, KY — and find the right fit."

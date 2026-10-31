@@ -1,7 +1,7 @@
 ---
-title: "Where to Submit Mental Health Insurance Claims"
+title: "Where to submit mental health insurance claims"
 seoTitle: "Submitting Mental Health Claims in KY"
-description: "A guide to payer portals, clearinghouses, and submission channels for mental health insurance claims in Kentucky — including free portal options and timely filing tips."
+description: "A guide to payer portals, clearinghouses, and submission channels for mental health claims in Kentucky — with free portal options and timely filing tips"
 seoDescription: "Free payer portals, Availity clearinghouse, and submission options for mental health insurance claims in Kentucky — therapy, testing, and medication management. Insurance and Kentucky Medicaid accepted."
 pubDate: 2026-09-02
 category: billing

@@ -1,7 +1,7 @@
 ---
 title: "Claim Denials for Mental Health Services"
 seoTitle: "Mental Health Claim Denials KY | Why Claims Get Denied"
-description: "Why mental health claims are denied in Kentucky — common denial reasons for psychological testing, therapy, and medication management, and how to identify them."
+description: "Why mental health claims are denied in Kentucky — common denial reasons for psychological testing, therapy, and medication management, and how to identify them"
 seoDescription: "Common reasons mental health claims are denied in Kentucky. Covers denial codes for testing, therapy, medication management, missing authorization, coding errors, and medical necessity denials. Insurance and Medicaid accepted."
 pubDate: 2026-09-20
 category: billing

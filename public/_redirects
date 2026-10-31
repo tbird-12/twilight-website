@@ -1,0 +1,31 @@
+# Twilight Psychology — Cloudflare Workers Assets 301 redirects
+# These replace the LegacyRedirectPage HTML stubs that returned HTTP 200.
+# Cloudflare processes this file natively; no Worker code required.
+
+# ── Legacy /about/ clinician slugs ──────────────────────────────────────────
+/about/emeli-evans              /about/clinicians/emeli-evans          301
+/about/heather-cornett          /about/clinicians/heather-cornett      301
+/about/jatana-boggs             /services/therapy/clinicians           301
+/about/jonica-davis             /about/clinicians/jonica-davis         301
+/about/mike-burns               /about/clinicians/michael-burns        301
+/about/nicola-allen             /about/clinicians/nicola-allen         301
+/about/samantha-rodarte         /about/staff/samantha-rodarte          301
+/about/stephen-shu              /contact                               301
+/about/tiffany-roundtree        /about/clinicians/tiffany-roundtree    301
+/about/mission-vision-values    /about/twilight-psychology             301
+
+# ── Legacy /specialities/ (misspelled) → /specialties/ ──────────────────────
+/specialities                              /specialties                              301
+/specialities/adoption-evaluations         /specialties/adoption-evaluations         301
+/specialities/benefits-evaluations         /specialties/benefits-evaluations         301
+/specialities/dyslexia-testing             /specialties/dyslexia-testing             301
+/specialities/esa-evaluations              /specialties/esa-evaluations              301
+/specialities/guardianship-evaluations     /specialties/guardianship-evaluations     301
+/specialities/iee                          /specialties/iee                          301
+/specialities/pda-profile                  /specialties/pda-profile                  301
+/specialities/psychoeducational-evaluations /specialties/psychoeducational-evaluations 301
+
+# ── Legacy /client-resources/ ────────────────────────────────────────────────
+/client-resources/fees-and-insurance                /resources/fees    301
+/client-resources/location                          /about/locations   301
+/client-resources/online-testing-and-insurance-faq  /resources/faq     301

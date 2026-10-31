@@ -1,5 +1,5 @@
 ---
-title: "Common CPT Codes Used in Psychological Testing"
+title: "Common CPT codes used in psychological testing"
 seoTitle: "Psychological Testing CPT Codes Explained"
 description: "A plain-language overview of psychological testing, developmental testing, and feedback-session codes commonly seen at Twilight Psychology"
 seoDescription: "Plain-language guide to common CPT codes used in psychological testing billing — testing, developmental, and feedback session codes explained."

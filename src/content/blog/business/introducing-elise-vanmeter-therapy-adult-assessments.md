@@ -1,7 +1,7 @@
 ---
 title: "Introducing Elise Van Meter, MA, T-LPA"
 seoTitle: "Introducing Elise Van Meter, MA, T-LPA — Kentucky Therapy & Adult Assessments"
-description: "Meet Elise Van Meter, MA, T-LPA — temporarily licensed psychological associate providing therapy for adolescents and adults and psychological assessments for neurodivergent adults in Kentucky"
+description: "Meet Elise Van Meter, MA, T-LPA — providing therapy for adolescents and adults and psychological assessments for neurodivergent adults in Kentucky"
 pubDate: 2026-07-15
 category: business
 author: "Twilight Psychology Team"

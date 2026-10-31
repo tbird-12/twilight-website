@@ -1,5 +1,5 @@
 ---
-title: "What Insurance Assignment Means for Providers"
+title: "What insurance assignment means for providers"
 seoTitle: "Insurance Assignment, Credentialing, and Provider Participation"
 description: "A plain-English guide to assignment, credentialing, paneling, and why a clinician may limit new patients even when they are in-network"
 seoDescription: "Learn what assignment means, how credentialing and contracting differ, and why some clinicians limit new patients even when they are in-network with an insurance plan."

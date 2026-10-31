@@ -3,6 +3,7 @@ import { getImage } from "astro:assets";
 import "../styles/global.css";
 import BlogHeader from "../components/blog/BlogHeader.astro";
 import BlogFooter from "../components/blog/BlogFooter.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
 import Schema from "../components/Schema.astro";
 import SearchModal from "../components/SearchModal.astro";
 import logoImage from "../assets/images/logo.png";
@@ -27,7 +28,7 @@ interface Props {
 
 const {
   title,
-  description = "Insights, updates, and clinical resources from Twilight Psychology.",
+  description = "Clinical insights, billing guidance, insurance updates, and practice announcements from the Twilight Psychology team in Lexington, Kentucky.",
   canonical,
   pubDate,
   updatedDate,
@@ -114,6 +115,7 @@ const webpageSchema = {
       }
     </script>
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" /></noscript>
+    <GoogleAnalytics gaId={siteConfig.gaId} />
     <title>{pageTitle}</title>
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
