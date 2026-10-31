@@ -28,6 +28,14 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
   const menuIconTransformClass = prefersReducedMotion ? "" : "transition-transform duration-250";
   const menuIconOpacityClass = prefersReducedMotion ? "" : "transition-all duration-250";
 
+  // Logo hover affordance — skipped when user prefers reduced motion
+  const logoImgClass = prefersReducedMotion ? "" : "transition-transform duration-300 group-hover:scale-[1.03]";
+  const logoTextClass = prefersReducedMotion ? "" : "group-hover:text-cta transition-colors duration-200";
+  const logoIconClass = prefersReducedMotion ? "opacity-30" : "text-site-text/30 group-hover:text-cta/70 transition-colors duration-200";
+  const logoUnderlineClass = prefersReducedMotion
+    ? "w-full opacity-20"
+    : "w-0 group-hover:w-full transition-[width] duration-300 ease-out";
+
   // Handle scroll lock and document attribute for mobile nav state
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -91,7 +99,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
           {/* Center: Logo */}
           <a
             href={logoHref}
-            className="flex items-center gap-2.5 font-sans tracking-tighter text-site-text transition-opacity hover:opacity-80"
+            className="group flex items-center gap-2.5 font-sans tracking-tighter text-site-text cursor-pointer"
             aria-label="Twilight Psychology home"
           >
             {logoSrc ? (
@@ -103,15 +111,22 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"
-                className="h-10 lg:h-14 w-auto mb-1 shrink-0"
+                className={`h-10 lg:h-14 w-auto mb-1 shrink-0 ${logoImgClass}`}
               />
             ) : (
               <div className="h-10 lg:h-14 w-auto flex shrink-0 items-center justify-center bg-surface rounded-lg px-2">
                 <span className="font-bold text-lg">TP</span>
               </div>
             )}
-            <span className="font-serif font-black text-base lg:text-lg text-site-text leading-tight">
-              Twilight Psychology
+            <span className="flex flex-col items-start gap-0.5">
+              <span className="flex items-center gap-1.5">
+                <span className={`font-serif font-black text-base lg:text-lg text-site-text leading-tight ${logoTextClass}`}>
+                  Twilight Psychology
+                </span>
+                {/* Persistent home affordance — subtle at rest, CTA-tinted on hover */}
+              </span>
+              {/* Underline that sweeps in on hover */}
+              <span className={`h-px bg-cta/40 ${logoUnderlineClass}`} aria-hidden="true" />
             </span>
           </a>
 
@@ -169,8 +184,8 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
             {/* Logo */}
             <a
               href={logoHref}
-              className="flex min-w-0 items-center gap-2.5 font-sans tracking-tighter text-site-text transition-opacity hover:opacity-80"
-              aria-label="Home"
+              className="group flex min-w-0 items-center gap-2.5 font-sans tracking-tighter text-site-text cursor-pointer"
+              aria-label="Twilight Psychology home"
             >
               {logoSrc ? (
                 <img
@@ -181,15 +196,19 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
-                  className="h-10 w-auto mb-1 shrink-0"
+                  className={`h-10 w-auto mb-1 shrink-0 ${logoImgClass}`}
                 />
               ) : (
                 <div className="h-10 w-auto flex shrink-0 items-center justify-center bg-surface rounded-lg px-2">
                   <span className="font-bold text-lg">TP</span>
                 </div>
               )}
-              <span className="font-serif font-black text-sm text-site-text hover:text-cta transition-colors leading-tight">
-                Twilight Psychology
+              <span className="flex min-w-0 flex-col items-start gap-0.5">
+                <span className="flex items-center gap-1">
+                  <span className={`font-serif font-black text-sm text-site-text leading-tight ${logoTextClass}`}>
+                    Twilight Psychology
+                  </span>
+                </span>
               </span>
             </a>
           </div>
