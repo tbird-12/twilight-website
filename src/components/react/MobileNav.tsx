@@ -124,7 +124,7 @@ export default function MobileNav({
 
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-[85] bg-site-text/35 md:hidden ${
+        className={`fixed inset-0 z-85 bg-site-text/35 md:hidden ${
           prefersReducedMotion ? "" : "mobile-nav-overlay-enter"
         }`}
         onClick={onClose}
@@ -132,7 +132,7 @@ export default function MobileNav({
       />
 
       {/* Sheet */}
-      <div className="fixed inset-x-0 bottom-0 z-[110] md:hidden" style={{ top: panelTop }}>
+      <div className="fixed inset-x-0 bottom-0 z-110 md:hidden" style={{ top: panelTop }}>
         <div
           ref={panelRef}
           id="mobile-menu"
