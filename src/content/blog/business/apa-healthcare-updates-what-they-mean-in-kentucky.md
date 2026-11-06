@@ -1,6 +1,6 @@
 ---
-title: "APA healthcare updates for Psychologists and what they mean in Kentucky"
-description: "Key APA policy and coding updates from late 2026 and what they mean for access, reimbursement, and practice operations in Kentucky"
+title: "APA healthcare updates: what they mean in Kentucky"
+description: "Learn how the APA's latest policy and coding updates from November 2026 affect practice operations, reimbursement, and access to care in Kentucky"
 pubDate: 2026-11-06
 category: business
 author: "Twilight Psychology Team"
