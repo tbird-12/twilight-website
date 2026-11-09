@@ -87,14 +87,14 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
     <>
       <header
         ref={headerRef}
-        className={`sticky top-0 z-30 w-full border-b theme-border bg-site-bg/88 font-sans backdrop-blur-xl ${
+        className={`sticky top-0 z-30 w-full border-b border-border-strong bg-glass-bg font-sans backdrop-blur-2xl ${
           isMobileMenuOpen ? "md:z-30" : ""
         }`}
       >
         {/* ── Desktop: centered-brand split layout ── */}
-        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-4 h-20 lg:h-24 max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-4 h-16 lg:h-20 max-w-6xl mx-auto px-4 sm:px-6">
           {/* Left: Services + Specialties */}
-          <DesktopNav headerHeight={headerHeight} menus={leftNavMenus} />
+          <DesktopNav headerHeight={headerHeight} menus={leftNavMenus} currentPath={currentPath} />
 
           {/* Center: Logo */}
           <a
@@ -132,7 +132,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
 
           {/* Right: Clients + About + ThemeToggle + CTA */}
           <div className="flex items-center justify-end gap-4 lg:gap-5">
-            <DesktopNav headerHeight={headerHeight} menus={rightNavMenus} />
+            <DesktopNav headerHeight={headerHeight} menus={rightNavMenus} currentPath={currentPath} />
             <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
             <a
               href="/contact"

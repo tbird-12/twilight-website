@@ -46,6 +46,8 @@
   --rgb-surface-2: 30, 30, 34;
   --rgb-accent: 255, 255, 255;
   --rgb-accent-alt: 56, 189, 248;
+  /* nav dropdown panel — distinctly elevated above the dark page background */
+  --nav-dropdown-rgb: var(--rgb-surface-2); /* 30, 30, 34 */
   --theme-section-label: rgba(148, 163, 184, 0.9);
   --theme-section-label-line: rgba(255, 255, 255, 0.1);
   --display-fluid-sm: clamp(2rem, 1.55rem + 1.8vw, 2.75rem);
@@ -80,6 +82,8 @@
   --rgb-surface-2: 239, 243, 238;
   --rgb-accent: 25, 60, 35;
   --rgb-accent-alt: 88, 150, 100;
+  /* nav dropdown panel — white, clearly distinct from the sage page background */
+  --nav-dropdown-rgb: var(--rgb-surface); /* 255, 255, 254 */
   --theme-section-label: rgba(55, 85, 65, 0.80);
   --theme-section-label-line: rgba(25, 60, 35, 0.10);
 }
@@ -385,6 +389,71 @@
   .nav-mega-enter    { animation: navMegaEnter    250ms cubic-bezier(.4,0,.2,1) forwards; }
   .nav-backdrop-enter { animation: navBackdropEnter 200ms ease forwards; }
   .nav-nested-enter   { animation: navNestedEnter  200ms cubic-bezier(.4,0,.2,1) forwards; }
+
+  /* ── Apple-style nav panel — CSS transition-based enter & exit ── */
+  /* Base: all transitions run on opacity + transform. Visibility uses a
+     delayed transition so the element is hidden only AFTER the fade-out
+     completes, preventing keyboard access to invisible items. */
+  .nav-panel-transition {
+    transition:
+      opacity 220ms cubic-bezier(0.2, 0, 0, 1),
+      transform 220ms cubic-bezier(0.2, 0, 0, 1),
+      visibility 0ms linear 220ms;
+    opacity: 0;
+    transform: translateY(-8px);
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav-panel-transition[data-open="true"] {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0ms;
+  }
+
+  /* Nested sub-panel: slides in from the left instead of up */
+  .nav-sub-transition {
+    transition:
+      opacity 160ms cubic-bezier(0.2, 0, 0, 1),
+      transform 160ms cubic-bezier(0.2, 0, 0, 1),
+      visibility 0ms linear 160ms;
+    opacity: 0;
+    transform: translateX(-6px);
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav-sub-transition[data-open="true"] {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0ms;
+  }
+
+  /* Scrim overlay: fade in/out */
+  .nav-scrim-transition {
+    transition:
+      opacity 260ms ease-out,
+      visibility 0ms linear 260ms;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav-scrim-transition[data-open="true"] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-panel-transition,
+    .nav-sub-transition,
+    .nav-scrim-transition {
+      transition: none;
+    }
+  }
 
   .site-footer {
     background-color: var(--theme-site-footer);
