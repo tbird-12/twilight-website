@@ -132,7 +132,16 @@ const webpageSchema = {
     <script is:inline>
       (() => {
         const stored = localStorage.getItem("theme");
-        const theme = stored === "light" || stored === "dark" ? stored : "dark";
+        let theme;
+        if (stored === "light") {
+          theme = "light";
+        } else if (stored === "dark") {
+          theme = "dark";
+        } else if (stored === "system") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        } else {
+          theme = "dark";
+        }
         document.documentElement.classList.remove("light", "dark");
         document.documentElement.classList.add(theme);
         document.documentElement.style.colorScheme = theme;

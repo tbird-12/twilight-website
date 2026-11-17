@@ -144,9 +144,16 @@ const webpageSchema = {
       (() => {
         const root = document.documentElement;
         const storedTheme = localStorage.getItem("theme");
-        const theme = storedTheme === "light" || storedTheme === "dark"
-          ? storedTheme
-          : "dark";
+        let theme;
+        if (storedTheme === "light") {
+          theme = "light";
+        } else if (storedTheme === "dark") {
+          theme = "dark";
+        } else if (storedTheme === "system") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        } else {
+          theme = "dark";
+        }
 
         root.classList.remove("light", "dark");
         root.classList.add(theme);

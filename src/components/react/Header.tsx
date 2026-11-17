@@ -31,7 +31,6 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
   // Logo hover affordance — skipped when user prefers reduced motion
   const logoImgClass = prefersReducedMotion ? "" : "transition-transform duration-300 group-hover:scale-[1.03]";
   const logoTextClass = prefersReducedMotion ? "" : "group-hover:text-cta transition-colors duration-200";
-  const logoIconClass = prefersReducedMotion ? "opacity-30" : "text-site-text/30 group-hover:text-cta/70 transition-colors duration-200";
   const logoUnderlineClass = prefersReducedMotion
     ? "w-full opacity-20"
     : "w-0 group-hover:w-full transition-[width] duration-300 ease-out";
@@ -181,34 +180,14 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
               </span>
             </button>
 
-            {/* Logo */}
+            {/* Brand name — fills available space, no logo image on mobile */}
             <a
               href={logoHref}
-              className="group flex min-w-0 items-center gap-2.5 font-sans tracking-tighter text-site-text cursor-pointer"
+              className="group flex min-w-0 items-center font-sans tracking-tighter text-site-text cursor-pointer"
               aria-label="Twilight Psychology home"
             >
-              {logoSrc ? (
-                <img
-                  src={logoSrc}
-                  alt="Twilight Psychology Logo"
-                  width={96}
-                  height={96}
-                  loading="eager"
-                  decoding="async"
-                  fetchPriority="high"
-                  className={`h-10 w-auto mb-1 shrink-0 ${logoImgClass}`}
-                />
-              ) : (
-                <div className="h-10 w-auto flex shrink-0 items-center justify-center bg-surface rounded-lg px-2">
-                  <span className="font-bold text-lg">TP</span>
-                </div>
-              )}
-              <span className="flex min-w-0 flex-col items-start gap-0.5">
-                <span className="flex items-center gap-1">
-                  <span className={`font-serif font-black text-sm text-site-text leading-tight ${logoTextClass}`}>
-                    Twilight Psychology
-                  </span>
-                </span>
+              <span className={`font-serif font-black text-base sm:text-lg text-site-text leading-tight ${logoTextClass}`}>
+                Twilight Psychology
               </span>
             </a>
           </div>

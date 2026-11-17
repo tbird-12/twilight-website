@@ -3,8 +3,13 @@
  */
 
 // Theme types
+export type Theme = 'light' | 'dark' | 'system';
+
 export interface ThemeContextType {
+  theme: Theme;
   isDark: boolean;
+  setTheme: (theme: Theme) => void;
+  /** @deprecated Use setTheme instead. Kept for backward compatibility. */
   toggleTheme: () => void;
 }
 
