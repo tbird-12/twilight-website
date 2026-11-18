@@ -1117,6 +1117,32 @@ a[class*="rounded-"] {
   width: 100%;
   aspect-ratio: 1;
   flex-shrink: 0;
+  border-radius: 50%;
+}
+
+:root.light .sc-frame {
+  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(236,242,255,0.58));
+  border: 1px solid rgba(var(--rgb-accent), 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    inset 0 0 0 1px rgba(var(--rgb-accent), 0.08),
+    0 18px 36px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+:root.light .sc-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0.875rem;
+  border-radius: 50%;
+  border: 1px solid rgba(var(--rgb-accent), 0.18);
+  pointer-events: none;
+}
+
+:root.light .sc-svg {
+  opacity: 1;
+  filter: saturate(1.08) contrast(1.08);
 }
 
 /* ── SVG layer ────────────────────────────────────────────────────── */
@@ -1274,9 +1300,13 @@ a[class*="rounded-"] {
   border-radius: 0.625rem;
 }
 
+:root.light .sc-list-item {
+  border-bottom-color: rgba(var(--rgb-accent), 0.14);
+}
+
 :root.light .sc-list-item:hover,
 :root.light .sc-list-item--active {
-  background: rgba(var(--rgb-accent), 0.05);
+  background: rgba(var(--rgb-accent), 0.07);
 }
 
 .sc-list-dir {
@@ -1301,7 +1331,7 @@ a[class*="rounded-"] {
   font-weight: 900;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-site-sub);
+  color: var(--color-site-text);
   line-height: 1;
   transition: color 0.18s ease;
 }
@@ -1384,6 +1414,25 @@ a[class*="rounded-"] {
   border: 1px solid rgba(165, 180, 252, 0.08);
 }
 
+:root.light .sc-wheel {
+  border-color: rgba(var(--rgb-accent), 0.24);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+:root.light .sc-wheel-center {
+  background: rgba(var(--rgb-accent-alt), 0.3);
+}
+
+:root.light .sc-wheel-dot {
+  background: rgba(var(--rgb-accent), 0.5);
+}
+
+:root.light .sc-wheel-indicator {
+  background: rgba(var(--rgb-accent), 0.8);
+}
+
 .sc-wheel-svg {
   position: absolute;
   inset: 0;
@@ -1434,7 +1483,7 @@ a[class*="rounded-"] {
   font-size: 0.45rem;
   font-weight: 900;
   letter-spacing: 0.06em;
-  color: var(--color-site-sub);
+  color: var(--color-site-text);
   transition: color 0.25s ease;
   line-height: 1;
   pointer-events: none;
@@ -1474,12 +1523,13 @@ a[class*="rounded-"] {
 }
 
 :root.light .sc-feature-card {
-  border-color: rgba(var(--rgb-accent), 0.14);
-  background: var(--color-surface);
+  border-color: rgba(var(--rgb-accent), 0.22);
+  background: rgba(255,255,255,0.66);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 }
 
 :root.light .sc-feature-card:hover {
-  border-color: rgba(var(--rgb-accent), 0.28);
+  border-color: rgba(var(--rgb-accent), 0.32);
 }
 
 .sc-feature-dir {
@@ -1531,7 +1581,7 @@ a[class*="rounded-"] {
 }
 
 :root.light .sc-footer {
-  border-top-color: rgba(var(--rgb-accent), 0.12);
+  border-top-color: rgba(var(--rgb-accent), 0.18);
 }
 
 .sc-footer-badge {

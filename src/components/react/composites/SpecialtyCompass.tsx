@@ -158,7 +158,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
           {/* Center: shows active direction letter on hover */}
           <div className="sc-center-info" aria-hidden="true">
             {hovered ? (
-              <span className="sc-center-name" style={{ color: THEME[hovered].text }}>
+              <span className="sc-center-name" style={{ color: 'var(--color-site-text)' }}>
                 {hovered}
               </span>
             ) : (
@@ -193,10 +193,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                       boxShadow: isHov ? `0 0 8px ${th.glow}` : undefined,
                     }}
                   />
-                  <span
-                    className="sc-list-dir-text"
-                    style={{ color: isHov ? th.text : undefined }}
-                  >
+                  <span className="sc-list-dir-text">
                     {node.direction}
                   </span>
                 </div>
@@ -269,7 +266,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                     style={{
                       transform: `rotate(${CLOCK_ANGLES[active]}deg)`,
                       transition: reduced ? 'none' : 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)',
-                      color: isAct ? th.text : undefined,
                     }}
                   >
                     {node.direction}
