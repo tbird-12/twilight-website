@@ -306,7 +306,7 @@ const qualityCareItems = [
 
     <!-- ════════════════ FROM OUR BLOG ════════════════ -->
     <section aria-labelledby="blog-heading" class="hp-section hp-section--alt homepage-panel-blog relative isolate overflow-hidden px-4">
-      <CelestialDivider type="stars" />
+      <CelestialDivider type="crescent" />
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
@@ -373,7 +373,7 @@ const qualityCareItems = [
       aria-label="Get started with Twilight Psychology"
       class="hp-section homepage-panel-cta relative isolate overflow-hidden px-4"
     >
-      <CelestialDivider type="crescent" />
+      <CelestialDivider type="stars" />
       <div class="hp-section-inner mx-auto max-w-5xl text-center">
         <p class="hp-eyebrow justify-center">Next Step</p>
         <h2
@@ -742,7 +742,7 @@ const qualityCareItems = [
     }
 
     .homepage-card-strong::before {
-      opacity: 0.92;
+      opacity: 0;
     }
 
     .homepage-service-card:hover::before {
@@ -1009,15 +1009,17 @@ const qualityCareItems = [
         filter: blur(80px);
       }
 
-      /* ── Service cards: remove backdrop blur that hazes panel gradient ── */
-      /* backdrop-filter bleeds the section's radial gradient through the
-         semi-transparent card surface, making text appear washed out on
-         mobile. Solid surface-2 background restores full legibility. */
+      /* ── Service cards: solid background on mobile for legibility ──── */
       .homepage-card-strong {
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
         background-color: var(--color-surface-2);
         background-image: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+      }
+
+      /* Suppress the glass-card-premium gradient overlay on mobile */
+      .glass-card-premium::before {
+        opacity: 0;
       }
 
     }
@@ -1090,7 +1092,6 @@ const qualityCareItems = [
 
       /* ── Section headers: stagger eyebrow → h2 → subtitle on entry ── */
       .hp-section-header > * {
-        opacity: 0;
         transform: translateY(1rem) scale(0.985);
         animation-name: viewReveal;
         animation-duration: 1ms;
@@ -1109,6 +1110,14 @@ const qualityCareItems = [
       }
 
       /* ── Services bento: cascade each card over a wider scroll window ── */
+      .bento-grid.reveal-children > * {
+        transform: translateY(1rem) scale(0.985);
+        animation-name: viewReveal;
+        animation-duration: 1ms;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+        animation-timeline: view();
+      }
       .bento-grid.reveal-children > *:nth-child(1) { animation-range: entry  6% cover 28%; }
       .bento-grid.reveal-children > *:nth-child(2) { animation-range: entry 10% cover 32%; }
       .bento-grid.reveal-children > *:nth-child(3) { animation-range: entry 14% cover 36%; }
@@ -1117,7 +1126,6 @@ const qualityCareItems = [
 
       /* ── Stats grid: stagger the four stat blocks ──────────────── */
       .hp-stats-grid > * {
-        opacity: 0;
         transform: translateY(1rem) scale(0.985);
         animation-name: viewReveal;
         animation-duration: 1ms;
@@ -1132,7 +1140,6 @@ const qualityCareItems = [
 
       /* ── Blog grid: three-column stagger ───────────────────────── */
       .hp-blog-grid > * {
-        opacity: 0;
         transform: translateY(1rem) scale(0.985);
         animation-name: viewReveal;
         animation-duration: 1ms;
@@ -1143,6 +1150,27 @@ const qualityCareItems = [
       .hp-blog-grid > *:nth-child(1) { animation-range: entry  8% cover 32%; }
       .hp-blog-grid > *:nth-child(2) { animation-range: entry 13% cover 37%; }
       .hp-blog-grid > *:nth-child(3) { animation-range: entry 18% cover 42%; }
+    }
+
+    /* ── Fallback for browsers without animation-timeline support ───── */
+    /* Elements must not stay at opacity:0 if animations don't run */
+    .hp-section-header > * {
+      opacity: 1 !important;
+    }
+
+    .hp-stats-grid > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .hp-blog-grid > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .bento-grid.reveal-children > * {
+      opacity: 1 !important;
+      transform: none !important;
     }
 
     /* ── Hero background parallax ─────────────────────────────────── */
