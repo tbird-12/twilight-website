@@ -7,8 +7,8 @@ import heroBgDawn from "../assets/hero-dawn.svg";
 import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg";
 import heroBg from "../assets/hero-background.svg";
 import heroBgMobile from "../assets/hero-mobile.svg";
+import SpecialtyCompassWrapper from "../components/SpecialtyCompassWrapper.astro";
 
-import { specialties } from "../data/services";
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
 import {
@@ -177,7 +177,7 @@ const qualityCareItems = [
         />
       </div>
       <div
-        class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-5xl text-center px-4 sm:px-6"
+        class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-6xl text-center px-4 sm:px-6"
       >
         <HeroSectionWrapper />
       </div>
@@ -220,10 +220,6 @@ const qualityCareItems = [
       aria-labelledby="services-heading"
       class="hp-section hp-section--alt homepage-panel-services relative isolate overflow-hidden px-4"
     >
-      <div
-        class="homepage-panel-glow homepage-panel-glow-right"
-        aria-hidden="true"
-      ></div>
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
@@ -276,13 +272,12 @@ const qualityCareItems = [
       </div>
     </section>
 
-    <!-- ════════════════ SPECIALTY EVALUATIONS ════════════════ -->
-    <section aria-labelledby="specialty-heading" class="hp-section homepage-panel-care hp-section-specialty-cards relative isolate overflow-hidden px-4">
-      <div
-        class="homepage-panel-glow homepage-panel-glow-right"
-        aria-hidden="true"
-      ></div>
-      <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
+    <!-- ════════════════ SPECIALTY EVALUATIONS — COMPASS ════════════════ -->
+    <section
+      aria-labelledby="specialty-heading"
+      class="hp-section homepage-panel-care relative isolate overflow-hidden px-4"
+    >
+      <div class="sc-section-inner mx-auto max-w-5xl px-4 sm:px-6 w-full">
         <header class="hp-section-header">
           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-3">
             <p class="hp-eyebrow mb-0">Specialty Evaluations</p>
@@ -297,60 +292,10 @@ const qualityCareItems = [
             Looking for Evaluations <span class="text-cta">Beyond Neurodiversity</span>
           </h2>
           <p class="mt-3 text-sm sm:text-base leading-relaxed text-site-sub max-w-2xl">
-            Evaluations that fall outside standard insurance definitions: no prior authorization, no managed-care restrictions or justification of medical necessity. Transparent self-pay rates apply, and most clients are seen within {SELF_PAY_WAITLIST_WEEKS} weeks.
+            Evaluations that fall outside standard insurance definitions — no prior authorization, no managed-care restrictions. Transparent self-pay rates and most clients seen within {SELF_PAY_WAITLIST_WEEKS} weeks.
           </p>
         </header>
-        <div class="hp-specialties-grid" aria-label="Specialty evaluation services">
-          {
-            specialties.map((spec) => (
-              <a
-                href={`/specialties/${spec.slug}`}
-                aria-label={`Learn about ${spec.name} evaluations`}
-                data-astro-prefetch="viewport"
-                class="hp-specialty-card group"
-              >
-                <h3 class="hp-specialty-name font-serif group-hover:text-cta transition-colors duration-200">
-                  {spec.name}
-                </h3>
-                
-                <span class="hp-specialty-arrow mt-auto" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                    <path
-                      d="M3 8h10M9 4l4 4-4 4"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </a>
-            ))
-          }
-        </div>
-        <div class="mt-10 flex flex-wrap gap-4 items-center justify-between">
-          <p class="text-xs text-site-sub leading-relaxed max-w-sm">
-            Not sure which evaluation fits? Our intake team can help you find the right assessment.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a
-              href="/resources/fees"
-              aria-label="View self-pay evaluation rates"
-              data-astro-prefetch="viewport"
-              class="text-xs font-black uppercase tracking-widest text-cta/80 hover:text-cta transition-colors"
-            >
-              View rates →
-            </a>
-            <a
-              href="/specialties"
-              aria-label="View all specialty evaluations"
-              data-astro-prefetch="viewport"
-              class="text-xs font-black uppercase tracking-widest text-site-sub/70 hover:text-cta transition-colors"
-            >
-              All specialties →
-            </a>
-          </div>
-        </div>
+        <SpecialtyCompassWrapper />
       </div>
     </section>
 
@@ -642,7 +587,7 @@ const qualityCareItems = [
     }
 
     :global(html.dark) .homepage-panel-hero {
-      background: rgba(var(--rgb-bg), 0.78);
+      background: rgba(var(--rgb-bg), 0.70);
     }
 
     .homepage-panel-inner {
@@ -742,94 +687,6 @@ const qualityCareItems = [
       color: var(--theme-site-sub);
     }
 
-    /* ── Editorial list ─────────────────────────────────────────────── */
-
-    .hp-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hp-list-item {
-      display: grid;
-      grid-template-columns: 2.5rem 1fr 1.25rem;
-      align-items: start;
-      gap: 1rem 1.25rem;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid rgba(var(--rgb-accent), 0.06);
-      text-decoration: none;
-      color: inherit;
-      transition: background-color 0.18s ease;
-    }
-
-    .hp-list-item:first-child {
-      border-top: 1px solid rgba(var(--rgb-accent), 0.06);
-    }
-
-    .hp-list-item:focus-visible {
-      outline: 2px solid var(--color-cta);
-      outline-offset: 2px;
-      border-radius: 0.25rem;
-    }
-
-    .hp-list-num {
-      font-size: 0.5625rem;
-      font-weight: 900;
-      letter-spacing: 0.22em;
-      color: var(--theme-site-sub);
-      opacity: 0.38;
-      padding-top: 0.3rem;
-      line-height: 1;
-    }
-
-    .hp-list-body {
-      min-width: 0;
-    }
-
-    .hp-list-challenge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: rgba(245, 158, 11, 0.82);
-      margin-bottom: 0.4rem;
-      line-height: 1.45;
-    }
-
-    :root.light .hp-list-challenge {
-      color: rgba(180, 83, 9, 0.85);
-    }
-
-    .hp-list-title {
-      font-size: 1.0625rem;
-      font-weight: 800;
-      line-height: 1.3;
-      color: var(--theme-site-text);
-      margin-bottom: 0.4rem;
-      transition: color 0.18s ease;
-    }
-
-    .hp-list-item:hover .hp-list-title {
-      color: var(--theme-cta);
-    }
-
-    .hp-list-desc {
-      font-size: 0.8125rem;
-      line-height: 1.65;
-      color: var(--theme-site-sub);
-    }
-
-    .hp-list-arrow {
-      color: var(--theme-site-sub);
-      opacity: 0.32;
-      padding-top: 0.3rem;
-      flex-shrink: 0;
-      transition: transform 0.18s ease, opacity 0.18s ease, color 0.18s ease;
-    }
-
-    .hp-list-item:hover .hp-list-arrow {
-      transform: translateX(3px);
-      opacity: 1;
-      color: var(--theme-cta);
-    }
-
     /* ── Footer note ─────────────────────────────────────────────────── */
 
     .hp-footer-note {
@@ -915,108 +772,7 @@ const qualityCareItems = [
       box-shadow: inset 0 1px 0 rgba(var(--rgb-accent), 0.15);
     }
 
-    /* ── Access table ────────────────────────────────────────────────── */
-
-    /* ── Specialty evaluations grid ─────────────────────────────────── */
-
-    .hp-specialties-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.375rem;
-    }
-
-    .hp-specialty-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 1.25rem 1.375rem;
-      border: 1px solid rgba(var(--rgb-accent), 0.08);
-      border-radius: 1rem;
-      background: rgba(var(--rgb-surface), 0.28);
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-      min-height: 7rem;
-    }
-
-    .hp-specialty-card:hover {
-      border-color: rgba(var(--rgb-accent), 0.18);
-      background: rgba(var(--rgb-surface), 0.55);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-
-    /* ── Gradient styling for specialty evaluations section ────────────── */
-    .hp-section-specialty-cards .hp-specialty-card {
-      background: linear-gradient(
-        135deg,
-        oklch(0.195 0.005 257) 0%,
-        oklch(0.18 0.004 220) 100%
-      );
-    }
-
-    .hp-section-specialty-cards .hp-specialty-card:hover {
-      background: linear-gradient(
-        135deg,
-        color-mix(in oklab, oklch(0.195 0.005 257) 85%, white) 0%,
-        color-mix(in oklab, oklch(0.18 0.004 220) 85%, white) 100%
-      );
-    }
-
-    :root.light .hp-section-specialty-cards .hp-specialty-card {
-      background: linear-gradient(
-        135deg,
-        oklch(0.988 0.005 110) 0%,
-        oklch(0.975 0.004 100) 100%
-      );
-    }
-
-    :root.light .hp-section-specialty-cards .hp-specialty-card:hover {
-      background: linear-gradient(
-        135deg,
-        color-mix(in oklab, oklch(0.988 0.005 110) 85%, white) 0%,
-        color-mix(in oklab, oklch(0.975 0.004 100) 85%, white) 100%
-      );
-    }
-
-    .hp-specialty-card:focus-visible {
-      outline: 2px solid var(--color-cta);
-      outline-offset: 2px;
-      border-radius: 1rem;
-    }
-
-    .hp-specialty-name {
-      font-size: 0.9375rem;
-      font-weight: 800;
-      line-height: 1.3;
-      letter-spacing: -0.012em;
-      color: var(--theme-site-text);
-      font-family: var(--font-heading);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hp-specialty-desc {
-      font-size: 0.75rem;
-      line-height: 1.6;
-      color: var(--theme-site-sub);
-      flex: 1;
-    }
-
-    .hp-specialty-arrow {
-      display: inline;
-      color: var(--theme-cta);
-      opacity: 0;
-      transform: translateX(-4px);
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      flex-shrink: 0;
-    }
-
-    .hp-specialty-card:hover .hp-specialty-arrow {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    /* ── Specialty self-pay badge ────────────────────────────────────── */
 
     .hp-self-pay-badge {
       display: inline-flex;
@@ -1032,30 +788,6 @@ const qualityCareItems = [
       color: var(--color-icon);
       border: 1px solid rgba(var(--rgb-accent-alt), 0.15);
       white-space: nowrap;
-    }
-
-    @media (min-width: 480px) {
-      .hp-specialties-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 768px) {
-      .hp-specialties-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.875rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hp-specialty-card {
-        transition: none;
-      }
-      .hp-specialty-arrow {
-        transition: none;
-        opacity: 1;
-        transform: none;
-      }
     }
 
     /* ── Blog grid ───────────────────────────────────────────────────── */
@@ -1156,6 +888,14 @@ const qualityCareItems = [
         padding-bottom: 8rem;
       }
 
+      .sc-section-inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
       .hp-section-header {
         margin-bottom: 3rem;
       }
@@ -1171,16 +911,6 @@ const qualityCareItems = [
         grid-template-columns: 3.5rem 1fr 1.25rem;
         gap: 1.25rem 2rem;
         padding: 2.25rem 0;
-      }
-
-      .hp-service {
-        grid-template-columns: 3.5rem 3rem 1fr 1.25rem;
-        align-items: start;
-        padding: 2rem 0;
-      }
-
-      .hp-service-desc {
-        display: block;
       }
 
       .hp-blog-grid {
@@ -1230,19 +960,6 @@ const qualityCareItems = [
       }
     }
 
-    /* ── Responsive: <640px ──────────────────────────────────────────── */
-
-    @media (max-width: 639px) {
-      .hp-service {
-        grid-template-columns: 2.25rem 1fr 1.25rem;
-        gap: 0.75rem 1rem;
-      }
-
-      .hp-service-num {
-        display: none;
-      }
-    }
-
     /* ── Responsive: <768px ──────────────────────────────────────────── */
 
     @media (max-width: 767px) {
@@ -1270,12 +987,6 @@ const qualityCareItems = [
         filter: blur(80px);
       }
 
-      .hp-hero-inner {
-        min-height: auto;
-        padding-top: 4.5rem;
-        padding-bottom: 4.5rem;
-      }
-
       /* ── Service cards: remove backdrop blur that hazes panel gradient ── */
       /* backdrop-filter bleeds the section's radial gradient through the
          semi-transparent card surface, making text appear washed out on
@@ -1287,25 +998,6 @@ const qualityCareItems = [
         background-image: none;
       }
 
-      /* ── Specialty cards: replace near-invisible oklch gradient ── */
-      /* Dark-mode gradient (oklch 0.18–0.195) is only 0.017–0.032
-         lightness units above the panel background (oklch 0.163),
-         causing bottom cards to blend into the section. surface-2 gives
-         a clear, consistent separation in both themes. */
-      .hp-section-specialty-cards .hp-specialty-card {
-        background: var(--color-surface-2);
-        border-color: rgba(var(--rgb-accent), 0.14);
-      }
-      .hp-section-specialty-cards .hp-specialty-card:hover {
-        background: var(--color-surface-2);
-      }
-      :root.light .hp-section-specialty-cards .hp-specialty-card {
-        background: var(--color-surface);
-        border-color: rgba(var(--rgb-accent), 0.12);
-      }
-      :root.light .hp-section-specialty-cards .hp-specialty-card:hover {
-        background: var(--color-surface);
-      }
     }
 
     @media (min-width: 1280px) {
@@ -1341,11 +1033,7 @@ const qualityCareItems = [
         animation: none;
       }
 
-      .hp-list-item,
-      .hp-service,
-      .hp-blog-card,
-      .hp-list-arrow,
-      .hp-service-arrow {
+      .hp-blog-card {
         transition: none;
       }
     }
@@ -1384,25 +1072,6 @@ const qualityCareItems = [
       .bento-grid.reveal-children > *:nth-child(3) { animation-range: entry 14% cover 36%; }
       .bento-grid.reveal-children > *:nth-child(4) { animation-range: entry 18% cover 40%; }
       .bento-grid.reveal-children > *:nth-child(5) { animation-range: entry 22% cover 44%; }
-
-      /* ── Specialty cards: stagger as the grid scrolls in ─────────── */
-      .hp-specialties-grid > * {
-        opacity: 0;
-        transform: translateY(1rem) scale(0.985);
-        animation-name: viewReveal;
-        animation-duration: 1ms;
-        animation-fill-mode: both;
-        animation-timing-function: linear;
-        animation-timeline: view();
-      }
-      .hp-specialties-grid > *:nth-child(1) { animation-range: entry  5% cover 26%; }
-      .hp-specialties-grid > *:nth-child(2) { animation-range: entry  7% cover 28%; }
-      .hp-specialties-grid > *:nth-child(3) { animation-range: entry  9% cover 30%; }
-      .hp-specialties-grid > *:nth-child(4) { animation-range: entry 11% cover 32%; }
-      .hp-specialties-grid > *:nth-child(5) { animation-range: entry 13% cover 34%; }
-      .hp-specialties-grid > *:nth-child(6) { animation-range: entry 15% cover 36%; }
-      .hp-specialties-grid > *:nth-child(7) { animation-range: entry 17% cover 38%; }
-      .hp-specialties-grid > *:nth-child(8) { animation-range: entry 19% cover 40%; }
 
       /* ── Stats grid: stagger the four stat blocks ──────────────── */
       .hp-stats-grid > * {
@@ -1458,7 +1127,6 @@ const qualityCareItems = [
        an explicit reset here. */
     @media (prefers-reduced-motion: reduce) {
       .hp-section-header > *,
-      .hp-specialties-grid > *,
       .hp-stats-grid > *,
       .hp-blog-grid > * {
         opacity: 1 !important;

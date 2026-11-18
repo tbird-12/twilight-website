@@ -1,0 +1,32 @@
+---
+import SpecialtyCompass from "./react/composites/SpecialtyCompass";
+import { specialties } from "../data/services";
+import { SELF_PAY_WAITLIST_WEEKS, SELF_PAY_REPORT_TURNAROUND_DAYS } from "../data/resource";
+
+type DirectionKey = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
+
+const DIRECTION_MAP: Record<string, DirectionKey> = {
+  'dyslexia-testing':              'N',
+  'psychoeducational-evaluations': 'NE',
+  'pda-profile':                   'E',
+  'iee':                           'SE',
+  'adoption-evaluations':          'S',
+  'benefits-evaluations':          'SW',
+  'guardianship-evaluations':      'W',
+  'esa-evaluations':               'NW',
+};
+
+const nodes = specialties.map(spec => ({
+  name: spec.name,
+  slug: spec.slug,
+  desc: spec.desc,
+  direction: DIRECTION_MAP[spec.slug] ?? ('N' as DirectionKey),
+}));
+---
+
+<SpecialtyCompass
+  nodes={nodes}
+  waitWeeks={SELF_PAY_WAITLIST_WEEKS}
+  reportDays={SELF_PAY_REPORT_TURNAROUND_DAYS}
+  client:visible
+/>

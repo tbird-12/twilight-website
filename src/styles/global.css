@@ -1085,6 +1085,514 @@ a[class*="rounded-"] {
   line-height: 1rem;
 }
 
+/* ══════════════════════════════════════════════════════════════════
+   Specialty Compass  (SpecialtyCompass.tsx)
+   ══════════════════════════════════════════════════════════════════ */
+
+.sc-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ── Show/hide per viewport ───────────────────────────────────────── */
+.sc-desktop { display: none; }
+.sc-mobile  { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+
+@media (min-width: 768px) {
+  .sc-desktop {
+    display: grid;
+    grid-template-columns: min(340px, 42%) 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    width: 100%;
+  }
+  .sc-mobile  { display: none; }
+}
+
+/* ── Compass frame ───────────────────────────────────────────────── */
+.sc-frame {
+  position: relative;
+  /* fills its grid column; aspect-ratio keeps it square */
+  width: 100%;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+/* ── SVG layer ────────────────────────────────────────────────────── */
+.sc-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ── Constellation lines (strokeDashoffset animated via inline style) */
+.sc-constellation-line {
+  pointer-events: none;
+}
+
+/* ── Node anchor ──────────────────────────────────────────────────── */
+.sc-node-anchor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  /* overflow visible so glow ring and label can extend outside the 20×20 box */
+  overflow: visible;
+}
+
+.sc-node-anchor:focus-visible {
+  outline: 2px solid var(--color-cta);
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+/* ── Node dot ─────────────────────────────────────────────────────── */
+.sc-node-dot {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  transition: width 0.2s ease, height 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sc-node-dot--active {
+  width: 13px;
+  height: 13px;
+}
+
+/* ── Glow ring ────────────────────────────────────────────────────── */
+.sc-node-glow {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.sc-node-glow--active {
+  opacity: 1;
+  animation: scGlowPulse 1.6s ease-in-out infinite;
+}
+
+/* ── Short name label ─────────────────────────────────────────────── */
+.sc-node-label {
+  position: absolute;
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  color: var(--color-site-sub);
+  transition: color 0.2s ease;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.sc-node-anchor:hover .sc-node-label,
+.sc-node-anchor:focus-visible .sc-node-label {
+  opacity: 1;
+}
+
+/* ── Central info ─────────────────────────────────────────────────── */
+.sc-center-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16%;
+  text-align: center;
+  pointer-events: none;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sc-center-name {
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  display: block;
+}
+
+.sc-center-idle {
+  font-size: 0.4rem;
+  font-weight: 600;
+  color: var(--color-site-sub);
+  opacity: 0.35;
+  letter-spacing: 0.08em;
+  display: block;
+}
+
+/* ── Specialty list (right panel) ────────────────────────────────── */
+.sc-list {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 100%;
+}
+
+.sc-list-item {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr auto;
+  gap: 0.875rem;
+  align-items: center;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.18s ease;
+  border-bottom: 1px solid rgba(165, 180, 252, 0.05);
+  position: relative;
+}
+
+.sc-list-item:last-child {
+  border-bottom: none;
+}
+
+.sc-list-item:hover,
+.sc-list-item--active {
+  background: rgba(165, 180, 252, 0.05);
+}
+
+.sc-list-item:focus-visible {
+  outline: 2px solid var(--color-cta);
+  outline-offset: 2px;
+  border-radius: 0.625rem;
+}
+
+:root.light .sc-list-item:hover,
+:root.light .sc-list-item--active {
+  background: rgba(var(--rgb-accent), 0.05);
+}
+
+.sc-list-dir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.sc-list-dir-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: box-shadow 0.18s ease;
+}
+
+.sc-list-dir-text {
+  font-size: 0.45rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-site-sub);
+  line-height: 1;
+  transition: color 0.18s ease;
+}
+
+.sc-list-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.sc-list-name {
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-site-text);
+  line-height: 1.3;
+  letter-spacing: -0.012em;
+  transition: color 0.18s ease;
+  display: block;
+}
+
+.sc-list-item:hover .sc-list-name,
+.sc-list-item--active .sc-list-name {
+  color: var(--color-cta);
+}
+
+.sc-list-desc {
+  font-size: 0.75rem;
+  color: var(--color-site-sub);
+  line-height: 1.5;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sc-list-arrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-cta);
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  flex-shrink: 0;
+  padding-left: 0.25rem;
+}
+
+.sc-list-item:hover .sc-list-arrow,
+.sc-list-item--active .sc-list-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* ── Mobile wheel container ──────────────────────────────────────── */
+.sc-wheel-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+/* Top tick mark that acts as a "12 o'clock" indicator */
+.sc-wheel-indicator {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 10px;
+  border-radius: 2px;
+  background: var(--color-cta);
+  display: block;
+  opacity: 0.7;
+}
+
+.sc-wheel {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(165, 180, 252, 0.08);
+}
+
+.sc-wheel-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ── Wheel node buttons ───────────────────────────────────────────── */
+.sc-wheel-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: inherit;
+  touch-action: manipulation;
+}
+
+.sc-wheel-node:focus-visible {
+  outline: 2px solid var(--color-cta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sc-wheel-dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(165, 180, 252, 0.3);
+  flex-shrink: 0;
+  transition: background 0.25s ease, box-shadow 0.25s ease, width 0.25s ease, height 0.25s ease;
+}
+
+.sc-wheel-dot--active {
+  width: 10px;
+  height: 10px;
+}
+
+.sc-wheel-dir {
+  display: block;
+  font-size: 0.45rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: var(--color-site-sub);
+  transition: color 0.25s ease;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.sc-wheel-center {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(165, 180, 252, 0.2);
+  pointer-events: none;
+}
+
+/* ── Feature card (mobile) ────────────────────────────────────────── */
+.sc-feature-card {
+  width: min(100%, 400px);
+  border: 1px solid rgba(165, 180, 252, 0.10);
+  border-radius: 1.25rem;
+  padding: 1.375rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sc-feature-card:hover,
+.sc-feature-card:focus-visible {
+  border-color: rgba(165, 180, 252, 0.22);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+:root.light .sc-feature-card {
+  border-color: rgba(var(--rgb-accent), 0.14);
+  background: var(--color-surface);
+}
+
+:root.light .sc-feature-card:hover {
+  border-color: rgba(var(--rgb-accent), 0.28);
+}
+
+.sc-feature-dir {
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.sc-feature-name {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--color-site-text);
+  letter-spacing: -0.012em;
+  margin: 0;
+}
+
+.sc-feature-desc {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--color-site-sub);
+  flex: 1;
+  margin: 0;
+}
+
+.sc-feature-cta {
+  font-size: 0.625rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cta);
+  margin-top: 0.25rem;
+}
+
+/* ── Shared footer ────────────────────────────────────────────────── */
+.sc-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid rgba(165, 180, 252, 0.07);
+  width: 100%;
+}
+
+:root.light .sc-footer {
+  border-top-color: rgba(var(--rgb-accent), 0.12);
+}
+
+.sc-footer-badge {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-site-sub);
+  opacity: 0.65;
+  margin: 0;
+}
+
+.sc-footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.sc-footer-link {
+  font-size: 0.625rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-cta);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.sc-footer-link:hover { opacity: 0.75; }
+
+.sc-footer-link--muted {
+  color: var(--color-site-sub);
+  opacity: 0.6;
+}
+
+.sc-footer-link--muted:hover { opacity: 1; }
+
+/* ── Keyframes ────────────────────────────────────────────────────── */
+@keyframes scGlowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.18); }
+}
+
+@keyframes scFadeUp {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .sc-node-glow--active { animation: none; }
+  .sc-node-dot,
+  .sc-node-label,
+  .sc-wheel-dot,
+  .sc-wheel-dir,
+  .sc-list-item,
+  .sc-list-name,
+  .sc-list-arrow,
+  .sc-feature-card {
+    transition: none;
+  }
+  .sc-desc-content { animation: none; }
+}
+
 /* ── Global Animation Keyframes ── */
 @keyframes navMegaEnter {
   from { opacity: 0; transform: translateY(-8px); }
