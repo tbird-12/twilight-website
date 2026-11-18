@@ -17,13 +17,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "7.3.5",
+    "@astrojs/markdown-remark": "7.3.9",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.10",
-    "@astrojs/react": "6.0.5",
+    "@astrojs/check": "0.9.7",
+    "@astrojs/react": "7.1.9",
     "@astrojs/sitemap": "3.7.4",
     "@iconify-json/lucide": "1.2.129",
     "@iconify-json/mdi": "1.2.3",
@@ -31,7 +31,7 @@
     "@tailwindcss/vite": "4.3.3",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "astro": "7.4.2",
+    "astro": "7.4.12",
     "astro-icon": "1.2.0",
     "astro-pagefind": "2.0.1",
     "autoprefixer": "10.4.24",
@@ -39,10 +39,10 @@
     "rehype-external-links": "3.0.0",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3",
-    "vitest": "4.1.12"
+    "vitest": "3.1.4"
   },
   "allowScripts": {
-    "esbuild@0.28.2": true,
-    "sharp@0.34.5": true
+    "sharp@0.34.5": true,
+    "esbuild@0.25.12": true
   }
 }

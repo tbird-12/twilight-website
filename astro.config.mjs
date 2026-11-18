@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { unified } from "@astrojs/markdown-remark";
 import tailwindcss from '@tailwindcss/vite';
 import rehypeExternalLinks from "rehype-external-links";
 
@@ -78,9 +79,11 @@ export default defineConfig({
     pagefind(),
   ],
   markdown: {
-    rehypePlugins: [
-      [rehypeExternalLinks, { rel: ["noopener", "noreferrer"], target: "_blank" }],
-    ],
+    processor: unified({
+      rehypePlugins: [
+        [rehypeExternalLinks, { rel: ["noopener", "noreferrer"], target: "_blank" }],
+      ],
+    }),
   },
   site: "https://www.twilightpsychology.com",
 });
