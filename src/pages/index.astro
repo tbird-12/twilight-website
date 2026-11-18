@@ -8,6 +8,7 @@ import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg";
 import heroBg from "../assets/hero-background.svg";
 import heroBgMobile from "../assets/hero-mobile.svg";
 import SpecialtyCompassWrapper from "../components/SpecialtyCompassWrapper.astro";
+import CelestialDivider from "../components/CelestialDivider.astro";
 
 import { getCollection } from "astro:content";
 import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
@@ -194,6 +195,7 @@ const qualityCareItems = [
       ></div>
       <!-- Decorative dot-grid background -->
       <div class="qc-dot-grid" aria-hidden="true"></div>
+      <CelestialDivider type="orbital" />
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header">
           <p class="hp-eyebrow">Sound Familiar?</p>
@@ -220,6 +222,7 @@ const qualityCareItems = [
       aria-labelledby="services-heading"
       class="hp-section hp-section--alt homepage-panel-services relative isolate overflow-hidden px-4"
     >
+      <CelestialDivider type="comet" />
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
@@ -277,6 +280,7 @@ const qualityCareItems = [
       aria-labelledby="specialty-heading"
       class="hp-section homepage-panel-care relative isolate overflow-hidden px-4"
     >
+      <CelestialDivider type="compass" />
       <div class="sc-section-inner mx-auto max-w-5xl px-4 sm:px-6 w-full">
         <header class="hp-section-header">
           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-3">
@@ -302,6 +306,7 @@ const qualityCareItems = [
 
     <!-- ════════════════ FROM OUR BLOG ════════════════ -->
     <section aria-labelledby="blog-heading" class="hp-section hp-section--alt homepage-panel-blog relative isolate overflow-hidden px-4">
+      <CelestialDivider type="stars" />
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
@@ -368,6 +373,7 @@ const qualityCareItems = [
       aria-label="Get started with Twilight Psychology"
       class="hp-section homepage-panel-cta relative isolate overflow-hidden px-4"
     >
+      <CelestialDivider type="crescent" />
       <div class="hp-section-inner mx-auto max-w-5xl text-center">
         <p class="hp-eyebrow justify-center">Next Step</p>
         <h2
@@ -967,9 +973,25 @@ const qualityCareItems = [
         min-height: 82svh;
       }
 
+      /* Stack the in-flow children (celestial art + section inner) vertically.
+         align-items:stretch keeps hp-section-inner full-width; the art uses
+         align-self:center to center itself within the column.               */
+      .hp-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      /* Restore sane vertical spacing — the in-flow celestial art
+         provides the visual section opener above the heading. */
       .hp-section-inner {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding-top: 2rem;
+        padding-bottom: 4.5rem;
+      }
+
+      /* sc-section-inner had zero mobile padding */
+      .sc-section-inner {
+        padding-top: 2rem;
+        padding-bottom: 4.5rem;
       }
 
       .homepage-panel-inner {
@@ -1036,6 +1058,13 @@ const qualityCareItems = [
       .hp-blog-card {
         transition: none;
       }
+
+      /* Restore separator line visibility when animations are disabled */
+      .hp-section::before {
+        animation: none;
+        transform: none;
+        opacity: 1;
+      }
     }
 
     /* ═══════════════════════════════════════════════════════════════════
@@ -1045,6 +1074,19 @@ const qualityCareItems = [
     ═══════════════════════════════════════════════════════════════════ */
 
     @supports (animation-timeline: view()) {
+
+      /* ── Section separator line: sweeps from center outward on entry ─ */
+      /* Creates a clear animated transition between sections as you scroll */
+      @keyframes separatorSweep {
+        from { transform: scaleX(0.06); opacity: 0.2; }
+        to   { transform: scaleX(1);    opacity: 1;   }
+      }
+      .hp-section::before {
+        transform-origin: center;
+        animation: separatorSweep linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 18%;
+      }
 
       /* ── Section headers: stagger eyebrow → h2 → subtitle on entry ── */
       .hp-section-header > * {
@@ -1138,6 +1180,12 @@ const qualityCareItems = [
         animation: none !important;
         transform: none !important;
         will-change: auto !important;
+      }
+      /* Restore separator lines statically */
+      .hp-section::before {
+        animation: none !important;
+        transform: scaleX(1) !important;
+        opacity: 1 !important;
       }
     }
   </style>
