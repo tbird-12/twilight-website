@@ -93,6 +93,7 @@ export default function MobileNav({
   headerHeight,
 }: MobileNavProps) {
   const [activeTabId, setActiveTabId] = useState(tabs[0].id);
+  const [expandedNestedItem, setExpandedNestedItem] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const prefersReducedMotion = useReducedMotion();
 
@@ -250,36 +251,97 @@ export default function MobileNav({
               </>
             ) : null}
 
-            {/* Items — nested groups become direct section links, no drill-in */}
+            {/* Items — nested groups can be expanded to show children */}
             {activeTab.items.map((item) => {
               if (isNavigationNestedItem(item)) {
+                const isExpanded = expandedNestedItem === item.slug;
                 const isActive = matchesPath(currentPath, item.childHrefBase);
+
                 return (
-                  <a
-                    key={item.slug}
-                    href={item.childHrefBase}
-                    onClick={onClose}
-                    aria-current={isActive ? "page" : undefined}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 transition-colors ${
-                      isActive ? "bg-cta/10" : "hover:bg-surface-2"
-                    }`}
-                  >
-                    <div className="min-w-0">
-                      <p
-                        className={`text-sm font-semibold leading-tight ${
-                          isActive ? "text-cta" : "text-site-text"
-                        }`}
-                      >
-                        {item.name}
-                      </p>
-                      {item.desc ? (
-                        <p className="mt-0.5 line-clamp-1 text-xs text-site-sub">{item.desc}</p>
-                      ) : null}
-                    </div>
-                    <span className="ml-3 shrink-0 rounded-full bg-surface-2 px-2 py-0.5 text-[10px] font-bold text-site-sub">
-                      {item.children.length}
-                    </span>
-                  </a>
+                  <div key={item.slug}>
+                    {/* Nested item header — click to toggle expansion */}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setExpandedNestedItem(isExpanded ? null : item.slug)
+                      }
+                      className={`w-full flex items-center justify-between rounded-xl px-4 py-3 transition-colors ${
+                        isExpanded
+                          ? "bg-surface-2 text-site-text"
+                          : isActive
+                            ? "bg-cta/10"
+                            : "hover:bg-surface-2"
+                      }`}
+                    >
+                      <div className="min-w-0 text-left">
+                        <p
+                          className={`text-sm font-semibold leading-tight ${
+                            isActive ? "text-cta" : "text-site-text"
+                          }`}
+                        >
+                          {item.name}
+                        </p>
+                        {item.desc ? (
+                          <p className="mt-0.5 line-clamp-1 text-xs text-site-sub">
+                            {item.desc}
+                          </p>
+                        ) : null}
+                      </div>
+                      <div className="ml-3 flex shrink-0 items-center gap-2">
+                        <span className="rounded-full bg-surface-2 px-2 py-0.5 text-[10px] font-bold text-site-sub">
+                          {item.children.length}
+                        </span>
+                        <svg
+                          className={`h-4 w-4 text-site-sub transition-transform ${
+                            isExpanded ? "rotate-180" : ""
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                            strokeWidth={2}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </button>
+
+                    {/* Nested children — only shown when expanded */}
+                    {isExpanded && (
+                      <div className="pl-4 py-1">
+                        {item.children.map((child) => {
+                          const childHref = `${item.childHrefBase}/${child.slug}`;
+                          const childIsActive = matchesPath(currentPath, childHref);
+
+                          return (
+                            <a
+                              key={child.slug}
+                              href={childHref}
+                              onClick={onClose}
+                              aria-current={childIsActive ? "page" : undefined}
+                              className={`flex items-center justify-between rounded-lg px-4 py-2.5 text-sm transition-colors ${
+                                childIsActive
+                                  ? "font-semibold text-cta bg-cta/5"
+                                  : "text-site-text hover:bg-surface-2"
+                              }`}
+                            >
+                              <span>{child.name}</span>
+                              {childIsActive ? (
+                                <span
+                                  className="h-1 w-1 shrink-0 rounded-full bg-cta"
+                                  aria-hidden="true"
+                                />
+                              ) : null}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
                 );
               }
 
