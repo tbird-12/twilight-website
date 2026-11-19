@@ -32,11 +32,11 @@ const { type } = Astro.props;
       <!-- Polaris glow rings (behind the star) -->
       <circle class="ursa-glow ursa-glow--outer" cx="215" cy="165" r="18"/>
       <circle class="ursa-glow ursa-glow--inner" cx="215" cy="165" r="10"/>
-      <!-- Stars (rendered on top of lines) -->
-      <circle class="ursa-star" cx="182" cy="143" r="1.8" style="animation-delay:.4s"/>
+      <!-- Stars — ζ, ε, δ randomly blink off; η, γ, Kochab, Polaris stay on -->
+      <circle class="ursa-star ursa-star--blink-a" cx="182" cy="143" r="1.8"/>
       <circle class="ursa-star" cx="150" cy="118" r="1.8" style="animation-delay:1.1s"/>
-      <circle class="ursa-star" cx="118" cy="102" r="2.1" style="animation-delay:.3s"/>
-      <circle class="ursa-star" cx="82"  cy="85"  r="2.1" style="animation-delay:1.6s"/>
+      <circle class="ursa-star ursa-star--blink-b" cx="118" cy="102" r="2.1"/>
+      <circle class="ursa-star ursa-star--blink-c" cx="82"  cy="85"  r="2.1"/>
       <circle class="ursa-star" cx="62"  cy="52"  r="2.2" style="animation-delay:.8s"/>
       <circle class="ursa-star ursa-star--kochab"  cx="98"  cy="36"  r="2.8"/>
       <circle class="ursa-star ursa-star--polaris" cx="215" cy="165" r="3.5"/>
@@ -58,7 +58,9 @@ const { type } = Astro.props;
       <ellipse class="orbit-band"              cx="120" cy="58" rx="22" ry="7"/>
       <!-- Front ring (over planet, bottom half only) -->
       <ellipse class="orbit-ring orbit-ring--front" cx="120" cy="62" rx="68" ry="18" clip-path="url(#cel-ring-front)"/>
-      <!-- Moons -->
+      <!-- Orbiting moon — travels outside the ring on a wider ellipse -->
+      <circle class="orbit-moon-body" cx="0" cy="0" r="3"/>
+      <!-- Background stars -->
       <circle class="cel-star" cx="34"  cy="26" r="2.5" style="animation-delay:0s"/>
       <circle class="cel-star" cx="198" cy="90" r="2"   style="animation-delay:1.2s"/>
       <circle class="cel-star" cx="210" cy="22" r="1.5" style="animation-delay:.6s"/>
@@ -67,11 +69,22 @@ const { type } = Astro.props;
 
   {type === "comet" && (
     <svg viewBox="0 0 240 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="cel-svg">
-      <!-- Tail drawn with scroll animation -->
+      <defs>
+        <!-- Gradient: transparent at the tip, opaque near the head -->
+        <linearGradient id="cel-comet-trail-grad" gradientUnits="userSpaceOnUse"
+                        x1="8" y1="68" x2="210" y2="50">
+          <stop offset="0%"   stop-color="currentColor" stop-opacity="0"/>
+          <stop offset="65%"  stop-color="currentColor" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="currentColor" stop-opacity="0.6"/>
+        </linearGradient>
+      </defs>
+      <!-- Gradient trail — always fades toward the tip -->
       <path class="comet-tail" d="M 210 50 Q 150 32 60 54 Q 25 62 8 68" pathLength="1"/>
-      <!-- Head glow + head -->
-      <circle class="comet-glow" cx="210" cy="50" r="12"/>
-      <circle class="comet-head" cx="210" cy="50" r="4"/>
+      <!-- Flying nucleus: glow + head travel along the tail path -->
+      <g class="comet-nucleus">
+        <circle class="comet-glow" cx="0" cy="0" r="12"/>
+        <circle class="comet-head" cx="0" cy="0" r="4"/>
+      </g>
       <!-- Trail sparkles -->
       <circle class="cel-star" cx="155" cy="34" r="1.2" style="animation-delay:.3s"/>
       <circle class="cel-star" cx="98"  cy="52" r="1"   style="animation-delay:.9s"/>
@@ -100,9 +113,12 @@ const { type } = Astro.props;
     <svg viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="cel-svg cel-svg--compass">
       <circle class="compass-ring" cx="110" cy="60" r="34"/>
       <circle class="compass-ring compass-ring--inner" cx="110" cy="60" r="18"/>
-      <path class="compass-needle compass-needle--north" d="M110 20 L118 60 L110 78 L102 60 Z"/>
-      <path class="compass-needle compass-needle--south" d="M110 100 L118 60 L110 42 L102 60 Z"/>
-      <circle class="compass-core" cx="110" cy="60" r="5"/>
+      <!-- Rose group rotates around the compass centre -->
+      <g class="compass-rose">
+        <path class="compass-needle compass-needle--north" d="M110 20 L118 60 L110 78 L102 60 Z"/>
+        <path class="compass-needle compass-needle--south" d="M110 100 L118 60 L110 42 L102 60 Z"/>
+        <circle class="compass-core" cx="110" cy="60" r="5"/>
+      </g>
       <path class="compass-axis" d="M110 10 V110 M10 60 H210"/>
       <circle class="cel-star" cx="58" cy="32" r="2" style="animation-delay:0s"/>
       <circle class="cel-star" cx="164" cy="28" r="1.8" style="animation-delay:.7s"/>
@@ -250,6 +266,20 @@ const { type } = Astro.props;
     animation: kochab 3.8s ease-in-out infinite;
   }
 
+  /* Stars that randomly blink off — snap out, slow fade back */
+  @keyframes starBlink {
+    0%   { opacity: 0.9; }
+    10%  { opacity: 1.0; }
+    20%  { opacity: 0.5; }
+    22%  { opacity: 0.0; }
+    58%  { opacity: 0.0; }
+    72%  { opacity: 0.9; }
+    100% { opacity: 0.9; }
+  }
+  .ursa-star--blink-a { animation: starBlink  8s ease-in-out infinite  1.0s; }
+  .ursa-star--blink-b { animation: starBlink 11s ease-in-out infinite  4.5s; }
+  .ursa-star--blink-c { animation: starBlink  9s ease-in-out infinite  7.2s; }
+
   .ursa-glow { fill: none; stroke-width: 0.75; }
 
   @keyframes glowInner {
@@ -276,10 +306,25 @@ const { type } = Astro.props;
   .orbit-planet { fill: rgba(var(--rgb-accent-alt), 0.12); stroke: rgba(var(--rgb-accent-alt), 0.3); stroke-width: 1; }
   .orbit-band { fill: none; stroke: rgba(var(--rgb-accent-alt), 0.08); stroke-width: 7; }
 
+  /* Moon orbiting outside the ring on a wider ellipse (rx=90, ry=22, centre 120 62) */
+  .orbit-moon-body {
+    fill: rgba(var(--rgb-accent-alt), 0.7);
+    stroke: rgba(var(--rgb-accent-alt), 0.35);
+    stroke-width: 0.6;
+    offset-path: path("M 210 62 A 90 22 0 0 1 30 62 A 90 22 0 0 1 210 62");
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    animation: moonOrbit 7s linear infinite;
+  }
+
+  @keyframes moonOrbit {
+    to { offset-distance: 100%; }
+  }
+
   /* ══ Comet ════════════════════════════════════════════════════════ */
-  /* Tail: always visible on mobile; draw animation desktop-only */
+  /* Gradient trail: transparent at tip, opaque near the head */
   .comet-tail {
-    stroke: rgba(var(--rgb-accent-alt), 0.45);
+    stroke: url(#cel-comet-trail-grad);
     stroke-width: 1.5;
     stroke-linecap: round;
     fill: none;
@@ -299,6 +344,23 @@ const { type } = Astro.props;
         animation-range: entry 8% cover 42%;
       }
     }
+  }
+
+  /* Nucleus flies from head (0 %) → tip (100 %), fades, then resets */
+  .comet-nucleus {
+    offset-path: path("M 210 50 Q 150 32 60 54 Q 25 62 8 68");
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    animation: cometFly 4.5s ease-in infinite;
+  }
+
+  @keyframes cometFly {
+    0%   { offset-distance:   0%; opacity: 1; }
+    60%  { offset-distance: 100%; opacity: 1; }
+    76%  { offset-distance: 100%; opacity: 0; }
+    77%  { offset-distance:   0%; opacity: 0; }
+    92%  { offset-distance:   0%; opacity: 1; }
+    100% { offset-distance:   0%; opacity: 1; }
   }
 
   @keyframes cometGlowAnim {
@@ -362,6 +424,18 @@ const { type } = Astro.props;
     stroke-width: 0.5;
   }
 
+  /* Rose (needles + core) rotates continuously around the compass centre */
+  .compass-rose {
+    transform-box: view-box;
+    transform-origin: 110px 60px;
+    animation: compassRotate 14s linear infinite;
+  }
+
+  @keyframes compassRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
   /* ══ Reduced motion ═══════════════════════════════════════════════ */
   @media (prefers-reduced-motion: reduce) {
     /* Stop all looping animations; keep art visible */
@@ -369,19 +443,28 @@ const { type } = Astro.props;
     .ursa-star,
     .ursa-star--polaris,
     .ursa-star--kochab,
+    .ursa-star--blink-a,
+    .ursa-star--blink-b,
+    .ursa-star--blink-c,
     .ursa-glow--inner,
     .ursa-glow--outer,
     .comet-glow,
     .comet-head,
+    .comet-nucleus,
+    .orbit-moon-body,
     .crescent-body,
     .compass-ring,
     .compass-ring--inner,
     .compass-axis,
     .compass-needle,
-    .compass-core {
+    .compass-core,
+    .compass-rose {
       animation: none !important;
       opacity: 0.75 !important;
     }
+
+    /* Reset transforms so static art looks correct */
+    .compass-rose { transform: none !important; }
 
     /* Desktop: show art statically without scroll animation */
     @media (min-width: 768px) {
