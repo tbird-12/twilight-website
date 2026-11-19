@@ -485,7 +485,7 @@
   .fluid-display-md,
   .fluid-display-lg,
   .fluid-display-xl {
-    line-height: 0.98;
+    line-height: 1.2;
     letter-spacing: -0.035em;
   }
 
