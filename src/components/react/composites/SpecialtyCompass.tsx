@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 type DirectionKey = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
@@ -44,6 +44,25 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
   const [hovered, setHovered] = useState<DirectionKey | null>(null);
   const [active, setActive] = useState<DirectionKey>(() => nodes[0]?.direction ?? 'N');
   const reduced = useReducedMotion();
+
+  // Sorted clockwise directions for the mobile carousel — updated each render via ref
+  const sortedDirsRef = useRef<DirectionKey[]>([]);
+  sortedDirsRef.current = nodes
+    .map(n => n.direction)
+    .sort((a, b) => CLOCK_ANGLES[a] - CLOCK_ANGLES[b]);
+
+  // Mobile auto-advance: step clockwise every 1 s; honours prefers-reduced-motion
+  useEffect(() => {
+    if (reduced) return;
+    const id = setInterval(() => {
+      setActive(prev => {
+        const dirs = sortedDirsRef.current;
+        const idx = dirs.indexOf(prev);
+        return dirs[(idx + 1) % dirs.length];
+      });
+    }, 1500);
+    return () => clearInterval(id);
+  }, [reduced]);
 
   // used by mobile feature card only
   const activeNode = nodes.find(n => n.direction === active) ?? nodes[0];
