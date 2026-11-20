@@ -5,7 +5,7 @@ pubDate: 2026-11-19
 category: announcements
 author: "Twilight Psychology Team"
 tags: ["team", "medication-management", "psychiatry", "medicare", "new-provider", "pmhnp"]
-draft: true
+draft: false
 ---
 
 We are thrilled to welcome **Sher Glaser, MSN, APRN, PMHNP-BC** to the Twilight Psychology team as our newest Psychiatric Mental Health Nurse Practitioner. Sher is now accepting new clients for medication management, with **immediate openings for Medicare and self-pay clients** in Kentucky.
