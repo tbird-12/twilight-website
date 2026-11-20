@@ -14,6 +14,7 @@ import taylorPenningtonImg from '../assets/images/staff/taylor-pennington.png';
 import eliseVanMeterImg from '../assets/images/staff/elise-vanmeter.jpeg';
 
 import ashleyPerkinsImg from '../assets/images/staff/ashley-perkins.jpeg';
+import sherGlaserImg from '../assets/images/staff/sher-glaser.png';
 
 /** Broad age buckets for client-facing filtering */
 export const AGE_GROUPS = ["Child (3–11)", "Teen (12–17)", "Adult (18–64)", "Older Adult (65+)"] as const;
@@ -217,6 +218,24 @@ export const providers: Provider[] = [
     age_groups: ['Teen (12–17)', 'Adult (18–64)', 'Older Adult (65+)'],
     availability_note: 'Therapy: ~6 weeks',
     availability_status: 'waitlist',
+    contact_url: 'https://twilightpsychology.clientsecure.me/contact-widget',
+  },
+  {
+    name: 'Sher Glaser',
+    slug: 'sher-glaser',
+    spec: 'Medication Management',
+    image: sherGlaserImg,
+    name_with_education: 'Sher Glaser, MSN',
+    credential: 'PMHNP-BC',
+    service_categories: ['Medication Management'],
+    services_offered: ['Medication Management'],
+    out_of_pocket_rates: { medication_intake: SELF_PAY_RATES.intake, medication_followup: SELF_PAY_RATES.therapy },
+    states_served: ['Kentucky'],
+    ins: ['Medicare'],
+    wait_times: { medication_management: 'Immediate' },
+    age_groups: ['Teen (12–17)', 'Adult (18–64)', 'Older Adult (65+)'],
+    availability_note: 'Self-pay & Medicare: Immediate',
+    availability_status: 'open',
     contact_url: 'https://twilightpsychology.clientsecure.me/contact-widget',
   },
 ];

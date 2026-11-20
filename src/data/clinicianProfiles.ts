@@ -792,6 +792,106 @@ export const clinicianProfiles: ClinicianProfile[] = [
       variant: "surface",
     },
   },
+  {
+    slug: "sher-glaser",
+    pageTitle: "Sher Glaser, PMHNP-BC | Psychiatric NP — KY",
+    pageDescription:
+      "Sher Glaser, PMHNP-BC brings 25 years of nursing experience to Twilight Psychology — now accepting Medicare and self-pay clients in Kentucky",
+    jobTitle: "Psychiatric Mental Health Nurse Practitioner",
+    badge: "Psychiatric Nurse Practitioner",
+    headingPrimary: "Sher Glaser,",
+    headingAccent: "MSN, APRN, PMHNP-BC",
+    intro:
+      "Board-certified psychiatric nurse practitioner with 25+ years of clinical experience, specializing in medication management for ADHD, neurodevelopmental conditions, and mood disorders.",
+    specialties: [
+      "Medication Management",
+      "ADHD & Neurodevelopmental Care",
+      "Mood & Anxiety Disorders",
+      "GeneSight Pharmacogenomic Testing",
+      "Telehealth",
+    ],
+    contentBlocks: [
+      {
+        type: "paragraphs",
+        title: "A Deep Clinical Foundation for Psychiatric Care.",
+        paragraphs: [
+          "With more than 25 years of nursing experience spanning intensive care, interventional radiology, and neurology, I bring a strong medical foundation to psychiatric medication management. That depth of clinical background shapes how I evaluate medications, interpret laboratory findings, and consider the complex interplay between physical and mental health.",
+          "My PMHNP training deepened my expertise in psychopharmacology and DSM-5-based diagnosis across a range of conditions, including ADHD, autism, anxiety, depression, bipolar disorder, and personality disorders. I trained alongside behavioral specialists and analysts serving neurodevelopmental and special-needs populations — an experience that informs my patient-centered, collaborative approach at Twilight Psychology.",
+          "I have a particular interest in GeneSight pharmacogenomic testing to support individualized medication decisions, and I am committed to careful monitoring of treatment response and side effects so that every patient feels informed and empowered throughout their care.",
+        ],
+      },
+      {
+        type: "quote",
+        quote:
+          "My goal is to meet each patient where they are — listening carefully, prescribing thoughtfully, and building a partnership grounded in shared decision-making.",
+        variant: "soft",
+      },
+    ],
+    detailCards: [
+      {
+        title: "Education & Training",
+        eyebrow: "Background",
+        variant: "soft",
+        items: [
+          {
+            title: "Master of Science in Nursing (PMHNP)",
+            subtitle: "Northern Kentucky University",
+          },
+          {
+            title: "Bachelor of Science in Nursing",
+            subtitle: "University of Nebraska Medical Center",
+          },
+          {
+            title: "PMHNP Clinical Training",
+            subtitle:
+              "Norton Behavioral Health, Lee's Specialty Clinic, Baptist Neurology Associates",
+          },
+        ],
+      },
+      {
+        title: "Clinical Focus",
+        eyebrow: "Care approach",
+        variant: "soft",
+        items: [
+          {
+            title:
+              "Medication evaluation and ongoing management for ADHD, anxiety, depression, and mood disorders",
+          },
+          {
+            title:
+              "Neurodevelopmental and neurodivergent-affirming psychiatric care, including autism-related presentations",
+          },
+          {
+            title:
+              "GeneSight pharmacogenomic testing to guide individualized treatment decisions",
+          },
+        ],
+      },
+      {
+        title: "Care Delivery",
+        variant: "surface-2",
+        body: [
+          "Sher provides telehealth appointments across Kentucky, bringing psychiatric medication management to clients wherever they are. In-person options may be available — contact our office for details.",
+        ],
+      },
+      {
+        title: "Safe Prescribing",
+        variant: "surface-2",
+        body: [
+          "At Twilight Psychology, we follow all Drug Enforcement Administration regulations and use Prescription Drug Monitoring Program checks to support safe, informed, individualized care.",
+        ],
+      },
+    ],
+    primaryPanel: {
+      eyebrow: "Availability",
+      title: "Immediate Openings for Medication Management",
+      description:
+        "Now accepting new Medicare and self-pay clients for psychiatric medication evaluation and management in Kentucky.",
+      ctaLabel: "Request Appointment",
+      ctaHref: requestAppointmentPhoneHref,
+      variant: "surface",
+    },
+  },
 ];
 
 export function getClinicianPageData(slug: string): ClinicianPageData | undefined {
