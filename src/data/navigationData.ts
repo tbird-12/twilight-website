@@ -30,6 +30,7 @@ export function getNavigationItemHref(item: Pick<NavigationLinkItem, "slug">, ba
 const providerMenuChildren: NavigationLinkItem[] = [
   { name: "Heather Cornett", slug: "heather-cornett" },
   { name: "Nicola Allen", slug: "nicola-allen" },
+  { name: "Sher Glaser", slug: "sher-glaser" },
   { name: "Jonica Davis", slug: "jonica-davis" },
   { name: "Emeli Evans", slug: "emeli-evans" },
   { name: "Ethan Puckett", slug: "ethan-puckett" },
@@ -37,7 +38,6 @@ const providerMenuChildren: NavigationLinkItem[] = [
   { name: "Tiffany Roundtree", slug: "tiffany-roundtree" },
   { name: "Taylor Pennington", slug: "taylor-pennington" },
   { name: "Elise Van Meter", slug: "elise-vanmeter" },
-  { name: "Sher Glaser", slug: "sher-glaser" },
 ].map((item) => ({
   ...item,
   desc: "Provider profile",
