@@ -21,9 +21,12 @@ const medicationSchema = {
     "psychiatric NP Lexington KY",
     "ADHD medication Medicaid Kentucky",
     "mental health medication management near me",
+    "immediate psychiatric care Lexington KY",
+    "psychiatric NP Kentucky Medicare",
+    "GeneSight pharmacogenomic testing Kentucky",
   ],
   description:
-    "Psychiatric medication management in Lexington, KY led by our dedicated Nurse Practitioner. Short wait, controlled substance prescribing, and broad insurance and Medicaid coverage.",
+    "Psychiatric medication management in Lexington, KY provided by two board-certified Nurse Practitioners. Short to immediate wait, controlled substance prescribing, and broad insurance and Medicaid coverage.",
   provider: {
     "@type": "MedicalOrganization",
     name: "Twilight Psychology",
@@ -58,15 +61,15 @@ const medicationApproach = [
 ---
 
 <Layout
-  title="Medication Management in Lexington, KY"
-  description="Psychiatric medication management in Lexington, KY. Short wait, controlled substance prescribing, ADHD stimulant access. Major insurance and Medicaid accepted."
+  title="Medication Management in KY"
+  description="Psychiatric medication management Lexington KY — two NPs accepting new clients. Short to immediate wait, stimulant prescribing, insurance and Medicaid accepted."
 >
   <Schema slot="page-schema" schema={medicationSchema} />
   <PageHeroWrapper
     title="Medication Management"
     accentWord="Management"
     badge="Psychiatric Care"
-    subtitle="Short access wait, controlled substance prescribing authority, and broad insurance coverage — psychiatric care led by our dedicated Nurse Practitioner."
+    subtitle="Psychiatric care from two board-certified Nurse Practitioners in Lexington, KY — with immediate to short wait times, controlled substance prescribing, and broad insurance coverage including Medicaid."
     size="lg"
   />
 
@@ -75,8 +78,9 @@ const medicationApproach = [
       <AnimatedSection client:visible animation="fadeInUp" delay={100}>
       <section
         class="bg-surface-soft backdrop-blur-md border border-border p-10 rounded-[2.5rem]"
+        aria-labelledby="med-intro-heading"
       >
-        <h2 class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">
+        <h2 id="med-intro-heading" class="font-serif text-3xl font-black text-site-text mb-6 tracking-tight">
           Responsive Access. Clinically Grounded Prescribing.
         </h2>
         <div class="space-y-6 text-site-text leading-relaxed text-lg">
@@ -84,15 +88,16 @@ const medicationApproach = [
             Access to a qualified psychiatric prescriber — one who can manage
             ADHD medications, stimulants, and other controlled substances when
             clinically appropriate — is one of the highest-demand services in
-            mental health care. Our Psychiatric Nurse Practitioner is currently
-            accepting new clients with a meaningfully shorter wait than most
-            outpatient practices.
+            mental health care. Twilight Psychology has two board-certified
+            Psychiatric Nurse Practitioners currently accepting new clients,
+            offering a range from immediate openings to meaningfully shorter
+            waits than most outpatient practices.
           </p>
           <p>
             Medication can be a powerful tool for ADHD, anxiety, depression, and
             other neurological differences — but it is never a one-size-fits-all
-            solution. Our <span class="text-cta">Psychiatric Nurse Practitioner</span>
-            works closely with you to find the right balance, respecting your
+            solution. Our <span class="text-cta">Psychiatric Nurse Practitioners</span>
+            work closely with you to find the right balance, respecting your
             lifestyle, your values, and your long-term goals.
           </p>
           <p>
@@ -106,8 +111,8 @@ const medicationApproach = [
       </AnimatedSection>
 
       <AnimatedSection client:visible animation="fadeInUp" delay={200}>
-      <section>
-        <h2 class="font-serif text-2xl font-black text-site-text mb-10 tracking-tight">
+      <section aria-labelledby="med-framework-heading">
+        <h2 id="med-framework-heading" class="font-serif text-2xl font-black text-site-text mb-10 tracking-tight">
           Our Clinical Framework
         </h2>
         <div class="grid sm:grid-cols-2 gap-6">
@@ -127,8 +132,9 @@ const medicationApproach = [
       <AnimatedSection client:visible animation="fadeInUp" delay={300}>
       <section
         class="bg-surface-soft border border-border-strong p-10 rounded-[2.5rem]"
+        aria-labelledby="med-intake-heading"
       >
-        <h2 class="font-serif text-2xl font-black text-site-text mb-6 tracking-tight">
+        <h2 id="med-intake-heading" class="font-serif text-2xl font-black text-site-text mb-6 tracking-tight">
           Your First Appointment
         </h2>
         <p class="text-site-sub mb-8 leading-relaxed">
@@ -156,18 +162,32 @@ const medicationApproach = [
 
     <aside class="space-y-8">
       <div class="bg-surface-soft border border-border p-8 rounded-[2.5rem]">
-        <h3 class="font-serif text-xl font-black text-site-text mb-4">Meet the Provider</h3>
-        <div class="space-y-4">
-          <p class="text-site-sub text-sm leading-relaxed">
-            Our medication management is led by experienced psychiatric
-            professionals specializing in neuro-affirming care.
-          </p>
-          <a
-            href="/about/clinicians/nicola-allen"
-            class="text-cta font-black text-xs uppercase tracking-widest hover:text-site-text transition-colors"
-          >
-            View Provider Profile →
-          </a>
+        <h3 class="font-serif text-xl font-black text-site-text mb-5">Meet the Providers</h3>
+        <div class="space-y-5">
+          <div class="border-b border-border pb-5">
+            <p class="font-serif font-black text-site-text text-sm mb-0.5">Nicola Allen, PMHNP-BC</p>
+            <p class="text-site-sub text-xs leading-relaxed mb-2">Major insurance, Medicaid &amp; Medicare · ~4 week wait</p>
+            <a
+              href="/about/clinicians/nicola-allen"
+              class="text-cta font-black text-xs uppercase tracking-widest hover:text-site-text transition-colors"
+              aria-label="View Nicola Allen's provider profile"
+              data-astro-prefetch="viewport"
+            >
+              View Profile →
+            </a>
+          </div>
+          <div>
+            <p class="font-serif font-black text-site-text text-sm mb-0.5">Sher Glaser, PMHNP-BC</p>
+            <p class="text-site-sub text-xs leading-relaxed mb-2">Medicare &amp; self-pay · Immediate availability</p>
+            <a
+              href="/about/clinicians/sher-glaser"
+              class="text-cta font-black text-xs uppercase tracking-widest hover:text-site-text transition-colors"
+              aria-label="View Sher Glaser's provider profile"
+              data-astro-prefetch="viewport"
+            >
+              View Profile →
+            </a>
+          </div>
         </div>
       </div>
 
@@ -180,6 +200,7 @@ const medicationApproach = [
         </p>
         <a
           href={WIDGET_LINK}
+          aria-label="Request a medication management intake appointment"
           class="block w-full py-4 bg-cta text-cta-fg font-black rounded-xl hover:bg-cta/80 hover:scale-105 transition-all duration-300 shadow-lg shadow-cta/10"
         >
           Request Intake
@@ -211,12 +232,12 @@ const medicationApproach = [
     </aside>
   </div>
 
-  <section class="max-w-7xl mx-auto px-4 mt-32">
+  <section class="max-w-7xl mx-auto px-4 mt-32" aria-labelledby="med-cta-heading">
     <div
       class="p-12 bg-surface-soft border border-border rounded-[3rem] flex flex-col md:flex-row items-center justify-between gap-8"
     >
       <div class="max-w-md">
-        <h2 class="font-serif text-3xl font-black text-site-text mb-4 italic">
+        <h2 id="med-cta-heading" class="font-serif text-3xl font-black text-site-text mb-4 italic">
           Complete Support.
         </h2>
         <p class="text-site-sub">
@@ -228,12 +249,14 @@ const medicationApproach = [
         <a
           href="/services/therapy"
           class="px-6 py-3 bg-surface-soft border border-border text-site-text font-black rounded-xl hover:bg-surface-2/50 transition-all"
+          data-astro-prefetch="viewport"
           >Individual Therapy</a
         >
         <a
           href="/services/psychological-evaluations"
           class="px-6 py-3 bg-surface-soft border border-border text-site-text font-black rounded-xl hover:bg-surface-2/50 transition-all"
-          >Testing & Diagnosis</a
+          data-astro-prefetch="viewport"
+          >Testing &amp; Diagnosis</a
         >
       </div>
     </div>
@@ -241,7 +264,7 @@ const medicationApproach = [
 
   <nav class="max-w-4xl mx-auto px-6 mt-12 mb-4">
     <a href="/services" class="inline-flex items-center gap-2 text-sm font-bold text-cta hover:text-cta/80 transition-colors">
-      <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      <svg class="w-4 h-4 rotate-180" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
       View All Services
     </a>
   </nav>

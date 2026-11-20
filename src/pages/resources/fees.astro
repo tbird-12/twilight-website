@@ -123,7 +123,7 @@ const relatedResourceLinks = [
               <p class="text-site-sub leading-relaxed mb-4">
                 ADHD evaluations are <strong class="text-site-text">{SELF_PAY_RATES.psychologicalEvaluation}</strong> on a self-pay basis and can be split into 2–3 payments across your appointments. Payment plans are available with no added fees.
               </p>
-              <a href={WIDGET_LINK} class="text-cta text-sm font-black uppercase tracking-widest hover:underline">Schedule an intake →</a>
+              <a href={WIDGET_LINK} aria-label="Schedule an intake appointment at Twilight Psychology" class="text-cta text-sm font-black uppercase tracking-widest hover:underline">Schedule an intake →</a>
             </div>
           </div>
         </section>
@@ -171,12 +171,12 @@ const relatedResourceLinks = [
         <section class="mt-12">
           <h2 class="font-serif text-2xl font-black text-site-text mb-6">Billing & Insurance Resources</h2>
           <div class="grid gap-4 sm:grid-cols-2">
-            <a href="/blog/billing/understanding-your-eob" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+            <a href="/blog/billing/understanding-your-eob" aria-label="Read: Understanding Your EOB" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
               <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.billing}`}>Billing</p>
               <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Your EOB</h3>
               <p class="text-xs text-site-sub">A plain-language guide to reading your explanation of benefits.</p>
             </a>
-            <a href="/blog/insurance/understanding-health-insurance" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
+            <a href="/blog/insurance/understanding-health-insurance" aria-label="Read: Understanding Health Insurance" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
               <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.insurance}`}>Insurance</p>
               <h3 class="font-serif text-sm font-black text-site-text group-hover:text-cta transition-colors mb-1">Understanding Health Insurance</h3>
               <p class="text-xs text-site-sub">Deductibles, copays, and how plan types affect your costs.</p>

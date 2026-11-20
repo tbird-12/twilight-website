@@ -32,7 +32,7 @@ const services = [
   {
     title: "Psychological Evaluations",
     kicker: "ADHD · Autism · Personality ",
-    desc: "Specialty-depth evaluations for ADHD, autism, personality, and complex diagnostic questions — for children, teens, and adults. Self-pay reports typically delivered within a week.",
+    desc: `Specialty-depth evaluations for ADHD, autism, personality, and complex diagnostic questions — for children, teens, and adults. Self-pay reports typically delivered within ${SELF_PAY_REPORT_TURNAROUND_DAYS} days.`,
     icon: "lucide:brain",
     link: "/services/psychological-evaluations",
     cardClass: "homepage-service-card--feature",
@@ -55,7 +55,7 @@ const services = [
   {
     title: "Medication Management",
     kicker: "Short wait · Insurance accepted",
-    desc: "Individualized psychiatric care through our dedicated Nurse Practitioner — including stimulant prescriptions for ADHD when clinically appropriate. Insurance widely accepted.",
+    desc: "Individualized psychiatric care through our two in-house Nurse Practitioners — stimulant prescriptions for ADHD included when clinically appropriate. Insurance widely accepted.",
     icon: "lucide:stethoscope",
     link: "/services/medication-management",
   },
@@ -102,8 +102,8 @@ const qualityCareItems = [
   },
   {
     issue: "Access to a prescriber took months",
-    title: "Psychiatric NP with a short current wait",
-    desc: "Medication management is available in-house through our dedicated NP, including stimulant prescriptions for ADHD when clinically appropriate.",
+    title: "Two Psychiatric NPs — immediate and short wait",
+    desc: "Medication management is available in-house through our two Nurse Practitioners, including stimulant prescriptions for ADHD when clinically appropriate.",
     link: "/services/medication-management",
   },
   {
