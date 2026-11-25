@@ -794,7 +794,6 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "sher-glaser",
-    pageTitle: "Sher Glaser, PMHNP-BC | Psychiatric NP — KY",
     pageDescription:
       "Sher Glaser, PMHNP-BC brings 25 years of nursing experience to Twilight Psychology — now accepting Medicare and self-pay clients in Kentucky",
     jobTitle: "Psychiatric Mental Health Nurse Practitioner",
@@ -889,6 +888,101 @@ export const clinicianProfiles: ClinicianProfile[] = [
         "Now accepting new Medicare and self-pay clients for psychiatric medication evaluation and management in Kentucky.",
       ctaLabel: "Request Appointment",
       ctaHref: requestAppointmentPhoneHref,
+      variant: "surface",
+    },
+  },
+  {
+    slug: "danielle-morgan",
+    pageTitle: "Danielle Morgan, LCSW | Adult Therapy — Lexington, KY",
+    pageDescription:
+      "Danielle Morgan, LCSW offers affirming individual and couples therapy for adults in Lexington, KY — specializing in LGBTQIA+ and kink-informed care.",
+    jobTitle: "Licensed Clinical Social Worker",
+    badge: "Licensed Clinical Social Worker",
+    headingPrimary: "Danielle Morgan,",
+    headingAccent: "MSW, LCSW.",
+    intro:
+      "Empowerment-focused individual and couples therapy for adults in Lexington, KY — specializing in LGBTQIA+ affirming and kink-informed care.",
+    specialties: [
+      "LGBTQIA+ Affirming Therapy",
+      "Kink-Informed Care",
+      "Couples Counseling",
+      "Neurodivergent Adults",
+      "Anxiety, Depression & PTSD",
+      "Life Transitions",
+    ],
+    contentBlocks: [
+      {
+        type: "paragraphs",
+        title: "You are the expert of your own experience.",
+        paragraphs: [
+          "I believe everyone is the expert of their own experience. Through a collaborative goal-setting approach, we will explore your self-determination and my clinical knowledge to ensure efficiency in your treatment. My goal is to create a space where you feel genuinely heard — not just guided through a checklist.",
+          "I specialize in kink-informed care and am helping couples improve their communication, intimacy, and conflict resolution skills. Whether you are navigating the complexities of a non-traditional relationship structure or simply want a therapist who will not flinch, I offer a nonjudgmental and informed space to do exactly that.",
+        ],
+      },
+      {
+        type: "quote",
+        quote:
+          "I believe everyone is the expert of their own experience — and that good therapy starts by honoring that truth.",
+        variant: "accent",
+      },
+      {
+        type: "paragraphs",
+        title: "Individual and couples work, rooted in empowerment.",
+        paragraphs: [
+          "Through individual and couples counseling sessions that focus on empowerment, change, and meeting client goals, I work with adults navigating depression, anxiety, PTSD, stress, and life transitions. Together we will build practical management skills, reduce symptoms, and strengthen your capacity for connection and self-advocacy.",
+          "I am also passionate about supporting neurodivergent adults — including those who have recently received an ADHD or autism diagnosis — as they make sense of their experiences and find ways forward that actually fit their lives.",
+        ],
+      },
+    ],
+    sidebarCards: [
+      {
+        title: "Education & Credentials",
+        eyebrow: "Background",
+        variant: "soft",
+        items: [
+          {
+            title: "Master of Social Work (MSW)",
+            subtitle: "University of Kentucky",
+            meta: "2022",
+          },
+          {
+            title: "B.A. in Psychology",
+            subtitle: "University of Kentucky",
+            meta: "2018",
+          },
+          {
+            title: "Licensed Clinical Social Worker (LCSW)",
+            subtitle: "Kentucky",
+          },
+        ],
+      },
+      {
+        title: "Who Danielle Works With",
+        eyebrow: "Ideal Clients",
+        variant: "surface-2",
+        body: [
+          "Adults (18+) seeking individual or couples therapy. LGBTQIA+ individuals, those in kink or non-traditional relationship structures, neurodivergent adults, and anyone navigating anxiety, depression, PTSD, or major life changes.",
+        ],
+      },
+    ],
+    primaryPanel: {
+      title: "Opening December 2027",
+      description:
+        "Danielle offers individual and couples therapy for adults in Lexington, KY. Couples counseling is self-pay; individual therapy accepts insurance and self-pay.",
+      items: [
+        { label: "Individual Therapy", value: "Opening Dec 2027" },
+        { label: "Couples Counseling", value: "Self-pay · Opening Dec 2027" },
+      ],
+      ctaLabel: "Schedule an Intake",
+      ctaHref: WIDGET_LINK,
+      variant: "surface",
+    },
+    secondaryPanel: {
+      title: "First Time Here?",
+      description:
+        "Learn about our intake process and what to expect as a new client at Twilight Psychology.",
+      ctaLabel: "New Client Guide",
+      ctaHref: "/resources/new-client",
       variant: "surface",
     },
   },

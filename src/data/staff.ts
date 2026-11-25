@@ -15,6 +15,7 @@ import eliseVanMeterImg from '../assets/images/staff/elise-vanmeter.jpeg';
 
 import ashleyPerkinsImg from '../assets/images/staff/ashley-perkins.jpeg';
 import sherGlaserImg from '../assets/images/staff/sher-glaser.png';
+import danielleMorganImg from '../assets/images/staff/danielle-morgan.jpeg';
 
 /** Broad age buckets for client-facing filtering */
 export const AGE_GROUPS = ["Child (3–11)", "Teen (12–17)", "Adult (18–64)", "Older Adult (65+)"] as const;
@@ -235,6 +236,24 @@ export const providers: Provider[] = [
     wait_times: { medication_management: 'Immediate' },
     age_groups: ['Teen (12–17)', 'Adult (18–64)', 'Older Adult (65+)'],
     availability_note: 'Self-pay & Medicare: Immediate',
+    availability_status: 'open',
+    contact_url: 'https://twilightpsychology.clientsecure.me/contact-widget',
+  },
+  {
+    name: 'Danielle Morgan',
+    slug: 'danielle-morgan',
+    spec: 'LGBTQIA+ Affirming & Kink-Informed Adult Therapy',
+    image: danielleMorganImg,
+    name_with_education: 'Danielle Morgan, LCSW',
+    credential: 'LCSW',
+    service_categories: ['Therapy'],
+    services_offered: ['Individual Therapy', 'Couples Counseling (self-pay)'],
+    out_of_pocket_rates: { therapy: SELF_PAY_RATES.therapy, couples: '$120' },
+    states_served: ['Kentucky'],
+    ins: ['Medicaid', 'Aetna', 'UHC Community', 'Humana', 'Passport', 'Cigna', 'Anthem', 'Wellcare'],
+    wait_times: { therapy: 'Opening Dec 2027', couples: 'Opening Dec 2027' },
+    age_groups: ['Adult (18–64)', 'Older Adult (65+)'],
+    availability_note: 'Opening December 2027',
     availability_status: 'open',
     contact_url: 'https://twilightpsychology.clientsecure.me/contact-widget',
   },
