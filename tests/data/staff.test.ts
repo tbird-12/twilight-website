@@ -58,6 +58,22 @@ describe("staff provider data", () => {
     expect(burns!.states_served).toContain("Tennessee");
   });
 
+  it("Allen has a six-month medication management waitlist", () => {
+    const allen = providers.find((p) => p.slug === "nicola-allen");
+
+    expect(allen).toBeDefined();
+    expect(allen!.wait_times.medication_management).toBe("6 months");
+    expect(allen!.availability_note).toContain("Not accepting new clients");
+  });
+
+  it("Morgan offers adult individual and couples counseling", () => {
+    const morgan = providers.find((p) => p.slug === "danielle-morgan");
+
+    expect(morgan).toBeDefined();
+    expect(morgan!.services_offered).toContain("Adult Individual Therapy");
+    expect(morgan!.services_offered).toContain("Couples Counseling (self-pay)");
+  });
+
   it("service_categories contain only valid values", () => {
     const valid = new Set(["Therapy", "Psychological Testing", "Medication Management"]);
     for (const p of providers) {

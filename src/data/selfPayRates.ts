@@ -11,6 +11,8 @@
 export const SELF_PAY_RATES = {
   therapy: "$100",
   therapy_45: "$80",
+  couplesCounseling: "$120",
+  intensive90: "$150",
   intake: "$250",
   mm_followup: "$150",
   psychologicalEvaluation: "$1,300",

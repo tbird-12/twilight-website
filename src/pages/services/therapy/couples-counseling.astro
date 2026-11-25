@@ -13,14 +13,14 @@ const couplesTopics = [
       "Support for couples who get stuck in repeated arguments, withdrawal cycles, defensiveness, resentment, or difficulty staying connected under stress.",
   },
   {
-    title: "Trust repair and betrayal recovery",
+    title: "Intimacy and connection",
     detail:
-      "Structured therapy for couples working through infidelity, secrecy, broken agreements, and the emotional aftermath of damaged trust.",
+      "A space to understand intimacy needs, strengthen emotional connection, and discuss difficult topics without shame or judgment.",
   },
   {
-    title: "Discernment and relationship clarity",
+    title: "LGBTQIA+ and non-traditional relationships",
     detail:
-      "Help for partners who need clearer direction, want to understand persistent patterns, or need support deciding what comes next.",
+      "Affirming care for LGBTQIA+ couples and partners navigating kink, non-traditional relationship structures, identity, or changing expectations.",
   },
   {
     title: "Neurodivergent relationship dynamics",
@@ -39,13 +39,13 @@ const couplesSchema = {
   url: couplesUrl,
   keywords: [
     "couples counseling Kentucky",
-    "marriage counseling Lexington KY",
+    "LGBTQIA+ couples counseling Kentucky",
     "relationship therapy Kentucky",
     "self-pay couples counseling",
-    "betrayal recovery therapy Kentucky",
+    "kink-informed couples therapy Kentucky",
   ],
   description:
-    "Couples counseling and relationship therapy in Kentucky through Twilight Psychology, including self-pay couples therapy, communication work, trust repair, betrayal recovery, and intensives.",
+    "Self-pay couples counseling in Lexington, KY with Danielle Morgan, LCSW, including affirming support for communication, intimacy, and conflict resolution.",
   provider: {
     "@type": "MedicalOrganization",
     name: "Twilight Psychology",
@@ -56,29 +56,39 @@ const couplesSchema = {
 
 <Layout
   title="Couples Therapy in Lexington, KY"
-  description="Couples counseling in Kentucky at Twilight Psychology, including communication work, trust repair, betrayal recovery, and relationship intensives in Lexington."
+  description="Self-pay couples counseling in Lexington, KY with Danielle Morgan, LCSW, including affirming support for communication, intimacy, and conflict resolution."
 >
-  <Schema slot="page-schema" schema={couplesSchema} />        <PageHeroWrapper
-          title="Couples Counseling"
-          accentWord="Couples"
-          badge="Relationship Therapy"
-          subtitle="Couples counseling in Lexington for communication work, trust repair, betrayal recovery, and major relationship decisions."
-          size="lg"
-        />
+  <Schema slot="page-schema" schema={couplesSchema} />
+  <PageHeroWrapper
+    title="Couples Counseling"
+    accentWord="Couples"
+    badge="Adult Relationship Therapy"
+    subtitle="Self-pay couples counseling in Lexington with Danielle Morgan, LCSW, focused on communication, intimacy, and conflict resolution."
+    size="lg"
+  />
 
-        <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+        <section
+          class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12"
+          aria-labelledby="couples-overview-heading"
+        >
           <div class="lg:col-span-2 space-y-10">
             <AnimatedSection client:visible animation="fadeInUp" delay={100}>
               <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
                 <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
-                  Couples Counseling — Service Update
+                  <span id="couples-overview-heading">Couples counseling with Danielle Morgan, LCSW</span>
                 </h2>
                 <div class="space-y-5 text-site-text leading-relaxed text-lg">
                   <p>
-                    Couples counseling services are currently unavailable at Twilight Psychology. We are evaluating future capacity for this service.
+                    Danielle Morgan, LCSW will offer self-pay couples counseling for adults in
+                    Lexington beginning December 2027. Her work focuses on communication,
+                    intimacy, conflict resolution, and relationships affected by stress or
+                    neurodivergence.
                   </p>
                   <p>
-                    If you are interested in relationship support, please <a href="/resources/new-client" class="font-bold text-cta hover:underline">contact our intake team</a> to discuss alternatives. We now offer group therapy that includes interpersonal and relationship skills work for neurodivergent adults.
+                    Danielle provides LGBTQIA+ affirming and kink-informed care, including support
+                    for couples in non-traditional relationship structures. Couples counseling is
+                    self-pay; <a href="/about/clinicians/danielle-morgan" class="font-bold text-cta hover:underline">view Danielle's profile</a>
+                    to learn about her approach, credentials, and individual therapy services.
                   </p>
                 </div>
               </section>
@@ -125,7 +135,7 @@ const couplesSchema = {
             <SidebarCta
               client:visible
               title="Ask about couples counseling"
-              description="Reviewing fit, fee details, and scheduling options before your first session makes the process easier."
+              description="Ask our intake team about Danielle's December 2027 opening, self-pay couples counseling, and whether her approach fits your relationship goals."
               buttonLabel="Schedule Intake"
               buttonHref={WIDGET_LINK}
               target="_blank"
@@ -134,11 +144,14 @@ const couplesSchema = {
           </aside>
         </section>
 
-        <section class="max-w-7xl mx-auto px-4 mt-24">
+        <section
+          class="max-w-7xl mx-auto px-4 mt-24"
+          aria-labelledby="couples-topics-heading"
+        >
           <AnimatedSection client:visible animation="fadeInUp" delay={200}>
             <header class="max-w-3xl mb-10">
               <h2 class="font-serif text-3xl font-black text-site-text tracking-tight mb-4">
-                What couples counseling can help address
+                <span id="couples-topics-heading">What couples counseling can help address</span>
               </h2>
               <p class="text-site-sub leading-relaxed">
                 Relationship therapy is most useful when the work needs more structure than a general support
@@ -159,18 +172,24 @@ const couplesSchema = {
           </AnimatedSection>
         </section>
 
-        <section class="max-w-7xl mx-auto px-4 mt-24 mb-12">
+        <section
+          class="max-w-7xl mx-auto px-4 mt-24 mb-12"
+          aria-labelledby="couples-start-heading"
+        >
           <AnimatedSection client:visible animation="fadeInUp" delay={250}>
               <div class="rounded-[2.5rem] border border-border bg-surface-soft p-8 md:p-10">
                 <h2 class="font-serif text-3xl font-black text-site-text mb-4 tracking-tight">
-                  Service Updates
+                  <span id="couples-start-heading">Starting couples counseling</span>
                 </h2>
                 <div class="space-y-5 text-site-sub leading-relaxed">
                   <p>
-                    Couples counseling services at Twilight Psychology are temporarily unavailable. We are evaluating future capacity for this service and will provide updates as plans develop.
+                    Couples counseling with Danielle Morgan will open in December 2027. Sessions
+                    are self-pay, and the intake team can explain current scheduling, fee, and
+                    documentation expectations before you request an appointment.
                   </p>
                   <p>
-                    If you were seeing a clinician for couples therapy, please reach out to our intake team to discuss how we can support your needs or to be notified when couples counseling services resume.
+                    If you need relationship support before December 2027, contact our office to
+                    discuss other clinician matches or appropriate community referral options.
                   </p>
                 </div>
                 <div class="flex flex-wrap gap-4 mt-8">

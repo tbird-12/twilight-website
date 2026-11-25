@@ -9,6 +9,11 @@ describe("SELF_PAY_RATES", () => {
     expect(SELF_PAY_RATES.psychoeducationalEvaluation).toBe("$1,500");
   });
 
+  it("exposes couples counseling and intensive session rates", () => {
+    expect(SELF_PAY_RATES.couplesCounseling).toBe("$120");
+    expect(SELF_PAY_RATES.intensive90).toBe("$150");
+  });
+
   it("has all rates formatted as dollar strings", () => {
     for (const value of Object.values(SELF_PAY_RATES)) {
       expect(value).toMatch(/^\$[\d,]+$/);

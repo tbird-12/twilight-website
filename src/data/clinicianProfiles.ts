@@ -255,8 +255,11 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Immediate Openings for Medication Management",
-      ctaLabel: "Request Appointment",
+      title: "Not Accepting New Clients",
+      description:
+        "Nicola's medication management waitlist is currently approximately six months. New client intake is paused until availability changes.",
+      items: [{ label: "Medication Management", value: "6-month waitlist" }],
+      ctaLabel: "Contact the Office",
       ctaHref: requestAppointmentPhoneHref,
       variant: "surface",
     },
@@ -894,30 +897,30 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "danielle-morgan",
-    pageTitle: "Danielle Morgan, LCSW | Adult Therapy — Lexington, KY",
+    pageTitle: "Danielle Morgan, LCSW | Neuro-Affirming Therapy — KY",
     pageDescription:
-      "Danielle Morgan, LCSW offers affirming individual and couples therapy for adults in Lexington, KY — specializing in LGBTQIA+ and kink-informed care.",
+      "Danielle Morgan, LCSW offers neuro-affirming adult and couples therapy in Lexington, KY for relationships, intimacy, LGBTQIA+ care, and kink-informed support.",
     jobTitle: "Licensed Clinical Social Worker",
     badge: "Licensed Clinical Social Worker",
     headingPrimary: "Danielle Morgan,",
     headingAccent: "MSW, LCSW.",
     intro:
-      "Empowerment-focused individual and couples therapy for adults in Lexington, KY — specializing in LGBTQIA+ affirming and kink-informed care.",
+      "Neuro-affirming therapy for adults and couples in Lexington, KY, with a primary focus on relationships, intimacy, identity, and authentic connection.",
     specialties: [
+      "Neuro-Affirming Therapy",
+      "Neurodivergent Adults",
+      "Relationships & Intimacy",
       "LGBTQIA+ Affirming Therapy",
       "Kink-Informed Care",
       "Couples Counseling",
-      "Neurodivergent Adults",
-      "Anxiety, Depression & PTSD",
-      "Life Transitions",
     ],
     contentBlocks: [
       {
         type: "paragraphs",
-        title: "You are the expert of your own experience.",
+        title: "Your neurodivergent experience is not a problem to solve.",
         paragraphs: [
-          "I believe everyone is the expert of their own experience. Through a collaborative goal-setting approach, we will explore your self-determination and my clinical knowledge to ensure efficiency in your treatment. My goal is to create a space where you feel genuinely heard — not just guided through a checklist.",
-          "I specialize in kink-informed care and am helping couples improve their communication, intimacy, and conflict resolution skills. Whether you are navigating the complexities of a non-traditional relationship structure or simply want a therapist who will not flinch, I offer a nonjudgmental and informed space to do exactly that.",
+          "I believe everyone is the expert of their own experience. My neuro-affirming approach honors difference rather than treating neurodivergence as something that must be corrected. We will set collaborative goals and explore ways to build support that fit your identity, relationships, communication style, and daily life.",
+          "Relationships and intimacy can involve different sensory, emotional, and communication needs. I help neurodivergent adults and couples understand those needs, reduce shame, navigate conflict, and create connection that does not depend on masking or conforming.",
         ],
       },
       {
@@ -928,10 +931,10 @@ export const clinicianProfiles: ClinicianProfile[] = [
       },
       {
         type: "paragraphs",
-        title: "Individual and couples work, rooted in empowerment.",
+        title: "Affirming individual and couples work.",
         paragraphs: [
-          "Through individual and couples counseling sessions that focus on empowerment, change, and meeting client goals, I work with adults navigating depression, anxiety, PTSD, stress, and life transitions. Together we will build practical management skills, reduce symptoms, and strengthen your capacity for connection and self-advocacy.",
-          "I am also passionate about supporting neurodivergent adults — including those who have recently received an ADHD or autism diagnosis — as they make sense of their experiences and find ways forward that actually fit their lives.",
+          "Within a neurodiversity-affirming framework, I support adults navigating ADHD or autism, anxiety, depression, PTSD, stress, identity, and major life transitions. Together we will build practical management skills, strengthen self-advocacy, and make room for relationships that reflect your values rather than outside expectations.",
+          "My work includes LGBTQIA+ affirming and kink-informed care for individuals and couples. Whether you are exploring intimacy, navigating a non-traditional relationship structure, working through communication patterns, or making sense of a recent diagnosis, I offer a nonjudgmental space to develop a clearer and more authentic way forward.",
         ],
       },
     ],
@@ -962,14 +965,14 @@ export const clinicianProfiles: ClinicianProfile[] = [
         eyebrow: "Ideal Clients",
         variant: "surface-2",
         body: [
-          "Adults (18+) seeking individual or couples therapy. LGBTQIA+ individuals, those in kink or non-traditional relationship structures, neurodivergent adults, and anyone navigating anxiety, depression, PTSD, or major life changes.",
+          "Neurodivergent adults (18+) and couples seeking affirming support around relationships, intimacy, communication, identity, or recent ADHD and autism diagnoses. Danielle also specializes in LGBTQIA+ affirming and kink-informed care.",
         ],
       },
     ],
     primaryPanel: {
       title: "Opening December 2027",
       description:
-        "Danielle offers individual and couples therapy for adults in Lexington, KY. Couples counseling is self-pay; individual therapy accepts insurance and self-pay.",
+        "Danielle offers neuro-affirming individual and couples therapy for adults in Lexington, KY, with a focus on relationships and intimacy. Couples counseling is self-pay.",
       items: [
         { label: "Individual Therapy", value: "Opening Dec 2027" },
         { label: "Couples Counseling", value: "Self-pay · Opening Dec 2027" },

@@ -22,6 +22,19 @@ const therapyClinicians = [
     ],
   },
   {
+    slug: "danielle-morgan",
+    fit:
+      "Best for neurodivergent adults and couples seeking affirming support around communication, intimacy, identity, conflict, and recent ADHD or autism diagnoses. Danielle also specializes in LGBTQIA+ affirming and kink-informed care.",
+    waitlist: "Opening December 2027 for individual and couples counseling.",
+    frameworks: [
+      "Empowerment-Focused Therapy",
+      "LGBTQIA+ Affirming Therapy",
+      "Kink-Informed Therapy",
+    ],
+    billing:
+      "Individual therapy may use Danielle's accepted insurance plans or self-pay. Couples counseling is self-pay.",
+  },
+  {
     slug: "michael-burns",
     fit:
       "Best for adults seeking therapy for substance use disorders, domestic violence recovery, PTSD, and relationship challenges. Also works with adolescents and clients seeking faith-integrated Christian counseling. Part-time schedule — limited weekly slots available.",
@@ -98,6 +111,10 @@ const therapyClinicians = [
     ...entry,
     provider: clinician.provider,
     href: `/about/clinicians/${entry.slug}`,
+    billing:
+      "billing" in entry
+        ? entry.billing
+        : "Individual therapy for a covered mental health diagnosis can often be billed to insurance. ADHD coaching is a self-pay service.",
   };
 });
 
@@ -254,7 +271,7 @@ const cliniciansSchema = {
                         Insurance and billing
                       </p>
                       <p class="text-sm font-semibold text-site-text mb-2">
-                        Individual therapy for a covered mental health diagnosis can often be billed to insurance. ADHD coaching is a self-pay service.
+                        {clinician.billing}
                       </p>
                       <a href="/resources/fees" class="text-xs font-black text-cta hover:text-cta/80 transition-colors">
                         Review fees and accepted plans →

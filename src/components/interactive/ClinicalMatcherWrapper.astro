@@ -3,8 +3,30 @@ import ClinicalMatcher from "./ClinicalMatcher";
 import { providers } from "../../data/staff";
 import { getImage } from "astro:assets";
 
+interface Props {
+  priorityProviderSlugs?: string[];
+  trailingProviderSlugs?: string[];
+}
+
+const {
+  priorityProviderSlugs = [],
+  trailingProviderSlugs = [],
+} = Astro.props;
+
+const priorityProviders = priorityProviderSlugs.flatMap((slug) => {
+  const provider = providers.find((item) => item.slug === slug);
+  return provider ? [provider] : [];
+});
+const trailingProviders = trailingProviderSlugs.flatMap((slug) => {
+  const provider = providers.find((item) => item.slug === slug);
+  return provider ? [provider] : [];
+});
+const positionedSlugs = new Set([...priorityProviderSlugs, ...trailingProviderSlugs]);
+const remainingProviders = providers.filter((provider) => !positionedSlugs.has(provider.slug));
+const orderedProviders = [...priorityProviders, ...remainingProviders, ...trailingProviders];
+
 const serialisedProviders = await Promise.all(
-  providers.map(async (p) => {
+  orderedProviders.map(async (p) => {
     const optimised = await getImage({ src: p.image, width: 112, height: 112, format: "webp" });
     return {
       id: p.slug,
