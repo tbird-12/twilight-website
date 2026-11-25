@@ -100,9 +100,11 @@ function NestedChildren({
 function NestedItem({
   item,
   currentPath,
+  maxHeight,
 }: {
   item: NavigationNestedItem;
   currentPath?: string;
+  maxHeight: string;
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
@@ -176,10 +178,11 @@ function NestedItem({
         id={menuId}
         role="menu"
         aria-label={`${item.name} submenu`}
-        className="nav-sub-transition absolute left-full top-0 ml-2 w-56 rounded-2xl border border-border p-3 shadow-2xl"
+        className="nav-sub-transition absolute left-full top-0 ml-2 w-56 overflow-y-auto overscroll-contain rounded-2xl border border-border p-3 shadow-2xl"
         data-open={isExpanded ? "true" : "false"}
         style={{
           zIndex: 62,
+          maxHeight,
           background: `rgba(var(--nav-dropdown-rgb), 0.98)`,
           backdropFilter: "blur(24px) saturate(160%)",
           WebkitBackdropFilter: "blur(24px) saturate(160%)",
@@ -223,6 +226,7 @@ export default function NavigationDropdown({
   const wasKeyboardOpenedRef = useRef(false);
   const menuId = `nav-menu-${title.toLowerCase().replace(/\s+/g, "-")}`;
   const panelTop = `${Math.max(headerHeight, 56)}px`;
+  const nestedMenuMaxHeight = `calc(100vh - ${Math.max(headerHeight, 56) + 120}px)`;
 
   const onEscapeMenu = useCallback(() => {
     wasKeyboardOpenedRef.current = false;
@@ -340,6 +344,7 @@ export default function NavigationDropdown({
                       key={`${item.slug}-${idx}`}
                       item={item}
                       currentPath={currentPath}
+                      maxHeight={nestedMenuMaxHeight}
                     />
                   );
                 }

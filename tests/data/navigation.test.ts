@@ -95,4 +95,17 @@ describe("navigation data", () => {
       }
     }
   });
+
+  it("clinical staff menu includes Danielle Morgan", () => {
+    const clinicalStaff = aboutMenuItems
+      .filter(isNavigationNestedItem)
+      .find((item) => item.slug === "clinical-staff");
+
+    expect(clinicalStaff?.children).toContainEqual(
+      expect.objectContaining({
+        name: "Danielle Morgan",
+        slug: "danielle-morgan",
+      }),
+    );
+  });
 });

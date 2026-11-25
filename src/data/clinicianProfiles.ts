@@ -794,6 +794,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
   },
   {
     slug: "sher-glaser",
+    pageTitle: "Sher Glaser, PMHNP-BC | Medication Management — KY",
     pageDescription:
       "Sher Glaser, PMHNP-BC brings 25 years of nursing experience to Twilight Psychology — now accepting Medicare and self-pay clients in Kentucky",
     jobTitle: "Psychiatric Mental Health Nurse Practitioner",
