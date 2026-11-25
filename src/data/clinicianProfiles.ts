@@ -887,9 +887,9 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Immediate Openings for Medication Management",
+      title: "Limited Availability — Part-Time Schedule",
       description:
-        "Now accepting new Medicare and self-pay clients for psychiatric medication evaluation and management in Kentucky.",
+        "Sher practices on a part-time schedule. A limited number of new Medicare and self-pay clients may be accepted — contact our office to confirm current openings in Kentucky.",
       ctaLabel: "Request Appointment",
       ctaHref: requestAppointmentPhoneHref,
       variant: "surface",

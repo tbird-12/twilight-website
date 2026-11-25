@@ -122,14 +122,24 @@ const therapyMenuChildren: NavigationLinkItem[] = [
     desc: "Start with the therapy hub",
   },
   {
+    name: "Child & Teen Therapy",
+    slug: "/services/therapy/child-and-teen-therapy",
+    desc: "Neuro-affirming therapy for ages 3–18",
+  },
+  {
     name: "Therapy Clinicians",
     slug: "/services/therapy/clinicians",
     desc: "Compare fit and availability",
   },
   {
+    name: "Couples Counseling",
+    slug: "/services/therapy/couples-counseling",
+    desc: "Adult relationship therapy — opening Dec 2027",
+  },
+  {
     name: "Group Therapy",
     slug: "/services/therapy/group-therapy",
-    desc: "Adult DBT skills group and teen D&D social skills group",
+    desc: "Adult skills group and teen D&D social skills group",
   },
   {
     name: "Therapy After Evaluation",

@@ -233,10 +233,10 @@ export const providers: Provider[] = [
     out_of_pocket_rates: { medication_intake: SELF_PAY_RATES.intake, medication_followup: SELF_PAY_RATES.therapy },
     states_served: ['Kentucky'],
     ins: ['Medicare'],
-    wait_times: { medication_management: 'Immediate' },
+    wait_times: { medication_management: 'Part-time · Limited openings' },
     age_groups: ['Teen (12–17)', 'Adult (18–64)', 'Older Adult (65+)'],
-    availability_note: 'Self-pay & Medicare: Immediate',
-    availability_status: 'open',
+    availability_note: 'Part-time · Limited openings (Medicare & self-pay)',
+    availability_status: 'waitlist',
     contact_url: 'https://twilightpsychology.clientsecure.me/contact-widget',
   },
   {
