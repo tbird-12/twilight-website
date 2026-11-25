@@ -6,7 +6,7 @@ import AnimatedSection from "../../components/react/primitives/AnimatedSection";
 import PageLinksSection from "../../components/PageLinksSection.astro";
 import ApplyButtonWrapper from "../../components/ApplyButtonWrapper.astro";
 
-type OpeningStatus = "open" | "filled";
+type OpeningStatus = "open" | "closed" | "filled";
 type CtaVariant = "solid" | "outline";
 
 interface CareerOpening {
@@ -18,6 +18,7 @@ interface CareerOpening {
   badgeLabel: string;
   badgeClass: string;
   summary: string;
+  salaryRange: string;
   highlights?: readonly {
     label: string;
     value: string;
@@ -50,7 +51,7 @@ const clinicianBenefits = [
 
 const careerOpenings: CareerOpening[] = [
   {
-    active: true, // ← flip to false to unpublish this posting
+    active: false, // ← flip to true to publish this posting
     positionId: "licensed-clinician",
     status: "open",
     heroLabel: "licensed clinicians",
@@ -59,6 +60,7 @@ const careerOpenings: CareerOpening[] = [
     badgeClass: "text-cta-fg bg-cta",
     summary:
       "We are seeking a fully licensed clinician in Kentucky — LP, LPP, or LPA with an existing supervisor — with experience in comprehensive assessments and therapy. The role offers a flexible mix of assessments and therapy to fit the clinician's strengths and interests.",
+    salaryRange: "Commensurate with experience",
     highlights: [
       {
         label: "License",
@@ -81,17 +83,64 @@ const careerOpenings: CareerOpening[] = [
     ctaVariant: "solid",
   },
   {
-    active: false, // ← flip to true to publish this posting
+    active: true, // ← flip to false to unpublish this posting
+    positionId: "psychiatric-nurse-practitioner",
+    status: "open",
+    heroLabel: "full-time psychiatric nurse practitioners",
+    titleLines: ["Nurse", "Practitioner"],
+    badgeLabel: "Full Time",
+    badgeClass: "text-cta-fg bg-cta",
+    summary:
+      "We are seeking a full-time nurse practitioner for neurodiversity-affirming medication management in Kentucky. The role centers on neurodivergent adults and teens with possible ADHD, including careful evaluation and prescribing for co-occurring mental health and substance use concerns.",
+    salaryRange: "$100,000–$150,000, depending on experience",
+    highlights: [
+      {
+        label: "Schedule",
+        value: "Full-time · Lexington-area and telehealth care in Kentucky",
+      },
+      {
+        label: "Required Experience",
+        value:
+          "Neuro-affirming medication management for neurodivergent clients with possible ADHD, including experience with substance use and controlled-substance prescribing",
+      },
+      {
+        label: "Collaboration",
+        value:
+          "A collaborator is required for candidates with fewer than 4 years of experience",
+      },
+      {
+        label: "Clinical Focus",
+        value:
+          "Safe, individualized psychiatric care for ADHD and co-occurring conditions with attention to controlled-substance monitoring",
+      },
+    ],
+    benefits: clinicianBenefits,
+    ctaLabel: "Apply Now",
+    ctaVariant: "solid",
+  },
+  {
+    active: true, // ← flip to false to unpublish this closed posting
     positionId: "licensed-psychologist",
-    status: "filled",
+    status: "closed",
     heroLabel: "licensed psychologists",
     titleLines: ["Licensed", "Psychologist"],
-    badgeLabel: "W2/1099",
+    badgeLabel: "Closed",
     badgeClass: "text-site-text border border-border-strong",
     summary:
-      "Seeking Kentucky-licensed psychologists (LP or LPP) for a role centered on psychological and psychoeducational assessments in Lexington and surrounding counties. This opportunity is designed for clinicians who want to focus primarily on testing, diagnostic clarification, and report writing rather than ongoing therapy services.",
+      "This full-time Kentucky role for Licensed Psychologists (LP) or Licensed Psychological Practitioners (LPP) focused exclusively on psychological and psychoeducational testing is currently closed. The posting remains available for salary transparency and future interest.",
+    salaryRange: "$100,000–$125,000, depending on experience",
+    highlights: [
+      {
+        label: "Credential",
+        value: "Kentucky LP or LPP",
+      },
+      {
+        label: "Position",
+        value: "Full-time testing, diagnostic clarification, and report writing",
+      },
+    ],
     benefits: clinicianBenefits,
-    ctaLabel: "Apply to Practice",
+    ctaLabel: "Position Closed",
     ctaVariant: "solid",
   },
   {
@@ -104,6 +153,7 @@ const careerOpenings: CareerOpening[] = [
     badgeClass: "text-cta-fg bg-cta",
     summary:
       "Seeking KY-licensed doctoral Psychology students for 15-20 hours of assessment and therapy work per week. Gain hands-on experience with a diverse caseload from ages 2 and above.",
+    salaryRange: "Stipend per program agreement",
     highlights: [
       {
         label: "Eligible Licenses",
@@ -125,7 +175,8 @@ const careerOpenings: CareerOpening[] = [
   },
 ];
 
-const openCareerOpenings = careerOpenings.filter(({ active }) => active);
+const publishedCareerOpenings = careerOpenings.filter(({ active }) => active);
+const openCareerOpenings = publishedCareerOpenings.filter(({ status }) => status === "open");
 
 const formatOpeningList = (labels: readonly string[]) => {
   if (labels.length === 0) {
@@ -148,7 +199,7 @@ const heroSubtitle = formatOpeningList(
 );
 
 const openingsGridClass =
-  openCareerOpenings.length === 1
+  publishedCareerOpenings.length === 1
     ? "max-w-3xl md:grid-cols-1"
     : "max-w-6xl md:grid-cols-2 lg:grid-cols-3";
 
@@ -176,7 +227,7 @@ const careerPageLinks = [
 
 <Layout
   title="Careers | Join the Team at Twilight Psychology"
-  description="Career opportunities at Twilight Psychology in Lexington, KY. Explore current openings and learn how we support therapists and clinicians."
+  description="Explore current career openings and salary ranges at Twilight Psychology in Lexington, KY, and join a collaborative neuro-affirming clinical team."
 >
   <PageHeroWrapper
     title="Build Your Career"
@@ -188,8 +239,8 @@ const careerPageLinks = [
 
     <AnimatedSection client:visible animation="fadeInUp" delay={100}>
     <div class:list={["mx-auto px-4 grid gap-6 -mt-12 relative z-30", openingsGridClass]}>
-      {openCareerOpenings.length > 0 ? (
-        openCareerOpenings.map((opening) => (
+      {publishedCareerOpenings.length > 0 ? (
+        publishedCareerOpenings.map((opening) => (
           <div class="bg-surface-soft backdrop-blur-xl border border-border p-6 sm:p-8 rounded-[2.5rem] flex flex-col justify-between hover:border-cta/30 active:scale-[0.98] transition-all">
             <div>
               <div class="flex justify-between items-start gap-4 mb-5">
@@ -210,6 +261,14 @@ const careerPageLinks = [
                 >
                   {opening.badgeLabel}
                 </span>
+              </div>
+              <div class="mb-5 rounded-2xl border border-border bg-surface-2 p-4">
+                <p class="text-[10px] font-black text-cta uppercase tracking-widest mb-1">
+                  Salary Range
+                </p>
+                <p class="text-site-text text-base font-black">
+                  {opening.salaryRange}
+                </p>
               </div>
               {opening.highlights && (
                 <div
@@ -240,12 +299,18 @@ const careerPageLinks = [
                 </ul>
               )}
             </div>
-            <ApplyButtonWrapper
-              position={opening.positionId}
-              ctaLabel={opening.ctaLabel}
-              ctaVariant={opening.ctaVariant}
-              scriptURL={RESUME_UPLOAD_SCRIPT_URL}
-            />
+            {opening.status === "open" ? (
+              <ApplyButtonWrapper
+                position={opening.positionId}
+                ctaLabel={opening.ctaLabel}
+                ctaVariant={opening.ctaVariant}
+                scriptURL={RESUME_UPLOAD_SCRIPT_URL}
+              />
+            ) : (
+              <p class="inline-flex items-center justify-center rounded-full border border-border-strong px-5 py-2.5 text-sm font-black text-site-sub">
+                Position Closed
+              </p>
+            )}
           </div>
         ))
       ) : (
