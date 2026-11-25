@@ -5,7 +5,7 @@ pubDate: 2027-12-01
 category: announcements
 author: "Twilight Psychology Team"
 tags: ["team", "therapy", "lgbtqia", "kink-informed", "couples-counseling", "new-provider", "lcsw"]
-draft: true
+draft: false
 ---
 
 We are delighted to welcome **Danielle Morgan, MSW, LCSW** to the Twilight Psychology team. Danielle joins us as a Licensed Clinical Social Worker providing individual and couples therapy exclusively for adults in Lexington, KY — with a focus on LGBTQIA+ affirming and kink-informed care. She begins seeing new clients on **December 1, 2027**.
@@ -26,7 +26,7 @@ Danielle specializes in **kink-informed care**, offering a nonjudgmental space f
 
 ## Who Danielle Works With
 
-Danielle works exclusively with **adults (18+)** seeking individual or couples therapy. She is a strong fit for clients who are:
+Danielle works exclusively with **adults** seeking individual or couples therapy. She is a strong fit for clients who are:
 
 - LGBTQIA+ and want an explicitly affirming provider
 - In kink, non-traditional, or ethically non-monogamous relationships
