@@ -255,9 +255,9 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Not Accepting New Clients",
+      title: "On a sabbatical",
       description:
-        "Nicola's medication management waitlist is currently approximately six months. New client intake is paused until availability changes.",
+        "Nicola is not accepting new medication management clients. Her current waitlist is approximately six months.",
       items: [{ label: "Medication Management", value: "6-month waitlist" }],
       ctaLabel: "Contact the Office",
       ctaHref: requestAppointmentPhoneHref,
@@ -887,9 +887,9 @@ export const clinicianProfiles: ClinicianProfile[] = [
     ],
     primaryPanel: {
       eyebrow: "Availability",
-      title: "Limited Availability — Part-Time Schedule",
+      title: "Immediate Openings",
       description:
-        "Sher practices on a part-time schedule. A limited number of new Medicare and self-pay clients may be accepted — contact our office to confirm current openings in Kentucky.",
+        "Sher is currently accepting new Medicare and self-pay medication management clients in Kentucky, with immediate openings available.",
       ctaLabel: "Request Appointment",
       ctaHref: requestAppointmentPhoneHref,
       variant: "surface",
