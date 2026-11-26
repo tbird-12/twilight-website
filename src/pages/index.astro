@@ -3,8 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import HeroSectionWrapper from "../components/HeroSectionWrapper.astro";
 import QualityCareCardsWrapper from "../components/QualityCareCardsWrapper.astro";
 import { Icon } from "astro-icon/components";
-import heroBgDawn from "../assets/hero-dawn.svg";
-import heroBgDawnMobile from "../assets/hero-dawn-mobile.svg";
 import heroBg from "../assets/hero-background.svg";
 import heroBgMobile from "../assets/hero-mobile.svg";
 import SpecialtyCompassWrapper from "../components/SpecialtyCompassWrapper.astro";
@@ -134,33 +132,7 @@ const qualityCareItems = [
       class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
     >
       <div
-        class="homepage-hero-art homepage-hero-art--mobile homepage-hero-art--light"
-        aria-hidden="true"
-      >
-        <img
-          src={heroBgDawnMobile.src}
-          alt=""
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          class="w-full h-full object-cover block"
-        />
-      </div>
-      <div
-        class="homepage-hero-art homepage-hero-art--desktop homepage-hero-art--light"
-        aria-hidden="true"
-      >
-        <img
-          src={heroBgDawn.src}
-          alt=""
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          class="w-full h-full object-cover block"
-        />
-      </div>
-      <div
-        class="homepage-hero-art homepage-hero-art--mobile homepage-hero-art--dark"
+        class="homepage-hero-art homepage-hero-art--mobile"
         aria-hidden="true"
       >
         <img
@@ -173,7 +145,7 @@ const qualityCareItems = [
         />
       </div>
       <div
-        class="homepage-hero-art homepage-hero-art--desktop homepage-hero-art--dark"
+        class="homepage-hero-art homepage-hero-art--desktop"
         aria-hidden="true"
       >
         <img
@@ -599,13 +571,11 @@ const qualityCareItems = [
       pointer-events: none;
     }
 
-    .homepage-hero-art--light,
-    .homepage-hero-art--dark {
+    .homepage-hero-art {
       display: none;
     }
 
-    :global(html.light) .homepage-hero-art--light.homepage-hero-art--mobile,
-    :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--mobile {
+    .homepage-hero-art--mobile {
       display: block;
       opacity: 0.92;
     }
@@ -895,13 +865,11 @@ const qualityCareItems = [
     /* ── Responsive: ≥768px ──────────────────────────────────────────── */
 
     @media (min-width: 768px) {
-      :global(html.light) .homepage-hero-art--light.homepage-hero-art--mobile,
-      :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--mobile {
+      .homepage-hero-art--mobile {
         display: none;
       }
 
-      :global(html.light) .homepage-hero-art--light.homepage-hero-art--desktop,
-      :global(html.dark) .homepage-hero-art--dark.homepage-hero-art--desktop {
+      .homepage-hero-art--desktop {
         display: block;
         opacity: 0.9;
       }
@@ -1208,8 +1176,7 @@ const qualityCareItems = [
         from { transform: scale(1.15) translateY(0%); }
         to   { transform: scale(1.15) translateY(-5%); }
       }
-      .homepage-hero-art--light,
-      .homepage-hero-art--dark {
+      .homepage-hero-art {
         animation: heroParallaxDrift linear both;
         animation-timeline: scroll(root);
         animation-range: 0px 120vh;
@@ -1229,8 +1196,7 @@ const qualityCareItems = [
         transform: none !important;
         animation: none !important;
       }
-      .homepage-hero-art--light,
-      .homepage-hero-art--dark {
+      .homepage-hero-art {
         animation: none !important;
         transform: none !important;
         will-change: auto !important;
