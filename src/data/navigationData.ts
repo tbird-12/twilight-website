@@ -123,27 +123,32 @@ const therapyMenuChildren: NavigationLinkItem[] = [
   },
   {
     name: "Child & Teen Therapy",
-    slug: "/services/therapy/child-and-teen-therapy",
+    slug: "child-and-teen-therapy",
     desc: "Neuro-affirming therapy for ages 3–18",
   },
   {
+    name: "Cognitive Behavioral Therapy",
+    slug: "cognitive-behavioral-therapy",
+    desc: "Neuro-affirming CBT for children and adults",
+  },
+  {
     name: "Therapy Clinicians",
-    slug: "/services/therapy/clinicians",
+    slug: "clinicians",
     desc: "Compare fit and availability",
   },
   {
     name: "Couples Counseling",
-    slug: "/services/therapy/couples-counseling",
+    slug: "couples-counseling",
     desc: "Adult relationship therapy — opening Dec 2027",
   },
   {
     name: "Group Therapy",
-    slug: "/services/therapy/group-therapy",
+    slug: "group-therapy",
     desc: "Adult skills group and teen D&D social skills group",
   },
   {
     name: "Therapy After Evaluation",
-    slug: "/services/therapy/after-evaluation",
+    slug: "after-evaluation",
     desc: "Connected next-step care",
   },
 ];

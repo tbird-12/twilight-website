@@ -13,7 +13,7 @@ draft: false
 
 Families looking for a **child psychological evaluation in Lexington, Kentucky** are often trying to answer more than one question at once. They may be wondering whether a child is showing signs of autism, ADHD, learning differences, emotional regulation challenges, developmental delays, or a more complex overlap that does not fit neatly into one category. At Twilight Psychology, our approach is to slow the process down enough to get the question right, then use comprehensive testing to build a more useful answer.
 
-We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)**, and **[Taylor Pennington](/about/clinicians/taylor-pennington)**, depending on the child's age, referral question, and clinical fit.
+We currently offer child psychological evaluations with **[Heather Cornett](/about/clinicians/heather-cornett)**, **[Emeli Evans](/about/clinicians/emeli-evans)**, **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)**, and **[Taylor Pennington](/about/clinicians/taylor-pennington)**, depending on the child's age, referral question, and clinical fit. Taylor's psychological evaluation services are available for all ages, including children.
 
 ## What families usually mean when they ask for a child psychological evaluation
 

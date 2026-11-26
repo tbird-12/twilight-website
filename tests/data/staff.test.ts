@@ -83,6 +83,21 @@ describe("staff provider data", () => {
     expect(morgan!.services_offered).toContain("Couples Counseling (self-pay)");
   });
 
+  it("Pennington offers psychological evaluations across all age groups", () => {
+    const pennington = providers.find((p) => p.slug === "taylor-pennington");
+
+    expect(pennington).toBeDefined();
+    expect(pennington!.services_offered).toContain(
+      "Psychological and Psychoeducational Testing (All Ages)",
+    );
+    expect(pennington!.age_groups).toEqual([
+      "Child (3–11)",
+      "Teen (12–17)",
+      "Adult (18–64)",
+      "Older Adult (65+)",
+    ]);
+  });
+
   it("service_categories contain only valid values", () => {
     const valid = new Set(["Therapy", "Psychological Testing", "Medication Management"]);
     for (const p of providers) {

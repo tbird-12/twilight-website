@@ -3,6 +3,7 @@ import {
   aboutMenuItems,
   allServicesMenuItems,
   clientResourcesMenuItems,
+  getNavigationItemHref,
   isNavigationNestedItem,
   servicesMenuItems,
   specialtiesMenuItems,
@@ -77,6 +78,32 @@ describe("navigation data", () => {
     expect(therapyItem).toBeDefined();
     expect(therapyItem?.childLabel).toBe("Therapy Pages");
     expect(therapyItem?.children.length).toBeGreaterThan(1);
+  });
+
+  it("resolves therapy child links without duplicating their base path", () => {
+    const therapyItem = allServicesMenuItems
+      .filter(isNavigationNestedItem)
+      .find((item) => item.slug === "therapy");
+
+    expect(therapyItem).toBeDefined();
+
+    const childHrefs = therapyItem?.children.map((child) =>
+      getNavigationItemHref(child, therapyItem.childHrefBase),
+    );
+
+    expect(childHrefs).toContain("/services/therapy");
+    expect(childHrefs).toContain("/services/therapy/child-and-teen-therapy");
+    expect(childHrefs).toContain("/services/therapy/cognitive-behavioral-therapy");
+    expect(childHrefs?.every((href) => !href.includes("/services/therapy//"))).toBe(true);
+  });
+
+  it("resolves both relative and absolute navigation slugs", () => {
+    expect(getNavigationItemHref({ slug: "therapy" }, "/services")).toBe(
+      "/services/therapy",
+    );
+    expect(
+      getNavigationItemHref({ slug: "/services/therapy/group-therapy" }, "/services/therapy"),
+    ).toBe("/services/therapy/group-therapy");
   });
 
   it("nested about menu groups include labeled child links", () => {

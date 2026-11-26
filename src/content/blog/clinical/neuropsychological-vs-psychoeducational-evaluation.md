@@ -82,7 +82,7 @@ Twilight Psychology offers **comprehensive psychological evaluations** conducted
 
 **[Michael Burns, PhD](/about/clinicians/michael-burns)** is a temporarily licensed psychologist at Twilight Psychology whose training spans psychological assessments and therapy.
 
-Other doctoral-level and supervised master's-level clinicians at Twilight conduct psychoeducational and psychological evaluations as well — see the [evaluating clinicians overview](/services/psychological-evaluations) for the full list. Additionally, temporarily licensed associates such as **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** provide psychological and psychoeducational testing for children and adolescents under supervision; see our announcement [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.
+Other doctoral-level and supervised master's-level clinicians at Twilight conduct psychoeducational and psychological evaluations as well — see the [evaluating clinicians overview](/services/psychological-evaluations) for the full list. Taylor Pennington, MS, T-LPA provides psychological and psychoeducational testing for all ages under supervision; see [Taylor's announcement](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.
 
 ## "Neuropsychologist" and what that term means in practice
 

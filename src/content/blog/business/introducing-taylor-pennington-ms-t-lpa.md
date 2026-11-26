@@ -1,7 +1,7 @@
 ---
 title: "Introducing Taylor Pennington, MS, T-LPA"
 seoTitle: "Introducing Taylor Pennington, MS, T-LPA"
-description: "Meet Taylor Pennington, MS, T-LPA — temporarily licensed psychological associate providing testing for children and adolescents in Kentucky"
+description: "Meet Taylor Pennington, MS, T-LPA — temporarily licensed psychological associate providing evaluations for all ages in Kentucky"
 pubDate: 2026-06-15
 category: business
 author: "Twilight Psychology Team"
@@ -9,13 +9,13 @@ tags: ["team", "clinician", "assessments", "autism", "adhd", "neurodivergent", "
 draft: false
 ---
 
-We are pleased to have **Taylor Pennington** on the team at Twilight Psychology. Taylor provides **psychological evaluations for children and adolescents ages 3 to 18**, with their strongest clinical fit typically in the **5 to 16** age range.
+We are pleased to have **Taylor Pennington** on the team at Twilight Psychology. Taylor provides **psychological and psychoeducational evaluations for clients of all ages**.
 
 Taylor holds a master's degree in counseling psychology from the University of Louisville and brings experience in school-based therapy and specialized outpatient services for youth with autism, ADHD, and cognitive delays.
 
-Taylor provides psychological and psychoeducational testing (including evaluations for intellectual disability, autism spectrum disorder, and ADHD) and offers relational-cultural therapy for clients aged 5–16. Taylor is passionate about supporting families after a neurodivergent diagnosis, advocating for children in school settings, and translating assessment findings into practical recommendations.
+Taylor provides psychological and psychoeducational testing, including evaluations for intellectual disability, autism spectrum disorder, and ADHD, for children, adolescents, adults, and older adults. Taylor also offers relational-cultural therapy for clients aged 5–16. Taylor is passionate about supporting clients and families after a neurodivergent diagnosis and translating assessment findings into practical recommendations.
 
-Taylor's availability will be:
+Taylor's availability:
 
 - Monday: 9:00–16:00 (virtual)
 - Tuesday: 9:00–16:00 (virtual)

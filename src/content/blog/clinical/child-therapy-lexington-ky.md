@@ -60,7 +60,7 @@ Ethan begins seeing therapy clients starting **July 6, 2026**, and also accepts 
 ### Other clinicians with child and adolescent overlap
 
 - **[Emeli Evans, MS](/about/clinicians/emeli-evans)** sees neurodivergent children and adolescents with a focus on AuDHD identity, PDA, and high-masking presentations
-- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing testing and therapy for children and adolescents; supervised by Dr. Heather Cornett. See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.
+- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing evaluations for all ages and therapy for children and adolescents ages 5–16; supervised by Dr. Heather Cornett. See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.
 
 ## Insurance and scheduling
 

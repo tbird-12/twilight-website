@@ -314,7 +314,10 @@ export default function MobileNav({
                     {isExpanded && (
                       <div className="pl-4 py-1">
                         {item.children.map((child) => {
-                          const childHref = `${item.childHrefBase}/${child.slug}`;
+                          const childHref = getNavigationItemHref(
+                            child,
+                            item.childHrefBase,
+                          );
                           const childIsActive = matchesPath(currentPath, childHref);
 
                           return (

@@ -48,7 +48,7 @@ Several Twilight Psychology clinicians conduct ADHD evaluations for children, ad
 - **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — neurodiverse-affirming ADHD and autism evaluations
 - **[Elise Van Meter, MA, T-LPA](/about/clinicians/elise-vanmeter)** — comprehensive psychological assessments for neurodivergent adults including ADHD, autism, and personality evaluations
 - **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)** — ADHD and psychological testing with a strong fit for children and adolescents ages 7–16
-- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing psychological and psychoeducational testing for children and adolescents; supervised by Dr. Heather Cornett. (See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.)
+- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing psychological and psychoeducational testing for all ages; supervised by Dr. Heather Cornett. (See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.)
 
 The right clinician depends on the child's or adult's age, the referral question, insurance participation, and current availability. Our intake team can help you sort through those factors before scheduling.
 

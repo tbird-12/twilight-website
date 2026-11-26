@@ -62,7 +62,7 @@ That distinction matters. A neurodivergent person who has received traditional t
 
 ### Children (ages 3–18)
 
-Child and adolescent therapy at Twilight is provided primarily by **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)**, **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)**, and **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)**. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support. Taylor provides testing and relational-cultural therapy for children and adolescents and is supervised by Dr. Heather Cornett.
+Child and adolescent therapy at Twilight is provided primarily by **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)**, **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)**, and **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)**. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support. Taylor provides psychological and psychoeducational evaluations for all ages and relational-cultural therapy for children and adolescents ages 5–16, under Dr. Heather Cornett's supervision.
 
 Our dedicated [child and teen therapy page](/services/therapy/child-and-teen-therapy) covers the specifics in more depth.
 

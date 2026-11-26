@@ -611,13 +611,13 @@ export const clinicianProfiles: ClinicianProfile[] = [
     slug: "taylor-pennington",
     pageTitle: "Taylor Pennington, MS, T-LPA | Psychological Evaluations — KY",
     pageDescription:
-      "Taylor Pennington, MS, T-LPA — temporarily licensed psychological associate providing school-based therapy and psychoeducational and psychological testing for children and adolescents in Kentucky, supervised by Dr. Heather Cornett.",
+      "Taylor Pennington, MS, T-LPA provides psychological and psychoeducational evaluations for all ages in Kentucky, under Dr. Heather Cornett's supervision.",
     jobTitle: "Temporary Licensed Psychological Associate",
     badge: "Temporary Licensed Psychological Associate",
     headingPrimary: "Taylor",
     headingAccent: "Pennington, MS, T-LPA",
     intro:
-      "I provide neuro-affirming assessments and therapy for children and adolescents, focusing on accurate testing and family-centered recommendations.",
+      "I provide neuro-affirming psychological evaluations for all ages and relational-cultural therapy for children and adolescents.",
     specialties: [
       "Psychological & Psychoeducational Testing",
       "Autism, ADHD, & Intellectual Disability Evaluations",
@@ -630,13 +630,13 @@ export const clinicianProfiles: ClinicianProfile[] = [
         paragraphs: [
           "My name is Taylor Pennington. I hold a master’s degree in counseling psychology from the University of Louisville and am a temporarily Licensed Psychological Associate practicing under the supervision of Dr. Heather Cornett.",
           "My experience includes school-based therapy for middle and high school students and outpatient work providing weekly therapy for individuals with autism, ADHD, and cognitive delays. I have completed evaluations for intellectual disability, autism spectrum disorder, and ADHD.",
-          "I aim to provide accurate assessments that open doors to new opportunities and resources. I am passionate about supporting families who have received a neurodivergent diagnosis and advocating for the children I work with to help them achieve their personal best.",
+          "I aim to provide accurate assessments across the lifespan that open doors to new opportunities and resources. I am passionate about supporting clients and families after a neurodivergent diagnosis and translating findings into practical recommendations.",
         ],
       },
       {
         type: "paragraphs",
         paragraphs: [
-          "My clinical expertise centers on assessment and treatment of children and adolescents from neurodivergent backgrounds. I offer psychological and psychoeducational testing to help families, schools, and care teams better understand learning, attention, autism, or emotional-behavioral functioning. I primarily work with clients aged 5 to 16 and use a relational-cultural therapeutic (RCT) approach that values the therapeutic relationship and family collaboration.",
+          "I offer psychological and psychoeducational evaluations for clients of all ages to help individuals, families, schools, and care teams better understand learning, attention, autism, or emotional-behavioral functioning. My therapy services remain focused on children and adolescents aged 5 to 16, using a relational-cultural therapeutic approach that values the therapeutic relationship and family collaboration.",
         ],
       },
     ],
@@ -660,11 +660,11 @@ export const clinicianProfiles: ClinicianProfile[] = [
         title: "Ideal Client",
         variant: "surface-2",
         body: [
-          "Children and adolescents aged 5 to 16 seeking assessment or therapy support, families navigating neurodivergent diagnoses, and school teams looking for clear, actionable assessment recommendations.",
+          "Clients of all ages seeking psychological or psychoeducational evaluation, plus children and adolescents aged 5 to 16 seeking therapy. I also support families navigating neurodivergent diagnoses and school teams seeking clear, actionable recommendations.",
         ],
       },
       {
-        title: "Start Date & Availability",
+        title: "Availability",
         eyebrow: "Scheduling",
         variant: "soft",
         body: [
@@ -680,7 +680,7 @@ export const clinicianProfiles: ClinicianProfile[] = [
       eyebrow: "Services",
       title: "Assessment & Therapy Services",
       description:
-        "Psychological and psychoeducational testing, feedback with family- and school-facing recommendations, and relational-cultural therapy for neurodivergent youth.",
+        "Psychological and psychoeducational evaluations for all ages, with family- and school-facing recommendations, plus relational-cultural therapy for children and adolescents ages 5 to 16.",
       items: [
         { label: "Insurance Assessments", value: "3 months" },
         { label: "Self-Pay Assessments", value: "3 weeks" },
