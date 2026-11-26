@@ -95,7 +95,7 @@ export const aboutMenuItems: NavigationMenuItem[] = [
 
 export const clientResourcesMenuItems: NavigationLinkItem[] = [
   { name: "Fees", slug: "fees", desc: "Pricing and payment options" },
-  { name: "FAQ", slug: "faq", desc: "Frequently asked questions" },
+  { name: "Blog", slug: "/blog", desc: "Clinical updates and practice news" },
   {
     name: "Waitlist Times",
     slug: "waitlist-times",
@@ -106,13 +106,14 @@ export const clientResourcesMenuItems: NavigationLinkItem[] = [
     slug: "insurances-accepted",
     desc: "Billing Insurance and Networks",
   },
+  { name: "FAQ", slug: "faq", desc: "Frequently asked questions" },
   { name: "New Client", slug: "new-client", desc: "Getting started guide" },
   {
     name: "Masking Inventory",
     slug: "masking-inventory",
     desc: "Free self-reflection tool",
   },
-  { name: "Blog", slug: "/blog", desc: "Clinical updates and practice news" },
+  
 ];
 
 const therapyMenuChildren: NavigationLinkItem[] = [

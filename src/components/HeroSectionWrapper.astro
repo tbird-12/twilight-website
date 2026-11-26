@@ -1,5 +1,5 @@
 ---
-import { REFERRAL_LINK } from "../data/resource";
+import { WIDGET_LINK } from "../data/resource";
 
 interface Props {
   title?: string;
@@ -35,19 +35,22 @@ const {
   <div class="hero-actions mx-auto w-full max-w-2xl">
     <div class="hero-cta-row">
       <a
-        href="/catalog"
+        href={WIDGET_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Request an appointment with Twilight Psychology"
         data-astro-prefetch="viewport"
         class="inline-flex items-center justify-center gap-2 rounded-full bg-cta px-8 py-3 text-base font-black text-cta-fg shadow-lg shadow-cta/20 transition-all duration-200 hover:bg-cta/80 hover:scale-[1.02] hover:ring-4 hover:ring-cta/30 hover:shadow-xl hover:shadow-cta/30 active:scale-95 animate-[glowPulse_3s_ease-in-out_infinite] motion-reduce:animate-none sm:px-10 sm:py-4"
       >
-        Browse by Concern
+        Request an Appointment
       </a>
       <a
-        href={REFERRAL_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hero-btn-referral"
+        href="/resources/new-client/"
+        aria-label="Read the Twilight Psychology new client guide"
+        data-astro-prefetch="viewport"
+        class="hero-btn-secondary"
       >
-        Referring a client?
+        New Client Guide
         <svg
           class="h-4 w-4 shrink-0"
           fill="none"
@@ -133,8 +136,8 @@ const {
     }
   }
 
-  /* ── Secondary "Referring a client?" button ── */
-  .hero-btn-referral {
+  /* ── Secondary new-client guide button ── */
+  .hero-btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -153,13 +156,13 @@ const {
       transform 0.15s ease;
   }
 
-  .hero-btn-referral:hover {
+  .hero-btn-secondary:hover {
     background-color: var(--color-surface);
     border-color: var(--color-border-strong);
     transform: scale(1.02);
   }
 
-  .hero-btn-referral:active {
+  .hero-btn-secondary:active {
     transform: scale(0.97);
   }
 

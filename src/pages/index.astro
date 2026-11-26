@@ -15,6 +15,7 @@ import { getCategoryMeta, categoryColorMap } from "../data/blogCategories";
 import {
   SELF_PAY_WAITLIST_WEEKS,
   SELF_PAY_REPORT_TURNAROUND_DAYS,
+  WIDGET_LINK,
 } from "../data/resource";
 
 const recentPosts = (await getCollection("blog", ({ data }) => !data.draft))
@@ -279,6 +280,20 @@ const qualityCareItems = [
             ))
           }
         </div>
+        <div class="mt-8 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:text-left">
+          <p class="m-0 text-sm text-site-sub">
+            Not sure which service fits? Start with the concern you want help with.
+          </p>
+          <a
+            href="/catalog/"
+            aria-label="Browse Twilight Psychology services by concern"
+            data-astro-prefetch="viewport"
+            class="inline-flex items-center gap-2 text-sm font-black text-cta hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 rounded-sm"
+          >
+            Browse by Concern
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -410,18 +425,22 @@ const qualityCareItems = [
         </div>
         <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
           <a
-            href="/resources/new-client"
-            data-astro-prefetch="viewport"
-            class="px-4 sm:px-10 py-2.5 sm:py-4 text-xs sm:text-base theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
-          >
-            Steps for New Clients
-          </a>
-          <a
-            href="/about/clinicians/clinicians-lex-ky"
+            href={WIDGET_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Request an appointment with Twilight Psychology"
             data-astro-prefetch="viewport"
             class="px-4 sm:px-10 py-2.5 sm:py-4 text-xs sm:text-base bg-cta text-cta-fg border border-button-border font-black rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cta/50 shadow-lg hover:shadow-2xl hover:shadow-cta/30 hover:-translate-y-1 hover:scale-105"
           >
-            Meet Our Clinicians
+            Request an Appointment
+          </a>
+          <a
+            href="/resources/new-client/"
+            aria-label="Read the Twilight Psychology new client guide"
+            data-astro-prefetch="viewport"
+            class="px-4 sm:px-10 py-2.5 sm:py-4 text-xs sm:text-base theme-surface-2 text-site-text border theme-border-strong font-black rounded-full theme-hover-surface transition-all hover:scale-105 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2"
+          >
+            New Client Guide
           </a>
         </div>
       </div>

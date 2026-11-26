@@ -1,14 +1,14 @@
 /**
  * TopBar - Banner above header with contact info, quick links, and search.
- * Desktop (md+): full layout with search, blog link, appointment CTA, and phone.
- * Mobile (<md):  compact strip with just appointment CTA and phone number.
+ * Desktop (md+): full layout with directions, phone, search, and blog link.
+ * Mobile (<md): compact strip with directions and phone number.
  */
 
 import { useEffect, useState } from "react";
 import {
   PHONE_NUMBER,
   PHONE_NUMBER_FORMATTED,
-  WIDGET_LINK,
+  MAIN_OFFICE_MAP_LINK,
 } from "../../data/resource";
 import SearchButton from "./primitives/SearchButton";
 
@@ -49,14 +49,14 @@ export default function TopBar({ className = "" }: TopBarProps) {
           : undefined
       }
     >
-      {/* ── Mobile strip: appointment CTA + phone only ── */}
+      {/* ── Mobile strip: directions + phone only ── */}
       <div className="md:hidden flex items-center justify-between gap-2 px-4 py-2">
         <a
-          href={WIDGET_LINK}
+          href={MAIN_OFFICE_MAP_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 rounded-full bg-cta/10 border border-cta/25 px-3 py-1 text-xs font-semibold text-cta transition-all hover:bg-cta/15 hover:border-cta/40 active:scale-95"
-          aria-label="Request an appointment at Twilight Psychology"
+          aria-label="Directions to Twilight Psychology"
         >
           <svg
             className="h-3 w-3 shrink-0"
@@ -68,10 +68,9 @@ export default function TopBar({ className = "" }: TopBarProps) {
             viewBox="0 0 24 24"
             aria-hidden="true"
           >
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-            <path d="M16 2v4M8 2v4M3 10h18" />
+            <path d="m3 11 19-9-9 19-2-8-8-2Z" />
           </svg>
-          <span>Request Appointment</span>
+          <span>Directions to Practice</span>
         </a>
 
         <a
@@ -97,14 +96,14 @@ export default function TopBar({ className = "" }: TopBarProps) {
 
       {/* ── Desktop row: full layout ── */}
       <div className="hidden md:flex max-w-6xl mx-auto w-full items-center justify-between gap-4 px-4 sm:px-6 py-3">
-        {/* Left: Appointment + Phone */}
+        {/* Left: Directions + Phone */}
         <div className="flex items-center gap-3">
           <a
-            href={WIDGET_LINK}
+            href={MAIN_OFFICE_MAP_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 rounded-full bg-cta/10 border border-cta/25 px-3.5 py-1 text-sm font-semibold text-cta transition-all hover:bg-cta/15 hover:border-cta/40"
-            aria-label="Request Appointment"
+            aria-label="Directions to Practice"
           >
             <svg
               className="h-3.5 w-3.5 shrink-0"
@@ -116,10 +115,9 @@ export default function TopBar({ className = "" }: TopBarProps) {
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-              <path d="M16 2v4M8 2v4M3 10h18" />
+              <path d="m3 11 19-9-9 19-2-8-8-2Z" />
             </svg>
-            <span>Request Appointment</span>
+            <span>Directions to Practice</span>
           </a>
 
           <span className="h-4 w-px bg-site-text/15" aria-hidden="true" />
