@@ -43,26 +43,52 @@ const DIRECTIONS = Object.keys(CLOCK_ANGLES) as DirectionKey[];
 export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: SpecialtyCompassProps) {
   const [hovered, setHovered] = useState<DirectionKey | null>(null);
   const [active, setActive] = useState<DirectionKey>(() => nodes[0]?.direction ?? 'N');
+  const [wheelRotation, setWheelRotation] = useState(
+    () => -CLOCK_ANGLES[nodes[0]?.direction ?? 'N'],
+  );
+  const [selectionVersion, setSelectionVersion] = useState(0);
+  const manualSelectionRef = useRef<DirectionKey | null>(null);
   const reduced = useReducedMotion();
 
-  // Sorted clockwise directions for the mobile carousel — updated each render via ref
-  const sortedDirsRef = useRef<DirectionKey[]>([]);
-  sortedDirsRef.current = nodes
-    .map(n => n.direction)
-    .sort((a, b) => CLOCK_ANGLES[a] - CLOCK_ANGLES[b]);
-
-  // Mobile auto-advance: step clockwise every 1 s; honours prefers-reduced-motion
+  // The wheel moves continuously; the feature card changes when each turn finishes.
   useEffect(() => {
-    if (reduced) return;
-    const id = setInterval(() => {
-      setActive(prev => {
-        const dirs = sortedDirsRef.current;
-        const idx = dirs.indexOf(prev);
-        return dirs[(idx + 1) % dirs.length];
-      });
-    }, 1500);
-    return () => clearInterval(id);
-  }, [reduced]);
+    const dirs = nodes
+      .map(n => n.direction)
+      .sort((a, b) => CLOCK_ANGLES[a] - CLOCK_ANGLES[b]);
+
+    if (reduced || dirs.length < 2) {
+      setWheelRotation(-CLOCK_ANGLES[active]);
+      return;
+    }
+
+    const currentIndex = dirs.indexOf(active);
+    const nextDirection = dirs[(currentIndex + 1) % dirs.length];
+    let id: number;
+    const beginTurn = () => {
+      const target = -CLOCK_ANGLES[nextDirection];
+      setWheelRotation(previous => target > previous ? target - 360 : target);
+      id = window.setTimeout(() => setActive(nextDirection), 2000);
+    };
+
+    if (manualSelectionRef.current === active) {
+      manualSelectionRef.current = null;
+      id = window.setTimeout(beginTurn, 2000);
+    } else {
+      beginTurn();
+    }
+
+    return () => window.clearTimeout(id);
+  }, [active, nodes, reduced, selectionVersion]);
+
+  function selectDirection(direction: DirectionKey) {
+    manualSelectionRef.current = direction;
+    setActive(direction);
+    setWheelRotation(previous => {
+      const target = -CLOCK_ANGLES[direction];
+      return target > previous ? target - 360 : target;
+    });
+    setSelectionVersion(version => version + 1);
+  }
 
   // used by mobile feature card only
   const activeNode = nodes.find(n => n.direction === active) ?? nodes[0];
@@ -234,8 +260,8 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
           <div
             className="sc-wheel"
             style={{
-              transform: `rotate(${-CLOCK_ANGLES[active]}deg)`,
-              transition: reduced ? 'none' : 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)',
+              transform: `rotate(${wheelRotation}deg)`,
+              transition: reduced ? 'none' : 'transform 2s linear',
             }}
           >
             {/* Decorative SVG inside wheel */}
@@ -271,7 +297,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   key={node.direction}
                   className="sc-wheel-node"
                   style={{ left: `${50 + 42 * Math.sin(a)}%`, top: `${50 - 42 * Math.cos(a)}%` }}
-                  onClick={() => setActive(node.direction)}
+                  onClick={() => selectDirection(node.direction)}
                   aria-label={`Select ${node.name}`}
                   aria-pressed={node.direction === active}
                 >
@@ -283,8 +309,8 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                     className="sc-wheel-dir"
                     aria-hidden="true"
                     style={{
-                      transform: `rotate(${CLOCK_ANGLES[active]}deg)`,
-                      transition: reduced ? 'none' : 'transform 0.4s cubic-bezier(0.34,1.56,0.64,1)',
+                      transform: `rotate(${-wheelRotation}deg)`,
+                      transition: reduced ? 'none' : 'transform 2s linear',
                     }}
                   >
                     {node.direction}
