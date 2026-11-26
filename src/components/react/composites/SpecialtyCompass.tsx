@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 type DirectionKey = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
@@ -43,52 +43,24 @@ const DIRECTIONS = Object.keys(CLOCK_ANGLES) as DirectionKey[];
 export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: SpecialtyCompassProps) {
   const [hovered, setHovered] = useState<DirectionKey | null>(null);
   const [active, setActive] = useState<DirectionKey>(() => nodes[0]?.direction ?? 'N');
-  const [wheelRotation, setWheelRotation] = useState(
-    () => -CLOCK_ANGLES[nodes[0]?.direction ?? 'N'],
-  );
-  const [selectionVersion, setSelectionVersion] = useState(0);
-  const manualSelectionRef = useRef<DirectionKey | null>(null);
   const reduced = useReducedMotion();
 
-  // The wheel moves continuously; the feature card changes when each turn finishes.
   useEffect(() => {
-    const dirs = nodes
+    if (reduced) return;
+
+    const directions = nodes
       .map(n => n.direction)
       .sort((a, b) => CLOCK_ANGLES[a] - CLOCK_ANGLES[b]);
 
-    if (reduced || dirs.length < 2) {
-      setWheelRotation(-CLOCK_ANGLES[active]);
-      return;
-    }
-
-    const currentIndex = dirs.indexOf(active);
-    const nextDirection = dirs[(currentIndex + 1) % dirs.length];
-    let id: number;
-    const beginTurn = () => {
-      const target = -CLOCK_ANGLES[nextDirection];
-      setWheelRotation(previous => target > previous ? target - 360 : target);
-      id = window.setTimeout(() => setActive(nextDirection), 2000);
-    };
-
-    if (manualSelectionRef.current === active) {
-      manualSelectionRef.current = null;
-      id = window.setTimeout(beginTurn, 2000);
-    } else {
-      beginTurn();
-    }
-
-    return () => window.clearTimeout(id);
-  }, [active, nodes, reduced, selectionVersion]);
-
-  function selectDirection(direction: DirectionKey) {
-    manualSelectionRef.current = direction;
-    setActive(direction);
-    setWheelRotation(previous => {
-      const target = -CLOCK_ANGLES[direction];
-      return target > previous ? target - 360 : target;
-    });
-    setSelectionVersion(version => version + 1);
-  }
+    if (directions.length < 2) return;
+    const id = window.setInterval(() => {
+      setActive(previous => {
+        const currentIndex = directions.indexOf(previous);
+        return directions[(currentIndex + 1) % directions.length];
+      });
+    }, 2000);
+    return () => window.clearInterval(id);
+  }, [nodes, reduced]);
 
   // used by mobile feature card only
   const activeNode = nodes.find(n => n.direction === active) ?? nodes[0];
@@ -257,13 +229,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
       <div className="sc-mobile">
         <div className="sc-wheel-container">
           <span className="sc-wheel-indicator" aria-hidden="true" />
-          <div
-            className="sc-wheel"
-            style={{
-              transform: `rotate(${wheelRotation}deg)`,
-              transition: reduced ? 'none' : 'transform 2s linear',
-            }}
-          >
+          <div className="sc-wheel">
             {/* Decorative SVG inside wheel */}
             <svg
               className="sc-wheel-svg"
@@ -287,6 +253,8 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
               })}
             </svg>
 
+            <span className="sc-wheel-hand" aria-hidden="true" />
+
             {/* 8 wheel node buttons */}
             {nodes.map((node) => {
               const a = CLOCK_ANGLES[node.direction] * Math.PI / 180;
@@ -297,7 +265,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   key={node.direction}
                   className="sc-wheel-node"
                   style={{ left: `${50 + 42 * Math.sin(a)}%`, top: `${50 - 42 * Math.cos(a)}%` }}
-                  onClick={() => selectDirection(node.direction)}
+                  onClick={() => setActive(node.direction)}
                   aria-label={`Select ${node.name}`}
                   aria-pressed={node.direction === active}
                 >
@@ -308,10 +276,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   <span
                     className="sc-wheel-dir"
                     aria-hidden="true"
-                    style={{
-                      transform: `rotate(${-wheelRotation}deg)`,
-                      transition: reduced ? 'none' : 'transform 2s linear',
-                    }}
                   >
                     {node.direction}
                   </span>
