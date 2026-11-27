@@ -253,8 +253,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
               })}
             </svg>
 
-            <span className="sc-wheel-hand" aria-hidden="true" />
-
             {/* 8 wheel node buttons */}
             {nodes.map((node) => {
               const a = CLOCK_ANGLES[node.direction] * Math.PI / 180;

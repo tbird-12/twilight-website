@@ -2,6 +2,7 @@
 title: "Couples counseling in Lexington, KY: When to seek therapy"
 description: "Learn when couples therapy helps relationships thrive, what to expect, and how Danielle Morgan, LCSW provides neuro-affirming couples counseling in Lexington."
 pubDate: 2026-11-25
+updatedDate: 2026-11-27
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["couples-therapy", "relationship-counseling", "couples-counseling", "therapy-lexington"]
@@ -47,11 +48,11 @@ This means couples counseling is handled on a **self-pay basis** in most cases, 
 
 ## Couples counseling in Lexington, KY
 
-**Danielle Morgan, MSW, LCSW** at Twilight Psychology offers neuro-affirming couples counseling for adults in Lexington. Her approach prioritizes authentic communication and honors the unique needs of each person in the relationship.
+**Danielle Morgan, MSW, LCSW** at Twilight Psychology offers neuro-affirming couples counseling for adults in Lexington. Her approach prioritizes authentic communication and honors the unique needs of each person in the relationship. This adult relationship work is separate from her broader individual therapy for older teens ages 15+ and adults, which focuses on neurodivergence, identity, self-advocacy, emotional health, and practical goals.
 
 Danielle specializes in working with neurodivergent couples, LGBTQIA+ relationships, and partners exploring kink and non-traditional structures. She helps couples reduce shame, navigate differences without requiring masking, and build connection that reflects both partners' values.
 
-**Couples counseling rates:** $120 per 60-minute session (self-pay). Danielle is accepting new couples clients.
+**Couples counseling rates:** $120 per 60-minute session (self-pay). Contact our intake team or review Danielle's clinician profile for current availability.
 
 ## How to get started
 

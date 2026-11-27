@@ -899,28 +899,28 @@ export const clinicianProfiles: ClinicianProfile[] = [
     slug: "danielle-morgan",
     pageTitle: "Danielle Morgan, LCSW | Neuro-Affirming Therapy — KY",
     pageDescription:
-      "Danielle Morgan, LCSW offers neuro-affirming adult and couples therapy in Lexington, KY for relationships, intimacy, LGBTQIA+ care, and kink-informed support.",
+      "Danielle Morgan, LCSW offers neuro-affirming therapy in Lexington, KY for older teens and adults navigating identity, ADHD, autism, anxiety, and change.",
     jobTitle: "Licensed Clinical Social Worker",
     badge: "Licensed Clinical Social Worker",
     headingPrimary: "Danielle Morgan,",
     headingAccent: "MSW, LCSW.",
     intro:
-      "Neuro-affirming therapy for adults and couples in Lexington, KY, with a primary focus on relationships, intimacy, identity, and authentic connection.",
+      "Neuro-affirming therapy for older teens ages 15+ and adults in Lexington, KY, centered on identity, practical support, self-advocacy, and authentic living.",
     specialties: [
       "Neuro-Affirming Therapy",
-      "Neurodivergent Adults",
-      "Relationships & Intimacy",
+      "Older Teen Therapy (15+)",
+      "ADHD & Autism Support",
+      "Identity Exploration",
       "LGBTQIA+ Affirming Therapy",
-      "Kink-Informed Care",
-      "Couples Counseling",
+      "Adult Couples Counseling",
     ],
     contentBlocks: [
       {
         type: "paragraphs",
         title: "Your neurodivergent experience is not a problem to solve.",
         paragraphs: [
-          "I believe everyone is the expert of their own experience. My neuro-affirming approach honors difference rather than treating neurodivergence as something that must be corrected. We will set collaborative goals and explore ways to build support that fit your identity, relationships, communication style, and daily life.",
-          "Relationships and intimacy can involve different sensory, emotional, and communication needs. I help neurodivergent adults and couples understand those needs, reduce shame, navigate conflict, and create connection that does not depend on masking or conforming.",
+          "I believe everyone is the expert of their own experience. My neuro-affirming approach honors difference rather than treating neurodivergence as something that must be corrected. Together, we will set collaborative goals and build supports that fit your identity, communication style, sensory needs, and daily life.",
+          "For older teens and adults, I provide practical, person-centered therapy for navigating ADHD or autism, anxiety, depression, PTSD, stress, self-understanding, and major life transitions. We can strengthen self-advocacy, explore identity, and develop strategies without asking you to mask or become someone else.",
         ],
       },
       {
@@ -931,10 +931,10 @@ export const clinicianProfiles: ClinicianProfile[] = [
       },
       {
         type: "paragraphs",
-        title: "Affirming individual and couples work.",
+        title: "A flexible structure built around your goals.",
         paragraphs: [
-          "Within a neurodiversity-affirming framework, I support adults navigating ADHD or autism, anxiety, depression, PTSD, stress, identity, and major life transitions. Together we will build practical management skills, strengthen self-advocacy, and make room for relationships that reflect your values rather than outside expectations.",
-          "My work includes LGBTQIA+ affirming and kink-informed care for individuals and couples. Whether you are exploring intimacy, navigating a non-traditional relationship structure, working through communication patterns, or making sense of a recent diagnosis, I offer a nonjudgmental space to develop a clearer and more authentic way forward.",
+          "Therapy can be structured around concrete goals, skill-building, and day-to-day concerns, or leave room for broader reflection when you are still finding the words for what feels difficult. I use an empowerment-focused, collaborative approach that adapts to the pace and format that help you participate most comfortably.",
+          "I also offer LGBTQIA+ affirming care and, for adult clients and couples, relationship, intimacy, non-traditional relationship, and kink-informed support. Those topics are always optional and never the assumed focus of neuro-affirming individual therapy for an older teen.",
         ],
       },
     ],
@@ -965,16 +965,16 @@ export const clinicianProfiles: ClinicianProfile[] = [
         eyebrow: "Ideal Clients",
         variant: "surface-2",
         body: [
-          "Neurodivergent adults (18+) and couples seeking affirming support around relationships, intimacy, communication, identity, or recent ADHD and autism diagnoses. Danielle also specializes in LGBTQIA+ affirming and kink-informed care.",
+          "Older teens ages 15 to 18 and adults of all ages seeking affirming support around neurodivergence, identity, self-advocacy, emotional health, communication, or a recent ADHD or autism diagnosis. Adult clients and couples may also seek relationship, intimacy, or kink-informed care.",
         ],
       },
     ],
     primaryPanel: {
       title: "Opening December 2027",
       description:
-        "Danielle offers neuro-affirming individual and couples therapy for adults in Lexington, KY, with a focus on relationships and intimacy. Couples counseling is self-pay.",
+        "Danielle offers neuro-affirming individual therapy for older teens ages 15+ and adults in Lexington, KY, plus adult couples counseling. Couples counseling is self-pay.",
       items: [
-        { label: "Individual Therapy", value: "Opening Dec 2027" },
+        { label: "Older Teen & Adult Therapy", value: "Opening Dec 2027" },
         { label: "Couples Counseling", value: "Self-pay · Opening Dec 2027" },
       ],
       ctaLabel: "Schedule an Intake",

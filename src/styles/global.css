@@ -1441,27 +1441,6 @@ a[class*="rounded-"] {
   pointer-events: none;
 }
 
-.sc-wheel-hand {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  animation: scCompassSweep 16s linear infinite;
-}
-
-.sc-wheel-hand::before {
-  content: "";
-  position: absolute;
-  top: 11%;
-  left: 50%;
-  width: 2px;
-  height: 39%;
-  border-radius: 999px;
-  background: var(--color-cta);
-  box-shadow: 0 0 8px var(--color-cta);
-  transform: translateX(-50%);
-  transform-origin: 50% 100%;
-}
-
 /* ── Wheel node buttons ───────────────────────────────────────────── */
 .sc-wheel-node {
   position: absolute;
@@ -1648,14 +1627,8 @@ a[class*="rounded-"] {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes scCompassSweep {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
 /* ── Reduced motion ───────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .sc-wheel-hand { animation: none; }
   .sc-node-glow--active { animation: none; }
   .sc-node-dot,
   .sc-node-label,

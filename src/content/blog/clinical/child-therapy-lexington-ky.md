@@ -4,7 +4,7 @@ seoTitle: "Child therapist in Lexington, KY | Teen therapy"
 description: "When to consider therapy for a child or teenager, what neuro-affirming child therapy looks like at Twilight Psychology, and which clinicians work with kids"
 seoDescription: "Child therapist in Lexington, KY at Twilight Psychology for anxiety, depression, ADHD, autism, school stress, and neuro-affirming teen therapy"
 pubDate: 2026-05-28
-updatedDate: 2026-06-21
+updatedDate: 2026-11-27
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["child-therapy", "teen-therapy", "pediatric-therapy", "lexington-ky", "adhd-therapy", "autism-therapy", "anxiety", "child-psychologist"]
@@ -49,37 +49,41 @@ For parents supporting a neurodivergent child, the parent component is often whe
 
 ### Ethan Puckett, Psy.D. — child and teen therapy
 
-**[Ethan Puckett](/about/clinicians/ethan-puckett)** specializes in the assessment and treatment of children and adolescents from neurodivergent populations. His ideal clinical fit is **ages 7 to 16**, with therapy using CBT, ACT, and a person-centered behavioral approach.
+**[Ethan Puckett](/about/clinicians/ethan-puckett/)** specializes in the assessment and treatment of children and adolescents from neurodivergent populations. His ideal clinical fit is **ages 7 to 16**, with therapy using CBT, ACT, and a person-centered behavioral approach.
 
-Ethan begins seeing therapy clients starting **July 6, 2026**, and also accepts older teens for in-person and virtual therapy sessions. He also offers **psychological and psychoeducational testing** alongside his therapy practice, which makes him a particularly strong fit for families who may want both evaluation and therapeutic support from one clinician.
+Ethan also accepts older teens for in-person and virtual therapy sessions. He offers **psychological and psychoeducational testing** alongside his therapy practice, which makes him a particularly strong fit for families who may want both evaluation and therapeutic support from one clinician.
 
 ### Tiffany Roundtree, MA.Ed — adolescent therapy and parenting support
 
-**[Tiffany Roundtree](/about/clinicians/tiffany-roundtree)** specializes in **adolescent therapy** and parenting support, with a focus on anxiety disorders and the relational and identity challenges of the teenage years. Her work is grounded in meeting adolescents where they are — approaching the therapeutic relationship with honesty and warmth rather than a clinical distance that many teens find alienating.
+**[Tiffany Roundtree](/about/clinicians/tiffany-roundtree/)** specializes in **adolescent therapy** and parenting support, with a focus on anxiety disorders and the relational and identity challenges of the teenage years. Her work is grounded in meeting adolescents where they are — approaching the therapeutic relationship with honesty and warmth rather than a clinical distance that many teens find alienating.
+
+### Danielle Morgan, LCSW — older teen therapy
+
+**[Danielle Morgan](/about/clinicians/danielle-morgan/)** provides neuro-affirming individual therapy for **older teens ages 15 to 18**. Her work centers on ADHD and autism, identity exploration, self-advocacy, anxiety, depression, emotional health, and practical goals. Therapy can be structured around concrete skills and daily concerns while leaving room for broader reflection, without asking a teen to mask or fit a neurotypical standard. Adult relationship, intimacy, and kink-informed care are separate offerings and are not the focus of Danielle's older-teen therapy.
 
 ### Other clinicians with child and adolescent overlap
 
-- **[Emeli Evans, MS](/about/clinicians/emeli-evans)** sees neurodivergent children and adolescents with a focus on AuDHD identity, PDA, and high-masking presentations
-- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)** — temporarily licensed psychological associate providing evaluations for all ages and therapy for children and adolescents ages 5–16; supervised by Dr. Heather Cornett. See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa) for details.
+- **[Emeli Evans, MS](/about/clinicians/emeli-evans/)** sees neurodivergent children and adolescents with a focus on AuDHD identity, PDA, and high-masking presentations
+- **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington/)** — temporarily licensed psychological associate providing evaluations for all ages and therapy for children and adolescents ages 5–16; supervised by Dr. Heather Cornett. See [Introducing Taylor Pennington, MS, T-LPA](/blog/business/introducing-taylor-pennington-ms-t-lpa/) for details.
 
 ## Insurance and scheduling
 
 Individual child and adolescent therapy is covered by most accepted insurance plans when there is a covered mental health diagnosis. Most Twilight therapy clinicians participate with major commercial plans and Kentucky Medicaid plans.
 
-Current availability varies by clinician. **Ethan Puckett** has immediate therapy availability starting July 6, 2026. **Tiffany Roundtree** currently has about a 1-month wait for new therapy clients.
+Current availability and intake timing vary by clinician and can change throughout the year. Danielle's profile notes her general fit for older teens, while the waitlist page provides the latest scheduling information for the therapy team.
 
-See the [waitlist times page](/resources/waitlist-times) for current information, or contact our intake team about specific openings.
+See the [waitlist times page](/resources/waitlist-times/) for current information, or contact our intake team about specific openings.
 
 ## How to get started
 
-If you are looking for a **child therapist in Lexington, KY**, the [child and teen therapy service page](/services/therapy/child-and-teen-therapy) gives a full overview of what we offer for this age group. The [new client guide](/resources/new-client) walks through what to expect when starting the intake process.
+If you are looking for a **child therapist in Lexington, KY**, the [child and teen therapy service page](/services/therapy/child-and-teen-therapy/) gives a full overview of what we offer for this age group. The [new client guide](/resources/new-client/) walks through what to expect when starting the intake process.
 
 If you are unsure whether your child needs therapy, a formal evaluation, or both, our intake team can help you think through the right starting point before you commit to a specific path.
 
 ## Related resources
 
-- [Child and Teen Therapy](/services/therapy/child-and-teen-therapy) — service overview for pediatric therapy
-- [Therapy Services Overview](/services/therapy) — full list of therapy options at Twilight
-- [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky) — when an evaluation is the right first step
-- [Therapy Clinicians](/services/therapy/clinicians) — compare therapists by specialty and availability
-- [Waitlist Times](/resources/waitlist-times) — current scheduling availability
+- [Child and Teen Therapy](/services/therapy/child-and-teen-therapy/) — service overview for pediatric therapy
+- [Therapy Services Overview](/services/therapy/) — full list of therapy options at Twilight
+- [Child Psychological Evaluations in Kentucky](/blog/clinical/child-psychological-evaluations-lexington-ky/) — when an evaluation is the right first step
+- [Therapy Clinicians](/services/therapy/clinicians/) — compare therapists by specialty and availability
+- [Waitlist Times](/resources/waitlist-times/) — current scheduling availability

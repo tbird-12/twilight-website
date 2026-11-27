@@ -1,14 +1,14 @@
 ---
 title: "Welcome Danielle Morgan, LCSW to Twilight Psychology"
-description: "Danielle Morgan, LCSW joins Twilight Psychology offering LGBTQIA+ affirming and kink-informed individual and couples therapy for adults in Lexington, KY"
+description: "Meet Danielle Morgan, LCSW, offering neuro-affirming therapy for older teens and adults plus LGBTQIA+ care and adult couples counseling in Lexington, KY"
 pubDate: 2027-12-01
 category: announcements
 author: "Twilight Psychology Team"
-tags: ["team", "therapy", "lgbtqia", "kink-informed", "couples-counseling", "new-provider", "lcsw"]
+tags: ["team", "therapy", "lgbtqia", "neuro-affirming", "adolescent-therapy", "couples-counseling", "new-provider", "lcsw"]
 draft: false
 ---
 
-We are delighted to welcome **Danielle Morgan, MSW, LCSW** to the Twilight Psychology team. Danielle joins us as a Licensed Clinical Social Worker providing individual and couples therapy exclusively for adults in Lexington, KY — with a focus on LGBTQIA+ affirming and kink-informed care. She begins seeing new clients on **December 1, 2027**.
+We are delighted to welcome **Danielle Morgan, MSW, LCSW** to the Twilight Psychology team. Danielle joins us as a Licensed Clinical Social Worker providing neuro-affirming individual therapy for older teens ages 15+ and adults in Lexington, KY, along with couples counseling for adults.
 
 ## About Danielle
 
@@ -22,35 +22,35 @@ Danielle brings an empowerment-centered philosophy to her work. She believes eve
 
 > "I believe everyone is the expert of their own experience — and that good therapy starts by honoring that truth."
 
-Danielle specializes in **kink-informed care**, offering a nonjudgmental space for clients in kink and non-traditional relationship structures who want a therapist who meets them where they are without hesitation or stigma. She is also passionate about supporting **LGBTQIA+ individuals** as they navigate identity, relationships, and mental health with an affirming and culturally aware provider.
+Danielle specializes in **neuro-affirming therapy**, with a focus on identity, ADHD, autism, self-advocacy, emotional health, and practical support that does not ask clients to mask. She is also passionate about supporting **LGBTQIA+ older teens and adults** as they navigate identity, relationships, and mental health with an affirming and culturally aware provider.
 
 ## Who Danielle Works With
 
-Danielle works exclusively with **adults** seeking individual or couples therapy. She is a strong fit for clients who are:
+Danielle works with **older teens ages 15 to 18, adults of all ages, and adult couples**. She is a strong fit for older teen and adult clients who are:
 
+- Neurodivergent or exploring a possible ADHD or autism identity
+- Navigating identity, self-advocacy, anxiety, depression, PTSD, stress, or significant life transitions
+- Looking for structured, goal-focused therapy balanced with space to process and reflect
 - LGBTQIA+ and want an explicitly affirming provider
-- In kink, non-traditional, or ethically non-monogamous relationships
-- Neurodivergent adults — including those recently diagnosed with ADHD or autism — looking for practical, affirming support
-- Working through depression, anxiety, PTSD, stress, or significant life transitions
-- Couples wanting to improve communication, intimacy, and conflict resolution skills
+- Adults or adult couples seeking support for communication, intimacy, kink-informed care, or non-traditional relationship structures
 
 ## Couples Counseling
 
-Danielle offers **couples counseling** with a focus on communication, intimacy, and conflict resolution. Couples sessions are available on a **self-pay basis**. Individual therapy accepts insurance as well as self-pay.
+Danielle offers **couples counseling for adults** with a focus on communication, intimacy, and conflict resolution. Couples sessions are available on a **self-pay basis**. Older teen and adult individual therapy accepts insurance as well as self-pay.
 
 ## Insurance and Fees
 
-For individual therapy, Danielle accepts Medicaid and several commercial insurance plans — including Aetna, Cigna, Anthem, Humana, Passport, UHC Community, and Wellcare. Couples counseling is **self-pay only**. Visit our [Fees page](/resources/fees) or [contact our office](/contact) for current self-pay rates.
+For individual therapy, Danielle accepts Medicaid and several commercial insurance plans — including Aetna, Cigna, Anthem, Humana, Passport, UHC Community, and Wellcare. Couples counseling is **self-pay only**. Visit our [Fees page](/resources/fees/) or [contact our office](/contact/) for current self-pay rates.
 
 ## Schedule with Danielle
 
-Danielle is accepting new individual and couples therapy clients beginning December 1, 2027. To request an intake appointment, use our scheduling widget or contact our office directly.
+Danielle accepts older teen and adult individual therapy clients, as well as adult couples, based on current availability. To request an intake appointment or confirm openings, use our scheduling widget or contact our office directly.
 
 We are so glad to have Danielle on our team and look forward to the thoughtful, affirming care she will bring to our community.
 
 ## Related resources
 
-- [Danielle Morgan's Provider Profile](/about/clinicians/danielle-morgan) — Full background, specialties, and scheduling
-- [Therapy at Twilight Psychology](/services/therapy) — What individual and couples therapy looks like at our practice
-- [Insurances Accepted](/resources/insurances-accepted) — View all insurance panels we accept
-- [New Client Guide](/resources/new-client) — Getting started as a new client at Twilight Psychology
+- [Danielle Morgan's Provider Profile](/about/clinicians/danielle-morgan/) — Full background, specialties, and scheduling
+- [Therapy at Twilight Psychology](/services/therapy/) — What individual and couples therapy looks like at our practice
+- [Insurances Accepted](/resources/insurances-accepted/) — View all insurance panels we accept
+- [New Client Guide](/resources/new-client/) — Getting started as a new client at Twilight Psychology

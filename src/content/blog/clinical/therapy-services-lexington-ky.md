@@ -4,7 +4,7 @@ seoTitle: "Mental Health Therapy in Lexington, KY"
 description: "An overview of therapy at Twilight Psychology: CBT, ACT, psychodynamic, and neuro-affirming approaches for children, teens, adults, and couples"
 seoDescription: "Mental health therapy in Lexington, KY for ADHD, autism, anxiety, and trauma. Neuro-affirming care for children, teens, adults, and couples."
 pubDate: 2026-06-04
-updatedDate: 2026-06-21
+updatedDate: 2026-11-27
 category: clinical
 author: "Twilight Psychology Team"
 tags: ["therapy", "cbt", "cognitive-behavioral-therapy", "lexington-ky", "therapist", "neurodivergent-therapy", "adhd-therapy", "autism-therapy"]
@@ -13,7 +13,7 @@ draft: false
 
 When people search for **mental health therapy in Lexington, KY**, they are usually not looking for a specific modality acronym. They are looking for a provider who understands what they are dealing with, can offer practical help, and will not default to a one-size-fits-all approach. That is the frame Twilight Psychology uses to think about therapy.
 
-Our therapy team now spans ages 3 to adulthood, with specializations in neurodivergent care, ADHD and autism support, childhood and adolescent mental health, anxiety and trauma, substance use recovery, and faith-integrated care. Insurance is accepted for individual therapy through most of our therapists.
+Our therapy team spans ages 3 through older adulthood, with specializations in neurodivergent care, ADHD and autism support, childhood and adolescent mental health, identity, anxiety and trauma, substance use recovery, and faith-integrated care. Insurance is accepted for individual therapy through most of our therapists.
 
 ## Evidence-based modalities we use
 
@@ -33,7 +33,7 @@ CBT is used at Twilight for:
 
 **Neuro-affirming CBT** — adapted for autistic and ADHD clients — is meaningfully different from standard CBT protocols. Traditional CBT can inadvertently push masking by framing the goal as behaving more "neurotypically." Neuro-affirming CBT instead focuses on distress tolerance, self-advocacy, understanding one's own patterns, and building a life that fits the actual person.
 
-Our [CBT therapy page](/services/therapy/cognitive-behavioral-therapy) provides a more detailed breakdown of how CBT is applied to specific concerns.
+Our [CBT therapy page](/services/therapy/cognitive-behavioral-therapy/) provides a more detailed breakdown of how CBT is applied to specific concerns.
 
 ### Acceptance and Commitment Therapy (ACT)
 
@@ -62,48 +62,49 @@ That distinction matters. A neurodivergent person who has received traditional t
 
 ### Children (ages 3–18)
 
-Child and adolescent therapy at Twilight is provided primarily by **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett)**, **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)**, and **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington)**. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support. Taylor provides psychological and psychoeducational evaluations for all ages and relational-cultural therapy for children and adolescents ages 5–16, under Dr. Heather Cornett's supervision.
+Child and adolescent therapy at Twilight is provided by **[Ethan Puckett, Psy.D.](/about/clinicians/ethan-puckett/)**, **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree/)**, **[Taylor Pennington, MS, T-LPA](/about/clinicians/taylor-pennington/)**, and **[Danielle Morgan, LCSW](/about/clinicians/danielle-morgan/)** for older teens ages 15+. Ethan's strongest clinical fit is ages 7–16, with play-informed, CBT, and ACT-based approaches for children with ADHD, autism, anxiety, and school-related challenges. Tiffany specializes in adolescent therapy and parenting support. Taylor provides relational-cultural therapy for children and adolescents ages 5–16, under Dr. Heather Cornett's supervision. Danielle's older-teen work centers on neurodivergence, identity, self-advocacy, emotional health, and practical support without requiring masking.
 
-Our dedicated [child and teen therapy page](/services/therapy/child-and-teen-therapy) covers the specifics in more depth.
+Our dedicated [child and teen therapy page](/services/therapy/child-and-teen-therapy/) covers the specifics in more depth.
 
 ### Adults
 
 Several Twilight therapists work primarily or exclusively with adults:
 
-- **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis)** — psychodynamic and neurodiverse-affirming therapy for individuals and couples
-- **[Emeli Evans, MS](/about/clinicians/emeli-evans)** — therapy for autistic, ADHD, and AuDHD adults, with particular expertise in high-masking presentations, PDA, and identity work; also offers **intimacy therapy**
-- **[Michael Burns, PhD](/about/clinicians/michael-burns)** — ADHD and autism support for adults alongside assessment services; **dual-licensed in Kentucky and Tennessee**
-- **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree)** — adolescent and adult therapy focused on anxiety disorders and parenting support
-- **[Elise Van Meter, MA, T-LPA](/about/clinicians/elise-vanmeter)** — evidence-based CBT for adolescents and adults experiencing anxiety, depression, trauma, and neurodivergent support
+- **[Jonica Davis, Psy.D.](/about/clinicians/jonica-davis/)** — psychodynamic and neurodiverse-affirming therapy for individuals and couples
+- **[Emeli Evans, MS](/about/clinicians/emeli-evans/)** — therapy for autistic, ADHD, and AuDHD adults, with particular expertise in high-masking presentations, PDA, and identity work; also offers **intimacy therapy**
+- **[Michael Burns, PhD](/about/clinicians/michael-burns/)** — ADHD and autism support for adults alongside assessment services; **dual-licensed in Kentucky and Tennessee**
+- **[Danielle Morgan, LCSW](/about/clinicians/danielle-morgan/)** — neuro-affirming individual therapy for adults of all ages, with emphasis on ADHD, autism, identity, self-advocacy, emotional health, and practical goals
+- **[Tiffany Roundtree, MA.Ed](/about/clinicians/tiffany-roundtree/)** — adolescent and adult therapy focused on anxiety disorders and parenting support
+- **[Elise Van Meter, MA, T-LPA](/about/clinicians/elise-vanmeter/)** — evidence-based CBT for adolescents and adults experiencing anxiety, depression, trauma, and neurodivergent support
 
 ### Couples
 
-Couples counseling services are **temporarily unavailable** at Twilight Psychology. We are evaluating future capacity for this service. Please see our [couples counseling page](/services/therapy/couples-counseling) for more information and to contact us about available alternatives.
+Danielle Morgan, LCSW offers neuro-affirming couples counseling for adults, including support around communication, conflict, intimacy, LGBTQIA+ relationships, neurodivergent relationship needs, and non-traditional structures. Couples counseling is self-pay. See the [couples counseling page](/services/therapy/couples-counseling/) and [Danielle's profile](/about/clinicians/danielle-morgan/) for the current intake process and availability.
 
 ## Insurance and scheduling
 
 Individual therapy is billable to accepted insurance plans for covered mental health diagnoses. Most of our therapy clinicians participate with major commercial plans and Kentucky Medicaid plans.
 
-Current availability varies meaningfully by clinician. Some therapists have immediate openings; others have 1-month waits. The [waitlist times page](/resources/waitlist-times) has current information, and our intake team can tell you specifically which clinicians have openings for your needs.
+Current availability varies meaningfully by clinician and changes over time. The [waitlist times page](/resources/waitlist-times/) has current information, and our intake team can tell you specifically which clinicians have openings for your needs.
 
 Twilight Psychology offers **weekday appointments** in Lexington plus **weekend appointments by request** — contact our intake team to ask about specific availability.
 
-All therapy services are also available via **telehealth across Kentucky**. Dr. Burns accepts telehealth therapy clients in **Tennessee** in addition to Kentucky. See our [telehealth services page](/services/telehealth) and [service area page](/about/service-area) for details.
+All therapy services are also available via **telehealth across Kentucky**. Dr. Burns accepts telehealth therapy clients in **Tennessee** in addition to Kentucky. See our [telehealth services page](/services/telehealth/) and [service area page](/about/service-area/) for details.
 
 ## When therapy follows an evaluation
 
-If you have recently completed a psychological, ADHD, or autism evaluation at Twilight Psychology — or elsewhere — and therapy is part of the recommended next step, our clinicians experienced in post-evaluation support understand how to work from a diagnostic report and translate recommendations into a therapeutic plan. Our [therapy after evaluation page](/services/therapy/after-evaluation) covers that transition in more detail.
+If you have recently completed a psychological, ADHD, or autism evaluation at Twilight Psychology — or elsewhere — and therapy is part of the recommended next step, our clinicians experienced in post-evaluation support understand how to work from a diagnostic report and translate recommendations into a therapeutic plan. Our [therapy after evaluation page](/services/therapy/after-evaluation/) covers that transition in more detail.
 
 ## How to get started
 
-The best starting point is our [therapy services overview](/services/therapy) or the [therapy clinicians page](/services/therapy/clinicians), which lets you compare therapists by specialty, age range, insurance, and current availability.
+The best starting point is our [therapy services overview](/services/therapy/) or the [therapy clinicians page](/services/therapy/clinicians/), which lets you compare therapists by specialty, age range, insurance, and current availability.
 
-If you are unsure who is the right fit, the [new client guide](/resources/new-client) walks through the intake process, and our intake team can help you match with the right clinician before you schedule.
+If you are unsure who is the right fit, the [new client guide](/resources/new-client/) walks through the intake process, and our intake team can help you match with the right clinician before you schedule.
 
 ## Related resources
 
-- [Therapy Services](/services/therapy) — full overview of therapy at Twilight
-- [Child and Teen Therapy](/services/therapy/child-and-teen-therapy) — neuro-affirming therapy for children and adolescents
-- [Couples Counseling](/services/therapy/couples-counseling) — couples counseling is temporarily unavailable; see the page for updates
-- [Therapy Clinicians](/services/therapy/clinicians) — compare therapists by specialty and availability
-- [FAQ](/resources/faq) — common questions about therapy, insurance, and scheduling
+- [Therapy Services](/services/therapy/) — full overview of therapy at Twilight
+- [Child and Teen Therapy](/services/therapy/child-and-teen-therapy/) — neuro-affirming therapy for children and adolescents
+- [Couples Counseling](/services/therapy/couples-counseling/) — adult relationship therapy and current self-pay information
+- [Therapy Clinicians](/services/therapy/clinicians/) — compare therapists by specialty and availability
+- [FAQ](/resources/faq/) — common questions about therapy, insurance, and scheduling

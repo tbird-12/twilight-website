@@ -75,12 +75,15 @@ describe("staff provider data", () => {
     expect(glaser!.out_of_pocket_rates.medication_followup).toBe("$150");
   });
 
-  it("Morgan offers adult individual and couples counseling", () => {
+  it("Morgan offers older teen and adult neuro-affirming therapy", () => {
     const morgan = providers.find((p) => p.slug === "danielle-morgan");
 
     expect(morgan).toBeDefined();
+    expect(morgan!.services_offered).toContain("Older Teen Individual Therapy (15+)");
     expect(morgan!.services_offered).toContain("Adult Individual Therapy");
     expect(morgan!.services_offered).toContain("Couples Counseling (self-pay)");
+    expect(morgan!.age_groups).toContain("Teen (12–17)");
+    expect(morgan!.age_groups).toContain("Older Adult (65+)");
   });
 
   it("Pennington offers psychological evaluations across all age groups", () => {
