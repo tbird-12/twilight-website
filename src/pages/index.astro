@@ -126,7 +126,7 @@ const qualityCareItems = [
   title="Psychoeducational Evaluations & Psychological Testing in KY"
   description="Private psychological evaluations for ADHD, autism, and IEP planning in Lexington, KY. Therapy, medication management, and specialties across Kentucky."
 >
-  <div class="homepage-shell bg-site-bg">
+  <div class="home-twilight homepage-shell bg-site-bg">
     <section
       aria-label="Neuro-affirming psychology services in Kentucky"
       class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
@@ -434,6 +434,121 @@ const qualityCareItems = [
 
     .homepage-shell {
       position: relative;
+    }
+
+    /* Homepage-only dark-mode twilight progression. Light mode and all
+       secondary pages continue to use the existing global theme tokens. */
+    :global(html.dark) .home-twilight {
+      --home-blue-hour-glow: oklch(0.34 0.025 245 / 0.18);
+      --home-dusk-glow: oklch(0.59 0.055 40 / 0.08);
+      --home-dusk-horizon: oklch(0.68 0.065 38 / 0.32);
+      --home-nautical: oklch(0.132 0.009 265);
+      --home-nautical-line: oklch(0.52 0.035 258 / 0.28);
+      --home-starlight: oklch(0.095 0.010 275);
+      --home-starlight-line: oklch(0.68 0.025 250 / 0.24);
+    }
+
+    /* Phase 1 — Blue Hour */
+    :global(html.dark) .home-twilight .homepage-panel-hero {
+      background-color: var(--theme-site-bg);
+    }
+
+    :global(html.dark) .home-twilight .homepage-panel-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(
+          ellipse 72% 58% at 50% 18%,
+          var(--home-blue-hour-glow),
+          transparent 72%
+        ),
+        linear-gradient(
+          180deg,
+          oklch(0.145 0.004 286 / 0.08),
+          oklch(0.145 0.004 286 / 0.42)
+        );
+    }
+
+    /* Phase 2 — Civil Twilight */
+    :global(html.dark) .home-twilight .homepage-panel-problem,
+    :global(html.dark) .home-twilight .homepage-panel-services,
+    :global(html.dark) .home-twilight .homepage-panel-care {
+      background-color: var(--theme-site-ann);
+      background-image:
+        radial-gradient(
+          ellipse 72% 48% at 82% 0%,
+          var(--home-dusk-glow),
+          transparent 72%
+        ),
+        radial-gradient(
+          ellipse 50% 40% at 12% 78%,
+          oklch(0.42 0.028 245 / 0.05),
+          transparent 74%
+        );
+      border-top: 1px solid color-mix(in oklab, var(--theme-button-border) 72%, transparent);
+    }
+
+    :global(html.dark) .home-twilight .homepage-panel-problem::before,
+    :global(html.dark) .home-twilight .homepage-panel-services::before,
+    :global(html.dark) .home-twilight .homepage-panel-care::before {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--home-dusk-horizon) 50%,
+        transparent
+      );
+    }
+
+    :global(html.dark) .home-twilight :global(.qc-card),
+    :global(html.dark) .home-twilight .homepage-service-card {
+      border-color: color-mix(in oklab, var(--theme-button-border) 64%, transparent);
+      box-shadow:
+        inset 0 1px 0 oklch(0.68 0.026 245 / 0.07),
+        0 18px 44px oklch(0.08 0.006 275 / 0.14);
+    }
+
+    /* Phase 3 — Nautical Twilight */
+    :global(html.dark) .home-twilight .homepage-panel-blog,
+    :global(html.dark) .home-twilight .homepage-panel-cta {
+      background-color: var(--home-nautical);
+      background-image:
+        radial-gradient(
+          ellipse 65% 42% at 78% 18%,
+          oklch(0.31 0.026 258 / 0.10),
+          transparent 76%
+        );
+      border-top-color: var(--home-nautical-line);
+    }
+
+    :global(html.dark) .home-twilight .homepage-panel-blog::before,
+    :global(html.dark) .home-twilight .homepage-panel-cta::before {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--home-nautical-line) 50%,
+        transparent
+      );
+    }
+
+    /* Keep the celestial accents quiet and phase-harmonized. The shared
+       SVG component remains unchanged; these rules are homepage-only. */
+    :global(html.dark) .home-twilight :global(.celestial-accent) {
+      opacity: 0.34;
+      filter: drop-shadow(0 0 1rem oklch(0.42 0.026 245 / 0.08));
+    }
+
+    :global(html.dark) .home-twilight .homepage-panel-problem :global(.celestial-accent),
+    :global(html.dark) .home-twilight .homepage-panel-services :global(.celestial-accent),
+    :global(html.dark) .home-twilight .homepage-panel-care :global(.celestial-accent) {
+      color: oklch(0.68 0.045 38 / 0.72);
+    }
+
+    :global(html.dark) .home-twilight .homepage-panel-blog :global(.celestial-accent),
+    :global(html.dark) .home-twilight .homepage-panel-cta :global(.celestial-accent) {
+      color: oklch(0.72 0.032 245 / 0.72);
     }
 
     .homepage-shell::before {
@@ -1041,6 +1156,15 @@ const qualityCareItems = [
 
     :root.light .homepage-panel-glow-right {
       background: rgba(var(--rgb-accent-alt), 0.10);
+    }
+
+    /* Phase 4 — Astronomical Twilight. This reaches the layout footer only
+       when the current document contains the homepage-specific wrapper. */
+    :global(html.dark body:has(.home-twilight) .site-footer) {
+      --theme-site-footer: oklch(0.095 0.010 275);
+      background-color: var(--theme-site-footer);
+      border-top-color: oklch(0.68 0.025 250 / 0.24);
+      box-shadow: inset 0 1px 0 oklch(0.52 0.022 245 / 0.10);
     }
 
     /* ── Reduced motion ──────────────────────────────────────────────── */

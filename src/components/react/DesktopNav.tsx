@@ -55,6 +55,8 @@ export const rightNavMenus: NavMenuConfig[] = [
   },
 ];
 
+export const desktopNavMenus: NavMenuConfig[] = [...leftNavMenus, ...rightNavMenus];
+
 interface DesktopNavProps {
   headerHeight: number;
   menus?: NavMenuConfig[];
@@ -64,7 +66,7 @@ interface DesktopNavProps {
 
 export default function DesktopNav({
   headerHeight,
-  menus = [...leftNavMenus, ...rightNavMenus],
+  menus = desktopNavMenus,
   className = "",
   currentPath,
 }: DesktopNavProps) {
@@ -101,7 +103,7 @@ export default function DesktopNav({
   return (
     <>
       <nav
-        className={`flex items-center gap-6 lg:gap-8 ${className}`.trim()}
+        className={`flex items-center gap-1 md:gap-3 lg:gap-8 ${className}`.trim()}
         role="navigation"
         aria-label="Main navigation"
       >

@@ -1,11 +1,11 @@
 /**
  * Header component - Main navigation header with logo, nav, and mobile menu.
- * Desktop: centered-brand split layout (2 nav groups flanking the logo).
+ * Desktop: left-aligned brand, centered navigation, right-aligned actions.
  * Mobile: compact bar — hamburger, logo, shortcuts — unchanged.
  */
 
 import { useEffect, useRef, useState } from "react";
-import DesktopNav, { leftNavMenus, rightNavMenus } from "./DesktopNav";
+import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import { useScrollLock } from "./hooks";
 import { useReducedMotion } from "./hooks/useReducedMotion";
@@ -90,15 +90,12 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
           isMobileMenuOpen ? "md:z-30" : ""
         }`}
       >
-        {/* ── Desktop: centered-brand split layout ── */}
-        <div className="hidden md:grid grid-cols-[1fr_auto_1fr] items-center gap-4 h-16 lg:h-20 max-w-6xl mx-auto px-4 sm:px-6">
-          {/* Left: Services + Specialties */}
-          <DesktopNav headerHeight={headerHeight} menus={leftNavMenus} currentPath={currentPath} />
-
-          {/* Center: Logo */}
+        {/* ── Desktop: logo left, navigation center, actions right ── */}
+        <div className="hidden md:grid grid-cols-[minmax(10rem,1fr)_auto_minmax(10rem,1fr)] items-center gap-3 lg:gap-5 h-16 lg:h-20 max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Left: Logo */}
           <a
             href={logoHref}
-            className="group flex items-center gap-2.5 font-sans tracking-tighter text-site-text cursor-pointer"
+            className="group flex w-fit items-center gap-2.5 font-sans tracking-tighter text-site-text cursor-pointer"
             aria-label="Twilight Psychology home"
           >
             {logoSrc ? (
@@ -117,7 +114,7 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
                 <span className="font-bold text-lg">TP</span>
               </div>
             )}
-            <span className="flex flex-col items-start gap-0.5">
+            <span className="hidden flex-col items-start gap-0.5 lg:flex">
               <span className="flex items-center gap-1.5">
                 <span className={`font-serif font-black text-base lg:text-lg text-site-text leading-tight ${logoTextClass}`}>
                   Twilight Psychology
@@ -129,9 +126,15 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
             </span>
           </a>
 
-          {/* Right: Clients + About + ThemeToggle + CTA */}
+          {/* Center: four primary tabs */}
+          <DesktopNav
+            headerHeight={headerHeight}
+            currentPath={currentPath}
+            className="justify-center"
+          />
+
+          {/* Right: ThemeToggle + CTA */}
           <div className="flex items-center justify-end gap-4 lg:gap-5">
-            <DesktopNav headerHeight={headerHeight} menus={rightNavMenus} currentPath={currentPath} />
             <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
             <a
               href="/contact"
