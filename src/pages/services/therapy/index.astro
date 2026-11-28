@@ -137,11 +137,11 @@ const therapySchema = {
           size="lg"
         />
 
-        <section class="max-w-7xl mx-auto px-4 mt-8 md:mt-16 grid lg:grid-cols-3 gap-8">
+        <div class="max-w-7xl mx-auto px-4 mt-8 md:mt-16 grid lg:grid-cols-3 gap-8">
           <div class="lg:col-span-2 space-y-10">
             <AnimatedSection client:visible animation="fadeInUp" delay={100}>
-              <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
-                <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+              <section aria-labelledby="therapy-overview-heading" class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+                <h2 id="therapy-overview-heading" class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
                   Therapy that meets you where you are
                 </h2>
                 <div class="space-y-5 text-site-text leading-relaxed text-base md:text-lg">
@@ -166,8 +166,8 @@ const therapySchema = {
             </AnimatedSection>
 
             <AnimatedSection client:visible animation="fadeInUp" delay={200}>
-              <section>
-                <h2 class="font-serif text-2xl font-black text-site-text mb-8 tracking-tight">
+              <section aria-labelledby="therapy-approach-heading">
+                <h2 id="therapy-approach-heading" class="font-serif text-2xl font-black text-site-text mb-8 tracking-tight">
                   How we approach therapy
                 </h2>
                 <div class="grid sm:grid-cols-2 gap-6">
@@ -279,15 +279,15 @@ const therapySchema = {
               </a>
             </div>
           </aside>
-        </section>
+        </div>
 
-        <section class="max-w-7xl mx-auto px-4 mt-12 md:mt-24">
+        <section aria-labelledby="therapy-paths-heading" class="max-w-7xl mx-auto px-4 mt-12 md:mt-24">
           <AnimatedSection client:visible animation="fadeInUp" delay={250}>
             <header class="max-w-3xl mb-10">
               <p class="text-xs font-black uppercase tracking-[0.28em] text-site-sub mb-3">
                 Therapy options
               </p>
-              <h2 class="font-serif text-3xl font-black text-site-text tracking-tight mb-4">
+              <h2 id="therapy-paths-heading" class="font-serif text-3xl font-black text-site-text tracking-tight mb-4">
                 Explore the therapy path that fits your needs
               </h2>
               <p class="text-site-sub leading-relaxed">
@@ -317,7 +317,7 @@ const therapySchema = {
           </AnimatedSection>
         </section>
 
-        <section class="max-w-7xl mx-auto px-4 mt-12 md:mt-24">
+        <section aria-label="Therapy coverage and scheduling" class="max-w-7xl mx-auto px-4 mt-12 md:mt-24">
           <AnimatedSection client:visible animation="fadeInUp" delay={275}>
             <div class="grid gap-6 md:grid-cols-2">
               <div class="rounded-3xl border border-border bg-surface-soft p-8">
@@ -367,10 +367,10 @@ const therapySchema = {
           </AnimatedSection>
         </section>
 
-        <section class="max-w-7xl mx-auto px-4 mt-12 md:mt-24 mb-6 md:mb-12">
+        <section aria-labelledby="therapy-cta-heading" class="max-w-7xl mx-auto px-4 mt-12 md:mt-24 mb-6 md:mb-12">
           <AnimatedSection client:visible animation="fadeInUp" delay={300}>
             <div class="p-6 md:p-10 bg-linear-to-r from-cta/10 to-cta/10 border border-cta/20 rounded-[3rem] text-center">
-              <h2 class="font-serif text-3xl font-black text-site-text mb-4">
+              <h2 id="therapy-cta-heading" class="font-serif text-3xl font-black text-site-text mb-4">
                 Ready to get started with therapy?
               </h2>
               <p class="text-site-sub mb-8 max-w-2xl mx-auto">

@@ -100,7 +100,7 @@ export const clientResourcesMenuItems: NavigationLinkItem[] = [
     slug: "masking-inventory",
     desc: "Free self-reflection tool",
   },
-  { name: "Catalog", slug: "/catalog", desc: "Browse by Concern" },
+  { name: "Concern Catalog", slug: "/catalog", desc: "Areas of Expertise" },
   {
     name: "Waitlist Times",
     slug: "waitlist-times",
@@ -112,7 +112,7 @@ export const clientResourcesMenuItems: NavigationLinkItem[] = [
     desc: "Billing Insurance and Networks",
   },
   { name: "New Client", slug: "new-client", desc: "Getting started guide" },
-  
+  { name: "FAQ", slug: "faq", desc: "Frequently asked questions" },
 ];
 
 const therapyMenuChildren: NavigationLinkItem[] = [

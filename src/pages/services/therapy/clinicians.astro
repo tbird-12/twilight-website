@@ -170,11 +170,11 @@ const cliniciansSchema = {
           size="lg"
         />
 
-        <section class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
+        <div class="max-w-7xl mx-auto px-4 mt-16 grid lg:grid-cols-3 gap-12">
           <div class="lg:col-span-2 space-y-10">
             <AnimatedSection client:visible animation="fadeInUp" delay={100}>
-              <section class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
-                <h2 class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
+              <section aria-labelledby="clinicians-fit-heading" class="bg-surface-soft border border-border p-8 md:p-10 rounded-[2.5rem]">
+                <h2 id="clinicians-fit-heading" class="font-serif text-3xl font-black text-site-text mb-5 tracking-tight">
                   Compare clinician fit before you book
                 </h2>
                 <div class="space-y-5 text-site-text leading-relaxed text-lg">
@@ -238,9 +238,9 @@ const cliniciansSchema = {
               rel="noopener noreferrer"
             />
           </aside>
-        </section>
+        </div>
 
-        <section class="not-prose max-w-7xl mx-auto px-4 mt-24">
+        <section aria-label="Therapy clinician profiles" class="not-prose max-w-7xl mx-auto px-4 mt-24">
           <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {
               therapyClinicians.map((clinician) => (

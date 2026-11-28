@@ -73,7 +73,7 @@ const relatedResourceLinks = [
   title="Service Fees & Rates"
   description="Review Twilight Psychology fees for evaluations, therapy, and medication management in Kentucky, plus insurance-supported care and payment planning."
 >
-    <section class="bg-site-bg py-10 md:py-24 px-4">
+    <div class="bg-site-bg py-10 md:py-24 px-4">
       <div class="max-w-4xl mx-auto">
 
       <PageHeroWrapper
@@ -83,8 +83,8 @@ const relatedResourceLinks = [
       />
 
       <AnimatedSection client:visible animation="fadeInUp" delay={100}>
-        <section class="mb-12 bg-surface-soft border-l-4 border-cta p-6 rounded-r-2xl">
-          <h2 class="font-serif text-site-text font-bold text-xl mb-2">Insurance Information</h2>
+        <section aria-labelledby="fees-insurance-info-heading" class="mb-12 bg-surface-soft border-l-4 border-cta p-6 rounded-r-2xl">
+          <h2 id="fees-insurance-info-heading" class="font-serif text-site-text font-bold text-xl mb-2">Insurance Information</h2>
           <div class="space-y-4 text-site-text leading-relaxed">
           <p>
             Clients with <strong>Kentucky Medicaid</strong> typically have $0 copays for
@@ -104,13 +104,13 @@ const relatedResourceLinks = [
         </section>
       </AnimatedSection>
 
-      <section class="mt-10">
+      <div class="mt-10">
         <FeeTabsWrapper categories={feeCategories} />
-      </section>
+      </div>
 
       <AnimatedSection client:visible animation="fadeInUp" delay={175}>
-        <section class="mt-10 bg-surface-soft border border-border rounded-[2.5rem] p-6 md:p-10">
-          <h2 class="font-serif text-site-text font-black text-2xl mb-6">Coverage for Therapy & Medication Management</h2>
+        <section aria-labelledby="fees-coverage-heading" class="mt-10 bg-surface-soft border border-border rounded-[2.5rem] p-6 md:p-10">
+          <h2 id="fees-coverage-heading" class="font-serif text-site-text font-black text-2xl mb-6">Coverage for Therapy & Medication Management</h2>
           <div class="grid md:grid-cols-2 gap-8">
             <div>
               <h3 class="font-serif text-site-text font-black text-lg mb-3">Kentucky Medicaid</h3>
@@ -131,7 +131,7 @@ const relatedResourceLinks = [
       </AnimatedSection>
 
       <AnimatedSection client:visible animation="fadeInUp" delay={300}>
-        <section class="mt-10">
+        <div class="mt-10">
           <div class="grid gap-6 md:grid-cols-2 bg-surface-soft border rounded-3xl p-6 md:p-8" style="border-color: var(--color-border-strong)">
             <div>
               <h3 class="font-serif text-site-text font-black text-xl mb-3">Accepted Payment Methods</h3>
@@ -157,7 +157,7 @@ const relatedResourceLinks = [
               </a>
             </div>
           </div>
-        </section>
+        </div>
       </AnimatedSection>
 
       <footer class="mt-12 text-center text-site-sub text-sm space-y-4">
@@ -169,8 +169,8 @@ const relatedResourceLinks = [
       </footer>
 
       <AnimatedSection client:visible animation="fadeInUp" delay={400}>
-        <section class="mt-12">
-          <h2 class="font-serif text-2xl font-black text-site-text mb-6">Billing & Insurance Resources</h2>
+        <section aria-labelledby="fees-billing-resources-heading" class="mt-12">
+          <h2 id="fees-billing-resources-heading" class="font-serif text-2xl font-black text-site-text mb-6">Billing & Insurance Resources</h2>
           <div class="grid gap-4 sm:grid-cols-2">
             <a href="/blog/billing/understanding-your-eob" aria-label="Read: Understanding Your EOB" class="group p-6 bg-surface-soft border border-border rounded-2xl hover:border-cta/30 transition-all">
               <p class={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-bold uppercase tracking-widest mb-2 ${categoryColorMap.billing}`}>Billing</p>
@@ -196,5 +196,5 @@ const relatedResourceLinks = [
       />
 
       </div>
-    </section>
+    </div>
 </Layout>
