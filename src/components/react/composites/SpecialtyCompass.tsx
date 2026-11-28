@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import type { CSSProperties } from 'react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 type DirectionKey = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
@@ -62,8 +63,8 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
     return () => window.clearInterval(id);
   }, [nodes, reduced]);
 
-  // used by mobile feature card only
   const activeNode = nodes.find(n => n.direction === active) ?? nodes[0];
+  const highlighted = hovered ?? active;
 
   return (
     <div className="sc-root">
@@ -133,7 +134,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   strokeWidth="0.35"
                   style={{
                     strokeDasharray: 40,
-                    strokeDashoffset: (reduced || hovered === node.direction) ? 0 : 40,
+                    strokeDashoffset: (reduced || highlighted === node.direction) ? 0 : 40,
                     transition: reduced ? 'none' : 'stroke-dashoffset 0.35s ease',
                   }}
                 />
@@ -145,7 +146,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
           {nodes.map((node) => {
             const pos = nodeXY(node.direction);
             const th  = THEME[node.direction];
-            const isHov = hovered === node.direction;
+            const isHighlighted = highlighted === node.direction;
             return (
               <a
                 key={node.direction}
@@ -160,27 +161,23 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                 onBlur={() => setHovered(null)}
               >
                 <span
-                  className={`sc-node-glow${isHov ? ' sc-node-glow--active' : ''}`}
+                  className={`sc-node-glow${isHighlighted ? ' sc-node-glow--active' : ''}`}
                   aria-hidden="true"
                   style={{ background: th.glow }}
                 />
                 <span
-                  className={`sc-node-dot${isHov ? ' sc-node-dot--active' : ''}`}
+                  className={`sc-node-dot${isHighlighted ? ' sc-node-dot--active' : ''}`}
                   style={{ background: th.dot }}
                 />
               </a>
             );
           })}
 
-          {/* Center: shows active direction letter on hover */}
+          {/* Center: shows the highlighted direction */}
           <div className="sc-center-info" aria-hidden="true">
-            {hovered ? (
-              <span className="sc-center-name" style={{ color: 'var(--color-site-text)' }}>
-                {hovered}
-              </span>
-            ) : (
-              <span className="sc-center-idle">✦</span>
-            )}
+            <span className="sc-center-name" style={{ color: 'var(--color-site-text)' }}>
+              {highlighted}
+            </span>
           </div>
         </div>
 
@@ -188,12 +185,12 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
         <div className="sc-list" role="list" aria-label="Specialty evaluations">
           {nodes.map((node) => {
             const th = THEME[node.direction];
-            const isHov = hovered === node.direction;
+            const isHighlighted = highlighted === node.direction;
             return (
               <a
                 key={node.direction}
                 href={`/specialties/${node.slug}/`}
-                className={`sc-list-item${isHov ? ' sc-list-item--active' : ''}`}
+                className={`sc-list-item${isHighlighted ? ' sc-list-item--active' : ''}`}
                 aria-label={`Learn about ${node.name} evaluation`}
                 data-astro-prefetch="viewport"
                 role="listitem"
@@ -207,7 +204,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                     className="sc-list-dir-dot"
                     style={{
                       background: th.dot,
-                      boxShadow: isHov ? `0 0 8px ${th.glow}` : undefined,
+                      boxShadow: isHighlighted ? `0 0 8px ${th.glow}` : undefined,
                     }}
                   />
                   <span className="sc-list-dir-text">
@@ -295,7 +292,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
             {
               '--sc-dot':  THEME[active].dot,
               '--sc-glow': THEME[active].glow,
-            } as React.CSSProperties
+            } as CSSProperties
           }
         >
           <span className="sc-feature-dir" style={{ color: THEME[active].text }}>{active}</span>
