@@ -112,7 +112,7 @@ export const clientResourcesMenuItems: NavigationLinkItem[] = [
     desc: "Billing Insurance and Networks",
   },
   { name: "New Client", slug: "new-client", desc: "Getting started guide" },
-  { name: "FAQ", slug: "faq", desc: "Frequently asked questions" },
+  { name: "Blog", slug: "/blog", desc: "Latest updates" },
 ];
 
 const therapyMenuChildren: NavigationLinkItem[] = [

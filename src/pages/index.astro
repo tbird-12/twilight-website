@@ -129,6 +129,7 @@ const qualityCareItems = [
       aria-label="Neuro-affirming psychology services in Kentucky"
       class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
     >
+      <div class="homepage-hero-atmosphere" aria-hidden="true"></div>
       <div
         class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-6xl text-center px-4 sm:px-6"
       >
@@ -431,19 +432,19 @@ const qualityCareItems = [
       overflow: clip;
     }
 
-    /* A single document-length gradient turns as the reader moves from
-       sunset into civil, nautical, and astronomical twilight. */
+    /* A single document-length gradient moves from pale midnight blue
+       into deeper civil, nautical, and astronomical twilight. */
     :global(html.dark) .home-twilight {
-      --home-sunset: oklch(0.265 0.045 25);
+      --home-midnight: oklch(0.285 0.050 258);
       --home-blue-hour: oklch(0.220 0.045 270);
       --home-civil: oklch(0.178 0.032 276);
       --home-nautical: oklch(0.132 0.015 268);
       --home-astronomical: oklch(0.095 0.010 275);
       background:
-        radial-gradient(ellipse 85% 18% at 12% 4%, oklch(0.58 0.095 38 / 0.22), transparent 72%),
+        radial-gradient(ellipse 85% 18% at 12% 4%, oklch(0.62 0.10 250 / 0.18), transparent 72%),
         linear-gradient(
           180deg,
-          var(--home-sunset) 0%,
+          var(--home-midnight) 0%,
           var(--home-blue-hour) 18%,
           var(--home-civil) 42%,
           var(--home-nautical) 68%,
@@ -629,6 +630,51 @@ const qualityCareItems = [
 
     :global(html.dark) .homepage-panel-hero {
       background: rgba(var(--rgb-bg), 0.70);
+    }
+
+    .homepage-hero-atmosphere {
+      display: none;
+    }
+
+    :global(html.dark) .homepage-panel-hero > .homepage-hero-atmosphere {
+      display: block;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        oklch(0.055 0.004 286 / 0.98) 0,
+        oklch(0.095 0.012 278 / 0.90) 72px,
+        oklch(0.18 0.038 266 / 0.42) 126px,
+        transparent 170px
+      );
+    }
+
+    :global(html.dark) .homepage-hero-atmosphere::after {
+      content: "";
+      position: absolute;
+      inset: 5.5rem -10% auto;
+      height: min(48%, 30rem);
+      background:
+        radial-gradient(
+          ellipse 42% 58% at 76% 34%,
+          oklch(0.58 0.10 250 / 0.15),
+          transparent 72%
+        ),
+        radial-gradient(
+          ellipse 54% 48% at 24% 62%,
+          oklch(0.38 0.075 265 / 0.12),
+          transparent 74%
+        ),
+        linear-gradient(
+          180deg,
+          transparent 0 54%,
+          oklch(0.60 0.085 250 / 0.08) 74%,
+          transparent 88%
+        );
+      filter: blur(18px);
+      opacity: 0.68;
     }
 
     .homepage-panel-inner {

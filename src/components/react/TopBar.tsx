@@ -12,7 +12,6 @@ import {
   MAIN_OFFICE_MAP_LINK,
   SIGN_IN_LINK,
 } from "../../data/resource";
-import SearchButton from "./primitives/SearchButton";
 
 interface TopBarProps {
   className?: string;
@@ -81,7 +80,7 @@ export default function TopBar({ className = "" }: TopBarProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 rounded-full bg-cta/10 border border-cta/25 px-3 py-1 text-xs font-semibold text-cta transition-all hover:bg-cta/15 hover:border-cta/40 active:scale-95"
-          aria-label="Directions to Twilight Psychology"
+          aria-label="Get Directions to Twilight Psychology"
         >
           <svg
             className="h-3 w-3 shrink-0"
@@ -95,22 +94,13 @@ export default function TopBar({ className = "" }: TopBarProps) {
           >
             <path d="m3 11 19-9-9 19-2-8-8-2Z" />
           </svg>
-          <span>Directions to Practice</span>
+          <span>Get Directions</span>
         </a>
       </div>
 
       {/* ── Desktop row: full layout ── */}
       <div className="hidden md:flex max-w-7xl mx-auto w-full items-center justify-end px-4 sm:px-6 py-2.5 lg:py-3">
         <div className="flex items-center gap-3 lg:gap-4 xl:gap-5">
-          <SearchButton
-            compact={false}
-            label="Search"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-site-bg px-4 py-1.5 text-sm font-medium text-site-text shadow-sm transition-all hover:border-border-strong hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg"
-            ariaLabel="Search the site"
-          />
-
-          <span className="select-none text-site-sub/30" aria-hidden="true">|</span>
-
           <a
             href={`tel:${PHONE_NUMBER}`}
             className="flex items-center gap-2 text-sm font-medium text-site-text transition-colors hover:text-cta"

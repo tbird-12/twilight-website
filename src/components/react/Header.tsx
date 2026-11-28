@@ -135,6 +135,11 @@ export default function Header({ logoHref = "/", logoSrc, currentPath }: HeaderP
 
           {/* Right: ThemeToggle + CTA */}
           <div className="flex items-center justify-end gap-4 lg:gap-5">
+            <SearchButton
+              compact
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-site-bg/90 text-site-text shadow-sm transition-colors hover:bg-surface"
+              ariaLabel="Search the site"
+            />
             <ThemeToggle className="bg-site-bg/90 ring-1 ring-border/50 hover:bg-surface" />
             <a
               href="/contact"

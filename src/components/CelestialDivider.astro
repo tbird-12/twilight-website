@@ -50,14 +50,16 @@ const { type } = Astro.props;
           <rect x="0" y="62" width="240" height="58"/>
         </clipPath>
       </defs>
-      <!-- Back ring (behind planet) -->
-      <ellipse class="orbit-ring"              cx="120" cy="62" rx="68" ry="18"/>
-      <!-- Planet body -->
-      <circle  class="orbit-planet"            cx="120" cy="62" r="26"/>
-      <!-- Surface band -->
-      <ellipse class="orbit-band"              cx="120" cy="58" rx="22" ry="7"/>
-      <!-- Front ring (over planet, bottom half only) -->
-      <ellipse class="orbit-ring orbit-ring--front" cx="120" cy="62" rx="68" ry="18" clip-path="url(#cel-ring-front)"/>
+      <g transform="rotate(-26.7 120 62)">
+        <!-- Back ring (behind planet) -->
+        <ellipse class="orbit-ring"              cx="120" cy="62" rx="68" ry="18"/>
+        <!-- Planet body -->
+        <circle  class="orbit-planet"            cx="120" cy="62" r="26"/>
+        <!-- Surface band -->
+        <ellipse class="orbit-band"              cx="120" cy="58" rx="22" ry="7"/>
+        <!-- Front ring (over planet, bottom half only) -->
+        <ellipse class="orbit-ring orbit-ring--front" cx="120" cy="62" rx="68" ry="18" clip-path="url(#cel-ring-front)"/>
+      </g>
       <!-- Orbiting moon — travels outside the ring on a wider ellipse -->
       <circle class="orbit-moon-body" cx="0" cy="0" r="3"/>
       <!-- Background stars -->
