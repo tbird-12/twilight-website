@@ -474,7 +474,8 @@ const qualityCareItems = [
     /* Keep the celestial accents quiet and phase-harmonized. The shared
        SVG component remains unchanged; these rules are homepage-only. */
     :global(html.dark) .home-twilight :global(.celestial-accent) {
-      opacity: 0.34;
+      --celestial-max-opacity: 0.68;
+      opacity: 0.68;
       filter: drop-shadow(0 0 1rem oklch(0.42 0.026 245 / 0.08));
     }
 

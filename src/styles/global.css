@@ -1196,13 +1196,21 @@ a[class*="rounded-"] {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  border: 2px solid var(--color-icon);
+  background: transparent;
+  opacity: 0;
   display: block;
-  transition: width 0.2s ease, height 0.2s ease, box-shadow 0.2s ease;
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-.sc-node-dot--active {
+.sc-node-dot--active,
+.sc-node-anchor:hover .sc-node-dot,
+.sc-node-anchor:focus-visible .sc-node-dot {
   width: 13px;
   height: 13px;
+  background: var(--color-icon);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-icon) 30%, transparent);
+  opacity: 1;
 }
 
 /* ── Glow ring ────────────────────────────────────────────────────── */
@@ -1324,11 +1332,24 @@ a[class*="rounded-"] {
 
 .sc-list-dir-dot {
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  border: 2px solid var(--color-icon);
+  background: transparent;
+  opacity: 0;
   flex-shrink: 0;
-  transition: box-shadow 0.18s ease;
+  transition: width 0.18s ease, height 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.sc-list-dir-dot--active,
+.sc-list-item:hover .sc-list-dir-dot,
+.sc-list-item:focus-visible .sc-list-dir-dot {
+  width: 13px;
+  height: 13px;
+  background: var(--color-icon);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-icon) 30%, transparent);
+  opacity: 1;
 }
 
 .sc-list-dir-text {
@@ -1466,14 +1487,20 @@ a[class*="rounded-"] {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  border: 2px solid var(--color-icon);
+  background: transparent;
   flex-shrink: 0;
-  opacity: 0.72;
-  transition: width 0.2s ease, height 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
-.sc-wheel-dot--active {
+.sc-wheel-dot--active,
+.sc-wheel-node:hover .sc-wheel-dot,
+.sc-wheel-node:focus-visible .sc-wheel-dot {
   width: 13px;
   height: 13px;
+  background: var(--color-icon);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-icon) 30%, transparent);
   opacity: 1;
 }
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import type { CSSProperties } from 'react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 
 type DirectionKey = 'N' | 'NE' | 'E' | 'SE' | 'S' | 'SW' | 'W' | 'NW';
@@ -27,19 +26,12 @@ function nodeXY(dir: DirectionKey, r = 40): { x: number; y: number } {
   return { x: 50 + r * Math.sin(a), y: 50 - r * Math.cos(a) };
 }
 
-// Dawn→Twilight theme per direction — fixed design constants, not UI tokens
-const THEME: Record<DirectionKey, { dot: string; glow: string; line: string; text: string }> = {
-  N:  { dot: '#FBBF24', glow: 'rgba(251,191,36,0.32)',  line: 'rgba(251,191,36,0.55)',  text: '#fde68a' },
-  NE: { dot: '#FB923C', glow: 'rgba(251,146,60,0.28)',  line: 'rgba(251,146,60,0.50)',  text: '#fed7aa' },
-  E:  { dot: '#FCA5A5', glow: 'rgba(252,165,165,0.28)', line: 'rgba(252,165,165,0.45)', text: '#fecaca' },
-  SE: { dot: '#C084FC', glow: 'rgba(192,132,252,0.28)', line: 'rgba(192,132,252,0.45)', text: '#e9d5ff' },
-  S:  { dot: '#818CF8', glow: 'rgba(129,140,248,0.32)', line: 'rgba(129,140,248,0.50)', text: '#c7d2fe' },
-  SW: { dot: '#6366F1', glow: 'rgba(99,102,241,0.28)',  line: 'rgba(99,102,241,0.45)',  text: '#a5b4fc' },
-  W:  { dot: '#7C3AED', glow: 'rgba(124,58,237,0.28)',  line: 'rgba(124,58,237,0.45)',  text: '#c4b5fd' },
-  NW: { dot: '#A78BFA', glow: 'rgba(167,139,250,0.28)', line: 'rgba(167,139,250,0.45)', text: '#ddd6fe' },
-};
-
 const DIRECTIONS = Object.keys(CLOCK_ANGLES) as DirectionKey[];
+const ACCENT_COLOR = 'var(--color-icon)';
+const ACCENT_LINE = 'color-mix(in srgb, var(--color-icon) 55%, transparent)';
+const ACCENT_GLOW = 'color-mix(in srgb, var(--color-icon) 30%, transparent)';
+const ACCENT_FAINT = 'color-mix(in srgb, var(--color-icon) 7%, transparent)';
+const ACCENT_SUBTLE = 'color-mix(in srgb, var(--color-icon) 11%, transparent)';
 
 export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: SpecialtyCompassProps) {
   const [hovered, setHovered] = useState<DirectionKey | null>(null);
@@ -81,13 +73,13 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
           >
             <defs>
               <radialGradient id="scDawnAtmos" cx="62%" cy="18%" r="48%">
-                <stop offset="0%"   stopColor="#FBBF24" stopOpacity="0.10" />
-                <stop offset="50%"  stopColor="#FB923C" stopOpacity="0.05" />
+                <stop offset="0%"   stopColor="var(--color-icon)" stopOpacity="0.10" />
+                <stop offset="50%"  stopColor="var(--color-icon)" stopOpacity="0.05" />
                 <stop offset="100%" stopColor="#000"    stopOpacity="0" />
               </radialGradient>
               <radialGradient id="scDuskAtmos" cx="38%" cy="82%" r="48%">
-                <stop offset="0%"   stopColor="#6366F1" stopOpacity="0.12" />
-                <stop offset="50%"  stopColor="#7C3AED" stopOpacity="0.05" />
+                <stop offset="0%"   stopColor="var(--color-icon)" stopOpacity="0.12" />
+                <stop offset="50%"  stopColor="var(--color-icon)" stopOpacity="0.05" />
                 <stop offset="100%" stopColor="#000"    stopOpacity="0" />
               </radialGradient>
             </defs>
@@ -96,8 +88,8 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
             <rect width="100" height="100" fill="url(#scDuskAtmos)" />
 
             {/* Rings */}
-            <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(165,180,252,0.07)" strokeWidth="0.4" />
-            <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(165,180,252,0.06)" strokeWidth="0.25" />
+            <circle cx="50" cy="50" r="47" fill="none" stroke={ACCENT_FAINT} strokeWidth="0.4" />
+            <circle cx="50" cy="50" r="40" fill="none" stroke={ACCENT_FAINT} strokeWidth="0.25" />
 
             {/* 8 compass spokes: inner radius 12 → outer radius 36 */}
             {DIRECTIONS.map((dir) => {
@@ -108,18 +100,18 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   key={dir}
                   x1={50 + 12 * Math.sin(a)} y1={50 - 12 * Math.cos(a)}
                   x2={50 + 36 * Math.sin(a)} y2={50 - 36 * Math.cos(a)}
-                  stroke={isCardinal ? 'rgba(165,180,252,0.11)' : 'rgba(165,180,252,0.06)'}
+                  stroke={isCardinal ? ACCENT_SUBTLE : ACCENT_FAINT}
                   strokeWidth={isCardinal ? '0.35' : '0.2'}
                 />
               );
             })}
 
             {/* Horizon line */}
-            <line x1="14" y1="50" x2="86" y2="50" stroke="rgba(165,180,252,0.10)" strokeWidth="0.25" strokeDasharray="1.5 2" />
+            <line x1="14" y1="50" x2="86" y2="50" stroke={ACCENT_SUBTLE} strokeWidth="0.25" strokeDasharray="1.5 2" />
 
             {/* Center ring + dot */}
-            <circle cx="50" cy="50" r="8"   fill="none"               stroke="rgba(165,180,252,0.10)" strokeWidth="0.3" />
-            <circle cx="50" cy="50" r="1.5" fill="rgba(165,180,252,0.3)" />
+            <circle cx="50" cy="50" r="8"   fill="none" stroke={ACCENT_SUBTLE} strokeWidth="0.3" />
+            <circle cx="50" cy="50" r="1.5" fill={ACCENT_GLOW} />
 
             {/* Constellation lines: drawn on hover via stroke-dashoffset */}
             {nodes.map((node) => {
@@ -130,7 +122,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   x1="50" y1="50"
                   x2={pos.x} y2={pos.y}
                   className="sc-constellation-line"
-                  stroke={THEME[node.direction].line}
+                  stroke={ACCENT_LINE}
                   strokeWidth="0.35"
                   style={{
                     strokeDasharray: 40,
@@ -145,7 +137,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
           {/* 8 node anchors — no text labels, names are in the right-panel list */}
           {nodes.map((node) => {
             const pos = nodeXY(node.direction);
-            const th  = THEME[node.direction];
             const isHighlighted = highlighted === node.direction;
             return (
               <a
@@ -163,11 +154,11 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                 <span
                   className={`sc-node-glow${isHighlighted ? ' sc-node-glow--active' : ''}`}
                   aria-hidden="true"
-                  style={{ background: th.glow }}
+                  style={{ background: ACCENT_GLOW }}
                 />
                 <span
                   className={`sc-node-dot${isHighlighted ? ' sc-node-dot--active' : ''}`}
-                  style={{ background: th.dot }}
+                  aria-hidden="true"
                 />
               </a>
             );
@@ -184,7 +175,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
         {/* RIGHT: All 8 specialties — always visible, always clickable */}
         <div className="sc-list" role="list" aria-label="Specialty evaluations">
           {nodes.map((node) => {
-            const th = THEME[node.direction];
             const isHighlighted = highlighted === node.direction;
             return (
               <a
@@ -201,11 +191,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
               >
                 <div className="sc-list-dir" aria-hidden="true">
                   <span
-                    className="sc-list-dir-dot"
-                    style={{
-                      background: th.dot,
-                      boxShadow: isHighlighted ? `0 0 8px ${th.glow}` : undefined,
-                    }}
+                    className={`sc-list-dir-dot${isHighlighted ? ' sc-list-dir-dot--active' : ''}`}
                   />
                   <span className="sc-list-dir-text">
                     {node.direction}
@@ -234,20 +220,20 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
             >
               <defs>
                 <radialGradient id="scMobileDawnAtmos" cx="62%" cy="18%" r="48%">
-                  <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.10" />
-                  <stop offset="50%" stopColor="#FB923C" stopOpacity="0.05" />
+                  <stop offset="0%" stopColor="var(--color-icon)" stopOpacity="0.10" />
+                  <stop offset="50%" stopColor="var(--color-icon)" stopOpacity="0.05" />
                   <stop offset="100%" stopColor="#000" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="scMobileDuskAtmos" cx="38%" cy="82%" r="48%">
-                  <stop offset="0%" stopColor="#6366F1" stopOpacity="0.12" />
-                  <stop offset="50%" stopColor="#7C3AED" stopOpacity="0.05" />
+                  <stop offset="0%" stopColor="var(--color-icon)" stopOpacity="0.12" />
+                  <stop offset="50%" stopColor="var(--color-icon)" stopOpacity="0.05" />
                   <stop offset="100%" stopColor="#000" stopOpacity="0" />
                 </radialGradient>
               </defs>
               <rect width="100" height="100" fill="url(#scMobileDawnAtmos)" />
               <rect width="100" height="100" fill="url(#scMobileDuskAtmos)" />
-              <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(165,180,252,0.07)" strokeWidth="0.4" />
-              <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(165,180,252,0.06)" strokeWidth="0.25" />
+              <circle cx="50" cy="50" r="47" fill="none" stroke={ACCENT_FAINT} strokeWidth="0.4" />
+              <circle cx="50" cy="50" r="40" fill="none" stroke={ACCENT_FAINT} strokeWidth="0.25" />
               {DIRECTIONS.map((dir) => {
                 const a = CLOCK_ANGLES[dir] * Math.PI / 180;
                 const isCardinal = dir === 'N' || dir === 'E' || dir === 'S' || dir === 'W';
@@ -256,12 +242,12 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                     key={dir}
                     x1={50 + 12 * Math.sin(a)} y1={50 - 12 * Math.cos(a)}
                     x2={50 + 36 * Math.sin(a)} y2={50 - 36 * Math.cos(a)}
-                    stroke={isCardinal ? 'rgba(165,180,252,0.11)' : 'rgba(165,180,252,0.06)'}
+                    stroke={isCardinal ? ACCENT_SUBTLE : ACCENT_FAINT}
                     strokeWidth={isCardinal ? '0.35' : '0.2'}
                   />
                 );
               })}
-              <line x1="14" y1="50" x2="86" y2="50" stroke="rgba(165,180,252,0.10)" strokeWidth="0.25" strokeDasharray="1.5 2" />
+              <line x1="14" y1="50" x2="86" y2="50" stroke={ACCENT_SUBTLE} strokeWidth="0.25" strokeDasharray="1.5 2" />
               {nodes.map((node) => {
                 const pos = nodeXY(node.direction);
                 return (
@@ -270,7 +256,7 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                     x1="50" y1="50"
                     x2={pos.x} y2={pos.y}
                     className="sc-constellation-line"
-                    stroke={THEME[node.direction].line}
+                    stroke={ACCENT_LINE}
                     strokeWidth="0.35"
                     style={{
                       strokeDasharray: 40,
@@ -285,7 +271,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
             {nodes.map((node) => {
               const a = CLOCK_ANGLES[node.direction] * Math.PI / 180;
               const isActive = node.direction === active;
-              const th = THEME[node.direction];
               return (
                 <button
                   key={node.direction}
@@ -297,7 +282,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                 >
                   <span
                     className={`sc-wheel-dot${isActive ? ' sc-wheel-dot--active' : ''}`}
-                    style={isActive ? { background: th.dot, boxShadow: `0 0 8px ${th.glow}` } : { background: th.dot }}
                   />
                   <span className="sc-wheel-dir" aria-hidden="true">
                     {node.direction}
@@ -318,14 +302,8 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
           href={`/specialties/${activeNode.slug}/`}
           aria-label={`Learn about ${activeNode.name} evaluation`}
           data-astro-prefetch="viewport"
-          style={
-            {
-              '--sc-dot':  THEME[active].dot,
-              '--sc-glow': THEME[active].glow,
-            } as CSSProperties
-          }
         >
-          <span className="sc-feature-dir" style={{ color: THEME[active].text }}>{active}</span>
+          <span className="sc-feature-dir" style={{ color: ACCENT_COLOR }}>{active}</span>
           <h3 className="sc-feature-name">{activeNode.name}</h3>
           <p className="sc-feature-desc">{activeNode.desc}</p>
           <span className="sc-feature-cta" aria-hidden="true">Learn more →</span>

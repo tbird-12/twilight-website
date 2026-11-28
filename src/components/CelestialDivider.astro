@@ -164,7 +164,7 @@ const { type } = Astro.props;
       bottom: 3rem;
       padding: 0;
       color: rgba(var(--rgb-accent-alt), 0.65);
-      opacity: 0.48;       /* fallback for browsers without scroll-driven animations */
+      opacity: var(--celestial-max-opacity, 0.48);
     }
 
     .cel-svg          { width: 165px; height: 107px; }
@@ -186,7 +186,7 @@ const { type } = Astro.props;
     @media (min-width: 768px) {
       @keyframes celestialFade {
         from { opacity: 0;    transform: translateY(10px); }
-        to   { opacity: 0.48; transform: translateY(0);    }
+        to   { opacity: var(--celestial-max-opacity, 0.48); transform: translateY(0); }
       }
       .celestial-accent {
         opacity: 0;          /* override fallback for browsers WITH animation-timeline support */
@@ -470,7 +470,7 @@ const { type } = Astro.props;
     @media (min-width: 768px) {
       .celestial-accent {
         animation: none !important;
-        opacity: 0.45 !important;
+        opacity: var(--celestial-max-opacity, 0.45) !important;
         transform: none !important;
       }
       /* Lines: show fully visible */
