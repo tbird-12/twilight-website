@@ -1,12 +1,12 @@
 <svg
   class="absolute inset-0 w-full h-full"
   viewBox="0 0 1440 700"
-  preserveAspectRatio="xMaxYMin slice"
+  preserveAspectRatio="xMinYMin slice"
   xmlns="http://www.w3.org/2000/svg"
 >
   <defs>
-    <!-- Radial reveal mask: fully opaque at upper-right, fades toward center-left -->
-    <radialGradient id="cornerReveal" cx="1326" cy="14" r="900" gradientUnits="userSpaceOnUse">
+    <!-- Radial reveal mask: fully opaque at upper-left, fades toward center-right -->
+    <radialGradient id="cornerReveal" cx="114" cy="14" r="900" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="white" stop-opacity="1"/>
       <stop offset="30%"  stop-color="white" stop-opacity="0.90"/>
       <stop offset="55%"  stop-color="white" stop-opacity="0.45"/>
@@ -18,8 +18,8 @@
       <rect width="1440" height="700" fill="url(#cornerReveal)"/>
     </mask>
 
-    <!-- Ambient atmosphere: unmasked, bleeds left as a subtle depth cue -->
-    <radialGradient id="atmosGlow" cx="1296" cy="140" r="850" gradientUnits="userSpaceOnUse">
+    <!-- Ambient atmosphere: unmasked, bleeds right as a subtle depth cue -->
+    <radialGradient id="atmosGlow" cx="144" cy="140" r="850" gradientUnits="userSpaceOnUse">
       <stop offset="0%"   stop-color="#c7d2fe" stop-opacity="0.18"/>
       <stop offset="30%"  stop-color="#a5b4fc" stop-opacity="0.08"/>
       <stop offset="65%"  stop-color="#818cf8" stop-opacity="0.03"/>
@@ -29,48 +29,55 @@
     <filter id="moonGlow" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="5"/>
     </filter>
+
+    <mask id="desktopMoonCrescent" maskUnits="userSpaceOnUse" x="150" y="145" width="40" height="40">
+      <circle cx="170" cy="165" r="15" fill="white"/>
+      <circle cx="177" cy="161" r="14" fill="black"/>
+    </mask>
   </defs>
 
-  <!-- Soft ambient glow bleeds leftward — implies the moon without placing stars over text -->
+  <!-- Soft ambient glow bleeds rightward without placing stars over footer text -->
   <rect width="1440" height="700" fill="url(#atmosGlow)"/>
 
-  <!-- All celestial elements are clipped to the upper-right corner via the mask -->
+  <!-- All celestial elements are clipped to the upper-left corner via the mask -->
   <g mask="url(#cornerMask)">
 
-    <!-- Compact moon with a crisp core and soft visible halo -->
+    <!-- Full earthlit moon disk with a bright Da Vinci-glow crescent -->
     <g>
-      <circle cx="1270" cy="165" r="27" fill="#c7d2fe" opacity="0.72" filter="url(#moonGlow)"/>
-      <circle cx="1270" cy="165" r="15" fill="#f8fafc" opacity="0.94"/>
-      <circle cx="1265" cy="160" r="11" fill="#e2e8f0" opacity="0.28"/>
+      <circle cx="170" cy="165" r="27" fill="#c7d2fe" opacity="0.42" filter="url(#moonGlow)"/>
+      <circle cx="170" cy="165" r="15" fill="#b8c7df" opacity="0.46"/>
+      <circle cx="170" cy="165" r="13.5" fill="#dce8f5" opacity="0.18"/>
+      <circle cx="170" cy="165" r="15" fill="#f8fafc" opacity="0.82" mask="url(#desktopMoonCrescent)"/>
+      <circle cx="170" cy="165" r="16.5" fill="#e0e7ff" opacity="0.5" mask="url(#desktopMoonCrescent)" filter="url(#moonGlow)"/>
     </g>
 
-    <!-- Star cluster — upper-right quadrant only -->
+    <!-- Star cluster — upper-left quadrant only -->
     <polygon points="0,-3 0.8,-0.8 3,0 0.8,0.8 0,3 -0.8,0.8 -3,0 -0.8,-0.8"
-      transform="translate(1060, 85) scale(0.9)" fill="#a5b4fc" opacity="0.18">
+      transform="translate(380, 85) scale(0.9)" fill="#a5b4fc" opacity="0.18">
       <animate attributeName="opacity" values="0.18; 0.45; 0.18" dur="6s" repeatCount="indefinite"/>
     </polygon>
     <polygon points="0,-2 0.5,-0.5 2,0 0.5,0.5 0,2 -0.5,0.5 -2,0 -0.5,-0.5"
-      transform="translate(1150, 50)" fill="#a5b4fc" opacity="0.14">
+      transform="translate(290, 50)" fill="#a5b4fc" opacity="0.14">
       <animate attributeName="opacity" values="0.14; 0.38; 0.14" dur="7.5s" begin="1.5s" repeatCount="indefinite"/>
     </polygon>
     <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4"
-      transform="translate(1320, 92)" fill="#60A839" opacity="0.14">
+      transform="translate(120, 92)" fill="#60A839" opacity="0.14">
       <animate attributeName="opacity" values="0.10; 0.32; 0.10" dur="8s" begin="0.8s" repeatCount="indefinite"/>
     </polygon>
     <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3"
-      transform="translate(1205, 130)" fill="#a5b4fc" opacity="0.11"/>
+      transform="translate(235, 130)" fill="#a5b4fc" opacity="0.11"/>
     <polygon points="0,-2.5 0.7,-0.7 2.8,0 0.7,0.7 0,2.8 -0.7,0.7 -2.8,0 -0.7,-0.7"
-      transform="translate(1375, 58) scale(0.8)" fill="#a5b4fc" opacity="0.11">
+      transform="translate(65, 58) scale(0.8)" fill="#a5b4fc" opacity="0.11">
       <animate attributeName="opacity" values="0.08; 0.28; 0.08" dur="5s" begin="2.5s" repeatCount="indefinite"/>
     </polygon>
     <polygon points="0,-1.5 0.4,-0.4 1.8,0 0.4,0.4 0,1.8 -0.4,0.4 -1.8,0 -0.4,-0.4"
-      transform="translate(1105, 205)" fill="#a5b4fc" opacity="0.09"/>
+      transform="translate(335, 205)" fill="#a5b4fc" opacity="0.09"/>
     <polygon points="0,-1 0.3,-0.3 1,0 0.3,0.3 0,1 -0.3,0.3 -1,0 -0.3,-0.3"
-      transform="translate(1255, 240)" fill="#60A839" opacity="0.09">
+      transform="translate(185, 240)" fill="#60A839" opacity="0.09">
       <animate attributeName="opacity" values="0.06; 0.22; 0.06" dur="9s" begin="3s" repeatCount="indefinite"/>
     </polygon>
     <polygon points="0,-2 0.5,-0.5 2,0 0.5,0.5 0,2 -0.5,0.5 -2,0 -0.5,-0.5"
-      transform="translate(958, 112) scale(1.1)" fill="#a5b4fc" opacity="0.07">
+      transform="translate(482, 112) scale(1.1)" fill="#a5b4fc" opacity="0.07">
       <animate attributeName="opacity" values="0.05; 0.18; 0.05" dur="11s" begin="1s" repeatCount="indefinite"/>
     </polygon>
   </g>
