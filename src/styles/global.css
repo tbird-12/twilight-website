@@ -1381,26 +1381,12 @@ a[class*="rounded-"] {
   transform: translateX(2px);
 }
 
-/* ── Mobile wheel container ──────────────────────────────────────── */
+/* ── Mobile compass ──────────────────────────────────────────────── */
 .sc-wheel-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 240px;
+  height: 240px;
   flex-shrink: 0;
-}
-
-/* Top tick mark that acts as a "12 o'clock" indicator */
-.sc-wheel-indicator {
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px;
-  height: 10px;
-  border-radius: 2px;
-  background: var(--color-cta);
-  display: block;
-  opacity: 0.7;
 }
 
 .sc-wheel {
@@ -1412,21 +1398,26 @@ a[class*="rounded-"] {
 
 :root.light .sc-wheel {
   border-color: rgba(var(--rgb-accent), 0.24);
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(236,242,255,0.58));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    inset 0 0 0 1px rgba(var(--rgb-accent), 0.08),
+    0 18px 36px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-:root.light .sc-wheel-center {
-  background: rgba(var(--rgb-accent-alt), 0.3);
+.sc-wheel::before {
+  content: "";
+  position: absolute;
+  inset: 0.875rem;
+  border-radius: 50%;
+  border: 1px solid rgba(165, 180, 252, 0.06);
+  pointer-events: none;
 }
 
-:root.light .sc-wheel-dot {
-  background: rgba(var(--rgb-accent), 0.5);
-}
-
-:root.light .sc-wheel-indicator {
-  background: rgba(var(--rgb-accent), 0.8);
+:root.light .sc-wheel::before {
+  border-color: rgba(var(--rgb-accent), 0.18);
 }
 
 .sc-wheel-svg {
@@ -1435,20 +1426,22 @@ a[class*="rounded-"] {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: visible;
 }
 
-/* ── Wheel node buttons ───────────────────────────────────────────── */
 .sc-wheel-node {
   position: absolute;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 0.2rem;
+  min-width: 2rem;
+  min-height: 2.5rem;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 0.25rem;
   color: inherit;
   touch-action: manipulation;
 }
@@ -1456,43 +1449,69 @@ a[class*="rounded-"] {
 .sc-wheel-node:focus-visible {
   outline: 2px solid var(--color-cta);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 0.375rem;
 }
 
 .sc-wheel-dot {
   display: block;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(165, 180, 252, 0.3);
   flex-shrink: 0;
-  transition: background 0.25s ease, box-shadow 0.25s ease, width 0.25s ease, height 0.25s ease;
+  opacity: 0.72;
+  transition: width 0.2s ease, height 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .sc-wheel-dot--active {
-  width: 10px;
-  height: 10px;
+  width: 13px;
+  height: 13px;
+  opacity: 1;
 }
 
 .sc-wheel-dir {
   display: block;
-  font-size: 0.45rem;
+  font-size: 0.5rem;
   font-weight: 900;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--color-site-text);
-  transition: color 0.25s ease;
   line-height: 1;
+  opacity: 0.58;
+  transition: opacity 0.2s ease;
   pointer-events: none;
+}
+
+.sc-wheel-node--active .sc-wheel-dir,
+.sc-wheel-node:focus-visible .sc-wheel-dir {
+  opacity: 1;
+}
+
+.sc-wheel-arrow {
+  position: absolute;
+  left: 100%;
+  top: 0.25rem;
+  color: var(--color-cta);
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+  animation: scFadeUp 0.2s ease both;
 }
 
 .sc-wheel-center {
   position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 10px;
-  height: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16%;
+  height: 16%;
+  border: 1px solid rgba(165, 180, 252, 0.10);
   border-radius: 50%;
-  background: rgba(165, 180, 252, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-site-text);
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   pointer-events: none;
 }
 

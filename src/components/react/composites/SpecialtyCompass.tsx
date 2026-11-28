@@ -225,16 +225,29 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
       {/* ── Mobile orbit slider ── */}
       <div className="sc-mobile">
         <div className="sc-wheel-container">
-          <span className="sc-wheel-indicator" aria-hidden="true" />
           <div className="sc-wheel">
-            {/* Decorative SVG inside wheel */}
             <svg
               className="sc-wheel-svg"
               viewBox="0 0 100 100"
               aria-hidden="true"
               style={{ pointerEvents: 'none' }}
             >
-              <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(165,180,252,0.07)" strokeWidth="0.5" />
+              <defs>
+                <radialGradient id="scMobileDawnAtmos" cx="62%" cy="18%" r="48%">
+                  <stop offset="0%" stopColor="#FBBF24" stopOpacity="0.10" />
+                  <stop offset="50%" stopColor="#FB923C" stopOpacity="0.05" />
+                  <stop offset="100%" stopColor="#000" stopOpacity="0" />
+                </radialGradient>
+                <radialGradient id="scMobileDuskAtmos" cx="38%" cy="82%" r="48%">
+                  <stop offset="0%" stopColor="#6366F1" stopOpacity="0.12" />
+                  <stop offset="50%" stopColor="#7C3AED" stopOpacity="0.05" />
+                  <stop offset="100%" stopColor="#000" stopOpacity="0" />
+                </radialGradient>
+              </defs>
+              <rect width="100" height="100" fill="url(#scMobileDawnAtmos)" />
+              <rect width="100" height="100" fill="url(#scMobileDuskAtmos)" />
+              <circle cx="50" cy="50" r="47" fill="none" stroke="rgba(165,180,252,0.07)" strokeWidth="0.4" />
+              <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(165,180,252,0.06)" strokeWidth="0.25" />
               {DIRECTIONS.map((dir) => {
                 const a = CLOCK_ANGLES[dir] * Math.PI / 180;
                 const isCardinal = dir === 'N' || dir === 'E' || dir === 'S' || dir === 'W';
@@ -242,47 +255,64 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   <line
                     key={dir}
                     x1={50 + 12 * Math.sin(a)} y1={50 - 12 * Math.cos(a)}
-                    x2={50 + 44 * Math.sin(a)} y2={50 - 44 * Math.cos(a)}
-                    stroke={isCardinal ? 'rgba(165,180,252,0.10)' : 'rgba(165,180,252,0.05)'}
-                    strokeWidth={isCardinal ? '0.4' : '0.25'}
+                    x2={50 + 36 * Math.sin(a)} y2={50 - 36 * Math.cos(a)}
+                    stroke={isCardinal ? 'rgba(165,180,252,0.11)' : 'rgba(165,180,252,0.06)'}
+                    strokeWidth={isCardinal ? '0.35' : '0.2'}
+                  />
+                );
+              })}
+              <line x1="14" y1="50" x2="86" y2="50" stroke="rgba(165,180,252,0.10)" strokeWidth="0.25" strokeDasharray="1.5 2" />
+              {nodes.map((node) => {
+                const pos = nodeXY(node.direction);
+                return (
+                  <line
+                    key={node.direction}
+                    x1="50" y1="50"
+                    x2={pos.x} y2={pos.y}
+                    className="sc-constellation-line"
+                    stroke={THEME[node.direction].line}
+                    strokeWidth="0.35"
+                    style={{
+                      strokeDasharray: 40,
+                      strokeDashoffset: (reduced || active === node.direction) ? 0 : 40,
+                      transition: reduced ? 'none' : 'stroke-dashoffset 0.35s ease',
+                    }}
                   />
                 );
               })}
             </svg>
 
-            {/* 8 wheel node buttons */}
             {nodes.map((node) => {
               const a = CLOCK_ANGLES[node.direction] * Math.PI / 180;
-              const isAct = node.direction === active;
+              const isActive = node.direction === active;
               const th = THEME[node.direction];
               return (
                 <button
                   key={node.direction}
-                  className="sc-wheel-node"
-                  style={{ left: `${50 + 42 * Math.sin(a)}%`, top: `${50 - 42 * Math.cos(a)}%` }}
+                  className={`sc-wheel-node${isActive ? ' sc-wheel-node--active' : ''}`}
+                  style={{ left: `${50 + 40 * Math.sin(a)}%`, top: `${50 - 40 * Math.cos(a)}%` }}
                   onClick={() => setActive(node.direction)}
                   aria-label={`Select ${node.name}`}
-                  aria-pressed={node.direction === active}
+                  aria-pressed={isActive}
                 >
                   <span
-                    className={`sc-wheel-dot${isAct ? ' sc-wheel-dot--active' : ''}`}
-                    style={isAct ? { background: th.dot, boxShadow: `0 0 8px ${th.glow}` } : undefined}
+                    className={`sc-wheel-dot${isActive ? ' sc-wheel-dot--active' : ''}`}
+                    style={isActive ? { background: th.dot, boxShadow: `0 0 8px ${th.glow}` } : { background: th.dot }}
                   />
-                  <span
-                    className="sc-wheel-dir"
-                    aria-hidden="true"
-                  >
+                  <span className="sc-wheel-dir" aria-hidden="true">
                     {node.direction}
                   </span>
+                  {isActive && <span className="sc-wheel-arrow" aria-hidden="true">→</span>}
                 </button>
               );
             })}
 
-            <div className="sc-wheel-center" />
+            <div className="sc-wheel-center" aria-hidden="true">
+              <span>{active}</span>
+            </div>
           </div>
         </div>
 
-        {/* Feature card */}
         <a
           className="sc-feature-card"
           href={`/specialties/${activeNode.slug}/`}
