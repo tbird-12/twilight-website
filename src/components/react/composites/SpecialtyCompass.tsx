@@ -201,7 +201,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   <span className="sc-list-name">{node.name}</span>
                   <span className="sc-list-desc">{node.desc}</span>
                 </div>
-                <span className="sc-list-arrow" aria-hidden="true">→</span>
               </a>
             );
           })}
@@ -286,7 +285,6 @@ export default function SpecialtyCompass({ nodes, waitWeeks, reportDays }: Speci
                   <span className="sc-wheel-dir" aria-hidden="true">
                     {node.direction}
                   </span>
-                  {isActive && <span className="sc-wheel-arrow" aria-hidden="true">→</span>}
                 </button>
               );
             })}
