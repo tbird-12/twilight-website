@@ -511,17 +511,17 @@ const { type } = Astro.props;
   }
 
   .noctilucent-wave--back {
-    opacity: 0.48;
+    opacity: 0.28;
     animation: noctilucentDrift 42s linear infinite;
   }
 
   .noctilucent-wave--middle {
-    opacity: 0.68;
+    opacity: 0.42;
     animation: noctilucentDrift 31s linear infinite reverse;
   }
 
   .noctilucent-wave--front {
-    opacity: 0.78;
+    opacity: 0.52;
     animation: noctilucentDrift 24s linear infinite;
   }
 
@@ -552,10 +552,13 @@ const { type } = Astro.props;
     .compass-axis,
     .compass-needle,
     .compass-core,
-    .compass-rose,
-    .noctilucent-wave {
+    .compass-rose {
       animation: none !important;
       opacity: 0.75 !important;
+    }
+
+    .noctilucent-wave {
+      animation: none !important;
     }
 
     /* Reset transforms so static art looks correct */

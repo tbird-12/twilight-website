@@ -128,7 +128,7 @@ export default function TopBar({ className = "" }: TopBarProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-full border border-button-border bg-surface/70 px-4 py-1.5 text-sm font-semibold text-site-text shadow-sm transition-all hover:border-cta/40 hover:bg-surface hover:text-cta focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cta focus-visible:ring-offset-2 focus-visible:ring-offset-site-bg"
-            aria-label="Directions to Practice"
+            aria-label="Directions to Twilight Psychology"
           >
             <svg
               className="h-3.5 w-3.5 shrink-0"
@@ -142,7 +142,7 @@ export default function TopBar({ className = "" }: TopBarProps) {
             >
               <path d="m3 11 19-9-9 19-2-8-8-2Z" />
             </svg>
-            <span>Directions to Practice</span>
+            <span>Get Directions</span>
           </a>
 
           <span className="select-none text-site-sub/30" aria-hidden="true">|</span>
