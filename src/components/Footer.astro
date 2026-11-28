@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import logoImage from "../assets/images/logo.png";
+import footerBg from "../assets/footer-background.svg";
+import footerBgMobile from "../assets/footer-background-mobile.svg";
 import {
   PHONE_NUMBER,
   PHONE_NUMBER_FORMATTED,
@@ -50,8 +52,18 @@ const links = [
 
 ---
 
-<footer class="relative site-footer">
-  <div class="mx-auto w-full max-w-6xl">
+<footer class="relative isolate overflow-hidden site-footer">
+  <picture class="site-footer-sky" aria-hidden="true">
+    <source media="(max-width: 767px)" srcset={footerBgMobile.src} />
+    <img
+      src={footerBg.src}
+      alt=""
+      loading="lazy"
+      decoding="async"
+      class="h-full w-full object-cover"
+    />
+  </picture>
+  <div class="relative z-10 mx-auto w-full max-w-6xl">
     <!-- Brand section - centered at top -->
     <div class="text-center mb-12 lg:mb-16">
       <a href="/" class="inline-flex items-center gap-2 mb-5 group">
@@ -147,3 +159,17 @@ const links = [
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer-sky {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.42;
+  }
+
+  :global(html.dark) .site-footer-sky {
+    opacity: 0.58;
+  }
+</style>

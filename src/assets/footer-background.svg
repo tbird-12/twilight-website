@@ -37,10 +37,11 @@
   <!-- All celestial elements are clipped to the upper-right corner via the mask -->
   <g mask="url(#cornerMask)">
 
-    <!-- Moon: blurred halo layers -->
-    <g opacity="0.28" filter="url(#moonGlow)">
-      <circle cx="1270" cy="165" r="38" fill="#e2e8f0"/>
-      <circle cx="1270" cy="165" r="56" fill="#c7d2fe" opacity="0.38"/>
+    <!-- Compact moon with a crisp core and soft visible halo -->
+    <g>
+      <circle cx="1270" cy="165" r="27" fill="#c7d2fe" opacity="0.72" filter="url(#moonGlow)"/>
+      <circle cx="1270" cy="165" r="15" fill="#f8fafc" opacity="0.94"/>
+      <circle cx="1265" cy="160" r="11" fill="#e2e8f0" opacity="0.28"/>
     </g>
 
     <!-- Star cluster — upper-right quadrant only -->

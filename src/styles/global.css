@@ -464,6 +464,15 @@
     @apply py-20 px-6 md:py-24 lg:py-28;
   }
 
+  :root.dark .site-footer {
+    --theme-site-text: oklch(0.984 0.003 248);
+    --theme-site-sub: oklch(0.704 0.04 257);
+    --theme-site-footer: oklch(0.095 0.010 275);
+    --theme-border: oklch(0.68 0.025 250 / 0.24);
+    --theme-icon: oklch(0.746 0.16 233);
+    border-top-color: transparent;
+  }
+
   @media (max-width: 767px) {
     .site-footer {
       min-height: auto;

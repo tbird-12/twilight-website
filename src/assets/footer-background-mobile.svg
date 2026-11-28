@@ -38,10 +38,11 @@
   <!-- Celestial elements masked to upper-right corner -->
   <g mask="url(#mobileCornerMask)">
 
-    <!-- Moon -->
-    <g opacity="0.28" filter="url(#mobileMoonGlow)">
-      <circle cx="320" cy="155" r="28" fill="#e2e8f0"/>
-      <circle cx="320" cy="155" r="40" fill="#c7d2fe" opacity="0.48"/>
+    <!-- Compact moon with a crisp core and soft visible halo -->
+    <g>
+      <circle cx="320" cy="155" r="20" fill="#c7d2fe" opacity="0.76" filter="url(#mobileMoonGlow)"/>
+      <circle cx="320" cy="155" r="11" fill="#f8fafc" opacity="0.96"/>
+      <circle cx="316" cy="151" r="8" fill="#e2e8f0" opacity="0.3"/>
     </g>
 
     <!-- Stars in upper-right quadrant -->

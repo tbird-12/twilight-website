@@ -3,8 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import HeroSectionWrapper from "../components/HeroSectionWrapper.astro";
 import QualityCareCardsWrapper from "../components/QualityCareCardsWrapper.astro";
 import { Icon } from "astro-icon/components";
-import heroBg from "../assets/hero-background.svg";
-import heroBgMobile from "../assets/hero-mobile.svg";
 import SpecialtyCompassWrapper from "../components/SpecialtyCompassWrapper.astro";
 import CelestialDivider from "../components/CelestialDivider.astro";
 
@@ -132,32 +130,6 @@ const qualityCareItems = [
       class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
     >
       <div
-        class="homepage-hero-art homepage-hero-art--mobile"
-        aria-hidden="true"
-      >
-        <img
-          src={heroBgMobile.src}
-          alt=""
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          class="w-full h-full object-cover block"
-        />
-      </div>
-      <div
-        class="homepage-hero-art homepage-hero-art--desktop"
-        aria-hidden="true"
-      >
-        <img
-          src={heroBg.src}
-          alt=""
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-          class="w-full h-full object-cover block"
-        />
-      </div>
-      <div
         class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-6xl text-center px-4 sm:px-6"
       >
         <HeroSectionWrapper />
@@ -202,7 +174,7 @@ const qualityCareItems = [
       aria-labelledby="services-heading"
       class="hp-section hp-section--alt homepage-panel-services relative isolate overflow-hidden px-4"
     >
-      <CelestialDivider type="comet" />
+      <CelestialDivider type="compass" />
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
@@ -274,7 +246,7 @@ const qualityCareItems = [
       aria-labelledby="specialty-heading"
       class="hp-section homepage-panel-care relative isolate overflow-hidden px-4"
     >
-      <CelestialDivider type="compass" />
+      <CelestialDivider type="crescent" />
       <div class="sc-section-inner mx-auto max-w-5xl px-4 sm:px-6 w-full">
         <header class="hp-section-header">
           <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2 mb-3">
@@ -300,7 +272,7 @@ const qualityCareItems = [
 
     <!-- ════════════════ FROM OUR BLOG ════════════════ -->
     <section aria-labelledby="blog-heading" class="hp-section hp-section--alt homepage-panel-blog relative isolate overflow-hidden px-4">
-      <CelestialDivider type="ursa-minor" />
+      <CelestialDivider type="comet" />
       <div class="hp-section-inner mx-auto max-w-5xl px-4 sm:px-6">
         <header class="hp-section-header hp-section-header--row">
           <div>
@@ -367,7 +339,7 @@ const qualityCareItems = [
       aria-label="Get started with Twilight Psychology"
       class="hp-section homepage-panel-cta relative isolate overflow-hidden px-4"
     >
-      <CelestialDivider type="crescent" />
+      <CelestialDivider type="ursa-minor" />
       <div class="hp-section-inner mx-auto max-w-5xl text-center">
         <p class="hp-eyebrow justify-center">Next Step</p>
         <h2
@@ -430,76 +402,65 @@ const qualityCareItems = [
       scroll-behavior: smooth;
     }
 
+    :global(body:has(.home-twilight) main) {
+      padding-bottom: 0;
+    }
+
+    :global(html.dark body:has(.home-twilight) .site-footer)::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 3;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        oklch(0.62 0.15 255 / 0.62) 25%,
+        oklch(0.76 0.13 248 / 0.92) 50%,
+        oklch(0.62 0.15 255 / 0.62) 75%,
+        transparent
+      );
+      box-shadow: 0 0 0.75rem oklch(0.64 0.15 255 / 0.5);
+      pointer-events: none;
+    }
+
     /* ── Shell ──────────────────────────────────────────────────────── */
 
     .homepage-shell {
       position: relative;
+      overflow: clip;
     }
 
-    /* Homepage-only dark-mode twilight progression. Light mode and all
-       secondary pages continue to use the existing global theme tokens. */
+    /* A single document-length gradient turns as the reader moves from
+       sunset into civil, nautical, and astronomical twilight. */
     :global(html.dark) .home-twilight {
-      --home-blue-hour-glow: oklch(0.34 0.025 245 / 0.18);
-      --home-dusk-glow: oklch(0.59 0.055 40 / 0.08);
-      --home-dusk-horizon: oklch(0.68 0.065 38 / 0.32);
-      --home-nautical: oklch(0.132 0.009 265);
-      --home-nautical-line: oklch(0.52 0.035 258 / 0.28);
-      --home-starlight: oklch(0.095 0.010 275);
-      --home-starlight-line: oklch(0.68 0.025 250 / 0.24);
-    }
-
-    /* Phase 1 — Blue Hour */
-    :global(html.dark) .home-twilight .homepage-panel-hero {
-      background-color: var(--theme-site-bg);
-    }
-
-    :global(html.dark) .home-twilight .homepage-panel-hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
+      --home-sunset: oklch(0.265 0.045 25);
+      --home-blue-hour: oklch(0.220 0.045 270);
+      --home-civil: oklch(0.178 0.032 276);
+      --home-nautical: oklch(0.132 0.015 268);
+      --home-astronomical: oklch(0.095 0.010 275);
       background:
-        radial-gradient(
-          ellipse 72% 58% at 50% 18%,
-          var(--home-blue-hour-glow),
-          transparent 72%
-        ),
+        radial-gradient(ellipse 85% 18% at 12% 4%, oklch(0.58 0.095 38 / 0.22), transparent 72%),
         linear-gradient(
           180deg,
-          oklch(0.145 0.004 286 / 0.08),
-          oklch(0.145 0.004 286 / 0.42)
+          var(--home-sunset) 0%,
+          var(--home-blue-hour) 18%,
+          var(--home-civil) 42%,
+          var(--home-nautical) 68%,
+          var(--home-astronomical) 100%
         );
     }
 
-    /* Phase 2 — Civil Twilight */
+    :global(html.dark) .home-twilight .homepage-panel-hero,
     :global(html.dark) .home-twilight .homepage-panel-problem,
     :global(html.dark) .home-twilight .homepage-panel-services,
-    :global(html.dark) .home-twilight .homepage-panel-care {
-      background-color: var(--theme-site-ann);
+    :global(html.dark) .home-twilight .homepage-panel-care,
+    :global(html.dark) .home-twilight .homepage-panel-blog,
+    :global(html.dark) .home-twilight .homepage-panel-cta {
+      background-color: transparent;
       background-image:
-        radial-gradient(
-          ellipse 72% 48% at 82% 0%,
-          var(--home-dusk-glow),
-          transparent 72%
-        ),
-        radial-gradient(
-          ellipse 50% 40% at 12% 78%,
-          oklch(0.42 0.028 245 / 0.05),
-          transparent 74%
-        );
+        radial-gradient(ellipse 65% 42% at 78% 18%, oklch(0.42 0.045 260 / 0.05), transparent 76%);
       border-top: 1px solid color-mix(in oklab, var(--theme-button-border) 72%, transparent);
-    }
-
-    :global(html.dark) .home-twilight .homepage-panel-problem::before,
-    :global(html.dark) .home-twilight .homepage-panel-services::before,
-    :global(html.dark) .home-twilight .homepage-panel-care::before {
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--home-dusk-horizon) 50%,
-        transparent
-      );
     }
 
     :global(html.dark) .home-twilight :global(.qc-card),
@@ -508,29 +469,6 @@ const qualityCareItems = [
       box-shadow:
         inset 0 1px 0 oklch(0.68 0.026 245 / 0.07),
         0 18px 44px oklch(0.08 0.006 275 / 0.14);
-    }
-
-    /* Phase 3 — Nautical Twilight */
-    :global(html.dark) .home-twilight .homepage-panel-blog,
-    :global(html.dark) .home-twilight .homepage-panel-cta {
-      background-color: var(--home-nautical);
-      background-image:
-        radial-gradient(
-          ellipse 65% 42% at 78% 18%,
-          oklch(0.31 0.026 258 / 0.10),
-          transparent 76%
-        );
-      border-top-color: var(--home-nautical-line);
-    }
-
-    :global(html.dark) .home-twilight .homepage-panel-blog::before,
-    :global(html.dark) .home-twilight .homepage-panel-cta::before {
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--home-nautical-line) 50%,
-        transparent
-      );
     }
 
     /* Keep the celestial accents quiet and phase-harmonized. The shared
@@ -678,21 +616,6 @@ const qualityCareItems = [
       --homepage-chrome-offset: 4rem;
       min-height: calc(100svh - var(--homepage-chrome-offset));
       background: rgba(var(--rgb-bg), 0.85);
-    }
-
-    .homepage-hero-art {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .homepage-hero-art {
-      display: none;
-    }
-
-    .homepage-hero-art--mobile {
-      display: block;
-      opacity: 0.92;
     }
 
     :global(html.light) .homepage-panel-hero {
@@ -980,15 +903,6 @@ const qualityCareItems = [
     /* ── Responsive: ≥768px ──────────────────────────────────────────── */
 
     @media (min-width: 768px) {
-      .homepage-hero-art--mobile {
-        display: none;
-      }
-
-      .homepage-hero-art--desktop {
-        display: block;
-        opacity: 0.9;
-      }
-
       .homepage-panel-hero {
         --homepage-chrome-offset: 6.5rem;
       }
@@ -1158,15 +1072,6 @@ const qualityCareItems = [
       background: rgba(var(--rgb-accent-alt), 0.10);
     }
 
-    /* Phase 4 — Astronomical Twilight. This reaches the layout footer only
-       when the current document contains the homepage-specific wrapper. */
-    :global(html.dark body:has(.home-twilight) .site-footer) {
-      --theme-site-footer: oklch(0.095 0.010 275);
-      background-color: var(--theme-site-footer);
-      border-top-color: oklch(0.68 0.025 250 / 0.24);
-      box-shadow: inset 0 1px 0 oklch(0.52 0.022 245 / 0.10);
-    }
-
     /* ── Reduced motion ──────────────────────────────────────────────── */
 
     @media (prefers-reduced-motion: reduce) {
@@ -1291,23 +1196,6 @@ const qualityCareItems = [
       transform: none !important;
     }
 
-    /* ── Hero background parallax ─────────────────────────────────── */
-    /* Moves the art layer upward at ~60% of the scroll rate, creating
-       depth. scale(1.15) pre-expands the div so translateY(-5%) never
-       reveals bare section background behind the art edges. */
-    @supports (animation-timeline: scroll()) {
-      @keyframes heroParallaxDrift {
-        from { transform: scale(1.15) translateY(0%); }
-        to   { transform: scale(1.15) translateY(-5%); }
-      }
-      .homepage-hero-art {
-        animation: heroParallaxDrift linear both;
-        animation-timeline: scroll(root);
-        animation-range: 0px 120vh;
-        will-change: transform;
-      }
-    }
-
     /* ── Reduced-motion safety net for the new selectors ──────────── */
     /* global.css handles animation-duration:0.01ms for everything, but
        opacity:0 set directly on the selector (not via keyframes) needs
@@ -1319,11 +1207,6 @@ const qualityCareItems = [
         opacity: 1 !important;
         transform: none !important;
         animation: none !important;
-      }
-      .homepage-hero-art {
-        animation: none !important;
-        transform: none !important;
-        will-change: auto !important;
       }
       /* Restore separator lines statically */
       .hp-section::before {
