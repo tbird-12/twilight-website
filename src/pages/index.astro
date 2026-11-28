@@ -130,6 +130,7 @@ const qualityCareItems = [
       class="homepage-panel homepage-panel-hero aurora-surface relative isolate overflow-hidden px-4"
     >
       <div class="homepage-hero-atmosphere" aria-hidden="true"></div>
+      <CelestialDivider type="noctilucent" />
       <div
         class="homepage-panel-inner homepage-hero-inner relative z-10 mx-auto max-w-6xl text-center px-4 sm:px-6"
       >
@@ -464,6 +465,10 @@ const qualityCareItems = [
       border-top: 1px solid color-mix(in oklab, var(--theme-button-border) 72%, transparent);
     }
 
+    :global(html.dark) .home-twilight .homepage-panel-problem {
+      border-top-color: transparent;
+    }
+
     :global(html.dark) .home-twilight :global(.qc-card),
     :global(html.dark) .home-twilight .homepage-service-card {
       border-color: color-mix(in oklab, var(--theme-button-border) 64%, transparent);
@@ -540,6 +545,10 @@ const qualityCareItems = [
       );
       z-index: 2;
       pointer-events: none;
+    }
+
+    .homepage-panel-problem::before {
+      content: none;
     }
 
     :root.light .hp-section::before {
